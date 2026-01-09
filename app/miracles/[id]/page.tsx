@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 
@@ -10,6 +10,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Unwrap params promise
@@ -21,7 +22,10 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   }, [params]);
 
   const handlePlayNarration = async () => {
-    if (isPlaying) {
+    if (isPlaying && audioRef.current) {
+      // Stop current playback
+      audioRef.current.pause();
+      audioRef.current = null;
       setIsPlaying(false);
       return;
     }
@@ -49,15 +53,73 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         }),
       });
 
+      if (!response.ok) {
+        throw new Error('Failed to get narration from n8n');
+      }
+
       const data = await response.json();
       
-      // For now, show success message - audio integration comes next
-      alert(`Narration received! Script: ${data.narration.substring(0, 100)}...`);
-      setIsPlaying(true);
+      if (!data.narration) {
+        throw new Error('No narration received from n8n');
+      }
+
+      // Now call Google TTS to convert text to speech
+      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_TTS_API_KEY;
       
-      setTimeout(() => setIsPlaying(false), 3000);
+      if (!apiKey) {
+        throw new Error('Google TTS API key not configured. Please add NEXT_PUBLIC_GOOGLE_TTS_API_KEY to Vercel environment variables.');
+      }
+
+      const ttsResponse = await fetch(
+        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            input: { text: data.narration },
+            voice: {
+              languageCode: 'en-US',
+              name: data.voice || 'en-US-Neural2-J',
+            },
+            audioConfig: {
+              audioEncoding: 'MP3',
+              speakingRate: 0.95,
+            },
+          }),
+        }
+      );
+
+      if (!ttsResponse.ok) {
+        const errorData = await ttsResponse.json();
+        throw new Error(`Google TTS error: ${errorData.error?.message || 'Failed to generate audio'}`);
+      }
+
+      const ttsData = await ttsResponse.json();
+      
+      // Create audio element and play
+      const audioContent = ttsData.audioContent;
+      const audioBlob = base64ToBlob(audioContent, 'audio/mp3');
+      const audioUrl = URL.createObjectURL(audioBlob);
+      
+      const audioElement = new Audio(audioUrl);
+      audioElement.onended = () => {
+        setIsPlaying(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+      };
+      audioElement.onerror = () => {
+        setError('Failed to play audio');
+        setIsPlaying(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+      };
+      
+      await audioElement.play();
+      audioRef.current = audioElement;
+      setIsPlaying(true);
     } catch (err: any) {
       setError(err.message || 'Failed to play narration');
+      console.error('Narration error:', err);
     } finally {
       setIsLoading(false);
     }
@@ -198,5 +260,15 @@ function getCountryFlag(country: string): string {
     'Mexico': '🇲🇽', 'Venezuela': '🇻🇪',
   };
   return flags[country] || '🌍';
+}
+
+function base64ToBlob(base64: string, mimeType: string): Blob {
+  const byteCharacters = atob(base64);
+  const byteNumbers = new Array(byteCharacters.length);
+  for (let i = 0; i < byteCharacters.length; i++) {
+    byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+  const byteArray = new Uint8Array(byteNumbers);
+  return new Blob([byteArray], { type: mimeType });
 }
 
