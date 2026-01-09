@@ -128,7 +128,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Select voice based on tour type\nconst tourType = $('Extract Stop Data').item.json.tourType;\n\nconst voiceMap = {\n  'Eucharistic Miracles': 'en-US-Neural2-J',\n  'Marian Apparitions': 'en-US-Neural2-F',\n  'Stations of the Cross': 'en-US-Neural2-H',\n  'Saint Shrines': 'en-US-Neural2-D',\n  'Holy Relics': 'en-GB-Neural2-B',\n  'Biblical Sites': 'en-US-Neural2-J'\n};\n\nconst voice = voiceMap[tourType] || 'en-US-Neural2-J';\nconst script = $('AI Agent - Generate Script').item.json.output || $('AI Agent - Generate Script').item.json.text;\nconst tourId = $('Extract Stop Data').item.json.tourId;\nconst stopId = $('Extract Stop Data').item.json.stopId;\n\nreturn {\n  script: script,\n  voice: voice,\n  tourId: tourId,\n  stopId: stopId,\n  tourType: tourType\n};"
+        "jsCode": "// Select voice based on tour type\nconst tourType = $('Extract Stop Data').item.json.tourType;\n\nconst voiceMap = {\n  'Eucharistic Miracles': 'en-US-Neural2-J',\n  'Marian Apparitions': 'en-US-Wavenet-H',\n  'Stations of the Cross': 'en-US-Neural2-D',\n  'Saint Shrines': 'en-US-Wavenet-D',\n  'Holy Relics': 'en-GB-Wavenet-B',\n  'Biblical Sites': 'en-US-Neural2-J'\n};\n\nconst voice = voiceMap[tourType] || 'en-US-Neural2-J';\nconst script = $('AI Agent - Generate Script').item.json.output || $('AI Agent - Generate Script').item.json.text;\nconst tourId = $('Extract Stop Data').item.json.tourId;\nconst stopId = $('Extract Stop Data').item.json.stopId;\n\nreturn {\n  script: script,\n  voice: voice,\n  tourId: tourId,\n  stopId: stopId,\n  tourType: tourType\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
