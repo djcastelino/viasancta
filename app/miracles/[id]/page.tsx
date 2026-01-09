@@ -155,19 +155,33 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
   const startBackgroundMusic = () => {
     if (!backgroundMusicRef.current) {
-      // Using a royalty-free sacred/ambient music (placeholder - you can replace with your own)
-      const bgMusic = new Audio('https://cdn.pixabay.com/download/audio/2022/05/13/audio_1808fbf07a.mp3');
+      // Using a working royalty-free ambient music source
+      // You can replace this with your own file at /public/audio/background-music.mp3
+      const bgMusic = new Audio('https://www.bensound.com/bensound-music/bensound-slowmotion.mp3');
       bgMusic.loop = true;
       bgMusic.volume = 0; // Start at 0 for fade-in
+      
+      // Add error handler
+      bgMusic.onerror = (e) => {
+        console.error('Background music failed to load:', e);
+        // Silently fail - narration will still work
+      };
+      
       backgroundMusicRef.current = bgMusic;
     }
 
     const bgMusic = backgroundMusicRef.current;
     bgMusic.currentTime = 0;
-    bgMusic.play().catch(err => console.log('Background music autoplay prevented:', err));
-    
-    // Fade in to 20% volume
-    fadeInMusic(bgMusic, 0.2);
+    bgMusic.play()
+      .then(() => {
+        console.log('Background music started successfully');
+        // Fade in to 20% volume
+        fadeInMusic(bgMusic, 0.2);
+      })
+      .catch(err => {
+        console.log('Background music autoplay prevented or failed:', err);
+        // This is normal - some browsers block autoplay
+      });
   };
 
   const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
