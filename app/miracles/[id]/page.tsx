@@ -175,8 +175,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     bgMusic.play()
       .then(() => {
         console.log('Background music started successfully');
-        // Fade in to 20% volume
-        fadeInMusic(bgMusic, 0.2);
+        // Fade in to 15% volume (softer than before)
+        fadeInMusic(bgMusic, 0.15);
       })
       .catch(err => {
         console.log('Background music autoplay prevented or failed:', err);
