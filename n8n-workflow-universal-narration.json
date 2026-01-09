@@ -1,0 +1,294 @@
+{
+  "name": "Via Sancta - Universal Tour Narration with Audio",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "via-sancta-narration",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [-80, -96],
+      "webhookId": "via-sancta-narration"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "tourType",
+              "value": "={{ $json.body.tourType || 'General' }}",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "tourId",
+              "value": "={{ $json.body.tourId || 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "stopId",
+              "value": "={{ $json.body.stopId || 'unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "4",
+              "name": "stopName",
+              "value": "={{ $json.body.stopData.name || 'Unknown' }}",
+              "type": "string"
+            },
+            {
+              "id": "5",
+              "name": "location",
+              "value": "={{ $json.body.stopData.location || 'Unknown location' }}",
+              "type": "string"
+            },
+            {
+              "id": "6",
+              "name": "date",
+              "value": "={{ $json.body.stopData.date || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "7",
+              "name": "narrative",
+              "value": "={{ $json.body.stopData.narrative || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "8",
+              "name": "scientificEvidence",
+              "value": "={{ $json.body.stopData.scientificEvidence || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "9",
+              "name": "significance",
+              "value": "={{ $json.body.stopData.significance || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "10",
+              "name": "visionary",
+              "value": "={{ $json.body.stopData.visionary || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "11",
+              "name": "message",
+              "value": "={{ $json.body.stopData.message || '' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [120, -96],
+      "id": "editFields",
+      "name": "Extract Stop Data"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an expert spiritual tour guide for Via Sancta, a sacred pilgrimage app.\n\nCreate an engaging, reverent 2-3 minute audio narration for this sacred site:\n\nTOUR TYPE: {{ $json.tourType }}\nLOCATION: {{ $json.stopName }}, {{ $json.location }}\nDATE: {{ $json.date }}\n\nSTORY:\n{{ $json.narrative }}\n\n{{ $json.scientificEvidence ? 'SCIENTIFIC EVIDENCE: ' + $json.scientificEvidence : '' }}\n{{ $json.visionary ? 'VISIONARY: ' + $json.visionary : '' }}\n{{ $json.message ? 'MESSAGE: ' + $json.message : '' }}\n{{ $json.significance ? 'SIGNIFICANCE: ' + $json.significance : '' }}\n\nGuidelines:\n1. Begin by setting the scene (time, place, atmosphere)\n2. Tell the story in an engaging, accessible way\n3. Include theological/spiritual significance\n4. Use warm, conversational tone\n5. End with a brief reflection\n6. Aim for 300-450 words (2-3 minutes spoken)\n\nAdapt your tone:\n- Eucharistic Miracles: Reverent, emphasize Real Presence, include scientific evidence\n- Marian Apparitions: Warm/maternal, focus on Mary's messages\n- Stations of the Cross: Meditative/contemplative\n- Saint Shrines: Inspiring/biographical\n- Holy Relics: Educational/historical\n- Biblical Sites: Scriptural context\n\nGenerate the complete narration script.",
+        "options": {
+          "systemMessage": "You are a professional sacred tour guide who creates reverent, engaging audio narrations for virtual pilgrimages."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [520, -96],
+      "id": "aiAgent",
+      "name": "AI Agent - Generate Script"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [320, 100],
+      "id": "groqModel",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "YOUR_GROQ_CREDENTIAL_ID",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Select voice based on tour type\nconst tourType = $('Extract Stop Data').item.json.tourType;\n\nconst voiceMap = {\n  'Eucharistic Miracles': 'en-US-Neural2-J',\n  'Marian Apparitions': 'en-US-Neural2-F',\n  'Stations of the Cross': 'en-US-Neural2-H',\n  'Saint Shrines': 'en-US-Neural2-D',\n  'Holy Relics': 'en-GB-Neural2-B',\n  'Biblical Sites': 'en-US-Neural2-J'\n};\n\nconst voice = voiceMap[tourType] || 'en-US-Neural2-J';\nconst script = $('AI Agent - Generate Script').item.json.output || $('AI Agent - Generate Script').item.json.text;\nconst tourId = $('Extract Stop Data').item.json.tourId;\nconst stopId = $('Extract Stop Data').item.json.stopId;\n\nreturn {\n  script: script,\n  voice: voice,\n  tourId: tourId,\n  stopId: stopId,\n  tourType: tourType\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, -96],
+      "id": "selectVoice",
+      "name": "Select Voice & Prepare"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "text": "={{ $json.script }}",
+        "voice": "={{ $json.voice }}",
+        "languageCode": "en-US",
+        "options": {
+          "speakingRate": 0.95
+        }
+      },
+      "type": "n8n-nodes-base.googleCloudTextToSpeech",
+      "typeVersion": 1,
+      "position": [920, -96],
+      "id": "googleTTS",
+      "name": "Google Cloud TTS",
+      "credentials": {
+        "googleCloudTextToSpeechOAuth2Api": {
+          "id": "YOUR_GOOGLE_TTS_CREDENTIAL_ID",
+          "name": "Google Cloud TTS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/Users/dcasteli/Documents/pda/viasancta/public/audio/' + $('Select Voice & Prepare').item.json.tourId + '/' + $('Select Voice & Prepare').item.json.stopId + '.mp3' }}",
+        "data": "={{ $binary.data }}"
+      },
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [1120, -96],
+      "id": "writeBinaryFile",
+      "name": "Write Audio File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const tourId = $('Select Voice & Prepare').item.json.tourId;\nconst stopId = $('Select Voice & Prepare').item.json.stopId;\nconst script = $('Select Voice & Prepare').item.json.script;\n\nconst audioUrl = `/audio/${tourId}/${stopId}.mp3`;\n\nreturn {\n  success: true,\n  audioUrl: audioUrl,\n  script: script,\n  tourId: tourId,\n  stopId: stopId,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, -96],
+      "id": "formatOutput",
+      "name": "Format Response"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, -96],
+      "id": "respond",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Stop Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Stop Data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent - Generate Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent - Generate Script",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent - Generate Script": {
+      "main": [
+        [
+          {
+            "node": "Select Voice & Prepare",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Voice & Prepare": {
+      "main": [
+        [
+          {
+            "node": "Google Cloud TTS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Cloud TTS": {
+      "main": [
+        [
+          {
+            "node": "Write Audio File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Audio File": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
