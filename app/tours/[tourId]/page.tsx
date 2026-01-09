@@ -64,8 +64,9 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
       {/* Miracles Grid */}
       <section className="max-w-7xl mx-auto px-5 pb-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {miracles.map((miracle: any) => {
+          {miracles.map((miracle: any, index: number) => {
             const countryFlag = getCountryFlag(miracle.location.country);
+            const cardGradient = getCardGradient(index);
             
             return (
               <Link
@@ -74,7 +75,7 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
                 {/* Hero Section */}
-                <div className="h-48 bg-gradient-to-br from-[#193d52] to-[#325847] relative flex items-center justify-center">
+                <div className={`h-48 bg-gradient-to-br ${cardGradient} relative flex items-center justify-center`}>
                   <div className="text-center text-white z-10">
                     <div className="text-6xl mb-3">{countryFlag}</div>
                     <div className="text-sm opacity-90">{miracle.location.country}</div>
@@ -124,6 +125,19 @@ function getCountryFlag(country: string): string {
     'India': '🇮🇳',
   };
   return flags[country] || '🌍';
+}
+
+// Helper function to get card gradient colors (rotating through sacred colors)
+function getCardGradient(index: number): string {
+  const gradients = [
+    'from-[#193d52] to-[#325847]',  // Deep teal/green (original)
+    'from-[#6B3E8C] to-[#4A2C5F]',  // Rich purple/violet
+    'from-[#8B4513] to-[#654321]',  // Warm brown/bronze
+    'from-[#1B4B5A] to-[#0D3A4A]',  // Deep ocean blue
+    'from-[#7B3F2B] to-[#5C2E1F]',  // Earthy terracotta
+    'from-[#2C5282] to-[#1A3A5C]',  // Royal blue
+  ];
+  return gradients[index % gradients.length];
 }
 
 export function generateStaticParams() {
