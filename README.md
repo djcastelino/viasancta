@@ -1,219 +1,143 @@
-# Via Sancta Project
+# ✦ Via Sancta ✦
+**The Holy Way - Virtual Sacred Pilgrimages**
 
-**The Holy Way - Virtual Sacred Pilgrimage Tours**
+Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.
 
-## 🎯 Project Overview
+## 🌟 Features
 
-Via Sancta is a Progressive Web App (PWA) offering immersive virtual pilgrimage tours of sacred sites worldwide, featuring AI-generated narrations, Google Street View integration, and curated historical content.
+- **6 Sacred Pilgrimage Tours** - Eucharistic Miracles, Marian Apparitions, Stations of the Cross, Saint Shrines, Sacred Architecture, Biblical Sites
+- **AI-Powered Narration** - Groq LLM generates engaging 3-5 minute audio stories
+- **Netflix-Style UI** - Beautiful, modern card-based interface
+- **Progressive Web App** - Installable, works offline
+- **Mobile-First** - Optimized for all devices
+- **Zero Cost Maps** - External Google Maps links (no API fees)
 
-**Domain:** viasancta.vercel.app  
-**Tech Stack:** React + TypeScript + Vite + PWA + Groq AI + Google Cloud TTS  
-**First Tour:** Eucharistic Miracles (30-40 stops)
+## 🚀 Tech Stack
 
----
+- **Frontend:** Next.js 14 + TypeScript + Tailwind CSS
+- **PWA:** next-pwa
+- **Backend:** n8n (workflow automation)
+- **AI:** Groq (LLaMA models)
+- **TTS:** Google Cloud Text-to-Speech
+- **Hosting:** Vercel
 
-## 📁 Project Structure
-
-```
-viasancta/
-├── n8n-workflow-universal-narration.json  # n8n workflow for audio generation
-├── n8n-setup-instructions.md              # How to set up n8n workflow
-├── data-curation-guide.md                 # Guide for curating miracle data
-├── COMPLETE-WORKFLOW-GUIDE.md             # Full workflow documentation
-├── generate-all-audio.sh                  # Batch audio generation script
-├── starter-miracles.json                  # 3 sample miracles (template)
-│
-├── public/
-│   └── audio/
-│       ├── eucharistic-miracles/          # Generated audio files
-│       ├── marian-apparitions/
-│       └── stations-of-cross/
-│
-└── src/
-    └── data/
-        └── eucharistic-miracles.json      # Full miracle dataset (you create this)
-```
-
----
-
-## 🚀 Getting Started
-
-### Step 1: Set Up n8n Workflow
-
-1. Follow `n8n-setup-instructions.md`
-2. Import workflow into your n8n instance
-3. Configure Groq and Google Cloud TTS credentials
-4. Activate the workflow
-
-### Step 2: Curate Miracle Data
-
-1. Follow `data-curation-guide.md`
-2. Start with `starter-miracles.json` as template
-3. Curate 30-40 Eucharistic miracles
-4. Save to `src/data/eucharistic-miracles.json`
-
-**Recommended approach:**
-- Start with Top 10 Tier 1 miracles
-- Test audio generation with those 10
-- Once satisfied, complete remaining 20-30
-
-### Step 3: Generate Audio Files
+## 📦 Installation
 
 ```bash
-# Edit script to set your n8n webhook URL
-nano generate-all-audio.sh
-
-# Run batch generation (takes ~12-15 minutes for 30 miracles)
-./generate-all-audio.sh
-```
-
-**Result:** Audio files saved to `public/audio/eucharistic-miracles/`
-
-### Step 4: Build Frontend
-
-```bash
-# Initialize React project
-npm create vite@latest . -- --template react-ts
+# Clone the repository
+git clone https://github.com/djcastelino/viasancta.git
+cd viasancta
 
 # Install dependencies
 npm install
-npm install -D vite-plugin-pwa workbox-window
-npm install react-router-dom
 
-# Start development server
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-### Step 5: Deploy
+## 🎯 Project Structure
+
+```
+viasancta/
+├── app/
+│   ├── page.tsx              # Home page (tour selection)
+│   ├── tours/
+│   │   └── [tourId]/
+│   │       └── page.tsx      # Tour landing page
+│   └── miracles/
+│       └── [id]/
+│           └── page.tsx      # Miracle detail page
+├── src/
+│   └── data/
+│       └── eucharistic-miracles.json  # Miracle data
+├── public/
+│   ├── manifest.json         # PWA manifest
+│   └── images/               # Curated photos
+├── n8n-workflow-universal-narration.json  # n8n workflow
+└── VIA-SANCTA-MASTER-PLAN.md  # Complete project plan
+```
+
+## 🎧 How It Works
+
+1. **User selects a tour** (e.g., Eucharistic Miracles)
+2. **Clicks a specific stop** (e.g., Buenos Aires, 1996)
+3. **Presses "Play Narration"**
+4. **Frontend calls n8n webhook** with tour/stop data
+5. **n8n sends data to Groq AI** (generates script)
+6. **Frontend receives narration text**
+7. **Frontend calls Google TTS** (text → audio)
+8. **Audio plays** while photos display
+
+## 🗺️ Tours
+
+### ⚪ Eucharistic Miracles (Available Now)
+11 documented miracles based on St. Carlo Acutis's research
+
+### Coming Soon:
+- ⭐ Marian Apparitions (25 stops)
+- ✝️ Stations of the Cross (14 stops)
+- 😇 Shrines of Saints (40 stops)
+- ⛪ Sacred Architecture (30 stops)
+- 📖 Biblical Sites (50 stops)
+
+## 🔧 Configuration
+
+### n8n Webhook
+Update the webhook URL in your frontend API calls:
+```
+https://workflowly.online/webhook/via-sancta-narration
+```
+
+### Google TTS
+Set up Google Cloud credentials for Text-to-Speech API.
+
+## 📱 Deploy to Vercel
 
 ```bash
-npm run build
-vercel --prod
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Or connect GitHub repo in Vercel dashboard
+# https://vercel.com/new
 ```
 
----
+## 📚 Documentation
 
-## 📖 Key Documentation
+- [Master Plan](./VIA-SANCTA-MASTER-PLAN.md) - Complete project vision and architecture
+- [n8n Setup](./n8n-setup-instructions.md) - Workflow configuration
+- [Data Curation](./data-curation-guide.md) - How to add new miracles
+- [Complete Workflow Guide](./COMPLETE-WORKFLOW-GUIDE.md) - Detailed workflow explanation
 
-| File | Purpose |
-|------|---------|
-| `COMPLETE-WORKFLOW-GUIDE.md` | **START HERE** - Full workflow explanation |
-| `n8n-setup-instructions.md` | Set up the n8n backend workflow |
-| `data-curation-guide.md` | How to curate miracle data |
-| `starter-miracles.json` | Template with 3 complete examples |
+## 🙏 Mission
 
----
+> **Via Sancta exists to make the sacred accessible to all.**
+> 
+> By combining cutting-edge AI technology with deep respect for Catholic tradition, we bring the world's most profound spiritual sites into the homes, classrooms, and hearts of people everywhere.
+> 
+> In honor of St. Carlo Acutis, whose work documented Eucharistic miracles for the digital age, we continue his mission: to show the world the beauty and truth of the Real Presence through modern technology.
 
-## 🎯 Implementation Status
+## 📄 License
 
-### ✅ Phase 1: n8n Backend (COMPLETE)
-- [x] Universal narration workflow created
-- [x] Groq LLM integration
-- [x] Google Cloud TTS integration
-- [x] Tour-specific voice selection
-- [x] Binary file writing
-- [x] Documentation complete
+MIT
 
-### ⏭️ Phase 2: Data Curation (IN PROGRESS)
-- [ ] Curate 30-40 Eucharistic miracles
-- [ ] Verify all Street View locations
-- [ ] Gather images for each miracle
-- [ ] Complete all data fields
+## 🤝 Contributing
 
-### ⏭️ Phase 3: Audio Generation (PENDING)
-- [ ] Run batch generation script
-- [ ] Validate all audio files
-- [ ] Optimize file sizes if needed
+Contributions welcome! Please read the contribution guidelines before submitting PRs.
 
-### ⏭️ Phase 4: Frontend Development (PENDING)
-- [ ] Initialize React project
-- [ ] Create component library
-- [ ] Implement tour-based UX
-- [ ] Integrate audio playback
-- [ ] Add Street View integration
-- [ ] Implement PWA features
+## 📧 Contact
 
-### ⏭️ Phase 5: Testing & Launch (PENDING)
-- [ ] Cross-browser testing
-- [ ] PWA installation testing
-- [ ] Performance optimization
-- [ ] Deploy to Vercel
-- [ ] Soft launch
+- Website: [viasancta.vercel.app](https://viasancta.vercel.app)
+- GitHub: [@djcastelino](https://github.com/djcastelino)
 
 ---
 
-## 💡 Key Concepts
-
-### Why Pre-generate Audio?
-
-**Problem:** Real-time generation = 25 seconds wait ❌
-
-**Solution:** Batch generate once, serve instantly ✅
-
-```
-Admin: Run batch job once (12 minutes for 30 miracles)
-User: Instant playback of pre-generated MP3s
-```
-
-### Architecture
-
-```
-Data Curation → Batch Audio Generation → Frontend Development
-     ↓                    ↓                        ↓
-  JSON file       Pre-generated MP3s        Instant playback
-```
-
----
-
-## 🆓 Cost Breakdown
-
-**100% FREE to build and operate:**
-
-- **Groq LLM:** FREE (14,400 requests/day)
-- **Google Cloud TTS:** FREE (1M characters/month)
-- **Vercel Hosting:** FREE (100GB bandwidth)
-- **Storage:** Vercel public folder (FREE)
-
-**Total Operating Cost: $0/month**
-
----
-
-## 📚 Resources
-
-- **Carlo Acutis Sources:**
-  - https://eucharisticmiracles.faith
-  - http://www.miracolieucaristici.org
-
-- **APIs:**
-  - Groq: https://console.groq.com
-  - Google Cloud TTS: https://cloud.google.com/text-to-speech
-
-- **Tools:**
-  - n8n: https://n8n.io
-  - Vite: https://vitejs.dev
-  - React: https://react.dev
-
----
-
-## 🎯 Next Action
-
-**Your immediate next step:**
-
-1. Read `COMPLETE-WORKFLOW-GUIDE.md` for full understanding
-2. Start curating miracle data using `data-curation-guide.md`
-3. Use `starter-miracles.json` as your template
-4. Aim for 10 miracles first, then test audio generation
-5. Complete remaining 20-30 miracles
-
-**The n8n backend is ready! Just need the data.**
-
----
-
-## 📧 Questions?
-
-Refer to the documentation files - they contain detailed explanations and troubleshooting guides.
-
----
-
-**Let's build something sacred.** ✨
-
+**Built with ❤️ and 🙏 for the greater glory of God**
