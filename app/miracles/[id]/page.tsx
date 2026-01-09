@@ -63,6 +63,9 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         throw new Error('No narration received from n8n');
       }
 
+      // Clean the narration: remove stage directions like [Soothing music fades out...]
+      const cleanNarration = data.narration.replace(/\[.*?\]/g, '').trim();
+
       // Now call Google TTS to convert text to speech
       const apiKey = process.env.NEXT_PUBLIC_GOOGLE_TTS_API_KEY;
       
@@ -76,7 +79,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            input: { text: data.narration },
+            input: { text: cleanNarration },
             voice: {
               languageCode: 'en-US',
               name: data.voice || 'en-US-Neural2-J',
