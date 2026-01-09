@@ -9,8 +9,10 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   const [miracle, setMiracle] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Unwrap params promise
@@ -26,11 +28,18 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       // Stop current playback
       audioRef.current.pause();
       audioRef.current = null;
+      
+      // Stop background music
+      if (backgroundMusicRef.current) {
+        fadeOutMusic(backgroundMusicRef.current);
+      }
+      
       setIsPlaying(false);
       return;
     }
 
     setIsLoading(true);
+    setLoadingMessage('Generating narration...');
     setError('');
 
     try {
@@ -65,6 +74,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
       // Clean the narration: remove stage directions like [Soothing music fades out...]
       const cleanNarration = data.narration.replace(/\[.*?\]/g, '').trim();
+
+      setLoadingMessage('Creating audio...');
 
       // Now call Google TTS to convert text to speech
       const apiKey = process.env.NEXT_PUBLIC_GOOGLE_TTS_API_KEY;
@@ -109,13 +120,26 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         setIsPlaying(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
+        
+        // Fade out background music
+        if (backgroundMusicRef.current) {
+          fadeOutMusic(backgroundMusicRef.current);
+        }
       };
       audioElement.onerror = () => {
         setError('Failed to play audio');
         setIsPlaying(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
+        
+        // Stop background music on error
+        if (backgroundMusicRef.current) {
+          fadeOutMusic(backgroundMusicRef.current);
+        }
       };
+      
+      // Start background music
+      startBackgroundMusic();
       
       await audioElement.play();
       audioRef.current = audioElement;
@@ -125,7 +149,47 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       console.error('Narration error:', err);
     } finally {
       setIsLoading(false);
+      setLoadingMessage('');
     }
+  };
+
+  const startBackgroundMusic = () => {
+    if (!backgroundMusicRef.current) {
+      // Using a royalty-free sacred/ambient music (placeholder - you can replace with your own)
+      const bgMusic = new Audio('https://cdn.pixabay.com/download/audio/2022/05/13/audio_1808fbf07a.mp3');
+      bgMusic.loop = true;
+      bgMusic.volume = 0; // Start at 0 for fade-in
+      backgroundMusicRef.current = bgMusic;
+    }
+
+    const bgMusic = backgroundMusicRef.current;
+    bgMusic.currentTime = 0;
+    bgMusic.play().catch(err => console.log('Background music autoplay prevented:', err));
+    
+    // Fade in to 20% volume
+    fadeInMusic(bgMusic, 0.2);
+  };
+
+  const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
+    const fadeInterval = setInterval(() => {
+      if (audio.volume < targetVolume) {
+        audio.volume = Math.min(audio.volume + 0.02, targetVolume);
+      } else {
+        clearInterval(fadeInterval);
+      }
+    }, 100);
+  };
+
+  const fadeOutMusic = (audio: HTMLAudioElement) => {
+    const fadeInterval = setInterval(() => {
+      if (audio.volume > 0.02) {
+        audio.volume = Math.max(audio.volume - 0.02, 0);
+      } else {
+        audio.pause();
+        audio.volume = 0;
+        clearInterval(fadeInterval);
+      }
+    }, 100);
   };
 
   if (!miracle) {
@@ -178,8 +242,27 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
               isPlaying ? 'bg-red-500 hover:bg-red-600' : isLoading ? 'bg-gray-400 cursor-wait' : 'bg-[#D4AF37] hover:bg-[#c49d2f] hover:scale-105'
             } text-white`}
           >
-            {isLoading ? <><span className="animate-spin">⏳</span> Generating...</> : isPlaying ? '⏹️ Stop' : '▶️ Play Narration'}
+            {isLoading ? (
+              <>
+                <span className="animate-spin">⏳</span> 
+                {loadingMessage || 'Loading...'}
+              </>
+            ) : isPlaying ? (
+              <>⏹️ Stop</>
+            ) : (
+              <>▶️ Play Narration</>
+            )}
           </button>
+          
+          {isLoading && (
+            <div className="mt-4 text-sm text-gray-500">
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+                <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+              </div>
+            </div>
+          )}
 
           {error && (
             <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">{error}</div>
