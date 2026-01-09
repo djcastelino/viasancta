@@ -1,10 +1,5 @@
 [
   {
-    "id": "lanciano-750",
-    "name": "Miracle of Lanciano",
-    ...
-  },
-  {
     "id": "buenos-aires-1996",
     "name": "Eucharistic Miracle of Buenos Aires",
     "location": {
@@ -18,376 +13,287 @@
     },
     "date": {
       "year": 1996,
-      "displayDate": "August 15, 1996 (investigation continued 1996–2006)"
+      "displayDate": "August 15, 1996"
     },
-    "type": "Eucharistic Miracle (Host transformed into cardiac tissue)",
+    "type": "Eucharistic Miracle",
     "description": "A consecrated Host transformed into living human heart tissue and blood following proper Eucharistic handling.",
-    "narrative": "Between 1992 and 1996, three Eucharistic miracles occurred at the parish of Santa María in Buenos Aires...",
-    "scientificEvidence": "Forensic pathology, histology, and DNA testing identified the substance as living human cardiac muscle tissue...",
-    "significance": "The miracle strongly supports Catholic teaching on the Real Presence of Christ in the Eucharist and was overseen by the future Pope Francis...",
+    "narrative": "Between 1992 and 1996, three Eucharistic miracles occurred at the parish of Santa María in Buenos Aires. The investigation was overseen by the future Pope Francis.",
+    "scientificEvidence": "Forensic pathology, histology, and DNA testing identified the substance as living human cardiac muscle tissue.",
+    "significance": "The miracle strongly supports Catholic teaching on the Real Presence of Christ in the Eucharist.",
     "hasStreetView": true,
     "wikiUrl": null,
     "images": [],
     "sources": ["miracolieucaristici.org"],
-    "tags": ["Eucharistic Miracle", "Real Presence", "Buenos Aires", "Pope Francis", "Scientific Investigation", "Heart Tissue"]
-  }
-
+    "tags": ["Eucharistic Miracle", "Real Presence", "Buenos Aires", "Pope Francis"]
+  },
   {
-  "id": "tumaco-1906",
-  "name": "Eucharistic Miracle of Tumaco",
-  "location": {
-    "city": "Tumaco",
-    "country": "Colombia",
-    "coordinates": {
-      "lat": 1.8083,
-      "lng": -78.7647
+    "id": "lanciano-750",
+    "name": "Miracle of Lanciano",
+    "location": {
+      "city": "Lanciano",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 42.2293,
+        "lng": 14.3894
+      },
+      "address": "Church of San Francesco, Lanciano"
     },
-    "address": "Tumaco Island, Pacific Coast"
-  },
-  "date": {
-    "year": 1906,
-    "displayDate": "January 31, 1906"
-  },
-  "type": "Eucharistic Miracle (Blessed Sacrament halting natural disaster)",
-  "description": "A tsunami caused by a powerful earthquake halted after a priest raised the Blessed Sacrament on the shore of Tumaco.",
-  "narrative": "On January 31, 1906, a massive undersea earthquake off the Pacific coast triggered a devastating tsunami that struck many coastal regions. As the waters surged toward the small island of Tumaco, Fr. Gerardo Larrondo was urged by the terrified villagers to bring the Blessed Sacrament. Carrying the monstrance, he processed to the beach with the faithful as the enormous wave advanced inland. Standing before the sea, Fr. Larrondo raised the Blessed Sacrament and traced the sign of the cross. At that moment, the wave suddenly stopped, receded, and the waters returned to their normal level. Tumaco was spared total destruction, and the event was widely regarded as a miraculous intervention attributed to the Real Presence of Christ in the Eucharist.",
-  "scientificEvidence": "Eyewitness testimony from clergy and townspeople documented the sudden and unexplained retreat of the tsunami despite ongoing seismic activity affecting surrounding regions.",
-  "significance": "The miracle reinforced Catholic belief in the power of the Eucharist and became known internationally, with Fr. Larrondo receiving letters from around the world requesting prayers.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": ["miracolieucaristici.org"],
-  "tags": [
-    "Eucharistic Miracle",
-    "Tumaco",
-    "Tsunami",
-    "Blessed Sacrament",
-    "Natural Disaster",
-    "Real Presence"
-  ]
-}
-{
-  "id": "ludbreg-1411",
-  "name": "Eucharistic Miracle of Ludbreg",
-  "location": {
-    "city": "Ludbreg",
-    "country": "Croatia",
-    "coordinates": {
-      "lat": 46.2528,
-      "lng": 16.6144
+    "date": {
+      "year": 750,
+      "displayDate": "8th Century AD"
     },
-    "address": "Chapel of the Batthyány Castle, Ludbreg"
+    "type": "Eucharistic Miracle",
+    "description": "The oldest and most famous Eucharistic miracle, where the consecrated host turned into flesh and wine into blood during Mass.",
+    "narrative": "A Basilian monk doubting the Real Presence witnessed the bread and wine transform into actual flesh and blood during Mass.",
+    "scientificEvidence": "Scientific analysis in 1970-1971 confirmed the flesh is cardiac tissue and the blood is human blood type AB.",
+    "significance": "One of the most scientifically documented Eucharistic miracles in Church history.",
+    "hasStreetView": true,
+    "wikiUrl": "https://en.wikipedia.org/wiki/Miracle_of_Lanciano",
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Real Presence", "Italy", "Ancient Miracle"]
   },
-  "date": {
-    "year": 1411,
-    "displayDate": "1411"
-  },
-  "type": "Eucharistic Miracle (Wine transformed into Blood)",
-  "description": "During Mass, consecrated wine visibly transformed into Blood after a priest doubted the Real Presence.",
-  "narrative": "In 1411, while celebrating Mass in the chapel of the Batthyány Castle in Ludbreg, a priest experienced doubt about the doctrine of transubstantiation. Immediately after the consecration, the wine in the chalice turned into visible Blood. Unsure how to proceed, the priest sealed the relic within the altar. News of the miracle soon spread, and pilgrims began arriving in Ludbreg. A Church commission later investigated the event, and in 1513 Pope Leo X approved public veneration of the Precious Blood, which he personally carried in procession through Rome. The relic has remained preserved through the centuries and is still venerated today. Each year, the town celebrates a week-long devotion known as “Sveta Nedjelja” (Holy Sunday) in remembrance of the miracle.",
-  "scientificEvidence": "The Blood relic has remained preserved and intact for centuries and was formally examined and approved for veneration by ecclesiastical authorities.",
-  "significance": "The miracle strongly affirmed belief in the Real Presence and received papal approval, becoming one of the most enduring and venerated Eucharistic miracles in Europe.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Ludbreg",
-    "Precious Blood",
-    "Transubstantiation",
-    "Croatia",
-    "Holy Sunday"
-  ]
-}
-{
-  "id": "chirattakonam-2001",
-  "name": "Eucharistic Miracle of Chirattakonam",
-  "location": {
-    "city": "Chirattakonam",
-    "country": "India",
-    "coordinates": {
-      "lat": 8.6570,
-      "lng": 76.7930
+  {
+    "id": "amsterdam-1345",
+    "name": "Miracle of Amsterdam",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "coordinates": {
+        "lat": 52.3702,
+        "lng": 4.8952
+      },
+      "address": "Kalverstraat, Amsterdam"
     },
-    "address": "St. Mary’s Malankara Catholic Church, Chirattakonam, Kerala"
-  },
-  "date": {
-    "year": 2001,
-    "displayDate": "April 28, 2001"
-  },
-  "type": "Eucharistic Miracle (Image of Christ appeared on Host)",
-  "description": "The face of Christ visibly appeared on a consecrated Host during Mass.",
-  "narrative": "On April 28, 2001, during Mass at St. Mary’s Malankara Catholic Church in Chirattakonam, Fr. Thomas Pathickal noticed a mysterious spot forming on a consecrated Host shortly after the consecration. As Mass continued, the spot gradually developed into a clear image resembling the face of Jesus Christ. The Host was reverently set aside and later examined by Church authorities. The faithful who viewed the Host reported deep spiritual impact. After careful investigation, the Syro-Malankara Catholic Church officially recognized the event as a Eucharistic miracle and authorized public veneration of the Host.",
-  "scientificEvidence": "The miracle involves a visible image rather than physical transformation; ecclesiastical investigation focused on authenticity, continuity of the image, and theological consistency rather than laboratory testing.",
-  "significance": "This miracle strengthened Eucharistic devotion in India and affirmed Catholic belief in the Real Presence, particularly within the Syro-Malankara Catholic Church.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Chirattakonam",
-    "India",
-    "Image of Christ",
-    "Real Presence",
-    "Syro-Malankara Church"
-  ]
-}
-{
-  "id": "morne-rouge-1902",
-  "name": "Eucharistic Miracle of Morne-Rouge",
-  "location": {
-    "city": "Morne-Rouge",
-    "country": "Martinique",
-    "coordinates": {
-      "lat": 14.7703,
-      "lng": -61.1394
+    "date": {
+      "year": 1345,
+      "displayDate": "March 15, 1345"
     },
-    "address": "Parish Church of Morne-Rouge, Martinique"
+    "type": "Eucharistic Miracle",
+    "description": "The Host remained intact after being thrown into fire, leading to centuries of devotion in Amsterdam.",
+    "narrative": "A dying man vomited the consecrated Host. It was thrown into the fire but remained unconsumed.",
+    "scientificEvidence": "Historical documentation and centuries of continuous devotion.",
+    "significance": "Led to the Silent Procession tradition that continues today in Amsterdam.",
+    "hasStreetView": true,
+    "wikiUrl": "https://en.wikipedia.org/wiki/Miracle_of_Amsterdam",
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Netherlands", "Medieval", "Fire"]
   },
-  "date": {
-    "year": 1902,
-    "displayDate": "May 8, 1902"
-  },
-  "type": "Eucharistic Miracle (Apparition of Christ and protection from natural disaster)",
-  "description": "An apparition of Jesus and His Sacred Heart appeared in the Host as the village was spared from a volcanic eruption.",
-  "narrative": "On May 8, 1902, the volcano Mount Pelée erupted violently, instantly destroying the nearby city of Saint-Pierre. That same day, the village of Morne-Rouge, located between Saint-Pierre and the volcano, was mysteriously spared. During Eucharistic adoration, many faithful witnessed an apparition of Jesus Christ and His Sacred Heart appearing in the consecrated Host exposed in the monstrance. In fear and repentance, the villagers rushed to confession, received Holy Communion, and remained in prayer. The Blessed Sacrament was later reposed, and the apparition ceased. Morne-Rouge was preserved from destruction during this eruption, though a later eruption on August 30, 1902 eventually destroyed the village, reinforcing the belief that its earlier salvation was a moment of divine mercy.",
-  "scientificEvidence": "The miracle is based on multiple eyewitness testimonies describing the visible apparition of Christ in the Eucharist and the unexplained preservation of the village during the initial volcanic eruption.",
-  "significance": "The event emphasized Eucharistic faith, repentance, and divine mercy, becoming a powerful testimony to the Real Presence and God’s intervention during moments of catastrophe.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Morne-Rouge",
-    "Martinique",
-    "Volcanic Eruption",
-    "Sacred Heart",
-    "Real Presence"
-  ]
-}
-{
-  "id": "saint-andre-de-la-reunion-1902",
-  "name": "Eucharistic Miracle of Saint-André de la Réunion",
-  "location": {
-    "city": "Saint-André",
-    "country": "France (La Réunion)",
-    "coordinates": {
-      "lat": -20.9633,
-      "lng": 55.6503
+  {
+    "id": "sokolka-2008",
+    "name": "Miracle of Sokółka",
+    "location": {
+      "city": "Sokółka",
+      "country": "Poland",
+      "coordinates": {
+        "lat": 53.4061,
+        "lng": 23.5019
+      },
+      "address": "Church of St. Anthony, Sokółka"
     },
-    "address": "Parish Church of Saint-André, La Réunion"
-  },
-  "date": {
-    "year": 1902,
-    "displayDate": "January 26, 1902"
-  },
-  "type": "Eucharistic Miracle (Image of Christ appeared on Host)",
-  "description": "The face of Jesus appeared on the consecrated Host and was witnessed for many hours by large crowds.",
-  "narrative": "On January 26, 1902, at the parish church of Saint-André on the island of La Réunion, Abbot Henry Lacombe was celebrating Mass when, during Eucharistic adoration, the face of Jesus appeared on the consecrated Host exposed in the monstrance. The apparition was clearly visible and lasted for several hours. Thousands of faithful came to witness the phenomenon, including journalists and clergy. The image changed over time, at moments showing Christ crowned with thorns and later appearing as a crucifix. After Eucharistic Benediction and the chanting of the Tantum Ergo, the vision disappeared. Abbot Lacombe later testified publicly about the miracle during the Eucharistic Congress of Angoulême in 1904 and to groups of priests during retreats in France.",
-  "scientificEvidence": "The event is supported by extensive eyewitness testimony from clergy, faithful, and journalists who observed the apparition over several hours; the Church evaluated the credibility of witnesses and consistency of accounts.",
-  "significance": "The miracle greatly strengthened Eucharistic devotion and belief in the Real Presence, drawing thousands to adoration and becoming widely known beyond the island of La Réunion.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Saint-André",
-    "La Réunion",
-    "Image of Christ",
-    "Real Presence",
-    "Eucharistic Adoration"
-  ]
-}
-{
-  "id": "tixtla-2006",
-  "name": "Eucharistic Miracle of Tixtla",
-  "location": {
-    "city": "Tixtla",
-    "country": "Mexico",
-    "coordinates": {
-      "lat": 17.5676,
-      "lng": -99.3985
+    "date": {
+      "year": 2008,
+      "displayDate": "October 12, 2008"
     },
-    "address": "Parish of Saint Mary of the Assumption, Diocese of Chilpancingo–Chilapa"
+    "type": "Eucharistic Miracle",
+    "description": "A consecrated Host that fell on the floor developed a red stain identified as heart muscle tissue.",
+    "narrative": "During distribution of Communion, a Host fell and was placed in water. Days later, a red stain appeared.",
+    "scientificEvidence": "Forensic analysis confirmed the presence of human heart muscle tissue.",
+    "significance": "One of the most recent scientifically documented Eucharistic miracles.",
+    "hasStreetView": true,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Poland", "Modern Miracle", "Heart Tissue"]
   },
-  "date": {
-    "year": 2006,
-    "displayDate": "October 21, 2006"
-  },
-  "type": "Eucharistic Miracle (Host bleeding; cardiac tissue identified)",
-  "description": "A consecrated Host began to exude blood that was later identified as living human cardiac tissue.",
-  "narrative": "On October 21, 2006, during a spiritual retreat in Tixtla within the Diocese of Chilpancingo–Chilapa, a consecrated Host began to exude a reddish substance while being handled during Eucharistic adoration. The phenomenon continued over time. Ecclesiastical authorities initiated a thorough investigation, and between 2009 and 2012 multiple independent scientific analyses were conducted. The results were presented publicly in 2013 and confirmed that the substance originated from within the Host. On October 12, 2013, Bishop Alejo Zavala Castro formally recognized the supernatural character of the events, declaring the bleeding Host of Tixtla a divine sign affirming the Real Presence of Jesus Christ in the Eucharist.",
-  "scientificEvidence": "Laboratory analyses identified the substance as human blood of type AB containing hemoglobin, DNA, intact white and red blood cells, active macrophages, and living cardiac muscle tissue (myocardium). Histopathological and immunohistochemical studies confirmed the tissue was heart muscle with signs of vitality, including mesenchymal cells and recovery trades, and demonstrated that the blood flowed from the interior of the Host rather than being applied externally.",
-  "significance": "The miracle provides one of the most extensively documented modern Eucharistic miracles, offering strong theological and scientific support for Catholic belief in the Real Presence of Christ in the Eucharist.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Tixtla",
-    "Mexico",
-    "Bleeding Host",
-    "Cardiac Tissue",
-    "Real Presence"
-  ]
-}
-{
-  "id": "eten-1649",
-  "name": "Eucharistic Miracle of Eten",
-  "location": {
-    "city": "Eten",
-    "country": "Peru",
-    "coordinates": {
-      "lat": -6.9089,
-      "lng": -79.8642
+  {
+    "id": "legnica-2013",
+    "name": "Miracle of Legnica",
+    "location": {
+      "city": "Legnica",
+      "country": "Poland",
+      "coordinates": {
+        "lat": 51.2071,
+        "lng": 16.1619
+      },
+      "address": "Church of St. Hyacinth, Legnica"
     },
-    "address": "Church of Santa María Magdalena, Eten"
-  },
-  "date": {
-    "year": 1649,
-    "displayDate": "June 2, 1649"
-  },
-  "type": "Eucharistic Miracle (Apparition of the Child Jesus in the Host)",
-  "description": "The Child Jesus appeared in a consecrated Host exposed for public adoration.",
-  "narrative": "On June 2, 1649, during the solemn exposition of the Blessed Sacrament in honor of Corpus Christi at the port town of Eten, Peru, the Franciscan friar Jerome de Silva Manrique exposed the Eucharist in the monstrance. At the end of the service, a radiant image of the Child Jesus appeared in the Host, with light shining from His face and shoulders. The faithful present witnessed the apparition. A second apparition occurred weeks later on July 22, during celebrations for St. Mary Magdalene, in which the Divine Child again appeared in the Host, accompanied by three small white hearts united together, symbolizing the Holy Trinity. The apparitions lasted about fifteen minutes and were carefully documented by ecclesiastical authorities. Since that time, devotion to the Divine Child of Eten has continued, drawing pilgrims annually.",
-  "scientificEvidence": "The miracle consists of visible apparitions witnessed by clergy and the faithful; Church authorities evaluated testimonies and preserved the accounts without recourse to laboratory analysis.",
-  "significance": "The miracle fostered lasting devotion to the Divine Child of Eten and reinforced belief in the Real Presence of Christ in the Eucharist throughout Peru and beyond.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Eten",
-    "Peru",
-    "Child Jesus",
-    "Real Presence",
-    "Corpus Christi"
-  ]
-}
-{
-  "id": "santarem-1266",
-  "name": "Eucharistic Miracle of Santarém",
-  "location": {
-    "city": "Santarém",
-    "country": "Portugal",
-    "coordinates": {
-      "lat": 39.2362,
-      "lng": -8.6850
+    "date": {
+      "year": 2013,
+      "displayDate": "December 25, 2013"
     },
-    "address": "Church of St. Stephen (Igreja de Santo Estêvão), Santarém"
+    "type": "Eucharistic Miracle",
+    "description": "A consecrated Host dropped during Christmas Mass showed signs of human heart tissue.",
+    "narrative": "During Christmas Mass, a Host fell and was placed in water. Red fibers appeared within days.",
+    "scientificEvidence": "Forensic pathology confirmed the presence of fragmented human heart muscle tissue.",
+    "significance": "Recent miracle that strengthens faith in the Real Presence.",
+    "hasStreetView": true,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Poland", "Modern Miracle", "Christmas"]
   },
-  "date": {
-    "year": 1266,
-    "displayDate": "February 16, 1266"
-  },
-  "type": "Eucharistic Miracle (Host transformed into bleeding Flesh and Blood)",
-  "description": "A consecrated Host began to bleed and transformed into Flesh and Blood after being stolen and hidden.",
-  "narrative": "According to a document commissioned by King Alfonso IV in 1346, on February 16, 1266, a woman in Santarém, distressed by jealousy toward her husband, sought help from a sorceress who instructed her to steal a consecrated Host for a love potion. After receiving Communion, she removed the Host and hid it in a linen cloth, which immediately became stained with Blood. At home, the Host began to gush Blood, and during the night brilliant rays of light illuminated the room from a drawer where it was kept. The husband, witnessing the phenomenon, confronted his wife, who confessed the sacrilege. The following day, the Host was returned in solemn procession to the Church of St. Stephen, where it continued to bleed for three days. In 1340, when the priest opened the tabernacle, the beeswax reliquary containing the Host was found broken, replaced by a crystal vessel containing Blood mixed with wax. The relic has been preserved and venerated ever since, with renewed emissions of Blood and visions of Christ reported over the centuries.",
-  "scientificEvidence": "Numerous canonical investigations and studies were carried out over the centuries; the relics of Flesh and Blood have remained preserved and are still venerated today.",
-  "significance": "Considered one of the most important Eucharistic miracles alongside Lanciano, the miracle received papal recognition and indulgences and has been a major center of Eucharistic devotion for centuries.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Santarém",
-    "Portugal",
-    "Bleeding Host",
-    "Flesh and Blood",
-    "Real Presence"
-  ]
-}
-{
-  "id": "ettiswil-1447",
-  "name": "Eucharistic Miracle of Ettiswil",
-  "location": {
-    "city": "Ettiswil",
-    "country": "Switzerland",
-    "coordinates": {
-      "lat": 47.1517,
-      "lng": 8.0219
+  {
+    "id": "tumaco-1906",
+    "name": "Miracle of Tumaco",
+    "location": {
+      "city": "Tumaco",
+      "country": "Colombia",
+      "coordinates": {
+        "lat": 1.8083,
+        "lng": -78.7647
+      },
+      "address": "Tumaco Island, Pacific Coast"
     },
-    "address": "Shrine of the Eucharistic Miracle, Ettiswil"
-  },
-  "date": {
-    "year": 1447,
-    "displayDate": "May 23, 1447"
-  },
-  "type": "Eucharistic Miracle (Host miraculously divided and surrounded by light)",
-  "description": "A stolen Host was found divided into seven pieces arranged like a flower and surrounded by a vivid light.",
-  "narrative": "On May 23, 1447, a consecrated Host was stolen from the parish church of Ettiswil by Anna Vögtli. Unable to carry it further, she discarded it near a fence among nettles. The Host was later discovered by Margaret Schulmeister, a swineherd, who observed that her animals refused to approach the spot. With witnesses present, the Host was seen divided into seven pieces arranged like a radiant flower and surrounded by intense light. When the parish priest arrived to recover the Host, six pieces were lifted, but the central piece adhered firmly to the ground before everyone’s eyes. Interpreting this as a divine sign, it was decided to build a chapel on that very spot. The six pieces were taken to the church and became objects of great veneration. Numerous miracles were reported, and the chapel and altar were consecrated on December 28, 1448.",
-  "scientificEvidence": "The event is documented in the official 'Protocol of Justice' compiled on July 16, 1447, containing sworn testimonies and detailed descriptions of the phenomenon.",
-  "significance": "The miracle became a major center of pilgrimage in Switzerland, received papal indulgences, and strengthened devotion to the Real Presence in the Eucharist.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Ettiswil",
-    "Switzerland",
-    "Miraculous Host",
-    "Real Presence",
-    "Pilgrimage Site"
-  ]
-}
-{
-  "id": "betania-1991",
-  "name": "Eucharistic Miracle of Betania",
-  "location": {
-    "city": "Betania (Cúa)",
-    "country": "Venezuela",
-    "coordinates": {
-      "lat": 10.1616,
-      "lng": -66.8845
+    "date": {
+      "year": 1906,
+      "displayDate": "January 31, 1906"
     },
-    "address": "Shrine of Betania, Cúa; relic preserved in Los Teques"
+    "type": "Eucharistic Miracle",
+    "description": "The consecrated Host remained intact and luminous after a devastating earthquake and tsunami.",
+    "narrative": "During a massive earthquake and tsunami, the church was destroyed but the monstrance with the Host remained intact and glowing.",
+    "scientificEvidence": "Historical documentation and eyewitness accounts.",
+    "significance": "Demonstrates God's protection and presence even in natural disasters.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Colombia", "Earthquake", "Divine Protection"]
   },
-  "date": {
-    "year": 1991,
-    "displayDate": "December 8, 1991"
+  {
+    "id": "siena-1730",
+    "name": "Miracle of Siena",
+    "location": {
+      "city": "Siena",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.3188,
+        "lng": 11.3307
+      },
+      "address": "Basilica of San Francesco, Siena"
+    },
+    "date": {
+      "year": 1730,
+      "displayDate": "August 14, 1730"
+    },
+    "type": "Eucharistic Miracle",
+    "description": "Consecrated Hosts stolen in 1730 remain perfectly intact and fresh to this day.",
+    "narrative": "223 consecrated Hosts were stolen but later recovered. Despite no preservatives, they remain fresh after nearly 300 years.",
+    "scientificEvidence": "Multiple scientific examinations confirm the Hosts show no signs of decay or corruption.",
+    "significance": "One of the longest-lasting Eucharistic miracles, defying natural decomposition.",
+    "hasStreetView": true,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Italy", "Incorruption", "Ongoing Miracle"]
   },
-  "type": "Eucharistic Miracle (Bleeding Host with cardiac-like pulsation)",
-  "description": "During Mass, a consecrated Host began to bleed and was later observed pulsating like a heart.",
-  "narrative": "On December 8, 1991, while celebrating Mass in the chapel of the Shrine of Betania in Cúa, Father Otty Ossa Aristizábal noticed that the consecrated Host was bleeding during the consecration. The Host was reverently preserved and later transferred to the city of Los Teques, where it is kept at the convent of the Augustinian Recollect Nuns of the Sacred Heart of Jesus for perpetual adoration. Over time, numerous prodigious events were associated with the Host. One notable event involved a young American pilgrim who filmed the Host visibly pulsating like a heart while it was exposed for adoration. The phenomenon drew widespread attention and devotion from pilgrims in Venezuela and abroad.",
-  "scientificEvidence": "Ecclesiastical investigations reported that the blood was of human origin and of blood type AB, consistent with findings in other recognized Eucharistic miracles; observations noted that the blood flowed from a specific area of the Host without staining the remainder.",
-  "significance": "The miracle strengthened Eucharistic devotion in Venezuela, becoming a major pilgrimage site and reinforcing belief in the Real Presence of Christ in the Eucharist.",
-  "hasStreetView": true,
-  "wikiUrl": null,
-  "images": [],
-  "sources": [
-    "miracolieucaristici.org"
-  ],
-  "tags": [
-    "Eucharistic Miracle",
-    "Betania",
-    "Venezuela",
-    "Bleeding Host",
-    "Real Presence",
-    "Pilgrimage Site"
-  ]
-}
+  {
+    "id": "tixtla-2006",
+    "name": "Miracle of Tixtla",
+    "location": {
+      "city": "Tixtla",
+      "country": "Mexico",
+      "coordinates": {
+        "lat": 17.5667,
+        "lng": -99.4
+      },
+      "address": "Parish of St. Martin of Tours, Tixtla"
+    },
+    "date": {
+      "year": 2006,
+      "displayDate": "October 21, 2006"
+    },
+    "type": "Eucharistic Miracle",
+    "description": "A consecrated Host began bleeding during adoration, later confirmed to be human blood.",
+    "narrative": "During a prayer service, a Host in the chalice began to bleed. Scientific analysis confirmed it was human blood.",
+    "scientificEvidence": "Laboratory testing identified the presence of human blood type AB.",
+    "significance": "Recent miracle that provides modern scientific evidence of the Real Presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Mexico", "Modern Miracle", "Blood"]
+  },
+  {
+    "id": "betania-1991",
+    "name": "Miracle of Betania",
+    "location": {
+      "city": "Betania",
+      "country": "Venezuela",
+      "coordinates": {
+        "lat": 10.2833,
+        "lng": -66.8667
+      },
+      "address": "Betania Sanctuary, Cúa"
+    },
+    "date": {
+      "year": 1991,
+      "displayDate": "December 8, 1991"
+    },
+    "type": "Eucharistic Miracle",
+    "description": "During Mass, a consecrated Host began to bleed in the presence of multiple witnesses.",
+    "narrative": "Father Otty Ossa Aristizábal witnessed the Host bleeding during Mass. Multiple people saw the phenomenon.",
+    "scientificEvidence": "Eyewitness testimony from numerous faithful present at the Mass.",
+    "significance": "Occurred at a site of approved Marian apparitions, connecting Eucharistic and Marian devotion.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "Venezuela", "Marian Connection"]
+  },
+  {
+    "id": "chirattakonam-2001",
+    "name": "Miracle of Chirattakonam",
+    "location": {
+      "city": "Chirattakonam",
+      "country": "India",
+      "coordinates": {
+        "lat": 8.5241,
+        "lng": 76.9366
+      },
+      "address": "St. Mary's Church, Chirattakonam"
+    },
+    "date": {
+      "year": 2001,
+      "displayDate": "April 28, 2001"
+    },
+    "type": "Eucharistic Miracle",
+    "description": "A consecrated Host was seen bleeding during Mass, witnessed by hundreds of faithful.",
+    "narrative": "During the Good Friday service, the Host began bleeding. The phenomenon was witnessed by the entire congregation.",
+    "scientificEvidence": "Eyewitness accounts from hundreds of people present at the service.",
+    "significance": "Rare Eucharistic miracle in India, strengthening faith in a region with Hindu majority.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "India", "Good Friday", "Asia"]
+  },
+  {
+    "id": "bordeaux-1822",
+    "name": "Miracle of Bordeaux",
+    "location": {
+      "city": "Bordeaux",
+      "country": "France",
+      "coordinates": {
+        "lat": 44.8378,
+        "lng": -0.5792
+      },
+      "address": "Church of Saint-Eloi, Bordeaux"
+    },
+    "date": {
+      "year": 1822,
+      "displayDate": "September 5, 1822"
+    },
+    "type": "Eucharistic Miracle",
+    "description": "Consecrated Hosts survived a devastating fire that destroyed the church building.",
+    "narrative": "A massive fire destroyed the church, but the ciborium containing the Hosts was found intact and the Hosts perfectly preserved.",
+    "scientificEvidence": "Historical documentation of the fire and the miraculous preservation.",
+    "significance": "Divine protection of the Blessed Sacrament even in catastrophic circumstances.",
+    "hasStreetView": true,
+    "wikiUrl": null,
+    "images": [],
+    "sources": ["miracolieucaristici.org"],
+    "tags": ["Eucharistic Miracle", "France", "Fire", "Divine Protection"]
+  }
 ]
