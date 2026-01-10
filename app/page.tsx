@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Via Sancta - Virtual Sacred Pilgrimages',
+  title: 'Divine Pilgrim - Virtual Sacred Pilgrimages',
   description: 'Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.',
 }
 
@@ -8,12 +8,12 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
       {/* Header */}
       <header className="text-center pt-16 pb-12 px-5">
-        <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-          ✦ Via Sancta ✦
+        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
+          Divine Pilgrim
         </h1>
-        <p className="text-2xl text-[#D4AF37] italic mb-3">The Holy Way</p>
+        <p className="text-2xl text-[#D4AF37] italic mb-3">Virtual Sacred Journeys</p>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Virtual Sacred Pilgrimage Tours with AI-Guided Narrations
+          Experience divine encounters through AI-guided virtual pilgrimages
         </p>
       </header>
 

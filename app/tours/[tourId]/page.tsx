@@ -34,8 +34,8 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
             ← Back to All Tours
           </Link>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#193d52] to-[#325847] bg-clip-text text-transparent font-serif">
-          ✦ Eucharistic Miracles Tour ✦
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#193d52] to-[#325847] bg-clip-text text-transparent font-serif">
+          Eucharistic Miracles Tour
         </h1>
         <p className="text-xl text-[#8B7355] italic mb-3">
           Based on St. Carlo Acutis Research

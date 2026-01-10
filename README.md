@@ -1,7 +1,7 @@
-# ✦ Via Sancta ✦
-**The Holy Way - Virtual Sacred Pilgrimages**
+# Divine Pilgrim 🙏
+**Virtual Sacred Journeys**
 
-Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.
+Experience divine encounters through AI-guided virtual pilgrimages to Eucharistic miracles, Marian apparitions, and sacred sites worldwide.
 
 ## 🌟 Features
 
@@ -119,7 +119,7 @@ vercel
 
 ## 🙏 Mission
 
-> **Via Sancta exists to make the sacred accessible to all.**
+> **Divine Pilgrim exists to make the sacred accessible to all.**
 > 
 > By combining cutting-edge AI technology with deep respect for Catholic tradition, we bring the world's most profound spiritual sites into the homes, classrooms, and hearts of people everywhere.
 > 
@@ -135,7 +135,7 @@ Contributions welcome! Please read the contribution guidelines before submitting
 
 ## 📧 Contact
 
-- Website: [viasancta.vercel.app](https://viasancta.vercel.app)
+- Website: [divinepilgrim.com](https://divinepilgrim.com)
 - GitHub: [@djcastelino](https://github.com/djcastelino)
 
 ---

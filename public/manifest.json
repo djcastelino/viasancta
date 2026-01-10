@@ -1,7 +1,7 @@
 {
-  "name": "Via Sancta - Virtual Sacred Pilgrimages",
-  "short_name": "Via Sancta",
-  "description": "Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.",
+  "name": "Divine Pilgrim - Virtual Sacred Journeys",
+  "short_name": "Divine Pilgrim",
+  "description": "Experience divine encounters through AI-guided virtual pilgrimages to Eucharistic miracles, Marian apparitions, and sacred sites worldwide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
