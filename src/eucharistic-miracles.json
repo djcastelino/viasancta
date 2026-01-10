@@ -1,9 +1,40 @@
 [
   {
-    "id": "lanciano-750",
-    "name": "Miracle of Lanciano",
-    ...
+  "id": "lanciano-750",
+  "name": "Eucharistic Miracle of Lanciano",
+  "location": {
+    "city": "Lanciano",
+    "country": "Italy",
+    "coordinates": {
+      "lat": 42.2300,
+      "lng": 14.3900
+    },
+    "address": "Church of St. Francis (San Francesco), Lanciano"
   },
+  "date": {
+    "year": 750,
+    "displayDate": "c. 750 A.D."
+  },
+  "type": "Eucharistic Miracle (Host transformed into Flesh; Wine into Blood)",
+  "description": "During Mass, the consecrated Host became human Flesh and the wine became human Blood before the congregation.",
+  "narrative": "Around the year 750 A.D., at the Church of St. Francis in Lanciano, a Basilian monk who doubted the Real Presence was celebrating Mass when, at the words of consecration, the Host visibly turned into Flesh and the wine into Blood. The transformation was witnessed by those present. The Flesh has remained intact through the centuries, and the Blood separated into five unequal clots that together weigh the same as each clot individually—an unexplained phenomenon. The relics were preserved and venerated, drawing pilgrims for generations. In the modern era, ecclesiastical authorities authorized scientific investigations to examine the relics while maintaining their devotional custody.",
+  "scientificEvidence": "Extensive studies (notably in 1970–1971 and later reviews) identified the Flesh as human myocardial tissue (heart muscle) and the Blood as human blood type AB, with proteins and mineral composition consistent with fresh human blood; no preservatives were found, and the tissue showed characteristics of a living heart at the time of transformation.",
+  "significance": "One of the most renowned and scientifically studied Eucharistic miracles, Lanciano has profoundly influenced Eucharistic devotion worldwide and serves as a cornerstone testimony to the Catholic doctrine of the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Lanciano",
+    "Italy",
+    "Flesh and Blood",
+    "Real Presence",
+    "Scientific Study"
+  ]
+},
   {
     "id": "buenos-aires-1996",
     "name": "Eucharistic Miracle of Buenos Aires",
@@ -30,7 +61,7 @@
     "images": [],
     "sources": ["miracolieucaristici.org"],
     "tags": ["Eucharistic Miracle", "Real Presence", "Buenos Aires", "Pope Francis", "Scientific Investigation", "Heart Tissue"]
-  }
+  },
 
   {
   "id": "tumaco-1906",
@@ -65,7 +96,7 @@
     "Natural Disaster",
     "Real Presence"
   ]
-}
+},
 {
   "id": "ludbreg-1411",
   "name": "Eucharistic Miracle of Ludbreg",
@@ -101,7 +132,7 @@
     "Croatia",
     "Holy Sunday"
   ]
-}
+},
 {
   "id": "chirattakonam-2001",
   "name": "Eucharistic Miracle of Chirattakonam",
@@ -137,7 +168,7 @@
     "Real Presence",
     "Syro-Malankara Church"
   ]
-}
+},
 {
   "id": "morne-rouge-1902",
   "name": "Eucharistic Miracle of Morne-Rouge",
@@ -173,7 +204,7 @@
     "Sacred Heart",
     "Real Presence"
   ]
-}
+},
 {
   "id": "saint-andre-de-la-reunion-1902",
   "name": "Eucharistic Miracle of Saint-André de la Réunion",
@@ -209,7 +240,7 @@
     "Real Presence",
     "Eucharistic Adoration"
   ]
-}
+},
 {
   "id": "tixtla-2006",
   "name": "Eucharistic Miracle of Tixtla",
@@ -245,7 +276,7 @@
     "Cardiac Tissue",
     "Real Presence"
   ]
-}
+},
 {
   "id": "eten-1649",
   "name": "Eucharistic Miracle of Eten",
@@ -281,7 +312,7 @@
     "Real Presence",
     "Corpus Christi"
   ]
-}
+},
 {
   "id": "santarem-1266",
   "name": "Eucharistic Miracle of Santarém",
@@ -317,7 +348,7 @@
     "Flesh and Blood",
     "Real Presence"
   ]
-}
+},
 {
   "id": "ettiswil-1447",
   "name": "Eucharistic Miracle of Ettiswil",
@@ -353,7 +384,7 @@
     "Real Presence",
     "Pilgrimage Site"
   ]
-}
+},
 {
   "id": "betania-1991",
   "name": "Eucharistic Miracle of Betania",
@@ -389,7 +420,7 @@
     "Real Presence",
     "Pilgrimage Site"
   ]
-}
+},
 {
   "id": "fiecht-1310",
   "name": "Eucharistic Miracle of Fiecht",
@@ -425,7 +456,7 @@
     "Real Presence",
     "Monastic Shrine"
   ]
-}
+},
 {
   "id": "seefeld-1384",
   "name": "Eucharistic Miracle of Seefeld",
@@ -461,7 +492,7 @@
     "Real Presence",
     "Pilgrimage Site"
   ]
-}
+},
 {
   "id": "weiten-raxendorf-1411",
   "name": "Eucharistic Miracle of Weiten-Raxendorf",
