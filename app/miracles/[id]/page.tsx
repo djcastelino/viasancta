@@ -25,10 +25,13 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
   const handlePlayNarration = async () => {
     if (isPlaying && audioRef.current) {
+      // Clear event handlers first to prevent error messages
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      
       // Stop current playback
       audioRef.current.pause();
       audioRef.current.currentTime = 0; // Reset to beginning
-      audioRef.current.src = ''; // Clear source
       audioRef.current = null;
       
       // Stop background music immediately
@@ -40,6 +43,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       
       setIsPlaying(false);
       setLoadingMessage('');
+      setError(''); // Clear any error messages
       return;
     }
 
