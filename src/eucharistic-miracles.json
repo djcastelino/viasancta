@@ -528,5 +528,341 @@
     "Real Presence",
     "Pilgrimage Site"
   ]
+},
+{
+  "id": "bois-seigneur-isaac-1405",
+  "name": "Eucharistic Miracle of Bois-Seigneur-Isaac",
+  "location": {
+    "city": "Bois-Seigneur-Isaac",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 50.6123,
+      "lng": 4.3841
+    },
+    "address": "Monastery of Bois-Seigneur-Isaac, Chapel of the Holy Blood"
+  },
+  "date": {
+    "year": 1405,
+    "displayDate": "1405 (public veneration approved 1413–1414)"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host staining the corporal)",
+  "description": "A consecrated Host bled during Mass and stained the corporal, which has been preserved for veneration.",
+  "narrative": "In 1405, during Mass at Bois-Seigneur-Isaac, the consecrated Host adhered to the corporal and began to bleed, staining it with Blood. The phenomenon continued over several days, with the Blood spreading across the cloth. Ecclesiastical authorities opened a formal investigation, collecting testimonies from witnesses. On May 3, 1413, the Bishop of Cambrai, Pierre d’Ailly, authorized public devotion to the Holy Relic and established a solemn procession, first held in 1414. On January 13, 1424, Pope Martin V approved the construction of the monastery. The blood-stained corporal is still preserved and exposed for veneration in the Chapel of the Holy Blood, and the site remains a destination for pilgrims.",
+  "scientificEvidence": "The miracle is documented through canonical investigations and eyewitness testimony; the blood-stained corporal has been preserved over centuries and remains intact.",
+  "significance": "The miracle received episcopal and papal approval, led to the foundation of a monastery, and became a lasting center of Eucharistic devotion in Belgium.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Bois-Seigneur-Isaac",
+    "Belgium",
+    "Bleeding Host",
+    "Holy Blood",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "bruges-1256",
+  "name": "Eucharistic Miracle of Bruges (Most Precious Blood of Jesus)",
+  "location": {
+    "city": "Bruges",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 51.2089,
+      "lng": 3.2242
+    },
+    "address": "Basilica of the Holy Blood (Basiliek van het Heilig Bloed), Bruges"
+  },
+  "date": {
+    "year": 1256,
+    "displayDate": "c. 1250–1256"
+  },
+  "type": "Eucharistic Miracle (Relic of the Precious Blood of Christ)",
+  "description": "A relic venerated as the Most Precious Blood of Jesus has been preserved and publicly honored in Bruges since the 13th century.",
+  "narrative": "The oldest documents concerning the Holy Blood of Bruges date back to 1256. According to historical tradition, the relic of the Precious Blood of Christ was preserved among the Passion relics in Constantinople and came into the possession of Baldwin IX, Count of Flanders, after the city was conquered during the Fourth Crusade. The relic was later sent to Bruges, Baldwin’s homeland. While an older tradition attributed its arrival to Count Diederik van den Elzas during the Second Crusade, modern investigations indicate the relic likely arrived around 1250 from Constantinople. The Holy Blood has since been preserved in a crystal vial dated to the 11th century and housed in the Basilica of the Holy Blood. Its veneration gave rise to the famous annual Procession of the Holy Blood, held on the Feast of the Ascension, during which the citizens of Bruges reenact biblical scenes and the arrival of the relic.",
+  "scientificEvidence": "Analyses of the crystal vial date it to the 11th century and confirm its origin near Constantinople; the relic itself has been preserved intact and continuously venerated.",
+  "significance": "The Holy Blood of Bruges is one of the most revered Eucharistic-related relics in Europe and has inspired centuries of devotion, pilgrimage, and one of the most renowned religious processions in the Catholic world.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Bruges",
+    "Belgium",
+    "Precious Blood",
+    "Relic",
+    "Procession of the Holy Blood",
+    "Real Presence"
+  ]
+},
+{
+  "id": "brussels-1370",
+  "name": "Eucharistic Miracle of Brussels",
+  "location": {
+    "city": "Brussels",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 50.8467,
+      "lng": 4.3525
+    },
+    "address": "Cathedral of St. Michael and St. Gudula, Brussels"
+  },
+  "date": {
+    "year": 1370,
+    "displayDate": "Good Friday, 1370"
+  },
+  "type": "Eucharistic Miracle (Bleeding Hosts after desecration)",
+  "description": "Consecrated Hosts bled after being slashed with knives during a desecration.",
+  "narrative": "In 1370, following the theft of consecrated Hosts in Brussels, desecrators gathered on Good Friday and slashed the Hosts with knives as an act of rebellion against the Catholic faith. Immediately, living blood flowed from the wounded Hosts. Terrified, the perpetrators entrusted the Hosts to a Catholic merchant, who revealed the events to the curate of the Church of Notre Dame. The Hosts were solemnly taken in procession to the Cathedral of St. Michael and St. Gudula. The Duke of Brabant condemned the desecrators, and the miraculous Hosts became objects of public veneration. Over the centuries, the miracle was commemorated through reliquaries, tapestries, and especially a series of stained-glass windows installed between 1436 and 1870, many donated by Belgian royalty and noble families.",
+  "scientificEvidence": "The miracle is documented through contemporaneous accounts, canonical investigations, and enduring artistic testimonies including reliquaries and stained-glass cycles depicting the events.",
+  "significance": "The miracle became a major religious and cultural symbol for Brussels and Belgium, strengthening Eucharistic devotion and leaving a lasting artistic and devotional legacy.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Brussels",
+    "Belgium",
+    "Bleeding Host",
+    "Real Presence",
+    "Stained Glass",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "herentals-1412",
+  "name": "Eucharistic Miracle of Herentals",
+  "location": {
+    "city": "Herentals",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 51.1766,
+      "lng": 4.8325
+    },
+    "address": "Cathedral of St. Waldetrudis (Sint-Waldetrudiskerk), Herentals; field site of De Hegge shrine"
+  },
+  "date": {
+    "year": 1412,
+    "displayDate": "1412 (recognized January 2, 1414)"
+  },
+  "type": "Eucharistic Miracle (Recovered Hosts found intact and radiant)",
+  "description": "Previously stolen Hosts were found intact after days in the open, arranged in the form of a cross and surrounded by light.",
+  "narrative": "In 1412, several consecrated Hosts stolen from Herentals were later discovered after eight days in a field near a rabbit burrow. Despite exposure to rain and weather, the Hosts were found perfectly intact, glowing with a brilliant light and arranged in the shape of a cross. The discovery moved the faithful deeply. Annual commemorations developed, including processions featuring paintings depicting the miracle and a commemorative Mass celebrated at the site known as De Hegge, where a small shrine was built. The relics and artistic testimonies are preserved in Herentals, especially at the Cathedral of St. Waldetrudis.",
+  "scientificEvidence": "The miracle is attested by historical records and eyewitness testimony noting the intact condition of the Hosts after prolonged exposure and their radiant appearance.",
+  "significance": "The event strengthened Eucharistic devotion in the region, led to enduring public commemorations, and became an important local pilgrimage tradition in Belgium.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Herentals",
+    "Belgium",
+    "Recovered Hosts",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "herkenrode-hasselt-1317",
+  "name": "Eucharistic Miracle of Herkenrode–Hasselt",
+  "location": {
+    "city": "Herkenrode–Hasselt",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 50.9307,
+      "lng": 5.3325
+    },
+    "address": "Church of St. Quintinus (Sint-Quintinuskathedraal), Hasselt; former Abbey of Herkenrode"
+  },
+  "date": {
+    "year": 1317,
+    "displayDate": "July 25 – August 1, 1317"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host with apparition of Christ)",
+  "description": "A consecrated Host became stained with blood and later revealed the face of Christ crowned with thorns.",
+  "narrative": "On July 25, 1317, the pastor of Viversel carried a consecrated Host to a sick parishioner. While the priest was hearing confession, a family member briefly handled the pyx containing the Host. When the priest later opened the pyx, he found the Host stained with blood and adhered to the linen. Alarmed, he sought counsel and was directed to bring the Host to the Abbey of Herkenrode. On August 1, 1317, along the journey extraordinary signs were reported, and upon arrival at the Benedictine monastery, the Host was shown to many witnesses. At that moment, the face of Christ crowned with thorns appeared on the Host, attested by numerous observers. The relic was placed in a reliquary and exposed for public veneration, and it was credited on several occasions with protecting the monastery from fire. In 1804, the relic was transferred to the Church of St. Quintinus in Hasselt, where it remains venerated today.",
+  "scientificEvidence": "Across the centuries, multiple ecclesiastical examinations were conducted, including investigations in the 18th century by the Apostolic Nuncio Carafa, the Bishop of Liège, and later by the Archbishop of Malines, confirming the extraordinary preservation of the Host and the blood stains.",
+  "significance": "The miracle became a major focus of Eucharistic devotion in the region, inspired enduring public veneration and processions, and remains one of Belgium’s most important medieval Eucharistic miracles.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Herkenrode",
+    "Hasselt",
+    "Belgium",
+    "Bleeding Host",
+    "Apparition of Christ",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "liege-1246",
+  "name": "Institution of the Feast of Corpus Christi",
+  "location": {
+    "city": "Liège",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 50.6326,
+      "lng": 5.5797
+    },
+    "address": "Sanctuary of Saint Juliana of Cornillon, Liège"
+  },
+  "date": {
+    "year": 1246,
+    "displayDate": "1246 (universal feast established 1264)"
+  },
+  "type": "Eucharistic Event (Vision leading to universal feast)",
+  "description": "Mystical visions received by Saint Juliana of Cornillon led to the establishment of the Feast of Corpus Christi.",
+  "narrative": "In the early 13th century, Blessed Juliana of Cornillon, an Augustinian nun near Liège, experienced repeated visions of a full moon marked by a dark spot. Through divine revelation, she understood the moon to represent the life of the Church and the dark spot the absence of a feast dedicated solely to honoring the Holy Eucharist. She reported these visions to Church authorities, including Jacques Panteléon, Archdeacon of Liège. In 1246, Bishop Robert of Thourotte instituted a diocesan feast in honor of the Blessed Sacrament, celebrated for the first time in 1249. In 1264, Jacques Panteléon—now Pope Urban IV—extended the Feast of Corpus Christi to the entire Catholic Church through the papal bull *Transiturus de hoc mundo* and commissioned Saint Thomas Aquinas to compose the liturgical texts for the feast.",
+  "scientificEvidence": "The event is based on documented mystical visions and authoritative ecclesiastical actions rather than physical or laboratory evidence.",
+  "significance": "The visions at Liège gave rise to the universal Feast of Corpus Christi, one of the most important liturgical celebrations affirming the doctrine of the Real Presence of Christ in the Eucharist.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Event",
+    "Liège",
+    "Belgium",
+    "Corpus Christi",
+    "Saint Juliana of Cornillon",
+    "Real Presence",
+    "Church History"
+  ]
+},
+{
+  "id": "middleburg-lovanio-1374",
+  "name": "Eucharistic Miracle of Middleburg–Lovanio",
+  "location": {
+    "city": "Middleburg (Middelburg)",
+    "country": "Belgium",
+    "coordinates": {
+      "lat": 51.2350,
+      "lng": 3.7530
+    },
+    "address": "St. Peter’s Church, Middleburg; relic later preserved in Louvain (Leuven)"
+  },
+  "date": {
+    "year": 1374,
+    "displayDate": "1374"
+  },
+  "type": "Eucharistic Miracle (Host transformed into bleeding Flesh)",
+  "description": "During Holy Communion, the consecrated Host changed into bleeding Flesh in the priest’s mouth.",
+  "narrative": "In 1374, at St. Peter’s Church in Middleburg, a woman known for her deep piety invited her household to prepare spiritually for Easter through penance and confession. One servant, Jan, who had not been to confession for many years and lived a dissolute life, reluctantly attended Mass and approached Holy Communion. As soon as he received the consecrated Host on his tongue, it transformed into bleeding Flesh. A particle fell from his mouth, and blood dripped onto the altar cloth. The priest immediately recognized the miracle. Jan repented sincerely, confessed his sins, and amended his life, remaining devoted to the Eucharist until his death. After thorough investigation, the Archbishop approved the cult of the miracle. A portion of the Precious Relic was later given as a gift to Jean de Gheest, confessor of the Archbishop, and preserved in Louvain by the Augustinian Fathers, while another portion remained in St. Peter’s Church in Middleburg.",
+  "scientificEvidence": "The miracle is supported by extensive historical documentation, eyewitness testimony, and a monograph written in 1905 by historian Joseph Wils of the University of Louvain, citing contemporary documents and sworn accounts.",
+  "significance": "The miracle reinforced belief in the Real Presence, inspired profound repentance and conversion, and received formal ecclesiastical approval, becoming a lasting focus of Eucharistic devotion in Belgium.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Middleburg",
+    "Lovanio",
+    "Belgium",
+    "Bleeding Host",
+    "Flesh and Blood",
+    "Real Presence",
+    "Conversion"
+  ]
+},
+{
+  "id": "st-mary-of-egypt-600s",
+  "name": "Eucharistic Miracle of St. Mary of Egypt",
+  "location": {
+    "city": "Jordan River (Desert of Transjordan)",
+    "country": "Egypt / Holy Land",
+    "coordinates": {
+      "lat": 31.8366,
+      "lng": 35.5546
+    },
+    "address": "Jordan River crossing; Desert east of the Jordan"
+  },
+  "date": {
+    "year": 600,
+    "displayDate": "7th century"
+  },
+  "type": "Eucharistic Miracle (Miraculous reception of Holy Communion)",
+  "description": "St. Mary of Egypt miraculously crossed the Jordan River to receive Holy Communion after decades of desert penance.",
+  "narrative": "This Eucharistic miracle is connected to the life of St. Mary of Egypt, who lived as a hermit in the desert for forty-seven years in repentance and prayer. According to the account written by Bishop Sophronius of Jerusalem in the 7th century, St. Mary met the monk Zosimus and asked him to bring her Holy Communion the following year. When Zosimus returned, he saw St. Mary cross the Jordan River by walking on the water to reach him. After receiving Confession and Holy Communion from Zosimus, she asked him to return the next year. When he did, he found her body lying peacefully in the desert. A lion helped Zosimus dig her grave, and she was buried as a saintly witness to repentance, holiness, and reverence for the Eucharist.",
+  "scientificEvidence": "The miracle is based on early hagiographical testimony recorded by Bishop Sophronius of Jerusalem, preserved consistently in Eastern and Western Christian tradition.",
+  "significance": "The event highlights the centrality of the Eucharist in Christian life, demonstrating repentance, sanctity, and the supernatural power granted through reverence for Holy Communion.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "St. Mary of Egypt",
+    "Egypt",
+    "Jordan River",
+    "Holy Communion",
+    "Desert Hermit",
+    "Real Presence",
+    "Early Church"
+  ]
+},
+{
+  "id": "scete-300-500",
+  "name": "Eucharistic Miracle of Scete",
+  "location": {
+    "city": "Scete (Wadi El Natrun)",
+    "country": "Egypt",
+    "coordinates": {
+      "lat": 30.3667,
+      "lng": 30.3000
+    },
+    "address": "Desert of Scete (Wadi El Natrun), monastic region of the Desert Fathers"
+  },
+  "date": {
+    "year": 400,
+    "displayDate": "3rd–5th centuries"
+  },
+  "type": "Eucharistic Miracle (Vision of the Infant Jesus at Consecration)",
+  "description": "During the Eucharistic consecration, the Infant Jesus appeared on the bread and Blood flowed into the chalice.",
+  "narrative": "The account of this Eucharistic miracle dates back to the early centuries of Christianity and is preserved in the sayings of the Fathers of the Desert who lived in Scete after the example of St. Anthony the Abbot. A monk expressed doubts about the Real Presence of Jesus Christ in the bread and wine consecrated at Mass, claiming they were only symbols. After the consecration, the Infant Jesus was visibly seen resting on the bread, and three companion monks witnessed the same apparition. According to another ancient account, an angel appeared holding a sword and pierced the Child, causing Blood to flow into the chalice. When the doubting monk approached Communion, the angel gave him flesh and blood instead of bread and wine. Terrified, the monk professed his faith in the Real Presence, after which the flesh returned to the form of bread, and he received Communion reverently. The miracle deeply strengthened Eucharistic faith among the Desert Fathers.",
+  "scientificEvidence": "The miracle is preserved through early monastic writings and oral tradition recorded in the apophthegmata of the Desert Fathers rather than scientific or laboratory analysis.",
+  "significance": "One of the earliest recorded Eucharistic miracles, it powerfully affirmed belief in the Real Presence among the early monastic communities and influenced Christian Eucharistic theology.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Scete",
+    "Egypt",
+    "Desert Fathers",
+    "Infant Jesus",
+    "Real Presence",
+    "Early Church",
+    "Monasticism"
+  ]
 }
 ]
