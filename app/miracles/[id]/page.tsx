@@ -27,14 +27,19 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     if (isPlaying && audioRef.current) {
       // Stop current playback
       audioRef.current.pause();
+      audioRef.current.currentTime = 0; // Reset to beginning
+      audioRef.current.src = ''; // Clear source
       audioRef.current = null;
       
-      // Stop background music
+      // Stop background music immediately
       if (backgroundMusicRef.current) {
-        fadeOutMusic(backgroundMusicRef.current);
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.currentTime = 0;
+        backgroundMusicRef.current.volume = 0;
       }
       
       setIsPlaying(false);
+      setLoadingMessage('');
       return;
     }
 
@@ -175,8 +180,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     bgMusic.play()
       .then(() => {
         console.log('Background music started successfully');
-        // Fade in to 15% volume (softer than before)
-        fadeInMusic(bgMusic, 0.15);
+        // Fade in to 10% volume (very soft)
+        fadeInMusic(bgMusic, 0.10);
       })
       .catch(err => {
         console.log('Background music autoplay prevented or failed:', err);
