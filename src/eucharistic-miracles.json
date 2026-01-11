@@ -864,5 +864,1251 @@
     "Early Church",
     "Monasticism"
   ]
+},
+{
+  "id": "avignon-1433",
+  "name": "Eucharistic Miracle of Avignon",
+  "location": {
+    "city": "Avignon",
+    "country": "France",
+    "coordinates": {
+      "lat": 43.9493,
+      "lng": 4.8055
+    },
+    "address": "Church of the Holy Cross (Chapelle des Pénitents Gris), Avignon"
+  },
+  "date": {
+    "year": 1433,
+    "displayDate": "November 30, 1433"
+  },
+  "type": "Eucharistic Miracle (Blessed Sacrament preserved during flood)",
+  "description": "During a major flood, the waters parted inside the church, leaving a dry path to the altar where the Blessed Sacrament remained unharmed.",
+  "narrative": "On November 30, 1433, after several days of heavy rain caused the Sorgue and Rhône rivers to overflow, the city of Avignon was submerged by floodwaters. A small church of the Gray Penitents of the Franciscan Order had been left with the Blessed Sacrament exposed for perpetual adoration. Fearing the Host had been swept away, the head of the Order and another friar reached the church by boat. Upon entering, they witnessed a miracle: although water stood about four feet high around the church, the waters inside were divided to the right and left, leaving a perfectly dry pathway from the entrance to the altar. The Sacred Host was completely unscathed. The scene recalled the parting of the Red Sea in the time of Moses. Many witnesses, including civic and religious authorities, came to verify the event, praising God. The miracle has been commemorated annually ever since on November 30 at the Chapelle des Pénitents Gris, with chants from the Canticle of Moses.",
+  "scientificEvidence": "The event is supported by extensive eyewitness testimony describing the unexplained division of floodwaters and the preservation of a dry pathway to the altar.",
+  "significance": "The miracle powerfully reinforced Eucharistic faith in Avignon, then considered a center of Christendom, and remains one of the city’s most celebrated signs of devotion to the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Avignon",
+    "France",
+    "Blessed Sacrament",
+    "Flood",
+    "Real Presence",
+    "Gray Penitents"
+  ]
+},
+{
+  "id": "blanot-1331",
+  "name": "Eucharistic Miracle of Blanot",
+  "location": {
+    "city": "Blanot",
+    "country": "France",
+    "coordinates": {
+      "lat": 46.9775,
+      "lng": 4.5772
+    },
+    "address": "Parish Church of Blanot, Diocese of Autun"
+  },
+  "date": {
+    "year": 1331,
+    "displayDate": "Easter Sunday, 1331"
+  },
+  "type": "Eucharistic Miracle (Host transformed into Blood staining the communion cloth)",
+  "description": "During Communion, a Host fell onto a cloth and transformed into Blood, leaving a stain the size of the Host.",
+  "narrative": "The Eucharistic Miracle of Blanot occurred during the Easter Mass of 1331. While administering Holy Communion, a consecrated Host fell onto a cloth held beneath the communicant’s mouth. When the priest attempted to pick up the Host, it was no longer possible, as it had transformed into Blood, leaving a clearly defined stain—equal in size and shape to the Host—on the cloth. The event was investigated under the authority of Bishop Pierre Bertrand of Autun, with canonical inquiries conducted by Jean Jasseron, resulting in official documentation of the miracle. The blood-stained cloth was reverently preserved and placed in a tabernacle. Over the centuries, it has been solemnly exposed on the feast of Corpus Christi in the church of Blanot and remains venerated to this day.",
+  "scientificEvidence": "The miracle is supported by contemporaneous ecclesiastical investigations and the enduring preservation of the blood-stained cloth without degradation.",
+  "significance": "The miracle strengthened Eucharistic devotion in the region and became a lasting sign affirming the Real Presence of Christ in the Eucharist, with public veneration continuing for centuries.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Blanot",
+    "France",
+    "Bleeding Host",
+    "Communion Cloth",
+    "Real Presence",
+    "Corpus Christi"
+  ]
+},
+{
+  "id": "bordeaux-1822",
+  "name": "Eucharistic Miracle of Bordeaux",
+  "location": {
+    "city": "Bordeaux",
+    "country": "France",
+    "coordinates": {
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "address": "Church of St. Eulalia (Rue Mazarin), Bordeaux; relic preserved at La Solitude, Martillac"
+  },
+  "date": {
+    "year": 1822,
+    "displayDate": "1822"
+  },
+  "type": "Eucharistic Miracle (Apparition of Jesus giving a blessing)",
+  "description": "Jesus appeared giving a blessing for more than twenty minutes in the Host exposed for public adoration.",
+  "narrative": "The Eucharistic Miracle of Bordeaux occurred in 1822, about twenty months after the founding of the religious Community established by the Venerable Father Pierre Noailles. During Eucharistic Benediction in the Church of St. Eulalia on Rue Mazarin, Abbot Delort—substituting that day for Father Noailles—exposed the Blessed Sacrament. Immediately after the blessing, an apparition of Jesus giving a blessing became visible in the Host. A great number of faithful present contemplated the image for more than twenty minutes, and at least one witness testified to hearing the words, “I am He who is.” The event was investigated and approved by ecclesiastical authorities, including the Archbishop of Bordeaux, Monsignor d’Aviau, who personally heard the testimonies. Today, the Chapel of the Miracle can be visited, and the precious relic of the monstrance associated with the apparition is venerated at La Solitude in Martillac.",
+  "scientificEvidence": "The event is supported by extensive eyewitness testimony and ecclesiastical approval following formal evaluation; no laboratory testing was applicable to the visionary nature of the miracle.",
+  "significance": "The miracle strengthened Eucharistic devotion in 19th-century France, confirmed belief in the Real Presence, and remains a living focus of prayer through continued veneration of the associated relic.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Bordeaux",
+    "France",
+    "Apparition of Jesus",
+    "Blessed Sacrament",
+    "Real Presence",
+    "Public Adoration"
+  ]
+},
+{
+  "id": "dijon-1430",
+  "name": "Eucharistic Miracle of Dijon",
+  "location": {
+    "city": "Dijon",
+    "country": "France",
+    "coordinates": {
+      "lat": 47.3220,
+      "lng": 5.0415
+    },
+    "address": "Basilica of Saint Michael the Archangel, Dijon"
+  },
+  "date": {
+    "year": 1430,
+    "displayDate": "1430"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host with image of Christ imprinted)",
+  "description": "After being cut with a knife, a consecrated Host bled and revealed an image of Christ seated on a semicircular throne.",
+  "narrative": "In 1430, a woman in Monaco purchased a second-hand monstrance which, unknown to her, still contained a consecrated Host that had likely been stolen. Ignorant of the Real Presence, she attempted to remove the Host using a knife. Immediately, living Blood flowed from the Host and then dried, leaving imprinted upon it the image of the Lord seated on a semicircular throne, accompanied by instruments of the Passion. Disturbed, the woman brought the Host to Canon Anelon, who safeguarded it. The miracle soon became known to Pope Eugene IV, who wished to gift the Host to Duke Philip of Burgundy; the Duke in turn donated it to the city of Dijon. The miraculous Host was preserved and venerated for more than 350 years in the Basilica of Saint Michael the Archangel. In 1794, during the French Revolution, the church was requisitioned as a temple of the so-called ‘goddess of reason,’ and the miraculous Host was burned. Numerous documents and works of art, including stained-glass windows in the Cathedral of Dijon, continue to attest to the event.",
+  "scientificEvidence": "The miracle is supported by contemporaneous documentation, papal correspondence, and a long history of public veneration; the Host’s preservation and iconographic imprint were widely recorded before its destruction in 1794.",
+  "significance": "The miracle strongly affirmed belief in the Real Presence and left a lasting devotional and artistic legacy in Dijon, even after the relic’s destruction during the Revolution.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Dijon",
+    "France",
+    "Bleeding Host",
+    "Image of Christ",
+    "Real Presence",
+    "French Revolution"
+  ]
+},
+{
+  "id": "douai-1254",
+  "name": "Eucharistic Miracle of Douai",
+  "location": {
+    "city": "Douai",
+    "country": "France",
+    "coordinates": {
+      "lat": 50.3714,
+      "lng": 3.0790
+    },
+    "address": "Church of Saint Peter (Église Saint-Pierre), Douai"
+  },
+  "date": {
+    "year": 1254,
+    "displayDate": "Easter Day, 1254"
+  },
+  "type": "Eucharistic Miracle (Levitation of the Host and apparition of the Child Jesus)",
+  "description": "After being dropped during Communion, a consecrated Host rose by itself and was followed by the apparition of a Child Jesus.",
+  "narrative": "On Easter Day in 1254, in the Church of St. Amato in Douai, a priest accidentally dropped a consecrated Host while distributing Holy Communion. As he bent down to retrieve it, the Host rose by itself and placed itself upon the purificator. Shortly afterward, a wonderful Child appeared in its place, visible to all the faithful and religious present. The event was witnessed by many and quickly spread. Bishop Thomas de Cantimpré of Cambrai, an eyewitness and theologian, personally investigated the miracle and later described seeing the face of Christ crowned with thorns and drops of blood on the Host. The miracle was commemorated annually, and the relic was preserved and honored for centuries. During the French Revolution the Host was hidden to prevent profanation, and in 1854 it was rediscovered beneath the altar of the Church of Saint Peter in Douai, accompanied by a signed Latin attestation identifying it as the true Host of the miracle.",
+  "scientificEvidence": "The miracle is documented by contemporaneous eyewitness accounts, including Bishop Thomas de Cantimpré, liturgical commemorations, and a written attestation preserved with the rediscovered Host.",
+  "significance": "The miracle powerfully affirmed belief in the Real Presence, inspired centuries of public devotion in Douai, and remains a living focus of Eucharistic prayer and veneration.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Douai",
+    "France",
+    "Levitation of the Host",
+    "Child Jesus",
+    "Real Presence",
+    "Public Veneration"
+  ]
+},
+{
+  "id": "faverney-1608",
+  "name": "Eucharistic Miracle of Faverney",
+  "location": {
+    "city": "Faverney",
+    "country": "France",
+    "coordinates": {
+      "lat": 47.7639,
+      "lng": 6.1064
+    },
+    "address": "Minor Basilica of Our Lady of the Assumption, Faverney"
+  },
+  "date": {
+    "year": 1608,
+    "displayDate": "Vigil of Pentecost, 1608"
+  },
+  "type": "Eucharistic Miracle (Levitation and preservation of the Blessed Sacrament)",
+  "description": "After a fire destroyed the altar, the monstrance containing the Host was found suspended in midair and perfectly intact.",
+  "narrative": "On the Vigil of Pentecost in 1608, the monks of Faverney exposed the Blessed Sacrament for public adoration. During the night, a fire broke out and destroyed the altar and sacred furnishings, yet the monstrance containing the consecrated Host remained unharmed. When the church was opened the next morning, the monstrance was discovered suspended in midair above the ashes, perfectly intact. The phenomenon continued for several days in the presence of large crowds of faithful and clergy. A provisional altar was prepared, and only after Holy Mass was celebrated did the monstrance slowly descend onto the altar by itself. Canonical investigations followed, and the miracle was officially recognized by ecclesiastical authorities. The miraculous Host has been preserved and venerated ever since, drawing pilgrims annually to Faverney.",
+  "scientificEvidence": "The miracle is documented through extensive eyewitness testimony and formal canonical investigations describing the sustained levitation and preservation of the Blessed Sacrament after the fire.",
+  "significance": "One of the most celebrated Eucharistic miracles in France, the event profoundly strengthened Eucharistic faith during a time of religious turmoil and remains a major pilgrimage site.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Faverney",
+    "France",
+    "Levitation",
+    "Blessed Sacrament",
+    "Fire",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "la-rochelle-1461",
+  "name": "Eucharistic Miracle of La Rochelle",
+  "location": {
+    "city": "La Rochelle",
+    "country": "France",
+    "coordinates": {
+      "lat": 46.1603,
+      "lng": -1.1511
+    },
+    "address": "Cathedral of Saint Louis, La Rochelle"
+  },
+  "date": {
+    "year": 1461,
+    "displayDate": "Easter Sunday, 1461"
+  },
+  "type": "Eucharistic Miracle (Instantaneous healing at Holy Communion)",
+  "description": "A boy paralyzed and mute for years was instantly healed after receiving Holy Communion during Easter Mass.",
+  "narrative": "During Easter of 1461, Mrs. Jehan Leclerc brought her twelve-year-old son Bartholomé to the parish church of St. Bertrand in La Rochelle. The boy had been paralyzed and unable to speak since the age of seven following a serious fall. At Mass, Bartholomé indicated to his mother that he desired to receive Holy Communion. Initially hesitant because the boy had not been able to go to Confession due to his muteness, the priest was eventually persuaded. Upon receiving the Blessed Sacrament, Bartholomé immediately felt a mysterious warmth throughout his body, stood up, and began to speak. He was completely cured of both paralysis and muteness. The event was carefully recorded in a painted manuscript, which remains preserved in the Cathedral of La Rochelle as authoritative testimony to the miracle.",
+  "scientificEvidence": "The miracle is supported by contemporaneous written documentation, notably the painted manuscript preserved in the Cathedral of La Rochelle, detailing the eyewitness accounts of the healing.",
+  "significance": "The miracle strengthened faith in the Real Presence of Christ in the Eucharist and became a lasting testimony to the healing power of Holy Communion in La Rochelle.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "La Rochelle",
+    "France",
+    "Healing",
+    "Holy Communion",
+    "Real Presence",
+    "Easter"
+  ]
+},
+{
+  "id": "les-ulmes-1668",
+  "name": "Eucharistic Miracle of Les Ulmes",
+  "location": {
+    "city": "Les Ulmes",
+    "country": "France",
+    "coordinates": {
+      "lat": 47.2220,
+      "lng": -0.2760
+    },
+    "address": "Parish Church of Les Ulmes, Diocese of Angers"
+  },
+  "date": {
+    "year": 1668,
+    "displayDate": "June 2, 1668 (Saturday of the Octave of Corpus Christi)"
+  },
+  "type": "Eucharistic Miracle (Apparition of Christ in place of the Host)",
+  "description": "During Eucharistic adoration, the Host appeared as the figure of a man clothed in white with luminous features.",
+  "narrative": "On June 2, 1668, during public adoration of the Blessed Sacrament in the parish church of Les Ulmes, the pastor, Fr. Nicolas Nezan, was incensing the monstrance while the hymn Pange Lingua was being sung. At the verse “Verbum caro Panem verum,” the consecrated Host was no longer visible; instead, the figure of a man appeared within the monstrance. Witnesses described light-brown hair falling over his back, a luminous face, hands crossed over one another, and a white tunic covering the body. The apparition lasted for more than fifteen minutes and was visible both when the Blessed Sacrament was on the tabernacle and when it was moved to the altar so the faithful could observe it more closely. The pastor immediately informed Bishop Henry Arnauld of Angers, who ordered a canonical inquiry. After examination, the Bishop authorized public devotion to the miracle. The event was widely publicized, documented in theological works, and commemorated annually for centuries. The miraculous Host was preserved for over 130 years and was devoutly consumed during the French Revolution by the Vicar of Puy-Notre-Dame to prevent profanation.",
+  "scientificEvidence": "The miracle was formally investigated by episcopal authority and documented in pastoral letters, engravings, and theological works of the 17th century, providing detailed eyewitness descriptions.",
+  "significance": "The miracle deeply strengthened Eucharistic devotion in the region, received formal episcopal approval, and remained an important reference point in later Eucharistic congresses and theological studies.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Les Ulmes",
+    "France",
+    "Apparition of Christ",
+    "Blessed Sacrament",
+    "Corpus Christi",
+    "Real Presence",
+    "Public Adoration"
+  ]
+},
+{
+  "id": "marseille-en-beauvais-1533",
+  "name": "Eucharistic Miracle of Marseille-en-Beauvais",
+  "location": {
+    "city": "Marseille-en-Beauvais",
+    "country": "France",
+    "coordinates": {
+      "lat": 49.4333,
+      "lng": 2.0833
+    },
+    "address": "Parish Church of Marseille-en-Beauvais; Chapel of the Sacred Hosts"
+  },
+  "date": {
+    "year": 1533,
+    "displayDate": "January 1533"
+  },
+  "type": "Eucharistic Miracle (Hosts preserved intact after desecration)",
+  "description": "Consecrated Hosts discarded in a field were found the next day perfectly intact despite a heavy snowstorm.",
+  "narrative": "In January 1533, thieves stole a ciborium containing consecrated Hosts from the parish church of Marseille-en-Beauvais and discarded the Hosts in a field. During the night, a strong snowstorm covered the area. The following day, a man named Jean Mousquet noticed a rock on the roadside that was free of snow. Lifting it, he discovered the consecrated Hosts underneath, found miraculously intact and unharmed despite exposure to the elements. He immediately informed the parish priest, Father Prothais, who recovered the Hosts with the faithful in solemn procession. A cross was erected at the discovery site, and numerous healings and acts of devotion followed. To accommodate pilgrims, the Chapel of the Sacred Hosts was eventually built. Despite these graces, some later attempted to profane the Hosts, which were ultimately destroyed; nevertheless, the miracle remained deeply rooted in local devotion. Each year, a solemn Mass is celebrated on January 2 in remembrance of the miracle.",
+  "scientificEvidence": "The miracle is supported by detailed historical accounts describing the intact condition of the Hosts after severe weather exposure and by recorded testimonies of healings.",
+  "significance": "The event reinforced belief in the Real Presence, inspired widespread devotion and pilgrimages, and left a lasting liturgical commemoration in Marseille-en-Beauvais.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Marseille-en-Beauvais",
+    "France",
+    "Recovered Hosts",
+    "Snowstorm",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "paris-1290",
+  "name": "Eucharistic Miracle of Paris (Miracle des Billettes)",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "coordinates": {
+      "lat": 48.8575,
+      "lng": 2.3564
+    },
+    "address": "Former Church of Saint-Jean-en-Grève; Chapel des Billettes (Rue des Jardins, later Rue du Dieu-Bouilli)"
+  },
+  "date": {
+    "year": 1290,
+    "displayDate": "Easter Sunday, April 2, 1290"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host, levitation, and cruciform apparition)",
+  "description": "A consecrated Host stabbed, burned, and boiled freed itself miraculously, bled, hovered in midair, and took the form of a crucifix.",
+  "narrative": "During Easter of 1290, a man named Jonathas, who harbored hatred toward the Catholic Faith and denied the Real Presence, obtained a consecrated Host in Paris with the intent to desecrate it. He stabbed the Host with a knife, causing it to bleed profusely and fill the container in which it was placed. Panic-stricken, he threw the Host into the fire, but it emerged unharmed. He then cast it into boiling water; the Host rose by itself from the water, hovered in midair, and took the form of a crucifix. Terrified, Jonathas placed the Host in the basin of a pious woman from the parish of Saint-Jean-en-Grève, who immediately brought it to her pastor. The miracle was widely attested by documents and chroniclers, including the Italian historian Giovanni Villani and Archbishop Rupp of Paris. King Philip the Fair confiscated the house of Jonathas, known thereafter as the ‘House of Miracles,’ and transformed it into a chapel following papal authorization from Pope Boniface VIII. The street became known as ‘Rue du Dieu bouilli’ (‘Street of God-Boiled’). The Host was preserved for centuries in a reliquary at the Church of Saint-Jean-en-Grève until it was lost during the French Revolution.",
+  "scientificEvidence": "The miracle is supported by extensive medieval documentation, royal records, episcopal histories, and later critical historical studies, including a 1954 scholarly examination by Moreau-Rendu affirming the authenticity of the sources.",
+  "significance": "One of the most famous medieval Eucharistic miracles, it deeply shaped Parisian devotion, inspired royal and papal action, and left a lasting imprint on the city’s religious geography and liturgical memory.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Paris",
+    "France",
+    "Miracle des Billettes",
+    "Bleeding Host",
+    "Levitation",
+    "Crucifix Apparition",
+    "Real Presence",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "pressac-1643",
+  "name": "Eucharistic Miracle of Pressac",
+  "location": {
+    "city": "Pressac",
+    "country": "France",
+    "coordinates": {
+      "lat": 46.1670,
+      "lng": 0.6680
+    },
+    "address": "Church of St. Just, Pressac (Diocese of Poitiers)"
+  },
+  "date": {
+    "year": 1643,
+    "displayDate": "Holy Thursday, 1643"
+  },
+  "type": "Eucharistic Miracle (Preservation of the Host during fire)",
+  "description": "After a church fire fused the chalice, the Host was found intact beneath a tin bubble formed on the chalice’s foot.",
+  "narrative": "On Holy Thursday in 1643, after Mass and Communion, the priest placed the chalice containing the reserved Host in the repository near the altar of the Blessed Virgin. Two candles left burning likely ignited a fire while the church was closed. When townspeople forced entry, the repository and painting were destroyed; nearly the entire chalice had fused into droplets of tin, leaving only the foot. Above it, a tin bubble had formed, and beneath this bubble the consecrated Host was found completely intact, having withstood both flames and molten metal. The vicar, Simon Sauvage, brought the bubbling remnant to the main altar for all to see. The Host—lightly reddened at the edges—was consumed the following morning during the Divine Office of Good Friday. Abbot François du Theil recorded sworn testimony and submitted it to Bishop Henri Louis Chastagnier de la Roche-Posay of Poitiers, who formally authorized public devotion. The miracle has been commemorated ever since, and stained-glass windows in the Church of St. Just depict the event’s phases.",
+  "scientificEvidence": "Canonical testimonies document the fusion of the chalice into tin droplets and the intact Host preserved beneath a formed tin bubble; the physical remnants (chalice foot) and iconographic records corroborate the accounts.",
+  "significance": "The miracle affirmed Eucharistic faith during a time of peril, received episcopal approval, and left enduring material and artistic witnesses that continue to testify to the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Pressac",
+    "France",
+    "Fire",
+    "Preserved Host",
+    "Chalice",
+    "Real Presence",
+    "Holy Thursday"
+  ]
+},
+{
+  "id": "augsburg-1194",
+  "name": "Eucharistic Miracle of Augsburg",
+  "location": {
+    "city": "Augsburg",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 48.3705,
+      "lng": 10.8978
+    },
+    "address": "Convent of the Holy Cross (Heilig Kreuz), Augsburg"
+  },
+  "date": {
+    "year": 1194,
+    "displayDate": "1194 (public exposition reaffirmed May 11, 1199)"
+  },
+  "type": "Eucharistic Miracle (Host transformed into bleeding Flesh)",
+  "description": "A stolen consecrated Host was later found transformed into bleeding Flesh and has remained preserved for veneration.",
+  "narrative": "In 1194, a woman in Augsburg, devoted to the Eucharist, stole a consecrated Host to keep it at home during a time when churches were closed to Eucharistic worship. She hid the Host in a wax container inside a cupboard. Years later, tormented by remorse, she returned the Host to the superior of the Convent of the Holy Cross, Father Berthold. When the priest opened the wax covering, he discovered that the Eucharist had been transformed into bleeding Flesh. Bishop Udalsk of Augsburg ordered the Host transferred in solemn procession to the cathedral and exhibited in a crystal reliquary for public veneration. Over time, the Host reportedly grew and swelled, and bleeding recurred, prompting further episcopal oversight. Historical sources record additional extraordinary signs, including apparitions associated with the relic. In 1200, Count Rechberg donated a silver opening for the placement of the Host. Through the centuries, several analyses were conducted, consistently confirming the presence of human Flesh and Blood. Today, the relic—known locally as *Wunderbarliches Gutes* (“The Miraculous Good”)—is preserved and cared for by the Dominican Fathers at the Convent of the Holy Cross in Augsburg.",
+  "scientificEvidence": "Across centuries, multiple examinations and analyses consistently reported the presence of human Flesh and Blood in the relic, as documented in historical records held in Augsburg’s civic state library.",
+  "significance": "One of the most enduring Eucharistic miracles in Germany, Augsburg has been continuously venerated for centuries and stands as a prominent testimony to belief in the Real Presence of Christ in the Eucharist.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Augsburg",
+    "Germany",
+    "Bleeding Host",
+    "Flesh and Blood",
+    "Real Presence",
+    "Dominican Fathers",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "benningen-1216",
+  "name": "Eucharistic Miracle of Benningen",
+  "location": {
+    "city": "Benningen",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 47.9667,
+      "lng": 10.2167
+    },
+    "address": "Riedkapelle zum Hochwürdigen Gut; Parish of St. Martin, Memmingen (custody)"
+  },
+  "date": {
+    "year": 1216,
+    "displayDate": "1216"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host after desecration)",
+  "description": "A consecrated Host began to bleed profusely after being stolen and desecrated by millers.",
+  "narrative": "In 1216, in the village of Benningen, two millers who were at odds with one another stole a consecrated Host after Holy Communion and carried it to a mill, intending to profane it. During the Feast of St. Gregory, the Host began to bleed so abundantly that the entire village and the Bishop learned of the event. The blasphemous miller repented and confessed his wrongdoing. The Bishop of Augsburg, Frederick, took custody of the Host and deposited it in a precious container in the Church of St. Martin in Memmingen. In the years following, the faithful began construction of a chapel at Benningen—later known as the Riedkapelle zum Hochwürdigen Gut—which was rebuilt and enlarged between 1674 and 1718 to accommodate pilgrims. Each year on the Feast of Corpus Christi, the parish of Benningen processes to the Riedkapelle to commemorate the miracle, which has remained a focal point of local devotion for centuries.",
+  "scientificEvidence": "The event is documented in contemporaneous accounts describing the profuse bleeding of the Host and subsequent episcopal intervention; artistic cycles and chapel records preserve the historical testimony.",
+  "significance": "The miracle strengthened Eucharistic faith in the region, inspired penitence and conversion, and established a lasting pilgrimage tradition centered on Corpus Christi devotion.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Benningen",
+    "Germany",
+    "Bleeding Host",
+    "Desecration",
+    "Real Presence",
+    "Corpus Christi",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "bettbrunn-1125",
+  "name": "Eucharistic Miracle of Bettbrunn",
+  "location": {
+    "city": "Bettbrunn",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 48.9667,
+      "lng": 11.8667
+    },
+    "address": "Church of the Holy Savior (San Salvatore), Bettbrunn"
+  },
+  "date": {
+    "year": 1125,
+    "displayDate": "1125"
+  },
+  "type": "Eucharistic Miracle (Immovable Host lifted after episcopal vow)",
+  "description": "A consecrated Host that fell to the ground could not be lifted until the bishop vowed to build a chapel in its honor.",
+  "narrative": "In 1125, near the small farm of Viehbrunn, a devout farmer—unable to attend Mass regularly—secretly took a consecrated Host home, concealing it in a hollowed walking stick so he could pray before it daily. Months later, while tending livestock, he impulsively threw the stick; the Host fell to the ground. Stricken with remorse, he tried to retrieve it, but the Host could not be lifted. Neither the parish priest of Tholling nor others succeeded. Bishop Hartwich of Regensburg came with his clergy and was able to lift the Host only after promising to build a chapel on the spot in honor of the Blessed Sacrament. The chapel was completed that same year, giving rise to the village of Bettbrunn and the Church of the Holy Savior. The relic was kept there until a fire in 1330 destroyed the building; the church was later rebuilt, preserving a pillar saved from the fire as a memorial.",
+  "scientificEvidence": "The event is documented by contemporaneous ecclesiastical accounts describing the immovable Host and the bishop’s successful retrieval following a vowed act, along with enduring architectural and devotional records.",
+  "significance": "The miracle founded Bettbrunn as a pilgrimage site, strengthened Eucharistic devotion, and led to the construction of the Church of the Holy Savior dedicated to the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Bettbrunn",
+    "Germany",
+    "Immovable Host",
+    "Blessed Sacrament",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "erding-1417",
+  "name": "Eucharistic Miracle of Erding",
+  "location": {
+    "city": "Erding",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 48.3060,
+      "lng": 11.9060
+    },
+    "address": "Sanctuary of the Most Precious Blood, Erding"
+  },
+  "date": {
+    "year": 1417,
+    "displayDate": "Holy Thursday, 1417"
+  },
+  "type": "Eucharistic Miracle (Host flying and recovered through episcopal intervention)",
+  "description": "A consecrated Host stolen by a peasant escaped his hands, flew through the air repeatedly, and was recovered only through the Bishop’s intervention.",
+  "narrative": "On Holy Thursday in 1417, a poor peasant of Erding, believing the Blessed Sacrament to be a kind of amulet that could bring prosperity, secretly took a consecrated Host after receiving Communion and hid it in his clothing. Struck by remorse during his journey, he attempted to return the Host, but it slipped from his hands and flew into the air, disappearing from sight. Terrified, he alerted the parish priest, who went to the spot where the Host had vanished. The priest saw the Host resting on a clump of earth, emitting a bright light, but when he tried to pick it up, it again flew away. The Bishop was summoned and came personally to the site; even then, the Host once more rose into the air. Only after the Bishop and the faithful resolved to build a chapel in honor of the Eucharistic Wonder was the Host finally recovered. A chapel was immediately constructed on the site, and numerous cures and wonders were soon attributed to devotion to this miracle. Because of the growing number of pilgrims, a larger baroque sanctuary was built between 1675 and 1677 and dedicated to the Most Precious Blood. The sanctuary, enriched with relics including that of the Most Precious Blood of Christ, has since remained a major place of pilgrimage and has been under the care of the monks of St. Paul of the Desert since 1992.",
+  "scientificEvidence": "The miracle is documented through detailed historical and ecclesiastical accounts describing the repeated levitation of the Host, its luminous appearance, and the Bishop’s direct involvement in its recovery.",
+  "significance": "The miracle led to the foundation of one of Bavaria’s most important Eucharistic pilgrimage sites and remains a powerful testimony to belief in the Real Presence of Christ in the Eucharist.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Erding",
+    "Germany",
+    "Flying Host",
+    "Levitation",
+    "Most Precious Blood",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "kranenburg-bei-kleve-1280",
+  "name": "Eucharistic Miracle of Kranenburg bei Kleve (Miracle of the Miraculous Crucifix)",
+  "location": {
+    "city": "Kranenburg",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 51.7833,
+      "lng": 6.0167
+    },
+    "address": "Church of St. Peter and Paul, Kranenburg (District of Kleve)"
+  },
+  "date": {
+    "year": 1280,
+    "displayDate": "1280 (tradition records 1284 in some accounts)"
+  },
+  "type": "Eucharistic Miracle (Miraculous Crucifix arising from a Host)",
+  "description": "A consecrated Host thrown near a tree later gave rise to a perfectly formed crucifix discovered inside the tree.",
+  "narrative": "Around 1280, in the town of Kranenburg in the district of Kleve, a shepherd who had received Holy Communion found himself unable to swallow the consecrated Host because of illness. In confusion and fear, he threw the Host near a tree in a garden. Stricken by remorse, he later confessed the incident to a priest, who searched unsuccessfully for the Host. Several years afterward, the same tree was cut down and split in two. At that moment, a perfectly carved crucifix fell from the trunk, astonishing all present. News of the prodigy spread rapidly, and the crucifix was venerated as a miraculous sign born of the Eucharist. On the site where the crucifix was found, a church was built, which still stands today and continues to attract numerous pilgrims. Bishops of Cologne and the Counts of Kleve promoted devotion to the Miraculous Crucifix, granting indulgences. In 1444, a larger Gothic church was constructed to house the relic, which remains one of the most important examples of Gothic devotional art in the Lower Rhine region.",
+  "scientificEvidence": "The miracle is attested by medieval documents, ecclesiastical records, and the enduring physical relic of the Miraculous Crucifix preserved and venerated in the church.",
+  "significance": "The miracle established Kranenburg as a major pilgrimage site and powerfully reinforced belief in the Real Presence of Christ in the Eucharist through a lasting devotional and artistic legacy.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Kranenburg",
+    "Germany",
+    "Miraculous Crucifix",
+    "Real Presence",
+    "Pilgrimage Site",
+    "Medieval Church",
+    "Gothic Art"
+  ]
+},
+{
+  "id": "regensburg-1255",
+  "name": "Eucharistic Miracle of Regensburg",
+  "location": {
+    "city": "Regensburg",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 49.0134,
+      "lng": 12.1016
+    },
+    "address": "Sanctuary of the Savior (near Regensburg; Ratisbonne)"
+  },
+  "date": {
+    "year": 1255,
+    "displayDate": "Holy Thursday, March 25, 1255"
+  },
+  "type": "Eucharistic Miracle (Living Crucifix and exhibition of the Blessed Sacrament)",
+  "description": "During Mass, a wooden crucifix came to life and Christ took the chalice from the priest to show the Eucharist to the faithful.",
+  "narrative": "On Holy Thursday, March 25, 1255, a priest of Ratisbonne was carrying Holy Viaticum to a dying person when an unexpected storm caused a stream to overflow at the city entrance. While crossing a plank placed over the water, he slipped and dropped the ciborium containing the consecrated Hosts. As an act of reparation, the priest, faithful, and civil authorities resolved that same day to build a chapel on the site of the accident. On September 8, 1255, Bishop Albert consecrated the chapel in honor of the Savior, and the Blessed Sacrament was carried there in solemn procession, soon drawing many pilgrims. Two years later, while a priest was celebrating Mass in the chapel, he was assailed by doubts about the Real Presence and hesitated at the elevation of the chalice. Suddenly, a sound was heard from the altar, and the wooden crucifix above it came to life: the Lord slowly extended His arms, took the chalice from the priest’s hands, and exhibited the Blessed Sacrament for the adoration of the faithful. The priest repented and begged forgiveness; the Lord then returned the chalice as a sign of pardon. The miraculous crucifix is still preserved in Regensburg and continues to be venerated by pilgrims.",
+  "scientificEvidence": "The miracle is supported by detailed medieval ecclesiastical accounts describing the events, the preserved miraculous crucifix, and the longstanding tradition of pilgrimage to the site.",
+  "significance": "The miracle profoundly strengthened faith in the Real Presence, led to the foundation of a sanctuary, and remains one of Germany’s most notable medieval Eucharistic testimonies.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Regensburg",
+    "Germany",
+    "Living Crucifix",
+    "Real Presence",
+    "Blessed Sacrament",
+    "Holy Thursday",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "walldurn-1330",
+  "name": "Eucharistic Miracle of Walldürn",
+  "location": {
+    "city": "Walldürn",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 49.5825,
+      "lng": 9.3669
+    },
+    "address": "Minor Basilica of St. George, Walldürn"
+  },
+  "date": {
+    "year": 1330,
+    "displayDate": "1330"
+  },
+  "type": "Eucharistic Miracle (Consecrated wine transformed into Blood forming image of Christ)",
+  "description": "During Mass, consecrated wine spilled onto the corporal and transformed into Blood forming the image of the Crucified Christ.",
+  "narrative": "In 1330, while celebrating Holy Mass in Walldürn, the priest Heinrich Otto accidentally overturned the chalice containing the consecrated wine onto the corporal. Immediately, the spilled wine transformed into Blood and formed the distinct image of the Crucified Christ surrounded by eleven crowned heads, representing the Apostles. Overcome by fear, the priest concealed the corporal beneath the altar and did not reveal the miracle for many years. Near the end of his life, he confessed the event, and the corporal was solemnly recovered. From the beginning, the relic inspired deep devotion, numerous conversions, and miraculous healings. The miracle was officially confirmed by Pope Eugene IV in 1445, who granted indulgences to pilgrims. The corporal is preserved today in the Minor Basilica of St. George in Walldürn, where it is displayed on a side altar. Each year, thousands of pilgrims visit Walldürn to venerate the miraculous corporal, making it one of Germany’s most important Eucharistic pilgrimage sites.",
+  "scientificEvidence": "The relic consists of a corporal bearing dried Blood forming a clear iconographic image of the Crucified Christ, preserved and venerated for centuries and documented in detailed historical records, including a comprehensive account written in 1589 by the monk Hoffius.",
+  "significance": "The miracle established Walldürn as a major center of Eucharistic devotion in Germany, affirmed belief in the Real Presence, and continues to attract large-scale pilgrimage and veneration.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Walldürn",
+    "Germany",
+    "Bleeding Corporal",
+    "Image of Christ",
+    "Real Presence",
+    "Pilgrimage Site",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "weingarten-1094",
+  "name": "Eucharistic Miracle of Weingarten (Most Precious Blood of Jesus)",
+  "location": {
+    "city": "Weingarten",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 47.8096,
+      "lng": 9.6409
+    },
+    "address": "Basilica of St. Martin, former Benedictine Abbey of Weingarten"
+  },
+  "date": {
+    "year": 1094,
+    "displayDate": "March 4, 1094"
+  },
+  "type": "Eucharistic Miracle (Relic of the Most Precious Blood of Jesus)",
+  "description": "A relic of the Most Precious Blood of Jesus has been venerated at Weingarten for over nine centuries.",
+  "narrative": "For more than 900 years, the faithful have venerated a relic of the Most Precious Blood of Jesus at the Benedictine Monastery of Weingarten. According to historical tradition, the Roman soldier Longinus carried the Precious Blood from Calvary to Mantua, where it was preserved and later divided into portions given to rulers and popes, including Charlemagne. An ancient document records that in 1055 Emperor Henry III of the Franks received a portion of the Precious Blood, which he bequeathed to Count Baldwin of Flanders. Baldwin passed the relic to his daughter Judith, who in turn gave it to her husband, Guelfo IV of Bavaria. Guelfo entrusted the relic to the Benedictine monks of Weingarten, then led by Abbot Wilichon. The solemn enshrinement took place on March 4, 1094, after which numerous papal indulgences were granted to the abbey, making it a major religious center. Each year, Weingarten celebrates the renowned ‘Ride of the Blood,’ a grand procession involving thousands of riders and clergy, honoring the Precious Blood relic that remains preserved in the Basilica of St. Martin.",
+  "scientificEvidence": "The authenticity and origin of the relic are supported by medieval documents, including a letter dated March 1, 1278, confirming its Mantuan provenance, and by continuous historical custody and veneration.",
+  "significance": "Weingarten is one of Europe’s most important centers of devotion to the Most Precious Blood of Jesus, fostering centuries of pilgrimage, liturgical celebration, and affirmation of Eucharistic faith.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Weingarten",
+    "Germany",
+    "Most Precious Blood",
+    "Relic",
+    "Real Presence",
+    "Pilgrimage Site",
+    "Ride of the Blood"
+  ]
+},
+{
+  "id": "wilsnack-1383",
+  "name": "Eucharistic Miracle of Wilsnack",
+  "location": {
+    "city": "Wilsnack",
+    "country": "Germany",
+    "coordinates": {
+      "lat": 52.9560,
+      "lng": 11.9480
+    },
+    "address": "Church of St. Nikolai (St. Nicholas), Bad Wilsnack"
+  },
+  "date": {
+    "year": 1383,
+    "displayDate": "August 1383"
+  },
+  "type": "Eucharistic Miracle (Bleeding Hosts preserved after fire)",
+  "description": "After a devastating fire, three consecrated Hosts were found intact and bleeding continuously among the ruins of the parish church.",
+  "narrative": "In August 1383, the village of Wilsnack was sacked, robbed, and set ablaze by Count Heinrich von Bülow, leaving the parish church in ruins. Amid the destruction, three consecrated Hosts were discovered perfectly intact and bleeding continuously. The Hosts were recovered and venerated, and numerous miracles were soon reported. One notable case involved Count Dietrich von Wenckstern, who doubted the authenticity of the bleeding Hosts and consequently lost his eyesight; his vision was restored only after he repented of his doubt. The miracle spread rapidly, and in 1384 the Bishop of Havelberg officially confirmed the phenomenon. Pope Urban VI contributed funds for rebuilding the church, joined by offerings from regional bishops. Wilsnack became one of Europe’s most important pilgrimage destinations until the 1500s, enabling the construction of the large Gothic brick Church of St. Nikolai dedicated to the miracle. Although the monstrance containing the relics was destroyed in a fire in 1522, extensive written testimonies and artworks documenting the miracle have survived.",
+  "scientificEvidence": "The miracle is attested by contemporaneous ecclesiastical confirmations, papal bulls (approved by Pope Eugene IV in 1447), eyewitness accounts of continuous bleeding, and a substantial body of historical documentation and devotional art.",
+  "significance": "One of the most influential medieval Eucharistic miracles, Wilsnack shaped European pilgrimage culture for centuries and strongly reinforced belief in the Real Presence of Christ in the Eucharist.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Wilsnack",
+    "Germany",
+    "Bleeding Hosts",
+    "Fire",
+    "Real Presence",
+    "Pilgrimage Site",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "alkmaar-1429",
+  "name": "Eucharistic Miracle of Alkmaar",
+  "location": {
+    "city": "Alkmaar",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 52.6324,
+      "lng": 4.7534
+    },
+    "address": "Cathedral of Saint Lawrence (Sint-Laurenskerk), Alkmaar"
+  },
+  "date": {
+    "year": 1429,
+    "displayDate": "May 1, 1429"
+  },
+  "type": "Eucharistic Miracle (Consecrated wine transformed into Blood)",
+  "description": "During Mass, consecrated wine spilled onto the altar and chasuble and miraculously transformed into Blood.",
+  "narrative": "On May 1, 1429, in the Cathedral of Saint Lawrence in Alkmaar, a priest named Folkert was celebrating his first Mass, assisted by Father Volpert Schult. Shortly after the consecration, Father Folkert accidentally knocked over the chalice, spilling the consecrated wine onto the altar and his chasuble. Immediately, the wine transformed into living Blood. After Mass, attempts were made to clean and even burn the blood-stained portion of the chasuble, but the stains could not be removed and reappeared after sewing. The blood-soaked chasuble was preserved as a precious relic. Numerous canonical investigations were conducted, and in 1433 the Bishop officially approved devotion surrounding the miracle. To this day, the blood-stained chasuble is preserved in a reliquary shaped like an angel and venerated in the Cathedral of Saint Lawrence in Alkmaar.",
+  "scientificEvidence": "The miracle is supported by multiple canonical investigations conducted shortly after the event and by the enduring preservation of the blood-stained chasuble, which resisted all attempts at removal.",
+  "significance": "The miracle strengthened Eucharistic devotion in the Netherlands, received formal episcopal approval, and remains a lasting testimony to belief in the Real Presence of Christ in the Eucharist.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Alkmaar",
+    "Netherlands",
+    "Precious Blood",
+    "Bleeding Chalice",
+    "Real Presence",
+    "Cathedral of Saint Lawrence"
+  ]
+},
+{
+  "id": "amsterdam-1345",
+  "name": "Eucharistic Miracle of Amsterdam",
+  "location": {
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 52.3728,
+      "lng": 4.8936
+    },
+    "address": "Site of the Miracle (former house of Ysbrand Dommer), near Oude Kerk; Chapel of the Beguines (later devotion)"
+  },
+  "date": {
+    "year": 1345,
+    "displayDate": "March 12, 1345"
+  },
+  "type": "Eucharistic Miracle (Host preserved from fire and suspended in air)",
+  "description": "A consecrated Host thrown into a fire was found intact and miraculously suspended in midair among the flames.",
+  "narrative": "On March 12, 1345, a few days before Easter, Ysbrand Dommer of Amsterdam, gravely ill and believing he was near death, received Holy Communion at his home from the parish priest of the Oude Kerk. Shortly afterward, he vomited into a basin; the contents, including the consecrated Host, were thrown by his maid into the lit fireplace. The following day, Ysbrand unexpectedly recovered his health. When the maid approached the fireplace to tend the fire, she saw a brilliant light and discovered the Host completely intact, suspended in midair amid the flames. Neighbors rushed in and witnessed the prodigy. The Host was wrapped in a linen cloth and taken to the parish priest, but three times it miraculously reappeared in Ysbrand’s house, requiring the priest to retrieve it again. It was then decided to convert the house into a chapel. On Easter Sunday, eyewitnesses and the mayor of Amsterdam compiled a sworn report that was delivered to Bishop Jan van Arkel of Utrecht, who immediately authorized devotion to the miracle. In 1452 the chapel was destroyed by fire, yet the monstrance containing the miraculous Host remained intact. In 1665, the relic was transferred to a chapel of the Beguines, though it was later stolen by unknown persons. Today, perpetual Eucharistic adoration is maintained in memory of the miracle, and each year Amsterdam holds the silent procession known as the *Stille Omgang* on the eve of Palm Sunday.",
+  "scientificEvidence": "The miracle is supported by sworn eyewitness reports, an official episcopal investigation and authorization, repeated inexplicable reappearances of the Host, and the documented survival of the monstrance in later fires.",
+  "significance": "One of the most famous Eucharistic miracles in Northern Europe, the Miracle of Amsterdam has inspired uninterrupted public devotion for centuries and remains commemorated by the annual *Stille Omgang* procession.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Amsterdam",
+    "Netherlands",
+    "Host Preserved from Fire",
+    "Levitation",
+    "Real Presence",
+    "Stille Omgang",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "bergen-1421",
+  "name": "Eucharistic Miracle of Bergen",
+  "location": {
+    "city": "Bergen op Zoom",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.4950,
+      "lng": 4.2860
+    },
+    "address": "Church of Saints Peter and Paul; River Scheldt, Bergen op Zoom"
+  },
+  "date": {
+    "year": 1421,
+    "displayDate": "Easter, 1421"
+  },
+  "type": "Eucharistic Miracle (Recovered Hosts stained with Blood)",
+  "description": "Consecrated Hosts thrown into a river were later found floating and stained with Blood.",
+  "narrative": "In 1421, in the city of Bergen op Zoom, the pastor of the Church of Saints Peter and Paul experienced persistent doubts about the Real Presence of Christ in the Eucharist. Because of his lack of devotion toward the Blessed Sacrament, one day after celebrating Mass he took the remaining consecrated Hosts and threw them into the river Scheldt. Several months later, fishermen discovered the Hosts floating on the water, visibly stained with coagulated Blood. News of the prodigy spread rapidly, and many pilgrims came to venerate the recovered Hosts. Ecclesiastical authorities approved devotion to the miracle. During the Protestant Reformation, public veneration was suppressed for a long period, but Catholics continued to preserve the memory of the miracle privately. Devotion was officially restored in the twentieth century, and numerous public events and commemorations have since taken place in Bergen to honor the Eucharistic miracle.",
+  "scientificEvidence": "The miracle is documented through historical ecclesiastical accounts describing the recovery of the Hosts from the river and their visible bloodstains, along with later approvals and commemorations recorded in local church history.",
+  "significance": "The miracle reaffirmed faith in the Real Presence, endured periods of suppression, and remains a lasting symbol of Eucharistic devotion in the Netherlands.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Bergen op Zoom",
+    "Netherlands",
+    "Recovered Hosts",
+    "Bleeding Host",
+    "Real Presence",
+    "River Miracle",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "boxmeer-1400",
+  "name": "Eucharistic Miracle of Boxmeer",
+  "location": {
+    "city": "Boxmeer",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.6460,
+      "lng": 5.9490
+    },
+    "address": "Church of Saints Peter and Paul, Boxmeer"
+  },
+  "date": {
+    "year": 1400,
+    "displayDate": "1400"
+  },
+  "type": "Eucharistic Miracle (Consecrated wine transformed into Blood)",
+  "description": "During Mass, the consecrated wine bubbled out of the chalice, transformed into Blood, and coagulated on the corporal.",
+  "narrative": "In 1400, during Holy Mass in the Church of Saints Peter and Paul at Boxmeer, Father Arnoldus Groen doubted the Real Presence immediately after the consecration. Suddenly, the consecrated wine began to bubble out of the chalice as if boiling and splashed onto the corporal, transforming into Blood. When the priest, terrified, asked God to forgive his doubts, the bubbling ceased. The Blood that had fallen onto the corporal coagulated into a solid lump about the size of a walnut. The relic—the corporal with the coagulated Blood—has been preserved without change over time and is kept in a reliquary. Numerous documents, stone tablets, paintings, and stained-glass windows attest to the event. The anniversary of the miracle is commemorated each year with a solemn procession, and several Popes, including Clement XI, Benedict XIV, Pius IX, and Leo XIII, expressed particular devotion to this miracle.",
+  "scientificEvidence": "Historical records attest to the visible transformation of the consecrated wine into Blood, its coagulation into a stable mass, and the long-term preservation of the relic without alteration.",
+  "significance": "The miracle reinforced belief in the Real Presence, inspired enduring public devotion and annual processions, and remains one of the Netherlands’ most venerated Eucharistic testimonies.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Boxmeer",
+    "Netherlands",
+    "Precious Blood",
+    "Bleeding Chalice",
+    "Real Presence",
+    "Annual Procession",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "boxtel-hoogstraten-1380",
+  "name": "Eucharistic Miracle of Boxtel–Hoogstraten",
+  "location": {
+    "city": "Boxtel / Hoogstraten",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.5900,
+      "lng": 5.3300
+    },
+    "address": "St. Peter’s Church, Boxtel; St. Catherine’s Church, Hoogstraten"
+  },
+  "date": {
+    "year": 1380,
+    "displayDate": "1380"
+  },
+  "type": "Eucharistic Miracle (Consecrated wine transformed into Blood)",
+  "description": "After the chalice was accidentally overturned during Mass, the consecrated white wine transformed into Blood and permanently stained the corporal and altar cloth.",
+  "narrative": "Around 1380, the priest Eligius van der Aker was celebrating Mass at St. Peter’s Church in Boxtel, at the altar of the Three Kings. Immediately after the consecration, he accidentally knocked over the chalice containing consecrated white wine. The spilled wine instantly changed into Blood, staining the corporal and the altar cloth. After Mass, the priest attempted unsuccessfully to remove the Blood stains and, frightened, hid the linens under his bed. Only on his deathbed did he reveal the event to his confessor, Fr. Henrijk van Meerheim, who informed Cardinal Pileus, apostolic legate of Pope Urban VI. Following a thorough investigation, Cardinal Pileus authorized public veneration of the relics by a decree dated June 25, 1380. Due to later religious conflicts, the relics were transferred in 1652 to Hoogstraten, near the Belgian border. In 1924, after repeated petitions, the Blood-stained corporal was returned to Boxtel. Each year on the feast of the Holy Trinity, a solemn procession commemorates the miracle and the relic is exposed for public veneration.",
+  "scientificEvidence": "Historical ecclesiastical documentation records the immediate transformation of the consecrated wine into Blood, the permanence of the stains despite attempts at removal, and the formal canonical investigation culminating in the decree of Cardinal Pileus.",
+  "significance": "The miracle strengthened Eucharistic devotion in the region, received formal ecclesiastical approval, and continues to be commemorated through annual public processions and veneration of the relic.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Boxtel",
+    "Hoogstraten",
+    "Netherlands",
+    "Precious Blood",
+    "Bleeding Chalice",
+    "Real Presence",
+    "Holy Trinity Procession"
+  ]
+},
+{
+  "id": "breda-niervaart-1300",
+  "name": "Eucharistic Miracle of Breda–Niervaart",
+  "location": {
+    "city": "Breda / Niervaart",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.5719,
+      "lng": 4.7683
+    },
+    "address": "Collegiate Church of Our Lady, Breda; village of Niervaart"
+  },
+  "date": {
+    "year": 1300,
+    "displayDate": "June 24, 1300"
+  },
+  "type": "Eucharistic Miracle (Stolen Host found intact)",
+  "description": "A consecrated Host stolen by a soldier was later found buried in the ground, perfectly preserved.",
+  "narrative": "On June 24, 1300, during a period of military occupation, a soldier stole a consecrated Host in the village of Niervaart near Breda. Sometime later, a farmer named Jan Bautoen discovered a mysterious light shining from the earth while working his field. Digging at the spot, he found the Sacred Host hidden beneath a clod of soil, completely intact and uncorrupted despite the passage of time. The Host was placed in a precious container and brought to the pastor of Niervaart. News of the miracle spread rapidly, and the faithful began to venerate the Eucharist. An official investigation was conducted by the Bishop of Liège, producing one of the most authoritative and complete documentary accounts of a Eucharistic miracle from the Middle Ages. In 1449, the Blessed Sacrament was transferred to the Collegiate Church of Our Lady in Breda, where a richly decorated monstrance was made for its preservation. During later religious conflicts, the relic itself was lost, but devotion endured. In the 20th century, public veneration was solemnly restored in Breda, and to this day annual processions and prayers commemorate the miracle.",
+  "scientificEvidence": "The miracle is supported by a formal episcopal investigation conducted by the Bishop of Liège and by extensive historical documentation describing the Host’s preservation and discovery.",
+  "significance": "The miracle deeply strengthened Eucharistic faith in the region, became one of the best-documented medieval Eucharistic miracles, and continues to be commemorated through public devotion and processions.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Breda",
+    "Niervaart",
+    "Netherlands",
+    "Recovered Host",
+    "Real Presence",
+    "Medieval Church",
+    "Annual Procession"
+  ]
+},
+{
+  "id": "breda-niervaart-1300",
+  "name": "Eucharistic Miracle of Breda–Niervaart",
+  "location": {
+    "city": "Breda / Niervaart",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.5719,
+      "lng": 4.7683
+    },
+    "address": "Collegiate Church of Our Lady, Breda; village of Niervaart"
+  },
+  "date": {
+    "year": 1300,
+    "displayDate": "June 24, 1300"
+  },
+  "type": "Eucharistic Miracle (Stolen Host found intact)",
+  "description": "A consecrated Host stolen by a soldier was later found buried in the ground, perfectly preserved.",
+  "narrative": "On June 24, 1300, during a period of military occupation, a soldier stole a consecrated Host in the village of Niervaart near Breda. Sometime later, a farmer named Jan Bautoen discovered a mysterious light shining from the earth while working his field. Digging at the spot, he found the Sacred Host hidden beneath a clod of soil, completely intact and uncorrupted despite the passage of time. The Host was placed in a precious container and brought to the pastor of Niervaart. News of the miracle spread rapidly, and the faithful began to venerate the Eucharist. An official investigation was conducted by the Bishop of Liège, producing one of the most authoritative and complete documentary accounts of a Eucharistic miracle from the Middle Ages. In 1449, the Blessed Sacrament was transferred to the Collegiate Church of Our Lady in Breda, where a richly decorated monstrance was made for its preservation. During later religious conflicts, the relic itself was lost, but devotion endured. In the 20th century, public veneration was solemnly restored in Breda, and to this day annual processions and prayers commemorate the miracle.",
+  "scientificEvidence": "The miracle is supported by a formal episcopal investigation conducted by the Bishop of Liège and by extensive historical documentation describing the Host’s preservation and discovery.",
+  "significance": "The miracle deeply strengthened Eucharistic faith in the region, became one of the best-documented medieval Eucharistic miracles, and continues to be commemorated through public devotion and processions.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Breda",
+    "Niervaart",
+    "Netherlands",
+    "Recovered Host",
+    "Real Presence",
+    "Medieval Church",
+    "Annual Procession"
+  ]
+},
+{
+  "id": "meerssen-1222-1465",
+  "name": "Eucharistic Miracles of Meerssen",
+  "location": {
+    "city": "Meerssen",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 50.8870,
+      "lng": 5.7480
+    },
+    "address": "Basilica of the Blessed Sacrament, Meerssen"
+  },
+  "date": {
+    "year": 1222,
+    "displayDate": "1222 and 1465"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host and preservation from fire)",
+  "description": "In Meerssen, a Host bled during Mass in 1222 and the Blood-stained relic was later miraculously saved from a devastating church fire in 1465.",
+  "narrative": "The town of Meerssen witnessed two important Eucharistic miracles. The first occurred in 1222 during the celebration of Sunday Mass, when the priest consecrated the Eucharistic species and living Blood began to drip from the large Host, staining the corporal. This miracle was officially recognized by ecclesiastical authorities and the Blood-stained relic was preserved. In 1465, a massive fire destroyed the entire church, but a farmer courageously rescued the relic of the miracle from the flames, finding it completely unharmed. The townspeople remembered this second event as the “Miracle of the Fire.” Despite the destruction, the church was immediately rebuilt. In 1938, Pope Pius XI raised it to the rank of a minor basilica. Today, the Basilica of the Blessed Sacrament in Meerssen remains a major pilgrimage destination, and the precious relic of the miracle is solemnly carried in procession each year on the octave of Corpus Christi.",
+  "scientificEvidence": "The miracles are documented in detailed historical and ecclesiastical records describing the visible bleeding of the Host, the staining of the corporal, and the preservation of the relic after the fire, supported by centuries of continuous veneration.",
+  "significance": "The Meerssen miracles deeply strengthened Eucharistic devotion in the Netherlands, led to the establishment of an important pilgrimage center, and continue to affirm belief in the Real Presence through annual public processions.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Meerssen",
+    "Netherlands",
+    "Bleeding Host",
+    "Miracle of the Fire",
+    "Real Presence",
+    "Corpus Christi",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "stiphout-1342",
+  "name": "Eucharistic Miracle of Stiphout",
+  "location": {
+    "city": "Stiphout",
+    "country": "Netherlands",
+    "coordinates": {
+      "lat": 51.4540,
+      "lng": 5.6120
+    },
+    "address": "Saint Trudo’s Church, Stiphout"
+  },
+  "date": {
+    "year": 1342,
+    "displayDate": "1342"
+  },
+  "type": "Eucharistic Miracle (Consecrated Hosts preserved from fire)",
+  "description": "Consecrated Hosts were miraculously preserved when a fire destroyed the entire church but could not reach the tabernacle.",
+  "narrative": "In 1342, a violent thunderstorm struck the village of Stiphout, and a lightning bolt set the parish church ablaze. The flames rapidly consumed the building, and entry became impossible. The elderly pastor, Jan Hocaerts, alerted the villagers, and a group of faithful led by Jan Baloys resolved to rescue the Blessed Sacrament. Since the doors could not be opened, Baloys was lowered through a window near the altar after breaking the glass. Inside, he witnessed that although the church had been destroyed by fire, the flames were being held back from the area surrounding the tabernacle. He opened it, removed the ciborium containing the consecrated Hosts, and carried them safely outside. The faithful immediately recognized the event as miraculous. The church was later rebuilt, and the Hosts remained intact until 1557. Due to later historical upheavals and religious wars, the relics were eventually lost. The miracle has been documented in numerous records, commemorated in artwork still displayed in Saint Trudo’s Church, and is venerated annually by the people of Stiphout, especially on the feast of Corpus Christi.",
+  "scientificEvidence": "The miracle is supported by historical documentation and eyewitness accounts describing the clear preservation of the tabernacle area and Hosts amid total destruction by fire.",
+  "significance": "The event strengthened Eucharistic faith in the region, inspired annual Corpus Christi devotion, and remains a lasting symbol of belief in the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Stiphout",
+    "Netherlands",
+    "Preserved Hosts",
+    "Fire",
+    "Real Presence",
+    "Corpus Christi",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "krakow-1345",
+  "name": "Eucharistic Miracle of Kraków",
+  "location": {
+    "city": "Kraków",
+    "country": "Poland",
+    "coordinates": {
+      "lat": 50.0549,
+      "lng": 19.9350
+    },
+    "address": "Village of Wawel (near Kraków); Church of Corpus Christi, Kraków"
+  },
+  "date": {
+    "year": 1345,
+    "displayDate": "1345"
+  },
+  "type": "Eucharistic Miracle (Hosts emitting a supernatural light)",
+  "description": "Consecrated Hosts stolen and abandoned in a marsh emitted a brilliant light visible for kilometers.",
+  "narrative": "In 1345, thieves broke into the Collegiate Church of All Saints near the village of Wawel, outside Kraków, and stole a monstrance containing consecrated Hosts. Discovering that the monstrance was not made of solid gold, they discarded it with the Hosts into a muddy marsh. When darkness fell, villagers observed mysterious, intense flashes of light emanating from the marsh, visible from several kilometers away. Frightened witnesses informed the Bishop of Kraków, who ordered three days of fasting and prayer. On the third day, he led a solemn procession to the marsh, where the monstrance and the Hosts were found intact and unbroken, clearly the source of the light. The faithful celebrated the miracle, and in the same year King Casimir III the Great ordered the construction of the Church of Corpus Christi in Kraków in its honor. Paintings, documents, and depositions commemorating the miracle are preserved in that church, and the event is celebrated annually on the feast of Corpus Christi.",
+  "scientificEvidence": "The miracle is documented by contemporary ecclesiastical records, sworn depositions, and enduring iconographic evidence depicting the luminous phenomenon and recovery of the Hosts.",
+  "significance": "The miracle strengthened Eucharistic devotion in medieval Poland, inspired the founding of the Church of Corpus Christi in Kraków, and remains a lasting testimony to belief in the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Kraków",
+    "Poland",
+    "Luminous Hosts",
+    "Recovered Monstrance",
+    "Real Presence",
+    "Corpus Christi",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "glotowo-1290",
+  "name": "Eucharistic Miracle of Głotowo",
+  "location": {
+    "city": "Głotowo",
+    "country": "Poland",
+    "coordinates": {
+      "lat": 53.9080,
+      "lng": 20.3530
+    },
+    "address": "Eucharistic Sanctuary of Głotowo (Dobro Miasto area)"
+  },
+  "date": {
+    "year": 1290,
+    "displayDate": "1290"
+  },
+  "type": "Eucharistic Miracle (Luminous Host discovered after burial)",
+  "description": "A consecrated Host buried during an invasion was later found intact, emitting a brilliant light, when oxen knelt in adoration.",
+  "narrative": "In 1290, during the invasion of the Lithuanians, a priest from the village of Głotowo buried in a field a silver ciborium plated in gold containing a consecrated Host, which he had inadvertently left inside. The village and its church were destroyed, and none of the survivors knew of the hidden Eucharist. Years later, in springtime, a farmer plowing the field noticed strange behavior from his oxen: they suddenly bowed to the ground and knelt in adoration. From the earth there emanated an intense, brilliant light. Digging at the spot, the farmer uncovered a small ciborium covered with soil that contained a perfect Host, white as snow. News of the prodigy spread quickly; local authorities organized a solemn procession to bring the Host to the church of Dobro Miasto. According to an ancient chronicle, the Host inexplicably disappeared during the procession and was found again at the very place where it had first been discovered, which was interpreted as a sign designating the site for veneration. Over the centuries devotion grew, and in the eighteenth century the old medieval church was enlarged and consecrated by Bishop Krzysztof Potocki on July 24, 1726. To this day, the shrine of Głotowo welcomes pilgrims who come to venerate the relic of the Host, intact since 1290.",
+  "scientificEvidence": "The miracle is attested by ancient chronicles, local ecclesiastical records, and continuous pilgrimage tradition centered on the intact Host and the luminous phenomenon described at its discovery.",
+  "significance": "The miracle established Głotowo as a lasting center of Eucharistic devotion in Poland, affirming belief in the Real Presence and inspiring centuries of pilgrimage and worship.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Głotowo",
+    "Poland",
+    "Luminous Host",
+    "Recovered Ciborium",
+    "Real Presence",
+    "Pilgrimage Site",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "legnica-2013",
+  "name": "Eucharistic Miracle of Legnica",
+  "location": {
+    "city": "Legnica",
+    "country": "Poland",
+    "coordinates": {
+      "lat": 51.2070,
+      "lng": 16.1619
+    },
+    "address": "St. Hyacinth’s Church, Legnica"
+  },
+  "date": {
+    "year": 2013,
+    "displayDate": "December 25, 2013"
+  },
+  "type": "Eucharistic Miracle (Host transformed into human heart tissue)",
+  "description": "A consecrated Host that fell during Communion developed a red stain later identified as human heart muscle tissue.",
+  "narrative": "On December 25, 2013, during Holy Mass at St. Hyacinth’s Church in Legnica, a consecrated Host accidentally fell to the ground during the distribution of Communion. In accordance with Canon Law, it was placed in a container of water and stored in the tabernacle to dissolve. On January 4, 2014, priests observed that the Host had not dissolved and that a red stain covered approximately one-fifth of its surface. Bishop Stefan Cichy immediately established a special theological and scientific commission. Samples were collected on January 26, 2014, and analyzed by independent forensic and medical institutes in Wrocław and Szczecin. The analyses excluded bacteria, fungi, and external contaminants. Histopathological examinations revealed fragments of cross-striated muscle consistent with human myocardial tissue, showing alterations typically seen during agony. Human DNA was identified. The findings were submitted to the Vatican’s Congregation for the Doctrine of the Faith, which recognized the supernatural nature of the event. On April 10 and April 17, 2016, Bishop Zbigniew Kiernikowski officially announced the results and ordered the preparation of a suitable place for public veneration of the relic.",
+  "scientificEvidence": "Independent histopathological analyses by multiple forensic medicine institutes identified myocardial fibers consistent with human heart muscle, with structural changes associated with extreme physiological stress, and excluded any natural or microbial causes.",
+  "significance": "The Legnica miracle is one of the most scientifically documented modern Eucharistic miracles, reinforcing belief in the Real Presence and echoing findings from Lanciano and other approved Eucharistic miracles.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Legnica",
+    "Poland",
+    "Modern Miracle",
+    "Human Heart Tissue",
+    "Scientific Analysis",
+    "Real Presence",
+    "St. Hyacinth"
+  ]
+},
+{
+  "id": "sokolka-2008",
+  "name": "Eucharistic Miracle of Sokółka",
+  "location": {
+    "city": "Sokółka",
+    "country": "Poland",
+    "coordinates": {
+      "lat": 53.4072,
+      "lng": 23.5020
+    },
+    "address": "Church of Saint Anthony of Padua, Sokółka"
+  },
+  "date": {
+    "year": 2008,
+    "displayDate": "October 12, 2008"
+  },
+  "type": "Eucharistic Miracle (Host transformed into human cardiac muscle tissue)",
+  "description": "A consecrated Host that fell during Communion developed a blood-red substance later identified as living human heart muscle tissue.",
+  "narrative": "On October 12, 2008, during the 8:30 AM Holy Mass at the Church of Saint Anthony of Padua in Sokółka, celebrated by Fr. Filip Zdrodowski, a consecrated Host accidentally fell from the priest’s hands during Communion. The Host was placed in a small silver vessel containing water and secured in the sacristy safe. A week later, when the sacristan Sister Julia Dubowska examined the vessel, the Host had partially dissolved and a distinct red substance was visible. The fragment was transferred onto a corporal and stored in the tabernacle. In January 2009, the Curia of Białystok commissioned two independent specialists in pathological anatomy from the Medical University of Białystok—Professor Maria Elżbieta Sobaniec-Łotowska and Professor Stanisław Sulkowski—to analyze the material. Microscopic and electron microscope examinations revealed numerous bio-morphological indicators characteristic of human cardiac muscle tissue, including segmentation, fragmentation, central nuclei, and structures typical of myocardium fibers undergoing intense contractions in the final phase preceding death. The tissue was found to be inseparably intertwined with the consecrated Host. The analyses excluded blood clots, microbial pigments, bacterial contamination, and any possibility of manipulation. An ecclesiastical commission convened by the Archbishop of Białystok on March 30, 2009 confirmed the continuity and integrity of custody of the Host. On October 14, 2009, the Metropolitan Curia of Białystok officially communicated the findings. The relic is preserved and solemnly carried in procession, drawing large numbers of faithful.",
+  "scientificEvidence": "Independent histopathological and electron microscope analyses identified living human cardiac muscle tissue showing features of extreme physiological stress, excluded autolysis, microbial origin, or fraud, and confirmed inseparable integration of myocardial fibers with the Host.",
+  "significance": "One of the most thoroughly investigated modern Eucharistic miracles, Sokółka powerfully reinforces belief in the Real Presence and parallels findings from Legnica and Lanciano.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Sokółka",
+    "Poland",
+    "Modern Miracle",
+    "Human Heart Tissue",
+    "Scientific Analysis",
+    "Real Presence",
+    "Saint Anthony"
+  ]
 }
 ]
