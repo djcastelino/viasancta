@@ -2110,5 +2110,732 @@
     "Real Presence",
     "Saint Anthony"
   ]
+},
+{
+  "id": "alboraya-almacera-1348",
+  "name": "Eucharistic Miracle of Alboraya–Almácera",
+  "location": {
+    "city": "Alboraya / Almácera",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 39.5009,
+      "lng": -0.3499
+    },
+    "address": "Hermitage Church in Alboraya; Parish of Almácera (sites commemorating the miracle)"
+  },
+  "date": {
+    "year": 1348,
+    "displayDate": "1348"
+  },
+  "type": "Eucharistic Miracle (Hosts recovered by fish)",
+  "description": "After a priest lost consecrated Hosts in a river, three fish emerged holding the Hosts intact and placed them into the chalice.",
+  "narrative": "In 1348, a priest carrying the Viaticum to the sick was crossing a small river near Alboraya–Almácera when a sudden wave swept him from his mule and overturned the ciborium, scattering the consecrated Hosts into the current toward the river’s mouth. Rescued but heartbroken, the priest was approached by fishermen who had witnessed an astonishing sight: three fish near the shore, each holding a small white disc resembling a Host in its mouth. Without hesitation, the priest returned with another ciborium. The fish were seen almost out of the water, lifting the Hosts like little trophies. Kneeling, the priest extended the chalice and prayed fervently; one by one, the fish deposited the Hosts into the chalice and then swiftly disappeared into the sea. A crowd gathered and witnessed the entire scene. The Hosts were carried back to the church in a solemn procession joined by the whole village. Numerous documents attest to the miracle; a small church was built on the site, its doors adorned with sculpted fish, and paintings and mosaics continue to depict the event, which is commemorated especially at Corpus Christi.",
+  "scientificEvidence": "The miracle is supported by contemporaneous documentary testimony, enduring iconographic representations (paintings, mosaics, sculpted fish), and continuous local tradition preserved at the commemorative churches.",
+  "significance": "The event strengthened Eucharistic devotion in the region, inspired lasting artistic and architectural memorials, and remains a vivid testimony to belief in the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Alboraya",
+    "Almácera",
+    "Spain",
+    "Recovered Hosts",
+    "Fish",
+    "Real Presence",
+    "Corpus Christi"
+  ]
+},
+{
+  "id": "alcala-1597",
+  "name": "Eucharistic Miracle of Alcalá",
+  "location": {
+    "city": "Alcalá",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 40.4818,
+      "lng": -3.3635
+    },
+    "address": "Jesuit Church (later Cathedral/Magisterial Church), Alcalá"
+  },
+  "date": {
+    "year": 1597,
+    "displayDate": "1597"
+  },
+  "type": "Eucharistic Miracle (Consecrated Hosts preserved intact)",
+  "description": "Twenty-four consecrated Hosts stolen and later returned were found perfectly intact after eleven years and verified by medical and theological study.",
+  "narrative": "In 1597, a thief stole consecrated Hosts along with precious objects from a church near Alcalá, Spain. A few days later, filled with remorse, he confessed his sins at the Jesuit church of Alcalá and returned the Hosts to the priest. Fearing possible poisoning—after recent incidents elsewhere—the Jesuits decided not to consume the Hosts but to place them in a silver box and allow them to decompose naturally. After eleven years, the twenty-four consecrated Hosts were found perfectly intact. The Provincial, Father Luis de la Palma, ordered a further test: the Hosts were placed in a wine cellar alongside unconsecrated hosts. Months later, the unconsecrated hosts had decomposed due to humidity, while the consecrated Hosts remained intact. Six years later, the miracle was made public. New academic, medical, and theological examinations—conducted with the involvement of royal physicians and eminent theologians—confirmed the miraculous nature of the preservation. In 1619 ecclesiastical authorities officially authorized the miracle. The Holy Hosts were publicly adored before King Philip III, who in 1620 presided over a solemn procession with the entire royal family. After the expulsion of the Jesuits, the Hosts were moved to the Magisterial Church. In 1936, during the burning of the church, priests hid the miraculous Hosts before being killed; their hiding place has never been discovered.",
+  "scientificEvidence": "Extended preservation without decomposition was verified over decades, including comparative testing with unconsecrated hosts under identical conditions; additional medical and theological examinations by royal physicians and scholars affirmed the phenomenon.",
+  "significance": "The miracle became a major focus of Eucharistic devotion in Spain, received official ecclesiastical approval, involved royal veneration, and remains a powerful testimony to belief in the Real Presence despite the later disappearance of the relics.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Alcalá",
+    "Spain",
+    "Preserved Hosts",
+    "Real Presence",
+    "Jesuits",
+    "Royal Veneration",
+    "Early Modern Period"
+  ]
+},
+{
+  "id": "alcoy-1568",
+  "name": "Eucharistic Miracle of Alcoy",
+  "location": {
+    "city": "Alcoy (Alcoi)",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 38.6986,
+      "lng": -0.4731
+    },
+    "address": "Church of Santa María, Alcoy; River Serpis (site associated with the miracle)"
+  },
+  "date": {
+    "year": 1568,
+    "displayDate": "1568"
+  },
+  "type": "Eucharistic Miracle (Hosts miraculously recovered from water)",
+  "description": "Consecrated Hosts lost in a river were miraculously recovered intact through extraordinary signs involving fish.",
+  "narrative": "In 1568, during a period of unrest, a priest in Alcoy was carrying the Blessed Sacrament when the consecrated Hosts were accidentally lost in the waters of the Serpis River. The faithful searched anxiously for the Eucharist. According to the traditional account preserved in local chronicles, fish emerged from the river bearing the Sacred Hosts in their mouths, allowing the priest to recover them intact and without corruption. The event was witnessed by many and interpreted as a clear sign of divine intervention. The Hosts were carried back to the church in solemn procession, and devotion to the Eucharist increased greatly in Alcoy. The miracle was commemorated through liturgical celebrations, artworks, and popular devotion that endured for centuries.",
+  "scientificEvidence": "The miracle is supported by historical ecclesiastical documentation, local chronicles, and continuous devotional tradition recorded in Alcoy and preserved by Church authorities.",
+  "significance": "The miracle strengthened Eucharistic faith in the region, reinforced belief in the Real Presence, and became a lasting element of Alcoy’s religious identity and devotion.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Alcoy",
+    "Spain",
+    "Recovered Hosts",
+    "Fish",
+    "Real Presence",
+    "River Miracle",
+    "Early Modern Period"
+  ]
+},
+{
+  "id": "caravaca-de-la-cruz-1231",
+  "name": "Eucharistic Miracle of Caravaca de la Cruz",
+  "location": {
+    "city": "Caravaca de la Cruz",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 38.1056,
+      "lng": -1.8636
+    },
+    "address": "Church and Sanctuary of the Holy Cross, Caravaca de la Cruz"
+  },
+  "date": {
+    "year": 1231,
+    "displayDate": "March 3, 1231"
+  },
+  "type": "Eucharistic Miracle (Apparition of Christ during Mass)",
+  "description": "During Mass celebrated before a Muslim king, Christ appeared in the Host and angels placed a Cross upon the altar.",
+  "narrative": "In 1231, the Christian priest Don Gínes Pérez Chirinos de Cuenca was captured while preaching among the Moors of the Kingdom of Murcia and brought before the Muslim king Zeyt-Abu-Zeyt. Curious about the Christian faith, the king asked the priest to explain the Holy Mass and then ordered him to celebrate one. Liturgical objects were fetched from Christian territory, but the altar Cross was missing. When the priest realized this, he halted the Mass in distress. At that moment, before the astonished king, two angels appeared and placed a Cross upon the altar. Deeply moved, the priest continued the celebration. At the moment of consecration, the king saw a beautiful infant Jesus appear within the Host, gazing at him with love. Struck by the miracle, the king, his wife, and his family converted to Christianity and were baptized, taking the names Vincent and Elena. From that day, March 3, 1231, the town became known as Caravaca de la Cruz. The miracle was recorded by the Franciscan Father Gilles of Zamora, historian of King Saint Ferdinand. In later centuries, Caravaca was granted the rare privilege of celebrating a perpetual jubilee every seven years at the sanctuary where the Holy Cross is preserved.",
+  "scientificEvidence": "The miracle is attested by contemporaneous historical testimony, especially that of Franciscan Father Gilles of Zamora, and supported by enduring ecclesiastical tradition and iconographic documentation.",
+  "significance": "The miracle led to the conversion of a Muslim ruler and his court, established Caravaca as a major center of Eucharistic and Christological devotion, and earned the city recognition as one of the few perpetual jubilee sites in the world.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Caravaca de la Cruz",
+    "Spain",
+    "Apparition of Christ",
+    "Angels",
+    "Holy Cross",
+    "Conversion",
+    "Perpetual Jubilee",
+    "Real Presence"
+  ]
+},
+{
+  "id": "cimballa-1383",
+  "name": "Eucharistic Miracle of Cimballa",
+  "location": {
+    "city": "Cimballa",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.1012,
+      "lng": -1.7719
+    },
+    "address": "Parish Church of Saint John the Baptist, Cimballa (Zaragoza)"
+  },
+  "date": {
+    "year": 1383,
+    "displayDate": "1383"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host)",
+  "description": "A consecrated Host began to bleed during Mass after the priest experienced doubt about the Real Presence.",
+  "narrative": "In 1383, while celebrating Holy Mass in the village of Cimballa in the region of Aragón, the priest experienced an interior doubt concerning the Real Presence of Christ in the Eucharist. Immediately after the consecration, the Host began to bleed visibly, staining the corporal. Deeply shaken, the priest repented of his doubt, and the event was reported to ecclesiastical authorities. Following investigation, the miracle was approved for public veneration. The blood-stained corporal and the Host became objects of devotion, and Cimballa emerged as a local center of Eucharistic pilgrimage. Over the centuries the miracle has been remembered through liturgical commemorations and preserved tradition within the Church.",
+  "scientificEvidence": "Historical ecclesiastical documentation records the visible bleeding of the Host during Mass and the subsequent canonical investigation approving veneration.",
+  "significance": "The miracle reaffirmed faith in the Real Presence, strengthened Eucharistic devotion in Aragón, and remains a witness to medieval belief in the sacramental mystery.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Cimballa",
+    "Spain",
+    "Bleeding Host",
+    "Real Presence",
+    "Medieval Church",
+    "Aragon"
+  ]
+},
+{
+  "id": "daroca-1239",
+  "name": "Eucharistic Miracle of Daroca",
+  "location": {
+    "city": "Daroca",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.1156,
+      "lng": -1.4140
+    },
+    "address": "Basilica of Santa María de los Sagrados Corporales, Daroca"
+  },
+  "date": {
+    "year": 1239,
+    "displayDate": "1239"
+  },
+  "type": "Eucharistic Miracle (Hosts and corporal soaked in Blood)",
+  "description": "Consecrated Hosts hidden during a battle were later found completely soaked in Blood and preserved as a relic.",
+  "narrative": "In 1239, during the Christian campaigns against the Moors, commanders from Daroca, Teruel, and Calatayud asked Don Mateo Martínez, chaplain of Daroca, to celebrate Holy Mass on the battlefield before an engagement near the castle of Chío. Shortly after the consecration of six Hosts, an unexpected enemy attack forced the priest to suspend the Mass and hide the consecrated Hosts and corporal beneath a rock. After the Christians emerged victorious, the commanders requested Communion. When Don Mateo retrieved the corporal, he found the Hosts completely drenched in Blood. Interpreting this as a divine sign, the leaders decided the relic should be entrusted to a city chosen by God. They placed the blood-stained corporal on the back of a mule and allowed it to wander freely; after traveling many miles, the animal collapsed and died at the gates of Daroca. This was taken as God’s will, and the relic remained there. Even today, the blood-stained corporals are preserved and venerated in Daroca, especially in the Basilica of Santa María de los Sagrados Corporales, with annual processions commemorating the miracle.",
+  "scientificEvidence": "The miracle is supported by contemporaneous historical documentation, preserved blood-stained corporals, and centuries of continuous public veneration recorded in ecclesiastical and civic records.",
+  "significance": "One of Spain’s most famous medieval Eucharistic miracles, it strengthened Eucharistic devotion, influenced regional history, and established Daroca as a major pilgrimage site centered on the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Daroca",
+    "Spain",
+    "Bleeding Hosts",
+    "Battlefield Mass",
+    "Real Presence",
+    "Medieval Church",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "gerona-1297",
+  "name": "Eucharistic Miracle of Gerona",
+  "location": {
+    "city": "Gerona (Girona)",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.9794,
+      "lng": 2.8214
+    },
+    "address": "Ancient Benedictine monastery; Cathedral of Gerona"
+  },
+  "date": {
+    "year": 1297,
+    "displayDate": "1297"
+  },
+  "type": "Eucharistic Miracle (Host transformed into Flesh)",
+  "description": "During Communion, a priest who doubted the Real Presence found the Host transformed into living Flesh in his mouth.",
+  "narrative": "In 1297, during the celebration of Holy Mass in an ancient Benedictine monastery in Gerona, a priest doubted the Real Presence of Christ in the Eucharist. When the moment of Communion arrived, he attempted to consume the consecrated Host but was unable to swallow it, for it had transformed into living Flesh in his mouth. Overcome with fear and awe, he removed the Host and wrapped it in the corporal, placing it on the altar. A nun who was assisting at Mass witnessed the priest’s distress and later saw him remove something from his mouth. After the Mass, the priest confessed his doubt and, upon examining the corporal, discovered a small piece of Flesh dripping with Blood. The miracle became known as the “Holy Doubt.” The relic was preserved for centuries in a reliquary and venerated by the faithful. Unfortunately, during the Spanish Civil War in 1936, the reliquary containing the Incarnate Host and the blood-stained corporal was destroyed.",
+  "scientificEvidence": "The miracle is supported by contemporaneous eyewitness testimony, long-term preservation and veneration of the Flesh relic, and detailed historical ecclesiastical records.",
+  "significance": "The miracle powerfully reaffirmed belief in the Real Presence, became a major focus of Eucharistic devotion in Catalonia, and remains an enduring witness despite the loss of the relics in 1936.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Gerona",
+    "Girona",
+    "Spain",
+    "Host Transformed into Flesh",
+    "Holy Doubt",
+    "Real Presence",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "gorkum-el-escorial-1572",
+  "name": "Eucharistic Miracle of Gorkum–El Escorial",
+  "location": {
+    "city": "Gorkum (Gorinchem) / El Escorial",
+    "country": "Netherlands / Spain",
+    "coordinates": {
+      "lat": 51.8326,
+      "lng": 4.9750
+    },
+    "address": "Catholic Church in Gorkum; Royal Monastery of San Lorenzo de El Escorial"
+  },
+  "date": {
+    "year": 1572,
+    "displayDate": "1572"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host after desecration)",
+  "description": "A consecrated Host trampled and pierced during a church plundering began to bleed and was later preserved intact.",
+  "narrative": "In 1572, during the religious conflicts in Holland, Protestant mercenaries entered the Catholic church of Gorkum and plundered it. As an act of sacrilege, one of the mercenaries trampled a consecrated Host with a spiked boot, breaking it into three pieces. Immediately, living Blood began to flow from the pierced Hosts, forming three distinct wounds that are still visible today. After the city was evacuated, the Host was recovered and safeguarded by the Catholic faithful. Following several investigations, the miraculous relic was presented to King Philip II of Spain in 1594. He placed it in the Royal Monastery of San Lorenzo de El Escorial, near Madrid, where it has been preserved and venerated ever since. The Host, known as the “Sagrada Forma,” remains intact and is solemnly exposed and carried in procession each year on September 29 and October 28, commemorating the miracle.",
+  "scientificEvidence": "The miracle is supported by eyewitness accounts of the bleeding Host, ecclesiastical verification in Holland, and continuous preservation and veneration of the relic at El Escorial.",
+  "significance": "The miracle became a powerful testimony to the Real Presence during the Reformation era, strengthened Catholic devotion, and established El Escorial as a major center of Eucharistic veneration.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Gorkum",
+    "Gorinchem",
+    "El Escorial",
+    "Netherlands",
+    "Spain",
+    "Bleeding Host",
+    "Sagrada Forma",
+    "Real Presence",
+    "Reformation Era"
+  ]
+},
+{
+  "id": "guadalupe-1420",
+  "name": "Eucharistic Miracle of Guadalupe",
+  "location": {
+    "city": "Guadalupe",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 39.4516,
+      "lng": -5.3316
+    },
+    "address": "Sanctuary of Nuestra Señora de Guadalupe, Guadalupe (Extremadura)"
+  },
+  "date": {
+    "year": 1420,
+    "displayDate": "1420"
+  },
+  "type": "Eucharistic Miracle (Bleeding Host and overflowing chalice)",
+  "description": "During Mass, abundant drops of Blood fell from the consecrated Host, filling and overflowing the chalice and staining the corporal and pall.",
+  "narrative": "In 1420, while celebrating Holy Mass in the region of Toledo, the Venerable Don Pedro Cabañuelas—known for his deep devotion and long hours of Eucharistic adoration—was severely tempted by doubts about transubstantiation. At the moment of consecration, a dense cloud descended and settled above the altar, preventing him from seeing. As he implored the Lord to remove his doubts, the cloud gradually lifted to reveal the Host elevated above the chalice. Abundant drops of Blood began to fall, immediately filling the chalice and overflowing onto the corporal and the pall. A voice instructed the priest to end the Mass and to reveal the event to no one for the moment. The miracle was later made public by Don Pedro’s brothers and spread throughout Spain, reaching King Juan II of Castile and Queen Maria of Aragon, who became deeply devoted and asked to be buried near Don Pedro. The blood-stained corporal and pall were later exhibited during the Eucharistic Congress of Toledo in 1926 and are still venerated today at the Sanctuary of Guadalupe.",
+  "scientificEvidence": "Numerous historical documents attest to the event, and the preserved relics—the blood-stained corporal and pall—have been exhibited and venerated publicly, including at the 1926 Eucharistic Congress of Toledo.",
+  "significance": "The miracle strengthened faith in the Real Presence among clergy and laity, inspired royal devotion, and established Guadalupe as a major center of Eucharistic veneration in Spain.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Guadalupe",
+    "Spain",
+    "Bleeding Host",
+    "Overflowing Chalice",
+    "Real Presence",
+    "Royal Devotion",
+    "Corpus Christi"
+  ]
+},
+{
+  "id": "ivorra-1010",
+  "name": "Eucharistic Miracle of Ivorra",
+  "location": {
+    "city": "Ivorra",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.7753,
+      "lng": 1.3947
+    },
+    "address": "Church of San Cugat, Ivorra (Diocese of Urgell)"
+  },
+  "date": {
+    "year": 1010,
+    "displayDate": "1010"
+  },
+  "type": "Eucharistic Miracle (Consecrated wine transformed into Blood)",
+  "description": "During Mass, the wine in the chalice was entirely transformed into living Blood and flowed onto the altar cloth and the ground.",
+  "narrative": "In the year 1010, the parish priest of Ivorra, Bernat Oliver, was troubled by doubts concerning the Real Presence of Christ in the Eucharist, influenced by heretical teachings spreading in Europe at the time. One day, while celebrating Holy Mass, the miracle occurred: the wine contained in the chalice was completely transformed into living Blood and poured out onto the altar cloth, flowing until it reached the ground. Shocked and repentant, the priest informed Saint Ermengol, Bishop of Urgell, who immediately went to Ivorra to investigate. The facts were then reported directly to Pope Sergius IV in Rome. The Pope confirmed the authenticity of the miracle and issued a pontifical bull certifying it as a true Eucharistic miracle. The blood-stained altar cloth and other relics were placed beneath the high altar of the parish church, which was later dedicated to San Cugat and inaugurated in 1055. Over the centuries, devotion to the miracle increased, and to accommodate pilgrims, a new sanctuary was built in 1663. Today, the sacred relics are preserved in a Gothic reliquary from 1426 that contains the blood-stained corporal and additional relics given by Pope Sergius IV to Saint Ermengol. Each year, on the second Sunday of Easter, the faithful celebrate the great feast known as the ‘Santa Duda’ (Holy Doubt), commemorating both the priest’s doubt and the miracle that confirmed the Real Presence.",
+  "scientificEvidence": "The miracle is supported by episcopal investigation, papal confirmation by Pope Sergius IV, preserved blood-stained relics, and continuous historical documentation and veneration spanning more than a millennium.",
+  "significance": "One of the earliest recorded Eucharistic miracles in Europe, Ivorra powerfully affirmed belief in the Real Presence, countered Eucharistic doubt, and established a lasting pilgrimage tradition centered on the ‘Holy Doubt.’",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Ivorra",
+    "Spain",
+    "Bleeding Chalice",
+    "Holy Doubt",
+    "Real Presence",
+    "Saint Ermengol",
+    "Pilgrimage Site",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "moncada-1392",
+  "name": "Eucharistic Miracle of Moncada",
+  "location": {
+    "city": "Moncada",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 39.5456,
+      "lng": -0.3956
+    },
+    "address": "Parish church of Moncada; Monastery of Santa Inés (Inés of Moncada)"
+  },
+  "date": {
+    "year": 1392,
+    "displayDate": "December 26, 1392"
+  },
+  "type": "Eucharistic Miracle (Apparition of the Child Jesus in the Host)",
+  "description": "During Mass, the Child Jesus appeared in the consecrated Host to confirm the validity of a priest’s ordination.",
+  "narrative": "At the end of the 14th century, during the turmoil of the Western Schism, many clergy doubted the validity of their ordinations because of rival papal obediences. In Moncada, the priest Fr. José Jaime Carros, ordained by a bishop aligned with the Avignon obedience, was deeply troubled by doubts about whether his priestly orders were valid. On December 26, 1392, after fervent prayer, he celebrated Mass and consecrated two Hosts. At that moment, the consecrated Host in his hands became visibly luminous, and the Child Jesus appeared within it. Lady Ángela, present at Mass, saw the Child in the priest’s hands; later, the hermit Saint Inés of Moncada was invited to attend Mass the following day. When Fr. Carros again consecrated the Host, the Child Jesus appeared once more. Asked what she saw, Inés replied, “I see a little white child.” The priest and the congregation were overwhelmed with joy, and the miracle was taken as divine confirmation of the priest’s valid ordination. Although an antipope had ordained the bishop, the Church later recognized that apostolic succession had been preserved through the imposition of hands. The event was recorded by Fr. Odorico Raynaldi in his *Annales Ecclesiastici* and in other documents preserved in the archives of Moncada.",
+  "scientificEvidence": "The miracle is supported by contemporaneous eyewitness testimony, historical chronicles (including the Annales Ecclesiastici), and sustained ecclesiastical tradition preserved in Moncada’s archives.",
+  "significance": "The miracle resolved widespread doubts during the Western Schism, reaffirmed confidence in apostolic succession and the Real Presence, and became a defining event in Moncada’s spiritual history.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Moncada",
+    "Spain",
+    "Apparition of Christ",
+    "Child Jesus",
+    "Western Schism",
+    "Real Presence",
+    "Apostolic Succession"
+  ]
+},
+{
+  "id": "montserrat-1657",
+  "name": "Eucharistic Miracle of Montserrat",
+  "location": {
+    "city": "Montserrat",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.5953,
+      "lng": 1.8355
+    },
+    "address": "Sanctuary and Monastery of Our Lady of Montserrat, Catalonia"
+  },
+  "date": {
+    "year": 1657,
+    "displayDate": "1657"
+  },
+  "type": "Eucharistic Miracle (Vision and miraculous sign during Mass)",
+  "description": "During Mass at Montserrat, a girl witnessed visions of purgatory and a miraculous burning of a cloth placed near the altar during the consecration.",
+  "narrative": "In 1657, at the Monastery of Our Lady of Montserrat, the Most Reverend Father Don Bernardo de Ontiveros, General of the Benedictine Order in Spain, and Abbot Don Millán de Miranda were present for a series of Masses offered for the soul of a deceased man. A woman and her young daughter begged the Abbot to celebrate three Masses in memory of the girl’s father, believing that these would free him from the pains of purgatory. During the first Mass, the girl reported seeing her father kneeling amid terrifying flames at the steps of the main altar. During the consecration, the priest and the General, filled with doubt, asked the girl to place a piece of cloth near the flames that appeared to surround her father. When she returned the cloth, it was thrown into the fire and immediately began to burn with a lively flame. During the second Mass, the girl confirmed that her father appeared dressed in a radiant-colored suit standing beside the deacon. At the third Mass, her father appeared dressed in snow-white garments, ascended joyfully into the sky, and disappeared. The girl then thanked the priest for the Masses offered for her father’s soul. The event was later recorded by the Benedictine priest R.P. Francio de Paula Crusellas in his work *New History of the Sanctuary and Monastery of Our Lady of Montserrat* and was witnessed by senior clergy and numerous townspeople.",
+  "scientificEvidence": "The miracle is supported by detailed historical testimony, eyewitness accounts from clergy and laypeople, and written documentation by Benedictine historians preserved in the monastery’s tradition.",
+  "significance": "The miracle reinforced belief in the Real Presence of Christ in the Eucharist, emphasized the efficacy of the Holy Mass for the souls in purgatory, and strengthened Montserrat’s role as a major spiritual center in Spain.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Montserrat",
+    "Spain",
+    "Purgatory",
+    "Holy Mass",
+    "Real Presence",
+    "Benedictine Order",
+    "Vision"
+  ]
+},
+{
+  "id": "ocebreiro-1300",
+  "name": "Eucharistic Miracle of O’Cebreiro",
+  "location": {
+    "city": "O’Cebreiro",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 42.7076,
+      "lng": -7.0406
+    },
+    "address": "Church of Santa María la Real, O’Cebreiro, Galicia"
+  },
+  "date": {
+    "year": 1300,
+    "displayDate": "1300"
+  },
+  "type": "Eucharistic Miracle (Host changed into Flesh and wine into Blood)",
+  "description": "During Mass, the Host changed into Flesh and the wine into Blood, which overflowed from the chalice and stained the corporal.",
+  "narrative": "In the icy winter of the year 1300, a Benedictine priest was celebrating Holy Mass in a small chapel at O’Cebreiro. Seeing a poor farmer, Juan Santín Barxam, arrive exhausted after walking through snow and ice, the priest inwardly doubted the value of celebrating Mass for a single peasant and also doubted the Real Presence of Christ in the Eucharist. Immediately after pronouncing the words of consecration, the Host visibly changed into living Flesh, and the wine in the chalice was transformed into Blood and overflowed, staining the corporal. At that moment, it appeared that even the head of the wooden statue of the Virgin Mary bowed in adoration. The miracle was preserved and widely venerated, and the chalice, paten, and blood-stained corporal are still kept near the church where the miracle occurred. Over the centuries, the event was officially recognized by the Church and confirmed by papal bulls, including those of Pope Innocent III (1487) and Pope Alexander VII (1659). O’Cebreiro became an important stop on the Camino de Santiago, and to this day pilgrims come annually to venerate the sacred relics, especially during Corpus Christi and other feast days.",
+  "scientificEvidence": "The miracle is supported by historical eyewitness testimony, preserved physical relics (chalice, paten, blood-stained corporal), papal bulls confirming the event, and continuous public veneration over seven centuries.",
+  "significance": "One of the most famous Eucharistic miracles in Europe, O’Cebreiro powerfully affirmed belief in the Real Presence and became a major center of pilgrimage along the Camino de Santiago.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "O’Cebreiro",
+    "Spain",
+    "Host Transformed into Flesh",
+    "Bleeding Chalice",
+    "Real Presence",
+    "Camino de Santiago",
+    "Benedictine Order",
+    "Medieval Church"
+  ]
+},
+{
+  "id": "onil-1824",
+  "name": "Eucharistic Miracle of Onil",
+  "location": {
+    "city": "Onil",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 38.6269,
+      "lng": -0.6739
+    },
+    "address": "Church of St. James the Apostle, Onil (Alicante)"
+  },
+  "date": {
+    "year": 1824,
+    "displayDate": "November 5, 1824"
+  },
+  "type": "Eucharistic Miracle (Miraculous preservation of a consecrated Host)",
+  "description": "A stolen consecrated Host was found intact in a field and has remained completely preserved for nearly two centuries.",
+  "narrative": "On November 5, 1824, Nicolás Bernabeu, a former altar boy at the parish church of Onil, stole a pyx containing a consecrated Host along with other sacred objects. The theft caused great alarm among the faithful. Civil authorities searched for the pyx, suspecting it might be hidden in the nearby town of Tibi. Days later, a woman from Tibi named Teresa Carbonell discovered the stolen pyx containing the consecrated Host in the middle of a green field known as “La Pedrera.” She immediately returned it to Onil, where she was received with great celebration. The Host was placed back in the parish church of St. James the Apostle. Exactly 119 years later, on November 28, 1943, Don Guillermo Hijarrubia, delegate of the Archbishop of Valencia, officially confirmed the authenticity of the miracle, verifying the complete and extraordinary preservation of the Host. To this day, despite the passage of nearly two centuries, the consecrated Host has remained perfectly intact and is solemnly venerated in the parish church. Each year, the faithful celebrate the Feast of Our Lord ‘Robat’ (Stolen Lord) in remembrance of the miracle and the recovery of the Host.",
+  "scientificEvidence": "Ecclesiastical verification in 1943 confirmed the complete preservation of the consecrated Host after more than a century, excluding natural causes of decay.",
+  "significance": "The miracle strengthened Eucharistic devotion in the region, affirmed belief in the Real Presence, and remains a living testimony through the continued intact preservation of the Host.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Onil",
+    "Spain",
+    "Preserved Host",
+    "Stolen Pyx",
+    "Real Presence",
+    "19th Century",
+    "Parish Devotion"
+  ]
+},
+{
+  "id": "ponferrada-1533",
+  "name": "Eucharistic Miracle of Ponferrada",
+  "location": {
+    "city": "Ponferrada",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 42.5463,
+      "lng": -6.5962
+    },
+    "address": "Arenal Field area; Church of St. Peter and Church of St. Mary, Ponferrada"
+  },
+  "date": {
+    "year": 1533,
+    "displayDate": "1533"
+  },
+  "type": "Eucharistic Miracle (Miraculous recovery and preservation of consecrated Hosts)",
+  "description": "Stolen consecrated Hosts were recovered intact after miraculous signs of light, doves, and an unmovable tabernacle revealed their location.",
+  "narrative": "In 1533, Juan de Benavente, a devout parishioner of Ponferrada, succumbed to greed and stole the tabernacle containing a precious silver ciborium with numerous consecrated Hosts from his own parish church. When he attempted to throw the wooden tabernacle into the Sil River, it became impossibly heavy, preventing him from casting it into the water. He hid the stolen items at home, but during the night continuous flashes of light emanated from the tabernacle, alarming his wife. Fearing discovery, Juan carried the tabernacle to the Arenal Field and threw it into a dense blackberry patch. In the following days, eyewitnesses reported intense flashes of light at night and strange doves hovering over the area by day. During local festivities, crossbowmen failed to strike the doves, and the miller Nogaledo ventured into the brambles, where he discovered the tabernacle and consecrated Hosts, from which the light originated. He immediately alerted the town, church bells rang, and a solemn procession returned the Hosts to the church. Overcome with remorse, Juan confessed his crime. A chapel was built at the place of discovery, and in 1570 the parish priest expanded the shrine and instituted an annual solemn procession on the eighth day after the Feast of Corpus Christi in memory of the miracle.",
+  "scientificEvidence": "The miracle is documented through contemporaneous eyewitness testimony, ecclesiastical records, and the enduring signs reported at the recovery site, including the intact condition of the Hosts and sustained public devotion.",
+  "significance": "The event deepened Eucharistic devotion in Ponferrada, affirmed belief in the Real Presence, and established a lasting tradition of annual processions and pilgrimage centered on the recovered Hosts.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Ponferrada",
+    "Spain",
+    "Preserved Hosts",
+    "Miraculous Signs",
+    "Real Presence",
+    "Corpus Christi",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "sant-joan-de-les-abadesses-1251",
+  "name": "Eucharistic Miracle of Saint John of the Abbesses",
+  "location": {
+    "city": "Sant Joan de les Abadesses",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 42.2339,
+      "lng": 2.2856
+    },
+    "address": "Monastery of Saint John of the Abbesses, Catalonia"
+  },
+  "date": {
+    "year": 1251,
+    "displayDate": "1251"
+  },
+  "type": "Eucharistic Miracle (Miraculous preservation of a Host embedded in a crucifix)",
+  "description": "A consecrated Host placed inside the forehead of a wooden crucifix in 1251 was found perfectly preserved nearly two centuries later.",
+  "narrative": "In the Pyrenean region of Catalonia, Count Vifred founded a monastery in 887, around which the village of Sant Joan de les Abadesses soon developed. In 1251, wooden sculptures depicting the deposition of Jesus from the Cross were carved for the monastery church. When the crucifix of Christ was created, the artist intentionally made a circular cavity in the forehead of Jesus, approximately two and a half inches in diameter, with the idea of preserving the Eucharist inside. That same year, a consecrated Host was placed within the cavity, though over time the memory of this act was lost. In 1426, during restoration work on the statues, the cavity in the forehead was rediscovered, sealed with a small silver plaque. Inside, wrapped in a white linen cloth, was the consecrated Host from 1251, found completely intact and uncorrupted. From that moment on, the Host—known as “The Most Holy Mystery of Saint John of the Abbesses”—has been solemnly adored and venerated by pilgrims. The crucifix and the miraculous Host survived the destruction of the Spanish Civil War in 1936 and continue to inspire devotion through their striking realism and enduring preservation.",
+  "scientificEvidence": "The miracle is supported by the rediscovery in 1426 of a consecrated Host preserved intact for nearly 175 years, documented by ecclesiastical records and continuous veneration.",
+  "significance": "The miracle affirmed belief in the Real Presence, established Sant Joan de les Abadesses as a pilgrimage site, and remains a powerful witness through the extraordinary long-term preservation of the Host.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Saint John of the Abbesses",
+    "Sant Joan de les Abadesses",
+    "Spain",
+    "Preserved Host",
+    "Crucifix",
+    "Real Presence",
+    "Medieval Church",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "silla-1907",
+  "name": "Eucharistic Miracle of Silla",
+  "location": {
+    "city": "Silla",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 39.3639,
+      "lng": -0.4136
+    },
+    "address": "Church of Our Lady of the Angels, Silla (Valencia)"
+  },
+  "date": {
+    "year": 1907,
+    "displayDate": "March 25, 1907"
+  },
+  "type": "Eucharistic Miracle (Miraculous preservation of consecrated Hosts)",
+  "description": "Stolen consecrated Hosts were recovered hidden under a stone and found perfectly preserved without corruption.",
+  "narrative": "On March 25, 1907, the Feast of the Annunciation, during the celebration of Holy Mass at the church of Our Lady of the Angels in Silla, Spain, the pastor Don Gerardo Gómez noticed that the tabernacle door had been forced open and that the ciborium containing the consecrated Hosts was missing. Two days later, the Sacred Species were discovered in a small garden outside the city, hidden under a stone. The pastor immediately returned the Hosts to the church in a solemn procession. Despite having been exposed to moisture, earth, and the elements, the Hosts were found to be in perfect condition. Years later, when it became evident that the Hosts had remained completely unchanged, the Archbishop of Valencia initiated a canonical investigation. In 1934, recognizing that the Hosts were still exactly as they had been found, the Archbishop officially declared their preservation to be miraculous and ordered the reliquary sealed with wax. Although the archbishop’s residence and documentation were destroyed during later persecutions, the Sacred Hosts themselves survived and continue to be preserved and adored in the church of Our Lady of the Angels. Even today, the faithful can venerate the incorrupt Hosts, which have remained intact for more than a century.",
+  "scientificEvidence": "Ecclesiastical investigation confirmed the extraordinary preservation of the consecrated Hosts over decades despite exposure to natural elements, excluding normal causes of decay.",
+  "significance": "The miracle strengthened Eucharistic devotion in the region of Valencia, reaffirmed belief in the Real Presence, and remains a living testimony through the continued intact preservation of the Hosts.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Silla",
+    "Spain",
+    "Preserved Hosts",
+    "Stolen Hosts",
+    "Real Presence",
+    "20th Century",
+    "Parish Devotion"
+  ]
+},
+{
+  "id": "valencia-holy-grail",
+  "name": "The Holy Chalice of Valencia (Holy Grail)",
+  "location": {
+    "city": "Valencia",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 39.4749,
+      "lng": -0.3750
+    },
+    "address": "Cathedral of Valencia, Chapel of the Santo Cáliz"
+  },
+  "date": {
+    "year": 1437,
+    "displayDate": "Traditionally 1st century; documented in Valencia since 1437"
+  },
+  "type": "Eucharistic Relic (Holy Chalice of the Last Supper)",
+  "description": "The chalice venerated in Valencia Cathedral is traditionally identified as the cup used by Jesus at the Last Supper to consecrate the Eucharistic wine.",
+  "narrative": "The Holy Chalice of Valencia—often identified with the Holy Grail—is the cup traditionally believed to have been used by Jesus at the Last Supper to consecrate the Eucharistic wine. Early testimonies report that the chalice was venerated by Christian pilgrims in Jerusalem centuries after Christ; the pilgrim-bishop Arculf (c. 720) describes the chalice preserved in the Church of the Holy Sepulcher, while the Venerable Bede notes it was protected by a net and could be kissed through an opening. Though the precise moment of its departure from Jerusalem is unknown, tradition suggests an early transfer, possibly as early as the seventh century. By the fifteenth century the chalice was received and formally documented in Valencia (1437). Today it is kept in the Gothic Chapel of the Santo Cáliz in Valencia Cathedral and is shown for the veneration of the faithful. The object is composed of distinct elements from different periods: an ancient upper cup of cornelian, a stem adorned with precious stones, and a base formed from an inverted cornelian vessel. The upper cup is considered the oldest and most significant component. The Holy Chalice has been publicly venerated by popes, including Saint John Paul II, and remains a focal point of Eucharistic devotion.",
+  "scientificEvidence": "Historical testimonies (Arculf, Bede), documentary records of custody and transfer, material analysis indicating components from different eras, and continuous ecclesiastical veneration support the tradition surrounding the chalice.",
+  "significance": "As a revered Eucharistic relic identified by tradition with the cup of the Last Supper, the Holy Chalice of Valencia occupies a central place in Christian devotion to the Eucharist and the history of the Holy Grail tradition.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Relic",
+    "Holy Grail",
+    "Holy Chalice",
+    "Valencia",
+    "Spain",
+    "Last Supper",
+    "Real Presence",
+    "Pilgrimage Site"
+  ]
+},
+{
+  "id": "zaragoza-1427",
+  "name": "Eucharistic Miracle of Zaragoza",
+  "location": {
+    "city": "Zaragoza",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 41.6488,
+      "lng": -0.8891
+    },
+    "address": "Cathedral of the See (La Seo), Chapel of San Dominguito del Val, Zaragoza"
+  },
+  "date": {
+    "year": 1427,
+    "displayDate": "1427"
+  },
+  "type": "Eucharistic Miracle (Apparition of the Child Jesus in the Host)",
+  "description": "A consecrated Host stolen for a superstition manifested as the Baby Jesus, unharmed by fire, and later returned to the Eucharistic species during Mass.",
+  "narrative": "In 1427, in Zaragoza, a married woman sought a Moorish sorcerer to obtain a charm to soften her husband’s violent behavior. The sorcerer demanded a consecrated Host. The woman went to the church of Saint Michael, confessed, received Holy Communion, and deceitfully removed the Host from her mouth, hiding it in a small coffer. When the coffer was opened, instead of the Host there appeared a little Baby surrounded by light. Terrified, the sorcerer instructed her to burn the Eucharist and bring him the ashes. The woman burned the coffer, but though it was completely consumed, the Baby remained unharmed. Stricken with fear, both went to inform Bishop Don Alonso Arhuello, confessing their sin and seeking baptism. After consulting prelates and theologians, the bishop ordered a solemn procession carrying the Miraculous Baby from the woman’s house to the cathedral. The entire city accompanied the procession. The Baby was placed on the altar of the chapel of Saint Valerio so the faithful could venerate Him. The following day, while the bishop celebrated Mass at the same altar, at the words of consecration the Baby disappeared and a Host appeared in His place, which the bishop immediately consumed. Documents describing the miracle are preserved in the town hall archives, and an ancient painting near the chapel of San Dominguito del Val in the Cathedral of the See depicts the event.",
+  "scientificEvidence": "The miracle is documented by a contemporaneous written report by the archdeacon Don Dorner, episcopal inquiry, preserved civic records, and enduring iconographic evidence within the cathedral.",
+  "significance": "The miracle renewed Eucharistic devotion in Zaragoza, led to citywide veneration, and remains commemorated through archival documentation and sacred art affirming belief in the Real Presence.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Zaragoza",
+    "Spain",
+    "Apparition of Christ",
+    "Child Jesus",
+    "Real Presence",
+    "Medieval Church",
+    "Cathedral of the See"
+  ]
 }
 ]
