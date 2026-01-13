@@ -123,7 +123,7 @@ export default function Home() {
             <div className="h-60 relative overflow-hidden">
               {/* Lourdes Grotto from Wikimedia Commons */}
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Grotte_de_Massabielle_01.jpg/800px-Grotte_de_Massabielle_01.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
                 alt="Lourdes Grotto"
                 className="w-full h-full object-cover"
               />
@@ -203,7 +203,6 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-6xl mb-2 drop-shadow-lg">😇</div>
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Shrines of Saints
                 </h3>
