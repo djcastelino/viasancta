@@ -79,14 +79,14 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
-                {/* Monstrance from Wikimedia Commons */}
+                {/* Eucharistic Adoration from Wikimedia Commons */}
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Monstranz_in_St._Gereon%2C_K%C3%B6ln-7443.jpg/800px-Monstranz_in_St._Gereon%2C_K%C3%B6ln-7443.jpg"
-                  alt="Golden monstrance with Eucharist"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Simala_Cebu_Adoration_2024-07-06.jpg/800px-Simala_Cebu_Adoration_2024-07-06.jpg"
+                  alt="Eucharistic Adoration"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                {/* Gradient overlay for text */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                {/* Lighter gradient overlay for text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-3xl font-bold drop-shadow-md">
@@ -126,7 +126,7 @@ export default function Home() {
                 alt="Lourdes Grotto"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Marian Apparitions
@@ -162,7 +162,7 @@ export default function Home() {
                 alt="Calvary at Burzet"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Stations of the Cross
@@ -198,7 +198,7 @@ export default function Home() {
                 alt="Saints in St. Stephen's Basilica Budapest"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Shrines of Saints
@@ -234,7 +234,7 @@ export default function Home() {
                 alt="Sagrada Familia Barcelona"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Sacred Architecture
@@ -270,7 +270,7 @@ export default function Home() {
                 alt="Jerusalem Dome of the Rock"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Biblical Sites
