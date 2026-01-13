@@ -79,9 +79,9 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
-                {/* Placeholder: Use Unsplash URL or local image */}
+                {/* Monstrance from Wikimedia Commons */}
                 <img 
-                  src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Monstranz_in_St._Gereon%2C_K%C3%B6ln-7443.jpg/800px-Monstranz_in_St._Gereon%2C_K%C3%B6ln-7443.jpg"
                   alt="Golden monstrance with Eucharist"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
@@ -121,9 +121,9 @@ export default function Home() {
           {/* Marian Apparitions */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Lourdes Grotto - actual apparition site */}
+              {/* Lourdes Grotto from Wikimedia Commons */}
               <img 
-                src="https://images.unsplash.com/photo-1583829893113-9e03c45fc7d9?w=800&q=80"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Grotte_de_Massabielle_01.jpg/800px-Grotte_de_Massabielle_01.jpg"
                 alt="Lourdes Grotto"
                 className="w-full h-full object-cover"
               />
@@ -158,10 +158,10 @@ export default function Home() {
           {/* Stations of the Cross */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Via Dolorosa Jerusalem - actual path Jesus walked */}
+              {/* Via Dolorosa Jerusalem from Wikimedia Commons */}
               <img 
-                src="https://images.unsplash.com/photo-1565552645632-d725f53511e2?w=800&q=80"
-                alt="Via Dolorosa Jerusalem"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Jerusalem_Oesterreichisches_Hospiz_Dachterrasse_Blick_auf_die_Altstadt_8.JPG/800px-Jerusalem_Oesterreichisches_Hospiz_Dachterrasse_Blick_auf_die_Altstadt_8.JPG"
+                alt="Via Dolorosa Jerusalem Old City"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -195,9 +195,9 @@ export default function Home() {
           {/* Shrines of Saints */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* St. Peter's Basilica - tomb of St. Peter */}
+              {/* St. Peter's Basilica from Wikimedia Commons */}
               <img 
-                src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&q=80"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Saint_Peter%27s_Basilica_-_Interior.jpg/800px-Saint_Peter%27s_Basilica_-_Interior.jpg"
                 alt="St. Peter's Basilica interior"
                 className="w-full h-full object-cover"
               />
@@ -232,10 +232,10 @@ export default function Home() {
           {/* Sacred Architecture */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Sagrada Familia Barcelona - iconic sacred architecture */}
+              {/* Sagrada Familia from Wikimedia Commons */}
               <img 
-                src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80"
-                alt="Sagrada Familia Barcelona"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Sagrada_Familia_nave_roof_detail.jpg/800px-Sagrada_Familia_nave_roof_detail.jpg"
+                alt="Sagrada Familia Barcelona interior"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -269,10 +269,10 @@ export default function Home() {
           {/* Biblical Sites */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Dome of the Rock Jerusalem - iconic Holy Land site */}
+              {/* Jerusalem Old City from Wikimedia Commons */}
               <img 
-                src="https://images.unsplash.com/photo-1564657878051-1bf0afde49ab?w=800&q=80"
-                alt="Jerusalem Old City"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/View_of_the_Temple_Mount_and_Dome_of_the_Rock%2C_Jerusalem.jpg/800px-View_of_the_Temple_Mount_and_Dome_of_the_Rock%2C_Jerusalem.jpg"
+                alt="Jerusalem Old City with Dome of the Rock"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
