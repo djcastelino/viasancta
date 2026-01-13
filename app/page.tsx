@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const metadata = {
   title: 'Divine Pilgrim - Virtual Sacred Pilgrimages',
   description: 'Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.',
@@ -242,6 +244,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8 px-5">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex justify-center gap-6 mb-4 text-sm">
+            <Link href="/about" className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors">
+              About
+            </Link>
+            <a 
+              href="https://www.miracolieucaristici.org" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
+            >
+              Carlo Acutis Exhibition
+            </a>
+            <a 
+              href="mailto:info@divinepilgrim.com"
+              className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
+            >
+              Contact
+            </a>
+          </div>
+          <p className="text-gray-600 text-sm">
+            Made with 🙏 for pilgrims worldwide
+          </p>
+          <p className="text-gray-500 text-xs mt-2">
+            Inspired by Blessed Carlo Acutis
+          </p>
+        </div>
+      </footer>
     </main>
   )
 }
