@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import miracles from '@/src/eucharistic-miracles.json';
 
 export const metadata = {
   title: 'Divine Pilgrim - Virtual Sacred Pilgrimages',
@@ -38,10 +39,10 @@ export default function Home() {
             <div className="text-center">
               <div className="text-5xl mb-4">🗺️</div>
               <h3 className="text-xl text-[#2C5F87] font-semibold mb-2">
-                Street View Tours
+                Curated Maps
               </h3>
               <p className="text-gray-600 text-sm">
-                Virtually visit sacred sites with Google Street View integration
+                Explore sacred sites with curated photos, map pins, and external Google Maps links
               </p>
             </div>
             <div className="text-center">
@@ -56,7 +57,7 @@ export default function Home() {
             <div className="text-center">
               <div className="text-5xl mb-4">✝️</div>
               <h3 className="text-xl text-[#2C5F87] font-semibold mb-2">
-                Curated Content
+                Authentic Content
               </h3>
               <p className="text-gray-600 text-sm">
                 Based on St. Carlo Acutis's research and official Church sources
@@ -72,44 +73,66 @@ export default function Home() {
           Sacred Pilgrimage Tours
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
           {/* Eucharistic Miracles */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-            <div className="h-60 bg-gradient-to-br from-[#193d52] to-[#325847] flex flex-col items-center justify-center gap-4 relative overflow-hidden">
-              <div className="text-7xl relative z-10 drop-shadow-lg">⚪</div>
-              <h3 className="text-3xl text-white font-semibold relative z-10 drop-shadow-md">
-                Eucharistic Miracles
-              </h3>
-            </div>
-            <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">11</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~6 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
+          <Link href="/tours/eucharistic-miracles" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              {/* Hero Image Section */}
+              <div className="h-60 relative overflow-hidden">
+                {/* Placeholder: Use Unsplash URL or local image */}
+                <img 
+                  src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?w=800&q=80"
+                  alt="Golden monstrance with Eucharist"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                {/* Gradient overlay for text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                {/* Title overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-6xl mb-2 drop-shadow-lg">⚪</div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Eucharistic Miracles
+                  </h3>
                 </div>
               </div>
-              <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Journey through documented Eucharistic miracles from around the world, based on St. Carlo Acutis's research. Explore scientific evidence and profound testimonies of faith.
-              </p>
-              <a
-                href="/tours/eucharistic-miracles"
-                className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors"
-              >
-                Start Tour →
-              </a>
+              
+              {/* Content */}
+              <div className="p-7">
+                <div className="flex gap-6 mb-5">
+                  <div>
+                    <div className="text-3xl font-bold text-[#D4AF37]">{miracles.length}</div>
+                    <div className="text-sm text-gray-500">Sacred Stops</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-[#D4AF37]">~6 hours</div>
+                    <div className="text-sm text-gray-500">Estimated Time</div>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Journey through documented Eucharistic miracles from around the world, based on St. Carlo Acutis's research.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Marian Apparitions */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer opacity-70">
-            <div className="h-60 bg-gradient-to-br from-[#2d5fa8] to-[#524aaa] flex flex-col items-center justify-center gap-4">
-              <div className="text-7xl drop-shadow-lg">⭐</div>
-              <h3 className="text-3xl text-white font-semibold drop-shadow-md">
-                Marian Apparitions
-              </h3>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?w=800&q=80"
+                alt="Statue of Mary against sunset sky"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-6xl mb-2 drop-shadow-lg">⭐</div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Marian Apparitions
+                </h3>
+              </div>
             </div>
             <div className="p-7">
               <div className="flex gap-6 mb-5">
@@ -123,7 +146,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Visit sites of Church-approved Marian apparitions. From Lourdes to Fatima, discover where Our Lady appeared with messages of peace and prayer.
+                Visit sites of Church-approved Marian apparitions. From Lourdes to Fatima, discover where Our Lady appeared.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
@@ -132,12 +155,20 @@ export default function Home() {
           </div>
 
           {/* Stations of the Cross */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer opacity-70">
-            <div className="h-60 bg-gradient-to-br from-[#5e3159] to-[#692f15] flex flex-col items-center justify-center gap-4">
-              <div className="text-7xl drop-shadow-lg">✝️</div>
-              <h3 className="text-3xl text-white font-semibold drop-shadow-md">
-                Stations of the Cross
-              </h3>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&q=80"
+                alt="Cross silhouette at sunset"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-6xl mb-2 drop-shadow-lg">✝️</div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Stations of the Cross
+                </h3>
+              </div>
             </div>
             <div className="p-7">
               <div className="flex gap-6 mb-5">
@@ -151,7 +182,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Walk the Way of the Cross with meditative reflections on Christ's Passion. Experience the 14 traditional stations with AI-guided contemplation.
+                Walk the Way of the Cross with meditative reflections on Christ's Passion and AI-guided contemplation.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
@@ -160,12 +191,20 @@ export default function Home() {
           </div>
 
           {/* Shrines of Saints */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer opacity-70">
-            <div className="h-60 bg-gradient-to-br from-[#b8921c] to-[#9e7d18] flex flex-col items-center justify-center gap-4">
-              <div className="text-7xl drop-shadow-lg">😇</div>
-              <h3 className="text-3xl text-white font-semibold drop-shadow-md">
-                Shrines of Saints
-              </h3>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1584547128754-5fa055f7aa39?w=800&q=80"
+                alt="Beautiful cathedral interior with light"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-6xl mb-2 drop-shadow-lg">😇</div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Shrines of Saints
+                </h3>
+              </div>
             </div>
             <div className="p-7">
               <div className="flex gap-6 mb-5">
@@ -179,7 +218,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Pilgrimage to the resting places of beloved saints. Visit the tombs and shrines of St. Peter, St. Francis, St. Therese, and many more.
+                Pilgrimage to the resting places of beloved saints. Visit the tombs and shrines of St. Peter, St. Francis, and more.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
@@ -188,12 +227,20 @@ export default function Home() {
           </div>
 
           {/* Sacred Architecture */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer opacity-70">
-            <div className="h-60 bg-gradient-to-br from-[#56442f] to-[#6a5540] flex flex-col items-center justify-center gap-4">
-              <div className="text-7xl drop-shadow-lg">⛪</div>
-              <h3 className="text-3xl text-white font-semibold drop-shadow-md">
-                Sacred Architecture
-              </h3>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&q=80"
+                alt="Stunning church exterior with architectural details"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-6xl mb-2 drop-shadow-lg">⛪</div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Sacred Architecture
+                </h3>
+              </div>
             </div>
             <div className="p-7">
               <div className="flex gap-6 mb-5">
@@ -207,7 +254,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Tour the world's most magnificent churches and basilicas. From St. Peter's in Rome to Sagrada Família in Barcelona, explore stunning sacred spaces.
+                Tour the world's most magnificent churches and basilicas. From St. Peter's to Sagrada Família.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
@@ -216,12 +263,20 @@ export default function Home() {
           </div>
 
           {/* Biblical Sites */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer opacity-70">
-            <div className="h-60 bg-gradient-to-br from-[#3e6d7e] to-[#4d8a96] flex flex-col items-center justify-center gap-4">
-              <div className="text-7xl drop-shadow-lg">📖</div>
-              <h3 className="text-3xl text-white font-semibold drop-shadow-md">
-                Biblical Sites
-              </h3>
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+                alt="Jerusalem landscape at golden hour"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-6xl mb-2 drop-shadow-lg">📖</div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Biblical Sites
+                </h3>
+              </div>
             </div>
             <div className="p-7">
               <div className="flex gap-6 mb-5">
@@ -235,7 +290,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Walk where Jesus walked in the Holy Land. Visit Jerusalem, Bethlehem, Nazareth, and other sacred biblical locations with rich historical context.
+                Walk where Jesus walked in the Holy Land. Visit Jerusalem, Bethlehem, Nazareth, and more.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
