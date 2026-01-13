@@ -121,9 +121,10 @@ export default function Home() {
           {/* Marian Apparitions */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
+              {/* Lourdes Grotto - actual apparition site */}
               <img 
-                src="https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?w=800&q=80"
-                alt="Statue of Mary against sunset sky"
+                src="https://images.unsplash.com/photo-1583829893113-9e03c45fc7d9?w=800&q=80"
+                alt="Lourdes Grotto"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -157,9 +158,10 @@ export default function Home() {
           {/* Stations of the Cross */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
+              {/* Via Dolorosa Jerusalem - actual path Jesus walked */}
               <img 
-                src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=800&q=80"
-                alt="Cross silhouette at sunset"
+                src="https://images.unsplash.com/photo-1565552645632-d725f53511e2?w=800&q=80"
+                alt="Via Dolorosa Jerusalem"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -193,9 +195,10 @@ export default function Home() {
           {/* Shrines of Saints */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
+              {/* St. Peter's Basilica - tomb of St. Peter */}
               <img 
-                src="https://images.unsplash.com/photo-1584547128754-5fa055f7aa39?w=800&q=80"
-                alt="Beautiful cathedral interior with light"
+                src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&q=80"
+                alt="St. Peter's Basilica interior"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -229,9 +232,10 @@ export default function Home() {
           {/* Sacred Architecture */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
+              {/* Sagrada Familia Barcelona - iconic sacred architecture */}
               <img 
-                src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&q=80"
-                alt="Stunning church exterior with architectural details"
+                src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80"
+                alt="Sagrada Familia Barcelona"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -265,9 +269,10 @@ export default function Home() {
           {/* Biblical Sites */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
+              {/* Dome of the Rock Jerusalem - iconic Holy Land site */}
               <img 
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
-                alt="Jerusalem landscape at golden hour"
+                src="https://images.unsplash.com/photo-1564657878051-1bf0afde49ab?w=800&q=80"
+                alt="Jerusalem Old City"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -309,13 +314,13 @@ export default function Home() {
             </Link>
             <a 
               href="https://www.miracolieucaristici.org" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
             >
               Carlo Acutis Exhibition
-            </a>
-            <a 
+          </a>
+          <a
               href="mailto:info@divinepilgrim.com"
               className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
             >
@@ -330,6 +335,6 @@ export default function Home() {
           </p>
         </div>
       </footer>
-    </main>
+      </main>
   )
 }
