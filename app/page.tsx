@@ -234,8 +234,8 @@ export default function Home() {
             <div className="h-60 relative overflow-hidden">
               {/* Sagrada Familia from Wikimedia Commons */}
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Sagrada_Familia_nave_roof_detail.jpg/800px-Sagrada_Familia_nave_roof_detail.jpg"
-                alt="Sagrada Familia Barcelona interior"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg/800px-Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg"
+                alt="Sagrada Familia Barcelona"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
