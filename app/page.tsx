@@ -195,10 +195,10 @@ export default function Home() {
           {/* Shrines of Saints */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* St. Peter's Basilica from Wikimedia Commons */}
+              {/* St. Stephen's Basilica Budapest from Wikimedia Commons */}
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Saint_Peter%27s_Basilica_-_Interior.jpg/800px-Saint_Peter%27s_Basilica_-_Interior.jpg"
-                alt="St. Peter's Basilica interior"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Saint_Andrew%2C_Saint_Peter_and_Jesus_Christ_blessing%2C_St._Stephen%27s_Basilica%2C_2016_Budapest.jpg/800px-Saint_Andrew%2C_Saint_Peter_and_Jesus_Christ_blessing%2C_St._Stephen%27s_Basilica%2C_2016_Budapest.jpg"
+                alt="Saints in St. Stephen's Basilica Budapest"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
