@@ -89,7 +89,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="text-6xl mb-2 drop-shadow-lg">⚪</div>
                   <h3 className="text-3xl font-bold drop-shadow-md">
                     Eucharistic Miracles
                   </h3>
@@ -129,7 +128,6 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-6xl mb-2 drop-shadow-lg">⭐</div>
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Marian Apparitions
                 </h3>
@@ -158,15 +156,14 @@ export default function Home() {
           {/* Stations of the Cross */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Via Dolorosa Jerusalem from Wikimedia Commons */}
+              {/* Calvary at Burzet from Wikimedia Commons */}
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Jerusalem_Oesterreichisches_Hospiz_Dachterrasse_Blick_auf_die_Altstadt_8.JPG/800px-Jerusalem_Oesterreichisches_Hospiz_Dachterrasse_Blick_auf_die_Altstadt_8.JPG"
-                alt="Via Dolorosa Jerusalem Old City"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_calvaire_%C3%A0_Burzet.jpg/800px-Le_calvaire_%C3%A0_Burzet.jpg"
+                alt="Calvary at Burzet"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-6xl mb-2 drop-shadow-lg">✝️</div>
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Stations of the Cross
                 </h3>
@@ -239,7 +236,6 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-6xl mb-2 drop-shadow-lg">⛪</div>
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Sacred Architecture
                 </h3>
@@ -268,15 +264,14 @@ export default function Home() {
           {/* Biblical Sites */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Jerusalem Old City from Wikimedia Commons */}
+              {/* Jerusalem Dome of the Rock from Wikimedia Commons */}
               <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/View_of_the_Temple_Mount_and_Dome_of_the_Rock%2C_Jerusalem.jpg/800px-View_of_the_Temple_Mount_and_Dome_of_the_Rock%2C_Jerusalem.jpg"
-                alt="Jerusalem Old City with Dome of the Rock"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jerusalem-2013%282%29-View_of_the_Dome_of_the_Rock_%26_Temple_Mount_02.jpg/800px-Jerusalem-2013%282%29-View_of_the_Dome_of_the_Rock_%26_Temple_Mount_02.jpg"
+                alt="Jerusalem Dome of the Rock"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-6xl mb-2 drop-shadow-lg">📖</div>
                 <h3 className="text-3xl font-bold drop-shadow-md">
                   Biblical Sites
                 </h3>
