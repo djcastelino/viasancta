@@ -118,7 +118,7 @@ export default function Home() {
           </Link>
 
           {/* Marian Apparitions */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
               {/* Lourdes Grotto from Wikimedia Commons */}
               <img 
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
 
           {/* Stations of the Cross */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
               {/* Calvary at Burzet from Wikimedia Commons */}
               <img 
@@ -190,7 +190,7 @@ export default function Home() {
           </div>
 
           {/* Shrines of Saints */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
               {/* St. Stephen's Basilica Budapest from Wikimedia Commons */}
               <img 
@@ -226,7 +226,7 @@ export default function Home() {
           </div>
 
           {/* Sacred Architecture */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
               {/* Sagrada Familia from Wikimedia Commons */}
               <img 
@@ -262,7 +262,7 @@ export default function Home() {
           </div>
 
           {/* Biblical Sites */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-70 cursor-pointer">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
               {/* Jerusalem Dome of the Rock from Wikimedia Commons */}
               <img 
