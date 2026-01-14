@@ -79,10 +79,10 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
-                {/* Eucharistic Adoration from Wikimedia Commons */}
+                {/* Gemini-generated Sacred Heart image */}
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Simala_Cebu_Adoration_2024-07-06.jpg/800px-Simala_Cebu_Adoration_2024-07-06.jpg"
-                  alt="Eucharistic Adoration"
+                  src="/images/tours/eucharistic-hero.png"
+                  alt="Sacred Heart with rays of light over landscape"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Lighter gradient overlay for text */}
