@@ -4761,5 +4761,285 @@
     "Medical Examination",
     "Mystical Experience"
   ]
+},
+{
+  "id": "calanda-1640",
+  "name": "Eucharistic Miracle of Calanda",
+  "location": {
+    "city": "Calanda",
+    "country": "Spain",
+    "coordinates": {
+      "lat": 40.9417,
+      "lng": -0.2333
+    },
+    "address": "Sanctuary of the Virgin of Pilar, Zaragoza (associated site); Calanda (place of the miracle)"
+  },
+  "date": {
+    "year": 1640,
+    "displayDate": "March 1640"
+  },
+  "type": "Eucharistic Miracle (Miraculous restoration of an amputated limb)",
+  "description": "Miguel-Juan Pellicer miraculously recovered his amputated right leg after years of Eucharistic devotion and prayer to the Virgin of Pilar.",
+  "narrative": "Miguel-Juan Pellicer was born in 1617 to a poor farming family in Calanda, Spain. At the age of nineteen, while working in the fields near Castellón de la Plana, he fell beneath a wagon loaded with grain, and its wheels crushed his right leg. After being taken to a hospital in Valencia, he left to make a painful journey toward Zaragoza, hoping to obtain healing through devotion to the Virgin of Pilar. Upon arriving in Zaragoza in October 1637, weakened and feverish, he confessed, received the Holy Eucharist, and was admitted to the Royal Hospital of Grace. Due to advanced gangrene, doctors amputated his right leg below the knee, cauterizing it with red-hot metal. The severed limb was buried in the hospital cemetery by the practitioner Juan Lorenzo García. For years afterward, Miguel-Juan lived as a beggar near the Sanctuary of the Virgin of Pilar, attending Mass daily, praying fervently before the Blessed Sacrament, and rubbing his mutilated leg with oil from the tabernacle lamp. In March 1640, after a night vigil in honor of the Virgin, he returned to his parents’ home in Calanda. While he slept, his mother discovered that he now had two legs. The amputated limb had been miraculously restored, pale and smaller in size but fully alive and functional. Eyewitnesses confirmed that Miguel-Juan could walk normally. A canonical investigation was immediately opened and presided over by the Archbishop of Zaragoza, who formally declared that the restoration of the leg was not a natural event but a true miracle.",
+  "scientificEvidence": "The miracle was verified through sworn eyewitness testimony, medical records of the amputation, burial of the limb, and a formal canonical process documented in a notarized act dated April 2, 1640.",
+  "significance": "Known as the “Miracle of All Miracles,” Calanda stands as one of the most thoroughly documented physical miracles in Church history, highlighting the power of the Eucharist and Marian intercession.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Eucharistic Miracle",
+    "Calanda",
+    "Spain",
+    "Miguel-Juan Pellicer",
+    "Miraculous Healing",
+    "Restored Limb",
+    "Virgin of Pilar",
+    "Real Presence",
+    "17th Century",
+    "Canonical Process"
+  ]
+},
+{
+  "id": "fatima-angel-of-peace-1916",
+  "name": "Eucharistic Apparitions of the Angel of Peace",
+  "location": {
+    "city": "Fatima",
+    "country": "Portugal",
+    "coordinates": {
+      "lat": 39.6256,
+      "lng": -8.6711
+    },
+    "address": "Valinhos and Loca do Cabeço, near Fatima"
+  },
+  "date": {
+    "year": 1916,
+    "displayDate": "1916"
+  },
+  "type": "Eucharistic Apparition (Angelic Communion)",
+  "description": "An angel appeared three times to the shepherd children of Fatima and gave them Holy Communion from a Host dripping Blood into a chalice.",
+  "narrative": "In 1916, one year before the Marian apparitions of Fatima, three shepherd children—Lucia dos Santos and her cousins Francisco and Jacinta Marto—were visited three times by an angel who identified himself as the Angel of Peace and the Guardian Angel of Portugal. During the first apparition at Loca do Cabeço, the angel appeared as a young man of brilliant light and taught the children prayers of adoration and reparation, urging them to offer sacrifices for sinners. During the second apparition, the angel encouraged perseverance in prayer and sacrifice, explaining that the Hearts of Jesus and Mary were attentive to their supplications. The third apparition, depicted vividly in the images on pages 1–3, was explicitly Eucharistic: the angel appeared holding a chalice suspended in the air, with a Host above it from which drops of Blood fell into the chalice. Leaving the chalice and Host suspended, the angel knelt and led the children in a profound Trinitarian prayer of Eucharistic reparation. He then gave Holy Communion to Lucia under the form of the Host, while Francisco and Jacinta, who had not yet made their First Communion, received the contents of the chalice. The angel instructed them to ‘Eat and drink the Body and Blood of Jesus Christ terribly outraged by the ingratitude of men’ and urged them to offer reparation and console God. After this, the angel disappeared, leaving the children strengthened spiritually and prepared for the apparitions of Our Lady in 1917.",
+  "scientificEvidence": "The events are supported by the later written testimony of Sister Lucia, preserved ecclesiastical records, and consistent devotional tradition, rather than physical scientific analysis.",
+  "significance": "These Eucharistic apparitions uniquely prepared the children of Fatima for the Marian revelations and stand as one of the clearest angelic testimonies to the Real Presence and Eucharistic reparation in modern history.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Angel of Peace",
+    "Fatima",
+    "Portugal",
+    "Eucharistic Apparition",
+    "Angelic Communion",
+    "Real Presence",
+    "Reparation",
+    "20th Century",
+    "Lucia dos Santos",
+    "Francisco and Jacinta Marto"
+  ]
+},
+{
+  "id": "guadalupe-mexico-1531",
+  "name": "Eucharistic Sign of Our Lady of Guadalupe",
+  "location": {
+    "city": "Mexico City",
+    "country": "Mexico",
+    "coordinates": {
+      "lat": 19.4849,
+      "lng": -99.1170
+    },
+    "address": "Hill of Tepeyac, Basilica of Our Lady of Guadalupe"
+  },
+  "date": {
+    "year": 1531,
+    "displayDate": "December 9–12, 1531"
+  },
+  "type": "Eucharistic Apparition (Marian apparition linked to the Incarnation)",
+  "description": "The Virgin Mary appeared to Juan Diego, leaving her image on his tilma as a Eucharistic sign of the Incarnation of Christ.",
+  "narrative": "At dawn on December 9, 1531, the young indigenous convert Juan Diego was walking across the hill of Tepeyac near Mexico City when he heard celestial music and encountered a radiant woman who revealed herself as the Virgin Mary. She asked him to request that Bishop Juan de Zumárraga build a church on that site so that people could honor her Son, Jesus Christ. When the bishop asked for proof, Mary promised a sign. After healing Juan Diego’s gravely ill uncle, she instructed him to gather flowers from the barren hilltop in winter. Juan Diego found miraculous roses and carried them in his tilma to the bishop. When he opened the tilma, the flowers fell to the ground and an extraordinary image of the Virgin appeared on the cloth. The bishop immediately knelt in reverence and placed the tilma in a chapel. The image depicts Mary wearing a black belt, a sign of pregnancy in Aztec culture, revealing her as the living tabernacle bearing Christ. The apparition has been understood by the Church as a profound Eucharistic sign, expressing the unity of the Incarnation and the Eucharist—“Flesh of Christ, flesh of Mary”—and presenting Mary as tabernacle, womb, and pyx. The tilma has endured for centuries and continues to be venerated at the Basilica of Guadalupe.",
+  "scientificEvidence": "Scientific investigations, including infrared and optical analysis by researchers such as J.B. Smith and P.S. Callahan, concluded that the image on the tilma was not produced by human technique, and later studies identified detailed reflections of witnesses in the eyes of the Virgin.",
+  "significance": "Our Lady of Guadalupe is one of the most powerful signs of the Incarnation and Eucharistic mystery, leading to the conversion of millions and remaining a central symbol of Christ’s real and living presence in history.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Our Lady of Guadalupe",
+    "Mexico",
+    "Juan Diego",
+    "Eucharistic Apparition",
+    "Incarnation",
+    "Real Presence",
+    "Tilma",
+    "Miraculous Image",
+    "16th Century",
+    "Marian Apparition"
+  ]
+},
+{
+  "id": "lourdes-1888",
+  "name": "Eucharistic Healings at Lourdes",
+  "location": {
+    "city": "Lourdes",
+    "country": "France",
+    "coordinates": {
+      "lat": 43.0955,
+      "lng": -0.0463
+    },
+    "address": "Sanctuary of Our Lady of Lourdes, Grotto of Massabielle"
+  },
+  "date": {
+    "year": 1888,
+    "displayDate": "August 22, 1888"
+  },
+  "type": "Eucharistic Miracle (Healings during the procession of the Blessed Sacrament)",
+  "description": "During the Eucharistic procession at Lourdes, numerous sick pilgrims have been miraculously healed, beginning with the first recorded cure in 1888.",
+  "narrative": "In 1888, a French priest participating in the National Pilgrimage proposed the creation of a procession with the Blessed Sacrament at Lourdes, following the Marian apparitions that had taken place decades earlier. On August 22, 1888, at 4:00 p.m., the first Eucharistic procession with the final blessing of the sick was held before the Grotto of Massabielle. As the Blessed Sacrament passed among the sick, Pietro Delanoy, who had suffered for many years from ataxia—a severe neurological disorder causing progressive loss of muscular coordination and inevitably leading to death—was instantly cured at the moment the tabernacle passed by. This healing marked the first Eucharistic miracle at Lourdes. From that day onward, the Eucharistic procession for the sick has continued without interruption. Over the years, countless pilgrims suffering from grave illnesses have been healed during these processions, including cases of tuberculosis, multiple sclerosis, kidney disease, blindness, deafness, and severe digestive disorders. The Sanctuary of Lourdes thus became not only a place of Marian devotion, but also a powerful testimony to the Real Presence of Jesus Christ in the Eucharist, manifested through tangible acts of healing and mercy.",
+  "scientificEvidence": "Numerous healings have been subjected to rigorous medical examination and documentation by the Lourdes Medical Bureau, with cases verified as instantaneous, complete, and scientifically inexplicable.",
+  "significance": "Lourdes stands as a unique and enduring witness to the Real Presence of Christ in the Eucharist, where Eucharistic processions have been accompanied by continuous and well-documented miraculous healings since 1888.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Lourdes",
+    "France",
+    "Eucharistic Miracle",
+    "Eucharistic Healing",
+    "Blessed Sacrament",
+    "Real Presence",
+    "Procession",
+    "19th Century",
+    "Medical Bureau of Lourdes",
+    "Marian Sanctuary"
+  ]
+},
+{
+  "id": "paris-catherine-laboure-1830",
+  "name": "Eucharistic Visions of Saint Catherine Labouré",
+  "location": {
+    "city": "Paris",
+    "country": "France",
+    "coordinates": {
+      "lat": 48.8519,
+      "lng": 2.3246
+    },
+    "address": "Chapel of Our Lady of the Miraculous Medal, Rue du Bac, Paris"
+  },
+  "date": {
+    "year": 1830,
+    "displayDate": "1830"
+  },
+  "type": "Eucharistic Phenomenon (Visions of Christ in the Eucharist)",
+  "description": "Saint Catherine Labouré was granted visions of Jesus present in the consecrated Host during Holy Communion and Eucharistic adoration.",
+  "narrative": "Saint Catherine Labouré was born on May 2, 1806, into a family of farmers in France. On April 21, 1830, she entered the novitiate of the Daughters of Charity at their motherhouse in Paris near Rue du Bac. During her stay there, Catherine received extraordinary graces connected to both the Eucharist and the Virgin Mary. In 1830, she experienced the famous apparitions of the Immaculate Virgin, who instructed her to have a medal struck according to the vision she received, promising great graces to those who would wear it with faith. In addition to these Marian apparitions, Catherine was granted profound Eucharistic experiences. As depicted and described on page 1 of the document, she saw Jesus truly present in the consecrated Host, both at the moment of Holy Communion and during the Exposition of the Blessed Sacrament. Catherine herself recounted that while making Eucharistic adoration in deep silence, she suddenly saw the Holy Virgin standing beside the altar, radiant and indescribably beautiful. Light flowed from Mary’s hands as she interceded for humanity, teaching Catherine how generous God is toward those who invoke Him. These Eucharistic visions strengthened Catherine’s understanding of the Real Presence and inspired a life of humility, silence, and hidden service. She spent the rest of her life unknown to the world, serving the poor, while the Miraculous Medal spread throughout the Church as a sign of grace flowing from Christ present in the Eucharist.",
+  "scientificEvidence": "The phenomena are supported by Catherine Labouré’s own testimony, religious witness, and formal ecclesiastical approval of the apparitions rather than scientific experimentation.",
+  "significance": "Saint Catherine Labouré’s Eucharistic visions affirm the Real Presence of Christ and link Eucharistic devotion with Marian intercession, leading to one of the most widespread sacramentals in Church history.",
+  "hasStreetView": true,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Saint Catherine Labouré",
+    "Paris",
+    "France",
+    "Eucharistic Vision",
+    "Real Presence",
+    "Miraculous Medal",
+    "Rue du Bac",
+    "19th Century",
+    "Marian Apparition",
+    "Eucharistic Adoration"
+  ]
+},
+{
+  "id": "miraculous-communions-various-saints",
+  "name": "Miraculous Communions of the Saints",
+  "location": {
+    "city": "Various",
+    "country": "Italy and Europe",
+    "coordinates": {
+      "lat": 43.0,
+      "lng": 12.5
+    },
+    "address": "Various churches, monasteries, and places of devotion across Europe"
+  },
+  "date": {
+    "year": 1300,
+    "displayDate": "14th–18th Centuries"
+  },
+  "type": "Eucharistic Miracle (Miraculous Holy Communion)",
+  "description": "Numerous saints and blesseds received Holy Communion through miraculous means when ordinary reception was impossible.",
+  "narrative": "Throughout Church history, God has at times granted extraordinary forms of Holy Communion to saints whose ardent desire for the Eucharist could not be fulfilled through ordinary means. The document titled “Miraculous Communions” presents several such cases. Saint Lucia Filippini, while attending Mass at the Franciscan church near Pitigliano, witnessed a fragment of the consecrated Host escape the priest’s hands, fly through the air radiating light, and come to rest upon her tongue. Blessed Emilia Bicchieri, after missing Holy Communion while caring for a sick sister, expressed her sorrow to the Lord and was consoled by the appearance of an angel who gave her the Eucharist. Saint Maria Francesca of the Five Wounds, bedridden by illness, repeatedly received Holy Communion brought to her by her Guardian Angel, as priests testified to the disappearance of the Host and Precious Blood during Mass. Blessed Imelda Lambertini, though too young to receive Communion according to the custom of her time, was granted a Host that rose miraculously into the air before her; after receiving the Eucharist, she died in ecstasy and was taken to heaven. Saint Juliana Falconieri, unable to receive Communion due to illness, asked that a Host be placed on her chest; it disappeared, leaving a violet mark over her heart. Saint Gerard Majella, denied Communion because of his age, received the Eucharist from Saint Michael the Archangel during the night. The collection also references Saint Bonaventure, Saint Bernard, Saint Secondo, Saint Jerome, Blessed Thomas of Cori, and Blessed James of Montieri, some of whom were nourished for long periods solely by the Eucharist or received Communion directly from Jesus Himself. These events, depicted in sacred art preserved in museums such as the Hieron Museum, emphasize Heaven’s response to intense Eucharistic love.",
+  "scientificEvidence": "These events are supported by sworn testimony, hagiographical records, priestly witnesses, and long-standing ecclesiastical tradition rather than experimental scientific analysis.",
+  "significance": "The Miraculous Communions testify to the Real Presence of Christ in the Eucharist and reveal God’s willingness to transcend ordinary sacramental limits to satisfy deep Eucharistic desire.",
+  "hasStreetView": false,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Miraculous Communion",
+    "Eucharistic Miracle",
+    "Angelic Communion",
+    "Real Presence",
+    "Saints and Blesseds",
+    "Italy",
+    "Europe",
+    "Medieval Church",
+    "Eucharistic Devotion",
+    "Guardian Angels"
+  ]
+},
+{
+  "id": "miraculous-communions-part-2",
+  "name": "Miraculous Communions of the Saints (Part II)",
+  "location": {
+    "city": "Various",
+    "country": "Italy and Europe",
+    "coordinates": {
+      "lat": 43.0,
+      "lng": 12.5
+    },
+    "address": "Various monasteries, churches, and places of devotion across Europe"
+  },
+  "date": {
+    "year": 600,
+    "displayDate": "6th–16th Centuries"
+  },
+  "type": "Eucharistic Miracle (Miraculous Holy Communion and Eucharistic Visions)",
+  "description": "Saints received Holy Communion through angelic or divine intervention or witnessed Christ manifest during the Eucharist.",
+  "narrative": "Throughout Church history, God has granted extraordinary forms of Holy Communion and Eucharistic visions to saints whose interior disposition or circumstances prevented ordinary reception. During her stay at Proceno, Saint Agnes Segni of Montepulciano often withdrew to the monastery garden at dawn to pray near an olive plant. One feast day, after hours of prayer, she realized she had missed Mass; at that moment an angel appeared carrying an immaculate Host and gave her Holy Communion. This grace was repeated on several occasions. The canonization acts of Saint Clare of Montefalco recount that one day she approached Holy Communion without her mantle and was publicly rebuked and sent away. Filled with sorrow, she returned to her cell in tears; while praying, Christ appeared to her, embraced her, and gave her Holy Communion Himself, leaving her deeply consoled. Blessed Angela of Foligno recounted a vision during Mass in which she saw Christ under the form of a small Child who nonetheless appeared majestic like a king seated on His throne; she was filled with such contemplation that she regretted the Host being replaced on the altar too quickly. The illustrated panels further depict one of the miraculous Masses of Saint Gregory the Great, during which Christ appeared crucified upon the altar; Saint Frances of Rome and her companions in ecstatic wonder before a monstrance radiating beams of light; and Saint Teresa of Avila, who often experienced visions of Heaven during Holy Mass. Together, these events testify to the intimate and living presence of Christ in the Eucharist, manifested through direct Communion, visions, and mystical participation.",
+  "scientificEvidence": "These events are preserved through canonization processes, hagiographical writings, eyewitness religious testimony, and longstanding ecclesiastical tradition rather than experimental scientific analysis.",
+  "significance": "The Miraculous Communions demonstrate the Real Presence of Christ in the Eucharist and reveal Heaven’s response to deep Eucharistic love, humility, and desire for union with God.",
+  "hasStreetView": false,
+  "wikiUrl": null,
+  "images": [],
+  "sources": [
+    "miracolieucaristici.org"
+  ],
+  "tags": [
+    "Miraculous Communion",
+    "Eucharistic Miracle",
+    "Angelic Communion",
+    "Eucharistic Vision",
+    "Real Presence",
+    "Saint Agnes Segni",
+    "Saint Clare of Montefalco",
+    "Blessed Angela of Foligno",
+    "Saint Gregory the Great",
+    "Saint Teresa of Avila"
+  ]
 }
 ]
