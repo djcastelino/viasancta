@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "date": "2026-01-16",
+    "promise": "I am with you always, even to the end of the age.",
+    "reference": "Matthew 28:20",
+    "category": "Presence"
+  },
+  {
+    "id": 2,
+    "date": "2026-01-17",
+    "promise": "Come to me, all you who are weary and burdened, and I will give you rest.",
+    "reference": "Matthew 11:28",
+    "category": "Rest"
+  },
+  {
+    "id": 3,
+    "date": "2026-01-18",
+    "promise": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+    "reference": "John 3:16",
+    "category": "Salvation"
+  },
+  {
+    "id": 4,
+    "date": "2026-01-19",
+    "promise": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+    "reference": "John 14:27",
+    "category": "Peace"
+  },
+  {
+    "id": 5,
+    "date": "2026-01-20",
+    "promise": "I have come that they may have life, and have it to the full.",
+    "reference": "John 10:10",
+    "category": "Abundant Life"
+  },
+  {
+    "id": 6,
+    "date": "2026-01-21",
+    "promise": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+    "reference": "Matthew 7:7",
+    "category": "Prayer"
+  },
+  {
+    "id": 7,
+    "date": "2026-01-22",
+    "promise": "I am the way and the truth and the life. No one comes to the Father except through me.",
+    "reference": "John 14:6",
+    "category": "Truth"
+  }
+]
