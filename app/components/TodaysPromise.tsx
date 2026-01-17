@@ -323,7 +323,7 @@ export default function TodaysPromise() {
                   onClick={handlePlayNarration}
                   className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  🔊 Listen to Today&apos;s Promise
+                  Listen to Reflection
                 </button>
               )}
 
