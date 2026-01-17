@@ -1598,5 +1598,1325 @@
     "testament": "Old",
     "category": "Free Will",
     "speaker": "Sirach"
+  },
+  {
+    "id": 201,
+    "verse": "The Lord is faithful; he will strengthen you and protect you from the evil one.",
+    "reference": "2 Thessalonians 3:3",
+    "testament": "New",
+    "category": "Protection",
+    "speaker": "Paul"
+  },
+  {
+    "id": 202,
+    "verse": "The fear of the Lord is the beginning of wisdom, and the knowledge of the Holy One is understanding.",
+    "reference": "Proverbs 9:10",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 203,
+    "verse": "May the Lord direct your hearts into God's love and Christ's perseverance.",
+    "reference": "2 Thessalonians 3:5",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 204,
+    "verse": "Trust in the Lord with all your heart, and do not lean on your own understanding.",
+    "reference": "Proverbs 3:5",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 205,
+    "verse": "The Lord is not unjust; he will not forget your work and the love you have shown him as you have helped his people and continue to help them.",
+    "reference": "Hebrews 6:10",
+    "testament": "New",
+    "category": "Faithfulness",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 206,
+    "verse": "The righteous will flourish like a palm tree, they will grow like a cedar of Lebanon.",
+    "reference": "Psalm 92:12",
+    "testament": "Old",
+    "category": "Flourishing",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 207,
+    "verse": "We have this hope as an anchor for the soul, firm and secure.",
+    "reference": "Hebrews 6:19",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 208,
+    "verse": "My son, do not despise the Lord's discipline, and do not resent his rebuke, because the Lord disciplines those he loves.",
+    "reference": "Proverbs 3:11-12",
+    "testament": "Old",
+    "category": "Discipline",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 209,
+    "verse": "God is not unjust; he will not forget your work and the love you have shown him.",
+    "reference": "Hebrews 6:10",
+    "testament": "New",
+    "category": "Justice",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 210,
+    "verse": "Honor the Lord with your wealth, with the firstfruits of all your crops; then your barns will be filled to overflowing.",
+    "reference": "Proverbs 3:9-10",
+    "testament": "Old",
+    "category": "Provision",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 211,
+    "verse": "Let us hold unswervingly to the hope we profess, for he who promised is faithful.",
+    "reference": "Hebrews 10:23",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 212,
+    "verse": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+    "reference": "Proverbs 15:1",
+    "testament": "Old",
+    "category": "Peace",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 213,
+    "verse": "Let us draw near to God with a sincere heart and with the full assurance that faith brings.",
+    "reference": "Hebrews 10:22",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 214,
+    "verse": "The Lord detests lying lips, but he delights in people who are trustworthy.",
+    "reference": "Proverbs 12:22",
+    "testament": "Old",
+    "category": "Truth",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 215,
+    "verse": "So do not throw away your confidence; it will be richly rewarded.",
+    "reference": "Hebrews 10:35",
+    "testament": "New",
+    "category": "Confidence",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 216,
+    "verse": "Anxiety weighs down the heart, but a kind word cheers it up.",
+    "reference": "Proverbs 12:25",
+    "testament": "Old",
+    "category": "Encouragement",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 217,
+    "verse": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+    "reference": "Hebrews 11:1",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 218,
+    "verse": "The one who gets wisdom loves life; the one who cherishes understanding will soon prosper.",
+    "reference": "Proverbs 19:8",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 219,
+    "verse": "And without faith it is impossible to please God, because anyone who comes to him must believe that he exists and that he rewards those who earnestly seek him.",
+    "reference": "Hebrews 11:6",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 220,
+    "verse": "Commit to the Lord whatever you do, and he will establish your plans.",
+    "reference": "Proverbs 16:3",
+    "testament": "Old",
+    "category": "Guidance",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 221,
+    "verse": "Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles.",
+    "reference": "Hebrews 12:1",
+    "testament": "New",
+    "category": "Perseverance",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 222,
+    "verse": "In their hearts humans plan their course, but the Lord establishes their steps.",
+    "reference": "Proverbs 16:9",
+    "testament": "Old",
+    "category": "Providence",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 223,
+    "verse": "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
+    "reference": "Hebrews 12:1-2",
+    "testament": "New",
+    "category": "Perseverance",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 224,
+    "verse": "How much better to get wisdom than gold, to get insight rather than silver!",
+    "reference": "Proverbs 16:16",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 225,
+    "verse": "For our God is a consuming fire.",
+    "reference": "Hebrews 12:29",
+    "testament": "New",
+    "category": "Holiness",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 226,
+    "verse": "Pride goes before destruction, a haughty spirit before a fall.",
+    "reference": "Proverbs 16:18",
+    "testament": "Old",
+    "category": "Humility",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 227,
+    "verse": "Keep your lives free from the love of money and be content with what you have, because God has said, 'Never will I leave you; never will I forsake you.'",
+    "reference": "Hebrews 13:5",
+    "testament": "New",
+    "category": "Contentment",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 228,
+    "verse": "Gray hair is a crown of splendor; it is attained in the way of righteousness.",
+    "reference": "Proverbs 16:31",
+    "testament": "Old",
+    "category": "Honor",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 229,
+    "verse": "The Lord is my helper; I will not be afraid. What can mere mortals do to me?",
+    "reference": "Hebrews 13:6",
+    "testament": "New",
+    "category": "Courage",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 230,
+    "verse": "A friend loves at all times, and a brother is born for a time of adversity.",
+    "reference": "Proverbs 17:17",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 231,
+    "verse": "Jesus Christ is the same yesterday and today and forever.",
+    "reference": "Hebrews 13:8",
+    "testament": "New",
+    "category": "Unchanging",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 232,
+    "verse": "A joyful heart is good medicine, but a crushed spirit dries up the bones.",
+    "reference": "Proverbs 17:22",
+    "testament": "Old",
+    "category": "Joy",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 233,
+    "verse": "Through Jesus, therefore, let us continually offer to God a sacrifice of praise—the fruit of lips that openly profess his name.",
+    "reference": "Hebrews 13:15",
+    "testament": "New",
+    "category": "Praise",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 234,
+    "verse": "The name of the Lord is a strong tower; the righteous run to it and are safe.",
+    "reference": "Proverbs 18:10",
+    "testament": "Old",
+    "category": "Safety",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 235,
+    "verse": "May the God of peace, who through the blood of the eternal covenant brought back from the dead our Lord Jesus, equip you with everything good for doing his will.",
+    "reference": "Hebrews 13:20-21",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 236,
+    "verse": "Whoever is patient has great understanding, but one who is quick-tempered displays folly.",
+    "reference": "Proverbs 14:29",
+    "testament": "Old",
+    "category": "Patience",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 237,
+    "verse": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.",
+    "reference": "James 1:2-3",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "James"
+  },
+  {
+    "id": 238,
+    "verse": "Whoever pursues righteousness and love finds life, prosperity and honor.",
+    "reference": "Proverbs 21:21",
+    "testament": "Old",
+    "category": "Righteousness",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 239,
+    "verse": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.",
+    "reference": "James 1:5",
+    "testament": "New",
+    "category": "Wisdom",
+    "speaker": "James"
+  },
+  {
+    "id": 240,
+    "verse": "The fear of the Lord leads to life; then one rests content, untouched by trouble.",
+    "reference": "Proverbs 19:23",
+    "testament": "Old",
+    "category": "Rest",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 241,
+    "verse": "But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind.",
+    "reference": "James 1:6",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "James"
+  },
+  {
+    "id": 242,
+    "verse": "Gracious words are a honeycomb, sweet to the soul and healing to the bones.",
+    "reference": "Proverbs 16:24",
+    "testament": "Old",
+    "category": "Words",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 243,
+    "verse": "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.",
+    "reference": "James 1:12",
+    "testament": "New",
+    "category": "Perseverance",
+    "speaker": "James"
+  },
+  {
+    "id": 244,
+    "verse": "Better a patient person than a warrior, one with self-control than one who takes a city.",
+    "reference": "Proverbs 16:32",
+    "testament": "Old",
+    "category": "Self-Control",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 245,
+    "verse": "Don't be deceived, my dear brothers and sisters. Every good and perfect gift is from above, coming down from the Father of the heavenly lights.",
+    "reference": "James 1:16-17",
+    "testament": "New",
+    "category": "Gifts",
+    "speaker": "James"
+  },
+  {
+    "id": 246,
+    "verse": "The prudent see danger and take refuge, but the simple keep going and pay the penalty.",
+    "reference": "Proverbs 27:12",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 247,
+    "verse": "Everyone should be quick to listen, slow to speak and slow to become angry.",
+    "reference": "James 1:19",
+    "testament": "New",
+    "category": "Wisdom",
+    "speaker": "James"
+  },
+  {
+    "id": 248,
+    "verse": "As iron sharpens iron, so one person sharpens another.",
+    "reference": "Proverbs 27:17",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 249,
+    "verse": "Do not merely listen to the word, and so deceive yourselves. Do what it says.",
+    "reference": "James 1:22",
+    "testament": "New",
+    "category": "Obedience",
+    "speaker": "James"
+  },
+  {
+    "id": 250,
+    "verse": "Charm is deceptive, and beauty is fleeting; but a woman who fears the Lord is to be praised.",
+    "reference": "Proverbs 31:30",
+    "testament": "Old",
+    "category": "Character",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 251,
+    "verse": "The Lord will make you the head, not the tail. If you pay attention to the commands of the Lord your God that I give you this day and carefully follow them, you will always be at the top, never at the bottom.",
+    "reference": "Deuteronomy 28:13",
+    "testament": "Old",
+    "category": "Blessing",
+    "speaker": "Moses"
+  },
+  {
+    "id": 252,
+    "verse": "Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress and to keep oneself from being polluted by the world.",
+    "reference": "James 1:27",
+    "testament": "New",
+    "category": "Compassion",
+    "speaker": "James"
+  },
+  {
+    "id": 253,
+    "verse": "The Lord will open the heavens, the storehouse of his bounty, to send rain on your land in season and to bless all the work of your hands.",
+    "reference": "Deuteronomy 28:12",
+    "testament": "Old",
+    "category": "Provision",
+    "speaker": "Moses"
+  },
+  {
+    "id": 254,
+    "verse": "Mercy triumphs over judgment.",
+    "reference": "James 2:13",
+    "testament": "New",
+    "category": "Mercy",
+    "speaker": "James"
+  },
+  {
+    "id": 255,
+    "verse": "If you fully obey the Lord your God and carefully follow all his commands I give you today, the Lord your God will set you high above all the nations on earth.",
+    "reference": "Deuteronomy 28:1",
+    "testament": "Old",
+    "category": "Obedience",
+    "speaker": "Moses"
+  },
+  {
+    "id": 256,
+    "verse": "You see that his faith and his actions were working together, and his faith was made complete by what he did.",
+    "reference": "James 2:22",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "James"
+  },
+  {
+    "id": 257,
+    "verse": "The Lord your God will bless you in the land he is giving you.",
+    "reference": "Deuteronomy 15:4",
+    "testament": "Old",
+    "category": "Blessing",
+    "speaker": "Moses"
+  },
+  {
+    "id": 258,
+    "verse": "With the tongue we praise our Lord and Father, and with it we curse human beings, who have been made in God's likeness.",
+    "reference": "James 3:9",
+    "testament": "New",
+    "category": "Words",
+    "speaker": "James"
+  },
+  {
+    "id": 259,
+    "verse": "For the Lord your God will bless you as he has promised, and you will lend to many nations but will borrow from none.",
+    "reference": "Deuteronomy 15:6",
+    "testament": "Old",
+    "category": "Prosperity",
+    "speaker": "Moses"
+  },
+  {
+    "id": 260,
+    "verse": "But the wisdom that comes from heaven is first of all pure; then peace-loving, considerate, submissive, full of mercy and good fruit, impartial and sincere.",
+    "reference": "James 3:17",
+    "testament": "New",
+    "category": "Wisdom",
+    "speaker": "James"
+  },
+  {
+    "id": 261,
+    "verse": "The Lord will grant you abundant prosperity—in the fruit of your womb, the young of your livestock and the crops of your ground.",
+    "reference": "Deuteronomy 28:11",
+    "testament": "Old",
+    "category": "Abundance",
+    "speaker": "Moses"
+  },
+  {
+    "id": 262,
+    "verse": "Submit yourselves, then, to God. Resist the devil, and he will flee from you.",
+    "reference": "James 4:7",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "James"
+  },
+  {
+    "id": 263,
+    "verse": "He humbled you, causing you to hunger and then feeding you with manna, to teach you that man does not live on bread alone but on every word that comes from the mouth of the Lord.",
+    "reference": "Deuteronomy 8:3",
+    "testament": "Old",
+    "category": "Word",
+    "speaker": "Moses"
+  },
+  {
+    "id": 264,
+    "verse": "Come near to God and he will come near to you.",
+    "reference": "James 4:8",
+    "testament": "New",
+    "category": "Intimacy",
+    "speaker": "James"
+  },
+  {
+    "id": 265,
+    "verse": "Know then in your heart that as a man disciplines his son, so the Lord your God disciplines you.",
+    "reference": "Deuteronomy 8:5",
+    "testament": "Old",
+    "category": "Discipline",
+    "speaker": "Moses"
+  },
+  {
+    "id": 266,
+    "verse": "Humble yourselves before the Lord, and he will lift you up.",
+    "reference": "James 4:10",
+    "testament": "New",
+    "category": "Humility",
+    "speaker": "James"
+  },
+  {
+    "id": 267,
+    "verse": "Observe the commands of the Lord your God, walking in obedience to him and revering him.",
+    "reference": "Deuteronomy 8:6",
+    "testament": "Old",
+    "category": "Obedience",
+    "speaker": "Moses"
+  },
+  {
+    "id": 268,
+    "verse": "Be patient, then, brothers and sisters, until the Lord's coming. See how the farmer waits for the land to yield its valuable crop, patiently waiting for the autumn and spring rains.",
+    "reference": "James 5:7",
+    "testament": "New",
+    "category": "Patience",
+    "speaker": "James"
+  },
+  {
+    "id": 269,
+    "verse": "For the Lord your God is bringing you into a good land—a land with brooks, streams, and deep springs gushing out into the valleys and hills.",
+    "reference": "Deuteronomy 8:7",
+    "testament": "Old",
+    "category": "Promise",
+    "speaker": "Moses"
+  },
+  {
+    "id": 270,
+    "verse": "The prayer of a righteous person is powerful and effective.",
+    "reference": "James 5:16",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "James"
+  },
+  {
+    "id": 271,
+    "verse": "Remember how the Lord your God led you all the way in the wilderness these forty years, to humble and test you in order to know what was in your heart.",
+    "reference": "Deuteronomy 8:2",
+    "testament": "Old",
+    "category": "Testing",
+    "speaker": "Moses"
+  },
+  {
+    "id": 272,
+    "verse": "My brothers and sisters, if one of you should wander from the truth and someone should bring that person back, remember this: Whoever turns a sinner from the error of their way will save them from death and cover over a multitude of sins.",
+    "reference": "James 5:19-20",
+    "testament": "New",
+    "category": "Restoration",
+    "speaker": "James"
+  },
+  {
+    "id": 273,
+    "verse": "Praise be to the God and Father of our Lord Jesus Christ! In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ from the dead.",
+    "reference": "1 Peter 1:3",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Peter"
+  },
+  {
+    "id": 274,
+    "verse": "The Lord is good and his love endures forever; his faithfulness continues through all generations.",
+    "reference": "Psalm 100:5",
+    "testament": "Old",
+    "category": "Goodness",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 275,
+    "verse": "And into an inheritance that can never perish, spoil or fade. This inheritance is kept in heaven for you.",
+    "reference": "1 Peter 1:4",
+    "testament": "New",
+    "category": "Inheritance",
+    "speaker": "Peter"
+  },
+  {
+    "id": 276,
+    "verse": "Shout for joy to the Lord, all the earth. Worship the Lord with gladness; come before him with joyful songs.",
+    "reference": "Psalm 100:1-2",
+    "testament": "Old",
+    "category": "Joy",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 277,
+    "verse": "In all this you greatly rejoice, though now for a little while you may have had to suffer grief in all kinds of trials.",
+    "reference": "1 Peter 1:6",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "Peter"
+  },
+  {
+    "id": 278,
+    "verse": "Know that the Lord is God. It is he who made us, and we are his; we are his people, the sheep of his pasture.",
+    "reference": "Psalm 100:3",
+    "testament": "Old",
+    "category": "Identity",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 279,
+    "verse": "These have come so that the proven genuineness of your faith—of greater worth than gold, which perishes even though refined by fire—may result in praise, glory and honor when Jesus Christ is revealed.",
+    "reference": "1 Peter 1:7",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Peter"
+  },
+  {
+    "id": 280,
+    "verse": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
+    "reference": "Psalm 100:4",
+    "testament": "Old",
+    "category": "Thanksgiving",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 281,
+    "verse": "Though you have not seen him, you love him; and even though you do not see him now, you believe in him and are filled with an inexpressible and glorious joy.",
+    "reference": "1 Peter 1:8",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "Peter"
+  },
+  {
+    "id": 282,
+    "verse": "He will call on me, and I will answer him; I will be with him in trouble, I will deliver him and honor him.",
+    "reference": "Psalm 91:15",
+    "testament": "Old",
+    "category": "Deliverance",
+    "speaker": "God"
+  },
+  {
+    "id": 283,
+    "verse": "For you are receiving the end result of your faith, the salvation of your souls.",
+    "reference": "1 Peter 1:9",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "Peter"
+  },
+  {
+    "id": 284,
+    "verse": "With long life I will satisfy him and show him my salvation.",
+    "reference": "Psalm 91:16",
+    "testament": "Old",
+    "category": "Life",
+    "speaker": "God"
+  },
+  {
+    "id": 285,
+    "verse": "But you are a chosen people, a royal priesthood, a holy nation, God's special possession, that you may declare the praises of him who called you out of darkness into his wonderful light.",
+    "reference": "1 Peter 2:9",
+    "testament": "New",
+    "category": "Identity",
+    "speaker": "Peter"
+  },
+  {
+    "id": 286,
+    "verse": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty.",
+    "reference": "Psalm 91:1",
+    "testament": "Old",
+    "category": "Rest",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 287,
+    "verse": "He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed.",
+    "reference": "1 Peter 2:24",
+    "testament": "New",
+    "category": "Healing",
+    "speaker": "Peter"
+  },
+  {
+    "id": 288,
+    "verse": "I will say of the Lord, 'He is my refuge and my fortress, my God, in whom I trust.'",
+    "reference": "Psalm 91:2",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 289,
+    "verse": "Cast all your anxiety on him because he cares for you.",
+    "reference": "1 Peter 5:7",
+    "testament": "New",
+    "category": "Care",
+    "speaker": "Peter"
+  },
+  {
+    "id": 290,
+    "verse": "Surely he will save you from the fowler's snare and from the deadly pestilence.",
+    "reference": "Psalm 91:3",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 291,
+    "verse": "And the God of all grace, who called you to his eternal glory in Christ, after you have suffered a little while, will himself restore you and make you strong, firm and steadfast.",
+    "reference": "1 Peter 5:10",
+    "testament": "New",
+    "category": "Restoration",
+    "speaker": "Peter"
+  },
+  {
+    "id": 292,
+    "verse": "If you say, 'The Lord is my refuge,' and you make the Most High your dwelling, no harm will overtake you, no disaster will come near your tent.",
+    "reference": "Psalm 91:9-10",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 293,
+    "verse": "His divine power has given us everything we need for a godly life through our knowledge of him who called us by his own glory and goodness.",
+    "reference": "2 Peter 1:3",
+    "testament": "New",
+    "category": "Power",
+    "speaker": "Peter"
+  },
+  {
+    "id": 294,
+    "verse": "For he will command his angels concerning you to guard you in all your ways.",
+    "reference": "Psalm 91:11",
+    "testament": "Old",
+    "category": "Angels",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 295,
+    "verse": "Through these he has given us his very great and precious promises, so that through them you may participate in the divine nature.",
+    "reference": "2 Peter 1:4",
+    "testament": "New",
+    "category": "Promises",
+    "speaker": "Peter"
+  },
+  {
+    "id": 296,
+    "verse": "They will lift you up in their hands, so that you will not strike your foot against a stone.",
+    "reference": "Psalm 91:12",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 297,
+    "verse": "The Lord is not slow in keeping his promise, as some understand slowness. Instead he is patient with you, not wanting anyone to perish, but everyone to come to repentance.",
+    "reference": "2 Peter 3:9",
+    "testament": "New",
+    "category": "Patience",
+    "speaker": "Peter"
+  },
+  {
+    "id": 298,
+    "verse": "You will tread on the lion and the cobra; you will trample the great lion and the serpent.",
+    "reference": "Psalm 91:13",
+    "testament": "Old",
+    "category": "Victory",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 299,
+    "verse": "But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be glory both now and forever! Amen.",
+    "reference": "2 Peter 3:18",
+    "testament": "New",
+    "category": "Growth",
+    "speaker": "Peter"
+  },
+  {
+    "id": 300,
+    "verse": "Because he loves me, says the Lord, I will rescue him; I will protect him, for he acknowledges my name.",
+    "reference": "Psalm 91:14",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "God"
+  },
+  {
+    "id": 301,
+    "verse": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+    "reference": "Romans 8:28",
+    "testament": "New",
+    "category": "Providence",
+    "speaker": "Paul"
+  },
+  {
+    "id": 302,
+    "verse": "You will seek me and find me when you seek me with all your heart.",
+    "reference": "Jeremiah 29:13",
+    "testament": "Old",
+    "category": "Seeking",
+    "speaker": "God"
+  },
+  {
+    "id": 303,
+    "verse": "What, then, shall we say in response to these things? If God is for us, who can be against us?",
+    "reference": "Romans 8:31",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Paul"
+  },
+  {
+    "id": 304,
+    "verse": "For I will restore health to you, and your wounds I will heal, declares the Lord.",
+    "reference": "Jeremiah 30:17",
+    "testament": "Old",
+    "category": "Healing",
+    "speaker": "God"
+  },
+  {
+    "id": 305,
+    "verse": "He who did not spare his own Son, but gave him up for us all—how will he not also, along with him, graciously give us all things?",
+    "reference": "Romans 8:32",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "Paul"
+  },
+  {
+    "id": 306,
+    "verse": "Call to me and I will answer you and tell you great and unsearchable things you do not know.",
+    "reference": "Jeremiah 33:3",
+    "testament": "Old",
+    "category": "Prayer",
+    "speaker": "God"
+  },
+  {
+    "id": 307,
+    "verse": "Who shall separate us from the love of Christ? Shall trouble or hardship or persecution or famine or nakedness or danger or sword?",
+    "reference": "Romans 8:35",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 308,
+    "verse": "I will give them a heart to know me, that I am the Lord. They will be my people, and I will be their God, for they will return to me with all their heart.",
+    "reference": "Jeremiah 24:7",
+    "testament": "Old",
+    "category": "Knowing God",
+    "speaker": "God"
+  },
+  {
+    "id": 309,
+    "verse": "No, in all these things we are more than conquerors through him who loved us.",
+    "reference": "Romans 8:37",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Paul"
+  },
+  {
+    "id": 310,
+    "verse": "The days are coming, declares the Lord, when I will make a new covenant with the people of Israel and with the people of Judah.",
+    "reference": "Jeremiah 31:31",
+    "testament": "Old",
+    "category": "Covenant",
+    "speaker": "God"
+  },
+  {
+    "id": 311,
+    "verse": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+    "reference": "Romans 8:38-39",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 312,
+    "verse": "I will put my law in their minds and write it on their hearts. I will be their God, and they will be my people.",
+    "reference": "Jeremiah 31:33",
+    "testament": "Old",
+    "category": "Covenant",
+    "speaker": "God"
+  },
+  {
+    "id": 313,
+    "verse": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+    "reference": "Romans 15:13",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Paul"
+  },
+  {
+    "id": 314,
+    "verse": "For I will forgive their wickedness and will remember their sins no more.",
+    "reference": "Jeremiah 31:34",
+    "testament": "Old",
+    "category": "Forgiveness",
+    "speaker": "God"
+  },
+  {
+    "id": 315,
+    "verse": "The God of peace will soon crush Satan under your feet. The grace of our Lord Jesus be with you.",
+    "reference": "Romans 16:20",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Paul"
+  },
+  {
+    "id": 316,
+    "verse": "Blessed is the one whose transgressions are forgiven, whose sins are covered.",
+    "reference": "Psalm 32:1",
+    "testament": "Old",
+    "category": "Forgiveness",
+    "speaker": "David"
+  },
+  {
+    "id": 317,
+    "verse": "Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us.",
+    "reference": "Ephesians 3:20",
+    "testament": "New",
+    "category": "Power",
+    "speaker": "Paul"
+  },
+  {
+    "id": 318,
+    "verse": "Blessed is the one whose sin the Lord does not count against them and in whose spirit is no deceit.",
+    "reference": "Psalm 32:2",
+    "testament": "Old",
+    "category": "Blessing",
+    "speaker": "David"
+  },
+  {
+    "id": 319,
+    "verse": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
+    "reference": "Ephesians 2:10",
+    "testament": "New",
+    "category": "Purpose",
+    "speaker": "Paul"
+  },
+  {
+    "id": 320,
+    "verse": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+    "reference": "Psalm 32:8",
+    "testament": "Old",
+    "category": "Guidance",
+    "speaker": "God"
+  },
+  {
+    "id": 321,
+    "verse": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+    "reference": "Ephesians 2:8",
+    "testament": "New",
+    "category": "Grace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 322,
+    "verse": "Many are the woes of the wicked, but the Lord's unfailing love surrounds the one who trusts in him.",
+    "reference": "Psalm 32:10",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "David"
+  },
+  {
+    "id": 323,
+    "verse": "I pray that out of his glorious riches he may strengthen you with power through his Spirit in your inner being.",
+    "reference": "Ephesians 3:16",
+    "testament": "New",
+    "category": "Strength",
+    "speaker": "Paul"
+  },
+  {
+    "id": 324,
+    "verse": "Rejoice in the Lord and be glad, you righteous; sing, all you who are upright in heart!",
+    "reference": "Psalm 32:11",
+    "testament": "Old",
+    "category": "Joy",
+    "speaker": "David"
+  },
+  {
+    "id": 325,
+    "verse": "And I pray that you, being rooted and established in love, may have power, together with all the Lord's holy people, to grasp how wide and long and high and deep is the love of Christ.",
+    "reference": "Ephesians 3:17-18",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 326,
+    "verse": "For the word of the Lord is right and true; he is faithful in all he does.",
+    "reference": "Psalm 33:4",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 327,
+    "verse": "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you.",
+    "reference": "Ephesians 4:32",
+    "testament": "New",
+    "category": "Forgiveness",
+    "speaker": "Paul"
+  },
+  {
+    "id": 328,
+    "verse": "By the word of the Lord the heavens were made, their starry host by the breath of his mouth.",
+    "reference": "Psalm 33:6",
+    "testament": "Old",
+    "category": "Creation",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 329,
+    "verse": "Do not let any unwholesome talk come out of your mouths, but only what is helpful for building others up according to their needs, that it may benefit those who listen.",
+    "reference": "Ephesians 4:29",
+    "testament": "New",
+    "category": "Words",
+    "speaker": "Paul"
+  },
+  {
+    "id": 330,
+    "verse": "The Lord loves righteousness and justice; the earth is full of his unfailing love.",
+    "reference": "Psalm 33:5",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 331,
+    "verse": "Finally, be strong in the Lord and in his mighty power.",
+    "reference": "Ephesians 6:10",
+    "testament": "New",
+    "category": "Strength",
+    "speaker": "Paul"
+  },
+  {
+    "id": 332,
+    "verse": "But the eyes of the Lord are on those who fear him, on those whose hope is in his unfailing love.",
+    "reference": "Psalm 33:18",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 333,
+    "verse": "And pray in the Spirit on all occasions with all kinds of prayers and requests. With this in mind, be alert and always keep on praying for all the Lord's people.",
+    "reference": "Ephesians 6:18",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Paul"
+  },
+  {
+    "id": 334,
+    "verse": "We wait in hope for the Lord; he is our help and our shield.",
+    "reference": "Psalm 33:20",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 335,
+    "verse": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "testament": "New",
+    "category": "Strength",
+    "speaker": "Paul"
+  },
+  {
+    "id": 336,
+    "verse": "In him our hearts rejoice, for we trust in his holy name.",
+    "reference": "Psalm 33:21",
+    "testament": "Old",
+    "category": "Joy",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 337,
+    "verse": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+    "reference": "Philippians 4:19",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "Paul"
+  },
+  {
+    "id": 338,
+    "verse": "May your unfailing love be with us, Lord, even as we put our hope in you.",
+    "reference": "Psalm 33:22",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 339,
+    "verse": "Rejoice in the Lord always. I will say it again: Rejoice!",
+    "reference": "Philippians 4:4",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "Paul"
+  },
+  {
+    "id": 340,
+    "verse": "The angel of the Lord encamps around those who fear him, and he delivers them.",
+    "reference": "Psalm 34:7",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "David"
+  },
+  {
+    "id": 341,
+    "verse": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+    "reference": "Philippians 4:6",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 342,
+    "verse": "Taste and see that the Lord is good; blessed is the one who takes refuge in him.",
+    "reference": "Psalm 34:8",
+    "testament": "Old",
+    "category": "Goodness",
+    "speaker": "David"
+  },
+  {
+    "id": 343,
+    "verse": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+    "reference": "Philippians 4:7",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 344,
+    "verse": "The righteous person may have many troubles, but the Lord delivers him from them all.",
+    "reference": "Psalm 34:19",
+    "testament": "Old",
+    "category": "Deliverance",
+    "speaker": "David"
+  },
+  {
+    "id": 345,
+    "verse": "For to me, to live is Christ and to die is gain.",
+    "reference": "Philippians 1:21",
+    "testament": "New",
+    "category": "Life",
+    "speaker": "Paul"
+  },
+  {
+    "id": 346,
+    "verse": "The Lord redeems his servants; no one who takes refuge in him will be condemned.",
+    "reference": "Psalm 34:22",
+    "testament": "Old",
+    "category": "Redemption",
+    "speaker": "David"
+  },
+  {
+    "id": 347,
+    "verse": "Being confident of this, that he who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+    "reference": "Philippians 1:6",
+    "testament": "New",
+    "category": "Faithfulness",
+    "speaker": "Paul"
+  },
+  {
+    "id": 348,
+    "verse": "Delight yourself in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalm 37:4",
+    "testament": "Old",
+    "category": "Delight",
+    "speaker": "David"
+  },
+  {
+    "id": 349,
+    "verse": "For God is working in you, giving you the desire and the power to do what pleases him.",
+    "reference": "Philippians 2:13",
+    "testament": "New",
+    "category": "Empowerment",
+    "speaker": "Paul"
+  },
+  {
+    "id": 350,
+    "verse": "Commit your way to the Lord; trust in him and he will do this: He will make your righteous reward shine like the dawn.",
+    "reference": "Psalm 37:5-6",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "David"
+  },
+  {
+    "id": 351,
+    "verse": "To the one who is victorious, I will give the right to eat from the tree of life, which is in the paradise of God.",
+    "reference": "Revelation 2:7",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 352,
+    "verse": "Therefore, since we have been justified through faith, we have peace with God through our Lord Jesus Christ.",
+    "reference": "Romans 5:1",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 353,
+    "verse": "To the one who is victorious, I will give some of the hidden manna. I will also give that person a white stone with a new name written on it, known only to the one who receives it.",
+    "reference": "Revelation 2:17",
+    "testament": "New",
+    "category": "Identity",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 354,
+    "verse": "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us.",
+    "reference": "Romans 5:8",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 355,
+    "verse": "To the one who is victorious and does my will to the end, I will give authority over the nations.",
+    "reference": "Revelation 2:26",
+    "testament": "New",
+    "category": "Authority",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 356,
+    "verse": "And not only so, but we also joy in God through our Lord Jesus Christ, by whom we have now received the atonement.",
+    "reference": "Romans 5:11",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "Paul"
+  },
+  {
+    "id": 357,
+    "verse": "The one who is victorious will, like them, be dressed in white. I will never blot out the name of that person from the book of life, but will acknowledge that name before my Father and his angels.",
+    "reference": "Revelation 3:5",
+    "testament": "New",
+    "category": "Eternal Life",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 358,
+    "verse": "The Spirit himself testifies with our spirit that we are God's children.",
+    "reference": "Romans 8:16",
+    "testament": "New",
+    "category": "Identity",
+    "speaker": "Paul"
+  },
+  {
+    "id": 359,
+    "verse": "The one who is victorious I will make a pillar in the temple of my God. Never again will they leave it. I will write on them the name of my God and the name of the city of my God.",
+    "reference": "Revelation 3:12",
+    "testament": "New",
+    "category": "Permanence",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 360,
+    "verse": "Now if we are children, then we are heirs—heirs of God and co-heirs with Christ.",
+    "reference": "Romans 8:17",
+    "testament": "New",
+    "category": "Inheritance",
+    "speaker": "Paul"
+  },
+  {
+    "id": 361,
+    "verse": "To the one who is victorious, I will give the right to sit with me on my throne, just as I was victorious and sat down with my Father on his throne.",
+    "reference": "Revelation 3:21",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 362,
+    "verse": "And the Spirit and the bride say, 'Come!' And let the one who hears say, 'Come!' Let the one who is thirsty come; and let the one who wishes take the free gift of the water of life.",
+    "reference": "Revelation 22:17",
+    "testament": "New",
+    "category": "Invitation",
+    "speaker": "Spirit"
+  },
+  {
+    "id": 363,
+    "verse": "He who testifies to these things says, 'Yes, I am coming soon.' Amen. Come, Lord Jesus.",
+    "reference": "Revelation 22:20",
+    "testament": "New",
+    "category": "Return",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 364,
+    "verse": "The grace of the Lord Jesus be with God's people. Amen.",
+    "reference": "Revelation 22:21",
+    "testament": "New",
+    "category": "Grace",
+    "speaker": "John"
+  },
+  {
+    "id": 365,
+    "verse": "Now to him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy—to the only God our Savior be glory, majesty, power and authority, through Jesus Christ our Lord, before all ages, now and forevermore! Amen.",
+    "reference": "Jude 1:24-25",
+    "testament": "New",
+    "category": "Doxology",
+    "speaker": "Jude"
   }
 ]
