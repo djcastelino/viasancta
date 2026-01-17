@@ -295,21 +295,48 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     );
   }
 
-  const countryFlag = getCountryFlag(miracle.location.country);
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${miracle.location.coordinates.lat},${miracle.location.coordinates.lng}`;
+
+  // Sunrise/sunset landscapes for header (same as cards)
+  const landscapes = [
+    'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=80', // Golden sunrise over mountains
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80', // Mountain sunrise
+    'https://images.unsplash.com/photo-1472120435266-53107fd0c44a?w=1200&q=80', // Sunset over hills
+    'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?w=1200&q=80', // Sunrise meadow
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80', // Mountain peak sunrise
+    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=1200&q=80', // Sunset lake reflection
+    'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80', // Golden hour landscape
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80', // Sunset field
+  ];
+
+  // Pick consistent landscape based on miracle ID
+  const landscapeIndex = miracleId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % landscapes.length;
+  const headerLandscape = landscapes[landscapeIndex];
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
-      <header className="bg-gradient-to-br from-[#193d52] to-[#325847] text-white pt-12 pb-16 px-5">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-6">
-            <Link href="/tours/eucharistic-miracles" className="text-white/80 hover:text-white text-sm">
-              ← Back to Eucharistic Miracles Tour
-            </Link>
-          </div>
-          <div className="text-center">
-            <div className="text-8xl mb-4">{countryFlag}</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif">{miracle.name}</h1>
+      {/* Back Link */}
+      <div className="max-w-4xl mx-auto px-5 pt-8 pb-4">
+        <Link href="/tours/eucharistic-miracles" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
+          ← Back to Eucharistic Miracles Tour
+        </Link>
+      </div>
+
+      {/* Header with Landscape */}
+      <section className="max-w-4xl mx-auto px-5 pb-8">
+        <div className="relative min-h-[300px] rounded-3xl overflow-hidden shadow-2xl">
+          {/* Background Landscape */}
+          <img
+            src={headerLandscape}
+            alt={`Sunrise/sunset landscape for ${miracle.name}`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+          {/* Content */}
+          <div className="relative text-center text-white p-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif drop-shadow-2xl">{miracle.name}</h1>
             <div className="flex items-center justify-center gap-4 text-lg">
               <span>{miracle.location.city}, {miracle.location.country}</span>
               <span>•</span>
@@ -317,7 +344,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       <div className="max-w-4xl mx-auto px-5 py-12">
         {/* Audio Player */}
@@ -434,15 +461,5 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   );
 }
 
-function getCountryFlag(country: string): string {
-  const flags: { [key: string]: string } = {
-    'Argentina': '🇦🇷', 'Colombia': '🇨🇴', 'Netherlands': '🇳🇱', 'Italy': '🇮🇹',
-    'Poland': '🇵🇱', 'France': '🇫🇷', 'Germany': '🇩🇪', 'Spain': '🇪🇸',
-    'Portugal': '🇵🇹', 'Austria': '🇦🇹', 'Belgium': '🇧🇪', 'India': '🇮🇳',
-    'Mexico': '🇲🇽', 'Venezuela': '🇻🇪',
-  };
-  return flags[country] || '🌍';
-}
-
-// base64ToBlob function removed - no longer needed with Azure Speech SDK
+// Removed getCountryFlag function - no longer using flags
 
