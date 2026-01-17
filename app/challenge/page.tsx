@@ -582,7 +582,7 @@ export default function ChallengePage() {
 
                   {isPlayingAudio && (
                     <button
-                      onClick={playTrivia}
+                      onClick={() => playTrivia()}
                       className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
                     >
                       ⏸️ Stop Playing
