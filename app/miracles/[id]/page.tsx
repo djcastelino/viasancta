@@ -98,8 +98,19 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       // Configure Azure Speech SDK
       const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
 
-      // Use Andrew (Natural) voice - en-US-AndrewMultilingualNeural
-      speechConfig.speechSynthesisVoiceName = 'en-US-AndrewMultilingualNeural';
+      // Multiple natural voices for variety
+      const voices = [
+        { name: 'en-US-AndrewMultilingualNeural', displayName: 'Andrew', gender: 'Male' },
+        { name: 'en-US-AvaMultilingualNeural', displayName: 'Ava', gender: 'Female' },
+        { name: 'en-US-EricNeural', displayName: 'Eric', gender: 'Male' },
+        { name: 'en-US-JennyMultilingualNeural', displayName: 'Jenny', gender: 'Female' },
+      ];
+
+      // Randomly select a voice for variety
+      const selectedVoice = voices[Math.floor(Math.random() * voices.length)];
+      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} (${selectedVoice.gender})`);
+
+      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
 
       // Set audio format to MP3
       speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
@@ -107,7 +118,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       // Set speaking rate (0.95 = slightly slower)
       const ssml = `
         <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-          <voice name="en-US-AndrewMultilingualNeural">
+          <voice name="${selectedVoice.name}">
             <prosody rate="0.95">
               ${cleanNarration}
             </prosody>
@@ -290,8 +301,10 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         {/* Audio Player */}
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 text-center">
           <h2 className="text-2xl font-bold text-[#2C5F87] mb-6">🎧 Listen to the Story</h2>
-          <p className="text-gray-600 mb-6">Hear the full account with AI narration and soothing background music</p>
-          <p className="text-xs text-gray-500 mb-6">🎵 Includes gentle ambient music at 10% volume</p>
+          <p className="text-gray-600 mb-6">Hear the full account with professional AI narration and soothing background music</p>
+          <p className="text-xs text-gray-500 mb-6">
+            🎙️ Natural voices (Andrew, Ava, Eric, or Jenny) • 🎵 Ambient music at 10% volume
+          </p>
           
           <button
             onClick={handlePlayNarration}
