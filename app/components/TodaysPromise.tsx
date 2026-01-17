@@ -220,8 +220,8 @@ export default function TodaysPromise() {
         </speak>
       `;
 
-      // Synthesize speech
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, undefined);
+      // Synthesize speech (null = no auto-play to speakers, only return data)
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
 
       const audioBlob: Blob = await new Promise((resolve, reject) => {
         synthesizer.speakSsmlAsync(
@@ -313,7 +313,6 @@ export default function TodaysPromise() {
         <div className="text-center max-w-4xl mx-auto">
           {/* Header */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-4xl">📖</span>
             <h2 className="text-3xl font-serif font-bold text-[#2C5F87]">
               Today&apos;s Promise
             </h2>

@@ -482,7 +482,7 @@ export default function ChallengePage() {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-            🎯 Daily Scripture Challenge
+            Daily Scripture Challenge
           </h1>
           <p className="text-gray-600 text-lg">
             Test your biblical knowledge! Can you guess who or what this is?
