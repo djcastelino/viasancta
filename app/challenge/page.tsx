@@ -21,6 +21,7 @@ export default function ChallengePage() {
   const [loadingAudio, setLoadingAudio] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
   // Get today's challenge based on date
   const getTodaysChallenge = (): ScriptureChallenge => {
@@ -182,6 +183,77 @@ export default function ChallengePage() {
     }
   };
 
+  const startBackgroundMusic = () => {
+    if (!backgroundMusicRef.current) {
+      // Multiple soothing ambient music options (royalty-free)
+      const musicOptions = [
+        'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
+        'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
+        'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3',
+      ];
+
+      const bgMusic = new Audio(musicOptions[0]);
+      bgMusic.loop = true;
+      bgMusic.volume = 0;
+
+      // Add error handler with fallback
+      bgMusic.onerror = (e) => {
+        console.log('Background music failed to load, trying fallback...');
+        if (musicOptions.length > 1) {
+          bgMusic.src = musicOptions[1];
+          bgMusic.load();
+        }
+      };
+
+      backgroundMusicRef.current = bgMusic;
+    }
+
+    const bgMusic = backgroundMusicRef.current;
+
+    // Reset to start if already playing
+    if (!bgMusic.paused) {
+      bgMusic.pause();
+    }
+    bgMusic.currentTime = 0;
+    bgMusic.volume = 0;
+
+    // Try to play with user interaction context
+    bgMusic.play()
+      .then(() => {
+        console.log('🎵 Background music started successfully');
+        // Fade in to 10% volume (very soft, soothing)
+        fadeInMusic(bgMusic, 0.10);
+      })
+      .catch(err => {
+        console.log('Background music autoplay blocked (normal browser behavior)');
+      });
+  };
+
+  const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
+    const fadeInterval = setInterval(() => {
+      if (audio.volume < targetVolume - 0.01) {
+        audio.volume = Math.min(audio.volume + 0.01, targetVolume);
+      } else {
+        audio.volume = targetVolume;
+        clearInterval(fadeInterval);
+        console.log(`🎵 Background music faded in to ${Math.round(targetVolume * 100)}% volume`);
+      }
+    }, 100);
+  };
+
+  const fadeOutMusic = (audio: HTMLAudioElement) => {
+    const fadeInterval = setInterval(() => {
+      if (audio.volume > 0.01) {
+        audio.volume = Math.max(audio.volume - 0.01, 0);
+      } else {
+        audio.pause();
+        audio.volume = 0;
+        clearInterval(fadeInterval);
+        console.log('🎵 Background music faded out');
+      }
+    }, 100);
+  };
+
   const playTrivia = async () => {
     // Prevent multiple concurrent audio generations
     if (loadingAudio) {
@@ -194,6 +266,12 @@ export default function ChallengePage() {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
       audioRef.current = null;
+
+      // Stop background music
+      if (backgroundMusicRef.current) {
+        fadeOutMusic(backgroundMusicRef.current);
+      }
+
       setIsPlayingAudio(false);
       setLoadingMessage('');
       return;
@@ -286,6 +364,11 @@ export default function ChallengePage() {
         setIsPlayingAudio(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
+
+        // Fade out background music
+        if (backgroundMusicRef.current) {
+          fadeOutMusic(backgroundMusicRef.current);
+        }
       };
 
       audioElement.onerror = () => {
@@ -293,11 +376,22 @@ export default function ChallengePage() {
         setIsPlayingAudio(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
+
+        // Stop background music on error
+        if (backgroundMusicRef.current) {
+          fadeOutMusic(backgroundMusicRef.current);
+        }
       };
 
       // Clear loading state BEFORE playing
       setLoadingAudio(false);
       setLoadingMessage('');
+
+      // Start background music first
+      startBackgroundMusic();
+
+      // Small delay to let background music start smoothly
+      await new Promise(resolve => setTimeout(resolve, 300));
 
       // Start playback
       audioRef.current = audioElement;
@@ -467,7 +561,7 @@ export default function ChallengePage() {
                       onClick={fetchTriviaAndPlay}
                       className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center w-full"
                     >
-                      🔊 Hear a fun fact about {gameState?.targetChallenge?.name}!
+                      🎧 Did you know about {gameState?.targetChallenge?.name}?
                     </button>
                   )}
 
