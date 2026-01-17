@@ -798,5 +798,805 @@
     "testament": "Old",
     "category": "Trust",
     "speaker": "David"
+  },
+  {
+    "id": 101,
+    "verse": "Be joyful in hope, patient in affliction, faithful in prayer.",
+    "reference": "Romans 12:12",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Paul"
+  },
+  {
+    "id": 102,
+    "verse": "The Lord is exalted over all the nations, his glory above the heavens. Who is like the Lord our God, the One who sits enthroned on high?",
+    "reference": "Psalm 113:4-5",
+    "testament": "Old",
+    "category": "Glory",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 103,
+    "verse": "But the Advocate, the Holy Spirit, whom the Father will send in my name, will teach you all things and will remind you of everything I have said to you.",
+    "reference": "John 14:26",
+    "testament": "New",
+    "category": "Holy Spirit",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 104,
+    "verse": "The Lord will keep you from all evil; he will keep your life.",
+    "reference": "Psalm 121:7",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 105,
+    "verse": "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world.",
+    "reference": "John 16:33",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 106,
+    "verse": "The Lord opens the eyes of the blind. The Lord lifts up those who are bowed down; the Lord loves the righteous.",
+    "reference": "Psalm 146:8",
+    "testament": "Old",
+    "category": "Healing",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 107,
+    "verse": "Until now you have not asked for anything in my name. Ask and you will receive, and your joy will be complete.",
+    "reference": "John 16:24",
+    "testament": "New",
+    "category": "Joy",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 108,
+    "verse": "Great is our Lord and mighty in power; his understanding has no limit.",
+    "reference": "Psalm 147:5",
+    "testament": "Old",
+    "category": "Power",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 109,
+    "verse": "Now this is eternal life: that they know you, the only true God, and Jesus Christ, whom you have sent.",
+    "reference": "John 17:3",
+    "testament": "New",
+    "category": "Eternal Life",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 110,
+    "verse": "The Lord is good to those whose hope is in him, to the one who seeks him.",
+    "reference": "Lamentations 3:25",
+    "testament": "Old",
+    "category": "Goodness",
+    "speaker": "Jeremiah"
+  },
+  {
+    "id": 111,
+    "verse": "I give them eternal life, and they shall never perish; no one will snatch them out of my hand.",
+    "reference": "John 10:28",
+    "testament": "New",
+    "category": "Security",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 112,
+    "verse": "The Lord is good, a stronghold in the day of trouble; he knows those who take refuge in him.",
+    "reference": "Nahum 1:7",
+    "testament": "Old",
+    "category": "Refuge",
+    "speaker": "Nahum"
+  },
+  {
+    "id": 113,
+    "verse": "Greater love has no one than this: to lay down one's life for one's friends.",
+    "reference": "John 15:13",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 114,
+    "verse": "The Lord your God will be with you wherever you go.",
+    "reference": "Joshua 1:9",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "God"
+  },
+  {
+    "id": 115,
+    "verse": "I no longer call you servants, because a servant does not know his master's business. Instead, I have called you friends, for everything that I learned from my Father I have made known to you.",
+    "reference": "John 15:15",
+    "testament": "New",
+    "category": "Friendship",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 116,
+    "verse": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+    "reference": "Joshua 1:9",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "God"
+  },
+  {
+    "id": 117,
+    "verse": "You did not choose me, but I chose you and appointed you so that you might go and bear fruit—fruit that will last.",
+    "reference": "John 15:16",
+    "testament": "New",
+    "category": "Calling",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 118,
+    "verse": "The Lord is not slow in keeping his promise, as some understand slowness. Instead he is patient with you, not wanting anyone to perish, but everyone to come to repentance.",
+    "reference": "2 Peter 3:9",
+    "testament": "New",
+    "category": "Patience",
+    "speaker": "Peter"
+  },
+  {
+    "id": 119,
+    "verse": "So do not fear, for I am with you; do not be dismayed, for I am your God.",
+    "reference": "Isaiah 41:10",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "God"
+  },
+  {
+    "id": 120,
+    "verse": "Whoever believes in the Son has eternal life, but whoever rejects the Son will not see life.",
+    "reference": "John 3:36",
+    "testament": "New",
+    "category": "Eternal Life",
+    "speaker": "John"
+  },
+  {
+    "id": 121,
+    "verse": "The Lord is my strength and my defense; he has become my salvation.",
+    "reference": "Exodus 15:2",
+    "testament": "Old",
+    "category": "Salvation",
+    "speaker": "Moses"
+  },
+  {
+    "id": 122,
+    "verse": "For God did not send his Son into the world to condemn the world, but to save the world through him.",
+    "reference": "John 3:17",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "John"
+  },
+  {
+    "id": 123,
+    "verse": "The Lord will fight for you; you need only to be still.",
+    "reference": "Exodus 14:14",
+    "testament": "Old",
+    "category": "Victory",
+    "speaker": "Moses"
+  },
+  {
+    "id": 124,
+    "verse": "This is love: not that we loved God, but that he loved us and sent his Son as an atoning sacrifice for our sins.",
+    "reference": "1 John 4:10",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "John"
+  },
+  {
+    "id": 125,
+    "verse": "It is the Lord who goes before you. He will be with you; he will not leave you or forsake you. Do not fear or be dismayed.",
+    "reference": "Deuteronomy 31:8",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "Moses"
+  },
+  {
+    "id": 126,
+    "verse": "See what great love the Father has lavished on us, that we should be called children of God! And that is what we are!",
+    "reference": "1 John 3:1",
+    "testament": "New",
+    "category": "Identity",
+    "speaker": "John"
+  },
+  {
+    "id": 127,
+    "verse": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+    "reference": "2 Samuel 22:2-3",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "David"
+  },
+  {
+    "id": 128,
+    "verse": "This is the confidence we have in approaching God: that if we ask anything according to his will, he hears us.",
+    "reference": "1 John 5:14",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "John"
+  },
+  {
+    "id": 129,
+    "verse": "The Lord your God is gracious and compassionate. He will not turn his face from you if you return to him.",
+    "reference": "2 Chronicles 30:9",
+    "testament": "Old",
+    "category": "Mercy",
+    "speaker": "God"
+  },
+  {
+    "id": 130,
+    "verse": "You, dear children, are from God and have overcome them, because the one who is in you is greater than the one who is in the world.",
+    "reference": "1 John 4:4",
+    "testament": "New",
+    "category": "Victory",
+    "speaker": "John"
+  },
+  {
+    "id": 131,
+    "verse": "The Lord gives strength to his people; the Lord blesses his people with peace.",
+    "reference": "Psalm 29:11",
+    "testament": "Old",
+    "category": "Peace",
+    "speaker": "David"
+  },
+  {
+    "id": 132,
+    "verse": "If anyone acknowledges that Jesus is the Son of God, God lives in them and they in God.",
+    "reference": "1 John 4:15",
+    "testament": "New",
+    "category": "Presence",
+    "speaker": "John"
+  },
+  {
+    "id": 133,
+    "verse": "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.",
+    "reference": "James 1:12",
+    "testament": "New",
+    "category": "Perseverance",
+    "speaker": "James"
+  },
+  {
+    "id": 134,
+    "verse": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+    "reference": "Isaiah 26:3",
+    "testament": "Old",
+    "category": "Peace",
+    "speaker": "Isaiah"
+  },
+  {
+    "id": 135,
+    "verse": "Every good and perfect gift is from above, coming down from the Father of the heavenly lights.",
+    "reference": "James 1:17",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "James"
+  },
+  {
+    "id": 136,
+    "verse": "The Lord is near to all who call on him, to all who call on him in truth.",
+    "reference": "Psalm 145:18",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "David"
+  },
+  {
+    "id": 137,
+    "verse": "Draw near to God and he will draw near to you.",
+    "reference": "James 4:8",
+    "testament": "New",
+    "category": "Intimacy",
+    "speaker": "James"
+  },
+  {
+    "id": 138,
+    "verse": "Though the mountains be shaken and the hills be removed, yet my unfailing love for you will not be shaken nor my covenant of peace be removed, says the Lord, who has compassion on you.",
+    "reference": "Isaiah 54:10",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "God"
+  },
+  {
+    "id": 139,
+    "verse": "The prayer of a righteous person is powerful and effective.",
+    "reference": "James 5:16",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "James"
+  },
+  {
+    "id": 140,
+    "verse": "For the mountains may depart and the hills be removed, but my steadfast love shall not depart from you.",
+    "reference": "Isaiah 54:10",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "God"
+  },
+  {
+    "id": 141,
+    "verse": "Humble yourselves before the Lord, and he will lift you up.",
+    "reference": "James 4:10",
+    "testament": "New",
+    "category": "Humility",
+    "speaker": "James"
+  },
+  {
+    "id": 142,
+    "verse": "Fear not, for I have redeemed you; I have summoned you by name; you are mine.",
+    "reference": "Isaiah 43:1",
+    "testament": "Old",
+    "category": "Identity",
+    "speaker": "God"
+  },
+  {
+    "id": 143,
+    "verse": "Blessed is the one who trusts in the Lord, whose confidence is in him.",
+    "reference": "Jeremiah 17:7",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "Jeremiah"
+  },
+  {
+    "id": 144,
+    "verse": "The grass withers and the flowers fall, but the word of our God endures forever.",
+    "reference": "Isaiah 40:8",
+    "testament": "Old",
+    "category": "Truth",
+    "speaker": "Isaiah"
+  },
+  {
+    "id": 145,
+    "verse": "Blessed are those whose strength is in you, whose hearts are set on pilgrimage.",
+    "reference": "Psalm 84:5",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 146,
+    "verse": "Cast your cares on the Lord and he will sustain you; he will never let the righteous be shaken.",
+    "reference": "Psalm 55:22",
+    "testament": "Old",
+    "category": "Care",
+    "speaker": "David"
+  },
+  {
+    "id": 147,
+    "verse": "The Lord will watch over your coming and going both now and forevermore.",
+    "reference": "Psalm 121:8",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 148,
+    "verse": "Surely your goodness and love will follow me all the days of my life, and I will dwell in the house of the Lord forever.",
+    "reference": "Psalm 23:6",
+    "testament": "Old",
+    "category": "Assurance",
+    "speaker": "David"
+  },
+  {
+    "id": 149,
+    "verse": "The Lord is a shield for all who take refuge in him.",
+    "reference": "Psalm 18:30",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "David"
+  },
+  {
+    "id": 150,
+    "verse": "Delight yourself in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalm 37:4",
+    "testament": "Old",
+    "category": "Delight",
+    "speaker": "David"
+  },
+  {
+    "id": 151,
+    "verse": "Those who fear the Lord will not be timid, or play the coward, for he is their hope.",
+    "reference": "Sirach 34:16",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 152,
+    "verse": "The souls of the righteous are in the hand of God, and no torment will ever touch them.",
+    "reference": "Wisdom 3:1",
+    "testament": "Old",
+    "category": "Security",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 153,
+    "verse": "My son, if you come to serve the Lord, prepare yourself for trials.",
+    "reference": "Sirach 2:1",
+    "testament": "Old",
+    "category": "Perseverance",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 154,
+    "verse": "But the souls of the righteous are in the hand of God, and no torment shall touch them. In the eyes of the foolish they seemed to have died, but they are at peace.",
+    "reference": "Wisdom 3:1-3",
+    "testament": "Old",
+    "category": "Peace",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 155,
+    "verse": "Those who trust in him will understand truth, and the faithful will abide with him in love, because grace and mercy are upon his holy ones.",
+    "reference": "Wisdom 3:9",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 156,
+    "verse": "For though in the sight of others they were punished, their hope is full of immortality.",
+    "reference": "Wisdom 3:4",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 157,
+    "verse": "With all your heart honor your father, and do not forget the birth pangs of your mother. Remember that through your parents you were born; what can you give back to them that equals their gift to you?",
+    "reference": "Sirach 7:27-28",
+    "testament": "Old",
+    "category": "Honor",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 158,
+    "verse": "God created us for incorruption, and made us in the image of his own eternity.",
+    "reference": "Wisdom 2:23",
+    "testament": "Old",
+    "category": "Identity",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 159,
+    "verse": "The Lord is patient with them and pours out his mercy upon them.",
+    "reference": "Sirach 18:11",
+    "testament": "Old",
+    "category": "Mercy",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 160,
+    "verse": "For whoever finds me finds life and obtains favor from the Lord.",
+    "reference": "Proverbs 8:35",
+    "testament": "Old",
+    "category": "Life",
+    "speaker": "Wisdom"
+  },
+  {
+    "id": 161,
+    "verse": "For she is a reflection of eternal light, a spotless mirror of the working of God, and an image of his goodness.",
+    "reference": "Wisdom 7:26",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 162,
+    "verse": "My child, when you come to serve the Lord, prepare yourself for testing. Set your heart right and be steadfast.",
+    "reference": "Sirach 2:1-2",
+    "testament": "Old",
+    "category": "Testing",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 163,
+    "verse": "For wisdom is more mobile than any motion; because of her pureness she pervades and penetrates all things.",
+    "reference": "Wisdom 7:24",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 164,
+    "verse": "Accept whatever befalls you, and in times of humiliation be patient. For gold is tested in the fire, and those found acceptable, in the furnace of humiliation.",
+    "reference": "Sirach 2:4-5",
+    "testament": "Old",
+    "category": "Patience",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 165,
+    "verse": "The beginning of wisdom is the most sincere desire for instruction, and concern for instruction is love of her.",
+    "reference": "Wisdom 6:17",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 166,
+    "verse": "Trust in God, and he will help you; make straight your ways and hope in him.",
+    "reference": "Sirach 2:6",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 167,
+    "verse": "She reaches mightily from one end of the earth to the other, and she orders all things well.",
+    "reference": "Wisdom 8:1",
+    "testament": "Old",
+    "category": "Providence",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 168,
+    "verse": "For the Lord is compassionate and merciful; he forgives sins and saves in time of distress.",
+    "reference": "Sirach 2:11",
+    "testament": "Old",
+    "category": "Compassion",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 169,
+    "verse": "I loved her and sought her from my youth; I desired to take her for my bride, and became enamored of her beauty.",
+    "reference": "Wisdom 8:2",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 170,
+    "verse": "Those who fear the Lord do not disobey his words, and those who love him keep his ways.",
+    "reference": "Sirach 2:15",
+    "testament": "Old",
+    "category": "Obedience",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 171,
+    "verse": "For in her there is a spirit that is intelligent, holy, unique, manifold, subtle, mobile, clear, unpolluted, distinct, invulnerable, loving the good.",
+    "reference": "Wisdom 7:22",
+    "testament": "Old",
+    "category": "Holy Spirit",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 172,
+    "verse": "Those who fear the Lord prepare their hearts and humble themselves before him.",
+    "reference": "Sirach 2:17",
+    "testament": "Old",
+    "category": "Humility",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 173,
+    "verse": "While remaining in herself, she renews all things; in every generation she passes into holy souls and makes them friends of God, and prophets.",
+    "reference": "Wisdom 7:27",
+    "testament": "Old",
+    "category": "Renewal",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 174,
+    "verse": "Do not depend on wealth that is unrighteous, for it will not benefit you on the day of calamity.",
+    "reference": "Sirach 5:8",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 175,
+    "verse": "For God loves nothing so much as the person who lives with wisdom.",
+    "reference": "Wisdom 7:28",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 176,
+    "verse": "Be steadfast in your understanding, and let your speech be consistent.",
+    "reference": "Sirach 5:10",
+    "testament": "Old",
+    "category": "Integrity",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 177,
+    "verse": "She is more beautiful than the sun, and excels every constellation of the stars. Compared with the light she is found to be superior.",
+    "reference": "Wisdom 7:29",
+    "testament": "Old",
+    "category": "Glory",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 178,
+    "verse": "Be quick to hear, but deliberate in answering.",
+    "reference": "Sirach 5:11",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 179,
+    "verse": "For she is a breath of the power of God, and a pure emanation of the glory of the Almighty.",
+    "reference": "Wisdom 7:25",
+    "testament": "Old",
+    "category": "Glory",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 180,
+    "verse": "A faithful friend is a sturdy shelter; whoever finds one has found a treasure.",
+    "reference": "Sirach 6:14",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 181,
+    "verse": "For wisdom will not enter a deceitful soul or dwell in a body enslaved to sin.",
+    "reference": "Wisdom 1:4",
+    "testament": "Old",
+    "category": "Purity",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 182,
+    "verse": "A faithful friend is beyond price, and there is no weighing of his excellence.",
+    "reference": "Sirach 6:15",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 183,
+    "verse": "For the Spirit of the Lord has filled the world, and that which holds all things together knows what is said.",
+    "reference": "Wisdom 1:7",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 184,
+    "verse": "A faithful friend is a life-saving medicine, and those who fear the Lord will find him.",
+    "reference": "Sirach 6:16",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 185,
+    "verse": "Because God did not make death, and he does not delight in the death of the living.",
+    "reference": "Wisdom 1:13",
+    "testament": "Old",
+    "category": "Life",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 186,
+    "verse": "Whoever fears the Lord will have such friends, for as he is, so are his neighbors.",
+    "reference": "Sirach 6:17",
+    "testament": "Old",
+    "category": "Friendship",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 187,
+    "verse": "For he created all things so that they might exist; the generative forces of the world are wholesome.",
+    "reference": "Wisdom 1:14",
+    "testament": "Old",
+    "category": "Creation",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 188,
+    "verse": "My child, from your youth choose discipline, and when you have gray hair you will still find wisdom.",
+    "reference": "Sirach 6:18",
+    "testament": "Old",
+    "category": "Discipline",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 189,
+    "verse": "Love righteousness, you rulers of the earth, think of the Lord in goodness and seek him with sincerity of heart.",
+    "reference": "Wisdom 1:1",
+    "testament": "Old",
+    "category": "Righteousness",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 190,
+    "verse": "Come to her like one who plows and sows, and wait for her good harvest. For when you cultivate her you will toil but little, and soon you will eat of her produce.",
+    "reference": "Sirach 6:19",
+    "testament": "Old",
+    "category": "Reward",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 191,
+    "verse": "Because he is found by those who do not put him to the test, and manifests himself to those who do not distrust him.",
+    "reference": "Wisdom 1:2",
+    "testament": "Old",
+    "category": "Faith",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 192,
+    "verse": "Listen, my child, and do not reject my counsel; put your feet into her fetters, and your neck into her collar.",
+    "reference": "Sirach 6:23-24",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 193,
+    "verse": "For perverse thoughts separate people from God, and when his power is tested, it exposes the foolish.",
+    "reference": "Wisdom 1:3",
+    "testament": "Old",
+    "category": "Truth",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 194,
+    "verse": "Afterward she will rise up and make your paths straight, and give you rest.",
+    "reference": "Sirach 6:28",
+    "testament": "Old",
+    "category": "Rest",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 195,
+    "verse": "For a holy and disciplined spirit will flee from deceit and will leave foolish thoughts behind.",
+    "reference": "Wisdom 1:5",
+    "testament": "Old",
+    "category": "Holiness",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 196,
+    "verse": "Then she will become to you a strong defense, and will become for you a crown of gladness.",
+    "reference": "Sirach 6:29",
+    "testament": "Old",
+    "category": "Joy",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 197,
+    "verse": "Wisdom is radiant and unfading, and she is easily discerned by those who love her, and is found by those who seek her.",
+    "reference": "Wisdom 6:12",
+    "testament": "Old",
+    "category": "Wisdom",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 198,
+    "verse": "For her adornment is golden, and her bonds are purple cord. You will wear her like a glorious robe, and put her on like a splendid crown.",
+    "reference": "Sirach 6:30-31",
+    "testament": "Old",
+    "category": "Glory",
+    "speaker": "Sirach"
+  },
+  {
+    "id": 199,
+    "verse": "She hastens to make herself known to those who desire her.",
+    "reference": "Wisdom 6:13",
+    "testament": "Old",
+    "category": "Seeking",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 200,
+    "verse": "If you choose, you can keep the commandments, and to act faithfully is a matter of your own choice.",
+    "reference": "Sirach 15:15",
+    "testament": "Old",
+    "category": "Free Will",
+    "speaker": "Sirach"
   }
 ]
