@@ -1,0 +1,109 @@
+{
+  "name": "Daily Promise Narration (Simple - Text Only)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "daily-promise-narration",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "daily-promise-narration"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are a warm, encouraging narrator for Divine Pilgrim, a Catholic spiritual app. Your role is to bring biblical promises to life with reverence, hope, and personal application. Speak as if you're a trusted spiritual guide sharing God's word with a dear friend."
+            },
+            {
+              "role": "user",
+              "content": "=Create a warm, inspiring 30-45 second audio narration for today's biblical promise.\n\nPROMISE: {{ $json.body.verse }}\nREFERENCE: {{ $json.body.reference }}\nTESTAMENT: {{ $json.body.testament }}\nSPEAKER: {{ $json.body.speaker }}\nCATEGORY: {{ $json.body.category }}\n\nGuidelines:\n1. Begin with a brief context (who spoke this, when/where if famous)\n2. Read the promise slowly and clearly\n3. Add 1-2 sentences of personal application or reflection\n4. End with an encouraging thought\n5. Aim for 100-150 words (30-45 seconds spoken)\n6. Use second person (\"you\") to make it personal\n7. Reverent but warm tone - like a spiritual director\n\nExample structure:\n\"In the Gospel of John, Jesus makes this beautiful promise to us: [quote]. This means that [personal application]. Today, may you [encouragement].\"\n\nGenerate the narration now:"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 200
+        }
+      },
+      "id": "groq-1",
+      "name": "Groq",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "groqApi": {
+          "id": "your-groq-credential-id",
+          "name": "Groq API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract narration script from Groq response\nconst groqOutput = $input.item.json;\nlet script = '';\n\nif (groqOutput.message?.content) {\n  script = groqOutput.message.content;\n} else if (groqOutput.text) {\n  script = groqOutput.text;\n} else if (typeof groqOutput === 'string') {\n  script = groqOutput;\n} else {\n  // Fallback\n  const verse = $('Webhook').first().json.body.verse;\n  const reference = $('Webhook').first().json.body.reference;\n  const speaker = $('Webhook').first().json.body.speaker;\n  script = `${speaker} says in ${reference}: \"${verse}\". May this promise bring you hope today.`;\n}\n\nreturn {\n  script: script.trim(),\n  reference: $('Webhook').first().json.body.reference\n};"
+      },
+      "id": "code-1",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-1",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Groq",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {}
+}

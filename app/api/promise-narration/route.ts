@@ -26,14 +26,14 @@ export async function POST(request: NextRequest) {
     }
 
     const data = await response.json();
-    const audioUrl = data.audioUrl || data.audio_url || data.url;
+    const script = data.script;
 
-    if (!audioUrl) {
-      throw new Error('No audio URL returned from n8n workflow');
+    if (!script) {
+      throw new Error('No script returned from n8n workflow');
     }
 
-    console.log('✅ Promise narration generated successfully');
-    return NextResponse.json({ audioUrl });
+    console.log('✅ Promise narration script generated successfully');
+    return NextResponse.json({ script });
   } catch (error) {
     console.error('❌ Error calling n8n webhook:', error);
 

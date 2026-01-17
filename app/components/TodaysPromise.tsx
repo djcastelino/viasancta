@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import promises from '@/src/daily-promises.json';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface DailyPromise {
   id: number;
@@ -134,12 +135,18 @@ export default function TodaysPromise() {
       return;
     }
 
+    // Prevent multiple concurrent requests
+    if (loadingAudio) {
+      console.log('⏳ Already loading, ignoring duplicate click');
+      return;
+    }
+
     try {
       setLoadingAudio(true);
       setLoadingMessage('Generating narration...');
-      console.log('🎙️ Generating promise narration...');
+      console.log('🎙️ Generating promise narration script...');
 
-      // Call the promise narration API
+      // Call the promise narration API to get the script text
       const response = await fetch('/api/promise-narration', {
         method: 'POST',
         headers: {
@@ -153,17 +160,77 @@ export default function TodaysPromise() {
       }
 
       const data = await response.json();
-      console.log('✅ Received narration from API');
+      const script = data.script;
+      console.log('✅ Received narration script from API');
 
       setLoadingMessage('Creating audio...');
 
-      // Fetch the audio file from the URL
-      const audioResponse = await fetch(data.audioUrl);
-      if (!audioResponse.ok) {
-        throw new Error('Failed to fetch audio file');
+      // Get Azure credentials
+      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!azureKey || !azureRegion) {
+        throw new Error('Azure Speech API credentials not configured');
       }
 
-      const audioBlob = await audioResponse.blob();
+      // Configure Azure Speech SDK
+      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
+
+      // Select voice based on promise ID (rotate through 4 voices)
+      const voices = [
+        { name: 'en-US-AndrewMultilingualNeural', displayName: 'Andrew' },
+        { name: 'en-US-AvaMultilingualNeural', displayName: 'Ava' },
+        { name: 'en-US-EricNeural', displayName: 'Eric' },
+        { name: 'en-US-JennyNeural', displayName: 'Jenny' },
+      ];
+
+      const voiceIndex = promise.id % 4;
+      const selectedVoice = voices[voiceIndex];
+      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} for promise ${promise.id}`);
+
+      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      // Set speaking rate (0.95 = slightly slower for meditation)
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="${selectedVoice.name}">
+            <prosody rate="0.95">
+              ${script}
+            </prosody>
+          </voice>
+        </speak>
+      `;
+
+      // Synthesize speech
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, undefined);
+
+      const audioBlob: Blob = await new Promise((resolve, reject) => {
+        synthesizer.speakSsmlAsync(
+          ssml,
+          (result) => {
+            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+              console.log('✅ Azure TTS synthesis completed');
+              const audioData = result.audioData;
+              const blob = new Blob([audioData], { type: 'audio/mp3' });
+              synthesizer.close();
+              resolve(blob);
+            } else {
+              console.error('❌ Speech synthesis failed:', result.errorDetails);
+              synthesizer.close();
+              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
+            }
+          },
+          (error) => {
+            console.error('❌ Azure TTS error:', error);
+            synthesizer.close();
+            reject(new Error(`Azure TTS error: ${error}`));
+          }
+        );
+      });
+
+      console.log('🎵 Audio blob created, size:', audioBlob.size, 'bytes');
+
       const audioUrl = URL.createObjectURL(audioBlob);
       const audioElement = new Audio(audioUrl);
 
