@@ -182,53 +182,69 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
   const startBackgroundMusic = () => {
     if (!backgroundMusicRef.current) {
-      // Using a working royalty-free ambient music source
-      // You can replace this with your own file at /public/audio/background-music.mp3
-      const bgMusic = new Audio('https://www.bensound.com/bensound-music/bensound-slowmotion.mp3');
+      // Multiple soothing ambient music options (royalty-free)
+      const musicOptions = [
+        'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
+        'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
+        'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3',
+      ];
+
+      // Use first option (you can randomize or let user choose)
+      const bgMusic = new Audio(musicOptions[0]);
       bgMusic.loop = true;
       bgMusic.volume = 0; // Start at 0 for fade-in
-      
-      // Add error handler
+      bgMusic.preload = 'auto'; // Preload for smoother playback
+
+      // Add error handler with fallback
       bgMusic.onerror = (e) => {
-        console.error('Background music failed to load:', e);
-        // Silently fail - narration will still work
+        console.log('Background music failed to load, trying fallback...');
+        // Try next music option if available
+        if (musicOptions.length > 1) {
+          bgMusic.src = musicOptions[1];
+          bgMusic.load();
+        }
       };
-      
+
       backgroundMusicRef.current = bgMusic;
     }
 
     const bgMusic = backgroundMusicRef.current;
     bgMusic.currentTime = 0;
+
+    // Try to play with user interaction context
     bgMusic.play()
       .then(() => {
-        console.log('Background music started successfully');
-        // Fade in to 10% volume (very soft)
+        console.log('🎵 Background music started successfully at 10% volume');
+        // Fade in to 10% volume (very soft, soothing)
         fadeInMusic(bgMusic, 0.10);
       })
       .catch(err => {
-        console.log('Background music autoplay prevented or failed:', err);
-        // This is normal - some browsers block autoplay
+        console.log('Background music autoplay blocked (normal browser behavior)');
+        // User needs to interact first - this is expected
       });
   };
 
   const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
     const fadeInterval = setInterval(() => {
-      if (audio.volume < targetVolume) {
-        audio.volume = Math.min(audio.volume + 0.02, targetVolume);
+      if (audio.volume < targetVolume - 0.01) {
+        audio.volume = Math.min(audio.volume + 0.01, targetVolume);
       } else {
+        audio.volume = targetVolume;
         clearInterval(fadeInterval);
+        console.log(`🎵 Background music faded in to ${Math.round(targetVolume * 100)}% volume`);
       }
     }, 100);
   };
 
   const fadeOutMusic = (audio: HTMLAudioElement) => {
     const fadeInterval = setInterval(() => {
-      if (audio.volume > 0.02) {
-        audio.volume = Math.max(audio.volume - 0.02, 0);
+      if (audio.volume > 0.01) {
+        audio.volume = Math.max(audio.volume - 0.01, 0);
       } else {
         audio.pause();
         audio.volume = 0;
         clearInterval(fadeInterval);
+        console.log('🎵 Background music faded out');
       }
     }, 100);
   };
@@ -274,7 +290,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         {/* Audio Player */}
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 text-center">
           <h2 className="text-2xl font-bold text-[#2C5F87] mb-6">🎧 Listen to the Story</h2>
-          <p className="text-gray-600 mb-6">Hear the full account of this miracle with AI-generated narration</p>
+          <p className="text-gray-600 mb-6">Hear the full account with AI narration and soothing background music</p>
+          <p className="text-xs text-gray-500 mb-6">🎵 Includes gentle ambient music at 10% volume</p>
           
           <button
             onClick={handlePlayNarration}
