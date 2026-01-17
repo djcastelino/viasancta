@@ -152,13 +152,13 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       });
 
       const audioUrl = URL.createObjectURL(audioBlob);
-      
+
       const audioElement = new Audio(audioUrl);
       audioElement.onended = () => {
         setIsPlaying(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
-        
+
         // Fade out background music
         if (backgroundMusicRef.current) {
           fadeOutMusic(backgroundMusicRef.current);
@@ -169,16 +169,20 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         setIsPlaying(false);
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
-        
+
         // Stop background music on error
         if (backgroundMusicRef.current) {
           fadeOutMusic(backgroundMusicRef.current);
         }
       };
-      
-      // Start background music
+
+      // Start background music and wait a moment for it to begin
       startBackgroundMusic();
-      
+
+      // Small delay to let background music start
+      await new Promise(resolve => setTimeout(resolve, 300));
+
+      // Now play narration with music already started
       await audioElement.play();
       audioRef.current = audioElement;
       setIsPlaying(true);
@@ -220,12 +224,18 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     }
 
     const bgMusic = backgroundMusicRef.current;
+
+    // Reset to start if already playing
+    if (!bgMusic.paused) {
+      bgMusic.pause();
+    }
     bgMusic.currentTime = 0;
+    bgMusic.volume = 0;
 
     // Try to play with user interaction context
     bgMusic.play()
       .then(() => {
-        console.log('🎵 Background music started successfully at 10% volume');
+        console.log('🎵 Background music started successfully');
         // Fade in to 10% volume (very soft, soothing)
         fadeInMusic(bgMusic, 0.10);
       })
