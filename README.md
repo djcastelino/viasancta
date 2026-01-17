@@ -18,7 +18,7 @@ Experience divine encounters through AI-guided virtual pilgrimages to Eucharisti
 - **PWA:** next-pwa
 - **Backend:** n8n (workflow automation)
 - **AI:** Groq (LLaMA models)
-- **TTS:** Google Cloud Text-to-Speech
+- **TTS:** Microsoft Azure Speech Services (Andrew Natural voice)
 - **Hosting:** Vercel
 
 ## 📦 Installation

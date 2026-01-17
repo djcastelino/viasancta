@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 export default function MiraclePage({ params }: { params: Promise<{ id: string }> }) {
   const [miracleId, setMiracleId] = useState<string>('');
@@ -86,42 +87,59 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
       setLoadingMessage('Creating audio...');
 
-      // Now call Google TTS to convert text to speech
-      const apiKey = process.env.NEXT_PUBLIC_GOOGLE_TTS_API_KEY;
-      
-      if (!apiKey) {
-        throw new Error('Google TTS API key not configured. Please add NEXT_PUBLIC_GOOGLE_TTS_API_KEY to Vercel environment variables.');
+      // Now call Microsoft Azure Speech Services to convert text to speech
+      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!azureKey || !azureRegion) {
+        throw new Error('Azure Speech API credentials not configured. Please check your environment variables.');
       }
 
-      const ttsResponse = await fetch(
-        `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            input: { text: cleanNarration },
-            voice: {
-              languageCode: 'en-US',
-              name: data.voice || 'en-US-Neural2-J',
-            },
-            audioConfig: {
-              audioEncoding: 'MP3',
-              speakingRate: 0.95,
-            },
-          }),
-        }
-      );
+      // Configure Azure Speech SDK
+      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
 
-      if (!ttsResponse.ok) {
-        const errorData = await ttsResponse.json();
-        throw new Error(`Google TTS error: ${errorData.error?.message || 'Failed to generate audio'}`);
-      }
+      // Use Andrew (Natural) voice - en-US-AndrewMultilingualNeural
+      speechConfig.speechSynthesisVoiceName = 'en-US-AndrewMultilingualNeural';
 
-      const ttsData = await ttsResponse.json();
-      
-      // Create audio element and play
-      const audioContent = ttsData.audioContent;
-      const audioBlob = base64ToBlob(audioContent, 'audio/mp3');
+      // Set audio format to MP3
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      // Set speaking rate (0.95 = slightly slower)
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="en-US-AndrewMultilingualNeural">
+            <prosody rate="0.95">
+              ${cleanNarration}
+            </prosody>
+          </voice>
+        </speak>
+      `;
+
+      // Create synthesizer with null audio output (we'll handle audio manually)
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, undefined);
+
+      // Synthesize speech
+      const audioBlob = await new Promise<Blob>((resolve, reject) => {
+        synthesizer.speakSsmlAsync(
+          ssml,
+          (result) => {
+            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+              const audioData = result.audioData;
+              const blob = new Blob([audioData], { type: 'audio/mp3' });
+              synthesizer.close();
+              resolve(blob);
+            } else {
+              synthesizer.close();
+              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
+            }
+          },
+          (error) => {
+            synthesizer.close();
+            reject(new Error(`Azure TTS error: ${error}`));
+          }
+        );
+      });
+
       const audioUrl = URL.createObjectURL(audioBlob);
       
       const audioElement = new Audio(audioUrl);
@@ -371,13 +389,5 @@ function getCountryFlag(country: string): string {
   return flags[country] || '🌍';
 }
 
-function base64ToBlob(base64: string, mimeType: string): Blob {
-  const byteCharacters = atob(base64);
-  const byteNumbers = new Array(byteCharacters.length);
-  for (let i = 0; i < byteCharacters.length; i++) {
-    byteNumbers[i] = byteCharacters.charCodeAt(i);
-  }
-  const byteArray = new Uint8Array(byteNumbers);
-  return new Blob([byteArray], { type: mimeType });
-}
+// base64ToBlob function removed - no longer needed with Azure Speech SDK
 
