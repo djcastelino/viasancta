@@ -21,8 +21,12 @@
         "messages": {
           "values": [
             {
+              "role": "system",
+              "content": "You are an engaging biblical scholar and storyteller. Your job is to share fascinating, memorable facts about biblical characters, events, and places that inspire curiosity and deepen understanding. Always write in a warm, conversational tone that's appropriate for all ages."
+            },
+            {
               "role": "user",
-              "content": "=You are a biblical scholar sharing interesting trivia. Generate a fascinating, concise 2-sentence fun fact about \"{{ $json.body.name }}\" from the Bible.\n\nContext:\n- Testament: {{ $json.body.testament }}\n- Role: {{ $json.body.role }}\n- Famous for: {{ $json.body.famousFor }}\n- Books: {{ $json.body.books.join(', ') }}\n\nRequirements:\n- Exactly 2 sentences\n- Engaging and memorable\n- Appropriate for all ages\n- Focus on interesting details not already mentioned in the famous for section\n- Make it conversational and easy to understand\n\nExample format: \"Did you know that [interesting fact]? [Additional fascinating detail].\"\n\nGenerate the trivia now:"
+              "content": "=Generate a fascinating 2-sentence fun fact about \"{{ $json.body.name }}\" from the Bible.\n\n**Context:**\n- Testament: {{ $json.body.testament }}\n- Role: {{ $json.body.role }}\n- Already known for: {{ $json.body.famousFor }}\n- Appears in: {{ $json.body.books.join(', ') }}\n\n**Requirements:**\n1. Exactly 2 sentences\n2. Start with \"Did you know that...\"\n3. Share interesting details NOT already mentioned in \"{{ $json.body.famousFor }}\"\n4. Make it memorable and engaging\n5. Appropriate for all ages\n6. Focus on lesser-known facts, connections, or details\n\n**Examples of good trivia:**\n- \"Did you know that Moses lived to be 120 years old yet his eyes never grew dim? He was the only person to speak with God face to face, and his face shone so brightly after these encounters that he had to wear a veil!\"\n- \"Did you know that David wrote over half of the Psalms while facing persecution and hardship? Before becoming king, he was a skilled harp player who could calm King Saul's troubled spirit with his music!\"\n\nGenerate the trivia now:"
             }
           ]
         },
@@ -45,7 +49,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Extract trivia from Groq response\nconst groqOutput = $input.item.json;\nlet trivia = '';\n\nif (groqOutput.message?.content) {\n  trivia = groqOutput.message.content;\n} else if (groqOutput.text) {\n  trivia = groqOutput.text;\n} else if (typeof groqOutput === 'string') {\n  trivia = groqOutput;\n} else {\n  // Fallback\n  const name = $('Webhook').first().json.body.name;\n  const books = $('Webhook').first().json.body.books.join(', ');\n  const famousFor = $('Webhook').first().json.body.famousFor;\n  trivia = `${name} is mentioned in ${books}. ${famousFor}`;\n}\n\nreturn {\n  trivia: trivia.trim()\n};"
+        "jsCode": "// Extract trivia from Groq response\nconst groqOutput = $input.item.json;\nlet trivia = '';\n\nif (groqOutput.message?.content) {\n  trivia = groqOutput.message.content;\n} else if (groqOutput.text) {\n  trivia = groqOutput.text;\n} else if (typeof groqOutput === 'string') {\n  trivia = groqOutput;\n} else {\n  // Fallback\n  const name = $('Webhook').first().json.body.name;\n  const books = $('Webhook').first().json.body.books.join(', ');\n  const famousFor = $('Webhook').first().json.body.famousFor;\n  trivia = `Did you know that ${name} is mentioned in ${books}? ${famousFor}.`;\n}\n\nreturn {\n  trivia: trivia.trim()\n};"
       },
       "id": "code-1",
       "name": "Format Response",
