@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
-import MiracleCard from '@/app/components/MiracleCard';
+import TourPageClient from './TourPageClient';
 
 export default async function TourPage({ params }: { params: Promise<{ tourId: string }> }) {
   const { tourId } = await params;
@@ -31,7 +31,7 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
       {/* Header */}
       <header className="text-center pt-12 pb-8 px-5">
         <div className="mb-4">
-          <Link href="/" className="text-gray-600 hover:text-[#2C5F87] text-sm">
+          <Link href="/" className="text-gray-600 hover:text-[#2C5F87] text-sm font-semibold hover:underline">
             ← Back to All Tours
           </Link>
         </div>
@@ -41,12 +41,16 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
         <p className="text-xl text-[#8B7355] italic mb-3">
           Based on St. Carlo Acutis Research
         </p>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-2">
           Journey through documented Eucharistic miracles from around the world
         </p>
+        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
+          <span>✓</span>
+          <span>100% Complete Collection</span>
+        </div>
 
         {/* Stats */}
-        <div className="flex justify-center gap-8 mt-8">
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
           <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
             <div className="text-3xl font-bold text-[#D4AF37]">{miracles.length}</div>
             <div className="text-sm text-gray-500">Sacred Stops</div>
@@ -59,17 +63,15 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
             <div className="text-3xl font-bold text-[#D4AF37]">2,000+</div>
             <div className="text-sm text-gray-500">Years of History</div>
           </div>
+          <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
+            <div className="text-3xl font-bold text-[#D4AF37]">~7 hrs</div>
+            <div className="text-sm text-gray-500">Total Duration</div>
+          </div>
         </div>
       </header>
 
-      {/* Miracles Grid - Now with beautiful Geonauts-style cards! */}
-      <section className="max-w-7xl mx-auto px-5 pb-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {miracles.map((miracle: any) => (
-            <MiracleCard key={miracle.id} miracle={miracle} />
-          ))}
-        </div>
-      </section>
+      {/* Search, Filter, and Miracles Grid */}
+      <TourPageClient miracles={miracles} countries={countries} />
     </main>
   );
 }

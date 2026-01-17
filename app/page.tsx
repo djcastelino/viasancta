@@ -9,16 +9,80 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
-      {/* Header */}
-      <header className="text-center pt-16 pb-12 px-5">
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-          Divine Pilgrim
-        </h1>
-        <p className="text-2xl text-[#D4AF37] italic mb-3">Virtual Sacred Journeys</p>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Experience divine encounters through AI-guided virtual pilgrimages
-        </p>
+      {/* Enhanced Hero Section */}
+      <header className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background with overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#6e3a6c]/90 via-[#2C5F87]/85 to-[#325847]/90" />
+          {/* Animated background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center px-5 text-white max-w-5xl mx-auto">
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl font-serif animate-fade-in">
+            Divine Pilgrim
+          </h1>
+          <p className="text-3xl md:text-4xl text-[#D4AF37] italic mb-6 drop-shadow-lg">
+            Virtual Sacred Journeys
+          </p>
+          <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
+            Experience divine encounters through AI-guided virtual pilgrimages to 136 documented Eucharistic miracles
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              href="/tours/eucharistic-miracles"
+              className="inline-block bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            >
+              Start Your Journey →
+            </Link>
+            <Link
+              href="/about"
+              className="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </header>
+
+      {/* Statistics Section */}
+      <section className="max-w-7xl mx-auto px-5 py-20 -mt-16 relative z-20">
+        <div className="bg-white rounded-3xl shadow-2xl p-10">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#D4AF37] mb-2">{miracles.length}</div>
+              <div className="text-gray-600 text-lg font-semibold">Eucharistic Miracles</div>
+              <div className="text-green-600 text-sm font-bold mt-1">✓ 100% Complete</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#D4AF37] mb-2">25+</div>
+              <div className="text-gray-600 text-lg font-semibold">Countries</div>
+              <div className="text-gray-500 text-sm mt-1">Worldwide Coverage</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#D4AF37] mb-2">2,000+</div>
+              <div className="text-gray-600 text-lg font-semibold">Years of History</div>
+              <div className="text-gray-500 text-sm mt-1">8th Century to Present</div>
+            </div>
+            <div className="text-center">
+              <div className="text-6xl font-bold text-[#D4AF37] mb-2">~7</div>
+              <div className="text-gray-600 text-lg font-semibold">Hours of Content</div>
+              <div className="text-gray-500 text-sm mt-1">AI Narrated Tours</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Highlights Section */}
       <section className="max-w-7xl mx-auto px-5 mb-16">
@@ -76,7 +140,14 @@ export default function Home() {
           
           {/* Eucharistic Miracles */}
           <Link href="/tours/eucharistic-miracles" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              {/* Completion Badge */}
+              <div className="absolute top-4 right-4 z-10">
+                <div className="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2">
+                  <span>✓</span>
+                  <span>100% Complete</span>
+                </div>
+              </div>
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
                 {/* Gemini-generated Sacred Heart image */}
@@ -299,34 +370,116 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-8 px-5">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex justify-center gap-6 mb-4 text-sm">
-            <Link href="/about" className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors">
-              About
-            </Link>
-            <a 
-              href="https://www.miracolieucaristici.org" 
-            target="_blank"
-            rel="noopener noreferrer"
-              className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
-            >
-              Carlo Acutis Exhibition
-          </a>
-          <a
-              href="mailto:info@divinepilgrim.com"
-              className="text-[#2C5F87] hover:text-[#D4AF37] transition-colors"
-            >
-              Contact
-            </a>
+      {/* Enhanced Footer */}
+      <footer className="bg-gradient-to-br from-[#193d52] to-[#325847] text-white py-16 px-5 mt-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
+            {/* Brand */}
+            <div>
+              <h3 className="text-3xl font-bold mb-4 font-serif flex items-center gap-2">
+                <span>✝️</span>
+                Divine Pilgrim
+              </h3>
+              <p className="text-white/80 mb-4">
+                Experience sacred journeys through AI-guided virtual pilgrimages to Eucharistic miracles worldwide.
+              </p>
+              <div className="text-[#D4AF37] font-semibold">
+                100% Complete Collection
+              </div>
+            </div>
+
+            {/* Tours */}
+            <div>
+              <h4 className="font-bold text-lg mb-4 text-[#D4AF37]">Tours</h4>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <Link href="/tours/eucharistic-miracles" className="hover:text-white hover:underline transition-colors flex items-center gap-2">
+                    <span>✓</span>
+                    Eucharistic Miracles (136)
+                  </Link>
+                </li>
+                <li className="text-white/50 flex items-center gap-2">
+                  <span>⏳</span>
+                  Marian Apparitions (Coming Soon)
+                </li>
+                <li className="text-white/50 flex items-center gap-2">
+                  <span>⏳</span>
+                  Stations of the Cross (Coming Soon)
+                </li>
+                <li className="text-white/50 flex items-center gap-2">
+                  <span>⏳</span>
+                  Shrines of Saints (Coming Soon)
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="font-bold text-lg mb-4 text-[#D4AF37]">Resources</h4>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <Link href="/about" className="hover:text-white hover:underline transition-colors">
+                    About Divine Pilgrim
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://www.miracolieucaristici.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white hover:underline transition-colors"
+                  >
+                    Carlo Acutis Exhibition
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@divinepilgrim.com" className="hover:text-white hover:underline transition-colors">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/djcastelino/viasancta" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline transition-colors">
+                    GitHub Repository
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <h4 className="font-bold text-lg mb-4 text-[#D4AF37]">Connect</h4>
+              <p className="text-white/80 mb-4">
+                Share your pilgrimage journey with others
+              </p>
+              <div className="flex gap-4 mb-6">
+                <a href="mailto:info@divinepilgrim.com" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Email">
+                  📧
+                </a>
+                <a href="#" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Share">
+                  📱
+                </a>
+                <a href="https://www.miracolieucaristici.org" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Carlo Acutis">
+                  🙏
+                </a>
+              </div>
+              <div className="text-sm text-white/60">
+                Built with Azure TTS & Next.js
+              </div>
+            </div>
           </div>
-          <p className="text-gray-600 text-sm">
-            Made with 🙏 for pilgrims worldwide
-          </p>
-          <p className="text-gray-500 text-xs mt-2">
-            Inspired by Blessed Carlo Acutis
-          </p>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-white/20 pt-8 text-center">
+            <p className="text-white/80 mb-2">
+              Made with 🙏 in honor of <span className="text-[#D4AF37] font-semibold">Blessed Carlo Acutis</span>
+            </p>
+            <p className="text-white/60 text-sm">
+              © {new Date().getFullYear()} Divine Pilgrim. Virtual Sacred Journeys for all.
+            </p>
+            <p className="text-white/40 text-xs mt-2">
+              divinepilgrim.com
+            </p>
+          </div>
         </div>
       </footer>
       </main>
