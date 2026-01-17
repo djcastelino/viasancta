@@ -152,8 +152,14 @@ export default function ChallengePage() {
     localStorage.setItem('challengeHistory', JSON.stringify(history));
   };
 
-  const fetchTrivia = async () => {
-    if (!gameState?.targetChallenge || trivia) return;
+  const fetchTriviaAndPlay = async () => {
+    if (!gameState?.targetChallenge) return;
+
+    // If trivia already loaded, just play it
+    if (trivia) {
+      playTrivia();
+      return;
+    }
 
     setLoadingTrivia(true);
     try {
@@ -165,10 +171,13 @@ export default function ChallengePage() {
 
       const data: TriviaResponse = await response.json();
       setTrivia(data.trivia);
+      setLoadingTrivia(false);
+
+      // Auto-play the audio immediately after fetching
+      setTimeout(() => playTrivia(), 100);
     } catch (error) {
       console.error('Failed to fetch trivia:', error);
       setTrivia('Fun fact coming soon!');
-    } finally {
       setLoadingTrivia(false);
     }
   };
@@ -453,35 +462,28 @@ export default function ChallengePage() {
 
                 {/* Trivia Section */}
                 <div className="mt-6 pt-4 border-t border-gray-200">
-                  {!trivia && !loadingTrivia && (
+                  {!trivia && !loadingTrivia && !isPlayingAudio && (
                     <button
-                      onClick={fetchTrivia}
-                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+                      onClick={fetchTriviaAndPlay}
+                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center w-full"
                     >
-                      📚 Learn More
+                      🔊 Hear a fun fact about {gameState?.targetChallenge?.name}!
                     </button>
                   )}
 
-                  {loadingTrivia && (
-                    <div className="text-gray-500 animate-pulse">Loading interesting fact...</div>
+                  {(loadingTrivia || loadingAudio) && (
+                    <div className="text-gray-500 animate-pulse text-center">
+                      {loadingTrivia ? '🎙️ Generating trivia...' : '🎵 Creating audio...'}
+                    </div>
                   )}
 
-                  {trivia && (
-                    <div className="bg-white/50 p-4 rounded-lg">
-                      <p className="text-gray-700 italic mb-3">{trivia}</p>
-                      {loadingMessage && (
-                        <p className="text-sm text-[#2C5F87] mb-2 text-center">{loadingMessage}</p>
-                      )}
-                      <button
-                        onClick={playTrivia}
-                        disabled={loadingAudio}
-                        className={`${
-                          loadingAudio ? 'bg-gray-400' : isPlayingAudio ? 'bg-red-500 hover:bg-red-600' : 'bg-[#2C5F87] hover:bg-[#1e4460]'
-                        } text-white px-6 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto`}
-                      >
-                        {loadingAudio ? '⏳ Creating audio...' : isPlayingAudio ? '⏸️ Stop' : '🔊 Listen'}
-                      </button>
-                    </div>
+                  {isPlayingAudio && (
+                    <button
+                      onClick={playTrivia}
+                      className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
+                    >
+                      ⏸️ Stop Playing
+                    </button>
                   )}
                 </div>
 
