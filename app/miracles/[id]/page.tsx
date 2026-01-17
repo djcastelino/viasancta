@@ -25,23 +25,29 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   }, [params]);
 
   const handlePlayNarration = async () => {
+    // Prevent multiple concurrent audio generations
+    if (isLoading) {
+      console.log('⏳ Already loading, ignoring duplicate click');
+      return;
+    }
+
     if (isPlaying && audioRef.current) {
       // Clear event handlers first to prevent error messages
       audioRef.current.onended = null;
       audioRef.current.onerror = null;
-      
+
       // Stop current playback
       audioRef.current.pause();
       audioRef.current.currentTime = 0; // Reset to beginning
       audioRef.current = null;
-      
+
       // Stop background music immediately
       if (backgroundMusicRef.current) {
         backgroundMusicRef.current.pause();
         backgroundMusicRef.current.currentTime = 0;
         backgroundMusicRef.current.volume = 0;
       }
-      
+
       setIsPlaying(false);
       setLoadingMessage('');
       setError(''); // Clear any error messages
@@ -127,7 +133,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       `;
 
       // Create synthesizer with null audio output (we'll handle audio manually)
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, undefined);
+      // Passing null prevents SDK from auto-playing - we want to control playback ourselves
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
 
       // Synthesize speech
       const audioBlob = await new Promise<Blob>((resolve, reject) => {
