@@ -200,6 +200,9 @@ export default function ChallengePage() {
       const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
       const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
 
+      console.log('🔑 Azure Key:', azureKey ? `${azureKey.substring(0, 10)}...` : 'NOT FOUND');
+      console.log('🌍 Azure Region:', azureRegion || 'NOT FOUND');
+
       if (!azureKey || !azureRegion) {
         throw new Error('Azure Speech API credentials not configured');
       }
@@ -209,7 +212,9 @@ export default function ChallengePage() {
 
       // Use a natural voice (Jenny is warm and engaging)
       const voiceName = 'en-US-JennyMultilingualNeural';
+      console.log('🎙️ Selected voice:', voiceName);
       speechConfig.speechSynthesisVoiceName = voiceName;
+      console.log('✅ Voice configured in speechConfig:', speechConfig.speechSynthesisVoiceName);
 
       // Set audio format to MP3
       speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
@@ -234,21 +239,27 @@ export default function ChallengePage() {
           ssml,
           (result) => {
             if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+              console.log('✅ Audio synthesis completed!');
+              console.log('📊 Audio data size:', result.audioData.byteLength, 'bytes');
               const audioData = result.audioData;
               const blob = new Blob([audioData], { type: 'audio/mp3' });
               synthesizer.close();
               resolve(blob);
             } else {
+              console.error('❌ Speech synthesis failed:', result.errorDetails);
               synthesizer.close();
               reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
             }
           },
           (error) => {
+            console.error('❌ Azure TTS error:', error);
             synthesizer.close();
             reject(new Error(`Azure TTS error: ${error}`));
           }
         );
       });
+
+      console.log('🎵 Audio blob created, size:', audioBlob.size, 'bytes');
 
       const audioUrl = URL.createObjectURL(audioBlob);
       const audioElement = new Audio(audioUrl);
@@ -273,13 +284,19 @@ export default function ChallengePage() {
       // Start playback
       audioRef.current = audioElement;
       setIsPlayingAudio(true);
+      console.log('▶️ Starting playback with Azure TTS audio...');
       await audioElement.play();
+      console.log('🎶 Audio is now playing');
 
     } catch (error) {
-      console.error('Error generating audio:', error);
+      console.error('❌ Error generating audio:', error);
       setLoadingAudio(false);
       setLoadingMessage('');
-      alert('Failed to generate audio. Please try again.');
+
+      // If Azure fails, show a more helpful error
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      console.error('💥 Full error details:', errorMessage);
+      alert(`Failed to generate audio: ${errorMessage}`);
     }
   };
 
