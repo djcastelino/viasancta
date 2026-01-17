@@ -176,22 +176,26 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         }
       };
 
-      // Start background music and wait a moment for it to begin
+      // IMPORTANT: Clear loading state BEFORE playing audio
+      // This prevents spinner showing while audio is playing
+      setIsLoading(false);
+      setLoadingMessage('');
+
+      // Start background music first
       startBackgroundMusic();
 
-      // Small delay to let background music start
+      // Small delay to let background music start smoothly
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Now play narration with music already started
+      // Now play narration with music already playing
       await audioElement.play();
       audioRef.current = audioElement;
       setIsPlaying(true);
     } catch (err: any) {
       setError(err.message || 'Failed to play narration');
-      console.error('Narration error:', err);
-    } finally {
       setIsLoading(false);
       setLoadingMessage('');
+      console.error('Narration error:', err);
     }
   };
 
