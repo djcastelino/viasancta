@@ -76,8 +76,8 @@ viasancta/
 
 ## 🗺️ Tours
 
-### ⚪ Eucharistic Miracles (Available Now)
-11 documented miracles based on St. Carlo Acutis's research
+### ⚪ Eucharistic Miracles (Available Now - COMPLETE!)
+136 documented miracles based on St. Carlo Acutis's research - 100% complete!
 
 ### Coming Soon:
 - ⭐ Marian Apparitions (25 stops)

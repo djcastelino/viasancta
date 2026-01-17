@@ -103,7 +103,7 @@ export default function Home() {
                     <div className="text-sm text-gray-500">Sacred Stops</div>
                   </div>
                   <div>
-                    <div className="text-3xl font-bold text-[#D4AF37]">~6 hours</div>
+                    <div className="text-3xl font-bold text-[#D4AF37]">~7 hours</div>
                     <div className="text-sm text-gray-500">Estimated Time</div>
                   </div>
                 </div>
