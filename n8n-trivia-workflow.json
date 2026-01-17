@@ -1,0 +1,105 @@
+{
+  "name": "Scripture Challenge Trivia Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "scripture-trivia",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "your-webhook-id"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "=You are a biblical scholar sharing interesting trivia. Generate a fascinating, concise 2-sentence fun fact about \"{{ $json.body.name }}\" from the Bible.\n\nContext:\n- Testament: {{ $json.body.testament }}\n- Role: {{ $json.body.role }}\n- Famous for: {{ $json.body.famousFor }}\n- Books: {{ $json.body.books.join(', ') }}\n\nRequirements:\n- Exactly 2 sentences\n- Engaging and memorable\n- Appropriate for all ages\n- Focus on interesting details not already mentioned in the famous for section\n- Make it conversational and easy to understand\n\nExample format: \"Did you know that [interesting fact]? [Additional fascinating detail].\"\n\nGenerate the trivia now:"
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 150
+        }
+      },
+      "id": "groq-1",
+      "name": "Groq",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "groqApi": {
+          "id": "your-groq-credential-id",
+          "name": "Groq API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract trivia from Groq response\nconst groqOutput = $input.item.json;\nlet trivia = '';\n\nif (groqOutput.message?.content) {\n  trivia = groqOutput.message.content;\n} else if (groqOutput.text) {\n  trivia = groqOutput.text;\n} else if (typeof groqOutput === 'string') {\n  trivia = groqOutput;\n} else {\n  // Fallback\n  const name = $('Webhook').first().json.body.name;\n  const books = $('Webhook').first().json.body.books.join(', ');\n  const famousFor = $('Webhook').first().json.body.famousFor;\n  trivia = `${name} is mentioned in ${books}. ${famousFor}`;\n}\n\nreturn {\n  trivia: trivia.trim()\n};"
+      },
+      "id": "code-1",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-1",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Groq",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {}
+}

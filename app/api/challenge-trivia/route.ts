@@ -1,54 +1,44 @@
 import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
 
 export async function POST(request: NextRequest) {
   try {
     const { challenge } = await request.json();
 
-    // Check if Groq API key is available
-    if (!process.env.GROQ_API_KEY) {
-      // Return a simple fallback message
+    // Check if n8n webhook URL is configured
+    const n8nWebhookUrl = process.env.N8N_TRIVIA_WEBHOOK_URL;
+
+    if (!n8nWebhookUrl) {
+      // Return a simple fallback message if no n8n webhook configured
       const trivia = `${challenge.name} is mentioned in ${challenge.books.join(', ')}. ${challenge.famousFor}`;
       return NextResponse.json({ trivia });
     }
 
-    // Use Groq API with Llama 3.3 (FREE and FAST!)
-    const groq = new OpenAI({
-      apiKey: process.env.GROQ_API_KEY,
-      baseURL: 'https://api.groq.com/openai/v1',
+    // Call n8n workflow webhook with challenge data
+    const response = await fetch(n8nWebhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: challenge.name,
+        testament: challenge.testament,
+        role: challenge.role,
+        famousFor: challenge.famousFor,
+        books: challenge.books,
+      }),
     });
 
-    const prompt = `You are a biblical scholar sharing interesting trivia. Generate a fascinating, concise 2-sentence fun fact about "${challenge.name}" from the Bible.
+    if (!response.ok) {
+      throw new Error(`n8n webhook failed: ${response.statusText}`);
+    }
 
-Requirements:
-- Exactly 2 sentences
-- Engaging and memorable
-- Appropriate for all ages
-- Focus on interesting details not already mentioned in: "${challenge.famousFor}"
-- Make it conversational and easy to understand
-
-Example format: "Did you know that [interesting fact]? [Additional fascinating detail]."
-
-Generate the trivia now:`;
-
-    const completion = await groq.chat.completions.create({
-      model: 'llama-3.3-70b-versatile', // Fast and smart!
-      messages: [
-        {
-          role: 'user',
-          content: prompt,
-        },
-      ],
-      temperature: 0.7,
-      max_tokens: 150,
-    });
-
-    const trivia = completion.choices[0]?.message?.content ||
+    const data = await response.json();
+    const trivia = data.trivia || data.output || data.result ||
       `${challenge.name} is mentioned in ${challenge.books.join(', ')}. ${challenge.famousFor}`;
 
     return NextResponse.json({ trivia });
   } catch (error) {
-    console.error('Error generating trivia:', error);
+    console.error('Error calling n8n webhook:', error);
     try {
       const { challenge } = await request.json();
       // Return fallback message on error
@@ -59,4 +49,5 @@ Generate the trivia now:`;
     }
   }
 }
+
 
