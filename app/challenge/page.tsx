@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { SCRIPTURE_CHALLENGES } from '@/src/scripture-challenges';
 import type { ScriptureChallenge, ChallengeGameState } from '@/src/types/scripture';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface TriviaResponse {
   trivia: string;
@@ -17,6 +18,9 @@ export default function ChallengePage() {
   const [trivia, setTrivia] = useState<string>('');
   const [loadingTrivia, setLoadingTrivia] = useState(false);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [loadingAudio, setLoadingAudio] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('');
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Get today's challenge based on date
   const getTodaysChallenge = (): ScriptureChallenge => {
@@ -169,15 +173,114 @@ export default function ChallengePage() {
     }
   };
 
-  const playTrivia = () => {
-    if (!trivia || isPlayingAudio) return;
+  const playTrivia = async () => {
+    // Prevent multiple concurrent audio generations
+    if (loadingAudio) {
+      console.log('⏳ Already loading, ignoring duplicate click');
+      return;
+    }
 
-    setIsPlayingAudio(true);
-    const utterance = new SpeechSynthesisUtterance(trivia);
-    utterance.rate = 0.9;
-    utterance.pitch = 1;
-    utterance.onend = () => setIsPlayingAudio(false);
-    window.speechSynthesis.speak(utterance);
+    if (isPlayingAudio && audioRef.current) {
+      // Stop current playback
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+      setIsPlayingAudio(false);
+      setLoadingMessage('');
+      return;
+    }
+
+    if (!trivia) return;
+
+    setLoadingAudio(true);
+    setLoadingMessage('Creating audio...');
+
+    try {
+      // Get Azure credentials
+      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!azureKey || !azureRegion) {
+        throw new Error('Azure Speech API credentials not configured');
+      }
+
+      // Configure Azure Speech SDK
+      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
+
+      // Use a natural voice (Jenny is warm and engaging)
+      const voiceName = 'en-US-JennyMultilingualNeural';
+      speechConfig.speechSynthesisVoiceName = voiceName;
+
+      // Set audio format to MP3
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      // Set speaking rate (0.95 = slightly slower for clarity)
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="${voiceName}">
+            <prosody rate="0.95">
+              ${trivia}
+            </prosody>
+          </voice>
+        </speak>
+      `;
+
+      // Create synthesizer
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      // Synthesize speech
+      const audioBlob = await new Promise<Blob>((resolve, reject) => {
+        synthesizer.speakSsmlAsync(
+          ssml,
+          (result) => {
+            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+              const audioData = result.audioData;
+              const blob = new Blob([audioData], { type: 'audio/mp3' });
+              synthesizer.close();
+              resolve(blob);
+            } else {
+              synthesizer.close();
+              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
+            }
+          },
+          (error) => {
+            synthesizer.close();
+            reject(new Error(`Azure TTS error: ${error}`));
+          }
+        );
+      });
+
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audioElement = new Audio(audioUrl);
+
+      audioElement.onended = () => {
+        setIsPlayingAudio(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+      };
+
+      audioElement.onerror = () => {
+        console.error('Failed to play audio');
+        setIsPlayingAudio(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+      };
+
+      // Clear loading state BEFORE playing
+      setLoadingAudio(false);
+      setLoadingMessage('');
+
+      // Start playback
+      audioRef.current = audioElement;
+      setIsPlayingAudio(true);
+      await audioElement.play();
+
+    } catch (error) {
+      console.error('Error generating audio:', error);
+      setLoadingAudio(false);
+      setLoadingMessage('');
+      alert('Failed to generate audio. Please try again.');
+    }
   };
 
   const handleShare = async () => {
@@ -340,14 +443,17 @@ export default function ChallengePage() {
                   {trivia && (
                     <div className="bg-white/50 p-4 rounded-lg">
                       <p className="text-gray-700 italic mb-3">{trivia}</p>
+                      {loadingMessage && (
+                        <p className="text-sm text-[#2C5F87] mb-2 text-center">{loadingMessage}</p>
+                      )}
                       <button
                         onClick={playTrivia}
-                        disabled={isPlayingAudio}
+                        disabled={loadingAudio}
                         className={`${
-                          isPlayingAudio ? 'bg-gray-400' : 'bg-[#2C5F87] hover:bg-[#1e4460]'
+                          loadingAudio ? 'bg-gray-400' : isPlayingAudio ? 'bg-red-500 hover:bg-red-600' : 'bg-[#2C5F87] hover:bg-[#1e4460]'
                         } text-white px-6 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto`}
                       >
-                        {isPlayingAudio ? '🔊 Playing...' : '🔊 Listen'}
+                        {loadingAudio ? '⏳ Creating audio...' : isPlayingAudio ? '⏸️ Stop' : '🔊 Listen'}
                       </button>
                     </div>
                   )}
