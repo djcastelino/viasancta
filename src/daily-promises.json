@@ -1,51 +1,802 @@
 [
   {
     "id": 1,
-    "date": "2026-01-16",
-    "promise": "I am with you always, even to the end of the age.",
-    "reference": "Matthew 28:20",
-    "category": "Presence"
+    "verse": "I am the bread of life. Whoever comes to me will never go hungry, and whoever believes in me will never be thirsty.",
+    "reference": "John 6:35",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "Jesus"
   },
   {
     "id": 2,
-    "date": "2026-01-17",
-    "promise": "Come to me, all you who are weary and burdened, and I will give you rest.",
-    "reference": "Matthew 11:28",
-    "category": "Rest"
+    "verse": "I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.",
+    "reference": "John 8:12",
+    "testament": "New",
+    "category": "Guidance",
+    "speaker": "Jesus"
   },
   {
     "id": 3,
-    "date": "2026-01-18",
-    "promise": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
-    "reference": "John 3:16",
-    "category": "Salvation"
+    "verse": "I am the gate; whoever enters through me will be saved. They will come in and go out, and find pasture.",
+    "reference": "John 10:9",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "Jesus"
   },
   {
     "id": 4,
-    "date": "2026-01-19",
-    "promise": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
-    "reference": "John 14:27",
-    "category": "Peace"
+    "verse": "I am the good shepherd. The good shepherd lays down his life for the sheep.",
+    "reference": "John 10:11",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Jesus"
   },
   {
     "id": 5,
-    "date": "2026-01-20",
-    "promise": "I have come that they may have life, and have it to the full.",
-    "reference": "John 10:10",
-    "category": "Abundant Life"
+    "verse": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+    "reference": "John 11:25",
+    "testament": "New",
+    "category": "Hope",
+    "speaker": "Jesus"
   },
   {
     "id": 6,
-    "date": "2026-01-21",
-    "promise": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
-    "reference": "Matthew 7:7",
-    "category": "Prayer"
+    "verse": "I am the way and the truth and the life. No one comes to the Father except through me.",
+    "reference": "John 14:6",
+    "testament": "New",
+    "category": "Truth",
+    "speaker": "Jesus"
   },
   {
     "id": 7,
-    "date": "2026-01-22",
-    "promise": "I am the way and the truth and the life. No one comes to the Father except through me.",
-    "reference": "John 14:6",
-    "category": "Truth"
+    "verse": "I am the true vine, and my Father is the gardener. Remain in me, as I also remain in you.",
+    "reference": "John 15:1,4",
+    "testament": "New",
+    "category": "Abiding",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 8,
+    "verse": "I am with you always, even to the end of the age.",
+    "reference": "Matthew 28:20",
+    "testament": "New",
+    "category": "Presence",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 9,
+    "verse": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+    "reference": "Jeremiah 29:11",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "God"
+  },
+  {
+    "id": 10,
+    "verse": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+    "reference": "John 14:27",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 11,
+    "verse": "Come to me, all you who are weary and burdened, and I will give you rest.",
+    "reference": "Matthew 11:28",
+    "testament": "New",
+    "category": "Rest",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 12,
+    "verse": "The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+    "reference": "Psalm 23:1-3",
+    "testament": "Old",
+    "category": "Provision",
+    "speaker": "David"
+  },
+  {
+    "id": 13,
+    "verse": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+    "reference": "John 3:16",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 14,
+    "verse": "The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.",
+    "reference": "Deuteronomy 31:8",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "Moses"
+  },
+  {
+    "id": 15,
+    "verse": "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you.",
+    "reference": "Matthew 7:7",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 16,
+    "verse": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+    "reference": "Psalm 34:18",
+    "testament": "Old",
+    "category": "Comfort",
+    "speaker": "David"
+  },
+  {
+    "id": 17,
+    "verse": "I have come that they may have life, and have it to the full.",
+    "reference": "John 10:10",
+    "testament": "New",
+    "category": "Abundant Life",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 18,
+    "verse": "Cast all your anxiety on him because he cares for you.",
+    "reference": "1 Peter 5:7",
+    "testament": "New",
+    "category": "Care",
+    "speaker": "Peter"
+  },
+  {
+    "id": 19,
+    "verse": "Do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+    "reference": "Isaiah 41:10",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "God"
+  },
+  {
+    "id": 20,
+    "verse": "If you remain in me and my words remain in you, ask whatever you wish, and it will be done for you.",
+    "reference": "John 15:7",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 21,
+    "verse": "The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?",
+    "reference": "Psalm 27:1",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "David"
+  },
+  {
+    "id": 22,
+    "verse": "And surely I am with you always, to the very end of the age.",
+    "reference": "Matthew 28:20",
+    "testament": "New",
+    "category": "Presence",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 23,
+    "verse": "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.",
+    "reference": "Romans 8:38-39",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Paul"
+  },
+  {
+    "id": 24,
+    "verse": "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.",
+    "reference": "Numbers 6:24-26",
+    "testament": "Old",
+    "category": "Blessing",
+    "speaker": "God"
+  },
+  {
+    "id": 25,
+    "verse": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+    "reference": "Isaiah 40:31",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "Isaiah"
+  },
+  {
+    "id": 26,
+    "verse": "Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls.",
+    "reference": "Matthew 11:29",
+    "testament": "New",
+    "category": "Rest",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 27,
+    "verse": "And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+    "reference": "Romans 8:28",
+    "testament": "New",
+    "category": "Providence",
+    "speaker": "Paul"
+  },
+  {
+    "id": 28,
+    "verse": "Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you; he will never leave you nor forsake you.",
+    "reference": "Deuteronomy 31:6",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "Moses"
+  },
+  {
+    "id": 29,
+    "verse": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.",
+    "reference": "1 John 1:9",
+    "testament": "New",
+    "category": "Forgiveness",
+    "speaker": "John"
+  },
+  {
+    "id": 30,
+    "verse": "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold.",
+    "reference": "Psalm 18:2",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "David"
+  },
+  {
+    "id": 31,
+    "verse": "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!",
+    "reference": "2 Corinthians 5:17",
+    "testament": "New",
+    "category": "Renewal",
+    "speaker": "Paul"
+  },
+  {
+    "id": 32,
+    "verse": "The Lord is my strength and my shield; my heart trusts in him, and he helps me. My heart leaps for joy, and with my song I praise him.",
+    "reference": "Psalm 28:7",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "David"
+  },
+  {
+    "id": 33,
+    "verse": "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+    "reference": "Matthew 6:33",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 34,
+    "verse": "The Lord your God is with you, the Mighty Warrior who saves. He will take great delight in you; in his love he will no longer rebuke you, but will rejoice over you with singing.",
+    "reference": "Zephaniah 3:17",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "God"
+  },
+  {
+    "id": 35,
+    "verse": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+    "reference": "Philippians 4:6-7",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 36,
+    "verse": "The Lord will fight for you; you need only to be still.",
+    "reference": "Exodus 14:14",
+    "testament": "Old",
+    "category": "Victory",
+    "speaker": "Moses"
+  },
+  {
+    "id": 37,
+    "verse": "I can do all this through him who gives me strength.",
+    "reference": "Philippians 4:13",
+    "testament": "New",
+    "category": "Strength",
+    "speaker": "Paul"
+  },
+  {
+    "id": 38,
+    "verse": "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+    "reference": "Nahum 1:7",
+    "testament": "Old",
+    "category": "Refuge",
+    "speaker": "Nahum"
+  },
+  {
+    "id": 39,
+    "verse": "For where two or three gather in my name, there am I with them.",
+    "reference": "Matthew 18:20",
+    "testament": "New",
+    "category": "Presence",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 40,
+    "verse": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+    "reference": "Proverbs 3:5-6",
+    "testament": "Old",
+    "category": "Guidance",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 41,
+    "verse": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'",
+    "reference": "2 Corinthians 12:9",
+    "testament": "New",
+    "category": "Grace",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 42,
+    "verse": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+    "reference": "Psalm 23:4",
+    "testament": "Old",
+    "category": "Comfort",
+    "speaker": "David"
+  },
+  {
+    "id": 43,
+    "verse": "And my God will meet all your needs according to the riches of his glory in Christ Jesus.",
+    "reference": "Philippians 4:19",
+    "testament": "New",
+    "category": "Provision",
+    "speaker": "Paul"
+  },
+  {
+    "id": 44,
+    "verse": "The Lord is compassionate and gracious, slow to anger, abounding in love.",
+    "reference": "Psalm 103:8",
+    "testament": "Old",
+    "category": "Mercy",
+    "speaker": "David"
+  },
+  {
+    "id": 45,
+    "verse": "If you believe, you will receive whatever you ask for in prayer.",
+    "reference": "Matthew 21:22",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 46,
+    "verse": "He heals the brokenhearted and binds up their wounds.",
+    "reference": "Psalm 147:3",
+    "testament": "Old",
+    "category": "Healing",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 47,
+    "verse": "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours.",
+    "reference": "Mark 11:24",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 48,
+    "verse": "The Lord is faithful to all his promises and loving toward all he has made.",
+    "reference": "Psalm 145:13",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "David"
+  },
+  {
+    "id": 49,
+    "verse": "And I will do whatever you ask in my name, so that the Father may be glorified in the Son.",
+    "reference": "John 14:13",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 50,
+    "verse": "He gives strength to the weary and increases the power of the weak.",
+    "reference": "Isaiah 40:29",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "Isaiah"
+  },
+  {
+    "id": 51,
+    "verse": "But to all who did receive him, to those who believed in his name, he gave the right to become children of God.",
+    "reference": "John 1:12",
+    "testament": "New",
+    "category": "Identity",
+    "speaker": "John"
+  },
+  {
+    "id": 52,
+    "verse": "The Lord will keep you from all harm—he will watch over your life; the Lord will watch over your coming and going both now and forevermore.",
+    "reference": "Psalm 121:7-8",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 53,
+    "verse": "No temptation has overtaken you except what is common to mankind. And God is faithful; he will not let you be tempted beyond what you can bear.",
+    "reference": "1 Corinthians 10:13",
+    "testament": "New",
+    "category": "Faithfulness",
+    "speaker": "Paul"
+  },
+  {
+    "id": 54,
+    "verse": "As far as the east is from the west, so far has he removed our transgressions from us.",
+    "reference": "Psalm 103:12",
+    "testament": "Old",
+    "category": "Forgiveness",
+    "speaker": "David"
+  },
+  {
+    "id": 55,
+    "verse": "For the Son of Man came to seek and to save the lost.",
+    "reference": "Luke 19:10",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 56,
+    "verse": "The name of the Lord is a fortified tower; the righteous run to it and are safe.",
+    "reference": "Proverbs 18:10",
+    "testament": "Old",
+    "category": "Safety",
+    "speaker": "Solomon"
+  },
+  {
+    "id": 57,
+    "verse": "Very truly I tell you, whoever hears my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life.",
+    "reference": "John 5:24",
+    "testament": "New",
+    "category": "Eternal Life",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 58,
+    "verse": "The Lord is gracious and righteous; our God is full of compassion.",
+    "reference": "Psalm 116:5",
+    "testament": "Old",
+    "category": "Compassion",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 59,
+    "verse": "Whoever believes in me, as Scripture has said, rivers of living water will flow from within them.",
+    "reference": "John 7:38",
+    "testament": "New",
+    "category": "Holy Spirit",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 60,
+    "verse": "The Lord watches over you—the Lord is your shade at your right hand; the sun will not harm you by day, nor the moon by night.",
+    "reference": "Psalm 121:5-6",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 61,
+    "verse": "Blessed are those who hunger and thirst for righteousness, for they will be filled.",
+    "reference": "Matthew 5:6",
+    "testament": "New",
+    "category": "Blessing",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 62,
+    "verse": "The Lord is near to all who call on him, to all who call on him in truth.",
+    "reference": "Psalm 145:18",
+    "testament": "Old",
+    "category": "Presence",
+    "speaker": "David"
+  },
+  {
+    "id": 63,
+    "verse": "If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
+    "reference": "John 15:5",
+    "testament": "New",
+    "category": "Fruitfulness",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 64,
+    "verse": "The Lord is my helper; I will not be afraid. What can mere mortals do to me?",
+    "reference": "Hebrews 13:6",
+    "testament": "New",
+    "category": "Courage",
+    "speaker": "Writer of Hebrews"
+  },
+  {
+    "id": 65,
+    "verse": "He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart.",
+    "reference": "Psalm 91:4",
+    "testament": "Old",
+    "category": "Refuge",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 66,
+    "verse": "Whoever drinks the water I give them will never thirst. Indeed, the water I give them will become in them a spring of water welling up to eternal life.",
+    "reference": "John 4:14",
+    "testament": "New",
+    "category": "Eternal Life",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 67,
+    "verse": "The Lord is my portion, says my soul, therefore I will hope in him.",
+    "reference": "Lamentations 3:24",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "Jeremiah"
+  },
+  {
+    "id": 68,
+    "verse": "My sheep listen to my voice; I know them, and they follow me. I give them eternal life, and they shall never perish; no one will snatch them out of my hand.",
+    "reference": "John 10:27-28",
+    "testament": "New",
+    "category": "Security",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 69,
+    "verse": "Blessed are the pure in heart, for they will see God.",
+    "reference": "Matthew 5:8",
+    "testament": "New",
+    "category": "Blessing",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 70,
+    "verse": "When you pass through the waters, I will be with you; and when you pass through the rivers, they will not sweep over you.",
+    "reference": "Isaiah 43:2",
+    "testament": "Old",
+    "category": "Protection",
+    "speaker": "God"
+  },
+  {
+    "id": 71,
+    "verse": "Blessed are the merciful, for they will be shown mercy.",
+    "reference": "Matthew 5:7",
+    "testament": "New",
+    "category": "Mercy",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 72,
+    "verse": "The Lord is a refuge for the oppressed, a stronghold in times of trouble.",
+    "reference": "Psalm 9:9",
+    "testament": "Old",
+    "category": "Refuge",
+    "speaker": "David"
+  },
+  {
+    "id": 73,
+    "verse": "Blessed are the peacemakers, for they will be called children of God.",
+    "reference": "Matthew 5:9",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 74,
+    "verse": "Because of the Lord's great love we are not consumed, for his compassions never fail. They are new every morning; great is your faithfulness.",
+    "reference": "Lamentations 3:22-23",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "Jeremiah"
+  },
+  {
+    "id": 75,
+    "verse": "Blessed are those who are persecuted because of righteousness, for theirs is the kingdom of heaven.",
+    "reference": "Matthew 5:10",
+    "testament": "New",
+    "category": "Blessing",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 76,
+    "verse": "The Lord is good to all; he has compassion on all he has made.",
+    "reference": "Psalm 145:9",
+    "testament": "Old",
+    "category": "Goodness",
+    "speaker": "David"
+  },
+  {
+    "id": 77,
+    "verse": "Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move. Nothing will be impossible for you.",
+    "reference": "Matthew 17:20",
+    "testament": "New",
+    "category": "Faith",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 78,
+    "verse": "You will seek me and find me when you seek me with all your heart.",
+    "reference": "Jeremiah 29:13",
+    "testament": "Old",
+    "category": "Seeking God",
+    "speaker": "God"
+  },
+  {
+    "id": 79,
+    "verse": "Love the Lord your God with all your heart and with all your soul and with all your mind. This is the first and greatest commandment.",
+    "reference": "Matthew 22:37-38",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 80,
+    "verse": "The Lord is righteous in all his ways and faithful in all he does.",
+    "reference": "Psalm 145:17",
+    "testament": "Old",
+    "category": "Faithfulness",
+    "speaker": "David"
+  },
+  {
+    "id": 81,
+    "verse": "Do not worry about tomorrow, for tomorrow will worry about itself. Each day has enough trouble of its own.",
+    "reference": "Matthew 6:34",
+    "testament": "New",
+    "category": "Trust",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 82,
+    "verse": "God is our refuge and strength, an ever-present help in trouble.",
+    "reference": "Psalm 46:1",
+    "testament": "Old",
+    "category": "Strength",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 83,
+    "verse": "I tell you, love your enemies and pray for those who persecute you.",
+    "reference": "Matthew 5:44",
+    "testament": "New",
+    "category": "Love",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 84,
+    "verse": "The Lord will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame.",
+    "reference": "Isaiah 58:11",
+    "testament": "Old",
+    "category": "Guidance",
+    "speaker": "Isaiah"
+  },
+  {
+    "id": 85,
+    "verse": "For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many.",
+    "reference": "Mark 10:45",
+    "testament": "New",
+    "category": "Salvation",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 86,
+    "verse": "Taste and see that the Lord is good; blessed is the one who takes refuge in him.",
+    "reference": "Psalm 34:8",
+    "testament": "Old",
+    "category": "Goodness",
+    "speaker": "David"
+  },
+  {
+    "id": 87,
+    "verse": "If anyone loves me, he will keep my word, and my Father will love him, and we will come to him and make our home with him.",
+    "reference": "John 14:23",
+    "testament": "New",
+    "category": "Presence",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 88,
+    "verse": "Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth.",
+    "reference": "Psalm 46:10",
+    "testament": "Old",
+    "category": "Peace",
+    "speaker": "God"
+  },
+  {
+    "id": 89,
+    "verse": "Do not let your hearts be troubled. You believe in God; believe also in me.",
+    "reference": "John 14:1",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 90,
+    "verse": "The Lord your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love.",
+    "reference": "Zephaniah 3:17",
+    "testament": "Old",
+    "category": "Love",
+    "speaker": "God"
+  },
+  {
+    "id": 91,
+    "verse": "In my Father's house are many rooms; if that were not so, would I have told you that I am going there to prepare a place for you?",
+    "reference": "John 14:2",
+    "testament": "New",
+    "category": "Heaven",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 92,
+    "verse": "The Lord is with me; I will not be afraid. What can mere mortals do to me?",
+    "reference": "Psalm 118:6",
+    "testament": "Old",
+    "category": "Courage",
+    "speaker": "Psalmist"
+  },
+  {
+    "id": 93,
+    "verse": "If I go and prepare a place for you, I will come back and take you to be with me that you also may be where I am.",
+    "reference": "John 14:3",
+    "testament": "New",
+    "category": "Heaven",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 94,
+    "verse": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+    "reference": "Psalm 27:14",
+    "testament": "Old",
+    "category": "Hope",
+    "speaker": "David"
+  },
+  {
+    "id": 95,
+    "verse": "And I will ask the Father, and he will give you another advocate to help you and be with you forever—the Spirit of truth.",
+    "reference": "John 14:16-17",
+    "testament": "New",
+    "category": "Holy Spirit",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 96,
+    "verse": "May the Lord of peace himself give you peace at all times and in every way.",
+    "reference": "2 Thessalonians 3:16",
+    "testament": "New",
+    "category": "Peace",
+    "speaker": "Paul"
+  },
+  {
+    "id": 97,
+    "verse": "The Lord is near. Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+    "reference": "Philippians 4:5-6",
+    "testament": "New",
+    "category": "Prayer",
+    "speaker": "Paul"
+  },
+  {
+    "id": 98,
+    "verse": "The Lord is a shelter for the oppressed, a refuge in times of trouble.",
+    "reference": "Psalm 9:9",
+    "testament": "Old",
+    "category": "Shelter",
+    "speaker": "David"
+  },
+  {
+    "id": 99,
+    "verse": "All that the Father gives me will come to me, and whoever comes to me I will never drive away.",
+    "reference": "John 6:37",
+    "testament": "New",
+    "category": "Acceptance",
+    "speaker": "Jesus"
+  },
+  {
+    "id": 100,
+    "verse": "Commit your way to the Lord; trust in him and he will do this: He will make your righteous reward shine like the dawn, your vindication like the noonday sun.",
+    "reference": "Psalm 37:5-6",
+    "testament": "Old",
+    "category": "Trust",
+    "speaker": "David"
   }
 ]
