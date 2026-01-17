@@ -22,7 +22,12 @@
     "significance": "One of the most renowned and scientifically studied Eucharistic miracles, Lanciano has profoundly influenced Eucharistic devotion worldwide and serves as a cornerstone testimony to the Catholic doctrine of the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
+        "alt": "SAMPLE PLACEHOLDER - Replace with actual Lanciano miracle image downloaded from miracolieucaristici.org"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
