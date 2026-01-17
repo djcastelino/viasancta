@@ -2,8 +2,8 @@ import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 
 export const metadata = {
-  title: 'Divine Pilgrim - Virtual Sacred Pilgrimages',
-  description: 'Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.',
+  title: 'Divine Pilgrim - AI-Guided Catholic Virtual Pilgrimages',
+  description: 'Experience AI-guided Catholic virtual pilgrimage tours. Explore Eucharistic miracles, Stations of the Cross, Marian apparitions, and sacred sites worldwide.',
 }
 
 export default function Home() {
@@ -27,10 +27,10 @@ export default function Home() {
             Divine Pilgrim
           </h1>
           <p className="text-3xl md:text-4xl text-[#D4AF37] italic mb-6 drop-shadow-lg">
-            Virtual Sacred Journeys
+            AI-Guided Catholic Virtual Pilgrimages
           </p>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
-            Experience divine encounters through AI-guided virtual pilgrimages to 136 documented Eucharistic miracles
+            Experience divine encounters through AI-guided audio tours of sacred sites, miracles, and holy places worldwide
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
@@ -61,9 +61,14 @@ export default function Home() {
         <div className="bg-white rounded-3xl shadow-2xl p-10">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
+              <div className="text-6xl font-bold text-[#D4AF37] mb-2">6</div>
+              <div className="text-gray-600 text-lg font-semibold">Sacred Tours</div>
+              <div className="text-green-600 text-sm font-bold mt-1">1 Complete • 5 Coming</div>
+            </div>
+            <div className="text-center">
               <div className="text-6xl font-bold text-[#D4AF37] mb-2">{miracles.length}</div>
               <div className="text-gray-600 text-lg font-semibold">Eucharistic Miracles</div>
-              <div className="text-green-600 text-sm font-bold mt-1">✓ 100% Complete</div>
+              <div className="text-green-600 text-sm font-bold mt-1">✓ First Tour Complete</div>
             </div>
             <div className="text-center">
               <div className="text-6xl font-bold text-[#D4AF37] mb-2">25+</div>
@@ -71,14 +76,9 @@ export default function Home() {
               <div className="text-gray-500 text-sm mt-1">Worldwide Coverage</div>
             </div>
             <div className="text-center">
-              <div className="text-6xl font-bold text-[#D4AF37] mb-2">2,000+</div>
-              <div className="text-gray-600 text-lg font-semibold">Years of History</div>
-              <div className="text-gray-500 text-sm mt-1">8th Century to Present</div>
-            </div>
-            <div className="text-center">
               <div className="text-6xl font-bold text-[#D4AF37] mb-2">~7</div>
-              <div className="text-gray-600 text-lg font-semibold">Hours of Content</div>
-              <div className="text-gray-500 text-sm mt-1">AI Narrated Tours</div>
+              <div className="text-gray-600 text-lg font-semibold">Hours Available Now</div>
+              <div className="text-gray-500 text-sm mt-1">AI Narrated Content</div>
             </div>
           </div>
         </div>
@@ -115,16 +115,16 @@ export default function Home() {
                 Rich History
               </h3>
               <p className="text-gray-600 text-sm">
-                Explore 2,000+ years of documented miracles and sacred sites
+                Explore 2,000+ years of Catholic miracles, saints, and sacred traditions
               </p>
             </div>
             <div className="text-center">
               <div className="text-5xl mb-4">✝️</div>
               <h3 className="text-xl text-[#2C5F87] font-semibold mb-2">
-                Authentic Content
+                Authentic Catholic Content
               </h3>
               <p className="text-gray-600 text-sm">
-                Based on St. Carlo Acutis's research and official Church sources
+                Based on Church-approved sources, St. Carlo Acutis's research, and sacred traditions
               </p>
             </div>
           </div>
@@ -381,10 +381,10 @@ export default function Home() {
                 Divine Pilgrim
               </h3>
               <p className="text-white/80 mb-4">
-                Experience sacred journeys through AI-guided virtual pilgrimages to Eucharistic miracles worldwide.
+                Experience sacred journeys through AI-guided Catholic virtual pilgrimages. Explore miracles, saints, and holy sites worldwide.
               </p>
               <div className="text-[#D4AF37] font-semibold">
-                100% Complete Collection
+                First Tour: 100% Complete ✓
               </div>
             </div>
 
