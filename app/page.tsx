@@ -69,7 +69,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   {/* Icon/Badge */}
-                  <div className="text-8xl">📖</div>
+                  <div className="text-8xl">🎯</div>
 
                   {/* Content */}
                   <div className="flex-1 text-center md:text-left">
@@ -105,7 +105,7 @@ export default function Home() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl">✝️</span>
-                        <span>100 Questions</span>
+                        <span>365 Questions</span>
                       </div>
                     </div>
                   </div>
@@ -133,13 +133,6 @@ export default function Home() {
           {/* Eucharistic Miracles */}
           <Link href="/tours/eucharistic-miracles" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
-              {/* Completion Badge */}
-              <div className="absolute top-4 right-4 z-10">
-                <div className="bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-xl flex items-center gap-2">
-                  <span>✓</span>
-                  <span>100% Complete</span>
-                </div>
-              </div>
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
                 {/* Gemini-generated Sacred Heart image */}
@@ -379,9 +372,6 @@ export default function Home() {
               <p className="text-white/80 mb-4">
                 Experience sacred journeys through AI-guided Catholic virtual pilgrimages. Explore miracles, saints, and holy sites worldwide.
               </p>
-              <div className="text-[#D4AF37] font-semibold">
-                First Tour: 100% Complete ✓
-              </div>
             </div>
 
             {/* Tours */}

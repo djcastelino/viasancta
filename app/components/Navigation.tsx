@@ -49,7 +49,7 @@ export default function Navigation() {
               href="/challenge"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors flex items-center gap-1"
             >
-              <span>📖</span>
+              <span>🎯</span>
               <span>Daily Challenge</span>
             </Link>
             <Link

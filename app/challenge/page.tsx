@@ -5,11 +5,18 @@ import Link from 'next/link';
 import { SCRIPTURE_CHALLENGES } from '@/src/scripture-challenges';
 import type { ScriptureChallenge, ChallengeGameState } from '@/src/types/scripture';
 
+interface TriviaResponse {
+  trivia: string;
+}
+
 export default function ChallengePage() {
   const [gameState, setGameState] = useState<ChallengeGameState | null>(null);
   const [guess, setGuess] = useState('');
   const [revealedClues, setRevealedClues] = useState(1);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [trivia, setTrivia] = useState<string>('');
+  const [loadingTrivia, setLoadingTrivia] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
   // Get today's challenge based on date
   const getTodaysChallenge = (): ScriptureChallenge => {
@@ -98,6 +105,8 @@ export default function ChallengePage() {
 
     if (isCorrect || revealedClues >= 6) {
       setShowAnswer(true);
+      // Save to history
+      saveToHistory(gameState.targetChallenge!, isCorrect, gameState.guesses.length + 1, revealedClues);
     } else if (!isCorrect && revealedClues < 6) {
       setRevealedClues(prev => prev + 1);
       updatedState.cluesRevealed = revealedClues + 1;
@@ -121,6 +130,77 @@ export default function ChallengePage() {
     localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
   };
 
+  const saveToHistory = (challenge: ScriptureChallenge, won: boolean, guessCount: number, cluesUsed: number) => {
+    const today = new Date().toISOString().split('T')[0];
+    const history = JSON.parse(localStorage.getItem('challengeHistory') || '[]');
+
+    // Don't add duplicate for same day
+    if (history.some((h: any) => h.date === today)) return;
+
+    history.push({
+      date: today,
+      challenge,
+      won,
+      guessCount,
+      cluesUsed
+    });
+
+    localStorage.setItem('challengeHistory', JSON.stringify(history));
+  };
+
+  const fetchTrivia = async () => {
+    if (!gameState?.targetChallenge || trivia) return;
+
+    setLoadingTrivia(true);
+    try {
+      const response = await fetch('/api/challenge-trivia', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ challenge: gameState.targetChallenge })
+      });
+
+      const data: TriviaResponse = await response.json();
+      setTrivia(data.trivia);
+    } catch (error) {
+      console.error('Failed to fetch trivia:', error);
+      setTrivia('Fun fact coming soon!');
+    } finally {
+      setLoadingTrivia(false);
+    }
+  };
+
+  const playTrivia = () => {
+    if (!trivia || isPlayingAudio) return;
+
+    setIsPlayingAudio(true);
+    const utterance = new SpeechSynthesisUtterance(trivia);
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+    utterance.onend = () => setIsPlayingAudio(false);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const handleShare = async () => {
+    const result = gameState?.isWon
+      ? `✅ ${gameState.guesses.length} ${gameState.guesses.length === 1 ? 'guess' : 'guesses'}`
+      : '❌';
+
+    const text = `Daily Scripture Challenge\n${result}\n🔴${'🟠🟡🔵🟢🟣'.slice(0, Math.min(revealedClues - 1, 5) * 2)}\n\ndivinepilgrim.com/challenge`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ text });
+      } catch (err) {
+        // User cancelled or error - copy to clipboard instead
+        navigator.clipboard.writeText(text);
+        alert('Copied to clipboard!');
+      }
+    } else {
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard!');
+    }
+  };
+
   const handleGiveUp = () => {
     if (!gameState) return;
 
@@ -135,6 +215,9 @@ export default function ChallengePage() {
     setGameState(updatedState);
     setShowAnswer(true);
     localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+
+    // Save to history
+    saveToHistory(gameState.targetChallenge!, false, gameState.guesses.length, revealedClues);
   };
 
   if (!gameState) {
@@ -158,7 +241,7 @@ export default function ChallengePage() {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-            📖 Daily Scripture Challenge
+            🎯 Daily Scripture Challenge
           </h1>
           <p className="text-gray-600 text-lg">
             Test your biblical knowledge! Can you guess who or what this is?
@@ -219,7 +302,7 @@ export default function ChallengePage() {
             <div className="mt-8 p-6 bg-gradient-to-r from-[#6e3a6c]/10 to-[#8B4789]/10 rounded-2xl border-2 border-[#D4AF37]">
               <div className="text-center">
                 <div className="text-3xl mb-2">
-                  {gameState.isWon ? '🎉' : '📖'}
+                  {gameState.isWon ? '🎉' : '🎯'}
                 </div>
                 <h3 className="text-2xl font-bold text-[#2C5F87] mb-2">
                   {gameState.isWon ? 'Correct!' : 'The Answer Was:'}
@@ -238,7 +321,61 @@ export default function ChallengePage() {
                     Solved in {gameState.guesses.length} {gameState.guesses.length === 1 ? 'guess' : 'guesses'}!
                   </div>
                 )}
+
+                {/* Trivia Section */}
                 <div className="mt-6 pt-4 border-t border-gray-200">
+                  {!trivia && !loadingTrivia && (
+                    <button
+                      onClick={fetchTrivia}
+                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-2 rounded-lg font-semibold transition-colors"
+                    >
+                      📚 Learn More
+                    </button>
+                  )}
+
+                  {loadingTrivia && (
+                    <div className="text-gray-500 animate-pulse">Loading interesting fact...</div>
+                  )}
+
+                  {trivia && (
+                    <div className="bg-white/50 p-4 rounded-lg">
+                      <p className="text-gray-700 italic mb-3">{trivia}</p>
+                      <button
+                        onClick={playTrivia}
+                        disabled={isPlayingAudio}
+                        className={`${
+                          isPlayingAudio ? 'bg-gray-400' : 'bg-[#2C5F87] hover:bg-[#1e4460]'
+                        } text-white px-6 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto`}
+                      >
+                        {isPlayingAudio ? '🔊 Playing...' : '🔊 Listen'}
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="mt-6 pt-4 border-t border-gray-200 flex gap-3 justify-center flex-wrap">
+                  <button
+                    onClick={handleShare}
+                    className="bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                  >
+                    📤 Share
+                  </button>
+                  <Link
+                    href="/challenge/archive"
+                    className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                  >
+                    📜 Archive
+                  </Link>
+                  <Link
+                    href="/challenge/stats"
+                    className="bg-[#2C5F87] hover:bg-[#1e4460] text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                  >
+                    📊 Stats
+                  </Link>
+                </div>
+
+                <div className="mt-6">
                   <p className="text-xs text-gray-500 italic">
                     Come back tomorrow for a new challenge! 🙏
                   </p>
