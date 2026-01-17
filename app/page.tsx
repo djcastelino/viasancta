@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
       {/* Enhanced Hero Section */}
-      <header className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <header className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#5a2d5c]/95 via-[#7d4a7e]/90 to-[#4a1f52]/95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#7d5a83]/90 via-[#9370a8]/85 to-[#8b6b96]/90" />
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
