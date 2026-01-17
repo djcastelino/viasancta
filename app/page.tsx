@@ -14,7 +14,7 @@ export default function Home() {
       <header className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         {/* Background with overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#6e3a6c]/95 via-white/80 to-[#8b5a9e]/95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#5a2d5c]/95 via-[#7d4a7e]/90 to-[#4a1f52]/95" />
           {/* Animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>

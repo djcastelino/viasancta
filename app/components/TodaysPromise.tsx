@@ -53,14 +53,10 @@ export default function TodaysPromise() {
             </p>
           </blockquote>
 
-          {/* Reference & Attribution */}
+          {/* Reference */}
           <div className="flex flex-col items-center gap-3">
             <div className="inline-block bg-[#D4AF37] text-white px-6 py-2 rounded-full font-semibold shadow-md">
               {promise.reference}
-            </div>
-            <div className="text-sm text-gray-600 flex items-center gap-2">
-              <span>🙏</span>
-              <span>Daily Promise from <span className="font-semibold text-[#2C5F87]">Logos Ministries</span></span>
             </div>
           </div>
         </div>
