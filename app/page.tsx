@@ -124,7 +124,7 @@ export default function Home() {
                 Authentic Catholic Content
               </h3>
               <p className="text-gray-600 text-sm">
-                Based on Church-approved sources, St. Carlo Acutis's research, and sacred traditions
+                Based on Church-approved sources and sacred Catholic traditions
               </p>
             </div>
           </div>
@@ -160,6 +160,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🙏</span>
+                    <span>Curated by Blessed Carlo Acutis</span>
+                  </div>
                   <h3 className="text-3xl font-bold drop-shadow-md">
                     Eucharistic Miracles
                   </h3>
@@ -179,7 +183,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Journey through documented Eucharistic miracles from around the world, based on St. Carlo Acutis's research.
+                  Journey through 136 documented Eucharistic miracles worldwide, meticulously researched and curated by <span className="font-semibold text-[#2C5F87]">Blessed Carlo Acutis</span>. Experience his legacy through AI-guided narrations.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Start Tour →
