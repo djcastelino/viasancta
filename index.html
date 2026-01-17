@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via Sancta - Virtual Sacred Pilgrimages</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f5f0 0%, #fff 50%, #e8e8f5 100%);
+            color: #2d2d2d;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #6e3a6c 0%, #8B4789 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            font-family: Georgia, serif;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #D4AF37;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #2C5F87;
+            margin: 60px 0 30px;
+            font-family: Georgia, serif;
+        }
+        
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+        
+        .tour-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        
+        .tour-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+        }
+        
+        .tour-card.available:hover {
+            border-color: #D4AF37;
+        }
+        
+        .tour-card.coming-soon {
+            opacity: 0.7;
+            cursor: default;
+        }
+        
+        .tour-hero {
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tour-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.9;
+        }
+        
+        .tour-hero.eucharistic::before {
+            background: linear-gradient(135deg, #193d52 0%, #325847 100%);
+        }
+        
+        .tour-hero.marian::before {
+            background: linear-gradient(135deg, #2d5fa8 0%, #524aaa 100%);
+        }
+        
+        .tour-hero.stations::before {
+            background: linear-gradient(135deg, #5e3159 0%, #692f15 100%);
+        }
+        
+        .tour-hero.saints::before {
+            background: linear-gradient(135deg, #b8921c 0%, #9e7d18 100%);
+        }
+        
+        .tour-hero.architecture::before {
+            background: linear-gradient(135deg, #56442f 0%, #6a5540 100%);
+        }
+        
+        .tour-hero.biblical::before {
+            background: linear-gradient(135deg, #3e6d7e 0%, #4d8a96 100%);
+        }
+        
+        .tour-icon {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        }
+        
+        .tour-title {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tour-content {
+            padding: 28px;
+        }
+        
+        .tour-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 2px;
+        }
+        
+        .tour-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .tour-button {
+            display: inline-block;
+            background: #D4AF37;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 28px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            font-size: 1rem;
+        }
+        
+        .tour-button:hover {
+            background: #c49d2f;
+            transform: scale(1.05);
+        }
+        
+        .coming-soon-badge {
+            display: inline-block;
+            background: #555;
+            color: #ddd;
+            padding: 12px 28px;
+            border-radius: 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .progress-bar {
+            background: #f0f0f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #D4AF37 0%, #E8B923 100%);
+            height: 100%;
+            transition: width 0.3s;
+        }
+        
+        .highlights {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+        
+        .highlight-item {
+            text-align: center;
+        }
+        
+        .highlight-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .highlight-title {
+            font-size: 1.2rem;
+            color: #2C5F87;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-text {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✦ Via Sancta ✦</h1>
+            <p class="subtitle">The Holy Way</p>
+            <p class="tagline">Virtual Sacred Pilgrimage Tours with AI-Guided Narrations</p>
+        </header>
+        
+        <div class="highlights">
+            <h2 class="section-title" style="margin-top: 0;">Experience Sacred Journeys</h2>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🎧</div>
+                    <div class="highlight-title">AI Narrations</div>
+                    <div class="highlight-text">Hear the stories brought to life with professional AI-generated audio tours</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🗺️</div>
+                    <div class="highlight-title">Street View Tours</div>
+                    <div class="highlight-text">Virtually visit sacred sites with Google Street View integration</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📚</div>
+                    <div class="highlight-title">Rich History</div>
+                    <div class="highlight-text">Explore 2,000+ years of documented miracles and sacred sites</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">✝️</div>
+                    <div class="highlight-title">Curated Content</div>
+                    <div class="highlight-text">Based on St. Carlo Acutis's research and official Church sources</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Sacred Pilgrimage Tours</h2>
+        
+        <div class="tours-grid" id="tours">
+            <!-- Tours will be loaded here -->
+        </div>
+    </div>
+    
+    <script>
+        const tours = [
+            {
+                id: 'eucharistic-miracles',
+                name: 'Eucharistic Miracles',
+                icon: '⚪',
+                theme: 'eucharistic',
+                description: 'Journey through documented Eucharistic miracles from around the world, based on St. Carlo Acutis\'s research. Explore scientific evidence and profound testimonies of faith.',
+                stops: 11, // Updated dynamically
+                countries: 0, // Will be calculated
+                duration: '~6 hours',
+                available: true,
+                dataFile: 'src/data/eucharistic-miracles.json'
+            },
+            {
+                id: 'marian-apparitions',
+                name: 'Marian Apparitions',
+                icon: '⭐',
+                theme: 'marian',
+                description: 'Visit sites of Church-approved Marian apparitions. From Lourdes to Fatima, discover where Our Lady appeared with messages of peace and prayer.',
+                stops: 25,
+                duration: '~4 hours',
+                available: false
+            },
+            {
+                id: 'stations-of-cross',
+                name: 'Stations of the Cross',
+                icon: '✝️',
+                theme: 'stations',
+                description: 'Walk the Way of the Cross with meditative reflections on Christ\'s Passion. Experience the 14 traditional stations with AI-guided contemplation.',
+                stops: 14,
+                duration: '~2 hours',
+                available: false
+            },
+            {
+                id: 'saint-shrines',
+                name: 'Shrines of Saints',
+                icon: '😇',
+                theme: 'saints',
+                description: 'Pilgrimage to the resting places of beloved saints. Visit the tombs and shrines of St. Peter, St. Francis, St. Therese, and many more.',
+                stops: 40,
+                duration: '~8 hours',
+                available: false
+            },
+            {
+                id: 'sacred-architecture',
+                name: 'Sacred Architecture',
+                icon: '⛪',
+                theme: 'architecture',
+                description: 'Tour the world\'s most magnificent churches and basilicas. From St. Peter\'s in Rome to Sagrada Família in Barcelona, explore stunning sacred spaces.',
+                stops: 30,
+                duration: '~6 hours',
+                available: false
+            },
+            {
+                id: 'biblical-sites',
+                name: 'Biblical Sites',
+                icon: '📖',
+                theme: 'biblical',
+                description: 'Walk where Jesus walked in the Holy Land. Visit Jerusalem, Bethlehem, Nazareth, and other sacred biblical locations with rich historical context.',
+                stops: 50,
+                duration: '~10 hours',
+                available: false
+            }
+        ];
+        
+        // Load Eucharistic miracles data to get accurate count
+        if (tours[0].dataFile) {
+            fetch(tours[0].dataFile)
+                .then(res => res.json())
+                .then(miracles => {
+                    tours[0].stops = miracles.length;
+                    renderTours();
+                })
+                .catch(err => {
+                    console.error('Error loading miracles:', err);
+                    renderTours();
+                });
+        } else {
+            renderTours();
+        }
+        
+        function renderTours() {
+            const container = document.getElementById('tours');
+            container.innerHTML = tours.map(tour => `
+                <div class="tour-card ${tour.available ? 'available' : 'coming-soon'}" 
+                     onclick="${tour.available ? `window.location.href='tour-${tour.id}.html'` : ''}">
+                    <div class="tour-hero ${tour.theme}">
+                        <div class="tour-icon">${tour.icon}</div>
+                        <div class="tour-title">${tour.name}</div>
+                    </div>
+                    <div class="tour-content">
+                        ${tour.available ? `
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        ` : ''}
+                        <div class="tour-stats">
+                            <div class="stat">
+                                <div class="stat-number">${tour.stops}</div>
+                                <div class="stat-label">Sacred Stops</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">${tour.duration}</div>
+                                <div class="stat-label">Estimated Time</div>
+                            </div>
+                        </div>
+                        <p class="tour-description">${tour.description}</p>
+                        ${tour.available 
+                            ? `<a href="tour-${tour.id}.html" class="tour-button">Start Tour →</a>`
+                            : `<span class="coming-soon-badge">Coming Soon</span>`
+                        }
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
+

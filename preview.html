@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via Sancta - Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f5f0 0%, #fff 50%, #e8e8f5 100%);
+            color: #2d2d2d;
+            padding: 20px;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+        
+        .back-link {
+            margin-bottom: 12px;
+            display: inline-block;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        .back-link:hover {
+            color: #2C5F87;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #2C5F87;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8B7355;
+            font-style: italic;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 8px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .miracles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .miracle-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .miracle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .miracle-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2C5F87 0%, #5A8F7B 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .miracle-content {
+            padding: 24px;
+        }
+        
+        .miracle-title {
+            font-size: 1.4rem;
+            color: #2C5F87;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .miracle-location {
+            color: #8B7355;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .miracle-date {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        
+        .miracle-description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        
+        .miracle-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        .tag.verified {
+            background: #e6f7ed;
+            color: #2d7a4a;
+        }
+        
+        .play-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #D4AF37;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            transition: background 0.3s;
+        }
+        
+        .play-button:hover {
+            background: #c49d2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">← Back to All Tours</a>
+            <h1>✦ Eucharistic Miracles Tour ✦</h1>
+            <p class="subtitle">Based on St. Carlo Acutis's Research</p>
+            <p class="tagline">Journey through documented Eucharistic miracles from around the world</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="miracle-count">0</div>
+                    <div class="stat-label">Sacred Stops</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">Years of History</div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="miracles-grid" id="miracles"></div>
+    </div>
+    
+    <script>
+        // Load miracle data
+        fetch('src/data/eucharistic-miracles.json')
+            .then(res => res.json())
+            .then(miracles => {
+                // Update stats
+                document.getElementById('miracle-count').textContent = miracles.length;
+                
+                // Render miracle cards
+                const grid = document.getElementById('miracles');
+                miracles.forEach(miracle => {
+                    const card = document.createElement('div');
+                    card.className = 'miracle-card';
+                    card.innerHTML = `
+                        <div class="miracle-image">✝️</div>
+                        <div class="miracle-content">
+                            <h3 class="miracle-title">${miracle.name}</h3>
+                            <div class="miracle-location">
+                                📍 ${miracle.location.city}, ${miracle.location.country}
+                            </div>
+                            <div class="miracle-date">
+                                🗓️ ${miracle.date.displayDate}
+                            </div>
+                            <p class="miracle-description">${miracle.description}</p>
+                            <div class="miracle-tags">
+                                ${miracle.scientificEvidence ? '<span class="tag verified">✓ Scientifically Verified</span>' : ''}
+                                <span class="tag">${miracle.type}</span>
+                                ${miracle.hasStreetView ? '<span class="tag">🗺️ Street View</span>' : ''}
+                            </div>
+                            <button class="play-button" onclick="playNarration('${miracle.id}')">
+                                ▶️ Listen to Tour
+                            </button>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error('Error loading miracles:', err);
+                document.getElementById('miracles').innerHTML = 
+                    '<p>Loading miracles... Make sure eucharistic-miracles.json is in src/data/</p>';
+            });
+        
+        function playNarration(miracleId) {
+            alert(`This will play AI narration for: ${miracleId}\n\nIn the full app, this will:\n1. Call your n8n workflow\n2. Get narration text from Groq\n3. Call Google TTS\n4. Play audio!`);
+        }
+    </script>
+</body>
+</html>
+

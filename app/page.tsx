@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
+import TodaysPromise from './components/TodaysPromise';
 
 export const metadata = {
   title: 'Divine Pilgrim - AI-Guided Catholic Virtual Pilgrimages',
@@ -55,6 +56,9 @@ export default function Home() {
           </svg>
         </div>
       </header>
+
+      {/* Today's Promise Section */}
+      <TodaysPromise />
 
       {/* Statistics Section */}
       <section className="max-w-7xl mx-auto px-5 py-20 -mt-16 relative z-20">
