@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import MiracleImageGallery from '@/app/components/MiracleImageGallery';
 
 export default function MiraclePage({ params }: { params: Promise<{ id: string }> }) {
   const [miracleId, setMiracleId] = useState<string>('');
@@ -360,6 +361,9 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
             <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">{error}</div>
           )}
         </div>
+
+        {/* Image Gallery */}
+        <MiracleImageGallery images={miracle.images || []} miracleName={miracle.name} />
 
         {/* Description */}
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
