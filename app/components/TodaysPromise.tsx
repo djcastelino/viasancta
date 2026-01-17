@@ -34,6 +34,7 @@ export default function TodaysPromise() {
   const [error, setError] = useState('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+  const isProcessingRef = useRef(false);
 
   if (!promise) {
     return null;
@@ -135,11 +136,28 @@ export default function TodaysPromise() {
       return;
     }
 
+    // Prevent multiple concurrent requests using ref (more reliable than state)
+    if (isProcessingRef.current) {
+      console.log('⏳ Already processing, ignoring duplicate call');
+      return;
+    }
+
     // Prevent multiple concurrent requests
     if (loadingAudio) {
       console.log('⏳ Already loading, ignoring duplicate click');
       return;
     }
+
+    // Force cleanup any existing audio elements
+    if (audioRef.current) {
+      console.log('🧹 Cleaning up old audio element');
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+
+    // Mark as processing
+    isProcessingRef.current = true;
 
     try {
       setLoadingAudio(true);
@@ -274,10 +292,14 @@ export default function TodaysPromise() {
       await audioElement.play();
       console.log('🎶 Audio is now playing');
 
+      // Mark as done processing
+      isProcessingRef.current = false;
+
     } catch (error) {
       console.error('❌ Error generating audio:', error);
       setLoadingAudio(false);
       setLoadingMessage('');
+      isProcessingRef.current = false; // Reset on error
 
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
       setError(`Failed to generate audio: ${errorMessage}`);
