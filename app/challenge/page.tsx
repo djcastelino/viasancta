@@ -568,9 +568,9 @@ export default function ChallengePage() {
                   {!trivia && !loadingTrivia && !isPlayingAudio && (
                     <button
                       onClick={fetchTriviaAndPlay}
-                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-lg font-semibold transition-colors text-center w-full"
+                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
                     >
-                      🎧 Did you know about {gameState?.targetChallenge?.name}?
+                      🔊 Hear a fun fact about {gameState?.targetChallenge?.name}
                     </button>
                   )}
 
