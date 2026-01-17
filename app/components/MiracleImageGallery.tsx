@@ -66,6 +66,22 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
         <p className="text-gray-500 text-xs text-center mt-4">
           Click image to view full size
         </p>
+
+        {/* Attribution */}
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <p className="text-gray-400 text-xs text-center">
+            📸 Images courtesy of{' '}
+            <a
+              href="https://www.miracolieucaristici.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D4AF37] hover:underline"
+            >
+              miracolieucaristici.org
+            </a>
+            {' '}(Free downloadable web panels)
+          </p>
+        </div>
       </div>
 
       {/* Full-Size Modal */}

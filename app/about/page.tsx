@@ -94,9 +94,11 @@ export default function AboutPage() {
                 </a>.
               </p>
               <p>
-                We are deeply grateful for their permission to use these materials for Catholic 
-                education and evangelization. The exhibition panels were designed and created by 
-                Carlo Acutis himself as a gift to the Church.
+                We are deeply grateful for their permission to use these materials for Catholic
+                education and evangelization. The exhibition panels were designed and created by
+                Carlo Acutis himself as a gift to the Church. All images used on Divine Pilgrim
+                are from the <strong>free downloadable web panels</strong> made publicly available
+                by miracolieucaristici.org for educational and devotional purposes.
               </p>
               <p className="text-sm italic text-gray-600">
                 "The more Eucharist we receive, the more we will become like Jesus, 

@@ -404,6 +404,18 @@ export default function Home() {
             <p className="text-white/60 text-sm">
               © {new Date().getFullYear()} Divine Pilgrim. Virtual Sacred Journeys for all.
             </p>
+            <p className="text-white/50 text-xs mt-3">
+              📸 Miracle images courtesy of{' '}
+              <a
+                href="https://www.miracolieucaristici.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#D4AF37] hover:underline"
+              >
+                miracolieucaristici.org
+              </a>
+              {' '}(Free downloadable web panels)
+            </p>
             <p className="text-white/40 text-xs mt-2">
               divinepilgrim.com
             </p>
