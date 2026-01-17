@@ -11,19 +11,20 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
       {/* Enhanced Hero Section */}
-      <header className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-        {/* Background with overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#7d5a83]/90 via-[#9370a8]/85 to-[#8b6b96]/90" />
-          {/* Animated background pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <section className="max-w-7xl mx-auto px-5 py-16">
+        <div className="relative min-h-[40vh] flex items-center justify-center overflow-hidden rounded-3xl shadow-2xl">
+          {/* Background with overlay */}
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6e3a6c]/95 via-[#8B4789]/90 to-[#6e3a6c]/95 rounded-3xl" />
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-10 rounded-3xl">
+              <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000"></div>
+            </div>
           </div>
-        </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center px-5 text-white max-w-5xl mx-auto">
+          {/* Content */}
+          <div className="relative z-10 text-center px-5 text-white max-w-5xl mx-auto py-16">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl font-serif animate-fade-in">
             Divine Pilgrim
           </h1>
@@ -48,14 +49,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
         </div>
-      </header>
+      </section>
 
       {/* Today's Promise Section */}
       <TodaysPromise />
