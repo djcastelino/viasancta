@@ -55,6 +55,74 @@ export default function Home() {
       {/* Today's Promise Section */}
       <TodaysPromise />
 
+      {/* Daily Scripture Challenge Section */}
+      <section className="max-w-7xl mx-auto px-5 py-8">
+        <Link href="/challenge" className="block group">
+          <div className="bg-gradient-to-br from-[#6e3a6c]/95 via-[#8B4789]/90 to-[#6e3a6c]/95 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div className="p-8 md:p-12 text-white relative">
+              {/* Decorative background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  {/* Icon/Badge */}
+                  <div className="text-8xl">📖</div>
+
+                  {/* Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                      <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
+                        DAILY CHALLENGE
+                      </span>
+                      <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
+                        NEW TODAY
+                      </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif">
+                      Daily Scripture Challenge
+                    </h2>
+                    <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                      Test your biblical knowledge with 6 clues! Can you guess today's biblical character, event, or miracle?
+                      Build your streak and compete with yourself! 🎯
+                    </p>
+
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">🔥</span>
+                        <span>Daily Streaks</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">📊</span>
+                        <span>Track Stats</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">🎮</span>
+                        <span>6 Clues/Day</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">✝️</span>
+                        <span>100 Questions</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="text-center">
+                    <div className="inline-block bg-[#D4AF37] hover:bg-[#c49d2f] px-8 py-4 rounded-full font-bold text-xl shadow-xl group-hover:scale-105 transition-transform">
+                      Play Today →
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Tours Section */}
       <section className="max-w-7xl mx-auto px-5 pb-20">
         <h2 className="text-3xl font-serif text-[#2C5F87] mb-8">

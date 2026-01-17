@@ -46,6 +46,13 @@ export default function Navigation() {
               Eucharistic Miracles
             </Link>
             <Link
+              href="/challenge"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors flex items-center gap-1"
+            >
+              <span>📖</span>
+              <span>Daily Challenge</span>
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
