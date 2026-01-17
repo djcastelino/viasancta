@@ -158,7 +158,7 @@ export default function ChallengePage() {
 
     // If trivia already loaded, just play it
     if (trivia) {
-      playTrivia();
+      playTrivia(trivia);
       return;
     }
 
@@ -171,11 +171,13 @@ export default function ChallengePage() {
       });
 
       const data: TriviaResponse = await response.json();
-      setTrivia(data.trivia);
+      const fetchedTrivia = data.trivia;
+      console.log('✅ Trivia fetched:', fetchedTrivia);
+      setTrivia(fetchedTrivia);
       setLoadingTrivia(false);
 
-      // Auto-play the audio immediately after fetching
-      setTimeout(() => playTrivia(), 100);
+      // Auto-play the audio immediately with the fetched trivia
+      setTimeout(() => playTrivia(fetchedTrivia), 100);
     } catch (error) {
       console.error('Failed to fetch trivia:', error);
       setTrivia('Fun fact coming soon!');
@@ -254,7 +256,7 @@ export default function ChallengePage() {
     }, 100);
   };
 
-  const playTrivia = async () => {
+  const playTrivia = async (triviaText?: string) => {
     // Prevent multiple concurrent audio generations
     if (loadingAudio) {
       console.log('⏳ Already loading, ignoring duplicate click');
@@ -277,7 +279,14 @@ export default function ChallengePage() {
       return;
     }
 
-    if (!trivia) return;
+    // Use passed trivia text or fall back to state
+    const textToSpeak = triviaText || trivia;
+    if (!textToSpeak) {
+      console.error('❌ No trivia text available');
+      return;
+    }
+
+    console.log('🎤 Playing trivia:', textToSpeak.substring(0, 50) + '...');
 
     setLoadingAudio(true);
     setLoadingMessage('Creating audio...');
@@ -320,7 +329,7 @@ export default function ChallengePage() {
         <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
           <voice name="${selectedVoice.name}">
             <prosody rate="0.95">
-              ${trivia}
+              ${textToSpeak}
             </prosody>
           </voice>
         </speak>
