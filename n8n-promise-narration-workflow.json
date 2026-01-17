@@ -1,0 +1,244 @@
+{
+  "name": "Daily Promise Narration with Azure TTS",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "daily-promise-narration",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [120, 240],
+      "webhookId": "daily-promise-narration"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "verse",
+              "value": "={{ $json.body.verse }}",
+              "type": "string"
+            },
+            {
+              "id": "2",
+              "name": "reference",
+              "value": "={{ $json.body.reference }}",
+              "type": "string"
+            },
+            {
+              "id": "3",
+              "name": "testament",
+              "value": "={{ $json.body.testament }}",
+              "type": "string"
+            },
+            {
+              "id": "4",
+              "name": "category",
+              "value": "={{ $json.body.category }}",
+              "type": "string"
+            },
+            {
+              "id": "5",
+              "name": "speaker",
+              "value": "={{ $json.body.speaker }}",
+              "type": "string"
+            },
+            {
+              "id": "6",
+              "name": "promiseId",
+              "value": "={{ $json.body.id || 1 }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [340, 240],
+      "id": "extractData",
+      "name": "Extract Promise Data"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 200
+        },
+        "systemMessage": "You are a warm, encouraging narrator for Divine Pilgrim, a Catholic spiritual app. Your role is to bring biblical promises to life with reverence, hope, and personal application. Speak as if you're a trusted spiritual guide sharing God's word with a dear friend.",
+        "prompt": "=Create a warm, inspiring 30-45 second audio narration for today's biblical promise.\n\nPROMISE: {{ $json.verse }}\nREFERENCE: {{ $json.reference }}\nTESTAMENT: {{ $json.testament }}\nSPEAKER: {{ $json.speaker }}\nCATEGORY: {{ $json.category }}\n\nGuidelines:\n1. Begin with a brief context (who spoke this, when/where if famous)\n2. Read the promise slowly and clearly\n3. Add 1-2 sentences of personal application or reflection\n4. End with an encouraging thought\n5. Aim for 100-150 words (30-45 seconds spoken)\n6. Use second person (\"you\") to make it personal\n7. Reverent but warm tone - like a spiritual director\n\nExample structure:\n\"In the Gospel of John, Jesus makes this beautiful promise to us: [quote]. This means that [personal application]. Today, may you [encouragement].\"\n\nGenerate the narration now:"
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [560, 240],
+      "id": "groqChat",
+      "name": "Groq Chat - Generate Script",
+      "credentials": {
+        "groqApi": {
+          "id": "YOUR_GROQ_CREDENTIAL_ID",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Select voice based on promise ID (rotate through 4 voices)\nconst promiseId = $('Extract Promise Data').item.json.promiseId;\nconst script = $input.first().json.message?.content || $input.first().json.text || $input.first().json.output;\n\n// Azure Neural Voices - Multilingual, natural sounding\nconst voices = [\n  'en-US-AndrewMultilingualNeural',  // Male 1: Warm, trustworthy\n  'en-US-AvaMultilingualNeural',     // Female 1: Clear, gentle\n  'en-US-EricNeural',                // Male 2: Professional, calm\n  'en-US-JennyNeural'                // Female 2: Friendly, expressive\n];\n\n// Use promise ID to determine which voice (cycles through 4 voices)\nconst voiceIndex = promiseId % 4;\nconst selectedVoice = voices[voiceIndex];\n\nreturn {\n  script: script,\n  voice: selectedVoice,\n  promiseId: promiseId,\n  reference: $('Extract Promise Data').item.json.reference\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [780, 240],
+      "id": "selectVoice",
+      "name": "Select Voice"
+    },
+    {
+      "parameters": {
+        "resource": "textToSpeech",
+        "text": "={{ $json.script }}",
+        "voice": "={{ $json.voice }}",
+        "audioFormat": "audio-16khz-128kbitrate-mono-mp3",
+        "options": {
+          "speakingRate": 0.95
+        }
+      },
+      "type": "n8n-nodes-base.microsoftAzure",
+      "typeVersion": 1,
+      "position": [1000, 240],
+      "id": "azureTTS",
+      "name": "Azure Text-to-Speech",
+      "credentials": {
+        "microsoftAzureApi": {
+          "id": "YOUR_AZURE_CREDENTIAL_ID",
+          "name": "Azure Speech Services"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ '/Users/dcasteli/Documents/pda/viasancta/public/audio/promises/' + $('Select Voice').item.json.promiseId + '.mp3' }}",
+        "data": "={{ $binary.data }}"
+      },
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [1220, 240],
+      "id": "writeFile",
+      "name": "Write Audio File"
+    },
+    {
+      "parameters": {
+        "jsCode": "const promiseId = $('Select Voice').item.json.promiseId;\nconst reference = $('Select Voice').item.json.reference;\nconst script = $('Select Voice').item.json.script;\n\nconst audioUrl = `/audio/promises/${promiseId}.mp3`;\n\nreturn {\n  success: true,\n  audioUrl: audioUrl,\n  script: script,\n  reference: reference,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 240],
+      "id": "formatResponse",
+      "name": "Format Response"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1660, 240],
+      "id": "respond",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Promise Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Promise Data": {
+      "main": [
+        [
+          {
+            "node": "Groq Chat - Generate Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat - Generate Script": {
+      "main": [
+        [
+          {
+            "node": "Select Voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Voice": {
+      "main": [
+        [
+          {
+            "node": "Azure Text-to-Speech",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Azure Text-to-Speech": {
+      "main": [
+        [
+          {
+            "node": "Write Audio File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Audio File": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-01-17T00:00:00.000Z",
+  "versionId": "1"
+}
