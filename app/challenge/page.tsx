@@ -210,10 +210,19 @@ export default function ChallengePage() {
       // Configure Azure Speech SDK
       const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
 
-      // Use a natural voice (Jenny is warm and engaging)
-      const voiceName = 'en-US-JennyMultilingualNeural';
-      console.log('🎙️ Selected voice:', voiceName);
-      speechConfig.speechSynthesisVoiceName = voiceName;
+      // Multiple natural voices for variety (same as narration)
+      const voices = [
+        { name: 'en-US-AndrewMultilingualNeural', displayName: 'Andrew', gender: 'Male' },
+        { name: 'en-US-AvaMultilingualNeural', displayName: 'Ava', gender: 'Female' },
+        { name: 'en-US-EricNeural', displayName: 'Eric', gender: 'Male' },
+        { name: 'en-US-JennyMultilingualNeural', displayName: 'Jenny', gender: 'Female' },
+      ];
+
+      // Randomly select a voice for variety
+      const selectedVoice = voices[Math.floor(Math.random() * voices.length)];
+      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} (${selectedVoice.gender})`);
+
+      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
       console.log('✅ Voice configured in speechConfig:', speechConfig.speechSynthesisVoiceName);
 
       // Set audio format to MP3
@@ -222,7 +231,7 @@ export default function ChallengePage() {
       // Set speaking rate (0.95 = slightly slower for clarity)
       const ssml = `
         <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-          <voice name="${voiceName}">
+          <voice name="${selectedVoice.name}">
             <prosody rate="0.95">
               ${trivia}
             </prosody>
