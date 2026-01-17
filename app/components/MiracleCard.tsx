@@ -30,19 +30,21 @@ export default function MiracleCard({ miracle }: MiracleCardProps) {
   const backgroundImage = miracle.images?.[0]?.url;
   const hasImage = backgroundImage && !imageError;
   
-  // Fallback gradient based on country (for variety)
-  const gradients = [
-    'from-[#193d52] to-[#325847]', // Teal
-    'from-[#2d5fa8] to-[#524aaa]', // Blue-Purple
-    'from-[#5e3159] to-[#692f15]', // Purple-Brown
-    'from-[#b8921c] to-[#9e7d18]', // Gold
-    'from-[#56442f] to-[#6a5540]', // Brown
-    'from-[#3e6d7e] to-[#4d8a96]', // Cyan
+  // Fallback sunrise/sunset landscapes (Unsplash - free to use)
+  const landscapes = [
+    'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800&q=80', // Golden sunrise over mountains
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', // Mountain sunrise
+    'https://images.unsplash.com/photo-1472120435266-53107fd0c44a?w=800&q=80', // Sunset over hills
+    'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?w=800&q=80', // Sunrise meadow
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80', // Mountain peak sunrise
+    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80', // Sunset lake reflection
+    'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80', // Golden hour landscape
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&q=80', // Sunset field
   ];
-  
-  // Simple hash to pick consistent gradient per miracle
-  const gradientIndex = miracle.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % gradients.length;
-  const gradient = gradients[gradientIndex];
+
+  // Simple hash to pick consistent landscape per miracle
+  const landscapeIndex = miracle.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % landscapes.length;
+  const fallbackLandscape = landscapes[landscapeIndex];
 
   return (
     <Link
@@ -50,21 +52,15 @@ export default function MiracleCard({ miracle }: MiracleCardProps) {
       className="block group"
     >
       <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        {/* Background Image or Gradient */}
-        {hasImage ? (
-          <>
-            <img 
-              src={backgroundImage}
-              alt={miracle.images![0].alt}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              onError={() => setImageError(true)}
-            />
-            {/* Gradient Overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-          </>
-        ) : (
-          <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`} />
-        )}
+        {/* Background Image (miracle image or landscape fallback) */}
+        <img
+          src={hasImage ? backgroundImage : fallbackLandscape}
+          alt={hasImage ? miracle.images![0].alt : `Sunrise/sunset landscape for ${miracle.location.city}`}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          onError={() => setImageError(true)}
+        />
+        {/* Gradient Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
         
         {/* Content */}
         <div className="relative h-full flex flex-col justify-between p-6 text-white">
@@ -78,8 +74,7 @@ export default function MiracleCard({ miracle }: MiracleCardProps) {
           {/* Bottom Content */}
           <div>
             {/* Location */}
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">{getCountryFlag(miracle.location.country)}</span>
+            <div className="mb-3">
               <span className="text-lg font-medium">
                 {miracle.location.city}, {miracle.location.country}
               </span>
@@ -110,34 +105,5 @@ export default function MiracleCard({ miracle }: MiracleCardProps) {
       </div>
     </Link>
   );
-}
-
-// Helper function
-function getCountryFlag(country: string): string {
-  const flags: { [key: string]: string } = {
-    'Argentina': '🇦🇷',
-    'Italy': '🇮🇹',
-    'Poland': '🇵🇱',
-    'France': '🇫🇷',
-    'Germany': '🇩🇪',
-    'Spain': '🇪🇸',
-    'Portugal': '🇵🇹',
-    'Austria': '🇦🇹',
-    'Belgium': '🇧🇪',
-    'India': '🇮🇳',
-    'Mexico': '🇲🇽',
-    'Venezuela': '🇻🇪',
-    'Croatia': '🇭🇷',
-    'Netherlands': '🇳🇱',
-    'Colombia': '🇨🇴',
-    'Peru': '🇵🇪',
-    'Switzerland': '🇨🇭',
-    'Egypt': '🇪🇬',
-    'Martinique': '🇲🇶',
-    'United States': '🇺🇸',
-    'Philippines': '🇵🇭',
-    // Add more as needed
-  };
-  return flags[country] || '🌍';
 }
 
