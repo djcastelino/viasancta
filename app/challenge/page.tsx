@@ -28,7 +28,14 @@ export default function ChallengePage() {
     const today = new Date();
     const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 1000 / 60 / 60 / 24);
     const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
-    return SCRIPTURE_CHALLENGES[index];
+    const challenge = SCRIPTURE_CHALLENGES[index];
+    console.log('🎯 Challenge Selection:', {
+      dayOfYear,
+      totalChallenges: SCRIPTURE_CHALLENGES.length,
+      index,
+      challengeName: challenge.name
+    });
+    return challenge;
   };
 
   // Initialize game state
@@ -39,8 +46,15 @@ export default function ChallengePage() {
     if (saved) {
       const savedState: ChallengeGameState = JSON.parse(saved);
 
+      console.log('🗓️ Date Check:', {
+        today,
+        lastPlayed: savedState.lastPlayedDate,
+        isDifferent: savedState.lastPlayedDate !== today
+      });
+
       // Check if it's a new day
       if (savedState.lastPlayedDate !== today) {
+        console.log('✨ New day detected - resetting challenge');
         // New day - reset game
         const todaysChallenge = getTodaysChallenge();
         const newState: ChallengeGameState = {
@@ -59,6 +73,7 @@ export default function ChallengePage() {
         localStorage.setItem('scriptureChallenge', JSON.stringify(newState));
       } else {
         // Same day - load saved state
+        console.log('📅 Same day - loading saved state:', savedState.targetChallenge?.name);
         setGameState(savedState);
         setRevealedClues(savedState.cluesRevealed);
         if (savedState.isComplete) {
