@@ -63,7 +63,12 @@
     "significance": "The miracle strongly supports Catholic teaching on the Real Presence of Christ in the Eucharist and was overseen by the future Pope Francis...",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/buenos-aires.png",
+        "alt": "Eucharistic Miracle of Buenos Aires - Host transformed into living cardiac tissue"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
