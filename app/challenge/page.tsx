@@ -20,6 +20,8 @@ export default function ChallengePage() {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [loadingAudio, setLoadingAudio] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
@@ -148,6 +150,35 @@ export default function ChallengePage() {
     };
     setGameState(updatedState);
     localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+  };
+
+  // Get autocomplete suggestions based on input
+  const handleInputChange = (value: string) => {
+    setGuess(value);
+
+    if (value.trim().length < 2) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    // Get all unique challenge names
+    const allNames = Array.from(new Set(SCRIPTURE_CHALLENGES.map(c => c.name)));
+
+    // Filter names that contain the input (case-insensitive)
+    const input = value.toLowerCase();
+    const matches = allNames
+      .filter(name => name.toLowerCase().includes(input))
+      .slice(0, 5); // Limit to 5 suggestions
+
+    setSuggestions(matches);
+    setShowSuggestions(matches.length > 0);
+  };
+
+  const selectSuggestion = (suggestion: string) => {
+    setGuess(suggestion);
+    setSuggestions([]);
+    setShowSuggestions(false);
   };
 
   const saveToHistory = (challenge: ScriptureChallenge, won: boolean, guessCount: number, cluesUsed: number) => {
@@ -641,15 +672,34 @@ export default function ChallengePage() {
         {!showAnswer && (
           <div className="bg-white rounded-3xl shadow-xl p-8">
             <div className="space-y-4">
-              <input
-                type="text"
-                value={guess}
-                onChange={(e) => setGuess(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleGuess()}
-                placeholder="Type your guess..."
-                className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl text-lg focus:outline-none focus:border-[#D4AF37]"
-                disabled={gameState.isComplete}
-              />
+              {/* Input with Autocomplete */}
+              <div className="relative">
+                <input
+                  type="text"
+                  value={guess}
+                  onChange={(e) => handleInputChange(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleGuess()}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                  placeholder="Type your guess..."
+                  className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl text-lg focus:outline-none focus:border-[#D4AF37]"
+                  disabled={gameState.isComplete}
+                />
+
+                {/* Autocomplete Dropdown */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute z-10 w-full mt-2 bg-white border-2 border-[#D4AF37] rounded-xl shadow-lg max-h-60 overflow-y-auto">
+                    {suggestions.map((suggestion, index) => (
+                      <button
+                        key={index}
+                        onClick={() => selectSuggestion(suggestion)}
+                        className="w-full text-left px-6 py-3 hover:bg-[#D4AF37]/10 transition-colors border-b border-gray-100 last:border-b-0"
+                      >
+                        <span className="text-gray-800 font-medium">{suggestion}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className="flex gap-4">
                 <button
