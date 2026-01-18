@@ -31,6 +31,14 @@ export default function ArchivePage() {
     }
   }, []);
 
+  const handleClearArchive = () => {
+    if (confirm('Are you sure you want to clear all challenge history? This cannot be undone.')) {
+      localStorage.removeItem('challengeHistory');
+      setHistory([]);
+      alert('Archive cleared successfully!');
+    }
+  };
+
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString('en-US', {
@@ -52,10 +60,18 @@ export default function ArchivePage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
       {/* Header */}
-      <div className="max-w-4xl mx-auto px-5 pt-8 pb-4">
+      <div className="max-w-4xl mx-auto px-5 pt-8 pb-4 flex justify-between items-center">
         <Link href="/challenge" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
           ← Back to Challenge
         </Link>
+        {history.length > 0 && (
+          <button
+            onClick={handleClearArchive}
+            className="text-red-600 hover:text-red-700 text-sm font-semibold"
+          >
+            Clear Archive
+          </button>
+        )}
       </div>
 
       <div className="max-w-4xl mx-auto px-5 pb-16">
