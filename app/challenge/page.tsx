@@ -48,14 +48,17 @@ export default function ChallengePage() {
     if (saved) {
       const savedState: ChallengeGameState = JSON.parse(saved);
 
+      // Migrate old state: if challengeDate doesn't exist, use lastPlayedDate
+      const savedChallengeDate = savedState.challengeDate || savedState.lastPlayedDate;
+
       console.log('🗓️ Date Check:', {
         today,
-        lastPlayed: savedState.lastPlayedDate,
-        isDifferent: savedState.lastPlayedDate !== today
+        challengeDate: savedChallengeDate,
+        isDifferent: savedChallengeDate !== today
       });
 
-      // Check if it's a new day
-      if (savedState.lastPlayedDate !== today) {
+      // Check if it's a new day (compare challengeDate, not lastPlayedDate)
+      if (savedChallengeDate !== today) {
         console.log('✨ New day detected - resetting challenge');
         // New day - reset game
         const todaysChallenge = getTodaysChallenge();
@@ -68,17 +71,22 @@ export default function ChallengePage() {
           maxStreak: savedState.maxStreak,
           gamesPlayed: savedState.gamesPlayed,
           gamesWon: savedState.gamesWon,
-          lastPlayedDate: today,
+          lastPlayedDate: savedState.lastPlayedDate || today,
+          challengeDate: today, // Set to today's date
           cluesRevealed: 1
         };
         setGameState(newState);
         localStorage.setItem('scriptureChallenge', JSON.stringify(newState));
       } else {
-        // Same day - load saved state
+        // Same day - load saved state (with migration)
         console.log('📅 Same day - loading saved state:', savedState.targetChallenge?.name);
-        setGameState(savedState);
-        setRevealedClues(savedState.cluesRevealed);
-        if (savedState.isComplete) {
+        const migratedState: ChallengeGameState = {
+          ...savedState,
+          challengeDate: savedState.challengeDate || savedState.lastPlayedDate
+        };
+        setGameState(migratedState);
+        setRevealedClues(migratedState.cluesRevealed);
+        if (migratedState.isComplete) {
           setShowAnswer(true);
         }
       }
@@ -95,6 +103,7 @@ export default function ChallengePage() {
         gamesPlayed: 0,
         gamesWon: 0,
         lastPlayedDate: today,
+        challengeDate: today, // Set to today's date
         cluesRevealed: 1
       };
       setGameState(newState);
@@ -109,23 +118,26 @@ export default function ChallengePage() {
     const normalizedAnswer = gameState.targetChallenge!.name.toLowerCase();
 
     const isCorrect = normalizedGuess === normalizedAnswer;
+    const isGameComplete = isCorrect || revealedClues >= 6;
+    const today = new Date().toISOString().split('T')[0];
 
     const updatedState: ChallengeGameState = {
       ...gameState,
       guesses: [...gameState.guesses, guess],
-      isComplete: isCorrect || revealedClues >= 6,
+      isComplete: isGameComplete,
       isWon: isCorrect,
-      gamesPlayed: isCorrect || revealedClues >= 6 ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
+      gamesPlayed: isGameComplete ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
       gamesWon: isCorrect ? gameState.gamesWon + 1 : gameState.gamesWon,
       currentStreak: isCorrect ? gameState.currentStreak + 1 : 0,
       maxStreak: isCorrect ? Math.max(gameState.maxStreak, gameState.currentStreak + 1) : gameState.maxStreak,
-      cluesRevealed: revealedClues
+      cluesRevealed: revealedClues,
+      lastPlayedDate: isGameComplete ? today : gameState.lastPlayedDate // Update lastPlayedDate when completing
     };
 
     setGameState(updatedState);
     localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
 
-    if (isCorrect || revealedClues >= 6) {
+    if (isGameComplete) {
       setShowAnswer(true);
       // Save to history
       saveToHistory(gameState.targetChallenge!, isCorrect, gameState.guesses.length + 1, revealedClues);
@@ -182,14 +194,27 @@ export default function ChallengePage() {
   };
 
   const saveToHistory = (challenge: ScriptureChallenge, won: boolean, guessCount: number, cluesUsed: number) => {
-    const today = new Date().toISOString().split('T')[0];
+    // Use the challenge's date, not today's date
+    // This ensures if user completes yesterday's challenge today, it saves with yesterday's date
+    const challengeDate = gameState?.challengeDate || new Date().toISOString().split('T')[0];
     const history = JSON.parse(localStorage.getItem('challengeHistory') || '[]');
 
-    // Don't add duplicate for same day
-    if (history.some((h: any) => h.date === today)) return;
+    console.log('💾 Saving to history:', {
+      challengeDate,
+      challengeName: challenge.name,
+      won,
+      guessCount,
+      cluesUsed
+    });
+
+    // Don't add duplicate for same challenge date
+    if (history.some((h: any) => h.date === challengeDate)) {
+      console.log('⚠️ History entry already exists for this challenge date, skipping');
+      return;
+    }
 
     history.push({
-      date: today,
+      date: challengeDate,
       challenge,
       won,
       guessCount,
@@ -197,6 +222,7 @@ export default function ChallengePage() {
     });
 
     localStorage.setItem('challengeHistory', JSON.stringify(history));
+    console.log('✅ Saved to history successfully');
   };
 
   const fetchTriviaAndPlay = async () => {
@@ -491,12 +517,15 @@ export default function ChallengePage() {
   const handleGiveUp = () => {
     if (!gameState) return;
 
+    const today = new Date().toISOString().split('T')[0];
+
     const updatedState: ChallengeGameState = {
       ...gameState,
       isComplete: true,
       isWon: false,
       gamesPlayed: gameState.gamesPlayed + 1,
-      currentStreak: 0
+      currentStreak: 0,
+      lastPlayedDate: today // Update lastPlayedDate when completing
     };
 
     setGameState(updatedState);

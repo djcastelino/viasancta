@@ -19,7 +19,8 @@ export interface ChallengeGameState {
   maxStreak: number;
   gamesPlayed: number;
   gamesWon: number;
-  lastPlayedDate: string;
+  lastPlayedDate: string; // Legacy field for backward compatibility
+  challengeDate: string; // The date of the challenge being displayed (YYYY-MM-DD)
   cluesRevealed: number; // Track how many clues have been revealed
 }
 
