@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Navigation from '../components/Navigation';
 
 interface JesusInOTEntry {
   id: number;
@@ -48,35 +47,27 @@ export default function JesusInOTPage() {
 
   if (isLoading) {
     return (
-      <>
-        <Navigation />
-        <div className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5 flex items-center justify-center">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37]"></div>
-            <p className="mt-4 text-gray-600">Loading today&apos;s entry...</p>
-          </div>
+      <div className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37]"></div>
+          <p className="mt-4 text-gray-600">Loading today&apos;s entry...</p>
         </div>
-      </>
+      </div>
     );
   }
 
   if (!todaysEntry) {
     return (
-      <>
-        <Navigation />
-        <div className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5 flex items-center justify-center">
-          <div className="text-center text-gray-600">
-            <p>No entry found for today.</p>
-          </div>
+      <div className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5 flex items-center justify-center">
+        <div className="text-center text-gray-600">
+          <p>No entry found for today.</p>
         </div>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5">
+    <main className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5">
         <div className="max-w-5xl mx-auto px-5 py-12">
           {/* Header */}
           <div className="text-center mb-12">
@@ -197,6 +188,5 @@ export default function JesusInOTPage() {
           </div>
         </div>
       </main>
-    </>
   );
 }

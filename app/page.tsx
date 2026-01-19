@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 import TodaysPromise from './components/TodaysPromise';
+import JesusInOT from './components/JesusInOT';
 
 export const metadata = {
   title: 'Divine Pilgrim - AI-Guided Catholic Virtual Pilgrimages',
@@ -54,6 +55,9 @@ export default function Home() {
 
       {/* Today's Promise Section */}
       <TodaysPromise />
+
+      {/* Jesus in the OT Section */}
+      <JesusInOT />
 
       {/* Daily Scripture Challenge Section */}
       <section className="max-w-7xl mx-auto px-5 py-8">
