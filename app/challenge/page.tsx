@@ -40,6 +40,22 @@ export default function ChallengePage() {
     return challenge;
   };
 
+  // Get yesterday's challenge
+  const getYesterdaysChallenge = (): ScriptureChallenge => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dayOfYear = Math.floor((yesterday.getTime() - new Date(yesterday.getFullYear(), 0, 0).getTime()) / 1000 / 60 / 60 / 24);
+    const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
+    const challenge = SCRIPTURE_CHALLENGES[index];
+    console.log('📅 Yesterday\'s Challenge Selection:', {
+      dayOfYear,
+      totalChallenges: SCRIPTURE_CHALLENGES.length,
+      index,
+      challengeName: challenge.name
+    });
+    return challenge;
+  };
+
   // Initialize game state
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -536,6 +552,37 @@ export default function ChallengePage() {
     saveToHistory(gameState.targetChallenge!, false, gameState.guesses.length, revealedClues);
   };
 
+  const loadYesterdaysChallenge = () => {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayDate = yesterday.toISOString().split('T')[0];
+
+    const yesterdaysChallenge = getYesterdaysChallenge();
+
+    // Reset game state with yesterday's challenge
+    const newState: ChallengeGameState = {
+      targetChallenge: yesterdaysChallenge,
+      guesses: [],
+      isComplete: false,
+      isWon: false,
+      currentStreak: gameState?.currentStreak || 0,
+      maxStreak: gameState?.maxStreak || 0,
+      gamesPlayed: gameState?.gamesPlayed || 0,
+      gamesWon: gameState?.gamesWon || 0,
+      lastPlayedDate: gameState?.lastPlayedDate || yesterdayDate,
+      challengeDate: yesterdayDate, // Set to yesterday's date
+      cluesRevealed: 1
+    };
+
+    setGameState(newState);
+    setRevealedClues(1);
+    setShowAnswer(false);
+    setGuess('');
+    setTrivia('');
+
+    console.log('📅 Loaded yesterday\'s challenge:', yesterdaysChallenge.name);
+  };
+
   if (!gameState) {
     return <div className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5] flex items-center justify-center">
       <div className="animate-spin text-4xl">⏳</div>
@@ -562,6 +609,20 @@ export default function ChallengePage() {
           <p className="text-gray-600 text-lg">
             Test your biblical knowledge! Can you guess who or what this is?
           </p>
+          {/* Show which challenge date */}
+          {gameState && (
+            <div className="mt-3">
+              {gameState.challengeDate === new Date().toISOString().split('T')[0] ? (
+                <span className="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold">
+                  Today&apos;s Challenge • {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </span>
+              ) : (
+                <span className="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-semibold">
+                  Yesterday&apos;s Challenge • {new Date(gameState.challengeDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </span>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Stats Bar */}
@@ -686,6 +747,21 @@ export default function ChallengePage() {
                     📊 Stats
                   </Link>
                 </div>
+
+                {/* Yesterday's Challenge Button (only show if viewing today's challenge) */}
+                {gameState.challengeDate === new Date().toISOString().split('T')[0] && (
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <button
+                      onClick={loadYesterdaysChallenge}
+                      className="w-full bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c] text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+                    >
+                      📅 Play Yesterday&apos;s Challenge
+                    </button>
+                    <p className="text-xs text-gray-500 italic text-center mt-2">
+                      Missed yesterday? Play it now!
+                    </p>
+                  </div>
+                )}
 
                 <div className="mt-6">
                   <p className="text-xs text-gray-500 italic">
