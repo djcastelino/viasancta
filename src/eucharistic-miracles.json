@@ -2214,7 +2214,12 @@
     "significance": "The miracle strengthened Eucharistic devotion in medieval Poland, inspired the founding of the Church of Corpus Christi in Kraków, and remains a lasting testimony to belief in the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/krakow.png",
+        "alt": "Eucharistic Miracle of Kraków"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3203,7 +3208,12 @@
     "significance": "One of the most thoroughly documented medieval Eucharistic miracles, Alatri played a major role in reaffirming Catholic doctrine on the Real Presence and countering Eucharistic heresies of the 13th century.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/alatri.png",
+        "alt": "Eucharistic Miracle of Alatri"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3242,7 +3252,12 @@
     "significance": "This miracle powerfully affirms belief in the Real Presence of Christ in the Eucharist and highlights the Eucharist as a source of divine protection for the Church and society.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/assissi.png",
+        "alt": "Eucharistic Miracle of Saint Clare of Assisi"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3281,7 +3296,12 @@
     "significance": "The miracle strengthened Eucharistic faith in Asti during a time of religious conflict and remains one of the most historically documented Eucharistic miracles of the 16th century.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/asti.png",
+        "alt": "Eucharistic Miracle of Asti (1535)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3319,7 +3339,12 @@
     "significance": "This second miracle reinforced belief in the Real Presence and stands as one of the most medically examined Eucharistic miracles of the early modern period.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/asti.png",
+        "alt": "Eucharistic Miracle of Asti (1718)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3357,7 +3382,12 @@
     "significance": "The miracle strengthened Eucharistic devotion in the Camaldolese tradition and remains a powerful witness to belief in the Real Presence through the preserved blood-stained corporal.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Bagnodiromagna.png",
+        "alt": "Eucharistic Miracle of Bagno di Romagna"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3396,7 +3426,12 @@
     "significance": "Bolsena directly led to the universal establishment of the Feast of Corpus Christi and stands as one of the most influential Eucharistic miracles in Church history.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/bolsena.png",
+        "alt": "Eucharistic Miracle of Bolsena"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3435,7 +3470,12 @@
     "significance": "The miracle restored Eucharistic faith in a time of religious crisis, strengthened devotion to the Real Presence, and established a perpetual vow and feast that continues to unite the community of Canosio.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/canosio.png",
+        "alt": "Eucharistic Miracle of Canosio"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3474,7 +3514,12 @@
     "significance": "The miracle reaffirmed belief in the Real Presence and served as a powerful reminder of reverence due to the Eucharist, becoming a lasting source of devotion in Cascia.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/cascia.png",
+        "alt": "Eucharistic Miracle of Cascia"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3512,7 +3557,12 @@
     "significance": "The miracle strengthened faith in the protective power of the Eucharist during times of crisis and remains a defining spiritual and cultural event in the life of Cava dei Tirreni.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Cavadeitirreni.png",
+        "alt": "Eucharistic Miracle of Cava dei Tirreni"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3551,7 +3601,12 @@
     "significance": "The miracle reinforced faith in the Real Presence of Christ in the Eucharist and remains a defining act of communal devotion and gratitude in Dronero.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/dronero.png",
+        "alt": "Eucharistic Miracle of Dronero"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3590,7 +3645,12 @@
     "significance": "The miracle reaffirmed faith in the Real Presence of Christ in the Eucharist and continues to serve as a modern witness to Eucharistic devotion in southern Italy.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/sacredheart.png",
+        "alt": "Eucharistic Miracle of San Mauro la Bruca"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3628,7 +3688,12 @@
     "significance": "Ferrara stands as one of the most visually preserved Eucharistic miracles in history, with physical evidence still visible, reinforcing belief in the Real Presence for over eight centuries.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/ferrara.png",
+        "alt": "Eucharistic Miracle of Ferrara"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3667,7 +3732,12 @@
     "significance": "The miracle reaffirmed the sacredness and indestructibility of the Eucharist and strengthened Eucharistic devotion in Florence during the post-Tridentine era.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/florence.png",
+        "alt": "Eucharistic Miracle of Florence (1595)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3706,7 +3776,12 @@
     "significance": "The miracle strengthened Eucharistic devotion in the region, led to the construction of a major shrine, and remains a powerful medieval witness to belief in the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/gruaro.png",
+        "alt": "Eucharistic Miracle of Gruaro"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3746,7 +3821,12 @@
     "significance": "The miracle reaffirmed faith in the Real Presence, strengthened Eucharistic devotion in Macerata, and established enduring traditions of confraternities and Corpus Christi processions.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/macerata.png",
+        "alt": "Eucharistic Miracle of Macerata"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3785,7 +3865,12 @@
     "significance": "The miracle renewed Eucharistic devotion in Mogoro and established a lasting public act of reparation through annual processions centered on the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/mogoro.png",
+        "alt": "Eucharistic Miracle of Mogoro"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3824,7 +3909,12 @@
     "significance": "The miracle established Morrovalle as a city publicly dedicated to Eucharistic devotion and remains a lasting testimony to belief in the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/morrovalle.png",
+        "alt": "Eucharistic Miracle of Morrovalle"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3863,7 +3953,12 @@
     "significance": "The miracle of Offida reinforced belief in the Real Presence, inspired centuries of Eucharistic devotion, and remains one of the most thoroughly documented medieval Eucharistic miracles in Italy.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/offida.png",
+        "alt": "Eucharistic Miracle of Offida"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3902,7 +3997,12 @@
     "significance": "The miracle strengthened Eucharistic devotion in the Diocese of Naples, led to official ecclesiastical recognition, and inspired diocesan initiatives centered on the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/patierno.png",
+        "alt": "Eucharistic Miracle of Patierno"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3941,7 +4041,12 @@
     "significance": "The miracle powerfully affirmed belief in the Real Presence, led to the conversion of heretics, and remains one of the most famous Eucharistic miracles associated with Saint Anthony of Padua.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/rimini.png",
+        "alt": "Eucharistic Miracle of Rimini"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -3979,7 +4084,12 @@
     "significance": "This miracle powerfully affirmed belief in the Real Presence during the early centuries of the Church and is one of the most important Eucharistic miracles associated with a reigning Pope.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/rome.png",
+        "alt": "Eucharistic Miracle of Rome (Mass of St. Gregory the Great)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4018,7 +4128,12 @@
     "significance": "The miracle underscores the reality of Christ’s presence in the Eucharist and remains a visible sign of faith within one of Rome’s most ancient churches.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/rome.png",
+        "alt": "Eucharistic Miracle of Rome (Santa Pudenziana)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4057,7 +4172,12 @@
     "significance": "The events renewed devotion to the Sacred Heart of Jesus and were interpreted by Church authorities as a call to prayer, conversion, and fidelity within the Diocese.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/rozano.png",
+        "alt": "Miracle of the Sacred Heart Statue of Rosano"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4096,7 +4216,12 @@
     "significance": "This miracle served as a powerful theological affirmation of transubstantiation and was cited by a Doctor of the Church as evidence against disbelief in the Eucharistic mystery.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/damian-scala.png",
+        "alt": "Eucharistic Miracle Witnessed by St. Peter Damian"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4135,7 +4260,12 @@
     "significance": "The miracle reinforced belief in the Real Presence and became a lasting public witness to Eucharistic reverence, remembered in art, tradition, and ecclesial history.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/salzano.png",
+        "alt": "Eucharistic Miracle of Salzano"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4174,7 +4304,12 @@
     "significance": "The miracle of Siena is one of the longest-lasting Eucharistic miracles in history and provides a sustained witness to the Real Presence of Christ in the Eucharist.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/siena.png",
+        "alt": "Eucharistic Miracle of Siena"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4214,7 +4349,12 @@
     "significance": "The miracle of Trani stands as a dramatic medieval witness to the Real Presence and remains a defining element of the city’s Eucharistic devotion.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/trani.png",
+        "alt": "Eucharistic Miracle of Trani"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4253,7 +4393,12 @@
     "significance": "The miracle of Turin is one of the most documented Eucharistic miracles in history and became a defining spiritual event for the city, profoundly strengthening faith in the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/turin.png",
+        "alt": "Eucharistic Miracle of Turin"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4293,7 +4438,12 @@
     "significance": "The miracle powerfully affirmed the sanctity of the Eucharist during a time of war and sacrilege and remains a visible sign of Eucharistic reverence in Turin.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/turin.png",
+        "alt": "Eucharistic Miracle of Turin (Santa Maria del Monte)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4333,7 +4483,12 @@
     "significance": "The miracle of Veroli strengthened Eucharistic devotion in the region and remains a lasting testimony to the Real Presence manifested through a visible apparition during public adoration.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/veroli.png",
+        "alt": "Eucharistic Miracle of Veroli"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4373,7 +4528,12 @@
     "significance": "The miracle of Volterra offered a striking public witness to the Real Presence during a time of war and sacrilege, reinforcing Eucharistic faith amid social and political turmoil.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/voltera.png",
+        "alt": "Eucharistic Miracle of Volterra"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4412,7 +4572,12 @@
     "significance": "The devotion to the Sacred Heart of Jesus profoundly deepened Eucharistic faith worldwide, emphasizing Christ’s living presence, sacrificial love, and mercy flowing from the Eucharist.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/sacredheart.png",
+        "alt": "Revelations of the Sacred Heart of Jesus"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4452,7 +4617,12 @@
     "significance": "This apparition confirmed the Church’s Eucharistic doctrine as articulated by St. Thomas Aquinas and solidified his theology as the definitive explanation of transubstantiation in Catholic teaching.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/thomasaquinas.png",
+        "alt": "Apparition of Christ to St. Thomas Aquinas"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4492,7 +4662,12 @@
     "significance": "These events highlight the Eucharistic devotion fostered by Saint Francis and symbolize creation’s response to the Real Presence, reinforcing reverence toward the Blessed Sacrament.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Francisofassisi.png",
+        "alt": "Miracle of the Devoted Lambs of the Eucharist"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4531,7 +4706,12 @@
     "significance": "This miracle demonstrates the power of the Eucharist to convert hardened hearts and affirms belief in Christ’s living presence acting through the Blessed Sacrament.",
     "hasStreetView": false,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Chiaravalle_Bosco.png",
+        "alt": "Eucharistic Miracle of Saint Bernard of Clairvaux"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4570,7 +4750,12 @@
     "significance": "The miracle of Pibrac emphasizes the supreme value of the Eucharist, demonstrating how sincere devotion to Holy Communion was miraculously rewarded and honored by God.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/pibrac.png",
+        "alt": "Eucharistic Miracle of Pibrac"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4609,7 +4794,12 @@
     "significance": "This miracle highlights the power of the Eucharistic sacrifice as a channel of divine mercy and forgiveness, emphasizing Christ’s living action during the Mass.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/egidio.png",
+        "alt": "Eucharistic Miracle of Saint Egidio"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4649,7 +4839,12 @@
     "significance": "This miracle emphasizes the power of the Eucharist as spiritual nourishment and healing, especially for the sick, and highlights trust in divine assistance at the hour of death.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Kostka.png",
+        "alt": "Miraculous Communion of Saint Stanislaus Kostka"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4734,7 +4929,12 @@
     "significance": "Saint Catherine’s Eucharistic visions provide one of the Church’s clearest mystical explanations of the doctrine of the Real Presence and the indivisibility of Christ in the Eucharist.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/siena.png",
+        "alt": "Eucharistic Visions of Saint Catherine of Siena"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4774,7 +4974,12 @@
     "significance": "The life of Blessed Alexandrina provides a modern testimony to the sustaining power of the Eucharist and deepened Eucharistic devotion in the twentieth century.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/dacosta.png",
+        "alt": "Eucharistic Fasting of Blessed Alexandrina Maria da Costa"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4814,7 +5019,12 @@
     "significance": "The life of Blessed Anne Catherine Emmerich offers a powerful modern testimony to the sustaining power of the Eucharist and deepened Eucharistic devotion throughout the Church.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Emmerich.png",
+        "alt": "Eucharistic Fasting of Blessed Anne Catherine Emmerich"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4854,7 +5064,12 @@
     "significance": "Blessed Mary of the Passion represents one of the most complete modern witnesses to Eucharistic reparation, demonstrating total union with Christ present in the Blessed Sacrament.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/EnglishMariaofpassion.png",
+        "alt": "Eucharistic Life of Blessed Mary of the Passion"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4894,7 +5109,12 @@
     "significance": "Blessed Nicholas Steno’s conversion stands as a striking witness to the power of the Eucharist to move even the greatest scientific minds toward faith in the Real Presence.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/NicholasSteno_Flue_Lateau.png",
+        "alt": "Eucharistic Conversion of Blessed Nicholas Steno"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4934,7 +5154,12 @@
     "significance": "Marthe Robin’s life stands as one of the longest and most striking modern testimonies to the sustaining power of the Eucharist and its central role in redemptive suffering and evangelization.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/robin.png",
+        "alt": "Eucharistic Fasting of the Servant of God Marthe Robin"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -4974,7 +5199,12 @@
     "significance": "The conversion of André Frossard stands as a powerful modern witness to the Real Presence of Christ in the Eucharist and its capacity to transform even the most hardened skepticism.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Frossard.png",
+        "alt": "Eucharistic Conversion of André Frossard"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5014,7 +5244,12 @@
     "significance": "Teresa Neumann’s life stands as one of the most striking modern witnesses to the Real Presence of Christ in the Eucharist and its power to sustain physical life.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Neumann.png",
+        "alt": "Eucharistic Fasting of Teresa Neumann"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5054,7 +5289,12 @@
     "significance": "Known as the “Miracle of All Miracles,” Calanda stands as one of the most thoroughly documented physical miracles in Church history, highlighting the power of the Eucharist and Marian intercession.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Calanda.png",
+        "alt": "Eucharistic Miracle of Calanda"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5094,7 +5334,12 @@
     "significance": "These Eucharistic apparitions uniquely prepared the children of Fatima for the Marian revelations and stand as one of the clearest angelic testimonies to the Real Presence and Eucharistic reparation in modern history.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/angelofpeace.png",
+        "alt": "Eucharistic Apparitions of the Angel of Peace"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5134,7 +5379,12 @@
     "significance": "Our Lady of Guadalupe is one of the most powerful signs of the Incarnation and Eucharistic mystery, leading to the conversion of millions and remaining a central symbol of Christ’s real and living presence in history.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/GuadalupeMexico.png",
+        "alt": "Eucharistic Sign of Our Lady of Guadalupe"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5174,7 +5424,12 @@
     "significance": "Lourdes stands as a unique and enduring witness to the Real Presence of Christ in the Eucharist, where Eucharistic processions have been accompanied by continuous and well-documented miraculous healings since 1888.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/lourdes.png",
+        "alt": "Eucharistic Healings at Lourdes"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5214,7 +5469,12 @@
     "significance": "Saint Catherine Labouré’s Eucharistic visions affirm the Real Presence of Christ and link Eucharistic devotion with Marian intercession, leading to one of the most widespread sacramentals in Church history.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/laboure.png",
+        "alt": "Eucharistic Visions of Saint Catherine Labouré"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5254,7 +5514,12 @@
     "significance": "The Miraculous Communions testify to the Real Presence of Christ in the Eucharist and reveal God’s willingness to transcend ordinary sacramental limits to satisfy deep Eucharistic desire.",
     "hasStreetView": false,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/communions-1.png",
+        "alt": "Miraculous Communions of the Saints"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5294,7 +5559,12 @@
     "significance": "The Miraculous Communions demonstrate the Real Presence of Christ in the Eucharist and reveal Heaven’s response to deep Eucharistic love, humility, and desire for union with God.",
     "hasStreetView": false,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/communions-2.png",
+        "alt": "Miraculous Communions of the Saints (Part II)"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5334,7 +5604,12 @@
     "significance": "The Scala miracle underscores the Eucharist as the living memorial of Christ’s Passion and affirms the Real Presence through repeated visible signs witnessed by Church leaders.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/damian-scala.png",
+        "alt": "Eucharistic Miracle of Scala"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5463,7 +5738,12 @@
     "significance": "This miracle highlights God’s providence through the Eucharist and confirms the Real Presence of Christ acting to nourish the faithful.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/Chiaravalle_Bosco.png",
+        "alt": "Eucharistic Miracle of Saint John Bosco"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5502,7 +5782,12 @@
     "significance": "This miracle illustrates the profound faith of the early Church in the Real Presence of Christ in the Eucharist and demonstrates divine protection granted through Eucharistic devotion.",
     "hasStreetView": false,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/satyrus.png",
+        "alt": "Eucharistic Miracle of Saint Satyrus"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5541,7 +5826,12 @@
     "significance": "Blessed Nicholas Steno’s conversion stands as a powerful testimony to the Real Presence of Christ in the Eucharist, showing how Eucharistic worship can transform even the most rigorous scientific mind.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/NicholasSteno_Flue_Lateau.png",
+        "alt": "Eucharistic Conversion of Blessed Nicholas Steno"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
@@ -5581,7 +5871,12 @@
     "significance": "Blessed Nicholas Steno’s conversion is a powerful witness to the Real Presence of Christ in the Eucharist, demonstrating the transformative power of Eucharistic worship even on a rigorous scientific mind.",
     "hasStreetView": true,
     "wikiUrl": null,
-    "images": [],
+    "images": [
+      {
+        "url": "/images/miracles/NicholasSteno_Flue_Lateau.png",
+        "alt": "Eucharistic Conversion of Blessed Nicholas Steno"
+      }
+    ],
     "sources": [
       "miracolieucaristici.org"
     ],
