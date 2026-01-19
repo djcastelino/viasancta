@@ -53,6 +53,13 @@ export default function Navigation() {
               <span>Daily Challenge</span>
             </Link>
             <Link
+              href="/jesus-in-ot"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors flex items-center gap-1"
+            >
+              <span>📖</span>
+              <span>Jesus in the OT</span>
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
