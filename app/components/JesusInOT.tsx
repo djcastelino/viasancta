@@ -14,6 +14,7 @@ interface JesusInOTEntry {
   historicalContext: string;
   howItPointsToJesus: string;
   keyInsights: string[];
+  sources?: string[];
 }
 
 export default function JesusInOT() {

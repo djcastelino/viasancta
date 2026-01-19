@@ -13,6 +13,7 @@ interface JesusInOTEntry {
   historicalContext: string;
   howItPointsToJesus: string;
   keyInsights: string[];
+  sources?: string[];
 }
 
 export default function JesusInOTPage() {
@@ -154,6 +155,30 @@ export default function JesusInOTPage() {
                   ))}
                 </ul>
               </section>
+
+              {/* Sources & References */}
+              {todaysEntry.sources && todaysEntry.sources.length > 0 && (
+                <section className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border border-[#D4AF37]/30">
+                  <h3 className="text-xl font-bold text-[#6e3a6c] mb-4 flex items-center gap-2">
+                    <span>📚</span>
+                    <span>Sources & References</span>
+                  </h3>
+                  <ul className="space-y-2">
+                    {todaysEntry.sources.map((source, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 text-sm"
+                      >
+                        <span className="text-[#D4AF37] flex-shrink-0">•</span>
+                        <span className="text-gray-700 leading-relaxed font-serif">{source}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-gray-500 mt-4 italic">
+                    References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, Doctors of the Church, and Magisterial documents.
+                  </p>
+                </section>
+              )}
 
               {/* Call to Action */}
               <section className="text-center pt-6 border-t border-gray-200">
