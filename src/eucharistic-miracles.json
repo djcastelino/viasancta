@@ -5597,5 +5597,1067 @@
       "Scientist Saint",
       "Priest and Missionary"
     ]
+  },
+  {
+    "id": "alatri-1228",
+    "name": "Eucharistic Miracle of Alatri",
+    "location": {
+      "city": "Alatri",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.7272,
+        "lng": 13.3431
+      },
+      "address": "Cathedral of St. Paul, Alatri"
+    },
+    "date": {
+      "year": 1228,
+      "displayDate": "1228"
+    },
+    "type": "Eucharistic Miracle (Host transformed into Flesh)",
+    "description": "A doubting priest witnessed the consecrated Host transform into bleeding Flesh during Mass.",
+    "narrative": "In 1228, at the Cathedral of St. Paul in Alatri, a priest celebrating Mass doubted the Real Presence. At the moment of consecration, the Host visibly turned into Flesh and began to bleed, witnessed by those present.",
+    "scientificEvidence": "The relic has been preserved and venerated for centuries.",
+    "significance": "One of Italy's documented Eucharistic miracles affirming the Real Presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/alatri.png",
+        "alt": "Eucharistic Miracle of Alatri"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Alatri",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "assisi-1240",
+    "name": "Eucharistic Miracle of Assisi",
+    "location": {
+      "city": "Assisi",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.0717,
+        "lng": 12.6175
+      },
+      "address": "Basilica of St. Clare, Assisi"
+    },
+    "date": {
+      "year": 1240,
+      "displayDate": "1240"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "St. Clare repelled Saracen invaders with the Blessed Sacrament, and the Host was miraculously preserved.",
+    "narrative": "In 1240, when Saracen soldiers attacked the monastery of San Damiano in Assisi, St. Clare, though gravely ill, took the ciborium containing the Blessed Sacrament and prayed before it. The invaders fled in terror. The Host from this miracle has been preserved.",
+    "scientificEvidence": "The Host remains incorrupt after nearly 800 years.",
+    "significance": "Demonstrates the power of Eucharistic adoration and St. Clare's faith.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/assissi.png",
+        "alt": "Eucharistic Miracle of Assisi"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Assisi",
+      "Italy",
+      "St. Clare",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "asti-1535",
+    "name": "Eucharistic Miracle of Asti",
+    "location": {
+      "city": "Asti",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.9009,
+        "lng": 8.2064
+      },
+      "address": "Church of St. Secondo, Asti"
+    },
+    "date": {
+      "year": 1535,
+      "displayDate": "1535"
+    },
+    "type": "Eucharistic Miracle (Host transformed)",
+    "description": "A consecrated Host miraculously transformed and bled during Mass.",
+    "narrative": "During Mass in 1535 at the Church of St. Secondo in Asti, the consecrated Host underwent a miraculous transformation, bleeding visibly before the congregation.",
+    "scientificEvidence": "The relic has been preserved and examined by Church authorities.",
+    "significance": "Affirms Catholic teaching on transubstantiation and the Real Presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/asti.png",
+        "alt": "Eucharistic Miracle of Asti"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Asti",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "bagno-di-romagna-1412",
+    "name": "Eucharistic Miracle of Bagno di Romagna",
+    "location": {
+      "city": "Bagno di Romagna",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.8458,
+        "lng": 11.9542
+      },
+      "address": "Basilica of Santa Maria Assunta, Bagno di Romagna"
+    },
+    "date": {
+      "year": 1412,
+      "displayDate": "1412"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A consecrated Host was miraculously preserved and found intact after being stolen.",
+    "narrative": "In 1412, thieves broke into the church and stole the ciborium containing consecrated Hosts. The sacred Hosts were later found intact in a field, glowing with divine light.",
+    "scientificEvidence": "The Host has remained incorrupt for over 600 years.",
+    "significance": "Demonstrates God's protection of the Blessed Sacrament.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/Bagnodiromagna.png",
+        "alt": "Eucharistic Miracle of Bagno di Romagna"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Bagno di Romagna",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "bolsena-1263",
+    "name": "Eucharistic Miracle of Bolsena",
+    "location": {
+      "city": "Bolsena",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 42.6448,
+        "lng": 11.9846
+      },
+      "address": "Church of St. Christina, Bolsena"
+    },
+    "date": {
+      "year": 1263,
+      "displayDate": "1263"
+    },
+    "type": "Eucharistic Miracle (Host bled onto corporal)",
+    "description": "A doubting priest witnessed the Host bleed onto the corporal during Mass.",
+    "narrative": "In 1263, a German priest traveling to Rome stopped at Bolsena. Doubting the Real Presence, he celebrated Mass at the Church of St. Christina. At the consecration, the Host began to bleed, staining the corporal. Pope Urban IV, hearing of the miracle, instituted the Feast of Corpus Christi.",
+    "scientificEvidence": "The blood-stained corporal is preserved in the Cathedral of Orvieto.",
+    "significance": "Led to the institution of the Feast of Corpus Christi; one of the most famous Eucharistic miracles.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/bolsena.png",
+        "alt": "Eucharistic Miracle of Bolsena"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Bolsena",
+      "Italy",
+      "Corpus Christi",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "canosio-1630",
+    "name": "Eucharistic Miracle of Canosio",
+    "location": {
+      "city": "Canosio",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4167,
+        "lng": 7.0833
+      },
+      "address": "Parish Church, Canosio"
+    },
+    "date": {
+      "year": 1630,
+      "displayDate": "1630"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "Consecrated Hosts were miraculously preserved after a church fire.",
+    "narrative": "In 1630, a devastating fire destroyed the parish church of Canosio. When rescuers searched the ruins, they found the ciborium containing the consecrated Hosts completely intact and unburned.",
+    "scientificEvidence": "The Hosts remained fresh and incorrupt despite the fire.",
+    "significance": "Demonstrates divine protection of the Blessed Sacrament.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/canosio.png",
+        "alt": "Eucharistic Miracle of Canosio"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Canosio",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "cascia-1330",
+    "name": "Eucharistic Miracle of Cascia",
+    "location": {
+      "city": "Cascia",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 42.7194,
+        "lng": 13.0139
+      },
+      "address": "Monastery of St. Rita, Cascia"
+    },
+    "date": {
+      "year": 1330,
+      "displayDate": "c. 1330"
+    },
+    "type": "Eucharistic Miracle (Host transformed into Flesh)",
+    "description": "The Host transformed into Flesh when brought to a dying woman who doubted.",
+    "narrative": "Around 1330, a priest was bringing Viaticum to a dying woman in Cascia. The woman mocked the priest, doubting the Real Presence. Suddenly, the Host turned into bleeding Flesh before her eyes. She repented immediately and died in a state of grace.",
+    "scientificEvidence": "The relic of the miraculous Host is preserved in the Monastery of St. Rita.",
+    "significance": "Conversion miracle demonstrating the Real Presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/cascia.png",
+        "alt": "Eucharistic Miracle of Cascia"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Cascia",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "cava-dei-tirreni-1656",
+    "name": "Eucharistic Miracle of Cava dei Tirreni",
+    "location": {
+      "city": "Cava dei Tirreni",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 40.7006,
+        "lng": 14.7069
+      },
+      "address": "Abbey of the Holy Trinity, Cava dei Tirreni"
+    },
+    "date": {
+      "year": 1656,
+      "displayDate": "1656"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A consecrated Host was found intact after being discarded by thieves.",
+    "narrative": "In 1656, thieves broke into the Abbey and stole the ciborium. They discarded the consecrated Hosts on the ground. Days later, the Hosts were found perfectly intact and glowing, surrounded by flowers that had grown around them.",
+    "scientificEvidence": "The Hosts showed no signs of decomposition despite exposure to elements.",
+    "significance": "Demonstrates reverence for the Blessed Sacrament and divine protection.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/Cavadeitirreni.png",
+        "alt": "Eucharistic Miracle of Cava dei Tirreni"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Cava dei Tirreni",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "scala-1732",
+    "name": "Eucharistic Miracle of Scala",
+    "location": {
+      "city": "Scala",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 40.6556,
+        "lng": 14.5578
+      },
+      "address": "Cathedral of San Lorenzo, Scala"
+    },
+    "date": {
+      "year": 1732,
+      "displayDate": "1732"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A consecrated Host bled miraculously during Mass.",
+    "narrative": "In 1732, during Mass at the Cathedral of San Lorenzo in Scala, the celebrant witnessed the consecrated Host begin to bleed at the moment of elevation. The miracle was witnessed by the congregation.",
+    "scientificEvidence": "The blood-stained Host is preserved as a relic.",
+    "significance": "Affirms the Real Presence of Christ in the Eucharist.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/damian-scala.png",
+        "alt": "Eucharistic Miracle of Scala"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Scala",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "dronero-1631",
+    "name": "Eucharistic Miracle of Dronero",
+    "location": {
+      "city": "Dronero",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.4667,
+        "lng": 7.35
+      },
+      "address": "Church of San Sebastiano, Dronero"
+    },
+    "date": {
+      "year": 1631,
+      "displayDate": "1631"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A consecrated Host survived a devastating flood intact.",
+    "narrative": "In 1631, a catastrophic flood struck Dronero, destroying much of the town. When the waters receded, rescuers found the ciborium from the Church of San Sebastiano buried in mud. Opening it, they discovered the consecrated Hosts perfectly intact and clean.",
+    "scientificEvidence": "The Hosts showed no water damage or decomposition.",
+    "significance": "Demonstrates divine protection of the Blessed Sacrament from natural disasters.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/dronero.png",
+        "alt": "Eucharistic Miracle of Dronero"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Dronero",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "ferrara-1171",
+    "name": "Eucharistic Miracle of Ferrara",
+    "location": {
+      "city": "Ferrara",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.8381,
+        "lng": 11.6198
+      },
+      "address": "Basilica of Santa Maria in Vado, Ferrara"
+    },
+    "date": {
+      "year": 1171,
+      "displayDate": "1171"
+    },
+    "type": "Eucharistic Miracle (Blood sprayed from Host)",
+    "description": "When the priest broke the Host, Blood sprayed onto the church vault.",
+    "narrative": "On Easter Sunday 1171, at the Basilica of Santa Maria in Vado, a priest broke the consecrated Host during Mass. Suddenly, Blood gushed from the Host and sprayed onto the church vault, leaving visible stains. The miracle was witnessed by the entire congregation.",
+    "scientificEvidence": "The blood stains remain visible on the church vault to this day.",
+    "significance": "One of Italy's most dramatic Eucharistic miracles; the blood stains have never faded.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/ferrara.png",
+        "alt": "Eucharistic Miracle of Ferrara"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Ferrara",
+      "Italy",
+      "Blood",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "florence-1230",
+    "name": "Eucharistic Miracle of Florence",
+    "location": {
+      "city": "Florence",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.7696,
+        "lng": 11.2558
+      },
+      "address": "Church of Sant'Ambrogio, Florence"
+    },
+    "date": {
+      "year": 1230,
+      "displayDate": "1230"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A consecrated Host bled when a woman attempted to use it for witchcraft.",
+    "narrative": "In 1230, a woman received Holy Communion at the Church of Sant'Ambrogio but removed the Host from her mouth intending to use it for witchcraft. When she placed it in a container at home, the Host began to bleed profusely. Terrified, she confessed to a priest. The Host was returned to the church and is venerated to this day.",
+    "scientificEvidence": "The miraculous Host is preserved in a crystal reliquary.",
+    "significance": "Demonstrates the sacredness of the Eucharist and consequences of sacrilege.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/florence.png",
+        "alt": "Eucharistic Miracle of Florence"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Florence",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "gruaro-1294",
+    "name": "Eucharistic Miracle of Gruaro",
+    "location": {
+      "city": "Gruaro",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.8167,
+        "lng": 12.8667
+      },
+      "address": "Parish Church, Gruaro"
+    },
+    "date": {
+      "year": 1294,
+      "displayDate": "1294"
+    },
+    "type": "Eucharistic Miracle (Host transformed into Flesh)",
+    "description": "A consecrated Host turned into visible Flesh during Mass.",
+    "narrative": "In 1294, during Mass at the parish church of Gruaro, the priest witnessed the consecrated Host transform into Flesh at the moment of consecration. The congregation saw the miracle and it was documented by Church authorities.",
+    "scientificEvidence": "The miraculous Flesh has been preserved as a relic.",
+    "significance": "Affirms transubstantiation and the Real Presence of Christ.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/gruaro.png",
+        "alt": "Eucharistic Miracle of Gruaro"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Gruaro",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "macerata-1356",
+    "name": "Eucharistic Miracle of Macerata",
+    "location": {
+      "city": "Macerata",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.2994,
+        "lng": 13.4531
+      },
+      "address": "Church of Santa Maria della Misericordia, Macerata"
+    },
+    "date": {
+      "year": 1356,
+      "displayDate": "1356"
+    },
+    "type": "Eucharistic Miracle (Mule genuflected before Host)",
+    "description": "A mule knelt before the Blessed Sacrament, converting a heretic.",
+    "narrative": "In 1356, a heretic challenged a priest to prove the Real Presence. The priest brought the Blessed Sacrament before a hungry mule that had been starved for three days. The heretic offered the mule food, but the mule ignored it and knelt before the Eucharist. The heretic converted immediately.",
+    "scientificEvidence": "The event was documented and witnessed by many.",
+    "significance": "Even animals recognize the presence of Christ in the Eucharist.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/macerata.png",
+        "alt": "Eucharistic Miracle of Macerata"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Macerata",
+      "Italy",
+      "Real Presence",
+      "Conversion"
+    ]
+  },
+  {
+    "id": "mogoro-1604",
+    "name": "Eucharistic Miracle of Mogoro",
+    "location": {
+      "city": "Mogoro",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 39.6833,
+        "lng": 8.7833
+      },
+      "address": "Parish Church of San Bernardino, Mogoro"
+    },
+    "date": {
+      "year": 1604,
+      "displayDate": "1604"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "Consecrated Hosts were miraculously preserved after being discarded.",
+    "narrative": "In 1604, thieves broke into the Church of San Bernardino and stole sacred vessels. They threw the consecrated Hosts on the ground. Days later, a shepherd found the Hosts glowing with divine light, perfectly intact and surrounded by flowers.",
+    "scientificEvidence": "The Hosts showed no decomposition despite exposure.",
+    "significance": "Divine protection and reverence for the Blessed Sacrament.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/mogoro.png",
+        "alt": "Eucharistic Miracle of Mogoro"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Mogoro",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "morrovalle-1560",
+    "name": "Eucharistic Miracle of Morrovalle",
+    "location": {
+      "city": "Morrovalle",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.3167,
+        "lng": 13.5833
+      },
+      "address": "Church of San Bartolomeo, Morrovalle"
+    },
+    "date": {
+      "year": 1560,
+      "displayDate": "1560"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A consecrated Host bled during Mass.",
+    "narrative": "In 1560, during Mass at the Church of San Bartolomeo, the priest elevated the Host and it began to bleed visibly. The miracle was witnessed by the congregation and investigated by Church authorities.",
+    "scientificEvidence": "The blood-stained Host is preserved as a relic.",
+    "significance": "Affirms Catholic teaching on the Real Presence and transubstantiation.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/morrovalle.png",
+        "alt": "Eucharistic Miracle of Morrovalle"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Morrovalle",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "offida-1273",
+    "name": "Eucharistic Miracle of Offida",
+    "location": {
+      "city": "Offida",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 42.9333,
+        "lng": 13.6833
+      },
+      "address": "Church of Sant'Agostino, Offida"
+    },
+    "date": {
+      "year": 1273,
+      "displayDate": "1273"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A woman attempted to use the Host for witchcraft; it bled profusely.",
+    "narrative": "In 1273, a woman took the consecrated Host from Mass intending to use it for sorcery. When she placed it in a pot with water and meat, the Host began to bleed so profusely that blood overflowed from the pot. Terrified, she confessed to a priest. The Host was recovered and is venerated to this day.",
+    "scientificEvidence": "The miraculous Host is preserved in the Church of Sant'Agostino.",
+    "significance": "Demonstrates the holiness of the Eucharist and divine response to sacrilege.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/offida.png",
+        "alt": "Eucharistic Miracle of Offida"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Offida",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "patierno-1772",
+    "name": "Eucharistic Miracle of Patierno",
+    "location": {
+      "city": "Patierno",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 40.8833,
+        "lng": 14.2833
+      },
+      "address": "Church of Santa Maria dell'Arco, Patierno"
+    },
+    "date": {
+      "year": 1772,
+      "displayDate": "1772"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A consecrated Host was recovered intact after being desecrated.",
+    "narrative": "In 1772, a sacrilegious act occurred when someone removed a consecrated Host from the church. The Host was later found in a stable, perfectly intact and glowing. It was returned to the church with great ceremony.",
+    "scientificEvidence": "The Host showed no signs of decomposition or damage.",
+    "significance": "Divine protection of the Blessed Sacrament from desecration.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/patierno.png",
+        "alt": "Eucharistic Miracle of Patierno"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Patierno",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "rimini-1227",
+    "name": "Eucharistic Miracle of Rimini",
+    "location": {
+      "city": "Rimini",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 44.0678,
+        "lng": 12.5695
+      },
+      "address": "Church of Sant'Antonio, Rimini"
+    },
+    "date": {
+      "year": 1227,
+      "displayDate": "1227"
+    },
+    "type": "Eucharistic Miracle (Mule genuflected before Host)",
+    "description": "St. Anthony's mule knelt before the Blessed Sacrament, converting heretics.",
+    "narrative": "In 1227, St. Anthony of Padua was challenged by heretics to prove the Real Presence. A mule was starved for three days. St. Anthony held up the Blessed Sacrament while the heretics offered the mule food. The mule ignored the food and knelt before the Eucharist, causing mass conversions.",
+    "scientificEvidence": "Documented historical event witnessed by many.",
+    "significance": "Famous miracle of St. Anthony demonstrating even animals recognize Christ's presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/rimini.png",
+        "alt": "Eucharistic Miracle of Rimini"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Rimini",
+      "Italy",
+      "St. Anthony",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "rome-595",
+    "name": "Eucharistic Miracle of Rome",
+    "location": {
+      "city": "Rome",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.9028,
+        "lng": 12.4964
+      },
+      "address": "Church of Santa Maria in Cosmedin, Rome"
+    },
+    "date": {
+      "year": 595,
+      "displayDate": "595"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "Pope Gregory the Great witnessed a Host bleed during Mass.",
+    "narrative": "In 595, Pope St. Gregory the Great was celebrating Mass when a woman doubted the Real Presence. The Pope prayed, and the Host on the altar began to bleed visibly, converting the doubter.",
+    "scientificEvidence": "Historical account from the life of St. Gregory the Great.",
+    "significance": "Papal witness to Eucharistic miracle affirming Real Presence.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/rome.png",
+        "alt": "Eucharistic Miracle of Rome"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Rome",
+      "Italy",
+      "Pope Gregory",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "rosano-1948",
+    "name": "Eucharistic Miracle of Rosano",
+    "location": {
+      "city": "Rosano",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.7167,
+        "lng": 11.3333
+      },
+      "address": "Abbey of Santa Maria, Rosano"
+    },
+    "date": {
+      "year": 1948,
+      "displayDate": "1948"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A Host was preserved incorrupt through World War II bombings.",
+    "narrative": "During World War II, the Abbey of Santa Maria in Rosano was bombed. After the war, when rescuers searched the ruins, they found a ciborium buried in rubble. Opening it, they discovered the consecrated Hosts perfectly intact and fresh, despite years of exposure.",
+    "scientificEvidence": "The Hosts showed no deterioration after years in rubble.",
+    "significance": "Modern Eucharistic miracle demonstrating divine protection during war.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/rozano.png",
+        "alt": "Eucharistic Miracle of Rosano"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Rosano",
+      "Italy",
+      "Real Presence",
+      "WWII"
+    ]
+  },
+  {
+    "id": "salzano-1632",
+    "name": "Eucharistic Miracle of Salzano",
+    "location": {
+      "city": "Salzano",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.5333,
+        "lng": 12.1167
+      },
+      "address": "Parish Church, Salzano"
+    },
+    "date": {
+      "year": 1632,
+      "displayDate": "1632"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A consecrated Host bled during an attempted theft.",
+    "narrative": "In 1632, thieves broke into the parish church of Salzano to steal the ciborium. When they opened it and touched the consecrated Hosts, one Host began to bleed profusely. Terrified, the thieves fled, leaving the sacred vessels behind.",
+    "scientificEvidence": "The blood-stained Host is preserved as a relic.",
+    "significance": "Divine protection against sacrilege and theft.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/salzano.png",
+        "alt": "Eucharistic Miracle of Salzano"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Salzano",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "siena-1730",
+    "name": "Eucharistic Miracle of Siena",
+    "location": {
+      "city": "Siena",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.3188,
+        "lng": 11.3308
+      },
+      "address": "Basilica of St. Francis, Siena"
+    },
+    "date": {
+      "year": 1730,
+      "displayDate": "1730"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "Consecrated Hosts have remained incorrupt for over 290 years.",
+    "narrative": "In 1730, thieves stole a ciborium containing 223 consecrated Hosts from the Basilica of St. Francis. The Hosts were later found in a collection box, covered in dust and spider webs. They were cleaned and placed in a new ciborium. Nearly 300 years later, the Hosts remain perfectly intact, fresh, and white, defying all natural laws of decomposition.",
+    "scientificEvidence": "Multiple scientific examinations confirm the Hosts show no signs of decomposition, mold, or deterioration after nearly 3 centuries.",
+    "significance": "One of the most remarkable ongoing Eucharistic miracles; the Hosts are displayed for veneration.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/siena.png",
+        "alt": "Eucharistic Miracle of Siena"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Siena",
+      "Italy",
+      "Real Presence",
+      "Incorruptibility"
+    ]
+  },
+  {
+    "id": "trani-1000",
+    "name": "Eucharistic Miracle of Trani",
+    "location": {
+      "city": "Trani",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.2769,
+        "lng": 16.4167
+      },
+      "address": "Church of Ognissanti, Trani"
+    },
+    "date": {
+      "year": 1000,
+      "displayDate": "c. 1000"
+    },
+    "type": "Eucharistic Miracle (Host bled)",
+    "description": "A Jewish man stabbed a consecrated Host and it bled.",
+    "narrative": "Around the year 1000 in Trani, a Jewish man obtained a consecrated Host and, in mockery, stabbed it with a knife. The Host began to bleed profusely, and blood flowed onto the floor. Witnesses called authorities, and the man converted to Christianity upon witnessing the miracle.",
+    "scientificEvidence": "The miraculous Host is preserved in the Church of Ognissanti.",
+    "significance": "Led to conversion and affirms Real Presence of Christ.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/trani.png",
+        "alt": "Eucharistic Miracle of Trani"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Trani",
+      "Italy",
+      "Real Presence",
+      "Conversion"
+    ]
+  },
+  {
+    "id": "turin-1453",
+    "name": "Eucharistic Miracle of Turin",
+    "location": {
+      "city": "Turin",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 45.0703,
+        "lng": 7.6869
+      },
+      "address": "Church of San Giovanni Battista, Turin"
+    },
+    "date": {
+      "year": 1453,
+      "displayDate": "1453"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A monstrance containing the Host survived a devastating fire.",
+    "narrative": "In 1453, thieves stole a monstrance containing the Blessed Sacrament from a church in Exilles. During their escape through Turin, the mule carrying the stolen goods stumbled, and the sack burst into flames. When the fire was extinguished, the monstrance was destroyed, but the Host was found suspended in mid-air, glowing with brilliant light. The Host floated to the Cathedral where it was reverently received.",
+    "scientificEvidence": "Documented historical event witnessed by crowds in Turin.",
+    "significance": "Led to devotion to the Eucharist in Turin; celebrated annually.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/turin.png",
+        "alt": "Eucharistic Miracle of Turin"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Turin",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "veroli-1570",
+    "name": "Eucharistic Miracle of Veroli",
+    "location": {
+      "city": "Veroli",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 41.6903,
+        "lng": 13.4169
+      },
+      "address": "Cathedral of Sant'Andrea, Veroli"
+    },
+    "date": {
+      "year": 1570,
+      "displayDate": "1570"
+    },
+    "type": "Eucharistic Miracle (Host transformed into Flesh)",
+    "description": "A consecrated Host turned into visible Flesh during Mass.",
+    "narrative": "In 1570, during Easter Mass at the Cathedral of Sant'Andrea in Veroli, the priest broke the consecrated Host and it visibly transformed into Flesh. The miracle was witnessed by the congregation and documented by Church authorities.",
+    "scientificEvidence": "The miraculous Flesh is preserved in a crystal reliquary.",
+    "significance": "Affirms transubstantiation during the Easter season.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/veroli.png",
+        "alt": "Eucharistic Miracle of Veroli"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Veroli",
+      "Italy",
+      "Real Presence"
+    ]
+  },
+  {
+    "id": "volterra-1472",
+    "name": "Eucharistic Miracle of Volterra",
+    "location": {
+      "city": "Volterra",
+      "country": "Italy",
+      "coordinates": {
+        "lat": 43.4008,
+        "lng": 10.8606
+      },
+      "address": "Church of Sant'Alessandro, Volterra"
+    },
+    "date": {
+      "year": 1472,
+      "displayDate": "1472"
+    },
+    "type": "Eucharistic Miracle (Host preservation)",
+    "description": "A consecrated Host was found intact after being discarded by thieves.",
+    "narrative": "In 1472, thieves broke into the Church of Sant'Alessandro and stole the ciborium. They threw the consecrated Hosts on the ground near the city walls. A shepherd discovered the Hosts days later, perfectly preserved and glowing with light.",
+    "scientificEvidence": "The Hosts showed no decomposition despite exposure.",
+    "significance": "Divine protection of the Blessed Sacrament.",
+    "hasStreetView": false,
+    "wikiUrl": null,
+    "images": [
+      {
+        "url": "/images/miracles/voltera.png",
+        "alt": "Eucharistic Miracle of Volterra"
+      }
+    ],
+    "sources": [
+      "miracolieucaristici.org"
+    ],
+    "tags": [
+      "Eucharistic Miracle",
+      "Volterra",
+      "Italy",
+      "Real Presence"
+    ]
   }
 ]
