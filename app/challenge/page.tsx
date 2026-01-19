@@ -734,12 +734,21 @@ export default function ChallengePage() {
                   >
                     📤 Share
                   </button>
-                  <Link
-                    href="/challenge/archive"
-                    className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                  >
-                    📜 Archive
-                  </Link>
+                  {gameState.challengeDate === new Date().toISOString().split('T')[0] ? (
+                    <button
+                      onClick={loadYesterdaysChallenge}
+                      className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                    >
+                      📜 Archive
+                    </button>
+                  ) : (
+                    <Link
+                      href="/challenge/archive"
+                      className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
+                    >
+                      📜 Archive
+                    </Link>
+                  )}
                   <Link
                     href="/challenge/stats"
                     className="bg-[#2C5F87] hover:bg-[#1e4460] text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
@@ -747,21 +756,6 @@ export default function ChallengePage() {
                     📊 Stats
                   </Link>
                 </div>
-
-                {/* Yesterday's Challenge Button (only show if viewing today's challenge) */}
-                {gameState.challengeDate === new Date().toISOString().split('T')[0] && (
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <button
-                      onClick={loadYesterdaysChallenge}
-                      className="w-full bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c] text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
-                    >
-                      📅 Play Yesterday&apos;s Challenge
-                    </button>
-                    <p className="text-xs text-gray-500 italic text-center mt-2">
-                      Missed yesterday? Play it now!
-                    </p>
-                  </div>
-                )}
 
                 <div className="mt-6">
                   <p className="text-xs text-gray-500 italic">
