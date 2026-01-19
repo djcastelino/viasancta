@@ -21,7 +21,8 @@
       "Irenaeus, Against Heresies III.22.4 - Mary's obedience vs Eve's disobedience",
       "John Paul II, Redemptoris Mater §11 - Mary crushes serpent with Christ",
       "Scott Hahn, Hail, Holy Queen, ch. 4 - New Eve typology"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 2,
@@ -45,7 +46,8 @@
       "Origen, Homilies on Genesis 8 - Isaac carrying wood prefigures cross",
       "Aquinas, ST III, q. 22, a. 2 - Christ's sacrifice and the Mass",
       "Benedict XVI, Jesus of Nazareth Part Two, pp. 208-212 - Father's sacrifice"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 3,
@@ -68,7 +70,8 @@
       "Augustine, Tractates on John 7.23 - Christ as ladder between heaven/earth",
       "Origen, Homilies on Genesis 12 - Ladder symbolizes Christ the mediator",
       "Aquinas, ST III, q. 26, a. 2 - Christ sole mediator between God and man"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 4,
@@ -91,7 +94,8 @@
       "Augustine, Against Faustus XII.41 - Joseph as type of Christ betrayed",
       "Origen, Homilies on Genesis 15 - Joseph sold for silver like Jesus",
       "Gregory the Great, Morals on Job - Divine Providence in suffering"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 5,
@@ -115,7 +119,8 @@
       "Melito of Sardis, On Pascha 67-71 - Paschal lamb typology",
       "Aquinas, ST III, q. 73, a. 6 - Eucharist fulfills Passover",
       "Brant Pitre, Jesus and the Jewish Roots of the Eucharist, ch. 3"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 6,
@@ -138,7 +143,8 @@
       "Augustine, Tractates on John 12.11 - Looking at serpent for healing",
       "Origen, Homilies on Numbers 19 - Serpent on pole as cross type",
       "Benedict XVI, Jesus of Nazareth vol. 1, pp. 106-108 - Lifted up for salvation"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 7,
@@ -162,7 +168,8 @@
       "Origen, Homilies on Leviticus 10 - Two goats: death and resurrection",
       "Aquinas, ST III, q. 46, a. 3 - Christ's vicarious satisfaction",
       "Benedict XVI, Jesus of Nazareth Part Two, ch. 4 - Bearing our sins"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 8,
@@ -186,7 +193,8 @@
       "Augustine, City of God XVII.8 - Davidic covenant fulfilled in Christ",
       "Aquinas, ST III, q. 59, a. 4 - Christ's kingship eternal",
       "Benedict XVI, Jesus of Nazareth, pp. 8-12 - Son of David"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 9,
@@ -210,7 +218,8 @@
       "Justin Martyr, Dialogue with Trypho 84 - Virgin birth prophecy",
       "Irenaeus, Against Heresies 3.21 - Virgin conception",
       "Aquinas, ST III, q. 28, a. 1-2 - Virgin birth necessity"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 10,
@@ -234,7 +243,8 @@
       "Irenaeus, Against Heresies 3.16 - Isaiah's prophecy of Incarnation",
       "Aquinas, ST III, q. 16, a. 1 - Christ is one Person with two natures",
       "Leo the Great, Tome - Two natures in one Person"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 11,
@@ -258,7 +268,8 @@
       "Augustine, City of God X.32 - Moses type of Christ",
       "Origen, Homilies on Exodus 2 - Moses saved from death",
       "Gregory of Nyssa, Life of Moses - Moses as type"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 12,
@@ -282,7 +293,8 @@
       "Augustine, Tractates on John 26 - Manna and Eucharist",
       "Aquinas, ST III, q. 75, a. 1 - Real Presence prefigured",
       "Brant Pitre, Jesus and the Last Supper, ch. 4 - Manna typology"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 13,
@@ -306,7 +318,8 @@
       "Augustine, Tractates on John 120.2 - Blood and water from Christ's side",
       "Aquinas, ST III, q. 66, a. 11 - Rock as type of Christ",
       "Cyril of Jerusalem, Catechetical Lectures 3.10 - Spiritual rock was Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 14,
@@ -330,7 +343,8 @@
       "Aquinas, ST III, q. 22, a. 4-5 - Christ's priesthood",
       "Origen, Homilies on Leviticus 9 - High Priest typology",
       "John Paul II, Pastores Dabo Vobis - Priesthood of Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 15,
@@ -354,7 +368,8 @@
       "Augustine, Expositions on Psalms 23 - David and Christ",
       "Gregory the Great, Pastoral Rule - Shepherd-king imagery",
       "Benedict XVI, Jesus of Nazareth vol. 1 - Son of David"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 16,
@@ -378,7 +393,8 @@
       "Augustine, Letter 102.6-8 - Jonah typology",
       "Aquinas, ST III, q. 52, a. 2 - Descent to dead",
       "Tertullian, On the Resurrection 39 - Three days in tomb"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 17,
@@ -402,7 +418,8 @@
       "Augustine, Expositions on Psalms 22 - Crucifixion prophecy",
       "Tertullian, Against Marcion 3.19 - Piercing foretold",
       "Benedict XVI, Jesus of Nazareth Part Two - Psalm 22 on cross"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 18,
@@ -426,7 +443,8 @@
       "Justin Martyr, Dialogue with Trypho 78 - Bethlehem prophecy",
       "Origen, Against Celsus 1.51 - Historical Bethlehem birth",
       "Benedict XVI, Jesus of Nazareth: Infancy Narratives, ch. 3"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 19,
@@ -450,7 +468,8 @@
       "Augustine, Tractates on John 120.2 - Blood and water from pierced side",
       "Aquinas, ST III, q. 46, a. 6 - Why Christ's side was opened",
       "Benedict XVI, Jesus of Nazareth Part Two - The Crucifixion"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 20,
@@ -474,7 +493,8 @@
       "Augustine, City of God XVI.22 - Melchizedek type of Christ",
       "Aquinas, ST III, q. 22, a. 6 - Priesthood according to Melchizedek",
       "Ambrose, On the Sacraments 4.10 - Eucharistic prefigurement"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 21,
@@ -498,7 +518,8 @@
       "Augustine, City of God XVII.20 - Tabernacle as type of Church",
       "Gregory of Nyssa, Life of Moses - Tabernacle symbolism",
       "Bede, On the Temple - Typological interpretation of sanctuary"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 22,
@@ -522,7 +543,8 @@
       "Aquinas, ST III, q. 27, a. 2 - Mary's role as Ark typology",
       "Origen, Homilies on Exodus 13 - Ark symbolism",
       "Scott Hahn, Hail, Holy Queen, ch. 5 - Mary as Ark"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 23,
@@ -546,7 +568,8 @@
       "Irenaeus, Against Heresies 4.20.11 - Son of Man prophecy",
       "Jerome, Commentary on Daniel 7 - Messianic figure",
       "Benedict XVI, Jesus of Nazareth vol. 1, pp. 327-330 - Son of Man title"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 24,
@@ -570,7 +593,8 @@
       "Augustine, Sermon 344 - Christ as kinsman-redeemer",
       "Origen, Homilies on Ruth - Boaz typology",
       "Benedict XVI, Deus Caritas Est 10 - God's redeeming love"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 25,
@@ -594,7 +618,8 @@
       "Jerome, Commentary on Jeremiah 23 - Righteous Branch explained",
       "Cyril of Jerusalem, Catechetical Lectures 10.11 - Branch from Jesse",
       "Eusebius, Proof of the Gospel 7.1 - Branch prophecy fulfilled"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 26,
@@ -618,7 +643,8 @@
       "Augustine, Tractates on John 46-47 - Good Shepherd discourse",
       "Gregory the Great, Pastoral Rule - Christ the shepherd",
       "Benedict XVI, Jesus of Nazareth vol. 1, ch. 10 - Good Shepherd"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 27,
@@ -642,7 +668,8 @@
       "Origen, Commentary on Song of Songs - Divine love imagery",
       "Augustine, City of God XVII.16 - Hosea's marriage typology",
       "John Paul II, Familiaris Consortio 13 - Covenant love"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 28,
@@ -666,7 +693,8 @@
       "Cyril of Jerusalem, Catechetical Lectures 17 - Spirit poured out",
       "Augustine, Sermons 269-270 - Pentecost",
       "Leo XIII, Divinum Illud Munus - On the Holy Spirit"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 29,
@@ -690,7 +718,8 @@
       "Cyril of Alexandria, Commentary on Luke 1 - Sun of righteousness",
       "Origen, Commentary on John 1 - True light",
       "Benedict XVI, Jesus of Nazareth vol. 1 - Light metaphor"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 30,
@@ -714,7 +743,8 @@
       "John Chrysostom, Homilies on Hebrews 16 - New covenant explained",
       "Aquinas, ST I-II, q. 106, a. 1 - New Law of Gospel",
       "Benedict XVI, Jesus of Nazareth Part Two, ch. 5 - Last Supper covenant"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 31,
@@ -738,7 +768,8 @@
       "Melito of Sardis, On Pascha 67-71 - Paschal lamb typology",
       "Aquinas, ST III, q. 73, a. 6 - Eucharist fulfills Passover",
       "Brant Pitre, Jesus and the Jewish Roots of the Eucharist, ch. 3"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 32,
@@ -763,7 +794,8 @@
       "Augustine, Expositions on Psalms 2 - Messianic king",
       "Aquinas, Commentary on Psalms 2 - Divine sonship",
       "Chrysostom, Homilies on Acts 10 - Fulfilled in Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 33,
@@ -788,7 +820,8 @@
       "Augustine, Expositions on Psalms 110 - Christ enthroned",
       "Aquinas, ST III, q. 58, a. 3 - Session at right hand",
       "Chrysostom, Homilies on Hebrews 17 - Eternal priesthood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 34,
@@ -812,7 +845,8 @@
       "Augustine, Tractates on John 26 - Manna and Eucharist",
       "Aquinas, ST III, q. 75, a. 1 - Real Presence prefigured",
       "Brant Pitre, Jesus and the Last Supper, ch. 4 - Manna typology"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 35,
@@ -837,7 +871,8 @@
       "Aquinas, ST III, q. 22, a. 2 - Christ's perfect obedience",
       "Chrysostom, Homilies on Hebrews 17 - Body prepared",
       "Origen, Commentary on Hebrews - Fulfillment in Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 36,
@@ -862,7 +897,8 @@
       "Augustine, City of God XVII.3 - Branch builds Church",
       "Aquinas, ST III, q. 22, a. 1 - Priestly kingship",
       "Cyril of Alexandria, Commentary on Zechariah 6 - Messianic fulfillment"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 37,
@@ -886,7 +922,8 @@
       "Aquinas, ST III, q. 22, a. 4-5 - Christ's priesthood",
       "Origen, Homilies on Leviticus 9 - High Priest typology",
       "John Paul II, Pastores Dabo Vobis - Priesthood of Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 38,
@@ -911,7 +948,8 @@
       "Augustine, City of God XVI.41 - Scepter prophecy",
       "Aquinas, ST III, q. 31, a. 2 - Davidic descent",
       "Justin Martyr, Dialogue 52 - Shiloh is Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 39,
@@ -935,7 +973,8 @@
       "Augustine, Sermon 344 - Christ as kinsman-redeemer",
       "Origen, Homilies on Ruth - Boaz typology",
       "Benedict XVI, Deus Caritas Est 10 - God's redeeming love"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 40,
@@ -959,7 +998,8 @@
       "Augustine, Expositions on Psalms 23 - David and Christ",
       "Gregory the Great, Pastoral Rule - Shepherd-king imagery",
       "Benedict XVI, Jesus of Nazareth vol. 1 - Son of David"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 41,
@@ -983,7 +1023,8 @@
       "Augustine, On the Trinity 7.3 - Divine Wisdom incarnate",
       "Aquinas, ST I, q. 34, a. 3 - Son as eternal Wisdom",
       "Benedict XVI, General Audience on Solomon and Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 42,
@@ -1007,7 +1048,8 @@
       "Augustine, Letter 102.6-8 - Jonah typology",
       "Aquinas, ST III, q. 52, a. 2 - Descent to dead",
       "Tertullian, On the Resurrection 39 - Three days in tomb"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 43,
@@ -1032,7 +1074,8 @@
       "Augustine, Expositions on Psalms 24 - King of Glory enters",
       "Aquinas, Commentary on Psalms 24 - Christ's triumph",
       "Origen, Homilies on Psalms - Gates of righteousness"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 44,
@@ -1057,7 +1100,8 @@
       "Aquinas, Commentary on Romans 11 - Mystery of Israel",
       "Chrysostom, Homilies on Romans 19 - Redeemer's coming",
       "Jerome, Commentary on Isaiah 59 - Messianic salvation"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 45,
@@ -1081,7 +1125,8 @@
       "Justin Martyr, Dialogue with Trypho 84 - Virgin birth prophecy",
       "Irenaeus, Against Heresies 3.21 - Virgin conception",
       "Aquinas, ST III, q. 28, a. 1-2 - Virgin birth necessity"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 46,
@@ -1105,7 +1150,8 @@
       "Augustine, Expositions on Psalms 22 - Crucifixion prophecy",
       "Tertullian, Against Marcion 3.19 - Piercing foretold",
       "Benedict XVI, Jesus of Nazareth Part Two - Psalm 22 on cross"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 47,
@@ -1129,7 +1175,8 @@
       "Cyril of Alexandria, Commentary on John 19 - Passover fulfillment",
       "Aquinas, ST III, q. 46, a. 10 - Details of Passion",
       "John Chrysostom, Homilies on John 85 - Prophetic fulfillment"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 48,
@@ -1153,7 +1200,8 @@
       "Augustine, Tractates on John 120.2 - Blood and water from pierced side",
       "Aquinas, ST III, q. 46, a. 6 - Why Christ's side was opened",
       "Benedict XVI, Jesus of Nazareth Part Two - The Crucifixion"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 49,
@@ -1177,7 +1225,8 @@
       "Origen, Commentary on Matthew 79 - Thirty pieces prophecy",
       "Cyril of Jerusalem, Catechetical Lectures 13.10 - Betrayal price",
       "Jerome, Commentary on Zechariah 11 - Silver prophecy fulfilled"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 50,
@@ -1201,7 +1250,8 @@
       "Jerome, Commentary on Isaiah 11 - Branch explained",
       "Cyril of Jerusalem, Catechetical Lectures 10.11 - Shoot from Jesse",
       "Eusebius, Proof of the Gospel 7.2 - Branch from David's line"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 51,
@@ -1225,7 +1275,8 @@
       "Simeon's Canticle (Luke 2:29-32) - Nunc Dimittis",
       "Benedict XVI, Jesus of Nazareth vol. 1 - Light to nations",
       "Eusebius, Proof of the Gospel 9.6 - Gentile salvation prophesied"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 52,
@@ -1249,7 +1300,8 @@
       "Cyril of Alexandria, Commentary on John 8 - Donkey symbolism",
       "Augustine, Harmony of the Gospels 2.66 - Palm Sunday fulfillment",
       "Jerome, Commentary on Zechariah 9 - King riding donkey"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 53,
@@ -1273,7 +1325,8 @@
       "Augustine, Expositions on Psalms 118 - Rejected stone exalted",
       "Origen, Commentary on Matthew 16 - Cornerstone prophecy",
       "Aquinas, ST III, q. 8, a. 3 - Christ foundation of Church"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 54,
@@ -1297,7 +1350,8 @@
       "Origen, Commentary on Matthew 126 - Vinegar offered",
       "Augustine, Expositions on Psalms 69 - Passion prophecy",
       "Cyril of Alexandria, Commentary on John 19 - Thirst on cross"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 55,
@@ -1321,7 +1375,8 @@
       "Augustine, On the Trinity 1.13 - David's Lord",
       "Aquinas, ST III, q. 58, a. 3 - Christ's session at right hand",
       "Benedict XVI, Jesus of Nazareth vol. 1, pp. 317-320"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 56,
@@ -1345,7 +1400,8 @@
       "Athanasius, Against the Arians 1.9 - Divine throne",
       "Aquinas, ST III, q. 59, a. 4 - Christ's eternal kingship",
       "Hilary of Poitiers, On the Psalms 45 - Messianic psalm"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 57,
@@ -1369,7 +1425,8 @@
       "John Chrysostom, Homilies on Matthew 37 - Baptist as messenger",
       "Origen, Commentary on John 6.24 - Elijah figure",
       "Benedict XVI, Jesus of Nazareth vol. 1, ch. 2 - Baptist's mission"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 58,
@@ -1393,7 +1450,8 @@
       "Origen, Commentary on Matthew 10.3 - Elijah's return",
       "Jerome, Commentary on Malachi 4 - Baptist fulfills prophecy",
       "Tertullian, On the Soul 35 - Elijah's spirit in John"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 59,
@@ -1417,7 +1475,8 @@
       "Augustine, Questions on the Heptateuch - Typological reading",
       "Jerome, Commentary on Hosea 11 - Matthew's use of prophecy",
       "Origen, Homilies on Exodus 2 - Israel and Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 60,
@@ -1441,7 +1500,8 @@
       "Origen, Commentary on John 6.24 - Voice crying out",
       "John Chrysostom, Homilies on Matthew 11 - Baptist's preaching",
       "Benedict XVI, Jesus of Nazareth vol. 1, ch. 2"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 61,
@@ -1465,7 +1525,8 @@
       "Origen, Homilies on Luke 4 - Raphael type of Christ",
       "Augustine, City of God X.16 - Angelic ministry",
       "John Chrysostom, Homilies on Matthew 32 - Healing the sick"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 62,
@@ -1489,7 +1550,8 @@
       "Athanasius, On the Incarnation 54 - Wisdom incarnate",
       "Augustine, On the Trinity 7.3 - Divine Wisdom is Son",
       "Aquinas, ST I, q. 34, a. 3 - Son as eternal Wisdom"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 63,
@@ -1513,7 +1575,8 @@
       "Origen, Commentary on Song of Songs - Wisdom's food",
       "Augustine, Sermon 229A - Come and eat",
       "Aquinas, ST III, q. 73, a. 1 - Eucharist as spiritual food"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 64,
@@ -1537,7 +1600,8 @@
       "Irenaeus, Against Heresies 4.20 - Wisdom walked among us",
       "Athanasius, On the Incarnation 1 - God appeared in flesh",
       "Aquinas, ST III, q. 1, a. 1 - Fittingness of Incarnation"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 65,
@@ -1561,7 +1625,8 @@
       "Tertullian, On the Resurrection 35-40 - OT resurrection hope",
       "Augustine, City of God XX.21 - Resurrection in OT",
       "Aquinas, ST Supplement, q. 75 - Bodies will rise"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 66,
@@ -1585,7 +1650,8 @@
       "Ambrose, On Widows 8 - Judith as type",
       "Origen, Homilies on Judges - Female deliverer",
       "Scott Hahn, Hail, Holy Queen, ch. 3 - Judith typology"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 67,
@@ -1609,7 +1675,8 @@
       "Gregory the Great, Morals on Job - Job as type of Christ",
       "Aquinas, ST II-II, q. 124, a. 4 - Patience in suffering",
       "Benedict XVI, General Audience on Job - Innocent suffering"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 68,
@@ -1633,7 +1700,8 @@
       "Origen, Commentary on Song of Songs Prologue - Wisdom's table",
       "Augustine, Sermon 229A - Bread and wine of Wisdom",
       "Aquinas, ST III, q. 73, a. 1 - Eucharist as spiritual banquet"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 69,
@@ -1657,7 +1725,8 @@
       "Augustine, Confessions 1.1 - Restless hearts",
       "Gregory of Nyssa, Homilies on Ecclesiastes - Vanity redeemed",
       "Benedict XVI, Spe Salvi - Hope for eternity"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 70,
@@ -1681,7 +1750,8 @@
       "Origen, Commentary on Song of Songs - Mystical marriage",
       "Bernard of Clairvaux, Sermons on Song of Songs - Divine love",
       "John Paul II, Mulieris Dignitatem 23 - Spousal analogy"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 71,
@@ -1705,7 +1775,8 @@
       "Augustine, City of God XVII.13 - True rest in Christ",
       "Cyril of Jerusalem, Catechetical Lectures 10.11 - Joshua type",
       "Hebrews 4:8-11 - Greater Joshua brings rest"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 72,
@@ -1729,7 +1800,8 @@
       "Origen, Homilies on Joshua 3 - Scarlet cord as blood",
       "Augustine, Questions on Joshua 2 - Rahab as Church type",
       "Justin Martyr, Dialogue with Trypho 111 - Scarlet symbolism"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 73,
@@ -1753,7 +1825,8 @@
       "Ambrose, On the Holy Spirit 1.9 - Divine power in weakness",
       "Augustine, City of God XVII.4 - Judges as saviors",
       "2 Corinthians 12:9 - Power perfected in weakness"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 74,
@@ -1777,7 +1850,8 @@
       "Augustine, City of God XVII.4 - Samson type of Christ",
       "Origen, Homilies on Judges 6 - Death brings victory",
       "Colossians 2:15 - Triumphing over powers"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 75,
@@ -1801,7 +1875,8 @@
       "Gregory of Nazianzus, Oration 2 - Threefold office",
       "Augustine, City of God XVII.4 - Samuel prefigures Christ",
       "Aquinas, ST III, q. 22 - Christ's priesthood and kingship"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 76,
@@ -1825,7 +1900,8 @@
       "Augustine, City of God XVII.8 - Davidic covenant fulfilled in Christ",
       "Aquinas, ST III, q. 59, a. 4 - Christ's kingship eternal",
       "Benedict XVI, Jesus of Nazareth, pp. 8-12 - Son of David"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 77,
@@ -1849,7 +1925,8 @@
       "Origen, Commentary on Matthew 12.42 - Elijah and Jesus",
       "John Chrysostom, Homilies on 1 Corinthians 10 - Fire consumes sacrifice",
       "Gregory of Nazianzus, Oration 45 - Pentecost fire"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 78,
@@ -1873,7 +1950,8 @@
       "Ambrose, On the Sacraments 5.25 - Bread strengthens for journey",
       "Augustine, Tractates on John 26 - True bread from heaven",
       "Aquinas, ST III, q. 79, a. 1-2 - Eucharist sustains spiritual life"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 79,
@@ -1897,7 +1975,8 @@
       "Cyril of Alexandria, Commentary on John 4 - Multiplication foreshadows abundance",
       "Origen, Commentary on Matthew 11 - Bread multiplied",
       "Ephrem the Syrian, Commentary on Tatian's Diatessaron - Miraculous provision"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 80,
@@ -1921,7 +2000,8 @@
       "Augustine, Tractates on John 49 - Death and resurrection",
       "Origen, Against Celsus 2.48 - Raising dead prefigures Christ",
       "Tertullian, On the Resurrection 38 - Types of resurrection"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 81,
@@ -1945,7 +2025,8 @@
       "Origen, Homilies on Luke 8 - Women of faith",
       "Ambrose, Exposition of Luke 1 - Mary's faith",
       "Augustine, Sermons 215 - Faith brings miracles"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 82,
@@ -1969,7 +2050,8 @@
       "Augustine, City of God XXI.8 - Miraculous signs",
       "Origen, Against Celsus 1.59 - Nature submits to God",
       "Aquinas, ST I, q. 105, a. 6 - Miracles as divine testimony"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 83,
@@ -1993,7 +2075,8 @@
       "Origen, Homilies on Jeremiah 14 - Book found, Word incarnate",
       "Augustine, Confessions 8.12 - Scripture transforms",
       "Dei Verbum 21 - Church venerates Scripture"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 84,
@@ -2017,7 +2100,8 @@
       "Origen, Commentary on John 10.18 - Temple rededicated",
       "Cyril of Jerusalem, Catechetical Lectures 14.5 - Body as temple",
       "John Chrysostom, Homilies on John 22 - Three days rebuild"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 85,
@@ -2041,7 +2125,8 @@
       "Tertullian, On the Resurrection 29-30 - Dry bones prophecy",
       "Augustine, City of God XX.21 - Bodies will rise",
       "Gregory of Nyssa, On the Soul - Resurrection hope"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 86,
@@ -2065,7 +2150,8 @@
       "Augustine, Tractates on John 120 - River from temple = Christ",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Living water",
       "Origen, Commentary on John 13 - Rivers of living water"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 87,
@@ -2089,7 +2175,8 @@
       "John Chrysostom, Homilies on Daniel - Fidelity rewarded",
       "Origen, Exhortation to Martyrdom - Witness through purity",
       "Ambrose, On Joseph - Chastity and holiness"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 88,
@@ -2113,7 +2200,8 @@
       "Justin Martyr, Dialogue with Trypho 126-128 - Christophany",
       "Irenaeus, Against Heresies 4.20.11 - Son appears in OT",
       "Augustine, City of God XVI.6 - Divine presence"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 89,
@@ -2137,7 +2225,8 @@
       "Origen, Homilies on Genesis 5 - Daniel type of Christ",
       "Augustine, City of God XVIII.36 - Delivered from lions",
       "Ambrose, Letter 54 - Innocence vindicated"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 90,
@@ -2161,7 +2250,8 @@
       "Jerome, Commentary on Amos 7 - Divine measurement",
       "Augustine, On the Trinity 15.14 - Christ our standard",
       "Origen, Commentary on John 1 - Word as measure of all"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 91,
@@ -2185,7 +2275,8 @@
       "Augustine, City of God XX.19 - Day of the Lord",
       "Irenaeus, Against Heresies 5.35 - Second Coming",
       "Tertullian, Against Marcion 3.24 - Judgment day"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 92,
@@ -2209,7 +2300,8 @@
       "Augustine, Letter 102 - Nineveh's repentance",
       "Jerome, Commentary on Jonah 3 - Greater than Jonah preached",
       "Origen, Homilies on Luke 11 - Sign of Jonah"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 93,
@@ -2233,7 +2325,8 @@
       "Justin Martyr, Dialogue with Trypho 78 - Bethlehem prophecy",
       "Origen, Against Celsus 1.51 - Historical Bethlehem birth",
       "Benedict XVI, Jesus of Nazareth: Infancy Narratives, ch. 3"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 94,
@@ -2257,7 +2350,8 @@
       "Augustine, On the Trinity 8.8 - Divine goodness",
       "Aquinas, ST I, q. 6, a. 1-4 - God's goodness",
       "Benedict XVI, Deus Caritas Est 1 - God is love"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 95,
@@ -2281,7 +2375,8 @@
       "Augustine, The Spirit and the Letter 26 - Faith justifies",
       "Aquinas, ST I-II, q. 113, a. 4 - Justification",
       "John Paul II, Veritatis Splendor 68 - Faith and works"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 96,
@@ -2305,7 +2400,8 @@
       "Origen, Commentary on Song of Songs - Divine love",
       "Ambrose, On Virgins 2.2 - Mary rejoices",
       "Benedict XVI, Deus Caritas Est 1 - God's love for us"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 97,
@@ -2329,7 +2425,8 @@
       "Augustine, City of God XVIII.48 - Desire of nations",
       "Eusebius, Proof of the Gospel 9 - Gentiles included",
       "John Paul II, Redemptoris Missio 5 - Universal mission"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 98,
@@ -2353,7 +2450,8 @@
       "Cyril of Alexandria, Commentary on John 8 - Donkey symbolism",
       "Augustine, Harmony of the Gospels 2.66 - Palm Sunday fulfillment",
       "Jerome, Commentary on Zechariah 9 - King riding donkey"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 99,
@@ -2377,7 +2475,8 @@
       "John Chrysostom, Homilies on Matthew 37 - Baptist as messenger",
       "Origen, Commentary on John 6.24 - Elijah figure",
       "Benedict XVI, Jesus of Nazareth vol. 1, ch. 2 - Baptist's mission"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 100,
@@ -2401,7 +2500,8 @@
       "Cyril of Alexandria, Commentary on Luke 1 - Sun of righteousness",
       "Origen, Commentary on John 1 - True light",
       "Benedict XVI, Jesus of Nazareth vol. 1 - Light metaphor"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 101,
@@ -2426,7 +2526,8 @@
       "Bonaventure, Breviloquium IV.9 - Kinsman redeemer prefigures Christ",
       "Jerome, Commentary on Ruth - Ruth's marriage as type of redemption",
       "Bede, On the Song of Songs - Boaz as type of Christ the Redeemer"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 102,
@@ -2451,7 +2552,8 @@
       "Augustine, Expositions on Psalms 22 - Christ's voice in suffering",
       "Aquinas, Commentary on Psalms 22 - Messianic prophecy",
       "Tertullian, Answer to the Jews 10 - 'Pierced hands and feet' fulfilled"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 103,
@@ -2476,7 +2578,8 @@
       "Aquinas, ST III, q. 22, a. 6 - Christ's eternal priesthood",
       "Chrysostom, Homilies on Hebrews 13 - Melchizedek's priesthood prefigures Christ",
       "Cyril of Jerusalem, Catechetical Lectures 10.19 - Psalm 110 as messianic"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 104,
@@ -2501,7 +2604,8 @@
       "Aquinas, Commentary on John 19 - Paschal Lamb typology",
       "Cyril of Alexandria, Commentary on John 19 - Preservation of Christ's body",
       "Bede, Homilies on the Gospels II.7 - Passover fulfillment"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 105,
@@ -2526,7 +2630,8 @@
       "Augustine, Expositions on Psalms 16 - Christ's body incorrupt",
       "Aquinas, ST III, q. 51, a. 3 - Christ's body immune to corruption",
       "Athanasius, On the Incarnation 26 - Death could not hold Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 106,
@@ -2551,7 +2656,8 @@
       "Aquinas, Commentary on Psalms 69 - Vinegar and gall prophecy",
       "Chrysostom, Homilies on Matthew 88 - Details of crucifixion foretold",
       "Tertullian, Against Marcion 3.19 - Passion prophecies"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 107,
@@ -2576,7 +2682,8 @@
       "Irenaeus, Against Heresies 3.21 - Virgin conception prefigured",
       "Aquinas, ST III, q. 28, a. 1-2 - Fittingness of virgin birth",
       "Jerome, Against Helvidius - 'Almah' means virgin"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 108,
@@ -2601,7 +2708,8 @@
       "Athanasius, On the Incarnation 8 - God becomes man",
       "Aquinas, ST III, q. 2, a. 11 - Hypostatic union prefigured",
       "Cyril of Alexandria, On the Unity of Christ - Two natures in Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 109,
@@ -2626,7 +2734,8 @@
       "Aquinas, ST III, q. 73, a. 6 - Eucharist prefigured in OT feasts",
       "Ambrose, On the Sacraments 5.3 - Mountain feast as type",
       "Gregory of Nyssa, On the Soul and Resurrection - Final banquet"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 110,
@@ -2651,7 +2760,8 @@
       "Augustine, Enchiridion 84 - Isaiah's resurrection prophecy",
       "Aquinas, ST Suppl., q. 75 - General resurrection",
       "Jerome, Commentary on Isaiah 26 - Dead will rise in Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 111,
@@ -2676,7 +2786,8 @@
       "Augustine, Expositions on Psalms 118 - Rejected stone becomes cornerstone",
       "Aquinas, ST III, q. 8, a. 3 - Christ as head of mystical body",
       "Cyprian, Unity of the Church 4 - Foundation on Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 112,
@@ -2701,7 +2812,8 @@
       "Cyril of Alexandria, Commentary on Isaiah 35 - Messianic healing",
       "Chrysostom, Homilies on Matthew 36 - Signs of Messiah",
       "Augustine, Sermons 88 - Desert blooms with grace"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 113,
@@ -2726,7 +2838,8 @@
       "Augustine, Harmony of the Gospels 2.16 - John fulfills prophecy",
       "Aquinas, ST III, q. 38, a. 1 - John's mission prophesied",
       "Bede, Commentary on Luke 3 - Voice in wilderness"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 114,
@@ -2751,7 +2864,8 @@
       "Origen, Commentary on Matthew 10.17 - Servant's meekness",
       "Aquinas, Commentary on Isaiah 42 - Justice without violence",
       "Eusebius, Proof of the Gospel 10 - Suffering Servant"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 115,
@@ -2776,7 +2890,8 @@
       "Justin Martyr, First Apology 49 - Universal salvation prophesied",
       "Irenaeus, Against Heresies 3.10 - Light reaches nations",
       "Augustine, City of God XVIII.29 - Gentile inclusion foretold"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 116,
@@ -2801,7 +2916,8 @@
       "Aquinas, ST III, q. 46, a. 5 - Mockery and spitting",
       "Chrysostom, Homilies on Isaiah 5 - Willing acceptance of suffering",
       "Cyril of Alexandria, Commentary on Isaiah 50 - Obedient unto death"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 117,
@@ -2826,7 +2942,8 @@
       "Augustine, City of God XVII.3 - Barren woman bears many",
       "Origen, Commentary on Song of Songs - Bride and Bridegroom",
       "Jerome, Commentary on Isaiah 54 - Covenant of peace in Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 118,
@@ -2851,7 +2968,8 @@
       "Cyprian, Letter 63.13 - Wine and milk as Eucharist types",
       "Ambrose, On the Sacraments 5 - Spiritual food without price",
       "Chrysostom, Homilies on John 51 - Free gift of salvation"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 119,
@@ -2876,7 +2994,8 @@
       "Augustine, Sermons 62 - Year of the Lord's favor",
       "Aquinas, ST III, q. 40, a. 1 - Christ's preaching mission",
       "Irenaeus, Against Heresies 3.9 - Spirit rests on Messiah"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 120,
@@ -2901,7 +3020,8 @@
       "Origen, Commentary on Song of Songs - New name of glory",
       "Jerome, Commentary on Isaiah 62 - No longer forsaken",
       "Cyril of Jerusalem, Catechetical Lectures 10 - Names of Church"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 121,
@@ -2926,7 +3046,8 @@
       "Aquinas, ST III, q. 46, a. 6 - Christ alone atones",
       "Cyril of Alexandria, Commentary on Isaiah 63 - Garments stained",
       "Jerome, Commentary on Isaiah 63 - Treading alone"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 122,
@@ -2951,7 +3072,8 @@
       "Chrysostom, Homilies on Matthew 12 - Father's voice from heaven",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Spirit descends",
       "Ambrose, On the Holy Spirit 1.4 - Heaven rent open"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 123,
@@ -2976,7 +3098,8 @@
       "Irenaeus, Against Heresies 5.35-36 - Material creation renewed",
       "Augustine, City of God XX.21 - New heaven and earth",
       "Aquinas, Commentary on 2 Peter 3 - Final renewal"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 124,
@@ -3001,7 +3124,8 @@
       "Aquinas, Commentary on John 13 - Judas prefigured",
       "Chrysostom, Homilies on John 71 - Intimate betrayal foretold",
       "Cyril of Alexandria, Commentary on John 13 - One who ate bread"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 125,
@@ -3026,7 +3150,8 @@
       "Augustine, Expositions on Psalms 45 - Royal bridegroom",
       "Origen, Commentary on Song of Songs - King and bride",
       "Jerome, Commentary on Ephesians 5 - Psalm 45 as messianic"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 126,
@@ -3051,7 +3176,8 @@
       "Cyril of Alexandria, Commentary on John - Christ brings captives to heaven",
       "Chrysostom, Homilies on Ephesians 11 - Gifts distributed after ascension",
       "Bede, Homilies 2.16 - Ascension triumph prophesied"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 127,
@@ -3076,7 +3202,8 @@
       "Aquinas, Commentary on Psalms 72 - Perpetual kingdom",
       "Eusebius, Proof of the Gospel 8 - Universal dominion",
       "Chrysostom, Homilies on Psalms - Kings bring tribute"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 128,
@@ -3101,7 +3228,8 @@
       "Augustine, Tractates on John 26 - Manna was shadow, Christ is reality",
       "Cyprian, Lord's Prayer 18 - Daily bread is Christ",
       "Ambrose, On the Sacraments 4.24 - Manna points to Eucharist"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 129,
@@ -3126,7 +3254,8 @@
       "Aquinas, Commentary on Psalms 80 - Messianic restoration",
       "Cyril of Jerusalem, Catechetical Lectures 15 - Son of Man returns",
       "Chrysostom, Homilies on Psalms - God's face shines in Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 130,
@@ -3151,7 +3280,8 @@
       "Aquinas, ST II-II, q. 83, a. 3 - Prayer in God's house",
       "Chrysostom, Homilies on 2 Corinthians - Living stones of temple",
       "Origen, On Prayer 31 - God dwells in His people"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 131,
@@ -3176,7 +3306,8 @@
       "Aquinas, ST III, q. 41, a. 4 - Christ's temptation and angels",
       "Chrysostom, Homilies on Matthew 13 - Satan misuses Scripture",
       "Jerome, Commentary on Matthew 4 - Messianic protection"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 132,
@@ -3201,7 +3332,8 @@
       "Aquinas, ST I, q. 10, a. 2 - God's eternity applied to Christ",
       "Athanasius, Against the Arians 1.12 - Christ is eternal Creator",
       "Hilary of Poitiers, On the Trinity 12.51 - Immutability of Son"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 133,
@@ -3226,7 +3358,8 @@
       "Aquinas, Commentary on Psalms 118 - Jews reject Messiah",
       "Chrysostom, Homilies on Acts 11 - Cornerstone prophecy",
       "Cyprian, Testimonies 2.16 - Stone rejected by Israel"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 134,
@@ -3251,7 +3384,8 @@
       "Augustine, Expositions on Psalms 132 - Zion fulfilled in Church",
       "Aquinas, Commentary on Psalms 132 - Temple points to Incarnation",
       "Bede, Homilies 1.4 - Mary as resting place of God"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 135,
@@ -3276,7 +3410,8 @@
       "Aquinas, ST II-II, q. 45, a. 2 - Wisdom invites to feast",
       "Ambrose, On the Sacraments 5.3 - Wisdom's table is Eucharist",
       "Origen, Commentary on Proverbs 9 - Seven pillars as gifts of Spirit"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 136,
@@ -3301,7 +3436,8 @@
       "Ambrose, On Widows 7.40 - Esther as type of Church",
       "Rabanus Maurus, Commentary on Esther - Intercession typology",
       "Bede, On Esther - Queen who risks life for people"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 137,
@@ -3326,7 +3462,8 @@
       "Aquinas, ST II-II, q. 81, a. 2 - Adoration belongs to God",
       "Chrysostom, On the Priesthood 3.4 - Worship in spirit",
       "Athanasius, Letter to Marcellinus - Psalms teach to seek God"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 138,
@@ -3351,7 +3488,8 @@
       "Aquinas, ST I-II, q. 109, a. 5 - Need for grace to do good",
       "Chrysostom, Homilies on 2 Corinthians 4 - Everything is gift",
       "Gregory the Great, Pastoral Rule 1.4 - Humility of leadership"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 139,
@@ -3376,7 +3514,8 @@
       "Augustine, Sermons 215.4 - Temple filled, Mary filled with God",
       "Aquinas, ST III, q. 27, a. 5 - Overshadowing of the Spirit",
       "Bede, Homilies 1.3 - Glory cloud prefigures Incarnation"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 140,
@@ -3401,7 +3540,8 @@
       "Aquinas, ST II-II, q. 83, a. 15 - Prayer for others",
       "Chrysostom, Homilies on Prayer - Conditions for answered prayer",
       "Cyprian, On the Lord's Prayer 2 - Communal repentance"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 141,
@@ -3426,7 +3566,8 @@
       "Augustine, City of God XVII.12 - Temple rebuilding as Church",
       "Aquinas, Commentary on Hebrews 12 - Old temple passes away",
       "Eusebius, Church History 1.3 - Second temple awaits Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 142,
@@ -3451,7 +3592,8 @@
       "Aquinas, ST III, q. 73, a. 6 - Eucharist as true Passover",
       "Melito of Sardis, On Pascha - Christ our Passover lamb",
       "Cyril of Alexandria, Commentary on Exodus 12 - Mystical Passover"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 143,
@@ -3476,7 +3618,8 @@
       "Aquinas, ST II-II, q. 28, a. 1 - Spiritual joy from charity",
       "Chrysostom, Homilies on Philippians 4 - Rejoice in the Lord always",
       "Gregory the Great, Homilies on Ezekiel 2.2 - Joy from God's word"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 144,
@@ -3501,7 +3644,8 @@
       "Aquinas, ST I-II, q. 106, a. 1 - New Law is Holy Spirit",
       "Cyril of Jerusalem, Catechetical Lectures 16 - Spirit given to believers",
       "Basil, On the Holy Spirit 16 - Spirit as gift from Father"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 145,
@@ -3526,7 +3670,8 @@
       "Aquinas, ST II-II, q. 30, a. 4 - Mercy as greatest virtue",
       "Chrysostom, Homilies on Matthew 6 - Blessed are the merciful",
       "Jerome, Commentary on Lamentations 3 - New every morning"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 146,
@@ -3551,7 +3696,8 @@
       "Origen, Homilies on Joshua 8 - Jesus/Joshua typology",
       "Cyril of Jerusalem, Catechetical Lectures 10 - Cleansing by grace",
       "Jerome, Commentary on Zechariah 3 - Satan's accusation defeated"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 147,
@@ -3576,7 +3722,8 @@
       "Aquinas, ST III, q. 40, a. 3 - Appropriateness of riding donkey",
       "Chrysostom, Homilies on Matthew 66 - Meekness of the King",
       "Jerome, Commentary on Zechariah 9 - King brings peace"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 148,
@@ -3601,7 +3748,8 @@
       "Aquinas, Commentary on John 19 - Prophecy fulfilled at cross",
       "Cyril of Alexandria, Commentary on John - Looking on the Pierced One",
       "Tertullian, Against the Jews 10 - Jews will recognize Messiah"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 149,
@@ -3626,7 +3774,8 @@
       "Chrysostom, Homilies on John 85 - Blood and water from side",
       "Ambrose, On the Sacraments 2.4 - Fountain of life",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Baptismal fountain"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 150,
@@ -3651,7 +3800,8 @@
       "Justin Martyr, Dialogue 41 - Eucharistic prophecy",
       "Irenaeus, Against Heresies 4.17.5 - Pure offering of Church",
       "Augustine, City of God XVIII.35 - Sacrifice among gentiles"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 151,
@@ -3676,7 +3826,8 @@
       "Origen, Commentary on John 6.14 - John prepares way for Lord",
       "Aquinas, Commentary on Matthew 11 - Messenger fulfillment",
       "Tertullian, Against Marcion 4.33 - John fulfills Malachi"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 152,
@@ -3701,7 +3852,8 @@
       "Cyprian, Testimonies 2.27 - Sun of justice with healing",
       "Ambrose, On the Christian Faith 3.12 - Christ the Sun",
       "Augustine, Sermons 229M - Light that illumines"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 153,
@@ -3726,7 +3878,8 @@
       "Augustine, Expositions on Psalms 44 - Eternal betrothal",
       "Origen, Commentary on Song of Songs - Nuptial mystery",
       "Jerome, Commentary on Hosea 2 - Covenant of love"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 154,
@@ -3751,7 +3904,8 @@
       "Tertullian, On the Resurrection 39 - Third day prophecy",
       "Origen, Commentary on John 10.15 - Return to life",
       "Cyril of Alexandria, Commentary on Hosea 6 - Life after two days"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 155,
@@ -3776,7 +3930,8 @@
       "Jerome, Commentary on Hosea 11 - Son called from Egypt",
       "Origen, Homilies on Exodus 2 - Typological fulfillment",
       "Irenaeus, Proof of the Apostolic Preaching 44 - Christ recapitulates Israel"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 156,
@@ -3801,7 +3956,8 @@
       "Chrysostom, On Repentance 5 - Mourning leads to joy",
       "Ambrose, On Penance - Priestly intercession",
       "Gregory the Great, Dialogues 3.36 - Fasting and prayer"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 157,
@@ -3826,7 +3982,8 @@
       "Cyril of Jerusalem, Catechetical Lectures 17 - Pentecost fulfillment",
       "Basil, On the Holy Spirit 16.39 - Universal outpouring",
       "Ambrose, On the Holy Spirit 1.3 - Promise of the Spirit"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 158,
@@ -3851,7 +4008,8 @@
       "Augustine, City of God XX.17 - Lord's dwelling in Church",
       "Aquinas, ST I-II, q. 102, a. 4 - Zion prefigures Church",
       "Origen, On First Principles 2.11 - Temple of Holy Spirit"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 159,
@@ -3876,7 +4034,8 @@
       "Jerome, Commentary on Amos 8 - Spiritual famine",
       "Origen, Homilies on Exodus 13 - Hunger for God's word",
       "Chrysostom, Homilies on Matthew 13 - Word as nourishment"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 160,
@@ -3901,7 +4060,8 @@
       "Eusebius, Proof of the Gospel 7.1 - Gentile inclusion",
       "Jerome, Commentary on Amos 9 - Rebuilt tabernacle is Church",
       "Aquinas, Commentary on Acts 15 - Prophecy of Church"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 161,
@@ -3926,7 +4086,8 @@
       "Augustine, Expositions on Psalms 8 - True Man",
       "Aquinas, ST III, q. 16, a. 10 - Dominion over all",
       "Chrysostom, Homilies on Hebrews 4 - Son of Man crowned"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 162,
@@ -3951,7 +4112,8 @@
       "Origen, Against Celsus 1.51 - Birthplace foretold",
       "Augustine, City of God XVIII.35 - Ruler from Bethlehem",
       "Jerome, Commentary on Micah 5 - Ancient origins of Messiah"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 163,
@@ -3976,7 +4138,8 @@
       "Aquinas, ST II-II, q. 104, a. 3 - Obedience to God",
       "Ambrose, On the Duties of the Clergy 1.11 - Walk humbly",
       "Chrysostom, Homilies on Matthew 15 - Mercy and justice"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 164,
@@ -4001,7 +4164,8 @@
       "Augustine, Tractates on John 47 - Shepherd who gives life",
       "Gregory the Great, Pastoral Rule 2.5 - Care of the shepherd",
       "Aquinas, ST III, q. 22, a. 1 - Christ's pastoral office"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 165,
@@ -4026,7 +4190,8 @@
       "Aquinas, ST I, q. 6, a. 2 - God is goodness itself",
       "Basil, On the Hexaemeron 1.7 - God's goodness in creation",
       "Ambrose, On the Christian Faith 1.5 - Lord is refuge"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 166,
@@ -4051,7 +4216,8 @@
       "Aquinas, Commentary on Romans 1 - Living by faith",
       "Luther's rediscovery noted in CCC context",
       "Jerome, Commentary on Habakkuk 2 - Faith unto salvation"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 167,
@@ -4076,7 +4242,8 @@
       "Augustine, Confessions 1.1 - Rest in God alone",
       "Aquinas, ST II-II, q. 17, a. 1 - Hope in adversity",
       "Chrysostom, Homilies on Philippians 14 - Joy in suffering"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 168,
@@ -4101,7 +4268,8 @@
       "Augustine, Sermons 291 - God rejoices over His people",
       "Aquinas, ST III, q. 27, a. 4 - God's delight in Mary",
       "Bernard, Homilies on Mary - God's joy in His dwelling"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 169,
@@ -4126,7 +4294,8 @@
       "Jerome, Commentary on Haggai 2 - Second temple glory",
       "Origen, On First Principles 3.6 - Christ as desire of nations",
       "Aquinas, Commentary on Hebrews 12 - Unshakeable kingdom"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 170,
@@ -4151,7 +4320,8 @@
       "Bernard, Sermons on Song of Songs 49 - Wine cellar of charity",
       "Gregory of Nyssa, Homilies on Song of Songs 5 - Divine love",
       "Augustine, Expositions on Psalms 44 - Royal marriage feast"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 171,
@@ -4176,7 +4346,8 @@
       "Bernard, Sermons on Song of Songs 74 - Open to Christ",
       "Gregory the Great, Morals on Job 5.36 - Divine visitation",
       "Ambrose, On Virgins 1.9 - Vigilance in prayer"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 172,
@@ -4201,7 +4372,8 @@
       "Ambrose, On Abraham 1.5 - Three visitors, one God",
       "Chrysostom, Homilies on Genesis 42 - Theophany at Mamre",
       "Origen, Homilies on Genesis 4 - Trinity foreshadowed"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 173,
@@ -4226,7 +4398,8 @@
       "Origen, Commentary on John 1.23 - Angels ascending on Son of Man",
       "Hilary of Poitiers, On the Trinity 4.23 - Bridge to heaven",
       "Ambrose, On Jacob and the Happy Life 2.2 - Vision of Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 174,
@@ -4251,7 +4424,8 @@
       "Origen, Homilies on Genesis 15 - Spiritual combat",
       "Ambrose, On Jacob 2.4 - Wrestling in prayer",
       "Gregory of Nyssa, On Perfection - Perseverance in seeking God"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 175,
@@ -4276,7 +4450,8 @@
       "Aquinas, ST I, q. 13, a. 11 - I AM as divine name",
       "Gregory of Nyssa, On the Life of Moses 2.25 - God's self-revelation",
       "Athanasius, Against the Arians 3.6 - Divine name applied to Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 176,
@@ -4301,7 +4476,8 @@
       "Augustine, Sermons 377 - Consecration of firstborn",
       "Ambrose, On Virginity 19.129 - Jesus consecrated in temple",
       "Cyril of Alexandria, Commentary on Luke 2 - Redemption of firstborn"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 177,
@@ -4326,7 +4502,8 @@
       "Aquinas, ST III, q. 63, a. 3 - Baptismal priesthood",
       "Origen, Homilies on Exodus 11 - Priestly people",
       "Chrysostom, Homilies on 1 Peter - Chosen race and priesthood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 178,
@@ -4351,7 +4528,8 @@
       "Augustine, Against Faustus 19.13 - Old and new covenant blood",
       "Chrysostom, Homilies on Matthew 82 - Blood that seals covenant",
       "Cyril of Alexandria, Commentary on Luke 22 - New covenant blood"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 179,
@@ -4376,7 +4554,8 @@
       "Aquinas, ST III, q. 22, a. 2 - Christ's offering to Father",
       "Irenaeus, Against Heresies 4.18 - Eucharist as wave offering",
       "Cyprian, Letter 63.14 - Lifted up sacrifice"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 180,
@@ -4401,7 +4580,8 @@
       "Aquinas, ST II-II, q. 83, a. 15 - Prayer rises like incense",
       "Ambrose, On the Christian Faith 3.11 - Incense of intercession",
       "Origen, On Prayer 31 - Perpetual prayer like incense"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 181,
@@ -4426,7 +4606,8 @@
       "Augustine, Tractates on John 120.2 - Blood of the covenant",
       "Chrysostom, Homilies on Hebrews 17 - Power of Christ's blood",
       "Cyril of Jerusalem, Catechetical Lectures 13.2 - Saving blood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 182,
@@ -4451,7 +4632,8 @@
       "Origen, Homilies on Exodus 7 - Spiritual unleavened bread",
       "Ambrose, On the Sacraments 4.13 - Daily bread from heaven",
       "Cyril of Alexandria, Commentary on 1 Corinthians 5 - Feast of redemption"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 183,
@@ -4476,7 +4658,8 @@
       "Augustine, Sermons 363 - Lord's face shines on us",
       "Ambrose, On the Priesthood 4 - Priestly blessing",
       "Basil, On the Holy Spirit 26 - Face of God in blessing"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 184,
@@ -4501,7 +4684,8 @@
       "Augustine, Sermons 215 - Cloud of glory",
       "Origen, Homilies on Numbers 9 - Divine guidance",
       "Gregory of Nyssa, On the Life of Moses 2.243 - Following the cloud"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 185,
@@ -4526,7 +4710,8 @@
       "Chrysostom, Homilies on 1 Corinthians 23 - Desire for manna",
       "Origen, Homilies on Numbers 16 - Craving vs contentment",
       "Ambrose, On Paradise 12.56 - True food from heaven"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 186,
@@ -4551,7 +4736,8 @@
       "Aquinas, ST III, q. 82, a. 1 - Minister of Eucharist",
       "Origen, Homilies on Numbers 11 - Priestly portion",
       "Chrysostom, On the Priesthood 3.4 - Sacred offerings"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 187,
@@ -4576,7 +4762,8 @@
       "Origen, On Prayer 27 - God's word as food",
       "Aquinas, ST III, q. 41, a. 1 - Spiritual nourishment",
       "Ambrose, On the Christian Faith 3.5 - Living by God's word"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 188,
@@ -4601,7 +4788,8 @@
       "Aquinas, ST III, q. 7, a. 8 - Christ's prophetic office",
       "Origen, Commentary on John 1.17 - Greater than Moses",
       "Eusebius, Proof of the Gospel 3.3 - Prophet foretold"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 189,
@@ -4626,7 +4814,8 @@
       "Origen, Homilies on Joshua 6 - Captain of salvation",
       "Justin Martyr, Dialogue 61 - Angel of great counsel",
       "Ambrose, On the Christian Faith 1.13 - Divine commander"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 190,
@@ -4651,7 +4840,8 @@
       "Ambrose, On the Holy Spirit 1.12 - Divine acceptance",
       "Chrysostom, Homilies on Hebrews 9 - Sacrifice consumed",
       "Jerome, Commentary on Judges 6 - Angel of the Lord appears"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 191,
@@ -4676,7 +4866,8 @@
       "Augustine, City of God XVIII.19 - Samson as type",
       "Origen, Homilies on Judges 13 - Miraculous birth",
       "Isidore of Seville, Allegoriae - Samson prefigures Christ"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 192,
@@ -4701,7 +4892,8 @@
       "Ambrose, On Widows 4.21 - Hannah's perseverance",
       "Origen, Homilies on 1 Samuel 1 - Power of prayer",
       "Chrysostom, On Prayer - Hannah's persistence"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 193,
@@ -4726,7 +4918,8 @@
       "Aquinas, ST I-II, q. 19, a. 6 - Interior act most important",
       "Gregory the Great, Pastoral Rule 1.11 - God sees within",
       "Ambrose, On the Duties 1.36 - Purity of heart"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 194,
@@ -4751,7 +4944,8 @@
       "Augustine, City of God XVII.4 - Victory over evil",
       "Gregory the Great, Morals on Job 33.12 - Defeating the giant",
       "Origen, Homilies on 1 Samuel - Stone strikes head of serpent"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 195,
@@ -4776,7 +4970,8 @@
       "Aquinas, ST III, q. 31, a. 2 - Son of David",
       "Irenaeus, Against Heresies 3.21 - Throne of David",
       "Cyril of Alexandria, Commentary on Luke 1 - Everlasting reign"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 196,
@@ -4801,7 +4996,8 @@
       "Ambrose, On Widows 6.36 - Inexhaustible supply",
       "Origen, Homilies on Luke 4 - Grace never runs out",
       "Bede, Homilies 2.21 - Providential care"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 197,
@@ -4826,7 +5022,8 @@
       "Gregory the Great, Morals on Job 23.19 - Gentle whisper",
       "Teresa of Avila, Interior Castle - God in silence",
       "John of the Cross, Spiritual Canticle - Silent music"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 198,
@@ -4851,7 +5048,8 @@
       "Aquinas, Commentary on Job 19 - Living Redeemer",
       "Gregory the Great, Morals on Job 14.56 - Christ as Redeemer",
       "Origen, Commentary on Job - Resurrection faith"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 199,
@@ -4876,7 +5074,8 @@
       "Aquinas, ST I, q. 103, a. 5 - Divine ordering",
       "Gregory of Nyssa, On Ecclesiastes 3 - Seasons of life",
       "Jerome, Commentary on Ecclesiastes 3 - Fullness of time"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 200,
@@ -4901,7 +5100,8 @@
       "Aquinas, Commentary on Psalms 23 - Lord guides His flock",
       "Gregory the Great, Pastoral Rule 2.5 - Model of shepherding",
       "Ambrose, On the Death of His Brother 2.97 - Green pastures of paradise"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 201,
@@ -4926,7 +5126,8 @@
       "Aquinas, ST II-II, q. 83, a. 3 - Beauty of the Lord",
       "Bernard, Sermons on Song of Songs 23 - Contemplation of God",
       "Gregory of Nyssa, Life of Moses - Vision of God's beauty"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 202,
@@ -4951,7 +5152,8 @@
       "Aquinas, Commentary on Psalms 42 - Soul's desire for God",
       "Teresa of Avila, Way of Perfection - Spiritual thirst",
       "John of the Cross, Dark Night - Longing for divine union"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 203,
@@ -4976,7 +5178,8 @@
       "Aquinas, ST II-II, q. 27, a. 3 - Charity above all",
       "Francis de Sales, Treatise on Love of God - Divine love supreme",
       "Bernard, On Loving God - Degrees of love"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 204,
@@ -5001,7 +5204,8 @@
       "Aquinas, ST II-II, q. 84, a. 2 - Adoration due to God alone",
       "Benedict XVI, Spirit of Liturgy - Coming before God",
       "Chrysostom, On the Priesthood 6.4 - Reverence in worship"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 205,
@@ -5026,7 +5230,8 @@
       "Aquinas, ST III, q. 83, a. 4 - Eucharist as thanksgiving",
       "Chrysostom, Homilies on Hebrews 25 - Grateful worship",
       "Basil, Homilies 6 - Thanksgiving always"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 206,
@@ -5051,7 +5256,8 @@
       "Aquinas, ST III, q. 74, a. 1 - Eucharistic chalice",
       "Chrysostom, Homilies on Matthew 82 - Cup of the New Covenant",
       "Cyprian, Letter 63.11 - Mingled cup"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 207,
@@ -5076,7 +5282,8 @@
       "Aquinas, Commentary on Psalms 141 - Sweet odor to God",
       "Origen, On Prayer 2 - Incense of intercession",
       "Ambrose, On the Mysteries 5.28 - Fragrance of prayer"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 208,
@@ -5101,7 +5308,8 @@
       "Aquinas, ST II-II, q. 83, a. 6 - Petition for daily needs",
       "Chrysostom, Homilies on Matthew 19 - Trust in providence",
       "Cyprian, On the Lord's Prayer 18 - Daily bread petition"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 209,
@@ -5126,7 +5334,8 @@
       "Augustine, City of God XV.26 - Angel of the Lord protects",
       "Origen, Homilies on Jeremiah 14 - Son of God with martyrs",
       "Chrysostom, Homilies on Daniel 4 - Divine presence in trial"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 210,
@@ -5151,7 +5360,8 @@
       "Augustine, City of God XX.23 - Coming on clouds",
       "Aquinas, ST III, q. 59, a. 6 - Ascension to Father",
       "Jerome, Commentary on Daniel 7 - Messianic prophecy"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 211,
@@ -5176,7 +5386,8 @@
       "Augustine, City of God XVIII.33 - Time of Christ's coming",
       "Origen, Commentary on Matthew 14.14 - Prophetic timeline",
       "Eusebius, Proof of the Gospel 8.2 - Daniel's prophecy fulfilled"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 212,
@@ -5201,7 +5412,8 @@
       "Aquinas, ST Suppl., q. 86, a. 1 - Bodies shine like stars",
       "Jerome, Commentary on Daniel 12 - Eternal life",
       "Chrysostom, Homilies on 1 Corinthians 41 - Degrees of glory"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 213,
@@ -5226,7 +5438,8 @@
       "Aquinas, ST III, q. 53, a. 2 - Duration in tomb",
       "Jerome, Commentary on Jonah 2 - Type of resurrection",
       "Cyril of Alexandria, Commentary on Jonah - Prefigurement of death and rising"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 214,
@@ -5251,7 +5464,8 @@
       "Aquinas, ST II-II, q. 32, a. 1 - Almsgiving as act of mercy",
       "Cyprian, On Works and Alms - Remedies for sin",
       "Chrysostom, Homilies on Matthew 49 - Fasting and charity"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 215,
@@ -5276,7 +5490,8 @@
       "Jerome, Commentary on Daniel - Antiochus as type of Antichrist",
       "Origen, Commentary on Matthew 24 - Temple destruction",
       "Eusebius, Church History 1.1 - Persecution prefigures trials"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 216,
@@ -5301,7 +5516,8 @@
       "Origen, Commentary on John 13 - Rededication fulfilled in Christ",
       "Jerome, Commentary on 1 Maccabees 4 - Temple restored",
       "Chrysostom, Homilies on John 59 - True temple is Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 217,
@@ -5326,7 +5542,8 @@
       "Aquinas, ST III, q. 3, a. 8 - Christ is Wisdom of God",
       "Athanasius, On the Incarnation 1 - Wisdom takes flesh",
       "Irenaeus, Against Heresies 4.20.4 - Wisdom revealed in Son"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 218,
@@ -5351,7 +5568,8 @@
       "Aquinas, ST III, q. 75, a. 1 - Angels' food given to humans",
       "Ambrose, On the Mysteries 9.48 - Manna was figure",
       "Chrysostom, Homilies on John 45 - Food of immortality"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 219,
@@ -5376,7 +5594,8 @@
       "Aquinas, ST II-II, q. 19, a. 9 - Fear as beginning of wisdom",
       "Gregory the Great, Morals on Job 1.32 - Sevenfold Spirit",
       "Ambrose, On the Holy Spirit 1.16 - Gift of fear"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 220,
@@ -5401,7 +5620,8 @@
       "Ambrose, On Virgins 1.3 - Mary as seat of Wisdom",
       "Augustine, Confessions 7.9 - Wisdom calls from above",
       "Aquinas, ST III, q. 27, a. 5 - Wisdom dwells in Mary"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 221,
@@ -5426,7 +5646,8 @@
       "Aquinas, ST II-II, q. 85, a. 2 - Sacrifice of praise",
       "Chrysostom, Homilies on Hebrews 28 - Spiritual sacrifices",
       "Cyprian, On the Lord's Prayer 31 - Mercy as sacrifice"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 222,
@@ -5451,7 +5672,8 @@
       "Augustine, City of God XVIII.26 - Judith saves people",
       "Origen, Homilies on Judith - Prayer and fasting together",
       "Chrysostom, On Prayer - Fasting strengthens prayer"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 223,
@@ -5476,7 +5698,8 @@
       "Augustine, Sermons 108 - Woman defeats enemy",
       "Rabanus Maurus, Commentary on Judith - Victory through humility",
       "Prudentius, Psychomachia - Woman warrior as type"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 224,
@@ -5501,7 +5724,8 @@
       "Aquinas, ST II-II, q. 83, a. 12 - Prayer in holy place",
       "Origen, Homilies on 1 Kings 1 - Temple of the Holy Spirit",
       "Chrysostom, Homilies on 2 Corinthians 26 - Living temple"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 225,
@@ -5526,7 +5750,8 @@
       "Origen, Commentary on Matthew 11.3 - Bread multiplication typology",
       "Ambrose, On Luke 6.68 - Greater than Elisha",
       "Jerome, Commentary on Matthew 14 - Abundance from little"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 226,
@@ -5551,7 +5776,8 @@
       "Aquinas, ST III, q. 80, a. 9 - Disposition for sacraments",
       "Ambrose, On the Mysteries 5.26 - Heart matters more than rite",
       "Chrysostom, Homilies on Matthew 82 - Spirit of the law"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 227,
@@ -5576,7 +5802,8 @@
       "Augustine, On the Trinity 1.12 - Wisdom begotten not made",
       "Aquinas, ST I, q. 34, a. 2 - Word as Wisdom",
       "Origen, On First Principles 1.2.2 - Wisdom of God"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 228,
@@ -5601,7 +5828,8 @@
       "Aquinas, ST II-II, q. 55, a. 6 - Mean between extremes",
       "Chrysostom, Homilies on Matthew 21 - Spiritual detachment",
       "Francis of Assisi, Rule - Holy poverty"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 229,
@@ -5626,7 +5854,8 @@
       "Origen, Homilies on Ezekiel 1 - Digesting Scripture",
       "Gregory the Great, Morals on Job 19.12 - Word sweeter than honey",
       "Jerome, Commentary on Ezekiel 2 - Prophet consumes word"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 230,
@@ -5651,7 +5880,8 @@
       "Aquinas, ST III, q. 22, a. 1 - Christ's pastoral office",
       "Gregory the Great, Pastoral Rule 2.5 - Shepherd cares for flock",
       "Origen, Homilies on Ezekiel 3 - God shepherds His own"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 231,
@@ -5676,7 +5906,8 @@
       "Aquinas, ST I-II, q. 106, a. 1 - New Law written on heart",
       "Origen, Homilies on Ezekiel 6 - Transformation by Spirit",
       "Cyril of Jerusalem, Catechetical Lectures 17 - Heart of stone to flesh"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 232,
@@ -5701,7 +5932,8 @@
       "Aquinas, ST Suppl., q. 75, a. 1 - Bodies will rise",
       "Tertullian, On the Resurrection 30 - Ezekiel's vision",
       "Jerome, Commentary on Ezekiel 37 - Bodies restored to life"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 233,
@@ -5726,7 +5958,8 @@
       "Origen, Homilies on Ezekiel 14 - Christ is true temple",
       "Ambrose, On the Holy Spirit 3.11 - Glory fills Church",
       "Gregory of Nyssa, Against Eunomius 3.3 - Divine indwelling"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 234,
@@ -5751,7 +5984,8 @@
       "Ambrose, On Virgins 2.2.7 - Virgin's closed gate",
       "Jerome, Against Helvidius 19 - Sealed gate of virginity",
       "Chrysostom, Homilies on Matthew 5 - Virgin birth"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 235,
@@ -5776,7 +6010,8 @@
       "Origen, Commentary on John 13 - Living water from temple",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Waters of baptism",
       "Ambrose, On the Mysteries 3.8 - River from Christ's side"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 236,
@@ -5801,7 +6036,8 @@
       "Ambrose, On the Sacraments 5.4 - Eating at King's table",
       "Origen, Homilies on 2 Samuel - Mercy shown to unworthy",
       "Chrysostom, Homilies on Matthew 69 - Invitation to feast"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 237,
@@ -5826,7 +6062,8 @@
       "Origen, Homilies on Luke 30 - Zealous prayer",
       "Ambrose, On Elijah and Fasting - Prophet's boldness",
       "Jerome, Against Jovinian 2.15 - Power of prayer"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 238,
@@ -5851,7 +6088,8 @@
       "Origen, Homilies on Luke 31 - Elijah assumed to heaven",
       "Ambrose, On the Christian Faith 5.15 - Taken up alive",
       "Jerome, Against Jovinian 1.42 - Type of resurrection"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 239,
@@ -5876,7 +6114,8 @@
       "Origen, Commentary on Matthew 11.3 - Bread multiplication",
       "Ambrose, On Luke 6.68 - Abundance in Christ",
       "Jerome, Commentary on Matthew 15 - Greater miracle"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 240,
@@ -5901,7 +6140,8 @@
       "Aquinas, ST III, q. 83, a. 2 - Daily Mass",
       "Origen, Homilies on Leviticus 4 - Altar fire as charity",
       "Ambrose, On the Duties 1.20 - Unquenchable devotion"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 241,
@@ -5926,7 +6166,8 @@
       "Aquinas, ST III, q. 73, a. 6 - Bread of Presence as type",
       "Origen, Homilies on Leviticus 13 - Bread before God's face",
       "Ambrose, On the Mysteries 8.49 - Figure of Eucharist"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 242,
@@ -5951,7 +6192,8 @@
       "Aquinas, ST III, q. 82, a. 10 - Daily celebration",
       "Irenaeus, Against Heresies 4.17.5 - Church's oblation",
       "Cyprian, Letter 63.17 - Morning and evening sacrifice"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 243,
@@ -5976,7 +6218,8 @@
       "Aquinas, ST III, q. 46, a. 9 - Passion at Passover",
       "Melito of Sardis, On Pascha - Mystery of Passover",
       "Cyril of Alexandria, Commentary on Luke 22 - New Passover"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 244,
@@ -6001,7 +6244,8 @@
       "Aquinas, ST II-II, q. 86, a. 1 - Oblation to God",
       "Origen, Homilies on Numbers 11 - First portion sacred",
       "Chrysostom, Homilies on 1 Corinthians 42 - Christ as firstfruits"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 245,
@@ -6026,7 +6270,8 @@
       "Augustine, Tractates on John 15 - Crossing into promised land",
       "Ambrose, On the Mysteries 3.11 - Jordan and baptism",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Waters of salvation"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 246,
@@ -6051,7 +6296,8 @@
       "Aquinas, ST I-II, q. 13, a. 6 - Choice between good and evil",
       "Origen, Homilies on Joshua 26 - Serve the Lord",
       "Chrysostom, Homilies on Romans 12 - Voluntary service"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 247,
@@ -6076,7 +6322,8 @@
       "Origen, Homilies on Judges 8 - Spiritual warfare",
       "Ambrose, On the Christian Faith 2.9 - Divine strength",
       "Gregory the Great, Morals on Job 34.10 - Small numbers prevail"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 248,
@@ -6101,7 +6348,8 @@
       "Aquinas, ST II-II, q. 147, a. 3 - Necessity excuses ritual",
       "Origen, Commentary on Matthew 10.14 - Mercy over sacrifice",
       "Chrysostom, Homilies on Matthew 39 - David's example"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 249,
@@ -6126,7 +6374,8 @@
       "Ambrose, On Virgins 2.2 - Ark brought to temple",
       "Athanasius, Letter to Virgins - Mary bears God",
       "Origen, Homilies on Exodus 13 - Ark of presence"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 250,
@@ -6151,7 +6400,8 @@
       "Origen, Homilies on Genesis 8 - Abraham's mountain",
       "Jerome, Commentary on Matthew 27 - Place of skull",
       "Ambrose, On Abraham 1.8 - Mountain of offering"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 251,
@@ -6176,7 +6426,8 @@
       "Augustine, City of God XVII.20 - Solomon prefigures Christ",
       "Aquinas, ST I-II, q. 68, a. 4 - Gift of wisdom",
       "Origen, Commentary on Matthew 17 - Greater Wisdom"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 252,
@@ -6201,7 +6452,8 @@
       "Augustine, City of God XVII.8 - Site of sacrifice",
       "Origen, Homilies on Genesis 8 - Place of offering",
       "Jerome, Commentary on Matthew 27 - Golgotha prefigured"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 253,
@@ -6226,7 +6478,8 @@
       "Aquinas, Commentary on John 7 - Abundance from Christ",
       "Origen, Commentary on John 13 - River of delight",
       "Chrysostom, Homilies on John 51 - God's house is Church"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 254,
@@ -6251,7 +6504,8 @@
       "Aquinas, ST III, q. 34, a. 3 - Christ as light",
       "Ambrose, On the Christian Faith 3.9 - Divine illumination",
       "Origen, Commentary on John 1 - True light"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 255,
@@ -6276,7 +6530,8 @@
       "Aquinas, ST II-II, q. 85, a. 3 - Interior sacrifice",
       "Chrysostom, Homilies on Hebrews 17 - Body prepared for Christ",
       "Ambrose, On Cain and Abel 1.4 - Spiritual offering"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 256,
@@ -6301,7 +6556,8 @@
       "Aquinas, ST II-II, q. 85, a. 2 - Contrition of heart",
       "Chrysostom, On Repentance 8 - Broken and contrite heart",
       "Ambrose, On Repentance 2.10 - God creates new heart"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 257,
@@ -6326,7 +6582,8 @@
       "Aquinas, ST I-II, q. 2, a. 8 - God alone is beatitude",
       "Bernard, On Loving God 10 - God is all",
       "Bonaventure, Journey of Mind to God - Ultimate goal"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 258,
@@ -6351,7 +6608,8 @@
       "Aquinas, ST II-II, q. 83, a. 2 - Asking from God",
       "Chrysostom, Homilies on Matthew 23 - Boldness in prayer",
       "Cyprian, On the Lord's Prayer 1 - God gives to those who ask"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 259,
@@ -6376,7 +6634,8 @@
       "Aquinas, Commentary on Psalms 87 - Zion is Church",
       "Origen, Commentary on Romans 9 - Spiritual Zion",
       "Ambrose, On Virgins 1.5 - Glorious city"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 260,
@@ -6401,7 +6660,8 @@
       "Aquinas, ST II-II, q. 106, a. 1 - Gratitude to God",
       "Chrysostom, Homilies on Ephesians 2 - Remember mercies",
       "Ambrose, On the Duties 1.16 - Grateful remembrance"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 261,
@@ -6426,7 +6686,8 @@
       "Aquinas, ST I, q. 45, a. 3 - God creates and sustains",
       "Basil, Hexaemeron - Six days of creation",
       "Ambrose, Hexaemeron - Creation displays God's wisdom"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 262,
@@ -6451,7 +6712,8 @@
       "Aquinas, Commentary on Psalms 105 - God remembers covenant",
       "Origen, Homilies on Exodus 2 - Covenant with Abraham",
       "Chrysostom, Homilies on Genesis 33 - Bread from heaven"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 263,
@@ -6476,7 +6738,8 @@
       "Aquinas, ST II-II, q. 83, a. 17 - Thanksgiving to God",
       "Chrysostom, Homilies on Philippians 7 - Constant thanksgiving",
       "Ambrose, On the Mysteries 9 - Eucharistic thanksgiving"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 264,
@@ -6501,7 +6764,8 @@
       "Aquinas, ST II-II, q. 83, a. 6 - Petition for daily needs",
       "Chrysostom, Homilies on Matthew 20 - Trust in divine providence",
       "Cyprian, On the Lord's Prayer 18 - Daily sustenance"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 265,
@@ -6526,7 +6790,8 @@
       "Aquinas, ST I, q. 22, a. 2 - Providence extends to all",
       "Basil, On the Holy Spirit 16 - God's generous provision",
       "Chrysostom, Homilies on Acts 38 - All depends on God"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 266,
@@ -6551,7 +6816,8 @@
       "Aquinas, ST II-II, q. 85, a. 2 - External rites need interior disposition",
       "Chrysostom, Homilies on Matthew 30 - Mercy over ritual",
       "Origen, Commentary on Matthew 11 - Spirit of law"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 267,
@@ -6576,7 +6842,8 @@
       "Cyril of Alexandria, Commentary on Isaiah 4 - Christ as Branch",
       "Origen, Commentary on John 1 - Branch bears fruit",
       "Eusebius, Proof of the Gospel 7 - Branch from Jesse"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 268,
@@ -6601,7 +6868,8 @@
       "Aquinas, ST II-II, q. 81, a. 7 - Adoration of divine majesty",
       "Origen, On First Principles 1.3 - Seraphim's song",
       "Ambrose, On the Holy Spirit 3.16 - Thrice holy Trinity"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 269,
@@ -6626,7 +6894,8 @@
       "Aquinas, Commentary on Romans 9 - Stumbling stone",
       "Cyprian, Testimonies 2.16 - Stone for faithful, stumbling for others",
       "Irenaeus, Against Heresies 4.33 - Two houses"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 270,
@@ -6651,7 +6920,8 @@
       "Aquinas, Commentary on Romans 9 - Remnant according to grace",
       "Origen, Commentary on Romans 7 - Faithful few",
       "Jerome, Commentary on Isaiah 10 - Survivors return"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 271,
@@ -6676,7 +6946,8 @@
       "Aquinas, ST III, q. 7, a. 1 - Christ's fullness of grace",
       "Origen, Commentary on Romans 9 - Root and offspring",
       "Jerome, Commentary on Isaiah 11 - Seven gifts of Spirit"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 272,
@@ -6701,7 +6972,8 @@
       "Origen, Commentary on John 13 - Living water",
       "Cyril of Jerusalem, Catechetical Lectures 16 - Waters of salvation",
       "Ambrose, On the Mysteries 3.8 - Baptismal water"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 273,
@@ -6726,7 +6998,8 @@
       "Aquinas, ST Suppl., q. 19, a. 3 - Power of keys",
       "Cyril of Jerusalem, Catechetical Lectures 17 - Authority given",
       "Jerome, Commentary on Isaiah 22 - Eliakim prefigures Peter"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 274,
@@ -6751,7 +7024,8 @@
       "Aquinas, ST Suppl., q. 73, a. 1 - Signs before judgment",
       "Jerome, Commentary on Isaiah 24 - Earth's desolation",
       "Origen, On First Principles 3.6 - End times"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 275,
@@ -6776,7 +7050,8 @@
       "Aquinas, Commentary on John 15 - Christ as vine",
       "Origen, Commentary on John 1 - True vineyard",
       "Cyprian, Letters 75.15 - Lord's vineyard"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 276,
@@ -6801,7 +7076,8 @@
       "Aquinas, ST II-II, q. 84, a. 2 - Interior worship",
       "Chrysostom, Homilies on Matthew 50 - Hypocrisy condemned",
       "Origen, Commentary on Matthew 11 - Vain worship"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 277,
@@ -6826,7 +7102,8 @@
       "Aquinas, ST I-II, q. 87, a. 8 - Medicinal punishment",
       "Gregory the Great, Morals on Job 6.17 - Trials as teacher",
       "Cyprian, On Mortality 8 - Adversity strengthens"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 278,
@@ -6851,7 +7128,8 @@
       "Aquinas, ST II-II, q. 58, a. 1 - Justice as virtue",
       "Jerome, Commentary on Isaiah 32 - Spirit brings righteousness",
       "Origen, Commentary on Romans 3 - Righteousness from faith"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 279,
@@ -6876,7 +7154,8 @@
       "Aquinas, ST I-II, q. 3, a. 8 - Beatific vision",
       "Gregory of Nyssa, Life of Moses - Seeing the invisible",
       "Bernard, Sermons on Song of Songs 31 - King in His beauty"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 280,
@@ -6901,7 +7180,8 @@
       "Aquinas, Commentary on John 2 - Holy zeal",
       "Chrysostom, Homilies on John 23 - Righteous anger",
       "Origen, Commentary on John 10 - Zealous love"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 281,
@@ -6926,7 +7206,8 @@
       "Origen, Homilies on Isaiah 8 - Added years as type",
       "Ambrose, On Repentance 2.6 - Hezekiah's prayer",
       "Jerome, Commentary on Isaiah 38 - Lengthened life"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 282,
@@ -6951,7 +7232,8 @@
       "Aquinas, ST II-II, q. 19, a. 1 - Fear and trust",
       "Chrysostom, Homilies on Matthew 90 - Emmanuel with us",
       "Origen, Commentary on Matthew 17 - God's presence"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 283,
@@ -6976,7 +7258,8 @@
       "Aquinas, Commentary on John 10 - Personal calling",
       "Origen, Commentary on John 1 - Names in heaven",
       "Chrysostom, Homilies on John 59 - Individual care"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 284,
@@ -7001,7 +7284,8 @@
       "Aquinas, ST I, q. 45, a. 6 - God creates each soul",
       "Tertullian, On the Soul 25 - Life from conception",
       "Gregory of Nyssa, On the Making of Man - Human dignity"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 285,
@@ -7026,7 +7310,8 @@
       "Aquinas, ST I, q. 104, a. 1 - Divine conservation",
       "Origen, Homilies on Genesis 12 - God's care",
       "Chrysostom, Homilies on Isaiah 6 - Unfailing support"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 286,
@@ -7051,7 +7336,8 @@
       "Aquinas, ST I, q. 44, a. 4 - Creation for divine glory",
       "Origen, On First Principles 1.3 - God's honor",
       "Irenaeus, Against Heresies 4.20 - Glory of God is man alive"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 287,
@@ -7076,7 +7362,8 @@
       "Origen, Commentary on Romans 10 - Spiritual awakening",
       "Ambrose, On Joseph 6 - Wake from sleep of sin",
       "Jerome, Commentary on Isaiah 51 - Rise in strength"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 288,
@@ -7101,7 +7388,8 @@
       "Aquinas, Commentary on Romans 10 - Preachers sent",
       "Chrysostom, Homilies on Romans 18 - Beautiful feet",
       "Origin, Commentary on Romans 8 - Good news proclaimed"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 289,
@@ -7126,7 +7414,8 @@
       "Aquinas, Commentary on Matthew 21 - Temple cleansing",
       "Chrysostom, Homilies on Matthew 67 - Prayer for all peoples",
       "Jerome, Commentary on Isaiah 56 - Universal call"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 290,
@@ -7151,7 +7440,8 @@
       "Aquinas, ST II-II, q. 147, a. 1 - Interior fasting",
       "Chrysostom, Homilies on Matthew 87 - Fast pleasing to God",
       "Origen, Homilies on Leviticus 10 - Spiritual fasting"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 291,
@@ -7176,7 +7466,8 @@
       "Origen, Homilies on Genesis 1 - Light of Christ",
       "Ambrose, On Luke 2 - Glory of the Lord shines",
       "Jerome, Commentary on Isaiah 60 - Church's glory"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 292,
@@ -7201,7 +7492,8 @@
       "Aquinas, ST II-II, q. 83, a. 16 - God anticipates prayer",
       "Origen, On Prayer 14 - God knows our needs",
       "Chrysostom, Homilies on Matthew 19 - Father knows beforehand"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 293,
@@ -7226,7 +7518,8 @@
       "Aquinas, ST I, q. 8, a. 1 - God present everywhere",
       "Origen, On Prayer 23 - God's immensity",
       "Chrysostom, Homilies on Acts 17 - Uncircumscribed God"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 294,
@@ -7251,7 +7544,8 @@
       "Origen, Homilies on Jeremiah 9 - Consuming God's word",
       "Jerome, Prologue to Jeremiah - Words sweeter than honey",
       "Gregory the Great, Morals on Job 19.12 - Savoring Scripture"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 295,
@@ -7276,7 +7570,8 @@
       "Aquinas, ST III, q. 31, a. 2 - Son of David",
       "Origen, Commentary on Matthew 1 - Genealogy fulfilled",
       "Jerome, Commentary on Jeremiah 23 - Messianic king"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 296,
@@ -7301,7 +7596,8 @@
       "Aquinas, ST I-II, q. 106, a. 3 - New Law surpasses old",
       "Chrysostom, Homilies on Hebrews 14 - Covenant on hearts",
       "Origen, Commentary on Romans 3 - Law written within"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 297,
@@ -7326,7 +7622,8 @@
       "Aquinas, Commentary on Jeremiah 33 - Davidic covenant",
       "Jerome, Commentary on Jeremiah 33 - Branch of righteousness",
       "Origen, Homilies on Jeremiah 18 - Divine presence"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 298,
@@ -7351,7 +7648,8 @@
       "Aquinas, ST II-II, q. 83, a. 17 - Vocal prayer",
       "Teresa of Avila, Way of Perfection - Heart's outpouring",
       "John of the Cross, Dark Night - Soul's cry"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 299,
@@ -7376,7 +7674,8 @@
       "Chrysostom, Homilies on Matthew 72 - Hypocritical leaders",
       "Origen, Commentary on Matthew 12 - Corrupt priesthood",
       "Jerome, Commentary on Lamentations 4 - Failed shepherds"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 300,
@@ -7401,7 +7700,8 @@
       "Aquinas, ST III, q. 1, a. 2 - Incarnation for restoration",
       "Origen, On Prayer 25 - Prayer for restoration",
       "Ambrose, On Repentance 1.3 - Return to God"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 301,
@@ -7426,7 +7726,8 @@
       "Aquinas, ST III, q. 62, a. 5 - Sacraments from Christ's side",
       "Origen, Homilies on Exodus 11 - Spiritual rock",
       "Cyprian, Letter 63.8 - Water and blood from side"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 302,
@@ -7451,7 +7752,8 @@
       "Aquinas, ST III, q. 22, a. 4 - Christ's priestly dignity",
       "Origen, Homilies on Leviticus 6 - Spiritual garments",
       "Chrysostom, On the Priesthood 3.4 - Sacred vestments"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 303,
@@ -7476,7 +7778,8 @@
       "Aquinas, ST III, q. 82, a. 1 - Priest acts in persona Christi",
       "Origen, Homilies on Numbers 10 - Priestly consecration",
       "Cyprian, Letter 63.14 - Eucharistic priesthood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 304,
@@ -7501,7 +7804,8 @@
       "Aquinas, ST III, q. 22, a. 5 - Aaron prefigures Christ",
       "Origen, Homilies on Leviticus 9 - Washing and anointing",
       "Chrysostom, Homilies on Hebrews 13 - New priesthood"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 305,
@@ -7526,7 +7830,8 @@
       "Origen, Homilies on Leviticus 8 - Cleansing from sin",
       "Ambrose, On the Mysteries 3.14 - Baptismal cleansing",
       "Cyril of Alexandria, Commentary on Leviticus - Spiritual healing"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 306,
@@ -7551,7 +7856,8 @@
       "Augustine, Against Faustus 16.18 - Yom Kippur fulfilled",
       "Origen, Homilies on Leviticus 9 - Scapegoat typology",
       "Chrysostom, Homilies on Hebrews 16 - Perfect sacrifice"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 307,
@@ -7576,7 +7882,8 @@
       "Aquinas, ST III, q. 66, a. 3 - Baptismal purification",
       "Origen, Homilies on Numbers 4 - Levites consecrated",
       "Cyprian, Letter 69 - Baptismal washing"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 308,
@@ -7601,7 +7908,8 @@
       "Aquinas, ST I-II, q. 102, a. 5 - Ceremonial cleansings",
       "Origen, Homilies on Numbers 24 - Purification water",
       "Ambrose, On the Mysteries 3.14 - Waters of baptism"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 309,
@@ -7626,7 +7934,8 @@
       "Aquinas, ST Suppl., q. 67, a. 1 - Marriage bond",
       "Chrysostom, Homilies on Matthew 62 - Permanence of marriage",
       "Origen, Commentary on Matthew 14 - No divorce"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 310,
@@ -7651,7 +7960,8 @@
       "Aquinas, ST Suppl., q. 41, a. 1 - Institution of marriage",
       "Chrysostom, Homilies on Genesis 15 - Two become one",
       "John Paul II, Theology of the Body - Nuptial meaning"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 311,
@@ -7676,7 +7986,8 @@
       "Origen, Homilies on Genesis 10 - Finding the bride",
       "Ambrose, On Isaac 6.54 - Bride brought to bridegroom",
       "Gregory of Nyssa, Life of Moses - Spiritual marriage"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 312,
@@ -7701,7 +8012,8 @@
       "Bernard, Sermons on Song of Songs 69 - Divine love",
       "Gregory of Nyssa, Homilies on Song of Songs 8 - Mystical union",
       "John of the Cross, Spiritual Canticle - Love of God"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 313,
@@ -7726,7 +8038,8 @@
       "Augustine, City of God XVII.8 - Eternal kingdom",
       "Aquinas, ST III, q. 31, a. 2 - Son of David",
       "Chrysostom, Homilies on Acts 6 - Promise to David fulfilled"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 314,
@@ -7751,7 +8064,8 @@
       "Aquinas, ST Suppl., q. 42, a. 3 - Marriage prayer",
       "Ambrose, On Tobias - Model of Christian marriage",
       "Chrysostom, Homilies on Ephesians 20 - Marital blessing"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 315,
@@ -7776,7 +8090,8 @@
       "Aquinas, ST II-II, q. 83, a. 13 - Attention in prayer",
       "Benedict XVI, Verbum Domini - Listening to God's word",
       "Origen, On Prayer 2 - Attentive hearing"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 316,
@@ -7801,7 +8116,8 @@
       "Aquinas, ST II-II, q. 85, a. 2 - Contrition necessary",
       "Ambrose, On Repentance 2.6 - David's confession",
       "Gregory the Great, Morals on Job 9.46 - True sorrow"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 317,
@@ -7826,7 +8142,8 @@
       "Aquinas, Commentary on Romans 4 - Imputation of righteousness",
       "Chrysostom, Homilies on Romans 8 - Forgiven through Christ",
       "Origen, On Prayer 28 - Confession brings mercy"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 318,
@@ -7851,7 +8168,8 @@
       "Aquinas, ST II-II, q. 85, a. 2 - Contrition of heart",
       "Chrysostom, On Repentance 8 - Broken and contrite heart",
       "Ambrose, On Repentance 2.10 - God creates new heart"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 319,
@@ -7876,7 +8194,8 @@
       "Aquinas, Commentary on Psalms 130 - Cry from depths",
       "Bernard, Sermons on Psalms - Hope in God's mercy",
       "Teresa of Avila, Way of Perfection 42 - Depths of soul"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 320,
@@ -7901,7 +8220,8 @@
       "Aquinas, ST I-II, q. 113, a. 7 - Justification renews",
       "Origen, Homilies on Ezekiel 1 - Transformed heart",
       "Cyril of Jerusalem, Catechetical Lectures 17 - Heart of flesh"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 321,
@@ -7926,7 +8246,8 @@
       "Origen, Commentary on John 13 - Living water from temple",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Waters of baptism",
       "Ambrose, On the Mysteries 3.8 - River from Christ's side"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 322,
@@ -7951,7 +8272,8 @@
       "Aquinas, ST II-II, q. 147, a. 1 - Interior fast",
       "Chrysostom, Homilies on Matthew 20 - Rend heart not garments",
       "Jerome, Commentary on Joel 2 - Return to the Lord"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 323,
@@ -7976,7 +8298,8 @@
       "Aquinas, ST I, q. 21, a. 3 - Divine mercy",
       "Origen, Homilies on Leviticus 2 - God casts sins into sea",
       "Ambrose, On Repentance 1.2 - Mercy of God"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 324,
@@ -8001,7 +8324,8 @@
       "Chrysostom, Homilies on John 85 - Blood and water from side",
       "Ambrose, On the Sacraments 2.4 - Fountain of life",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Baptismal fountain"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 325,
@@ -8026,7 +8350,8 @@
       "Aquinas, ST Suppl., q. 70, a. 3 - Purgatorial fire",
       "Origen, On First Principles 2.10 - Purifying process",
       "Gregory the Great, Dialogues 4.41 - Cleansing after death"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 326,
@@ -8051,7 +8376,8 @@
       "Origen, Homilies on Joshua 6 - Seven times in water",
       "Ambrose, On the Mysteries 3.11 - Baptism heals",
       "Cyril of Jerusalem, Catechetical Lectures 3 - Naaman cleansed"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 327,
@@ -8076,7 +8402,8 @@
       "Jerome, Against Vigilantius 5 - Honor to relics",
       "Gregory of Nyssa, On the Saints - Power in holy remains",
       "Ambrose, On Virgins 3.7 - Elisha's bones as type"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 328,
@@ -8101,7 +8428,8 @@
       "Aquinas, ST III, q. 65, a. 1 - Oil as sacramental matter",
       "Origen, Homilies on Leviticus 2 - Spiritual anointing",
       "Cyril of Jerusalem, Catechetical Lectures 21 - Chrism"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 329,
@@ -8126,7 +8454,8 @@
       "Aquinas, ST III, q. 72, a. 2 - Confirmation by chrism",
       "Cyril of Jerusalem, Catechetical Lectures 21 - Sacred chrism",
       "Ambrose, On the Mysteries 6.29 - Anointing of the Spirit"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 330,
@@ -8151,7 +8480,8 @@
       "Aquinas, ST Suppl., q. 29, a. 1 - Extreme unction",
       "Origen, Homilies on Leviticus 2 - Prayer for sick",
       "Bede, Commentary on James 5 - Anointing sacrament"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 331,
@@ -8176,7 +8506,8 @@
       "Aquinas, ST III, q. 68, a. 9 - Infant baptism necessary",
       "Origen, Homilies on Luke 14 - Blessed little ones",
       "Cyprian, Letter 64 - Baptism of infants"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 332,
@@ -8201,7 +8532,8 @@
       "Aquinas, ST III, q. 66, a. 1 - Necessity of baptism",
       "Cyril of Jerusalem, Catechetical Lectures 3 - New birth",
       "Ambrose, On the Mysteries 3.8 - Baptismal regeneration"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 333,
@@ -8226,7 +8558,8 @@
       "Aquinas, ST Suppl., q. 18, a. 1 - Power of binding",
       "Chrysostom, On the Priesthood 3.5 - Authority given",
       "Cyprian, Unity of the Church 4 - Keys to Peter"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 334,
@@ -8251,7 +8584,8 @@
       "Aquinas, ST III, q. 72, a. 1 - Confirmation perfects baptism",
       "Cyril of Jerusalem, Catechetical Lectures 17 - Gift of Spirit",
       "Tertullian, On Baptism 7-8 - Water and Spirit"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 335,
@@ -8276,7 +8610,8 @@
       "Aquinas, ST III, q. 72, a. 9 - Matter of confirmation",
       "Cyprian, Letter 73 - Hands for Spirit",
       "Tertullian, On Baptism 8 - Hand gives Spirit"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 336,
@@ -8301,7 +8636,8 @@
       "Aquinas, ST III, q. 72, a. 6 - Confirmation completes baptism",
       "Chrysostom, Homilies on Acts 40 - Full initiation",
       "Origen, On First Principles 1.3 - Gifts of Spirit"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 337,
@@ -8326,7 +8662,8 @@
       "Aquinas, ST III, q. 82, a. 1 - Priestly character",
       "Chrysostom, On the Priesthood 3.4 - Sacred office",
       "Ignatius of Antioch, Letter to Philadelphians - Ordained ministry"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 338,
@@ -8351,7 +8688,8 @@
       "Aquinas, ST III, q. 82, a. 5 - Sacramental grace",
       "Chrysostom, Homilies on 2 Timothy 2 - Stir up gift",
       "Gregory the Great, Pastoral Rule 1.1 - Pastoral calling"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 339,
@@ -8376,7 +8714,8 @@
       "Aquinas, ST Suppl., q. 42, a. 1 - Marriage as sacrament",
       "Chrysostom, Homilies on Ephesians 20 - Great mystery",
       "John Paul II, Theology of the Body - Nuptial meaning"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 340,
@@ -8401,7 +8740,8 @@
       "Aquinas, ST III, q. 66, a. 9 - Baptismal character",
       "Origen, Homilies on Hebrews - Enlightenment",
       "Chrysostom, Homilies on Hebrews 9 - Once baptized"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 341,
@@ -8426,7 +8766,8 @@
       "Aquinas, ST III, q. 73, a. 3 - Unity from one bread",
       "Cyprian, Letter 63.13 - Unity of Church",
       "Chrysostom, Homilies on 1 Corinthians 24 - One body"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 342,
@@ -8451,7 +8792,8 @@
       "Aquinas, ST III, q. 80, a. 9 - Proper disposition",
       "Chrysostom, Homilies on 1 Corinthians 28 - Self-examination",
       "Ambrose, On the Sacraments 4.25 - Worthy partaking"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 343,
@@ -8476,7 +8818,8 @@
       "Aquinas, ST III, q. 48, a. 3 - Blood of covenant",
       "Chrysostom, Homilies on Hebrews 17 - Perfect sacrifice",
       "Cyril of Alexandria, Commentary on Hebrews - New covenant blood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 344,
@@ -8501,7 +8844,8 @@
       "Aquinas, ST III, q. 83, a. 1 - Altar of Mass",
       "Chrysostom, Homilies on Hebrews 29 - Spiritual altar",
       "Ambrose, On the Mysteries 9.53 - Altar sanctified"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 345,
@@ -8526,7 +8870,8 @@
       "Aquinas, ST III, q. 63, a. 3 - Baptismal priesthood",
       "1 Peter 2:9 explained by Cyprian",
       "Bede, Explanation of the Apocalypse 1 - Royal priesthood"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 346,
@@ -8551,7 +8896,8 @@
       "Aquinas, ST II-II, q. 24, a. 10 - Degrees of charity",
       "Origin, Commentary on Matthew - Zeal required",
       "Bernard, Sermons on Song of Songs 74 - Spiritual fervor"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 347,
@@ -8576,7 +8922,8 @@
       "Aquinas, ST III, q. 73, a. 4 - Eucharist as wedding feast",
       "Origen, Commentary on Song of Songs - Marriage supper",
       "Irenaeus, Against Heresies 4.18 - Eschatological banquet"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 348,
@@ -8601,7 +8948,8 @@
       "Aquinas, ST III, q. 59, a. 5 - Second coming",
       "Cyprian, On Mortality 26 - Yearning for Christ",
       "Didache 10 - Maranatha prayer"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 349,
@@ -8626,7 +8974,8 @@
       "Aquinas, ST I, q. 93, a. 5 - Trinity's image in man",
       "Irenaeus, Against Heresies 4.20 - Image and likeness",
       "Basil, On the Hexaemeron 9.6 - Created by Word"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 350,
@@ -8651,7 +9000,8 @@
       "Augustine, City of God XIV.11 - Seed of woman",
       "Justin Martyr, Dialogue 100 - Virgin crushes serpent",
       "Ambrose, On Virgins 2.2 - New Eve"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 351,
@@ -8676,7 +9026,8 @@
       "Aquinas, ST II-II, q. 174, a. 3 - Prophetic gift",
       "Origen, Homilies on Genesis 2 - Walking with God",
       "Ambrose, On Paradise 12.56 - Enoch's righteousness"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 352,
@@ -8701,7 +9052,8 @@
       "Aquinas, ST III, q. 22, a. 6 - Melchizedek's sacrifice",
       "Cyprian, Letter 63.4 - Eucharistic prefigurement",
       "Origen, Homilies on Genesis 4 - Type of Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 353,
@@ -8726,7 +9078,8 @@
       "Aquinas, ST III, q. 47, a. 2 - Sacrifice of Christ",
       "Origen, Homilies on Genesis 8 - Isaac as type",
       "Irenaeus, Against Heresies 4.5 - Offering of Isaac"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 354,
@@ -8751,7 +9104,8 @@
       "Aquinas, Commentary on John 19 - Paschal fulfillment",
       "Cyprian, Testimonies 2.15 - Lamb without blemish",
       "Melito of Sardis, On Pascha 66-71 - True Paschal Lamb"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 355,
@@ -8776,7 +9130,8 @@
       "Aquinas, ST III, q. 75, a. 1 - Eucharistic presence",
       "Cyprian, On the Lord's Prayer 18 - Daily bread",
       "Ambrose, On the Mysteries 8.48 - Manna as type"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 356,
@@ -8801,7 +9156,8 @@
       "Aquinas, ST III, q. 73, a. 6 - Bread of Presence as type",
       "Origen, Homilies on Exodus 13 - Bread in God's presence",
       "Bede, On the Tabernacle 2 - Eucharistic prefigurement"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 357,
@@ -8826,7 +9182,8 @@
       "Aquinas, ST III, q. 2, a. 2 - God with us",
       "Origen, Homilies on Leviticus 12 - God's presence",
       "Irenaeus, Against Heresies 5.35 - God among people"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 358,
@@ -8851,7 +9208,8 @@
       "Aquinas, ST III, q. 46, a. 4 - Cross as healing",
       "Origen, Homilies on Numbers 19 - Serpent typology",
       "Ambrose, On the Christian Faith 2.11 - Looking to Christ"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 359,
@@ -8876,7 +9234,8 @@
       "Aquinas, ST I-II, q. 1, a. 1 - Ultimate end",
       "Origen, Homilies on Deuteronomy - Way of life",
       "Didache 1.1 - Two ways of life and death"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 360,
@@ -8901,7 +9260,8 @@
       "Aquinas, Commentary on Psalms 1 - Fruitful tree",
       "Origen, Homilies on Psalms - Tree of life",
       "Gregory the Great, Morals on Job 8.30 - Deep roots"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 361,
@@ -8926,7 +9286,8 @@
       "Aquinas, ST III, q. 73, a. 1 - Spiritual taste",
       "Cyril of Jerusalem, Catechetical Lectures 23 - Taste of heaven",
       "Ambrose, On the Mysteries 9.58 - Sweet sacrament"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 362,
@@ -8951,7 +9312,8 @@
       "Aquinas, ST II-II, q. 180, a. 3 - Contemplation of truth",
       "Teresa of Avila, Interior Castle 7.1 - Rest in God",
       "John of the Cross, Living Flame - Silent knowing"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 363,
@@ -8976,7 +9338,8 @@
       "Aquinas, ST II-II, q. 122, a. 4 - Sunday observance",
       "Ignatius of Antioch, Letter to Magnesians 9 - Lord's Day",
       "Didache 14 - Sunday as Lord's Day"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 364,
@@ -9001,7 +9364,8 @@
       "Aquinas, ST II-II, q. 91, a. 1 - Praising God",
       "Basil, On the Holy Spirit 27 - Doxology",
       "Athanasius, Letter to Marcellinus - Psalms as praise"
-    ]
+    ],
+    "bibleTranslation": "RSV-CE"
   },
   {
     "id": 365,
@@ -9026,6 +9390,7 @@
       "Cyprian, Testimonies 2.27 - Sun with healing wings",
       "Ambrose, On the Christian Faith 3.12 - Christ the Sun",
       "Augustine, Sermons 229M - Light has come into world"
-    ]
+    ],
+    "bibleTranslation": "NABRE"
   }
 ]
