@@ -26,10 +26,11 @@ let entries = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
  */
 async function fetchNABRE(reference) {
   return new Promise((resolve, reject) => {
-    // Parse reference (e.g., "Genesis 3:15" -> "genesis/3")
+    // Parse reference (e.g., "Genesis 3:15" or "Genesis 3:15-16")
     const parts = reference.split(/[\s:]/);
     const book = parts[0].toLowerCase();
     const chapter = parts[1];
+    const verses = parts[2] ? parts[2].split('-')[0] : '1'; // Get first verse number
 
     const url = `https://bible.usccb.org/bible/${book}/${chapter}`;
 
@@ -39,15 +40,48 @@ async function fetchNABRE(reference) {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        // Parse HTML to extract verse text
-        // This is a simplified parser - may need adjustment based on actual HTML structure
         try {
-          const verseMatch = data.match(/<div class="content-body">([\s\S]*?)<\/div>/);
-          if (verseMatch) {
-            let text = verseMatch[1]
-              .replace(/<[^>]*>/g, '') // Remove HTML tags
-              .replace(/\s+/g, ' ')     // Normalize whitespace
+          // USCCB uses a more complex structure - look for verse content area
+          // Try multiple patterns to find verse text
+
+          // Pattern 1: Look for content within main article or content area
+          let text = null;
+
+          // Find the main content section (between header and footer)
+          const contentMatch = data.match(/<article[^>]*>([\s\S]*?)<\/article>/i) ||
+                              data.match(/<main[^>]*>([\s\S]*?)<\/main>/i) ||
+                              data.match(/<div[^>]*class="[^"]*content[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+
+          if (contentMatch) {
+            // Extract text and clean it up
+            text = contentMatch[1]
+              .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove scripts
+              .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')   // Remove styles
+              .replace(/<head[^>]*>[\s\S]*?<\/head>/gi, '')     // Remove head
+              .replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, '')       // Remove navigation
+              .replace(/<header[^>]*>[\s\S]*?<\/header>/gi, '') // Remove header
+              .replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, '') // Remove footer
+              .replace(/<[^>]*>/g, ' ')                         // Remove all HTML tags
+              .replace(/\[[^\]]*\]/g, '')                       // Remove footnote markers [a], [*], etc.
+              .replace(/\s+/g, ' ')                             // Normalize whitespace
               .trim();
+
+            // If we got a lot of text, it's probably the whole chapter
+            // Try to extract just the verse(s) we need
+            if (text.length > 500) {
+              // Look for verse number patterns
+              const versePattern = new RegExp(`${verses}[\\s:)]([^0-9]{50,200})`, 'i');
+              const verseMatch = text.match(versePattern);
+              if (verseMatch) {
+                text = verseMatch[1].trim();
+              } else {
+                // Fallback: take first 200 characters of content
+                text = text.substring(0, 200).trim() + '...';
+              }
+            }
+          }
+
+          if (text && text.length > 20) {
             resolve(text);
           } else {
             resolve(null);
