@@ -741,6 +741,56 @@
     ]
   },
   {
+    "id": 32,
+    "dayOfYear": 32,
+    "title": "Psalm 2: The LORD's Anointed King",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 2:7-9",
+    "otText": "I will proclaim the LORD's decree: He said to me, 'You are my son; today I have become your father. Ask me, and I will make the nations your inheritance, the ends of the earth your possession. You will break them with a rod of iron; you will dash them to pieces like pottery.'",
+    "historicalContext": "Psalm 2 is a royal coronation psalm celebrating God's anointed king, written for David's dynasty but pointing beyond to the Messiah.",
+    "howItPointsToJesus": "At Jesus' baptism, God declares 'This is my Son' (Matthew 3:17), echoing Psalm 2:7. Jesus is the King who rules the nations and whom all must serve. Acts 4:25-28 applies this psalm directly to Jesus.",
+    "keyInsights": [
+      "Jesus is God's Son from eternity",
+      "All authority given to Christ",
+      "Nations will serve Him",
+      "Reject Him at your peril"
+    ],
+    "sources": [
+      "CCC 441 - Jesus as Son of God",
+      "Acts 4:25-28 - Apostles apply Psalm 2 to Jesus",
+      "Hebrews 1:5 - You are my Son cited",
+      "Augustine, Expositions on Psalms 2 - Messianic king",
+      "Aquinas, Commentary on Psalms 2 - Divine sonship",
+      "Chrysostom, Homilies on Acts 10 - Fulfilled in Christ"
+    ]
+  },
+  {
+    "id": 33,
+    "dayOfYear": 33,
+    "title": "Psalm 110: Sit at My Right Hand",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 110:1",
+    "otText": "The LORD says to my lord: 'Sit at my right hand until I make your enemies a footstool for your feet.'",
+    "historicalContext": "David wrote this psalm about a figure greater than himself - the Messiah who would be both king and priest.",
+    "howItPointsToJesus": "Jesus quotes this psalm to prove the Messiah is more than David's son (Matthew 22:41-45). After His resurrection, Jesus ascended to the Father's right hand (Acts 2:34-35), where He reigns as King and High Priest.",
+    "keyInsights": [
+      "The Messiah is Lord, not just son of David",
+      "Christ seated at God's right hand",
+      "Enemies made His footstool",
+      "Priest forever after Melchizedek"
+    ],
+    "sources": [
+      "CCC 447 - Jesus is Lord",
+      "CCC 659-664 - Christ's ascension to right hand",
+      "Matthew 22:41-45 - Jesus cites this psalm",
+      "Augustine, Expositions on Psalms 110 - Christ enthroned",
+      "Aquinas, ST III, q. 58, a. 3 - Session at right hand",
+      "Chrysostom, Homilies on Hebrews 17 - Eternal priesthood"
+    ]
+  },
+  {
     "id": 34,
     "dayOfYear": 34,
     "title": "Manna from Heaven",
@@ -765,6 +815,56 @@
     ]
   },
   {
+    "id": 35,
+    "dayOfYear": 35,
+    "title": "Psalm 40: A Body You Prepared for Me",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 40:6-8",
+    "otText": "Sacrifice and offering you did not desire— but my ears you have opened— burnt offerings and sin offerings you did not require. Then I said, 'Here I am, I have come— it is written about me in the scroll. I desire to do your will, my God; your law is within my heart.'",
+    "historicalContext": "David understood that God desires obedience more than ritual sacrifice, pointing to a perfect offering yet to come.",
+    "howItPointsToJesus": "Hebrews 10:5-10 applies this psalm to Jesus, who came not to offer animal sacrifices but to offer Himself. Jesus perfectly obeys the Father's will, becoming the sacrifice that ends all sacrifices.",
+    "keyInsights": [
+      "God desires obedience not ritual",
+      "Christ's body prepared for sacrifice",
+      "Perfect obedience to Father's will",
+      "One sacrifice replaces all others"
+    ],
+    "sources": [
+      "CCC 2100 - True sacrifice is interior",
+      "Hebrews 10:5-10 - Body prepared for Christ",
+      "Augustine, Expositions on Psalms 40 - Obedience over sacrifice",
+      "Aquinas, ST III, q. 22, a. 2 - Christ's perfect obedience",
+      "Chrysostom, Homilies on Hebrews 17 - Body prepared",
+      "Origen, Commentary on Hebrews - Fulfillment in Christ"
+    ]
+  },
+  {
+    "id": 36,
+    "dayOfYear": 36,
+    "title": "Zechariah 6: The Branch Will Build the Temple",
+    "category": "Messianic Prophecy",
+    "otBook": "Zechariah",
+    "otReference": "Zechariah 6:12-13",
+    "otText": "Tell him this is what the LORD Almighty says: 'Here is the man whose name is the Branch, and he will branch out from his place and build the temple of the LORD. It is he who will build the temple of the LORD, and he will be clothed with majesty and will sit and rule on his throne. And he will be a priest on his throne.'",
+    "historicalContext": "Zechariah prophesied about the coming Messiah who would be both king and priest, building God's true temple.",
+    "howItPointsToJesus": "Jesus is 'the Branch' who builds the Church (His temple) from both Jews and Gentiles. He is the King-Priest who sits on His throne interceding for us. We are living stones in His temple (1 Peter 2:5).",
+    "keyInsights": [
+      "Christ is the Branch from David's line",
+      "Builds spiritual temple (the Church)",
+      "Both King and Priest together",
+      "Rules from throne with majesty"
+    ],
+    "sources": [
+      "CCC 756 - Church as temple of God",
+      "CCC 1544 - Christ as priest and king",
+      "Ephesians 2:19-22 - Built into spiritual temple",
+      "Augustine, City of God XVII.3 - Branch builds Church",
+      "Aquinas, ST III, q. 22, a. 1 - Priestly kingship",
+      "Cyril of Alexandria, Commentary on Zechariah 6 - Messianic fulfillment"
+    ]
+  },
+  {
     "id": 37,
     "dayOfYear": 37,
     "title": "The High Priest",
@@ -786,6 +886,31 @@
       "Aquinas, ST III, q. 22, a. 4-5 - Christ's priesthood",
       "Origen, Homilies on Leviticus 9 - High Priest typology",
       "John Paul II, Pastores Dabo Vobis - Priesthood of Christ"
+    ]
+  },
+  {
+    "id": 38,
+    "dayOfYear": 38,
+    "title": "Genesis 49: The Scepter from Judah",
+    "category": "Messianic Prophecy",
+    "otBook": "Genesis",
+    "otReference": "Genesis 49:10",
+    "otText": "The scepter will not depart from Judah, nor the ruler's staff from between his feet, until he to whom it belongs shall come and the obedience of the nations shall be his.",
+    "historicalContext": "Jacob blessed his twelve sons on his deathbed, prophesying that kingship would come through Judah's line until Shiloh (the Messiah) comes.",
+    "howItPointsToJesus": "Jesus is 'the Lion of the tribe of Judah' (Revelation 5:5). David's line came from Judah, and Jesus is David's greater son. All authority belongs to Him, and the nations will bow before Him.",
+    "keyInsights": [
+      "Kingship promised to Judah's line",
+      "Points to ultimate King (Messiah)",
+      "Nations will obey Him",
+      "Jesus is Lion of Judah"
+    ],
+    "sources": [
+      "CCC 436 - Jesus from tribe of Judah",
+      "Revelation 5:5 - Lion of tribe of Judah",
+      "Matthew 1:2-3 - Jesus' genealogy through Judah",
+      "Augustine, City of God XVI.41 - Scepter prophecy",
+      "Aquinas, ST III, q. 31, a. 2 - Davidic descent",
+      "Justin Martyr, Dialogue 52 - Shiloh is Christ"
     ]
   },
   {
@@ -882,6 +1007,56 @@
       "Augustine, Letter 102.6-8 - Jonah typology",
       "Aquinas, ST III, q. 52, a. 2 - Descent to dead",
       "Tertullian, On the Resurrection 39 - Three days in tomb"
+    ]
+  },
+  {
+    "id": 43,
+    "dayOfYear": 43,
+    "title": "Psalm 24: The King of Glory",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 24:7-10",
+    "otText": "Lift up your heads, you gates; be lifted up, you ancient doors, that the King of glory may come in. Who is this King of glory? The LORD strong and mighty, the LORD mighty in battle. Lift up your heads, you gates; lift them up, you ancient doors, that the King of glory may come in. Who is he, this King of glory? The LORD Almighty— he is the King of glory.",
+    "historicalContext": "This psalm celebrates the LORD's entrance into His temple, but points to the Messiah's triumphant entry.",
+    "howItPointsToJesus": "Jesus is the King of Glory who enters Jerusalem (Matthew 21:9), enters the heavenly sanctuary after His resurrection (Hebrews 9:24), and will return in glory (Matthew 25:31). The ancient doors opened when Christ descended to the dead and rose victorious.",
+    "keyInsights": [
+      "Christ is the King of Glory",
+      "Victorious over death and hell",
+      "Ascends to heavenly temple",
+      "Will return in glory"
+    ],
+    "sources": [
+      "CCC 631-637 - Christ's descent and resurrection",
+      "CCC 664 - Christ reigns in glory",
+      "Ephesians 4:8-10 - Christ ascended on high",
+      "Augustine, Expositions on Psalms 24 - King of Glory enters",
+      "Aquinas, Commentary on Psalms 24 - Christ's triumph",
+      "Origen, Homilies on Psalms - Gates of righteousness"
+    ]
+  },
+  {
+    "id": 44,
+    "dayOfYear": 44,
+    "title": "Isaiah 59: The Redeemer Will Come to Zion",
+    "category": "Messianic Prophecy",
+    "otBook": "Isaiah",
+    "otReference": "Isaiah 59:20-21",
+    "otText": "'The Redeemer will come to Zion, to those in Jacob who repent of their sins,' declares the LORD. 'As for me, this is my covenant with them,' says the LORD. 'My Spirit, who is on you, will not depart from you, and my words that I have put in your mouth will always be on your lips, on the lips of your children and on the lips of their descendants—from this time on and forever,' says the LORD.",
+    "historicalContext": "Isaiah prophesied that despite Israel's sin, a Redeemer would come to Zion to save those who repent.",
+    "howItPointsToJesus": "Paul quotes this in Romans 11:26-27, showing that Jesus is the Redeemer who came to Zion and will save all Israel. Jesus brings the new covenant with the Holy Spirit dwelling in His people forever.",
+    "keyInsights": [
+      "Redeemer comes to save repentant",
+      "New covenant with the Spirit",
+      "God's word remains forever",
+      "All Israel will be saved"
+    ],
+    "sources": [
+      "CCC 674-676 - Israel's full inclusion",
+      "Romans 11:26-27 - Redeemer comes to Zion",
+      "Augustine, City of God XX.29 - Salvation of Israel",
+      "Aquinas, Commentary on Romans 11 - Mystery of Israel",
+      "Chrysostom, Homilies on Romans 19 - Redeemer's coming",
+      "Jerome, Commentary on Isaiah 59 - Messianic salvation"
     ]
   },
   {
@@ -3726,6 +3901,31 @@
       "Eusebius, Proof of the Gospel 7.1 - Gentile inclusion",
       "Jerome, Commentary on Amos 9 - Rebuilt tabernacle is Church",
       "Aquinas, Commentary on Acts 15 - Prophecy of Church"
+    ]
+  },
+  {
+    "id": 161,
+    "dayOfYear": 161,
+    "title": "Psalm 8: Son of Man Crowned with Glory",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 8:4-6",
+    "otText": "What is mankind that you are mindful of them, human beings that you care for them? You have made them a little lower than the angels and crowned them with glory and honor. You made them rulers over the works of your hands; you put everything under their feet.",
+    "historicalContext": "David marvels at God's care for humanity, giving mankind dominion over creation.",
+    "howItPointsToJesus": "Hebrews 2:6-9 applies this to Jesus, the Son of Man who was 'made lower than angels' by becoming human, but is now 'crowned with glory and honor.' All things are put under His feet (1 Corinthians 15:27, Ephesians 1:22).",
+    "keyInsights": [
+      "Jesus is the true Son of Man",
+      "Made lower through incarnation",
+      "Crowned with glory after resurrection",
+      "All things under His authority"
+    ],
+    "sources": [
+      "CCC 441 - Jesus as Son of Man",
+      "Hebrews 2:6-9 - Psalm 8 applied to Christ",
+      "1 Corinthians 15:27 - All under His feet",
+      "Augustine, Expositions on Psalms 8 - True Man",
+      "Aquinas, ST III, q. 16, a. 10 - Dominion over all",
+      "Chrysostom, Homilies on Hebrews 4 - Son of Man crowned"
     ]
   },
   {
@@ -7501,6 +7701,31 @@
       "Bernard, Sermons on Song of Songs 69 - Divine love",
       "Gregory of Nyssa, Homilies on Song of Songs 8 - Mystical union",
       "John of the Cross, Spiritual Canticle - Love of God"
+    ]
+  },
+  {
+    "id": 313,
+    "dayOfYear": 313,
+    "title": "Psalm 89: I Will Establish His Line Forever",
+    "category": "Messianic Prophecy",
+    "otBook": "Psalms",
+    "otReference": "Psalm 89:3-4, 28-29",
+    "otText": "You said, 'I have made a covenant with my chosen one, I have sworn to David my servant, \"I will establish your line forever and make your throne firm through all generations.\"' ... 'I will maintain my love to him forever, and my covenant with him will never fail. I will establish his line forever, his throne as long as the heavens endure.'",
+    "historicalContext": "God made an eternal covenant with David, promising that his throne would last forever—a promise fulfilled in the Messiah.",
+    "howItPointsToJesus": "Gabriel tells Mary that her son will sit on 'the throne of his father David' forever (Luke 1:32-33). Jesus is the eternal King from David's line whose kingdom has no end. Peter preaches that God raised Christ to sit on David's throne (Acts 2:30-36).",
+    "keyInsights": [
+      "Davidic covenant fulfilled in Christ",
+      "Jesus' throne established forever",
+      "Kingdom has no end",
+      "Covenant love never fails"
+    ],
+    "sources": [
+      "CCC 709 - Davidic covenant fulfilled in Christ",
+      "Luke 1:32-33 - Throne of David forever",
+      "Acts 2:30-36 - Christ on David's throne",
+      "Augustine, City of God XVII.8 - Eternal kingdom",
+      "Aquinas, ST III, q. 31, a. 2 - Son of David",
+      "Chrysostom, Homilies on Acts 6 - Promise to David fulfilled"
     ]
   },
   {
