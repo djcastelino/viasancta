@@ -609,20 +609,6 @@ export default function ChallengePage() {
           <p className="text-gray-600 text-lg">
             Test your biblical knowledge! Can you guess who or what this is?
           </p>
-          {/* Show which challenge date */}
-          {gameState && (
-            <div className="mt-3">
-              {gameState.challengeDate === new Date().toISOString().split('T')[0] ? (
-                <span className="inline-block bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold">
-                  Today&apos;s Challenge • {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </span>
-              ) : (
-                <span className="inline-block bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-sm font-semibold">
-                  Yesterday&apos;s Challenge • {new Date(gameState.challengeDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </span>
-              )}
-            </div>
-          )}
         </div>
 
         {/* Stats Bar */}
