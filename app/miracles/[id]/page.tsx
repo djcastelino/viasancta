@@ -5,6 +5,7 @@ import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 import MiracleImageGallery from '@/app/components/MiracleImageGallery';
+import SourceLinks from '@/app/components/SourceLinks';
 
 export default function MiraclePage({ params }: { params: Promise<{ id: string }> }) {
   const [miracleId, setMiracleId] = useState<string>('');
@@ -417,6 +418,20 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
           <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
             <h2 className="text-2xl font-bold text-[#2C5F87] mb-4">✝️ Spiritual Significance</h2>
             <p className="text-gray-700 leading-relaxed">{miracle.significance}</p>
+          </div>
+        )}
+
+        {/* Sources & References */}
+        {miracle.sources && miracle.sources.length > 0 && (
+          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl shadow-xl p-8 mb-8 border border-[#D4AF37]/30">
+            <h2 className="text-2xl font-bold text-[#6e3a6c] mb-4 flex items-center gap-2">
+              <span>📚</span>
+              <span>Sources & References</span>
+            </h2>
+            <SourceLinks sources={miracle.sources} />
+            <p className="text-xs text-gray-500 mt-4 italic">
+              Click links to read more about this miracle from historical and Church sources.
+            </p>
           </div>
         )}
 

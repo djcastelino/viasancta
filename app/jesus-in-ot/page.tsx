@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import SourceLinks from '@/app/components/SourceLinks';
 
 interface JesusInOTEntry {
   id: number;
@@ -163,19 +164,9 @@ export default function JesusInOTPage() {
                     <span>📚</span>
                     <span>Sources & References</span>
                   </h3>
-                  <ul className="space-y-2">
-                    {todaysEntry.sources.map((source, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start gap-3 text-sm"
-                      >
-                        <span className="text-[#D4AF37] flex-shrink-0">•</span>
-                        <span className="text-gray-700 leading-relaxed font-serif">{source}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <SourceLinks sources={todaysEntry.sources} />
                   <p className="text-xs text-gray-500 mt-4 italic">
-                    References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, Doctors of the Church, and Magisterial documents.
+                    References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, Doctors of the Church, and Magisterial documents. Click links to read more.
                   </p>
                 </section>
               )}
