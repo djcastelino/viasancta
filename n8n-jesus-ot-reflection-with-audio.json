@@ -1,0 +1,220 @@
+{
+  "name": "Jesus in OT - Reflection with Audio",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "jesus-in-ot-reflection",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "056f420a-2cbf-4afc-835d-7b509d4dadbd",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "webhookId": "jesus-ot-reflection"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Create a thoughtful 2-3 minute reflection (250-350 words) on how this Old Testament passage points to Jesus Christ.\n\nPASSAGE DETAILS:\n- Title: {{ $json.body.title }}\n- Reference: {{ $json.body.reference }}\n- Scripture Text: {{ $json.body.otText }}\n- Historical Context: {{ $json.body.historicalContext }}\n- How It Points to Jesus: {{ $json.body.howItPointsToJesus }}\n\nYOUR REFLECTION SHOULD:\n\n1. BEGIN WITH WONDER (30-40 words)\n   - Open with awe at God's providence in revealing Christ throughout Scripture\n   - Example: \"How marvelous is God's providence that even in the moment of humanity's greatest tragedy—the Fall—He already spoke His first word of hope.\"\n\n2. EXPLAIN THE TYPOLOGY/PROPHECY (80-120 words)\n   - Explain how this OT passage prefigures or prophesies Christ\n   - Use accessible, beautiful language (not academic jargon)\n   - Show the connection clearly\n   - Example: \"This promise, the Protoevangelium or 'first gospel,' reveals that God would not abandon us to sin and death. Notice the woman mentioned here: not just Eve, but prefiguring Mary, the New Eve...\"\n\n3. CONNECT TO CATHOLIC LIFE (60-80 words)\n   - Link to the Mass, sacraments, or Catholic devotional life\n   - Show how this deepens our understanding of Jesus\n   - Example: \"At every Mass, we witness this victory made present again. The same Jesus who crushed Satan's power is truly present in the Eucharist, offering you His victory over sin and death.\"\n\n4. END WITH INVITATION (30-40 words)\n   - Practical invitation to encounter Jesus today through this truth\n   - Personal and encouraging\n   - Example: \"Today, as you face temptation or struggle, remember: the battle is already won. Christ has conquered, and in Him, you too can triumph.\"\n\nGUIDELINES:\n- Total: 250-350 words (2-3 minutes spoken)\n- Use \"you\" and \"we\" to make it personal and engaging\n- Reverent but warm tone - like a beloved priest giving a homily\n- Write for everyday Catholics (avoid academic jargon)\n- Let the beauty and depth of Catholic theology shine through\n- Focus on Jesus - how this passage reveals Him and draws us closer to Him\n\nGenerate the reflection now:",
+        "options": {
+          "systemMessage": "You are a warm, reverent Catholic theologian and spiritual guide. Your role is to help the faithful encounter Jesus Christ in the Old Testament through thoughtful, accessible reflections that connect ancient Scripture to modern Catholic life. You speak with the wisdom of the Church Fathers, the clarity of the Catechism, and the heart of a pastor who loves souls. Your reflections illuminate how the Old Testament prepares for and reveals Christ, helping believers see the unity of God's plan of salvation across both Testaments."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [208, 0],
+      "id": "d598dfeb-477c-4c03-aa02-debe03ac8eea",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [80, 208],
+      "id": "f40c4124-01ec-4a77-a7f5-00eecc76ba00",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "uDN6zqxy0IeLRvv5",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract reflection text from Groq response\nconst groqOutput = $input.item.json;\nlet reflectionText = '';\n\nif (groqOutput.message?.content) {\n  reflectionText = groqOutput.message.content;\n} else if (groqOutput.content) {\n  reflectionText = groqOutput.content;\n} else if (groqOutput.text) {\n  reflectionText = groqOutput.text;\n} else if (groqOutput.output) {\n  reflectionText = groqOutput.output;\n} else if (typeof groqOutput === 'string') {\n  reflectionText = groqOutput;\n} else {\n  const entry = $('Webhook').first().json.body;\n  reflectionText = `This passage reveals Jesus Christ in a profound way. ${entry.howItPointsToJesus} As we contemplate this Old Testament text, we see how God was preparing His people for the coming of the Messiah.`;\n}\n\nreflectionText = reflectionText.trim();\n\n// Randomly select from 6 natural voices\nconst voices = [\n  'en-US-AndrewNeural',\n  'en-US-BrianNeural',\n  'en-US-ChristopherNeural',\n  'en-US-EricNeural',\n  'en-US-SteffanNeural',\n  'en-US-RogerNeural'\n];\n\nconst selectedVoice = voices[Math.floor(Math.random() * voices.length)];\n\nconsole.log('Selected voice:', selectedVoice);\n\nreturn {\n  reflectionText: reflectionText,\n  selectedVoice: selectedVoice\n};"
+      },
+      "id": "select-voice-node",
+      "name": "Select Voice",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [416, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate SSML for Azure TTS\nconst reflectionText = $json.reflectionText;\nconst selectedVoice = $json.selectedVoice;\n\n// Escape XML special characters\nconst escapedText = reflectionText\n  .replace(/&/g, '&amp;')\n  .replace(/</g, '&lt;')\n  .replace(/>/g, '&gt;')\n  .replace(/\"/g, '&quot;');\n\nconst ssml = `<speak version='1.0' xml:lang='en-US'>\n  <voice xml:lang='en-US' name='${selectedVoice}'>\n    <prosody rate='0.95'>\n      ${escapedText}\n    </prosody>\n  </voice>\n</speak>`;\n\nreturn {\n  reflectionText: reflectionText,\n  selectedVoice: selectedVoice,\n  ssml: ssml\n};"
+      },
+      "id": "generate-ssml-node",
+      "name": "Generate SSML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [624, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://{{ $env.AZURE_REGION || 'eastus' }}.tts.speech.microsoft.com/cognitiveservices/v1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Ocp-Apim-Subscription-Key",
+              "value": "={{ $env.AZURE_SPEECH_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/ssml+xml"
+            },
+            {
+              "name": "X-Microsoft-OutputFormat",
+              "value": "audio-16khz-32kbitrate-mono-mp3"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyContentType": "raw",
+        "rawBody": "={{ $json.ssml }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "azure-tts-node",
+      "name": "Azure TTS",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [832, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format response with text and audio\nconst reflectionText = $('Select Voice').first().json.reflectionText;\nconst selectedVoice = $('Select Voice').first().json.selectedVoice;\n\n// Get audio binary data from Azure TTS response\nconst audioData = $input.item.binary.data;\n\nif (audioData) {\n  // Convert binary to base64\n  const audioBuffer = Buffer.from(audioData);\n  const audioBase64 = audioBuffer.toString('base64');\n  const audioUrl = `data:audio/mpeg;base64,${audioBase64}`;\n\n  console.log('Audio generated successfully, size:', audioBuffer.length);\n\n  return {\n    reflectionText: reflectionText,\n    audioUrl: audioUrl,\n    voice: selectedVoice\n  };\n} else {\n  console.log('No audio data received from Azure TTS');\n  return {\n    reflectionText: reflectionText,\n    audioUrl: null,\n    error: 'Failed to generate audio'\n  };\n}"
+      },
+      "id": "5b73232b-a276-4c66-8278-d136c9c7d963",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1040, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "9d1024ad-b394-42b6-b489-46754401ef4e",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1248, 0]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Select Voice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Voice": {
+      "main": [
+        [
+          {
+            "node": "Generate SSML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate SSML": {
+      "main": [
+        [
+          {
+            "node": "Azure TTS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Azure TTS": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}

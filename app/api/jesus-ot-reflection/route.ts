@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     const { entry } = body;
 
     // Validate entry data
-    if (!entry || !entry.title || !entry.reference) {
+    if (!entry || !entry.title || !entry.otReference) {
       return NextResponse.json(
         { error: 'Missing required entry data' },
         { status: 400 }
