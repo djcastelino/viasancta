@@ -20,10 +20,11 @@ export function getSourceLink(source: string): LinkedSource {
   if (source.startsWith('CCC ')) {
     const match = source.match(/CCC\s+(\d+(-\d+)?)/);
     if (match) {
-      const section = match[1].split('-')[0]; // Get first number
+      const paragraphNumber = match[1].split('-')[0]; // Get first number
+      // Use USCCB official Catechism flipbook with direct paragraph link
       return {
         text,
-        url: `https://www.usccb.org/sites/default/files/flipbooks/catechism/${section}`,
+        url: `https://ccc.usccb.org/flipbooks/catechism/${paragraphNumber}`,
         type: 'CCC'
       };
     }
