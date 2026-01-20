@@ -41,33 +41,9 @@ export default async function TourPage({ params }: { params: Promise<{ tourId: s
         <p className="text-xl text-[#8B7355] italic mb-3">
           Based on St. Carlo Acutis Research
         </p>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-2">
+        <p className="text-gray-600 max-w-2xl mx-auto">
           Journey through documented Eucharistic miracles from around the world
         </p>
-        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">
-          <span>✓</span>
-          <span>100% Complete Collection</span>
-        </div>
-
-        {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
-            <div className="text-3xl font-bold text-[#D4AF37]">{miracles.length}</div>
-            <div className="text-sm text-gray-500">Sacred Stops</div>
-          </div>
-          <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
-            <div className="text-3xl font-bold text-[#D4AF37]">{countries.length}</div>
-            <div className="text-sm text-gray-500">Countries</div>
-          </div>
-          <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
-            <div className="text-3xl font-bold text-[#D4AF37]">2,000+</div>
-            <div className="text-sm text-gray-500">Years of History</div>
-          </div>
-          <div className="bg-white rounded-2xl shadow-md p-5 min-w-[120px]">
-            <div className="text-3xl font-bold text-[#D4AF37]">~7 hrs</div>
-            <div className="text-sm text-gray-500">Total Duration</div>
-          </div>
-        </div>
       </header>
 
       {/* Search, Filter, and Miracles Grid */}

@@ -57,14 +57,6 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
         countries={countries}
       />
 
-      {/* Results count */}
-      <div className="max-w-7xl mx-auto px-5 mb-6">
-        <p className="text-gray-600">
-          Showing <span className="font-bold text-[#2C5F87]">{filteredMiracles.length}</span> of{' '}
-          <span className="font-bold">{miracles.length}</span> miracles
-        </p>
-      </div>
-
       {/* Miracles Grid */}
       <section className="max-w-7xl mx-auto px-5 pb-16">
         {filteredMiracles.length > 0 ? (

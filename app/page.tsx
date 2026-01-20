@@ -157,16 +157,6 @@ export default function Home() {
               
               {/* Content */}
               <div className="p-7">
-                <div className="flex gap-6 mb-5">
-                  <div>
-                    <div className="text-3xl font-bold text-[#D4AF37]">{miracles.length}</div>
-                    <div className="text-sm text-gray-500">Sacred Stops</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-[#D4AF37]">~7 hours</div>
-                    <div className="text-sm text-gray-500">Estimated Time</div>
-                  </div>
-                </div>
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                   Journey through 136 documented Eucharistic miracles worldwide, meticulously researched and curated by <span className="font-semibold text-[#2C5F87]">St. Carlo Acutis</span>. Experience his legacy through AI-guided narrations.
                 </p>
@@ -194,16 +184,6 @@ export default function Home() {
               </div>
             </div>
             <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">25</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~4 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
-                </div>
-              </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                 Visit sites of Church-approved Marian apparitions. From Lourdes to Fatima, discover where Our Lady appeared.
               </p>
@@ -235,16 +215,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-7">
-                <div className="flex gap-6 mb-5">
-                  <div>
-                    <div className="text-3xl font-bold text-[#D4AF37]">14</div>
-                    <div className="text-sm text-gray-500">Sacred Stops</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-[#D4AF37]">~2 hours</div>
-                    <div className="text-sm text-gray-500">Estimated Time</div>
-                  </div>
-                </div>
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                   Walk the Via Dolorosa in Jerusalem with <span className="font-semibold text-[#2C5F87]">Google Street View</span>. Experience the actual path Jesus walked with immersive prayer mode and audio meditations.
                 </p>
@@ -272,16 +242,6 @@ export default function Home() {
               </div>
             </div>
             <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">40</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~8 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
-                </div>
-              </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                 Pilgrimage to the resting places of beloved saints. Visit the tombs and shrines of St. Peter, St. Francis, and more.
               </p>
@@ -344,16 +304,6 @@ export default function Home() {
               </div>
             </div>
             <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">50</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~10 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
-                </div>
-              </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                 Walk where Jesus walked in the Holy Land. Visit Jerusalem, Bethlehem, Nazareth, and more.
               </p>
