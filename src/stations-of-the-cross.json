@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "number": 1,
+    "title": "Jesus is Condemned to Death",
+    "location": {
+      "name": "Omariya School (traditional site of Antonia Fortress)",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78059,
+      "lng": 35.23566,
+      "description": "The traditional site of Pilate's judgment hall where Jesus was condemned"
+    },
+    "scripture": {
+      "reference": "Mark 15:15",
+      "text": "So Pilate, wishing to satisfy the crowd, released Barabbas for them; and after flogging Jesus, he handed him over to be crucified."
+    },
+    "meditation": "At this first station, we stand where an innocent man was condemned to the most brutal form of execution known to the ancient world. Pontius Pilate, knowing Jesus was innocent, chose political expediency over justice. In this moment, the Judge of all creation submitted Himself to human judgment. Consider the silence of Jesus—He who could have called down legions of angels chose instead to accept this unjust sentence for our sake. His condemnation secures our acquittal. His innocent suffering pays the debt of our guilty sins. As you stand virtually at this place, reflect on the times you have chosen popularity over principle, comfort over truth. Jesus' willingness to be condemned frees us from the ultimate condemnation we deserve.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "This station is located at the Omariya School, near the site of the ancient Antonia Fortress where Roman governors resided when visiting Jerusalem. Though the exact location of Pilate's judgment hall is debated by scholars, this traditional site has been venerated by pilgrims for centuries."
+  },
+  {
+    "id": 2,
+    "number": 2,
+    "title": "Jesus Receives the Cross",
+    "location": {
+      "name": "Chapel of the Condemnation and Imposition of the Cross",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78069,
+      "lng": 35.23625,
+      "description": "Where Jesus received the instrument of His execution"
+    },
+    "scripture": {
+      "reference": "John 19:17",
+      "text": "Carrying the cross by himself, he went out to what is called the Place of the Skull, in Hebrew, Golgotha."
+    },
+    "meditation": "The wood of the cross is placed upon Jesus' torn and bleeding shoulders. This is the instrument of His death, and He embraces it. How heavy it must have been—not just in physical weight, but in the weight of all human sin it represents. Every lie, every act of hatred, every moment of pride and selfishness from all of history is somehow contained in this wood. Yet Jesus does not refuse it. He accepts it willingly because He accepts us willingly. The cross He carries is not just wood and nails; it is the sum total of human rebellion against God, and He shoulders it all. What crosses has God asked you to carry? Your daily struggles, your sufferings, your trials—these too can become instruments of redemption when united to His cross.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Franciscan Chapel of the Condemnation, located here, was built in 1904 on Crusader foundations. Archaeologists have discovered a large stone pavement dating to the time of Jesus, possibly part of the Antonia Fortress courtyard."
+  },
+  {
+    "id": 3,
+    "number": 3,
+    "title": "Jesus Falls the First Time",
+    "location": {
+      "name": "Polish Catholic Chapel",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78055,
+      "lng": 35.23689,
+      "description": "Where Jesus fell under the weight of the cross"
+    },
+    "scripture": {
+      "reference": "Isaiah 53:6",
+      "text": "We had all gone astray like sheep, all following our own way; But the Lord laid upon him the guilt of us all."
+    },
+    "meditation": "Weakened by a night without sleep, brutalized by scourging, crowned with thorns, and burdened by the massive wooden beam, Jesus falls. The God who holds the universe in being stumbles under the weight of human sin. This fall is not a sign of weakness but of the profound reality of the Incarnation—God truly became man, experiencing our human frailty to its fullest extent. In this fall, Jesus sanctifies every moment when we feel we cannot go on, when our burdens seem too heavy, when we collapse under the weight of life's struggles. He knows what it is to fall, and in His falling, He transforms our failures into opportunities for grace. When you fall—morally, spiritually, physically—remember that Christ has already been there, and His presence in that moment of weakness becomes your strength.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "A small Polish Catholic chapel marks this station. The Via Dolorosa here begins its ascent, making the journey more physically demanding as it continues uphill toward Calvary."
+  },
+  {
+    "id": 4,
+    "number": 4,
+    "title": "Jesus Meets His Mother",
+    "location": {
+      "name": "Armenian Catholic Church of Our Lady of the Spasm",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78048,
+      "lng": 35.23745,
+      "description": "Where Mary encountered her Son on the way to crucifixion"
+    },
+    "scripture": {
+      "reference": "Luke 2:34-35",
+      "text": "Simeon blessed them and said to Mary his mother, 'Behold, this child is destined for the fall and rise of many in Israel, and to be a sign that will be contradicted—and you yourself a sword will pierce—so that the thoughts of many hearts may be revealed.'"
+    },
+    "meditation": "In this moment of unbearable sorrow, mother and son lock eyes. No words are recorded, yet everything is communicated in that glance. Mary's heart, already pierced by Simeon's prophecy, now experiences the fulfillment of that sword of sorrow. She who said 'yes' to God's plan at the Annunciation now lives the terrible consequences of that yes. Yet even in this moment of supreme anguish, Mary does not curse God or collapse in despair. She stands. She is present. She accompanies her Son to the end. This is the meaning of Christian love—to remain present in suffering, to accompany those we love through their darkest hours, to say 'yes' to God even when that yes leads through the valley of death. Mary teaches us that true love means sharing in the suffering of the beloved. Her presence here strengthens Jesus and strengthens us.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Armenian Catholic Church at this station is known as 'Our Lady of the Spasm' (the spasm of grief). The church contains a crypt with mosaics showing the footprints believed to be those of Mary as she stood here."
+  },
+  {
+    "id": 5,
+    "number": 5,
+    "title": "Simon of Cyrene Helps Jesus Carry the Cross",
+    "location": {
+      "name": "Franciscan Chapel",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78038,
+      "lng": 35.23802,
+      "description": "Where Simon was compelled to help carry the cross"
+    },
+    "scripture": {
+      "reference": "Mark 15:21",
+      "text": "They pressed into service a passer-by, Simon, a Cyrenian, who was coming in from the country, the father of Alexander and Rufus, to carry his cross."
+    },
+    "meditation": "Simon of Cyrene was likely coming to Jerusalem for Passover when Roman soldiers forced him to carry Jesus' cross. What must have seemed like a terrible inconvenience and humiliation became the greatest honor of his life. Tradition tells us that Simon and his sons (Mark specifically names them, suggesting they became known in the early Church) became Christians. In helping Jesus carry His cross, Simon discovered the meaning of his own life. This station reminds us that God often calls us to serve Him in unexpected ways, at inconvenient times, through circumstances we didn't choose. When we're forced to carry burdens we didn't ask for—caring for sick relatives, dealing with unexpected hardships, shouldering responsibilities we didn't seek—we're being given the privilege of walking alongside Christ. Like Simon, what we initially resist may become our greatest blessing. Jesus invites us: 'Take up your cross daily and follow me.'",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Franciscan Chapel at this station features a Latin inscription commemorating Simon. The Via Dolorosa continues upward here, steep and narrow, much as it would have been in Jesus' time."
+  },
+  {
+    "id": 6,
+    "number": 6,
+    "title": "Veronica Wipes the Face of Jesus",
+    "location": {
+      "name": "Church of the Holy Face",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78028,
+      "lng": 35.23845,
+      "description": "Where Veronica courageously ministered to Jesus"
+    },
+    "scripture": {
+      "reference": "Isaiah 53:2-3",
+      "text": "He had no stately bearing to make us look at him, nor appearance that would attract us to him. He was spurned and avoided by men, a man of suffering, accustomed to infirmity."
+    },
+    "meditation": "From the crowd of spectators emerges one brave woman—Veronica. While Roman soldiers control the scene and most people either mock or watch passively, she breaks through with an act of tender mercy. She offers Jesus the simple gift of her veil to wipe His face, disfigured by blood, sweat, and spittle. According to pious tradition, Jesus' image was miraculously imprinted on her cloth. But the real miracle is the courage of compassion in the face of cruelty. Veronica didn't calculate the risks or worry about what others would think. She saw suffering and responded with love. This station challenges us: Do we have the courage to show mercy when it's unpopular? Will we step forward to help those whom society has condemned or rejected? Jesus' face is still disfigured in our world—in the faces of the poor, the imprisoned, the refugee, the unborn, the elderly, the sick. When we serve them, we wipe His face.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Church of the Holy Face (Little Sisters of Jesus) marks this station. Though not mentioned in Scripture, the tradition of Veronica is ancient and has been commemorated on the Via Dolorosa since medieval times."
+  },
+  {
+    "id": 7,
+    "number": 7,
+    "title": "Jesus Falls the Second Time",
+    "location": {
+      "name": "Franciscan Chapel at the intersection",
+      "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
+      "lat": 31.78015,
+      "lng": 35.23885,
+      "description": "Where Jesus fell again as He neared the gate to Calvary"
+    },
+    "scripture": {
+      "reference": "Hebrews 12:2-3",
+      "text": "For the sake of the joy that lay before him he endured the cross, despising its shame, and has taken his seat at the right of the throne of God. Consider how he endured such opposition from sinners, in order that you may not grow weary and lose heart."
+    },
+    "meditation": "Jesus falls again. The burden hasn't lessened; His strength continues to ebb away. Yet He rises once more. This second fall teaches us about perseverance in the spiritual life. The first fall might be unexpected, shocking. But the second fall—we know it's coming, we've been here before, and still we fall. How often do we repeat the same sins, struggle with the same weaknesses, fall into the same patterns? Jesus knows. He's been through it. And just as He rose from this second fall to continue His journey, He empowers us to rise from our repeated failures. The key is not to avoid falling—in this life, we will fall—but to keep getting up, to keep moving toward our goal, to persist in following Him even when we're exhausted and discouraged. Each time we rise from sin and return to Him, we walk in His footsteps on this Via Dolorosa. He understands our struggles because He has experienced them.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "This station is located at an important intersection on the Via Dolorosa. Pilgrims approaching from one direction can see both the previous stations and the route ahead toward Calvary. The constant flow of people through these narrow streets echoes the crowds that witnessed Jesus' journey."
+  },
+  {
+    "id": 8,
+    "number": 8,
+    "title": "Jesus Meets the Women of Jerusalem",
+    "location": {
+      "name": "Greek Orthodox monastery",
+      "address": "Via Dolorosa, Christian Quarter, Jerusalem",
+      "lat": 31.77998,
+      "lng": 35.23921,
+      "description": "Where Jesus consoled the weeping women"
+    },
+    "scripture": {
+      "reference": "Luke 23:28-31",
+      "text": "Jesus turned to them and said, 'Daughters of Jerusalem, do not weep for me; weep instead for yourselves and for your children, for indeed, the days are coming when people will say, 'Blessed are the barren, the wombs that never bore and the breasts that never nursed.' At that time, people will say to the mountains, 'Fall upon us!' and to the hills, 'Cover us!' for if these things are done when the wood is green what will happen when it is dry?'"
+    },
+    "meditation": "Even in His agony, Jesus thinks of others. Women weep for Him, and He turns to console them, warning them of the coming destruction of Jerusalem in 70 AD. This moment reveals the heart of Christ—utterly self-forgetful, concerned with the spiritual welfare of others even as He carries the instrument of His death. 'Weep not for me,' He says, 'but for yourselves and your children.' He redirects their sorrow toward something more important than His physical suffering: the spiritual state of their souls and the consequences of rejecting God's love. This station calls us to examine our own tears. Do we weep over the right things? Are we more concerned about temporal troubles than eternal realities? Do we grieve over sin—our own and the world's—or only over inconveniences and discomforts? Jesus teaches us to have a proper perspective on suffering, to see beyond the immediate to the ultimate.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "A Greek Orthodox monastery marks this station. The words 'NIKA' (Jesus Christ conquers) are inscribed here. This section of the Via Dolorosa enters the Christian Quarter of the Old City."
+  },
+  {
+    "id": 9,
+    "number": 9,
+    "title": "Jesus Falls the Third Time",
+    "location": {
+      "name": "Coptic Orthodox Patriarchate entrance",
+      "address": "Near Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77855,
+      "lng": 35.22952,
+      "description": "Jesus' final fall before reaching Calvary"
+    },
+    "scripture": {
+      "reference": "Philippians 2:8",
+      "text": "He humbled himself, becoming obedient to death, even death on a cross."
+    },
+    "meditation": "Calvary is in sight, yet Jesus falls a third time. This is total exhaustion, complete depletion. He has nothing left to give—except everything. This third fall represents the depths of human weakness and the extremity of divine love. Three times fallen, just as Peter would deny Him three times, just as we persistently fall into the same sins. But Jesus doesn't give up. Somehow, He finds the strength to rise once more. From where does this strength come? From love. Love for you, love for me, love for every human soul who has ever lived or will ever live. At the moment of greatest weakness, love proves stronger than death. This station speaks to those who feel they can't go on, who have fallen so many times they despair of ever rising again. Look at Jesus: bloodied, beaten, fallen for the third time—yet He rises. If He can do this for you, He can help you rise too. His love lifts us when we have no strength left.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "This station is marked by a Roman column outside the entrance to the Coptic Orthodox Patriarchate, very near the Church of the Holy Sepulchre. From here, the summit of Calvary is just steps away."
+  },
+  {
+    "id": 10,
+    "number": 10,
+    "title": "Jesus is Stripped of His Garments",
+    "location": {
+      "name": "Chapel within Church of the Holy Sepulchre",
+      "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77844,
+      "lng": 35.22938,
+      "description": "Where Jesus was stripped before crucifixion"
+    },
+    "scripture": {
+      "reference": "John 19:23-24",
+      "text": "When the soldiers had crucified Jesus, they took his clothes and divided them into four shares, a share for each soldier. They also took his tunic, but the tunic was seamless, woven in one piece from the top down. So they said to one another, 'Let's not tear it, but cast lots for it to see whose it will be,' in order that the passage of Scripture might be fulfilled that says: 'They divided my garments among them, and for my vesture they cast lots.'"
+    },
+    "meditation": "The soldiers tear away Jesus' garments, reopening the wounds from His scourging. The humiliation is complete—He who clothed Himself in our humanity now stands naked before His creation. This is the ultimate poverty, the total self-emptying of God. He has nothing left, not even the simple dignity of clothing. Yet in this moment of complete destitution, Jesus is accomplishing the greatest act of generosity in history. He strips Himself of everything so that we might be clothed in His righteousness. His nakedness covers our shame. His poverty makes us rich. Consider what we cling to: possessions, reputation, comfort, control. Jesus teaches us that we must be willing to let go of everything—even the last shred of earthly dignity—if we are to follow Him fully. Detachment isn't just about material things; it's about being willing to be stripped of everything we think defines us, trusting that our true identity is found in Him alone.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "This station is located inside the Church of the Holy Sepulchre. The remaining stations (10-14) are all within this holy church, built over the sites of Calvary and Jesus' tomb. The church has been a pilgrimage destination since the 4th century."
+  },
+  {
+    "id": 11,
+    "number": 11,
+    "title": "Jesus is Nailed to the Cross",
+    "location": {
+      "name": "Latin Calvary, Church of the Holy Sepulchre",
+      "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77846,
+      "lng": 35.22944,
+      "description": "The site of Golgotha where Jesus was crucified"
+    },
+    "scripture": {
+      "reference": "Luke 23:33-34",
+      "text": "When they came to the place called the Skull, they crucified him and the criminals there, one on his right, the other on his left. Then Jesus said, 'Father, forgive them, they know not what they do.'"
+    },
+    "meditation": "The nails pierce His hands and feet, affixing Him to the wood of the cross. This is the moment toward which all of salvation history has been moving—the sacrifice of the Lamb of God who takes away the sin of the world. The pain is unimaginable, yet Jesus' first words from the cross are words of forgiveness: 'Father, forgive them.' In this act, Jesus is not merely dying; He is offering Himself as the perfect sacrifice, the High Priest and the Victim, reconciling humanity to God. Every sin ever committed—yours, mine, all of humanity's—is being nailed to this cross and destroyed. The anger you can't let go of, the pride that separates you from others, the selfishness that keeps you from loving—all of it is here, being crucified with Christ. These nails that held Him also hold our sins. And in three days, when He rises, He will leave those sins in the tomb. Do you want to be free? Look at the cross. It is the price of your freedom, and it is given freely out of love.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The traditional site of Calvary (Golgotha in Aramaic, meaning 'place of the skull') is now enclosed within the Church of the Holy Sepulchre. You can ascend stairs to stand on the rock of Calvary where the cross stood. A glass case beneath the altar allows you to see the actual rock, with a crack believed to have formed at Jesus' death."
+  },
+  {
+    "id": 12,
+    "number": 12,
+    "title": "Jesus Dies on the Cross",
+    "location": {
+      "name": "Greek Orthodox Calvary, Church of the Holy Sepulchre",
+      "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77848,
+      "lng": 35.22946,
+      "description": "Where Jesus gave up His spirit"
+    },
+    "scripture": {
+      "reference": "John 19:28-30",
+      "text": "After this, aware that everything was now finished, in order that the scripture might be fulfilled, Jesus said, 'I thirst.' There was a vessel filled with common wine. So they put a sponge soaked in wine on a sprig of hyssop and put it up to his mouth. When Jesus had taken the wine, he said, 'It is finished.' And bowing his head, he handed over the spirit."
+    },
+    "meditation": "'It is finished.' With these words, Jesus completes the work of redemption. He has paid the price in full. The debt of sin is canceled. The gates of heaven, closed by Adam's fall, are thrown open by Christ's obedience. In this moment of apparent defeat—the Son of God dying like a common criminal—God wins the greatest victory in history. Death itself is defeated from within. Sin loses its power. Satan's dominion is shattered. And all this through what looks like weakness: a man dying on a cross. This is the paradox of Christianity—strength perfected in weakness, victory through surrender, life through death. Stand before this cross and know: this is what God thinks of you. This is how far He will go to bring you home. If you ever doubt that you are loved, look at the cross. If you ever wonder if your sins are too great to be forgiven, look at the cross. If you ever feel alone, look at the cross. It is God's final word on the subject of His love for you: 'It is finished.' Your salvation is complete.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "Between the Latin (Catholic) and Greek Orthodox sections of Calvary, pilgrims can venerate the site where the cross stood. A silver disc marks the spot where tradition holds the cross was planted. Many pilgrims kneel here to pray and touch the rock of Calvary through an opening in the altar."
+  },
+  {
+    "id": 13,
+    "number": 13,
+    "title": "Jesus is Taken Down from the Cross",
+    "location": {
+      "name": "Altar of Stabat Mater, Church of the Holy Sepulchre",
+      "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77843,
+      "lng": 35.22940,
+      "description": "Where Mary received her Son's body"
+    },
+    "scripture": {
+      "reference": "Luke 23:53",
+      "text": "After he had taken the body down, he wrapped it in a linen cloth and laid him in a rock-hewn tomb in which no one had yet been buried."
+    },
+    "meditation": "Joseph of Arimathea and Nicodemus carefully remove the nails and lower Jesus' body from the cross. They place Him in the arms of His mother, Mary. This moment—memorialized in Michelangelo's Pietà and countless other works of art—captures the depth of a mother's sorrow. Mary holds her dead Son as she once held Him as an infant. The circle is complete; the sword prophesied by Simeon has fully pierced her heart. Yet even in this moment of utter desolation, Mary's faith does not waver. She trusted in God's promise at the Annunciation; she trusts still, even when that promise seems to have died on a cross. This is the dark night of faith—when everything God promised appears to have failed, when hope seems crushed, when love itself lies dead in your arms. Mary teaches us to hold on in the darkness, to remain faithful when we cannot see the way forward. She knows something we often forget: the story is not over. This is Friday. Sunday is coming.",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Altar of Stabat Mater (Latin for 'The Mother was Standing') between Calvary and the Stone of Anointing commemorates this station. The sorrowful mother receiving her Son's body has been a central image in Catholic devotion for centuries."
+  },
+  {
+    "id": 14,
+    "number": 14,
+    "title": "Jesus is Laid in the Tomb",
+    "location": {
+      "name": "The Holy Sepulchre (Tomb of Christ)",
+      "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
+      "lat": 31.77839,
+      "lng": 35.22932,
+      "description": "The empty tomb where Jesus rose from the dead"
+    },
+    "scripture": {
+      "reference": "Matthew 27:59-60",
+      "text": "Taking the body, Joseph wrapped it in clean linen and laid it in his new tomb that he had hewn in the rock. Then he rolled a huge stone across the entrance to the tomb and departed."
+    },
+    "meditation": "They lay Jesus in a borrowed tomb. The one who created the universe owns nothing, not even a place to be buried. A huge stone seals the entrance. Roman guards stand watch. The disciples hide in fear. Everything seems finished, defeated, hopeless. But this tomb will not hold Him. Death cannot contain Life itself. This is not an ending but a pause before the greatest beginning in history. In three days, this tomb will be empty. The stone will be rolled away not to let Jesus out, but to let the disciples in to see that He is gone. He has risen! This is the promise that transforms everything—death is not the end. Your struggles, your sufferings, your failures—none of these have the final word. Christ has conquered death, and because He lives, we too shall live. This empty tomb is the reason we have hope. Stand before it and hear the angel's words: 'He is not here. He has risen!' This is the Christian faith: not that a good man died courageously, but that God became man, died for our sins, and rose from the dead to give us eternal life. The tomb is empty. Death is defeated. Go and live in the joy of the Resurrection!",
+    "prayer": "We adore You, O Christ, and we praise You, because by Your holy Cross You have redeemed the world.",
+    "historicalContext": "The Holy Sepulchre—the actual tomb of Jesus—is the holiest site in Christianity. Pilgrims queue to enter the small chapel built over the tomb, where they can kneel in the very place where Jesus' body lay. The marble slab covers the original rock where His body rested. Archaeological evidence confirms this location was outside the city walls in Jesus' time and was a known burial site. For 2,000 years, Christians have come here to venerate the place where death was conquered and our salvation secured."
+  }
+]
