@@ -22,7 +22,7 @@ export default function JesusInOTPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   // Reflection states
-  const [reflectionMode, setReflectionMode] = useState<'none' | 'text' | 'audio'>('none');
+  const [showReflectionText, setShowReflectionText] = useState(false);
   const [reflectionText, setReflectionText] = useState('');
   const [isGeneratingReflection, setIsGeneratingReflection] = useState(false);
   const [reflectionError, setReflectionError] = useState('');
@@ -66,14 +66,13 @@ export default function JesusInOTPage() {
     loadTodaysEntry();
   }, []);
 
-  // Handle Get Reflection button click
-  const handleGetReflection = () => {
-    setReflectionMode('text'); // Default to text mode
-  };
-
-  // Generate reflection (always gets both text and audio)
-  const handleGenerateReflection = async () => {
-    if (!todaysEntry || reflectionText) return; // Skip if already generated
+  // Generate and show reflection text
+  const handleReadText = async () => {
+    if (reflectionText) {
+      // Already generated, just show it
+      setShowReflectionText(true);
+      return;
+    }
 
     setIsGeneratingReflection(true);
     setReflectionError('');
@@ -90,7 +89,9 @@ export default function JesusInOTPage() {
 
       const data = await response.json();
       setReflectionText(data.reflectionText);
-      // Store audio URL in state for later use
+      setShowReflectionText(true);
+
+      // Store audio URL if available
       if (data.audioUrl) {
         audioRef.current = new Audio(data.audioUrl);
       }
@@ -103,27 +104,63 @@ export default function JesusInOTPage() {
     }
   };
 
-  // Play audio reflection
-  const handlePlayAudio = async () => {
-    if (!audioRef.current) {
-      setReflectionError('Audio not available. Please try refreshing.');
-      return;
-    }
-
+  // Generate and play audio reflection
+  const handleListen = async () => {
+    // If already playing, stop it
     if (isPlaying) {
-      // Stop playback
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       if (backgroundMusicRef.current) {
         backgroundMusicRef.current.pause();
         backgroundMusicRef.current.currentTime = 0;
         backgroundMusicRef.current.volume = 0;
       }
-
       setIsPlaying(false);
       return;
     }
+
+    // Generate reflection if not already done
+    if (!reflectionText) {
+      setIsGeneratingReflection(true);
+      setReflectionError('');
+      setLoadingMessage('Generating reflection...');
+
+      try {
+        const response = await fetch('/api/jesus-ot-reflection', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            entry: todaysEntry
+          })
+        });
+
+        const data = await response.json();
+        setReflectionText(data.reflectionText);
+
+        if (data.audioUrl) {
+          audioRef.current = new Audio(data.audioUrl);
+        }
+      } catch (error) {
+        console.error('Error generating reflection:', error);
+        setReflectionError('Failed to generate reflection. Please try again.');
+        setIsGeneratingReflection(false);
+        setLoadingMessage('');
+        return;
+      }
+    }
+
+    // Check if audio is available
+    if (!audioRef.current) {
+      setReflectionError('Audio not available. Please try refreshing.');
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+      return;
+    }
+
+    setIsGeneratingReflection(false);
+    setLoadingMessage('');
 
     try {
       // Start background music
@@ -214,12 +251,6 @@ export default function JesusInOTPage() {
     }, stepDuration);
   };
 
-  // Handle mode switch
-  useEffect(() => {
-    if (reflectionMode === 'text' && !reflectionText && !isGeneratingReflection) {
-      handleGenerateReflection();
-    }
-  }, [reflectionMode]);
 
   if (isLoading) {
     return (
@@ -347,111 +378,72 @@ export default function JesusInOTPage() {
 
               {/* Reflection Section */}
               <section className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border-2 border-[#6e3a6c]/30">
-                {reflectionMode === 'none' ? (
-                  // Initial state - show Get Reflection button
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-[#6e3a6c] mb-3 flex items-center justify-center gap-2">
-                      <span>💭</span>
-                      <span>Deeper Reflection</span>
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Get a thoughtful theological reflection on this passage from a Catholic perspective
-                    </p>
+                <div>
+                  <h3 className="text-xl font-bold text-[#6e3a6c] mb-4 flex items-center justify-center gap-2">
+                    <span>💭</span>
+                    <span>Theological Reflection</span>
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-center">
+                    Get a thoughtful theological reflection on this passage from a Catholic perspective
+                  </p>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3 mb-6 max-w-md mx-auto">
                     <button
-                      onClick={handleGetReflection}
-                      className="bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c] text-white px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+                      onClick={handleReadText}
+                      disabled={isGeneratingReflection}
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c] text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      🎯 Get Reflection
+                      <span>📖</span>
+                      <span>Read Text</span>
+                    </button>
+                    <button
+                      onClick={handleListen}
+                      disabled={isGeneratingReflection}
+                      className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${
+                        isPlaying
+                          ? 'bg-red-500 hover:bg-red-600 text-white'
+                          : 'bg-gradient-to-r from-[#2C5F87] to-[#325847] hover:from-[#325847] hover:to-[#2C5F87] text-white'
+                      }`}
+                    >
+                      <span>{isPlaying ? '⏹️' : '🔊'}</span>
+                      <span>{isPlaying ? 'Stop' : 'Listen'}</span>
                     </button>
                   </div>
-                ) : (
-                  // Reflection mode active - show toggle and content
-                  <div>
-                    <h3 className="text-xl font-bold text-[#6e3a6c] mb-4 flex items-center gap-2">
-                      <span>💭</span>
-                      <span>Theological Reflection</span>
-                    </h3>
 
-                    {/* Toggle Buttons */}
-                    <div className="flex gap-2 mb-6 bg-white/50 rounded-full p-1 max-w-md mx-auto">
-                      <button
-                        onClick={() => setReflectionMode('text')}
-                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
-                          reflectionMode === 'text'
-                            ? 'bg-white text-[#6e3a6c] shadow-md'
-                            : 'text-gray-600 hover:text-[#6e3a6c]'
-                        }`}
-                      >
-                        <span>📖</span>
-                        <span>Read Text</span>
-                      </button>
-                      <button
-                        onClick={() => setReflectionMode('audio')}
-                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
-                          reflectionMode === 'audio'
-                            ? 'bg-white text-[#6e3a6c] shadow-md'
-                            : 'text-gray-600 hover:text-[#6e3a6c]'
-                        }`}
-                      >
-                        <span>🔊</span>
-                        <span>Listen</span>
-                      </button>
+                  {/* Error Message */}
+                  {reflectionError && (
+                    <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4">
+                      {reflectionError}
                     </div>
+                  )}
 
-                    {/* Error Message */}
-                    {reflectionError && (
-                      <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4">
-                        {reflectionError}
+                  {/* Loading State */}
+                  {isGeneratingReflection && (
+                    <div className="text-center py-8">
+                      <div className="flex justify-center gap-2 mb-3">
+                        <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                       </div>
-                    )}
+                      <p className="text-gray-600 font-medium">{loadingMessage}</p>
+                    </div>
+                  )}
 
-                    {/* Loading State */}
-                    {isGeneratingReflection && (
-                      <div className="text-center py-8">
-                        <div className="flex justify-center gap-2 mb-3">
-                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-                        </div>
-                        <p className="text-gray-600 font-medium">{loadingMessage}</p>
-                      </div>
-                    )}
-
-                    {/* Read Text Mode */}
-                    {reflectionMode === 'text' && reflectionText && !isGeneratingReflection && (
-                      <div className="bg-white rounded-xl p-6 shadow-inner">
-                        <p className="text-gray-800 leading-relaxed whitespace-pre-line text-lg">
-                          {reflectionText}
-                        </p>
-                        <div className="mt-4 pt-4 border-t border-gray-200 text-center">
-                          <p className="text-xs text-gray-500 italic">
-                            Reflection generated by Catholic theological AI
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Listen Mode */}
-                    {reflectionMode === 'audio' && !isGeneratingReflection && (
-                      <div className="text-center">
-                        <button
-                          onClick={handlePlayAudio}
-                          disabled={isGeneratingReflection}
-                          className={`${
-                            isPlaying
-                              ? 'bg-red-500 hover:bg-red-600'
-                              : 'bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c]'
-                          } text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed`}
-                        >
-                          {isPlaying ? '⏹️ Stop' : '🔊 Listen to Reflection'}
-                        </button>
-                        <p className="text-xs text-gray-500 mt-4 italic">
-                          Narration with background music • 2-3 minutes
+                  {/* Reflection Text Display */}
+                  {showReflectionText && reflectionText && !isGeneratingReflection && (
+                    <div className="bg-white rounded-xl p-6 shadow-inner">
+                      <p className="text-gray-800 leading-relaxed whitespace-pre-line text-lg">
+                        {reflectionText}
+                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+                        <p className="text-xs text-gray-500 italic">
+                          Reflection generated by Catholic theological AI
                         </p>
                       </div>
-                    )}
-                  </div>
-                )}
+                    </div>
+                  )}
+                </div>
               </section>
 
               {/* Call to Action */}
