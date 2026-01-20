@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'About Divine Pilgrim',
-  description: 'Learn about Divine Pilgrim and our mission to spread Eucharistic devotion through virtual sacred journeys.',
+  description: 'Learn about Divine Pilgrim - AI-guided Catholic virtual pilgrimages, daily spiritual tools, and immersive sacred experiences.',
 }
 
 export default function AboutPage() {
@@ -21,71 +21,125 @@ export default function AboutPage() {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-5 pb-16">
         <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 space-y-8">
-          
-          {/* Inspired by Carlo */}
+
+          {/* What is Divine Pilgrim */}
           <section>
             <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Inspired by Blessed Carlo Acutis
+              What is Divine Pilgrim?
             </h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Divine Pilgrim is directly inspired by <strong>Blessed Carlo Acutis's</strong> incredible 
-                work cataloging Eucharistic miracles around the world. Before his death at age 15 in 2006, 
-                Carlo created a comprehensive exhibition documenting Church-approved Eucharistic miracles, 
-                driven by his profound love for the Real Presence of Jesus in the Eucharist.
+                Divine Pilgrim is an <strong>AI-guided Catholic pilgrimage platform</strong> that brings
+                sacred sites and spiritual practices into your daily life. Whether you're seeking a
+                contemplative walk through Jerusalem, daily encouragement from Scripture, or to witness
+                miraculous evidence of Christ's presence, Divine Pilgrim offers immersive experiences
+                that deepen faith and inspire wonder.
               </p>
               <p>
-                Carlo's passion for technology and his deep faith showed that computers and the internet 
-                could be powerful tools for evangelization. He famously said: <em>"The Eucharist is my 
-                highway to Heaven."</em>
-              </p>
-              <p>
-                This app continues Carlo's mission by bringing his beautiful research to life through 
-                immersive audio tours, making these miraculous testimonies of faith accessible to anyone, 
-                anywhere, at any time.
+                We believe technology can be a powerful tool for evangelization and spiritual growth.
+                By combining AI narration, Google Street View, contemplative music, and carefully curated
+                Catholic content, we create virtual pilgrimages that feel real, reverent, and transformative.
               </p>
             </div>
           </section>
 
-          {/* Mission */}
+          {/* Our Experiences */}
           <section>
             <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Our Mission
+              Our Sacred Experiences
+            </h2>
+            <div className="text-gray-700 space-y-4">
+              <div>
+                <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Blessed Carlo Acutis's research</li>
+                  <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
+                  <li><strong>Coming Soon:</strong> Marian Apparitions, Shrines of Saints, Sacred Architecture</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#6e3a6c] mb-2">Daily Spiritual Tools</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Today's Promise:</strong> Daily Bible promises with AI-generated reflections and audio narration</li>
+                  <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
+                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing Christ throughout the Hebrew Scriptures</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Technology for Good */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
+              Technology Meets Faith
             </h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Divine Pilgrim provides AI-narrated virtual pilgrimage tours of sacred sites and miracles 
-                worldwide. Our goal is to:
+                Divine Pilgrim uses cutting-edge technology to create deeply spiritual experiences:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Deepen devotion to the Real Presence of Christ in the Eucharist</li>
-                <li>Make sacred sites accessible to those who cannot physically visit them</li>
-                <li>Educate people about the historical evidence for Eucharistic miracles</li>
-                <li>Inspire faith through beautiful storytelling and technology</li>
-                <li>Continue Blessed Carlo Acutis's legacy of digital evangelization</li>
+                <li><strong>AI Narration:</strong> Natural, reverent voices bring stories to life (powered by Azure TTS)</li>
+                <li><strong>Google Street View:</strong> Stand on the actual Via Dolorosa where Jesus walked</li>
+                <li><strong>Prayer Mode:</strong> Full-screen immersive meditation with contemplative music</li>
+                <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
+                <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
+                <li><strong>Church-Approved Content:</strong> All spiritual content is based on Catholic teaching and approved sources</li>
               </ul>
             </div>
           </section>
 
-          {/* Image Credits */}
+          {/* Inspired by Blessed Carlo */}
+          <section className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6">
+            <h3 className="text-xl font-serif text-[#2C5F87] mb-3">
+              Inspired by Blessed Carlo Acutis
+            </h3>
+            <div className="text-gray-700 space-y-3">
+              <p>
+                Our Eucharistic Miracles pilgrimage is directly inspired by <strong>Blessed Carlo Acutis</strong>,
+                who before his death at age 15 in 2006, created a comprehensive exhibition documenting
+                Church-approved Eucharistic miracles worldwide. Carlo showed that technology and deep faith
+                can work together beautifully.
+              </p>
+              <p className="italic">
+                "The Eucharist is my highway to Heaven." — Blessed Carlo Acutis
+              </p>
+            </div>
+          </section>
+
+          {/* Free & Non-Commercial */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
+              Free Forever
+            </h2>
+            <div className="text-gray-700">
+              <p>
+                Divine Pilgrim is completely free and will always remain so. No ads, no subscriptions,
+                no hidden costs. This is a labor of love created to help people grow closer to Christ
+                through virtual sacred experiences. We believe spiritual resources should be freely
+                accessible to all.
+              </p>
+            </div>
+          </section>
+
+          {/* Credits */}
           <section className="border-t pt-8">
             <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Image Credits & Attribution
+              Credits & Attribution
             </h2>
-            <div className="text-gray-700 space-y-4">
+            <div className="text-gray-700 space-y-3 text-sm">
               <p>
-                All Eucharistic miracle images and historical information are courtesy of the{' '}
-                <a 
-                  href="https://www.miracolieucaristici.org" 
+                <strong>Eucharistic Miracles:</strong> Images and information courtesy of the{' '}
+                <a
+                  href="https://www.miracolieucaristici.org"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#D4AF37] hover:underline font-semibold"
                 >
-                  Carlo Acutis Eucharistic Miracles Exhibition
+                  Carlo Acutis Exhibition
                 </a>
                 {' '}and the{' '}
-                <a 
-                  href="https://www.carloacutis.com" 
+                <a
+                  href="https://www.carloacutis.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#D4AF37] hover:underline font-semibold"
@@ -94,80 +148,12 @@ export default function AboutPage() {
                 </a>.
               </p>
               <p>
-                We are deeply grateful for their permission to use these materials for Catholic
-                education and evangelization. The exhibition panels were designed and created by
-                Carlo Acutis himself as a gift to the Church. All images used on Divine Pilgrim
-                are from the <strong>free downloadable web panels</strong> made publicly available
-                by miracolieucaristici.org for educational and devotional purposes.
+                <strong>Street View:</strong> Via Dolorosa imagery powered by Google Maps Street View
               </p>
-              <p className="text-sm italic text-gray-600">
-                "The more Eucharist we receive, the more we will become like Jesus, 
-                so that on this earth we will have a foretaste of Heaven." 
-                <br />— Blessed Carlo Acutis
-              </p>
-            </div>
-          </section>
-
-          {/* How It Works */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              How It Works
-            </h2>
-            <div className="text-gray-700 space-y-4">
               <p>
-                Divine Pilgrim uses advanced AI technology to create immersive audio experiences:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>AI Narration:</strong> Each miracle story is narrated using Google Cloud Text-to-Speech with natural, reverent voices</li>
-                <li><strong>Background Music:</strong> Soft sacred music creates a prayerful atmosphere</li>
-                <li><strong>Curated Content:</strong> All information is based on Church-approved sources</li>
-                <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Free & Non-Commercial */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Free & Non-Commercial
-            </h2>
-            <div className="text-gray-700">
-              <p>
-                Divine Pilgrim is completely free and will always remain so. There are no ads, 
-                no subscriptions, and no hidden costs. This is a labor of love created to spread 
-                Eucharistic devotion and continue Carlo Acutis's mission of using technology for 
-                evangelization.
+                <strong>Background Music:</strong> Contemplative tracks courtesy of Bensound
               </p>
             </div>
-          </section>
-
-          {/* Contact */}
-          <section className="border-t pt-8">
-            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Contact Us
-            </h2>
-            <div className="text-gray-700">
-              <p>
-                Questions, suggestions, or just want to share how Divine Pilgrim has blessed you? 
-                We'd love to hear from you at:{' '}
-                <a href="mailto:info@divinepilgrim.com" className="text-[#D4AF37] hover:underline">
-                  info@divinepilgrim.com
-                </a>
-              </p>
-            </div>
-          </section>
-
-          {/* Blessed Carlo Prayer */}
-          <section className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6">
-            <h3 className="text-xl font-serif text-[#2C5F87] mb-3 text-center">
-              Prayer for Carlo Acutis's Intercession
-            </h3>
-            <p className="text-gray-700 italic text-center">
-              Blessed Carlo Acutis, you loved the Eucharist with all your heart. 
-              Intercede for us, that we too may grow in love for Jesus present 
-              in the Blessed Sacrament. Help us to use technology to spread the 
-              faith and bring souls closer to Christ. Amen.
-            </p>
           </section>
 
           {/* Back to Tours */}
