@@ -46,6 +46,12 @@ export default function Navigation() {
               Sacred Pilgrimages
             </Link>
             <Link
+              href="/#promise"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+            >
+              Today's Promise
+            </Link>
+            <Link
               href="/challenge"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
