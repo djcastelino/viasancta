@@ -71,9 +71,9 @@ export default function JesusInOTPage() {
     setReflectionMode('text'); // Default to text mode
   };
 
-  // Generate reflection text
-  const handleGenerateReflectionText = async () => {
-    if (!todaysEntry) return;
+  // Generate reflection (always gets both text and audio)
+  const handleGenerateReflection = async () => {
+    if (!todaysEntry || reflectionText) return; // Skip if already generated
 
     setIsGeneratingReflection(true);
     setReflectionError('');
@@ -84,13 +84,16 @@ export default function JesusInOTPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          entry: todaysEntry,
-          includeAudio: false
+          entry: todaysEntry
         })
       });
 
       const data = await response.json();
       setReflectionText(data.reflectionText);
+      // Store audio URL in state for later use
+      if (data.audioUrl) {
+        audioRef.current = new Audio(data.audioUrl);
+      }
     } catch (error) {
       console.error('Error generating reflection:', error);
       setReflectionError('Failed to generate reflection. Please try again.');
@@ -100,15 +103,17 @@ export default function JesusInOTPage() {
     }
   };
 
-  // Generate reflection with audio
+  // Play audio reflection
   const handlePlayAudio = async () => {
-    if (!todaysEntry) return;
+    if (!audioRef.current) {
+      setReflectionError('Audio not available. Please try refreshing.');
+      return;
+    }
 
-    if (isPlaying && audioRef.current) {
+    if (isPlaying) {
       // Stop playback
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
-      audioRef.current = null;
 
       if (backgroundMusicRef.current) {
         backgroundMusicRef.current.pause();
@@ -117,37 +122,10 @@ export default function JesusInOTPage() {
       }
 
       setIsPlaying(false);
-      setLoadingMessage('');
       return;
     }
 
-    setIsGeneratingReflection(true);
-    setReflectionError('');
-    setLoadingMessage('Generating reflection...');
-
     try {
-      const response = await fetch('/api/jesus-ot-reflection', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          entry: todaysEntry,
-          includeAudio: true
-        })
-      });
-
-      const data = await response.json();
-
-      if (!data.audioUrl) {
-        setReflectionError('Audio generation failed. Please try again.');
-        return;
-      }
-
-      setLoadingMessage('Creating audio...');
-
-      // Create audio element
-      const audio = new Audio(data.audioUrl);
-      audioRef.current = audio;
-
       // Start background music
       const musicIndex = Math.floor(Math.random() * musicOptions.length);
       const bgMusic = new Audio(musicOptions[musicIndex]);
@@ -166,18 +144,16 @@ export default function JesusInOTPage() {
       await new Promise(resolve => setTimeout(resolve, 300));
 
       // Play narration
-      audio.play();
+      audioRef.current.play();
       setIsPlaying(true);
-      setIsGeneratingReflection(false);
-      setLoadingMessage('');
 
       // Handle audio end
-      audio.onended = () => {
+      audioRef.current.onended = () => {
         fadeOutMusic();
         setIsPlaying(false);
       };
 
-      audio.onerror = () => {
+      audioRef.current.onerror = () => {
         setReflectionError('Audio playback failed.');
         setIsPlaying(false);
         if (backgroundMusicRef.current) {
@@ -188,8 +164,6 @@ export default function JesusInOTPage() {
     } catch (error) {
       console.error('Error playing audio:', error);
       setReflectionError('Failed to play audio. Please try again.');
-      setIsGeneratingReflection(false);
-      setLoadingMessage('');
     }
   };
 
@@ -243,7 +217,7 @@ export default function JesusInOTPage() {
   // Handle mode switch
   useEffect(() => {
     if (reflectionMode === 'text' && !reflectionText && !isGeneratingReflection) {
-      handleGenerateReflectionText();
+      handleGenerateReflection();
     }
   }, [reflectionMode]);
 

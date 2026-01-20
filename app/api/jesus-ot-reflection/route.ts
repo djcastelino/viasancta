@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { entry, includeAudio = false } = body;
+    const { entry } = body;
 
     // Validate entry data
     if (!entry || !entry.title || !entry.reference) {
@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Call n8n workflow webhook
+    // Call n8n workflow webhook (always generates audio)
     const n8nWebhookUrl = 'https://workflowly.online/webhook/jesus-in-ot-reflection';
 
     const response = await fetch(n8nWebhookUrl, {
@@ -26,8 +26,7 @@ export async function POST(request: NextRequest) {
         reference: entry.otReference,
         otText: entry.otText,
         historicalContext: entry.historicalContext,
-        howItPointsToJesus: entry.howItPointsToJesus,
-        includeAudio: includeAudio
+        howItPointsToJesus: entry.howItPointsToJesus
       }),
     });
 

@@ -14,62 +14,16 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "title",
-              "name": "title",
-              "value": "={{ $json.body.title }}",
-              "type": "string"
-            },
-            {
-              "id": "reference",
-              "name": "reference",
-              "value": "={{ $json.body.reference }}",
-              "type": "string"
-            },
-            {
-              "id": "otText",
-              "name": "otText",
-              "value": "={{ $json.body.otText }}",
-              "type": "string"
-            },
-            {
-              "id": "historicalContext",
-              "name": "historicalContext",
-              "value": "={{ $json.body.historicalContext }}",
-              "type": "string"
-            },
-            {
-              "id": "howItPointsToJesus",
-              "name": "howItPointsToJesus",
-              "value": "={{ $json.body.howItPointsToJesus }}",
-              "type": "string"
-            },
-            {
-              "id": "includeAudio",
-              "name": "includeAudio",
-              "value": "={{ $json.body.includeAudio || false }}",
-              "type": "boolean"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Extract Entry Data",
-      "type": "n8n-nodes-base.set",
-      "position": [450, 300]
-    },
-    {
-      "parameters": {
         "model": "llama-3.3-70b-versatile",
         "messages": {
           "messageValues": [
             {
-              "message": "=You are a warm, reverent Catholic theologian and spiritual guide. Your role is to help the faithful encounter Jesus Christ in the Old Testament through thoughtful, accessible reflections that connect ancient Scripture to modern Catholic life. You speak with the wisdom of the Church Fathers, the clarity of the Catechism, and the heart of a pastor who loves souls. Your reflections illuminate how the Old Testament prepares for and reveals Christ, helping believers see the unity of God's plan of salvation across both Testaments."
+              "role": "system",
+              "message": "You are a warm, reverent Catholic theologian and spiritual guide. Your role is to help the faithful encounter Jesus Christ in the Old Testament through thoughtful, accessible reflections that connect ancient Scripture to modern Catholic life. You speak with the wisdom of the Church Fathers, the clarity of the Catechism, and the heart of a pastor who loves souls."
             },
             {
-              "message": "=Create a thoughtful 2-3 minute reflection on how this Old Testament passage points to Jesus Christ.\n\nPASSAGE TITLE: {{ $json.title }}\nREFERENCE: {{ $json.reference }}\nSCRIPTURE TEXT: {{ $json.otText }}\nHISTORICAL CONTEXT: {{ $json.historicalContext }}\nHOW IT POINTS TO JESUS: {{ $json.howItPointsToJesus }}\n\nGuidelines:\n1. Begin with wonder at God's providence in revealing Christ throughout Scripture\n2. Explain the typology or prophecy in accessible, beautiful language\n3. Connect to the Mass, sacraments, or Catholic devotional life where relevant\n4. Show how this deepens our understanding of who Jesus is and what He accomplished\n5. End with a practical invitation to encounter Jesus today through this truth\n6. Aim for 250-350 words (2-3 minutes when spoken aloud)\n7. Use \"you\" and \"we\" to make it personal and engaging\n8. Reverent but warm tone - like a beloved priest giving a homily\n9. Avoid academic jargon; write for everyday Catholics\n10. Let the beauty and depth of Catholic theology shine through\n\nGenerate the reflection now:"
+              "role": "user",
+              "message": "=Create a thoughtful 2-3 minute reflection on how this Old Testament passage points to Jesus Christ.\n\nPASSAGE: {{ $json.body.title }}\nREFERENCE: {{ $json.body.reference }}\nTEXT: {{ $json.body.otText }}\nCONTEXT: {{ $json.body.historicalContext }}\nHOW IT POINTS TO JESUS: {{ $json.body.howItPointsToJesus }}\n\nGuidelines:\n1. Begin with wonder at God's providence in revealing Christ throughout Scripture\n2. Explain the typology or prophecy in accessible, beautiful language\n3. Connect to the Mass, sacraments, or Catholic devotional life where relevant\n4. End with a practical invitation to encounter Jesus today\n5. Aim for 250-350 words (2-3 minutes spoken)\n6. Use \"you\" and \"we\" to make it personal\n7. Reverent but warm tone - like a beloved priest giving a homily\n8. Write for everyday Catholics\n\nGenerate the reflection now:"
             }
           ]
         },
@@ -80,185 +34,44 @@
       },
       "name": "Groq - Generate Reflection",
       "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
-      "credentials": {
-        "groqApi": {
-          "id": "YOUR_GROQ_CREDENTIAL_ID",
-          "name": "Groq API"
-        }
-      },
-      "position": [650, 300]
+      "position": [450, 300]
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "reflectionText",
-              "name": "reflectionText",
-              "value": "={{ $json.response.content }}",
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "name": "Extract Reflection Text",
-      "type": "n8n-nodes-base.set",
-      "position": [850, 300]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "boolean": [
-            {
-              "value1": "={{ $json.includeAudio }}",
-              "value2": true
-            }
-          ]
-        }
-      },
-      "name": "Check if Audio Requested",
-      "type": "n8n-nodes-base.if",
-      "position": [1050, 300]
-    },
-    {
-      "parameters": {
-        "jsCode": "// Rotate through 4 Azure voices based on entry ID hash\nconst entryTitle = $input.first().json.title || '';\nconst hashCode = entryTitle.split('').reduce((acc, char) => {\n  return ((acc << 5) - acc) + char.charCodeAt(0);\n}, 0);\n\nconst voices = [\n  'en-US-AndrewMultilingualNeural',\n  'en-US-AvaMultilingualNeural', \n  'en-US-EricNeural',\n  'en-US-JennyMultilingualNeural'\n];\n\nconst voiceIndex = Math.abs(hashCode) % voices.length;\nconst selectedVoice = voices[voiceIndex];\n\nreturn {\n  voice: selectedVoice,\n  text: $input.first().json.reflectionText\n};"
-      },
-      "name": "Select Voice (Rotate 4 Voices)",
-      "type": "n8n-nodes-base.code",
-      "position": [1250, 200]
-    },
-    {
-      "parameters": {
-        "voice": "={{ $json.voice }}",
-        "text": "={{ $json.text }}",
+        "voice": "en-US-AndrewMultilingualNeural",
+        "text": "={{ $json.message.content }}",
         "options": {
-          "rate": 0.95,
+          "rate": "0.95",
           "format": "audio-16khz-32kbitrate-mono-mp3"
         }
       },
       "name": "Azure Text-to-Speech",
       "type": "n8n-nodes-base.microsoftAzure.textToSpeech",
-      "credentials": {
-        "microsoftAzureApi": {
-          "id": "YOUR_AZURE_CREDENTIAL_ID",
-          "name": "Azure Speech Services"
-        }
-      },
-      "position": [1450, 200]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "audioData",
-              "name": "audioData",
-              "value": "={{ $binary.data }}",
-              "type": "string"
-            },
-            {
-              "id": "audioUrl",
-              "name": "audioUrl",
-              "value": "=data:audio/mpeg;base64,{{ $binary.data.toString('base64') }}",
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "name": "Format Audio Response",
-      "type": "n8n-nodes-base.set",
-      "position": [1650, 200]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "reflectionText",
-              "name": "reflectionText",
-              "value": "={{ $('Extract Reflection Text').item.json.reflectionText }}",
-              "type": "string"
-            },
-            {
-              "id": "audioUrl",
-              "name": "audioUrl",
-              "value": "={{ $json.audioUrl }}",
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "name": "Combine Text + Audio",
-      "type": "n8n-nodes-base.set",
-      "position": [1850, 200]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "reflectionText",
-              "name": "reflectionText",
-              "value": "={{ $json.reflectionText }}",
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "name": "Text Only Response",
-      "type": "n8n-nodes-base.set",
-      "position": [1250, 400]
+      "position": [650, 300]
     },
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={{ $json }}"
+        "responseBody": "={{ { \"reflectionText\": $('Groq - Generate Reflection').item.json.message.content, \"audioUrl\": \"data:audio/mpeg;base64,\" + $binary.data.toString('base64') } }}"
       },
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
-      "position": [2050, 300]
+      "position": [850, 300]
     }
   ],
   "connections": {
     "Webhook": {
-      "main": [[{ "node": "Extract Entry Data", "type": "main", "index": 0 }]]
-    },
-    "Extract Entry Data": {
       "main": [[{ "node": "Groq - Generate Reflection", "type": "main", "index": 0 }]]
     },
     "Groq - Generate Reflection": {
-      "main": [[{ "node": "Extract Reflection Text", "type": "main", "index": 0 }]]
-    },
-    "Extract Reflection Text": {
-      "main": [[{ "node": "Check if Audio Requested", "type": "main", "index": 0 }]]
-    },
-    "Check if Audio Requested": {
-      "main": [
-        [{ "node": "Select Voice (Rotate 4 Voices)", "type": "main", "index": 0 }],
-        [{ "node": "Text Only Response", "type": "main", "index": 0 }]
-      ]
-    },
-    "Select Voice (Rotate 4 Voices)": {
       "main": [[{ "node": "Azure Text-to-Speech", "type": "main", "index": 0 }]]
     },
     "Azure Text-to-Speech": {
-      "main": [[{ "node": "Format Audio Response", "type": "main", "index": 0 }]]
-    },
-    "Format Audio Response": {
-      "main": [[{ "node": "Combine Text + Audio", "type": "main", "index": 0 }]]
-    },
-    "Combine Text + Audio": {
-      "main": [[{ "node": "Respond to Webhook", "type": "main", "index": 0 }]]
-    },
-    "Text Only Response": {
       "main": [[{ "node": "Respond to Webhook", "type": "main", "index": 0 }]]
     }
   },
   "settings": {},
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2024-01-19T00:00:00.000Z",
-  "versionId": "1"
+  "triggerCount": 1
 }
