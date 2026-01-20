@@ -12,7 +12,9 @@ This workflow generates thoughtful Catholic theological reflections on "Jesus in
 
 **Model**: Llama 3.3 70B Versatile (Groq)
 
-**Voice**: Rotates through 4 Azure Neural Voices based on entry title hash
+**Voice**: Andrew Multilingual Neural (can be changed directly in Azure TTS node)
+
+**Nodes**: 4 (Webhook → Groq → Azure TTS → Respond)
 
 ## System Message
 
@@ -52,36 +54,22 @@ Generate the reflection now:
 - **Temperature**: 0.7 (creative but coherent)
 - **Max Tokens**: 500 (allows for 250-350 word reflections)
 
-## Voice Selection Logic
+## Voice Selection
 
-Rotates through 4 Azure Neural voices using a hash of the entry title:
+Voice is set directly in the Azure TTS node: `en-US-AndrewMultilingualNeural`
 
-```javascript
-const hashCode = entryTitle.split('').reduce((acc, char) => {
-  return ((acc << 5) - acc) + char.charCodeAt(0);
-}, 0);
-
-const voices = [
-  'en-US-AndrewMultilingualNeural',  // Male, warm
-  'en-US-AvaMultilingualNeural',     // Female, clear
-  'en-US-EricNeural',                // Male, authoritative
-  'en-US-JennyMultilingualNeural'    // Female, friendly
-];
-
-const voiceIndex = Math.abs(hashCode) % voices.length;
-```
-
-This ensures:
-- Variety across different entries
-- Consistency for the same entry
-- Natural distribution across voices
+You can change the voice in n8n by editing the Azure TTS node settings. Popular options:
+- `en-US-AndrewMultilingualNeural` - Male, warm (current)
+- `en-US-AvaMultilingualNeural` - Female, clear
+- `en-US-EricNeural` - Male, authoritative
+- `en-US-JennyMultilingualNeural` - Female, friendly
 
 ## Azure TTS Settings
 
-- **Voice**: Dynamically selected (see above)
+- **Voice**: `en-US-AndrewMultilingualNeural` (set in node)
 - **Speaking Rate**: 0.95 (5% slower for meditation)
 - **Format**: `audio-16khz-32kbitrate-mono-mp3`
-- **Output**: Base64-encoded MP3 or data URL
+- **Output**: Base64-encoded data URL
 
 ## Request Format
 
@@ -91,8 +79,7 @@ This ensures:
   "reference": "Genesis 3:15",
   "otText": "I will put enmity between you and the woman...",
   "historicalContext": "Immediately after Adam and Eve's sin...",
-  "howItPointsToJesus": "This is called the 'Protoevangelium'...",
-  "includeAudio": true
+  "howItPointsToJesus": "This is called the 'Protoevangelium'..."
 }
 ```
 
@@ -102,18 +89,13 @@ This ensures:
 - `otText` (required): The Old Testament verse text
 - `historicalContext` (required): Historical background
 - `howItPointsToJesus` (required): Explanation of Christological connection
-- `includeAudio` (optional, default: false): Whether to generate TTS audio
+
+**Note**: Workflow always generates both text and audio. Frontend uses what it needs based on mode.
 
 ## Response Format
 
-### Text Only (includeAudio: false)
-```json
-{
-  "reflectionText": "How marvelous is God's providence..."
-}
-```
+Always returns both text and audio:
 
-### Text + Audio (includeAudio: true)
 ```json
 {
   "reflectionText": "How marvelous is God's providence...",
@@ -123,17 +105,14 @@ This ensures:
 
 ## Workflow Nodes
 
-1. **Webhook** - Receives POST request
-2. **Extract Entry Data** - Parses request body
-3. **Groq - Generate Reflection** - Creates theological reflection
-4. **Extract Reflection Text** - Gets text from Groq response
-5. **Check if Audio Requested** - Branches based on `includeAudio`
-6. **Select Voice** - Rotates through 4 voices (if audio requested)
-7. **Azure Text-to-Speech** - Converts text to audio (if audio requested)
-8. **Format Audio Response** - Creates base64 data URL (if audio requested)
-9. **Combine Text + Audio** - Merges both outputs (if audio requested)
-10. **Text Only Response** - Returns just text (if no audio requested)
-11. **Respond to Webhook** - Returns final JSON
+**Simple 4-node structure** (same pattern as promise narration):
+
+1. **Webhook** - Receives POST request with entry data
+2. **Groq - Generate Reflection** - Creates theological reflection using Llama 3.3 70B
+3. **Azure Text-to-Speech** - Converts reflection text to audio MP3
+4. **Respond to Webhook** - Returns JSON with reflectionText and audioUrl
+
+**That's it!** No branching, no voice selection code, no conditional logic. Just a simple pipeline.
 
 ## Fallback Behavior
 
@@ -158,16 +137,16 @@ curl -X POST https://workflowly.online/webhook/jesus-in-ot-reflection \
     "reference": "Genesis 3:15",
     "otText": "I will put enmity between you and the woman, and between your offspring and hers; They will strike at your head, while you strike at their heel.",
     "historicalContext": "Immediately after Adam and Eve'\''s sin, God spoke these words to the serpent.",
-    "howItPointsToJesus": "This is called the '\''Protoevangelium'\'' - the first gospel. God promises that a descendant of '\''the woman'\'' (Mary) will crush Satan'\''s head.",
-    "includeAudio": false
+    "howItPointsToJesus": "This is called the '\''Protoevangelium'\'' - the first gospel. God promises that a descendant of '\''the woman'\'' (Mary) will crush Satan'\''s head."
   }'
 ```
 
-### Expected Output (Text Only)
+### Expected Output
 
 ```json
 {
-  "reflectionText": "How marvelous is God's providence that even in the moment of humanity's greatest tragedy—the Fall—He already spoke His first word of hope. This promise in Genesis 3:15, known as the Protoevangelium or 'first gospel,' is the seed from which the entire plan of redemption would grow...[continues for 250-350 words]"
+  "reflectionText": "How marvelous is God's providence that even in the moment of humanity's greatest tragedy—the Fall—He already spoke His first word of hope. This promise in Genesis 3:15, known as the Protoevangelium or 'first gospel,' is the seed from which the entire plan of redemption would grow...[continues for 250-350 words]",
+  "audioUrl": "data:audio/mpeg;base64,..."
 }
 ```
 
@@ -180,13 +159,13 @@ const response = await fetch('/api/jesus-ot-reflection', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    entry: todaysEntry,
-    includeAudio: true // or false
+    entry: todaysEntry
   })
 });
 
 const data = await response.json();
-// Returns: { reflectionText, audioUrl }
+// Always returns: { reflectionText, audioUrl }
+// Frontend uses text for "Read Text" mode, audio for "Listen" mode
 ```
 
 ## Example Reflections
@@ -206,7 +185,9 @@ const data = await response.json();
 
 - Reflections are dynamically generated, never cached
 - Same entry may produce slightly different reflections each time (temperature: 0.7)
-- Voice selection is deterministic based on title hash
+- Always generates both text and audio (simple, no branching)
 - Audio generation adds ~6-8 seconds to response time
 - Speaking rate of 0.95 provides a contemplative pace
 - Background music is handled by frontend, not workflow
+- Voice can be changed directly in n8n Azure TTS node
+- Simple 4-node workflow matches promise narration pattern
