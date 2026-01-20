@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Script from 'next/script';
 import stations from '@/src/stations-of-the-cross.json';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
@@ -36,6 +37,8 @@ export default function StationsOfTheCross() {
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const streetViewRef = useRef<HTMLDivElement>(null);
+  const [mapsLoaded, setMapsLoaded] = useState(false);
+  const panoramaRef = useRef<any>(null);
 
   // Music options
   const musicOptions = [
@@ -43,23 +46,34 @@ export default function StationsOfTheCross() {
     'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
   ];
 
-  // Initialize Google Maps Street View
+  // Initialize Google Maps Street View when maps loads and station changes
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).google && streetViewRef.current) {
-      const panorama = new (window as any).google.maps.StreetViewPanorama(
-        streetViewRef.current,
-        {
-          position: { lat: currentStation.location.lat, lng: currentStation.location.lng },
-          pov: { heading: 100, pitch: 0 },
-          zoom: 1,
-          addressControl: false,
-          linksControl: true,
-          panControl: true,
-          enableCloseButton: false,
-        }
-      );
+    if (mapsLoaded && streetViewRef.current && (window as any).google) {
+      console.log('Initializing Street View for station:', currentStation.number, 'at', currentStation.location.lat, currentStation.location.lng);
+
+      // Create or update panorama
+      if (!panoramaRef.current) {
+        panoramaRef.current = new (window as any).google.maps.StreetViewPanorama(
+          streetViewRef.current,
+          {
+            position: { lat: currentStation.location.lat, lng: currentStation.location.lng },
+            pov: { heading: 100, pitch: 0 },
+            zoom: 1,
+            addressControl: false,
+            linksControl: true,
+            panControl: true,
+            enableCloseButton: false,
+          }
+        );
+      } else {
+        // Update existing panorama position
+        panoramaRef.current.setPosition({
+          lat: currentStation.location.lat,
+          lng: currentStation.location.lng
+        });
+      }
     }
-  }, [currentStation]);
+  }, [currentStation, mapsLoaded]);
 
   const handleStationChange = (station: Station) => {
     setCurrentStation(station);
@@ -256,7 +270,20 @@ export default function StationsOfTheCross() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+    <>
+      {/* Load Google Maps Script */}
+      <Script
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
+        onLoad={() => {
+          console.log('Google Maps loaded successfully');
+          setMapsLoaded(true);
+        }}
+        onError={(e) => {
+          console.error('Error loading Google Maps:', e);
+        }}
+      />
+
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-5">
@@ -452,12 +479,7 @@ export default function StationsOfTheCross() {
         </div>
       </div>
 
-      {/* Google Maps Script */}
-      <script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
-        async
-        defer
-      />
-    </main>
+      </main>
+    </>
   );
 }
