@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "psalmNumber": 23,
+    "title": "The Lord is My Shepherd",
+    "verses": [
+      "The Lord is my shepherd; there is nothing I lack.",
+      "In green pastures he makes me lie down; to still waters he leads me; he restores my soul.",
+      "He guides me along right paths for the sake of his name.",
+      "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff comfort me.",
+      "You set a table before me in front of my enemies; You anoint my head with oil; my cup overflows.",
+      "Indeed, goodness and mercy will pursue me all the days of my life; I will dwell in the house of the Lord for endless days."
+    ],
+    "reference": "Psalm 23",
+    "theme": "Trust in God's Providence"
+  },
+  {
+    "id": 2,
+    "psalmNumber": 100,
+    "title": "Joyful Shout to the Lord",
+    "verses": [
+      "Shout joyfully to the Lord, all you lands; serve the Lord with gladness; come before him with joyful song.",
+      "Know that the Lord is God, he made us, we belong to him, we are his people, the flock he shepherds.",
+      "Enter his gates with thanksgiving, his courts with praise. Give thanks to him, bless his name.",
+      "For the Lord is good, his mercy endures forever, his faithfulness lasts through every generation."
+    ],
+    "reference": "Psalm 100",
+    "theme": "Praise and Thanksgiving"
+  },
+  {
+    "id": 3,
+    "psalmNumber": 51,
+    "title": "Prayer of Repentance",
+    "verses": [
+      "Have mercy on me, God, in accord with your merciful love; in your abundant compassion blot out my transgressions.",
+      "Thoroughly wash away my guilt; and from my sin cleanse me.",
+      "For I know my transgressions; my sin is always before me.",
+      "Against you, you alone have I sinned; I have done what is evil in your eyes.",
+      "A clean heart create for me, God; renew within me a steadfast spirit.",
+      "Do not drive me from before your face, nor take from me your holy spirit.",
+      "Restore to me the gladness of your salvation; uphold me with a willing spirit."
+    ],
+    "reference": "Psalm 51:1-4, 12-14",
+    "theme": "Repentance and Renewal"
+  },
+  {
+    "id": 4,
+    "psalmNumber": 103,
+    "title": "Praise of Divine Goodness",
+    "verses": [
+      "Bless the Lord, my soul; all my being, bless his holy name!",
+      "Bless the Lord, my soul; and do not forget all his gifts.",
+      "Who pardons all your sins, and heals all your ills.",
+      "Who redeems your life from the pit, and crowns you with mercy and compassion.",
+      "Merciful and gracious is the Lord, slow to anger, abounding in mercy.",
+      "He will not always accuse, and nurses no lasting anger.",
+      "He has not dealt with us as our sins merit, nor requited us as our wrongs deserve.",
+      "As the heavens tower over the earth, so his mercy towers over those who fear him."
+    ],
+    "reference": "Psalm 103:1-4, 8-11",
+    "theme": "God's Mercy"
+  },
+  {
+    "id": 5,
+    "psalmNumber": 63,
+    "title": "Ardent Longing for God",
+    "verses": [
+      "O God, you are my God; it is you I seek! For you my body yearns; for you my soul thirsts.",
+      "In a land parched, lifeless, and without water.",
+      "I look to you in the sanctuary to see your power and glory.",
+      "For your love is better than life; my lips shall ever praise you!",
+      "I will bless you as long as I live; I will lift up my hands, calling on your name.",
+      "My soul shall be sated as with choice food, with joyous lips my mouth shall praise you!"
+    ],
+    "reference": "Psalm 63:2-6",
+    "theme": "Longing for God"
+  },
+  {
+    "id": 6,
+    "psalmNumber": 91,
+    "title": "Security Under God's Protection",
+    "verses": [
+      "You who dwell in the shelter of the Most High, who abide in the shade of the Almighty.",
+      "Say to the Lord, 'My refuge and fortress, my God in whom I trust.'",
+      "He will rescue you from the fowler's snare, from the destroying plague.",
+      "He will shelter you with his pinions, and under his wings you may take refuge; his faithfulness is a protecting shield.",
+      "You shall not fear the terror of the night nor the arrow that flies by day.",
+      "No evil shall befall you, no affliction come near your tent.",
+      "For he commands his angels with regard to you, to guard you wherever you go."
+    ],
+    "reference": "Psalm 91:1-5, 10-11",
+    "theme": "Divine Protection"
+  },
+  {
+    "id": 7,
+    "psalmNumber": 27,
+    "title": "Trust in God",
+    "verses": [
+      "The Lord is my light and my salvation; whom should I fear? The Lord is my life's refuge; of whom should I be afraid?",
+      "One thing I ask of the Lord; this I seek: To dwell in the Lord's house all the days of my life.",
+      "To gaze on the Lord's beauty, to visit his temple.",
+      "For God will hide me in his shelter in time of trouble; He will conceal me in the cover of his tent; and set me high upon a rock.",
+      "Hear my voice, Lord, when I call; have mercy on me and answer me.",
+      "Do not hide your face from me; do not repel your servant in anger. You are my salvation; do not cast me off."
+    ],
+    "reference": "Psalm 27:1, 4-5, 7, 9",
+    "theme": "Seeking God's Presence"
+  }
+]
