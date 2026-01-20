@@ -32,7 +32,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             <Link
               href="/"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
@@ -47,19 +47,19 @@ export default function Navigation() {
             </Link>
             <Link
               href="/#promise"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Today's Promise
             </Link>
             <Link
               href="/challenge"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Daily Challenge
             </Link>
             <Link
               href="/jesus-in-ot"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Jesus in the Old Testament
             </Link>
@@ -68,12 +68,6 @@ export default function Navigation() {
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
               About
-            </Link>
-            <Link
-              href="/tours/eucharistic-miracles"
-              className="bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105 shadow-md hover:shadow-xl"
-            >
-              Start Journey →
             </Link>
           </div>
 

@@ -72,9 +72,6 @@ export default function Home() {
 
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row items-center gap-8">
-                  {/* Icon/Badge */}
-                  <div className="text-8xl">📖</div>
-
                   {/* Content */}
                   <div className="flex-1 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
