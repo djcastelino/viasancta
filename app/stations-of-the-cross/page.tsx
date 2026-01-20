@@ -33,9 +33,11 @@ export default function StationsOfTheCross() {
   const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
   const [isPrayerMode, setIsPrayerMode] = useState(false);
+  const [showMusicPrompt, setShowMusicPrompt] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+  const prayerMusicRef = useRef<HTMLAudioElement | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   const googleMapRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
@@ -47,6 +49,9 @@ export default function StationsOfTheCross() {
     'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
   ];
 
+  // Prayer Mode background music
+  const prayerMusicUrl = 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3';
+
   const handleStationChange = (station: Station) => {
     setCurrentStation(station);
     setShowText(false);
@@ -55,6 +60,54 @@ export default function StationsOfTheCross() {
       handleStop();
     }
   };
+
+  // Handle Prayer Mode music
+  const startPrayerMusic = () => {
+    if (!prayerMusicRef.current) {
+      const music = new Audio(prayerMusicUrl);
+      music.loop = true;
+      music.volume = 0;
+      prayerMusicRef.current = music;
+
+      music.play().then(() => {
+        setShowMusicPrompt(false);
+        // Fade in
+        const fadeInterval = setInterval(() => {
+          if (music.volume < 0.15) {
+            music.volume = Math.min(music.volume + 0.01, 0.15);
+          } else {
+            clearInterval(fadeInterval);
+          }
+        }, 100);
+      }).catch(err => {
+        console.log('Prayer music autoplay prevented, showing prompt');
+        setShowMusicPrompt(true);
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (isPrayerMode) {
+      // Try to start music automatically
+      startPrayerMusic();
+    } else {
+      // Fade out and stop prayer music when exiting
+      setShowMusicPrompt(false);
+      if (prayerMusicRef.current) {
+        const music = prayerMusicRef.current;
+        const fadeInterval = setInterval(() => {
+          if (music.volume > 0.01) {
+            music.volume = Math.max(music.volume - 0.01, 0);
+          } else {
+            music.pause();
+            music.currentTime = 0;
+            prayerMusicRef.current = null;
+            clearInterval(fadeInterval);
+          }
+        }, 100);
+      }
+    }
+  }, [isPrayerMode]);
 
   // Initialize interactive Google Map with all station markers
   useEffect(() => {
@@ -491,6 +544,16 @@ export default function StationsOfTheCross() {
                     className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all pointer-events-auto"
                   >
                     Exit Prayer Mode
+                  </button>
+                )}
+
+                {/* Music Prompt (if autoplay blocked) */}
+                {isPrayerMode && showMusicPrompt && (
+                  <button
+                    onClick={startPrayerMusic}
+                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-purple-600/90 hover:bg-purple-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all pointer-events-auto shadow-lg animate-pulse"
+                  >
+                    🎵 Enable Background Music
                   </button>
                 )}
               </div>
