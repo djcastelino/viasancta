@@ -40,10 +40,10 @@ export default function Navigation() {
               Home
             </Link>
             <Link
-              href="/tours/eucharistic-miracles"
+              href="/#tours"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
-              Eucharistic Miracles
+              Sacred Pilgrimages
             </Link>
             <Link
               href="/challenge"
@@ -55,7 +55,7 @@ export default function Navigation() {
               href="/jesus-in-ot"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
-              Jesus in the OT
+              Jesus in the Old Testament
             </Link>
             <Link
               href="/about"

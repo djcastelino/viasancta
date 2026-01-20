@@ -73,7 +73,7 @@ export default function Home() {
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   {/* Icon/Badge */}
-                  <div className="text-8xl">🎯</div>
+                  <div className="text-8xl">📖</div>
 
                   {/* Content */}
                   <div className="flex-1 text-center md:text-left">
@@ -91,7 +91,7 @@ export default function Home() {
                     </h2>
                     <p className="text-white/90 text-lg mb-4 leading-relaxed">
                       Test your biblical knowledge with 6 clues! Can you guess today's biblical character, event, or miracle?
-                      Build your streak and compete with yourself! 🎯
+                      Build your streak and compete with yourself!
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Tours Section */}
-      <section className="max-w-7xl mx-auto px-5 pb-20">
+      <section id="tours" className="max-w-7xl mx-auto px-5 pb-20">
         <h2 className="text-3xl font-serif text-[#2C5F87] mb-8">
           Sacred Pilgrimage Tours
         </h2>
