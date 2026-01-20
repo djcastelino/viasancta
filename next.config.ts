@@ -5,6 +5,7 @@ import withPWA from 'next-pwa';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  reactStrictMode: false, // Temporarily disable to prevent double-mounting in dev
 };
 
 export default withPWA({

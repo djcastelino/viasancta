@@ -59,67 +59,6 @@ export default function Home() {
       {/* Jesus in the OT Section */}
       <JesusInOT />
 
-      {/* Stations of the Cross Section */}
-      <section className="max-w-7xl mx-auto px-5 py-8">
-        <Link href="/stations-of-the-cross" className="block group">
-          <div className="bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-900 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-            <div className="p-8 md:p-12 text-white relative">
-              {/* Decorative background pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
-              </div>
-
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  {/* Icon/Badge */}
-                  <div className="text-8xl">✝️</div>
-
-                  {/* Content */}
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                      <span className="bg-yellow-500 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
-                        VIRTUAL PILGRIMAGE
-                      </span>
-                      <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
-                        IMMERSIVE
-                      </span>
-                    </div>
-
-                    <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif">
-                      Stations of the Cross
-                    </h2>
-                    <p className="text-white/90 text-lg mb-4 leading-relaxed">
-                      Walk the Via Dolorosa in Jerusalem with Google Street View. Stand where Jesus walked, see the actual streets, and pray the 14 stations with audio meditations. 🗺️
-                    </p>
-
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">🌍</span>
-                        <span>360° Street View</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">🎧</span>
-                        <span>Audio Meditations</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">📖</span>
-                        <span>Traditional Prayers</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Arrow indicator */}
-                  <div className="text-4xl group-hover:translate-x-2 transition-transform">
-                    →
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Link>
-      </section>
-
       {/* Daily Scripture Challenge Section */}
       <section className="max-w-7xl mx-auto px-5 py-8">
         <Link href="/challenge" className="block group">
@@ -279,40 +218,46 @@ export default function Home() {
           </div>
 
           {/* Stations of the Cross */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-            <div className="h-60 relative overflow-hidden">
-              {/* Calvary at Burzet from Wikimedia Commons */}
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_calvaire_%C3%A0_Burzet.jpg/800px-Le_calvaire_%C3%A0_Burzet.jpg"
-                alt="Calvary at Burzet"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-3xl font-bold drop-shadow-md">
-                  Stations of the Cross
-                </h3>
-              </div>
-            </div>
-            <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">14</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~2 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
+          <Link href="/stations-of-the-cross" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              <div className="h-60 relative overflow-hidden">
+                {/* Calvary at Burzet from Wikimedia Commons */}
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_calvaire_%C3%A0_Burzet.jpg/800px-Le_calvaire_%C3%A0_Burzet.jpg"
+                  alt="Calvary at Burzet"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>✝️</span>
+                    <span>The Via Dolorosa</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Stations of the Cross
+                  </h3>
                 </div>
               </div>
-              <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Walk the Way of the Cross with meditative reflections on Christ's Passion and AI-guided contemplation.
-              </p>
-              <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
-                Coming Soon
-              </span>
+              <div className="p-7">
+                <div className="flex gap-6 mb-5">
+                  <div>
+                    <div className="text-3xl font-bold text-[#D4AF37]">14</div>
+                    <div className="text-sm text-gray-500">Sacred Stops</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-bold text-[#D4AF37]">~2 hours</div>
+                    <div className="text-sm text-gray-500">Estimated Time</div>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Walk the Via Dolorosa in Jerusalem with <span className="font-semibold text-[#2C5F87]">Google Street View</span>. Experience the actual path Jesus walked with immersive prayer mode and audio meditations.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Shrines of Saints */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">

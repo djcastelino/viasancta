@@ -32,48 +32,20 @@ export default function StationsOfTheCross() {
   const [isGeneratingAudio, setIsGeneratingAudio] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
+  const [isPrayerMode, setIsPrayerMode] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-  const streetViewRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const googleMapRef = useRef<any>(null);
+  const markersRef = useRef<any[]>([]);
   const [mapsLoaded, setMapsLoaded] = useState(false);
-  const panoramaRef = useRef<any>(null);
 
   // Music options
   const musicOptions = [
     'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
     'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
   ];
-
-  // Initialize Google Maps Street View when maps loads and station changes
-  useEffect(() => {
-    if (mapsLoaded && streetViewRef.current && (window as any).google) {
-      console.log('Initializing Street View for station:', currentStation.number, 'at', currentStation.location.lat, currentStation.location.lng);
-
-      // Create or update panorama
-      if (!panoramaRef.current) {
-        panoramaRef.current = new (window as any).google.maps.StreetViewPanorama(
-          streetViewRef.current,
-          {
-            position: { lat: currentStation.location.lat, lng: currentStation.location.lng },
-            pov: { heading: 100, pitch: 0 },
-            zoom: 1,
-            addressControl: false,
-            linksControl: true,
-            panControl: true,
-            enableCloseButton: false,
-          }
-        );
-      } else {
-        // Update existing panorama position
-        panoramaRef.current.setPosition({
-          lat: currentStation.location.lat,
-          lng: currentStation.location.lng
-        });
-      }
-    }
-  }, [currentStation, mapsLoaded]);
 
   const handleStationChange = (station: Station) => {
     setCurrentStation(station);
@@ -82,6 +54,130 @@ export default function StationsOfTheCross() {
     if (isPlaying) {
       handleStop();
     }
+  };
+
+  // Initialize interactive Google Map with all station markers
+  useEffect(() => {
+    if (mapsLoaded && mapRef.current && (window as any).google && !googleMapRef.current) {
+      console.log('Initializing Google Map...');
+      const google = (window as any).google;
+
+      // Create map centered on Via Dolorosa with custom styling
+      const map = new google.maps.Map(mapRef.current, {
+        center: { lat: 31.7798, lng: 35.2343 },
+        zoom: 15,
+        mapTypeId: 'roadmap',
+        styles: [
+          {
+            featureType: 'poi',
+            elementType: 'labels',
+            stylers: [{ visibility: 'off' }]
+          }
+        ]
+      });
+
+      googleMapRef.current = map;
+      console.log('Map created successfully');
+
+      // Draw path line connecting all stations (the Via Dolorosa route)
+      const pathCoordinates = stations.map(station => ({
+        lat: station.location.lat,
+        lng: station.location.lng
+      }));
+
+      const viaDolorosaPath = new google.maps.Polyline({
+        path: pathCoordinates,
+        geodesic: true,
+        strokeColor: '#9333EA', // Purple to match theme
+        strokeOpacity: 0.8,
+        strokeWeight: 4,
+        map: map,
+      });
+
+      // Add markers for all stations
+      stations.forEach((station) => {
+        const marker = new google.maps.Marker({
+          position: { lat: station.location.lat, lng: station.location.lng },
+          map: map,
+          label: {
+            text: station.number.toString(),
+            color: 'white',
+            fontSize: '14px',
+            fontWeight: 'bold',
+          },
+          title: station.title,
+        });
+
+        // Make markers clickable
+        marker.addListener('click', () => {
+          handleStationChange(station as Station);
+        });
+
+        markersRef.current.push({ marker, stationId: station.id });
+      });
+
+      console.log('Map initialization complete with', stations.length, 'markers');
+    }
+  }, [mapsLoaded, handleStationChange]);
+
+  // Update marker colors when current station changes
+  useEffect(() => {
+    if (googleMapRef.current && markersRef.current.length > 0) {
+      const google = (window as any).google;
+
+      markersRef.current.forEach(({ marker, stationId }) => {
+        // Highlight current station in yellow, others in red
+        marker.setIcon({
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 10,
+          fillColor: stationId === currentStation.id ? '#EAB308' : '#DC2626',
+          fillOpacity: 1,
+          strokeColor: '#FFFFFF',
+          strokeWeight: 2,
+        });
+      });
+
+      // Pan map to center on current station
+      googleMapRef.current.panTo({
+        lat: currentStation.location.lat,
+        lng: currentStation.location.lng,
+      });
+    }
+  }, [currentStation]);
+
+  // Fix map display when exiting prayer mode
+  useEffect(() => {
+    if (!isPrayerMode && googleMapRef.current && mapsLoaded) {
+      // Trigger map resize after prayer mode exits and DOM updates
+      // Use multiple delays to ensure proper rendering
+      const timeouts = [50, 150, 300].map(delay =>
+        setTimeout(() => {
+          const google = (window as any).google;
+          if (google && google.maps && googleMapRef.current) {
+            google.maps.event.trigger(googleMapRef.current, 'resize');
+            // Re-center the map
+            googleMapRef.current.setCenter({
+              lat: currentStation.location.lat,
+              lng: currentStation.location.lng,
+            });
+            googleMapRef.current.setZoom(15);
+          }
+        }, delay)
+      );
+
+      return () => timeouts.forEach(clearTimeout);
+    }
+  }, [isPrayerMode, currentStation, mapsLoaded]);
+
+  // Generate Static Street View URL
+  const getStreetViewImageUrl = (lat: number, lng: number) => {
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    const size = '800x600';
+    const heading = 100; // Direction the camera is facing
+    const pitch = 0; // Up/down angle
+    const fov = 90; // Field of view
+
+    return `https://maps.googleapis.com/maps/api/streetview?size=${size}&location=${lat},${lng}&heading=${heading}&pitch=${pitch}&fov=${fov}&key=${apiKey}`;
   };
 
   const handleReadText = () => {
@@ -285,29 +381,48 @@ export default function StationsOfTheCross() {
 
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8">
-        <div className="max-w-7xl mx-auto px-5">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2 text-center">
-            ✝️ Stations of the Cross
-          </h1>
-          <p className="text-xl text-center text-purple-200">
-            Walk the Via Dolorosa - The Way of Suffering
-          </p>
+      {!isPrayerMode && (
+        <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8">
+          <div className="max-w-7xl mx-auto px-5">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2 text-center">
+              ✝️ Stations of the Cross
+            </h1>
+            <p className="text-xl text-center text-purple-200">
+              Walk the Via Dolorosa - The Way of Suffering
+            </p>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Overview Map */}
-      <div className="bg-gray-800 py-4">
+      <div className={`bg-gray-800 py-4 transition-opacity duration-300 ${isPrayerMode ? 'hidden' : ''}`}>
         <div className="max-w-7xl mx-auto px-5">
           <div className="bg-white rounded-lg overflow-hidden shadow-xl">
-            <iframe
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3387.1!d35.2343!d31.7798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDQ2JzQ3LjMiTiAzNcKwMTQnMDMuNSJF!5e0!3m2!1sen!2s!4v1234567890`}
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            />
+            <div
+              ref={mapRef}
+              className="w-full"
+              style={{ height: '300px' }}
+            >
+              {/* Interactive Google Map will load here */}
+              {!mapsLoaded && (
+                <div className="flex items-center justify-center h-full bg-gray-200">
+                  <p className="text-gray-600">Loading map...</p>
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="text-center mt-2 mb-4">
+            <p className="text-sm text-gray-300">
+              🗺️ The Via Dolorosa - Jesus' Path to Calvary
+            </p>
+            <p className="text-xs text-gray-400 mt-1">
+              <span className="text-purple-400">━━ The Journey Path</span>
+              <span className="ml-3 text-yellow-400">● Current Station</span>
+              <span className="ml-3 text-red-400">● Other Stations</span>
+            </p>
+            <p className="text-xs text-gray-400 mt-1">
+              Click any marker to jump to that station
+            </p>
           </div>
           <div className="flex flex-wrap gap-2 mt-4 justify-center">
             {stations.map((station) => (
@@ -328,38 +443,74 @@ export default function StationsOfTheCross() {
       </div>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-5 py-8">
-        <div className="grid lg:grid-cols-3 gap-6">
+      <div className={`${isPrayerMode ? 'fixed inset-0 z-50' : 'max-w-7xl mx-auto px-5 py-8'}`}>
+        <div className={`${isPrayerMode ? 'h-screen' : 'grid lg:grid-cols-3 gap-6'}`}>
           {/* Street View - Large Area */}
-          <div className="lg:col-span-2">
-            <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-              <div
-                ref={streetViewRef}
-                className="w-full h-96 lg:h-[600px] bg-gray-700"
-              >
-                {/* Google Street View will load here */}
-                <div className="flex items-center justify-center h-full text-white">
-                  <div className="text-center">
-                    <p className="text-xl mb-4">🗺️ Street View Loading...</p>
-                    <p className="text-sm text-gray-400">
-                      Requires Google Maps API key
-                    </p>
+          <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
+            <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
+              <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700`}>
+                {/* Vignette overlay for prayer mode */}
+                {isPrayerMode && (
+                  <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-60 pointer-events-none z-10"></div>
+                )}
+
+                <img
+                  src={getStreetViewImageUrl(currentStation.location.lat, currentStation.location.lng)}
+                  alt={`Street View of ${currentStation.location.name}`}
+                  className={`w-full h-full object-cover ${isPrayerMode ? 'opacity-90' : ''}`}
+                  onError={(e) => {
+                    console.error('Failed to load Street View image');
+                    setError('Street View image unavailable for this location');
+                  }}
+                />
+
+                {/* Prayer Mode Overlay */}
+                {isPrayerMode && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
+                    <div className="text-center px-8 animate-fade-in">
+                      <div className="text-white/90 text-sm font-semibold mb-3 tracking-wider uppercase">
+                        Station {currentStation.number} of 14
+                      </div>
+                      <h2 className="text-white text-3xl md:text-5xl font-serif font-bold mb-4 drop-shadow-2xl">
+                        {currentStation.title}
+                      </h2>
+                      <div className="text-white/80 text-lg md:text-xl font-serif italic max-w-2xl mx-auto drop-shadow-lg">
+                        "{currentStation.scripture.text}"
+                      </div>
+                      <p className="text-white/70 text-sm mt-3">
+                        {currentStation.scripture.reference}
+                      </p>
+                    </div>
                   </div>
+                )}
+
+                {/* Exit Prayer Mode Button */}
+                {isPrayerMode && (
+                  <button
+                    onClick={() => setIsPrayerMode(false)}
+                    className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all pointer-events-auto"
+                  >
+                    Exit Prayer Mode
+                  </button>
+                )}
+              </div>
+
+              {!isPrayerMode && (
+                <div className="p-4 bg-gray-900 text-white">
+                  <p className="text-sm">
+                    📍 {currentStation.location.name}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {currentStation.location.description}
+                  </p>
                 </div>
-              </div>
-              <div className="p-4 bg-gray-900 text-white">
-                <p className="text-sm">
-                  📍 {currentStation.location.name}
-                </p>
-                <p className="text-xs text-gray-400 mt-1">
-                  {currentStation.location.description}
-                </p>
-              </div>
+              )}
             </div>
           </div>
 
           {/* Station Content Panel */}
-          <div className="lg:col-span-1">
+          {!isPrayerMode && (
+            <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-2xl p-6 sticky top-4">
               <div className="text-center mb-4">
                 <div className="inline-block bg-purple-900 text-white px-4 py-2 rounded-full font-bold mb-2">
@@ -401,6 +552,14 @@ export default function StationsOfTheCross() {
                   {isPlaying ? '⏹️ Stop' : '🔊 Listen'}
                 </button>
               </div>
+
+              {/* Prayer Mode Button */}
+              <button
+                onClick={() => setIsPrayerMode(true)}
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 rounded-lg font-semibold transition-all mb-4 shadow-lg"
+              >
+                🙏 Enter Prayer Mode
+              </button>
 
               {/* Error */}
               {error && (
@@ -461,11 +620,13 @@ export default function StationsOfTheCross() {
               </div>
             </div>
           </div>
+          )}
         </div>
       </div>
 
       {/* Footer */}
-      <div className="bg-gray-900 text-white py-8 mt-12">
+      {!isPrayerMode && (
+        <div className="bg-gray-900 text-white py-8 mt-12">
         <div className="max-w-4xl mx-auto px-5 text-center">
           <p className="text-gray-400 mb-4">
             "Were you there when they crucified my Lord?"
@@ -478,8 +639,29 @@ export default function StationsOfTheCross() {
           </a>
         </div>
       </div>
+      )}
 
       </main>
+
+      {/* CSS for animations */}
+      <style jsx>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 1.5s ease-out;
+        }
+        .bg-gradient-radial {
+          background: radial-gradient(circle, var(--tw-gradient-stops));
+        }
+      `}</style>
     </>
   );
 }
