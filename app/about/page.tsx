@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Today's Promise:</strong> Daily Bible promises with AI-generated reflections and audio narration</li>
                   <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
-                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing Christ throughout the Hebrew Scriptures</li>
+                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing Christ throughout the Scriptures</li>
                 </ul>
               </div>
             </div>
@@ -106,21 +106,6 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Free & Non-Commercial */}
-          <section>
-            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
-              Free Forever
-            </h2>
-            <div className="text-gray-700">
-              <p>
-                Divine Pilgrim is completely free and will always remain so. No ads, no subscriptions,
-                no hidden costs. This is a labor of love created to help people grow closer to Christ
-                through virtual sacred experiences. We believe spiritual resources should be freely
-                accessible to all.
-              </p>
-            </div>
-          </section>
-
           {/* Credits */}
           <section className="border-t pt-8">
             <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
@@ -128,24 +113,16 @@ export default function AboutPage() {
             </h2>
             <div className="text-gray-700 space-y-3 text-sm">
               <p>
-                <strong>Eucharistic Miracles:</strong> Images and information courtesy of the{' '}
+                <strong>Eucharistic Miracles:</strong> Images courtesy of{' '}
                 <a
                   href="https://www.miracolieucaristici.org"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#D4AF37] hover:underline font-semibold"
                 >
-                  Carlo Acutis Exhibition
+                  miracolieucaristici.org
                 </a>
-                {' '}and the{' '}
-                <a
-                  href="https://www.carloacutis.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline font-semibold"
-                >
-                  Associazione Amici di Carlo Acutis
-                </a>.
+                {' '}free downloadable web panels. Exhibition created by Blessed Carlo Acutis.
               </p>
               <p>
                 <strong>Street View:</strong> Via Dolorosa imagery powered by Google Maps Street View
