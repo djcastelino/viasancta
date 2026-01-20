@@ -6,8 +6,8 @@
     "location": {
       "name": "Omariya School (traditional site of Antonia Fortress)",
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
-      "lat": 31.78059,
-      "lng": 35.23566,
+      "lat": 31.78065,
+      "lng": 35.2359,
       "description": "The traditional site of Pilate's judgment hall where Jesus was condemned"
     },
     "scripture": {
@@ -158,8 +158,8 @@
     "location": {
       "name": "Coptic Orthodox Patriarchate entrance",
       "address": "Near Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77855,
-      "lng": 35.22952,
+      "lat": 31.77865,
+      "lng": 35.22965,
       "description": "Jesus' final fall before reaching Calvary"
     },
     "scripture": {
@@ -177,9 +177,9 @@
     "location": {
       "name": "Chapel within Church of the Holy Sepulchre",
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77844,
-      "lng": 35.22938,
-      "description": "Where Jesus was stripped before crucifixion"
+      "lat": 31.77845,
+      "lng": 35.22955,
+      "description": "Where Jesus was stripped before crucifixion (Street view shows church entrance - station is inside)"
     },
     "scripture": {
       "reference": "John 19:23-24",
@@ -196,9 +196,9 @@
     "location": {
       "name": "Latin Calvary, Church of the Holy Sepulchre",
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77846,
-      "lng": 35.22944,
-      "description": "The site of Golgotha where Jesus was crucified"
+      "lat": 31.77845,
+      "lng": 35.22955,
+      "description": "The site of Golgotha where Jesus was crucified (Street view shows church entrance - station is inside)"
     },
     "scripture": {
       "reference": "Luke 23:33-34",
@@ -215,9 +215,9 @@
     "location": {
       "name": "Greek Orthodox Calvary, Church of the Holy Sepulchre",
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77848,
-      "lng": 35.22946,
-      "description": "Where Jesus gave up His spirit"
+      "lat": 31.77845,
+      "lng": 35.22955,
+      "description": "Where Jesus gave up His spirit (Street view shows church entrance - station is inside)"
     },
     "scripture": {
       "reference": "John 19:28-30",
@@ -234,9 +234,9 @@
     "location": {
       "name": "Altar of Stabat Mater, Church of the Holy Sepulchre",
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77843,
-      "lng": 35.22940,
-      "description": "Where Mary received her Son's body"
+      "lat": 31.77845,
+      "lng": 35.22955,
+      "description": "Where Mary received her Son's body (Street view shows church entrance - station is inside)"
     },
     "scripture": {
       "reference": "Luke 23:53",
@@ -253,9 +253,9 @@
     "location": {
       "name": "The Holy Sepulchre (Tomb of Christ)",
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
-      "lat": 31.77839,
-      "lng": 35.22932,
-      "description": "The empty tomb where Jesus rose from the dead"
+      "lat": 31.77845,
+      "lng": 35.22955,
+      "description": "The empty tomb where Jesus rose from the dead (Street view shows church entrance - station is inside)"
     },
     "scripture": {
       "reference": "Matthew 27:59-60",
