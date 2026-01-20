@@ -525,14 +525,6 @@ export default function JesusInOTPage() {
                 </div>
               </section>
 
-              {/* Call to Action */}
-              <section className="text-center pt-6 border-t border-gray-200">
-                <p className="text-gray-600 italic mb-4">
-                  &quot;For I delivered to you as of first importance what I also received: that Christ died for our sins in accordance with the Scriptures.&quot;
-                  <br />
-                  <span className="text-sm text-[#D4AF37] font-semibold">— 1 Corinthians 15:3</span>
-                </p>
-              </section>
             </div>
           </div>
 

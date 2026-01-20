@@ -352,10 +352,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 text-center">
           <h2 className="text-2xl font-bold text-[#2C5F87] mb-6">🎧 Listen to the Story</h2>
           <p className="text-gray-600 mb-6">Hear the full account with professional AI narration and soothing background music</p>
-          <p className="text-xs text-gray-500 mb-6">
-            🎙️ Natural voices (Andrew, Ava, Eric, or Jenny) • 🎵 Ambient music at 10% volume
-          </p>
-          
+
           <button
             onClick={handlePlayNarration}
             disabled={isLoading}
