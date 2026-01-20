@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import SourceLinks from '@/app/components/SourceLinks';
 
 interface JesusInOTEntry {
@@ -20,6 +20,25 @@ interface JesusInOTEntry {
 export default function JesusInOTPage() {
   const [todaysEntry, setTodaysEntry] = useState<JesusInOTEntry | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Reflection states
+  const [reflectionMode, setReflectionMode] = useState<'none' | 'text' | 'audio'>('none');
+  const [reflectionText, setReflectionText] = useState('');
+  const [isGeneratingReflection, setIsGeneratingReflection] = useState(false);
+  const [reflectionError, setReflectionError] = useState('');
+
+  // Audio states
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('');
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  // Background music options
+  const musicOptions = [
+    'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
+    'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
+    'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3',
+  ];
 
   useEffect(() => {
     const loadTodaysEntry = async () => {
@@ -46,6 +65,187 @@ export default function JesusInOTPage() {
 
     loadTodaysEntry();
   }, []);
+
+  // Handle Get Reflection button click
+  const handleGetReflection = () => {
+    setReflectionMode('text'); // Default to text mode
+  };
+
+  // Generate reflection text
+  const handleGenerateReflectionText = async () => {
+    if (!todaysEntry) return;
+
+    setIsGeneratingReflection(true);
+    setReflectionError('');
+    setLoadingMessage('Generating reflection...');
+
+    try {
+      const response = await fetch('/api/jesus-ot-reflection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          entry: todaysEntry,
+          includeAudio: false
+        })
+      });
+
+      const data = await response.json();
+      setReflectionText(data.reflectionText);
+    } catch (error) {
+      console.error('Error generating reflection:', error);
+      setReflectionError('Failed to generate reflection. Please try again.');
+    } finally {
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+    }
+  };
+
+  // Generate reflection with audio
+  const handlePlayAudio = async () => {
+    if (!todaysEntry) return;
+
+    if (isPlaying && audioRef.current) {
+      // Stop playback
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+
+      if (backgroundMusicRef.current) {
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.currentTime = 0;
+        backgroundMusicRef.current.volume = 0;
+      }
+
+      setIsPlaying(false);
+      setLoadingMessage('');
+      return;
+    }
+
+    setIsGeneratingReflection(true);
+    setReflectionError('');
+    setLoadingMessage('Generating reflection...');
+
+    try {
+      const response = await fetch('/api/jesus-ot-reflection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          entry: todaysEntry,
+          includeAudio: true
+        })
+      });
+
+      const data = await response.json();
+
+      if (!data.audioUrl) {
+        setReflectionError('Audio generation failed. Please try again.');
+        return;
+      }
+
+      setLoadingMessage('Creating audio...');
+
+      // Create audio element
+      const audio = new Audio(data.audioUrl);
+      audioRef.current = audio;
+
+      // Start background music
+      const musicIndex = Math.floor(Math.random() * musicOptions.length);
+      const bgMusic = new Audio(musicOptions[musicIndex]);
+      backgroundMusicRef.current = bgMusic;
+      bgMusic.loop = true;
+      bgMusic.volume = 0;
+
+      bgMusic.play().catch(err => {
+        console.log('Background music autoplay prevented:', err);
+      });
+
+      // Fade in background music
+      fadeInMusic();
+
+      // Delay slightly before playing narration
+      await new Promise(resolve => setTimeout(resolve, 300));
+
+      // Play narration
+      audio.play();
+      setIsPlaying(true);
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+
+      // Handle audio end
+      audio.onended = () => {
+        fadeOutMusic();
+        setIsPlaying(false);
+      };
+
+      audio.onerror = () => {
+        setReflectionError('Audio playback failed.');
+        setIsPlaying(false);
+        if (backgroundMusicRef.current) {
+          backgroundMusicRef.current.pause();
+        }
+      };
+
+    } catch (error) {
+      console.error('Error playing audio:', error);
+      setReflectionError('Failed to play audio. Please try again.');
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+    }
+  };
+
+  // Fade in background music
+  const fadeInMusic = () => {
+    if (!backgroundMusicRef.current) return;
+
+    const music = backgroundMusicRef.current;
+    const targetVolume = 0.1; // 10% volume
+    const duration = 2000; // 2 seconds
+    const steps = 50;
+    const stepDuration = duration / steps;
+    const volumeStep = targetVolume / steps;
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      if (!music || currentStep >= steps) {
+        clearInterval(interval);
+        return;
+      }
+      music.volume = Math.min(volumeStep * currentStep, targetVolume);
+      currentStep++;
+    }, stepDuration);
+  };
+
+  // Fade out background music
+  const fadeOutMusic = () => {
+    if (!backgroundMusicRef.current) return;
+
+    const music = backgroundMusicRef.current;
+    const duration = 2000;
+    const steps = 50;
+    const stepDuration = duration / steps;
+    const volumeStep = music.volume / steps;
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      if (!music || currentStep >= steps) {
+        clearInterval(interval);
+        if (music) {
+          music.pause();
+          music.currentTime = 0;
+        }
+        return;
+      }
+      music.volume = Math.max(music.volume - volumeStep, 0);
+      currentStep++;
+    }, stepDuration);
+  };
+
+  // Handle mode switch
+  useEffect(() => {
+    if (reflectionMode === 'text' && !reflectionText && !isGeneratingReflection) {
+      handleGenerateReflectionText();
+    }
+  }, [reflectionMode]);
 
   if (isLoading) {
     return (
@@ -170,6 +370,115 @@ export default function JesusInOTPage() {
                   </p>
                 </section>
               )}
+
+              {/* Reflection Section */}
+              <section className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border-2 border-[#6e3a6c]/30">
+                {reflectionMode === 'none' ? (
+                  // Initial state - show Get Reflection button
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-[#6e3a6c] mb-3 flex items-center justify-center gap-2">
+                      <span>💭</span>
+                      <span>Deeper Reflection</span>
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      Get a thoughtful theological reflection on this passage from a Catholic perspective
+                    </p>
+                    <button
+                      onClick={handleGetReflection}
+                      className="bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c] text-white px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                      🎯 Get Reflection
+                    </button>
+                  </div>
+                ) : (
+                  // Reflection mode active - show toggle and content
+                  <div>
+                    <h3 className="text-xl font-bold text-[#6e3a6c] mb-4 flex items-center gap-2">
+                      <span>💭</span>
+                      <span>Theological Reflection</span>
+                    </h3>
+
+                    {/* Toggle Buttons */}
+                    <div className="flex gap-2 mb-6 bg-white/50 rounded-full p-1 max-w-md mx-auto">
+                      <button
+                        onClick={() => setReflectionMode('text')}
+                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
+                          reflectionMode === 'text'
+                            ? 'bg-white text-[#6e3a6c] shadow-md'
+                            : 'text-gray-600 hover:text-[#6e3a6c]'
+                        }`}
+                      >
+                        <span>📖</span>
+                        <span>Read Text</span>
+                      </button>
+                      <button
+                        onClick={() => setReflectionMode('audio')}
+                        className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
+                          reflectionMode === 'audio'
+                            ? 'bg-white text-[#6e3a6c] shadow-md'
+                            : 'text-gray-600 hover:text-[#6e3a6c]'
+                        }`}
+                      >
+                        <span>🔊</span>
+                        <span>Listen</span>
+                      </button>
+                    </div>
+
+                    {/* Error Message */}
+                    {reflectionError && (
+                      <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4">
+                        {reflectionError}
+                      </div>
+                    )}
+
+                    {/* Loading State */}
+                    {isGeneratingReflection && (
+                      <div className="text-center py-8">
+                        <div className="flex justify-center gap-2 mb-3">
+                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                          <div className="w-3 h-3 bg-[#D4AF37] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                        </div>
+                        <p className="text-gray-600 font-medium">{loadingMessage}</p>
+                      </div>
+                    )}
+
+                    {/* Read Text Mode */}
+                    {reflectionMode === 'text' && reflectionText && !isGeneratingReflection && (
+                      <div className="bg-white rounded-xl p-6 shadow-inner">
+                        <p className="text-gray-800 leading-relaxed whitespace-pre-line text-lg">
+                          {reflectionText}
+                        </p>
+                        <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+                          <p className="text-xs text-gray-500 italic">
+                            Reflection generated by Catholic theological AI
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Listen Mode */}
+                    {reflectionMode === 'audio' && !isGeneratingReflection && (
+                      <div className="text-center">
+                        <button
+                          onClick={handlePlayAudio}
+                          disabled={isGeneratingReflection}
+                          className={`${
+                            isPlaying
+                              ? 'bg-red-500 hover:bg-red-600'
+                              : 'bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] hover:from-[#8B4789] hover:to-[#6e3a6c]'
+                          } text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed`}
+                        >
+                          {isPlaying ? '⏹️ Stop' : '🔊 Listen to Reflection'}
+                        </button>
+                        <p className="text-xs text-gray-500 mt-4 italic">
+                          Narration with background music • 2-3 minutes
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </section>
 
               {/* Call to Action */}
               <section className="text-center pt-6 border-t border-gray-200">
