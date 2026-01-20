@@ -107,6 +107,8 @@ export default function JesusInOTPage() {
 
   // Generate and play audio reflection (like promise narration)
   const handleListen = async () => {
+    if (!todaysEntry) return; // Guard against null
+
     setReflectionError('');
 
     // If already playing, stop
