@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import SourceLinks from '@/app/components/SourceLinks';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface JesusInOTEntry {
   id: number;
@@ -104,65 +105,148 @@ export default function JesusInOTPage() {
     }
   };
 
-  // Generate and play audio reflection
+  // Generate and play audio reflection (like promise narration)
   const handleListen = async () => {
-    // If already playing, stop it
+    setReflectionError('');
+
+    // If already playing, stop
     if (isPlaying) {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current = null;
       }
       if (backgroundMusicRef.current) {
-        backgroundMusicRef.current.pause();
-        backgroundMusicRef.current.currentTime = 0;
-        backgroundMusicRef.current.volume = 0;
+        fadeOutMusic();
       }
       setIsPlaying(false);
       return;
     }
 
-    // Generate reflection if not already done
-    if (!reflectionText) {
-      setIsGeneratingReflection(true);
-      setReflectionError('');
-      setLoadingMessage('Generating reflection...');
-
-      try {
-        const response = await fetch('/api/jesus-ot-reflection', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            entry: todaysEntry
-          })
-        });
-
-        const data = await response.json();
-        setReflectionText(data.reflectionText);
-
-        if (data.audioUrl) {
-          audioRef.current = new Audio(data.audioUrl);
-        }
-      } catch (error) {
-        console.error('Error generating reflection:', error);
-        setReflectionError('Failed to generate reflection. Please try again.');
-        setIsGeneratingReflection(false);
-        setLoadingMessage('');
-        return;
-      }
+    // Force cleanup any existing audio
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
     }
-
-    // Check if audio is available
-    if (!audioRef.current) {
-      setReflectionError('Audio not available. Please try refreshing.');
-      setIsGeneratingReflection(false);
-      setLoadingMessage('');
-      return;
-    }
-
-    setIsGeneratingReflection(false);
-    setLoadingMessage('');
 
     try {
+      setIsGeneratingReflection(true);
+      setLoadingMessage('Generating reflection...');
+      console.log('🎙️ Generating reflection script...');
+
+      // Call API to get reflection text script
+      const response = await fetch('/api/jesus-ot-reflection', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ entry: todaysEntry })
+      });
+
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      const script = data.reflectionText;
+      setReflectionText(script); // Save for Read Text button
+      console.log('✅ Received reflection script from API');
+
+      setLoadingMessage('Creating audio...');
+
+      // Get Azure credentials
+      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!azureKey || !azureRegion) {
+        throw new Error('Azure Speech API credentials not configured');
+      }
+
+      // Configure Azure Speech SDK
+      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
+
+      // Rotate through 6 voices using entry ID
+      const voices = [
+        { name: 'en-US-AndrewNeural', displayName: 'Andrew' },
+        { name: 'en-US-BrianNeural', displayName: 'Brian' },
+        { name: 'en-US-ChristopherNeural', displayName: 'Christopher' },
+        { name: 'en-US-EricNeural', displayName: 'Eric' },
+        { name: 'en-US-SteffanNeural', displayName: 'Steffan' },
+        { name: 'en-US-RogerNeural', displayName: 'Roger' },
+      ];
+
+      const voiceIndex = todaysEntry.id % 6;
+      const selectedVoice = voices[voiceIndex];
+      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} for entry ${todaysEntry.id}`);
+
+      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      // Set speaking rate (0.95 = slightly slower for meditation)
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="${selectedVoice.name}">
+            <prosody rate="0.95">
+              ${script}
+            </prosody>
+          </voice>
+        </speak>
+      `;
+
+      // Synthesize speech
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      const audioBlob: Blob = await new Promise((resolve, reject) => {
+        synthesizer.speakSsmlAsync(
+          ssml,
+          (result) => {
+            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+              console.log('✅ Azure TTS synthesis completed');
+              const audioData = result.audioData;
+              const blob = new Blob([audioData], { type: 'audio/mp3' });
+              synthesizer.close();
+              resolve(blob);
+            } else {
+              console.error('❌ Speech synthesis failed:', result.errorDetails);
+              synthesizer.close();
+              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
+            }
+          },
+          (error) => {
+            console.error('❌ Azure TTS error:', error);
+            synthesizer.close();
+            reject(new Error(`Azure TTS error: ${error}`));
+          }
+        );
+      });
+
+      console.log('🎵 Audio blob created, size:', audioBlob.size, 'bytes');
+
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audioElement = new Audio(audioUrl);
+
+      audioElement.onended = () => {
+        setIsPlaying(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+        if (backgroundMusicRef.current) {
+          fadeOutMusic();
+        }
+      };
+
+      audioElement.onerror = () => {
+        console.error('Failed to play audio');
+        setIsPlaying(false);
+        audioRef.current = null;
+        URL.revokeObjectURL(audioUrl);
+        if (backgroundMusicRef.current) {
+          fadeOutMusic();
+        }
+      };
+
+      // Clear loading state
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+
       // Start background music
       const musicIndex = Math.floor(Math.random() * musicOptions.length);
       const bgMusic = new Audio(musicOptions[musicIndex]);
@@ -177,30 +261,23 @@ export default function JesusInOTPage() {
       // Fade in background music
       fadeInMusic();
 
-      // Delay slightly before playing narration
+      // Small delay
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Play narration
-      audioRef.current.play();
+      // Start playback
+      audioRef.current = audioElement;
       setIsPlaying(true);
-
-      // Handle audio end
-      audioRef.current.onended = () => {
-        fadeOutMusic();
-        setIsPlaying(false);
-      };
-
-      audioRef.current.onerror = () => {
-        setReflectionError('Audio playback failed.');
-        setIsPlaying(false);
-        if (backgroundMusicRef.current) {
-          backgroundMusicRef.current.pause();
-        }
-      };
+      console.log('▶️ Starting playback...');
+      await audioElement.play();
+      console.log('🎶 Audio is now playing');
 
     } catch (error) {
-      console.error('Error playing audio:', error);
-      setReflectionError('Failed to play audio. Please try again.');
+      console.error('❌ Error generating audio:', error);
+      setIsGeneratingReflection(false);
+      setLoadingMessage('');
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setReflectionError(`Failed to generate audio: ${errorMessage}`);
+      console.error('💥 Full error details:', errorMessage);
     }
   };
 
