@@ -21,10 +21,10 @@ export function getSourceLink(source: string): LinkedSource {
     const match = source.match(/CCC\s+(\d+(-\d+)?)/);
     if (match) {
       const paragraphNumber = match[1].split('-')[0]; // Get first number
-      // Use USCCB Catechism flipbook with anchor to jump to paragraph
+      // Use St. Charles Borromeo Parish CCC (direct paragraph links)
       return {
         text,
-        url: `https://www.usccb.org/sites/default/files/flipbooks/catechism/index.html#${paragraphNumber}`,
+        url: `http://www.scborromeo.org/ccc/para/${paragraphNumber}.htm`,
         type: 'CCC'
       };
     }
