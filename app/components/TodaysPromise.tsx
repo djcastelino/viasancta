@@ -308,7 +308,7 @@ export default function TodaysPromise() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-5 py-16 relative z-20">
+    <section id="promise" className="max-w-7xl mx-auto px-5 py-16 relative z-20">
       <div className="bg-gradient-to-br from-[#6e3a6c]/10 via-[#2C5F87]/10 to-[#325847]/10 rounded-3xl shadow-xl p-8 md:p-12 border border-[#D4AF37]/20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Header */}
