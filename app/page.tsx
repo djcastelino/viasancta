@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 import TodaysPromise from './components/TodaysPromise';
-import DailyPsalmChant from './components/DailyPsalmChant';
 import JesusInOT from './components/JesusInOT';
 
 export const metadata = {
@@ -56,9 +55,6 @@ export default function Home() {
 
       {/* Today's Promise Section */}
       <TodaysPromise />
-
-      {/* Daily Psalm Chant Section */}
-      <DailyPsalmChant />
 
       {/* Jesus in the OT Section */}
       <JesusInOT />
