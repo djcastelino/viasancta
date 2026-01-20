@@ -147,8 +147,7 @@ export default function Home() {
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
-                    <span>🙏</span>
-                    <span>Curated by Blessed Carlo Acutis</span>
+                    <span>Curated by St. Carlo Acutis</span>
                   </div>
                   <h3 className="text-3xl font-bold drop-shadow-md">
                     Eucharistic Miracles
@@ -169,7 +168,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Journey through 136 documented Eucharistic miracles worldwide, meticulously researched and curated by <span className="font-semibold text-[#2C5F87]">Blessed Carlo Acutis</span>. Experience his legacy through AI-guided narrations.
+                  Journey through 136 documented Eucharistic miracles worldwide, meticulously researched and curated by <span className="font-semibold text-[#2C5F87]">St. Carlo Acutis</span>. Experience his legacy through AI-guided narrations.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Start Tour →
@@ -369,40 +368,21 @@ export default function Home() {
       {/* Enhanced Footer */}
       <footer className="bg-gradient-to-br from-[#193d52] to-[#325847] text-white py-16 px-5 mt-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Brand */}
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Divine Pilgrim */}
             <div>
-              <h3 className="text-3xl font-bold mb-4 font-serif flex items-center gap-2">
-                <span>✝️</span>
+              <h3 className="text-3xl font-bold mb-4 font-serif">
                 Divine Pilgrim
               </h3>
               <p className="text-white/80 mb-4">
-                Experience sacred journeys through AI-guided Catholic virtual pilgrimages. Explore miracles, saints, and holy sites worldwide.
+                Virtual Sacred Journeys and Daily Spiritual Tools
               </p>
-            </div>
-
-            {/* Tours */}
-            <div>
-              <h4 className="font-bold text-lg mb-4 text-[#D4AF37]">Tours</h4>
-              <ul className="space-y-3 text-white/80">
-                <li>
-                  <Link href="/tours/eucharistic-miracles" className="hover:text-white hover:underline transition-colors flex items-center gap-2">
-                    <span>✓</span>
-                    Eucharistic Miracles (136)
-                  </Link>
-                </li>
-                <li className="text-white/50 flex items-center gap-2">
-                  <span>⏳</span>
-                  Marian Apparitions (Coming Soon)
-                </li>
-                <li className="text-white/50 flex items-center gap-2">
-                  <span>⏳</span>
-                  Stations of the Cross (Coming Soon)
-                </li>
-                <li className="text-white/50 flex items-center gap-2">
-                  <span>⏳</span>
-                  Shrines of Saints (Coming Soon)
-                </li>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li>• Eucharistic Miracles</li>
+                <li>• Stations of the Cross</li>
+                <li>• Today's Promise</li>
+                <li>• Daily Scripture Challenge</li>
+                <li>• Jesus in the Old Testament</li>
               </ul>
             </div>
 
@@ -415,74 +395,14 @@ export default function Home() {
                     About Divine Pilgrim
                   </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://www.miracolieucaristici.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white hover:underline transition-colors"
-                  >
-                    Carlo Acutis Exhibition
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:info@divinepilgrim.com" className="hover:text-white hover:underline transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/djcastelino/viasancta" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline transition-colors">
-                    GitHub Repository
-                  </a>
-                </li>
               </ul>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <h4 className="font-bold text-lg mb-4 text-[#D4AF37]">Connect</h4>
-              <p className="text-white/80 mb-4">
-                Share your pilgrimage journey with others
-              </p>
-              <div className="flex gap-4 mb-6">
-                <a href="mailto:info@divinepilgrim.com" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Email">
-                  📧
-                </a>
-                <a href="#" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Share">
-                  📱
-                </a>
-                <a href="https://www.miracolieucaristici.org" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[#D4AF37] transition-colors" title="Carlo Acutis">
-                  🙏
-                </a>
-              </div>
-              <div className="text-sm text-white/60">
-                Built with Azure TTS & Next.js
-              </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
           <div className="border-t border-white/20 pt-8 text-center">
-            <p className="text-white/80 mb-2">
-              Made with 🙏 in honor of <span className="text-[#D4AF37] font-semibold">Blessed Carlo Acutis</span>
-            </p>
             <p className="text-white/60 text-sm">
-              © {new Date().getFullYear()} Divine Pilgrim. Virtual Sacred Journeys for all.
-            </p>
-            <p className="text-white/50 text-xs mt-3">
-              📸 Miracle images courtesy of{' '}
-              <a
-                href="https://www.miracolieucaristici.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#D4AF37] hover:underline"
-              >
-                miracolieucaristici.org
-              </a>
-              {' '}(Free downloadable web panels)
-            </p>
-            <p className="text-white/40 text-xs mt-2">
-              divinepilgrim.com
+              © {new Date().getFullYear()} Divine Pilgrim. Virtual Sacred Journeys and Daily Spiritual Tools for all.
             </p>
           </div>
         </div>
