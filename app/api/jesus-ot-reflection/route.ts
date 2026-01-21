@@ -26,7 +26,9 @@ export async function POST(request: NextRequest) {
         reference: entry.otReference,
         otText: entry.otText,
         historicalContext: entry.historicalContext,
-        howItPointsToJesus: entry.howItPointsToJesus
+        howItPointsToJesus: entry.howItPointsToJesus,
+        sources: entry.sources || [],
+        instruction: 'In your reflection, include ONE authoritative Catholic quote or reference from the provided sources (St. Augustine, St. Thomas Aquinas, or Catechism of the Catholic Church). Use phrasing like "As St. Augustine teaches..." or "The Catechism tells us..." or "St. Thomas Aquinas explains...". Choose the most relevant source that enhances the spiritual reflection.'
       }),
     });
 
