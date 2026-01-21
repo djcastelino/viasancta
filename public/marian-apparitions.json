@@ -1,0 +1,605 @@
+[
+  {
+    "id": 1,
+    "name": "Our Lady of Guadalupe",
+    "location": {
+      "city": "Mexico City",
+      "country": "Mexico",
+      "shrine": "Basilica of Our Lady of Guadalupe"
+    },
+    "year": "1531",
+    "visionaries": ["St. Juan Diego (age 57)"],
+    "apparitionCount": 4,
+    "keyMessages": [
+      "I am the Mother of the True God",
+      "Build a temple here so I can show my love to all people",
+      "I am your merciful mother"
+    ],
+    "miracles": [
+      "Miraculous image on tilma (cactus fiber cloak) that should have decayed in 20 years - intact 493 years later",
+      "Image contains stars matching exact sky formation on December 12, 1531",
+      "Uncle Juan Bernardino instantly healed of fatal illness",
+      "9 million Aztecs converted to Christianity within 7 years"
+    ],
+    "churchApproval": "Archbishop Zumárraga approved 1531, Pope Benedict XIV made patroness of New Spain 1754",
+    "historicalContext": "Mexico 1531 - Just 12 years after Spanish conquest, during mass Aztec human sacrifice era",
+    "shrine": "Basilica receives 20 million pilgrims annually - most visited Catholic pilgrimage site in the world",
+    "story": "On December 9, 1531, Juan Diego encountered a beautiful woman surrounded by light on Tepeyac Hill. She spoke in his native Nahuatl language and asked him to tell the bishop to build a church there. The bishop demanded a sign. On December 12, Mary told Juan Diego to gather roses from the hilltop (impossible in winter) and present them to the bishop. When Juan Diego opened his tilma before the bishop, dozens of Castilian roses fell out and the miraculous image of Our Lady appeared imprinted on the fabric.",
+    "coordinates": { "lat": 19.4848, "lng": -99.1172 },
+    "images": ["/images/apparitions/guadalupe.jpg"]
+  },
+  {
+    "id": 2,
+    "name": "Our Lady of Lourdes",
+    "location": {
+      "city": "Lourdes",
+      "country": "France",
+      "shrine": "Sanctuary of Our Lady of Lourdes"
+    },
+    "year": "1858",
+    "visionaries": ["St. Bernadette Soubirous (age 14)"],
+    "apparitionCount": 18,
+    "keyMessages": [
+      "I am the Immaculate Conception",
+      "Pray for sinners",
+      "Penance, penance, penance",
+      "Go drink at the spring and wash in it"
+    ],
+    "miracles": [
+      "Healing spring discovered during 9th apparition",
+      "Over 70 miracles officially recognized by Lourdes Medical Bureau since 1858",
+      "Thousands of documented healings",
+      "Bernadette's body found incorrupt 30 years after death"
+    ],
+    "churchApproval": "Bishop Bertrand-Sévère Laurence approved January 18, 1862 (4 years after apparitions ended)",
+    "historicalContext": "France 1858 - Just 4 years after Pope Pius IX declared Immaculate Conception dogma (1854)",
+    "shrine": "6 million pilgrims visit annually - one of most visited Marian shrines in world",
+    "story": "Between February 11 and July 16, 1858, the Blessed Virgin Mary appeared 18 times to Bernadette Soubirous in the grotto of Massabielle. During the 9th apparition on February 25, Mary told Bernadette to 'drink at the spring and wash in it.' When Bernadette dug in the mud, a spring emerged that now produces 27,000 gallons daily. During the 16th apparition on March 25, when Bernadette asked Mary's name three times, she replied in local dialect: 'I am the Immaculate Conception.'",
+    "coordinates": { "lat": 43.0968, "lng": -0.0457 },
+    "images": ["/images/apparitions/lourdes.jpg"]
+  },
+  {
+    "id": 3,
+    "name": "Our Lady of Fatima",
+    "location": {
+      "city": "Fatima",
+      "country": "Portugal",
+      "shrine": "Sanctuary of Our Lady of Fatima"
+    },
+    "year": "1917",
+    "visionaries": ["Lucia dos Santos (age 10)", "Francisco Marto (age 9)", "Jacinta Marto (age 7)"],
+    "apparitionCount": 6,
+    "keyMessages": [
+      "Pray the Rosary every day for peace",
+      "Sacrifice for the conversion of sinners",
+      "Consecrate Russia to my Immaculate Heart",
+      "Three Secrets revealed (Hell vision, WWII prediction, Pope assassination attempt)"
+    ],
+    "miracles": [
+      "Miracle of the Sun witnessed by 70,000 people on October 13, 1917",
+      "Sun appeared to dance, change colors, and plunge toward earth",
+      "Healing spring water cures documented",
+      "Francisco and Jacinta died young as Mary predicted - both canonized 2017"
+    ],
+    "churchApproval": "Bishop José Alves Correia da Silva approved October 13, 1930",
+    "historicalContext": "Portugal 1917 - During WWI, anticlerical Portuguese government, Russian Revolution",
+    "shrine": "6 million pilgrims annually, visited by Popes Paul VI, John Paul II, Benedict XVI, Francis",
+    "story": "From May 13 to October 13, 1917, Mary appeared to three shepherd children on the 13th of each month. She revealed three secrets, asked for consecration of Russia, and promised a great miracle. On October 13, before 70,000 witnesses including atheists and journalists, the sun appeared to dance, spin, and plunge toward earth, drying rain-soaked ground instantly. Newspapers worldwide reported the solar phenomenon.",
+    "coordinates": { "lat": 39.6317, "lng": -8.6719 },
+    "images": ["/images/apparitions/fatima.jpg"]
+  },
+  {
+    "id": 4,
+    "name": "Our Lady of Knock",
+    "location": {
+      "city": "Knock",
+      "country": "Ireland",
+      "shrine": "Knock Shrine"
+    },
+    "year": "1879",
+    "visionaries": ["15 witnesses ages 5-75"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "Silent apparition - no words spoken",
+      "Visual representation of Mass and Eucharist",
+      "Heaven's comfort during Ireland's suffering"
+    ],
+    "miracles": [
+      "15 witnesses of all ages saw identical vision for 2 hours in pouring rain",
+      "Ground beneath apparition remained completely dry",
+      "Multiple healings at site including deaf-mute Archdeacon Cavanagh in 1880",
+      "Over 300 cures documented at shrine"
+    ],
+    "churchApproval": "Archbishop John MacHale approved 1879, official Commission of Enquiry confirmed 1936",
+    "historicalContext": "Ireland 1879 - Land War beginning, post-Famine poverty, British oppression",
+    "shrine": "1.5 million pilgrims annually, visited by Pope John Paul II (1979) and Pope Francis (2018)",
+    "story": "On August 21, 1879, at 8pm in pouring rain, 15 villagers witnessed a silent apparition at the south gable of Knock parish church lasting two hours. They saw Mary crowned and praying, St. Joseph, St. John the Evangelist holding a book, and a lamb on an altar with a cross behind it - representing the Mass. The ground remained completely dry where the apparition appeared despite torrential rain. No words were spoken, but the vision conveyed the centrality of the Eucharist.",
+    "coordinates": { "lat": 53.7951, "lng": -8.9147 },
+    "images": ["/images/apparitions/knock.jpg"]
+  },
+  {
+    "id": 5,
+    "name": "Our Lady of Akita",
+    "location": {
+      "city": "Akita",
+      "country": "Japan",
+      "shrine": "Convent of the Handmaids of the Eucharist"
+    },
+    "year": "1973-1981",
+    "visionaries": ["Sister Agnes Sasagawa"],
+    "apparitionCount": 3,
+    "keyMessages": [
+      "Pray the Rosary for bishops, priests, and religious",
+      "Many men will be lost if they don't repent",
+      "Fire will fall from heaven, killing many",
+      "Only the Rosary and devotion to Immaculate Heart can save the world"
+    ],
+    "miracles": [
+      "Wooden statue wept human tears 101 times between 1975-1981",
+      "Tears scientifically analyzed - confirmed human tears, blood type B",
+      "Stigmata appeared on Sister Agnes's hand matching wounds on statue",
+      "Sister Agnes's total deafness miraculously cured",
+      "Fragrance of roses emanated from statue"
+    ],
+    "churchApproval": "Bishop John Shojiro Ito approved 1984 as 'reliable and worthy of belief'",
+    "historicalContext": "Japan 1973-1981 - Only 0.35% Christian population, Cold War era",
+    "shrine": "Remote convent now pilgrimage destination, statue still preserved",
+    "story": "Sister Agnes Sasagawa received three messages from Mary in 1973. A wooden statue of Mary in the convent chapel then wept human tears 101 times between January 4, 1975 and September 15, 1981. The tears were televised on Japanese national TV and scientifically verified as human tears. Stigmata wounds appeared on the statue's right hand matching wounds that appeared on Sister Agnes's hand. Bishop Ito declared the events supernatural after 8-year investigation.",
+    "coordinates": { "lat": 39.7186, "lng": 140.1025 },
+    "images": ["/images/apparitions/akita.jpg"]
+  },
+  {
+    "id": 6,
+    "name": "Our Lady of Good Help",
+    "location": {
+      "city": "Champion, Wisconsin",
+      "country": "United States",
+      "shrine": "Shrine of Our Lady of Good Help"
+    },
+    "year": "1859",
+    "visionaries": ["Adele Brise (age 28)"],
+    "apparitionCount": 3,
+    "keyMessages": [
+      "I am the Queen of Heaven who prays for the conversion of sinners",
+      "Gather the children and teach them the catechism",
+      "Make a general confession and offer Communion for the conversion of sinners"
+    ],
+    "miracles": [
+      "1871 Peshtigo Fire - deadliest in US history killed 1,500+ but stopped at shrine boundary",
+      "People sheltered at chapel survived while surroundings burned",
+      "Multiple healings documented at shrine",
+      "Adele's missionary work converted entire region"
+    ],
+    "churchApproval": "Bishop David Ricken approved December 8, 2010 - only approved apparition in United States",
+    "historicalContext": "Wisconsin 1859 - Just 11 years after statehood, frontier mission territory",
+    "shrine": "Thousands of pilgrims annually, chapel preserved at original site",
+    "story": "On October 9, 1859, Adele Brise saw a beautiful lady in white with a crown of stars while walking to a gristmill. The apparition appeared three times. During the third, Mary identified herself as Queen of Heaven and instructed Adele to teach catechism to children. Adele spent 40 years doing this work. In 1871, the Peshtigo Fire killed 1,500+ people but stopped at the shrine boundary - those who took refuge at the chapel survived while everything around them burned.",
+    "coordinates": { "lat": 44.4525, "lng": -87.9242 },
+    "images": ["/images/apparitions/champion.jpg"]
+  },
+  {
+    "id": 7,
+    "name": "Our Lady of Pontmain",
+    "location": {
+      "city": "Pontmain",
+      "country": "France",
+      "shrine": "Basilica of Our Lady of Hope"
+    },
+    "year": "1871",
+    "visionaries": ["Eugene Barbedette (age 12)", "Joseph Barbedette (age 10)", "2 other children"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "Pray my children, God will hear you soon",
+      "My Son allows Himself to be moved",
+      "Hope - symbolized by appearance during Franco-Prussian War"
+    ],
+    "miracles": [
+      "3-hour apparition in night sky witnessed by multiple witnesses",
+      "Prussian army advancing on Pontmain stopped 30 miles away that same night",
+      "Armistice signed 11 days later ending war",
+      "All 38 Pontmain men serving in war returned home alive"
+    ],
+    "churchApproval": "Bishop Wicart approved February 2, 1872 (13 months after apparition)",
+    "historicalContext": "France January 17, 1871 - Franco-Prussian War, Paris besieged, Prussians advancing",
+    "shrine": "100,000+ pilgrims annually, basilica built 1900",
+    "story": "On January 17, 1871, during the Franco-Prussian War, four children saw Mary appear in the sky above their village for 3 hours starting at 5:30pm. As villagers prayed the rosary, messages appeared in golden letters: 'Pray my children, God will hear you soon' and 'My Son allows Himself to be moved.' That same night, the advancing Prussian army stopped 30 miles from Pontmain. The armistice was signed 11 days later, and all 38 Pontmain soldiers returned home alive.",
+    "coordinates": { "lat": 48.4144, "lng": -1.0347 },
+    "images": ["/images/apparitions/pontmain.jpg"]
+  },
+  {
+    "id": 8,
+    "name": "Our Lady of Beauraing",
+    "location": {
+      "city": "Beauraing",
+      "country": "Belgium",
+      "shrine": "Sanctuary of Beauraing"
+    },
+    "year": "1932-1933",
+    "visionaries": ["5 children ages 9-15"],
+    "apparitionCount": 33,
+    "keyMessages": [
+      "I am the Immaculate Virgin",
+      "Pray always",
+      "Convert sinners",
+      "I will convert sinners"
+    ],
+    "miracles": [
+      "33 apparitions witnessed by 5 children over 2 months",
+      "Golden heart visible in Mary's chest during final apparition",
+      "Multiple healings at shrine documented",
+      "Visionaries maintained consistent testimony throughout lives"
+    ],
+    "churchApproval": "Bishop André-Marie Charue approved July 2, 1949",
+    "historicalContext": "Belgium 1932-33 - Great Depression, pre-WWII Europe",
+    "shrine": "Hawthorn tree site now pilgrimage destination, 250,000+ visitors annually",
+    "story": "From November 29, 1932 to January 3, 1933, five children saw Mary 33 times near a hawthorn tree at a convent school in Beauraing. During the final apparition on January 3, Mary revealed a golden heart in her chest and said 'Pray always.' The children described her as radiating light and standing on a small cloud. Despite skepticism and medical/psychological examinations, the five children never changed their testimony.",
+    "coordinates": { "lat": 50.1147, "lng": 4.9558 },
+    "images": ["/images/apparitions/beauraing.jpg"]
+  },
+  {
+    "id": 9,
+    "name": "Our Lady of Banneux",
+    "location": {
+      "city": "Banneux",
+      "country": "Belgium",
+      "shrine": "Shrine of Our Lady of Banneux"
+    },
+    "year": "1933",
+    "visionaries": ["Mariette Beco (age 11)"],
+    "apparitionCount": 8,
+    "keyMessages": [
+      "I am the Virgin of the Poor",
+      "This stream is reserved for me",
+      "I come to relieve suffering",
+      "Believe in me, I will believe in you"
+    ],
+    "miracles": [
+      "Healing spring revealed during apparitions",
+      "Documented cures at spring water",
+      "Mariette's father converted after initially being hostile",
+      "Poor family became messengers of hope"
+    ],
+    "churchApproval": "Bishop Louis-Joseph Kerkhofs approved August 22, 1949",
+    "historicalContext": "Belgium 1933 - Depression era, weeks after Beauraing apparitions ended",
+    "shrine": "Spring produces healing water, 500,000+ pilgrims annually",
+    "story": "From January 15 to March 2, 1933, Mary appeared 8 times to Mariette Beco, daughter of a poor, non-religious family. During the second apparition, Mary led Mariette to a spring saying 'This stream is reserved for me' and 'I come to relieve suffering.' She identified herself as 'Virgin of the Poor.' The apparitions transformed the Beco family - even Mariette's skeptical father converted. The spring has since been associated with healings.",
+    "coordinates": { "lat": 50.5314, "lng": 5.8669 },
+    "images": ["/images/apparitions/banneux.jpg"]
+  },
+  {
+    "id": 10,
+    "name": "Our Lady of Kibeho",
+    "location": {
+      "city": "Kibeho",
+      "country": "Rwanda",
+      "shrine": "Shrine of Our Lady of Kibeho"
+    },
+    "year": "1981-1989",
+    "visionaries": ["Alphonsine Mumureke", "Nathalie Mukamazimpaka", "Marie-Claire Mukangango"],
+    "apparitionCount": "Multiple over 8 years",
+    "keyMessages": [
+      "I am the Mother of the Word",
+      "The world is on the verge of catastrophe",
+      "Repent and convert before it is too late",
+      "Pray without ceasing"
+    ],
+    "miracles": [
+      "Prophetic visions of 1994 Rwandan genocide shown to visionaries",
+      "Vision of rivers of blood 13 years before genocide occurred",
+      "Multiple witnesses experienced mystical phenomena during apparitions",
+      "Only Vatican-approved apparition in Africa"
+    ],
+    "churchApproval": "Bishop Augustin Misago approved June 29, 2001 (for 3 of 7 seers)",
+    "historicalContext": "Rwanda 1981-89 - Ethnic tensions building toward 1994 genocide",
+    "shrine": "Site where Marie-Claire was killed during genocide now shrine, thousands visit annually",
+    "story": "From November 28, 1981 to November 28, 1989, Mary appeared to students at Kibeho College calling herself 'Mother of the Word.' She showed terrifying visions of rivers of blood, abandoned corpses, and a tree engulfed in flames - prophesying the 1994 genocide 13 years before it occurred. In 1994, 800,000 Tutsis were killed including visionary Marie-Claire who was martyred. The apparitions are the only Vatican-approved apparitions in Africa.",
+    "coordinates": { "lat": -2.6000, "lng": 29.5667 },
+    "images": ["/images/apparitions/kibeho.jpg"]
+  },
+  {
+    "id": 11,
+    "name": "Our Lady of La Vang",
+    "location": {
+      "city": "Quảng Trị",
+      "country": "Vietnam",
+      "shrine": "Basilica of Our Lady of La Vang"
+    },
+    "year": "1798",
+    "visionaries": ["Catholic refugees hiding from persecution"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "I will grant help to those who pray here",
+      "Comfort during persecution",
+      "Use leaves from trees here for medicine"
+    ],
+    "miracles": [
+      "Mary appeared to Catholics hiding in jungle during Tây Sơn persecution",
+      "Leaves from La Vang trees used for healing - documented cures",
+      "Site survived Vietnam War bombing - chapel rebuilt 5 times",
+      "National shrine of Vietnam"
+    ],
+    "churchApproval": "Recognized by Vietnamese bishops, designated National Shrine",
+    "historicalContext": "Vietnam 1798 - Tây Sơn persecution of Catholics, hundreds killed",
+    "shrine": "Basilica built on site, pilgrimage destination for Vietnamese Catholics worldwide",
+    "story": "In 1798, during violent persecution of Catholics, refugees hid in the La Vang forest near Quảng Trị. Exhausted and starving, they prayed the rosary for help. Mary appeared with the Christ child, flanked by two angels, comforting them and promising to help all who pray there. She told them to use leaves from the forest trees as medicine. The site became a pilgrimage destination and has survived war and destruction - the church has been rebuilt five times.",
+    "coordinates": { "lat": 16.7833, "lng": 107.1167 },
+    "images": ["/images/apparitions/lavang.jpg"]
+  },
+  {
+    "id": 12,
+    "name": "Our Lady of Aparecida",
+    "location": {
+      "city": "Aparecida",
+      "country": "Brazil",
+      "shrine": "National Shrine Basilica of Our Lady of Aparecida"
+    },
+    "year": "1717",
+    "visionaries": ["Three fishermen"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "Hope in poverty and oppression",
+      "Mary's care for the poor",
+      "Patroness of Brazil"
+    ],
+    "miracles": [
+      "Terracotta statue caught in fishing nets in two pieces - head then body",
+      "Nets immediately filled with fish after finding statue",
+      "Countless miracles documented at shrine since 1717",
+      "Statue survived 1978 bombing attempt - only crown damaged",
+      "12 million pilgrims annually - second largest Marian basilica in world"
+    ],
+    "churchApproval": "Basilica status 1908, Pope Pius XI proclaimed patroness of Brazil 1930",
+    "historicalContext": "Brazil 1717 - Colonial era, slavery, Portuguese rule",
+    "shrine": "Second largest Catholic church in world, holds 45,000 people",
+    "story": "In October 1717, three fishermen cast nets in Paraíba River searching for food for a governor's banquet. After catching nothing, they pulled up a headless terracotta statue of Mary. Casting again, they caught the head. Immediately their nets filled with so many fish they nearly sank the boat. The small statue, only 15 inches tall, was enshrined. Miracles multiplied, and today the National Shrine receives 12 million pilgrims yearly - making it the second most-visited Marian shrine worldwide.",
+    "coordinates": { "lat": -22.8508, "lng": -45.2317 },
+    "images": ["/images/apparitions/aparecida.jpg"]
+  },
+  {
+    "id": 13,
+    "name": "Our Lady of Las Lajas",
+    "location": {
+      "city": "Ipiales",
+      "country": "Colombia",
+      "shrine": "Sanctuary of Las Lajas"
+    },
+    "year": "1754",
+    "visionaries": ["Indigenous woman María Mueces and deaf-mute daughter Rosa"],
+    "apparitionCount": 2,
+    "keyMessages": [
+      "Call to my daughter",
+      "Divine accessibility to indigenous peoples",
+      "Miraculous image as permanent sign"
+    ],
+    "miracles": [
+      "Deaf-mute daughter Rosa suddenly spoke after seeing apparition",
+      "Image of Mary, Jesus, and angels appeared on rock wall - still visible",
+      "Scientific tests confirm image penetrates rock, not painted on surface",
+      "Countless healings documented at shrine",
+      "Image survived attempts to remove it from rock"
+    ],
+    "churchApproval": "Basilica status granted 1954 by Pope Pius XII",
+    "historicalContext": "Colombia 1754 - Spanish colonial era, indigenous population marginalized",
+    "shrine": "Gothic basilica built into gorge over rock image, 750,000+ pilgrims annually",
+    "story": "In 1754, María Mueces and her deaf-mute daughter Rosa sought shelter from a storm in a gorge near Ipiales. Rosa suddenly cried 'Mother, look!' - her first words ever. They saw Mary with infant Jesus, surrounded by angels. Days later they returned and found a beautiful image of the vision imprinted on the rock wall. Scientific analysis confirmed the image penetrates the rock rather than being painted on it. The spectacular Gothic basilica now spans the gorge over the miraculous image.",
+    "coordinates": { "lat": 0.7706, "lng": -77.5958 },
+    "images": ["/images/apparitions/laslajas.jpg"]
+  },
+  {
+    "id": 14,
+    "name": "Our Lady of Walsingham",
+    "location": {
+      "city": "Walsingham",
+      "country": "England",
+      "shrine": "National Catholic Shrine of Our Lady"
+    },
+    "year": "1061",
+    "visionaries": ["Richeldis de Faverches"],
+    "apparitionCount": 3,
+    "keyMessages": [
+      "Build a replica of my Nazareth house",
+      "England as Mary's Dowry",
+      "Devotion to the Incarnation"
+    ],
+    "miracles": [
+      "House miraculously moved 200 feet to correct location overnight",
+      "Healing spring discovered at site",
+      "Became England's premier pilgrimage site for 500 years",
+      "Survived Reformation destruction, restored 1897",
+      "Multiple healings documented at shrine"
+    ],
+    "churchApproval": "Medieval approval by bishops, restored as National Shrine 1934",
+    "historicalContext": "England 1061 - Pre-Norman Conquest, medieval Catholic England",
+    "shrine": "Restored shrine receives 300,000+ pilgrims annually, visited by popes and royalty",
+    "story": "In 1061, Mary appeared three times to noblewoman Richeldis de Faverches, showing her the house in Nazareth where the Annunciation occurred. Mary asked Richeldis to build a replica 'in honor of the Incarnation.' Workers built it in wrong spot; overnight it miraculously moved 200 feet to the correct location. Walsingham became England's greatest pilgrimage site for 500 years until Henry VIII destroyed it in 1538. It was restored in 1897 and is now the Catholic National Shrine.",
+    "coordinates": { "lat": 52.8936, "lng": 0.8739 },
+    "images": ["/images/apparitions/walsingham.jpg"]
+  },
+  {
+    "id": 15,
+    "name": "Our Lady of the Pillar",
+    "location": {
+      "city": "Zaragoza",
+      "country": "Spain",
+      "shrine": "Basilica of Our Lady of the Pillar"
+    },
+    "year": "40 AD",
+    "visionaries": ["St. James the Apostle"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "This place will be my house",
+      "Build a church here",
+      "First Marian apparition in history"
+    ],
+    "miracles": [
+      "First documented Marian apparition - while Mary still lived on earth",
+      "Jasper pillar Mary stood upon preserved in basilica for 2,000 years",
+      "During Spanish Civil War, three bombs dropped on basilica - none exploded",
+      "Unexploded bombs now displayed in basilica",
+      "Countless miracles documented over 2 millennia"
+    ],
+    "churchApproval": "Ancient tradition approved by Church, Basilica since 1456",
+    "historicalContext": "Spain 40 AD - St. James evangelizing Iberia, Mary still living in Ephesus",
+    "shrine": "Major basilica, 500,000+ pilgrims annually, October 12 feast day",
+    "story": "In 40 AD, while Mary still lived in Ephesus, she bi-located to Zaragoza, Spain where St. James the Apostle was struggling to evangelize. Appearing on a jasper pillar carried by angels, Mary encouraged James to build a chapel there. The pillar remains enshrined in the Basilica of Our Lady of the Pillar. This is unique as the only apparition occurring while Mary lived on earth. During the 1936 Spanish Civil War, three bombs hit the basilica but miraculously failed to explode.",
+    "coordinates": { "lat": 41.6573, "lng": -0.8782 },
+    "images": ["/images/apparitions/pillar.jpg"]
+  },
+  {
+    "id": 16,
+    "name": "Our Lady of Good Success",
+    "location": {
+      "city": "Quito",
+      "country": "Ecuador",
+      "shrine": "Convent of the Immaculate Conception"
+    },
+    "year": "1594-1634",
+    "visionaries": ["Mother Mariana de Jesús Torres"],
+    "apparitionCount": "Multiple over 40 years",
+    "keyMessages": [
+      "Prophecies about 20th century Church crisis",
+      "Sacraments will be held in contempt",
+      "Masonic sects will infiltrate all social classes",
+      "Great devotion to Eucharist will save the Church"
+    ],
+    "miracles": [
+      "Statue's face miraculously formed during prayer",
+      "Statue opened eyes multiple times witnessed by many",
+      "Baby Jesus statue disappeared and reappeared heavier",
+      "Mother Mariana's body found incorrupt in 1906",
+      "Accurate prophecies about 20th century fulfilled"
+    ],
+    "churchApproval": "Bishop Jesús María Yerovi approved 1611, reaffirmed 2010",
+    "historicalContext": "Ecuador 1594-1634 - Spanish colonial era, convent life",
+    "shrine": "Statue enshrined in Quito convent, growing pilgrimage site",
+    "story": "From 1594-1634, Mary appeared numerous times to Mother Mariana de Jesús Torres, a Spanish abbess in Quito. Mary gave detailed prophecies about the 20th century, warning of a great crisis in the Church beginning in the 1960s. She described how faith would be lost, sacraments abandoned, and priests would fall away. Mary promised that devotion to the Eucharist and her Immaculate Heart would restore the Church. The statue's face was miraculously formed during prayer, and it has opened its eyes multiple times before witnesses.",
+    "coordinates": { "lat": -0.2150, "lng": -78.5075 },
+    "images": ["/images/apparitions/quito.jpg"]
+  },
+  {
+    "id": 17,
+    "name": "Our Lady of Cuapa",
+    "location": {
+      "city": "Cuapa",
+      "country": "Nicaragua",
+      "shrine": "Sanctuary of Our Lady of Cuapa"
+    },
+    "year": "1980",
+    "visionaries": ["Bernardo Martínez (sacristan)"],
+    "apparitionCount": 8,
+    "keyMessages": [
+      "Pray the Rosary",
+      "Nicaragua will suffer if people don't change",
+      "Love one another",
+      "Make peace, do penance"
+    ],
+    "miracles": [
+      "8 apparitions during Nicaraguan civil war",
+      "Mary appeared walking on a cloud",
+      "Healing spring revealed",
+      "Bernardo received stigmata wounds",
+      "Multiple witnesses saw luminous phenomena"
+    ],
+    "churchApproval": "Bishop Pablo Antonio Vega approved November 13, 1982 (fastest approval in modern history - 2 years)",
+    "historicalContext": "Nicaragua 1980 - Sandinista revolution, civil war, communist persecution of Church",
+    "shrine": "Sanctuary built, pilgrimage site for Central American Catholics",
+    "story": "On May 8, 1980, sacristan Bernardo Martínez saw a beautiful lady in radiant white descending on a cloud near his church in Cuapa. Over eight apparitions through October 1980, Mary identified herself as 'Mother of all sinners' and called for prayer, especially the Rosary, to prevent suffering in Nicaragua. She revealed a healing spring and gave Bernardo stigmata wounds. Despite the civil war, the bishop approved the apparitions in just two years - one of the fastest approvals in modern Church history.",
+    "coordinates": { "lat": 12.2667, "lng": -85.3833 },
+    "images": ["/images/apparitions/cuapa.jpg"]
+  },
+  {
+    "id": 18,
+    "name": "Our Lady of All Nations",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "shrine": "Chapel of Our Lady of All Nations"
+    },
+    "year": "1945-1959",
+    "visionaries": ["Ida Peerdeman"],
+    "apparitionCount": 56,
+    "keyMessages": [
+      "I am the Lady of All Nations",
+      "Who once was Mary",
+      "Pray for true unity of Church",
+      "New dogma: Mary as Co-Redemptrix, Mediatrix, Advocate"
+    ],
+    "miracles": [
+      "56 apparitions over 14 years",
+      "Prophesied Second Vatican Council before announcement",
+      "Accurate prophecies about Church and world events",
+      "Healing spring water produces documented cures",
+      "Millions pray approved prayer worldwide"
+    ],
+    "churchApproval": "Bishop Jozef Marianus Punt approved May 31, 2002 (after 43-year investigation)",
+    "historicalContext": "Netherlands 1945-1959 - Post-WWII, Cold War, pre-Vatican II Church",
+    "shrine": "Chapel in Amsterdam, prayer spread to 90+ countries",
+    "story": "From March 25, 1945 to May 31, 1959, Mary appeared 56 times to Ida Peerdeman in Amsterdam. She called herself 'Lady of All Nations, who once was Mary' and requested a new dogma proclaiming her as Co-Redemptrix, Mediatrix, and Advocate. Mary prophesied the Second Vatican Council years before it was announced and gave detailed messages about Church unity. After a thorough 43-year investigation, Bishop Punt approved the apparitions in 2002. The prayer Mary taught is now prayed in over 90 countries.",
+    "coordinates": { "lat": 52.3676, "lng": 4.9041 },
+    "images": ["/images/apparitions/amsterdam.jpg"]
+  },
+  {
+    "id": 19,
+    "name": "Our Lady of Zeitoun",
+    "location": {
+      "city": "Cairo",
+      "country": "Egypt",
+      "shrine": "St. Mary's Coptic Orthodox Church"
+    },
+    "year": "1968-1971",
+    "visionaries": ["Thousands of witnesses, Muslims and Christians"],
+    "apparitionCount": "Multiple over 3 years",
+    "keyMessages": [
+      "Silent apparition - no words spoken",
+      "Unity between Christians and Muslims",
+      "Hope during Middle East tensions",
+      "Ecumenical significance"
+    ],
+    "miracles": [
+      "Mary appeared as full luminous figure on church roof",
+      "Witnessed by millions including Muslims, atheists, Coptic Pope Kyrillos VI",
+      "Photographed and filmed by Egyptian media",
+      "Luminous doves appeared with no natural source",
+      "Healings documented during apparitions",
+      "Lasted 3 years with hundreds of appearances"
+    ],
+    "churchApproval": "Coptic Pope Kyrillos VI approved 1968, investigated and recognized",
+    "historicalContext": "Egypt 1968-1971 - Post Six-Day War, Middle East tensions, Muslim-Christian relations",
+    "shrine": "Coptic church in Zeitoun, pilgrimage site for Christians and Muslims",
+    "story": "On April 2, 1968, Muslim bus mechanics saw a woman in white on the roof of St. Mary's Coptic Church in Zeitoun, Cairo. Thinking she would jump, they called for help. Instead, she began to glow with brilliant light. For the next three years, Mary appeared hundreds of times on and around the church, witnessed by millions including Coptic Pope Kyrillos VI, President Nasser's wife, and countless Muslims. Egyptian TV filmed the apparitions. Mary never spoke, but her presence brought Christians and Muslims together in prayer. Documented healings occurred, and luminous doves appeared with no natural explanation.",
+    "coordinates": { "lat": 30.0808, "lng": 31.3147 },
+    "images": ["/images/apparitions/zeitoun.jpg"]
+  },
+  {
+    "id": 20,
+    "name": "Our Lady of Medjugorje",
+    "location": {
+      "city": "Medjugorje",
+      "country": "Bosnia and Herzegovina",
+      "shrine": "St. James Church"
+    },
+    "year": "1981-present",
+    "visionaries": ["Six visionaries - still receiving messages"],
+    "apparitionCount": "Daily since 1981 (ongoing)",
+    "keyMessages": [
+      "I am the Queen of Peace",
+      "Pray for peace, fast, convert",
+      "Pray the Rosary daily",
+      "Monthly confession, Eucharist, Bible reading"
+    ],
+    "miracles": [
+      "Daily apparitions for 43+ years and ongoing",
+      "10 secrets about future events given to visionaries",
+      "Sun miracles witnessed by millions",
+      "Countless conversions and healings documented",
+      "40+ million pilgrims since 1981",
+      "Visionaries show no signs of deception in medical tests"
+    ],
+    "churchApproval": "Vatican permits pilgrimages (2019), final verdict pending. Local bishop skeptical, but Pope Francis allowed pastoral care",
+    "historicalContext": "Bosnia 1981-present - Communist Yugoslavia, then Bosnian War (1992-95), now post-war healing",
+    "shrine": "St. James Church in Medjugorje, one of most visited pilgrimage sites in world",
+    "story": "On June 24, 1981, six teenagers saw a luminous woman holding a baby on Apparition Hill near Medjugorje. She identified herself as 'Queen of Peace' and has appeared daily since then - over 43 years and counting. Each visionary has been given 10 secrets about future Church and world events. Despite initial communist persecution and later war, Medjugorje has become one of Christianity's most visited sites with 40+ million pilgrims. The Vatican permits organized pilgrimages while investigation continues. Dramatic conversions and documented healings number in the thousands.",
+    "coordinates": { "lat": 43.1942, "lng": 17.6769 },
+    "images": ["/images/apparitions/medjugorje.jpg"]
+  }
+]
