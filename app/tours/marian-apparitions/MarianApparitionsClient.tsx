@@ -22,6 +22,16 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
+  // Voice rotation - different voice for each apparition
+  const voices = [
+    { name: 'en-US-AndrewNeural', displayName: 'Andrew' },
+    { name: 'en-US-BrianNeural', displayName: 'Brian' },
+    { name: 'en-US-ChristopherNeural', displayName: 'Christopher' },
+    { name: 'en-US-EricNeural', displayName: 'Eric' },
+    { name: 'en-US-SteffanNeural', displayName: 'Steffan' },
+    { name: 'en-US-RogerNeural', displayName: 'Roger' },
+  ];
+
   // Background music
   const musicOptions = [
     'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
@@ -140,13 +150,17 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
         throw new Error('Azure Speech credentials not configured');
       }
 
+      // Select voice based on apparition ID
+      const voiceIndex = selectedApparition.id % 6;
+      const selectedVoice = voices[voiceIndex];
+
       const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
-      speechConfig.speechSynthesisVoiceName = 'en-US-AndrewMultilingualNeural';
+      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
 
       const synthesizer = new sdk.SpeechSynthesizer(speechConfig);
 
       const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
-        <voice name='en-US-AndrewMultilingualNeural'>
+        <voice name='${selectedVoice.name}'>
           <prosody rate='0.95' pitch='+2%'>
             ${data.narrationText}
           </prosody>
