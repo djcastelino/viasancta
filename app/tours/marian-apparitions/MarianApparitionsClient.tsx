@@ -153,15 +153,17 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
       // Select voice based on apparition ID
       const voiceIndex = selectedApparition.id % 6;
       const selectedVoice = voices[voiceIndex];
+      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} for apparition ${selectedApparition.id}`);
 
       const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
       speechConfig.speechSynthesisVoiceName = selectedVoice.name;
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
 
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig);
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
 
-      const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'>
-        <voice name='${selectedVoice.name}'>
-          <prosody rate='0.95' pitch='+2%'>
+      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+        <voice name="${selectedVoice.name}">
+          <prosody rate="0.95">
             ${data.narrationText}
           </prosody>
         </voice>
