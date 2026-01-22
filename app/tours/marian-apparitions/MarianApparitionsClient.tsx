@@ -77,33 +77,12 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     setError('');
   };
 
-  const handleReadText = async () => {
-    if (narrationText) {
-      setShowNarration(true);
-      return;
-    }
+  const handleReadText = () => {
+    if (!selectedApparition) return;
 
-    setIsGenerating(true);
-    setError('');
-    setLoadingMessage('Generating narration...');
-
-    try {
-      const response = await fetch('/api/marian-apparition-narration', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ apparition: selectedApparition })
-      });
-
-      const data = await response.json();
-      setNarrationText(data.narrationText);
-      setShowNarration(true);
-    } catch (error) {
-      console.error('Error generating narration:', error);
-      setError('Failed to generate narration. Please try again.');
-    } finally {
-      setIsGenerating(false);
-      setLoadingMessage('');
-    }
+    // Just display the story text from the apparition data
+    setNarrationText(selectedApparition.story);
+    setShowNarration(true);
   };
 
   const handleListen = async () => {
