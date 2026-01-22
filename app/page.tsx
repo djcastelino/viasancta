@@ -168,30 +168,32 @@ export default function Home() {
           </Link>
 
           {/* Marian Apparitions */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-            <div className="h-60 relative overflow-hidden">
-              {/* Lourdes Grotto from Wikimedia Commons */}
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
-                alt="Lourdes Grotto"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-3xl font-bold drop-shadow-md">
-                  Marian Apparitions
-                </h3>
+          <Link href="/tours/marian-apparitions" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="h-60 relative overflow-hidden">
+                {/* Lourdes Grotto from Wikimedia Commons */}
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
+                  alt="Lourdes Grotto"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Marian Apparitions
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Journey through 20 Church-approved Marian apparitions worldwide. From Guadalupe to Lourdes to Fatima, experience where Our Lady appeared with AI-guided narrations.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
               </div>
             </div>
-            <div className="p-7">
-              <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Visit sites of Church-approved Marian apparitions. From Lourdes to Fatima, discover where Our Lady appeared.
-              </p>
-              <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
-                Coming Soon
-              </span>
-            </div>
-          </div>
+          </Link>
 
           {/* Stations of the Cross */}
           <Link href="/stations-of-the-cross" className="block group">
