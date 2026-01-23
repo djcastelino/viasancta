@@ -59,6 +59,70 @@ export default function Home() {
       {/* Jesus in the OT Section */}
       <JesusInOT />
 
+      {/* Memory Verses Section */}
+      <section className="max-w-7xl mx-auto px-5 py-8">
+        <Link href="/memory-verses" className="block group">
+          <div className="bg-gradient-to-br from-amber-500 to-yellow-600 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div className="p-8 md:p-12 text-white relative">
+              {/* Decorative background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  {/* Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                      <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-bold">
+                        SCRIPTURE MEMORY
+                      </span>
+                      <span className="bg-white/30 px-4 py-1 rounded-full text-sm font-semibold">
+                        77 VERSES
+                      </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif">
+                      AI Memory Coach
+                    </h2>
+                    <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                      Memorize 77 essential Bible verses with your personal AI coach. Progressive learning, spaced repetition, proven techniques. Take God's Word to heaven!
+                    </p>
+
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">📖</span>
+                        <span>One Verse/Day</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">🧠</span>
+                        <span>AI Coaching</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">✍️</span>
+                        <span>Write to Remember</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">🔄</span>
+                        <span>Spaced Repetition</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="text-center">
+                    <div className="inline-block bg-white text-amber-600 hover:bg-amber-50 px-8 py-4 rounded-full font-bold text-xl shadow-xl group-hover:scale-105 transition-transform">
+                      Start Learning →
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Daily Scripture Challenge Section */}
       <section className="max-w-7xl mx-auto px-5 py-8">
         <Link href="/challenge" className="block group">
@@ -190,36 +254,6 @@ export default function Home() {
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Start Tour →
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          {/* Memory Verses */}
-          <Link href="/memory-verses" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
-              <div className="h-60 relative overflow-hidden bg-gradient-to-br from-amber-500 to-yellow-600">
-                {/* Bible illustration background */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white/10 text-[200px] font-bold">📖</div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
-                    <span>🧠</span>
-                    <span>AI Memory Coach</span>
-                  </div>
-                  <h3 className="text-3xl font-bold drop-shadow-md">
-                    Scripture Memory Coach
-                  </h3>
-                </div>
-              </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Memorize 77 essential Bible verses with your personal AI coach. Progressive learning, spaced repetition, and proven techniques. Take God's Word to heaven.
-                </p>
-                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                  Start Learning →
                 </span>
               </div>
             </div>

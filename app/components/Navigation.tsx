@@ -65,6 +65,12 @@ export default function Navigation() {
               Jesus in the Old Testament
             </Link>
             <Link
+              href="/memory-verses"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+            >
+              Memory Verses
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
@@ -125,6 +131,13 @@ export default function Navigation() {
                 className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
               >
                 Jesus in the Old Testament
+              </Link>
+              <Link
+                href="/memory-verses"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
+              >
+                Memory Verses
               </Link>
               <Link
                 href="/about"
