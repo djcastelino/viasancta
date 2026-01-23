@@ -28,7 +28,7 @@ interface MemoryVerseClientProps {
   verses: MemoryVerse[];
 }
 
-type Phase = 'phase1_read' | 'phase2_type' | 'phase3_first_letters' | 'phase4_round1' | 'phase4_round2' | 'phase4_round3' | 'phase5_mastery' | 'phase6_reference';
+type Phase = 'phase1_read' | 'phase2_type' | 'phase3_round1' | 'phase3_round2' | 'phase3_round3' | 'phase3_round4' | 'phase4_master' | 'phase5_reference';
 
 export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [currentDay, setCurrentDay] = useState(1);
