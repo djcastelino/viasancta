@@ -206,6 +206,21 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
+  // Get next phase
+  const getNextPhase = (): Phase | null => {
+    switch (currentPhase) {
+      case 'phase1_read': return 'phase2_type';
+      case 'phase2_type': return 'phase3_round1';
+      case 'phase3_round1': return 'phase3_round2';
+      case 'phase3_round2': return 'phase3_round3';
+      case 'phase3_round3': return 'phase3_round4';
+      case 'phase3_round4': return 'phase4_master';
+      case 'phase4_master': return 'phase5_reference';
+      case 'phase5_reference': return null; // Done, move to next verse
+      default: return null;
+    }
+  };
+
   // Advance to next phase
   const advancePhase = async (nextPhase: Phase) => {
     setIsLoading(true);
@@ -343,13 +358,27 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-xl font-bold text-gray-800">Today's Verse</h3>
-            <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-              todaysVerse.difficulty === 'short' ? 'bg-green-100 text-green-700' :
-              todaysVerse.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' :
-              'bg-red-100 text-red-700'
-            }`}>
-              {todaysVerse.difficulty}
-            </span>
+            <div className="flex gap-2">
+              {coachResponse && (
+                <span className="px-3 py-1 rounded-full text-sm font-semibold bg-blue-100 text-blue-700">
+                  {currentPhase === 'phase1_read' && '📖 Phase 1: Read'}
+                  {currentPhase === 'phase2_type' && '✍️ Phase 2: Type'}
+                  {currentPhase === 'phase3_round1' && '🧠 Phase 3-1'}
+                  {currentPhase === 'phase3_round2' && '🧠 Phase 3-2'}
+                  {currentPhase === 'phase3_round3' && '🧠 Phase 3-3'}
+                  {currentPhase === 'phase3_round4' && '🧠 Phase 3-4'}
+                  {currentPhase === 'phase4_master' && '🏆 Phase 4: Master'}
+                  {currentPhase === 'phase5_reference' && '💎 Phase 5: Bonus'}
+                </span>
+              )}
+              <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                todaysVerse.difficulty === 'short' ? 'bg-green-100 text-green-700' :
+                todaysVerse.difficulty === 'medium' ? 'bg-yellow-100 text-yellow-700' :
+                'bg-red-100 text-red-700'
+              }`}>
+                {todaysVerse.difficulty}
+              </span>
+            </div>
           </div>
           <p className="text-2xl text-gray-700 mb-2 leading-relaxed">
             "{todaysVerse.verse}"
@@ -390,7 +419,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               </div>
             )}
 
-            {/* User Input (Phases 2-6) */}
+            {/* User Input (Phases 2-5) */}
             {currentPhase !== 'phase1_read' && (
               <>
                 <div>
@@ -413,13 +442,31 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   >
                     {isLoading ? 'Checking...' : '✓ Submit'}
                   </button>
-                  <button
-                    onClick={nextVerse}
-                    disabled={currentDay >= 77}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-                  >
-                    Skip →
-                  </button>
+
+                  {/* Next Phase Button */}
+                  {getNextPhase() && (
+                    <button
+                      onClick={() => {
+                        const next = getNextPhase();
+                        if (next) advancePhase(next);
+                      }}
+                      disabled={isLoading}
+                      className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 whitespace-nowrap"
+                    >
+                      {isLoading ? 'Loading...' : 'Next Phase →'}
+                    </button>
+                  )}
+
+                  {/* Skip to Next Verse (only show if no next phase) */}
+                  {!getNextPhase() && (
+                    <button
+                      onClick={nextVerse}
+                      disabled={currentDay >= 77}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                    >
+                      Next Verse →
+                    </button>
+                  )}
                 </div>
               </>
             )}
@@ -427,7 +474,10 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             {/* Next button for Phase 1 */}
             {currentPhase === 'phase1_read' && (
               <button
-                onClick={() => advancePhase('phase2_type')}
+                onClick={() => {
+                  const next = getNextPhase();
+                  if (next) advancePhase(next);
+                }}
                 disabled={isLoading}
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
               >
