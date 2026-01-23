@@ -292,10 +292,25 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       });
 
       const data = await response.json();
-      setCoachResponse(data.coachResponse);
+      const responseText = data.coachResponse;
+      setCoachResponse(responseText);
 
-      // Check if phase should advance (simple check - Llama should guide this)
-      // You might want to parse Llama's response to detect phase advancement
+      // Auto-advance if AI says correct and suggests next phase
+      const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for'];
+      const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword));
+
+      if (isCorrect) {
+        // Auto-advance to next phase after a brief delay
+        setTimeout(() => {
+          const next = getNextPhase();
+          if (next) {
+            setCurrentPhase(next);
+            setCoachResponse('');
+            // Immediately fetch next phase instructions
+            advancePhase(next);
+          }
+        }, 1500); // 1.5 second delay to let user see validation
+      }
 
       setUserInput('');
     } catch (error) {
@@ -440,33 +455,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                     disabled={isLoading || !userInput.trim()}
                     className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
                   >
-                    {isLoading ? 'Checking...' : '✓ Submit'}
+                    {isLoading ? 'Checking...' : '✓ Submit Answer'}
                   </button>
 
-                  {/* Next Phase Button */}
-                  {getNextPhase() && (
-                    <button
-                      onClick={() => {
-                        const next = getNextPhase();
-                        if (next) advancePhase(next);
-                      }}
-                      disabled={isLoading}
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 whitespace-nowrap"
-                    >
-                      {isLoading ? 'Loading...' : 'Next Phase →'}
-                    </button>
-                  )}
-
-                  {/* Skip to Next Verse (only show if no next phase) */}
-                  {!getNextPhase() && (
-                    <button
-                      onClick={nextVerse}
-                      disabled={currentDay >= 77}
-                      className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-                    >
-                      Next Verse →
-                    </button>
-                  )}
+                  {/* Skip to Next Verse button */}
+                  <button
+                    onClick={nextVerse}
+                    disabled={currentDay >= 77 || isLoading}
+                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 whitespace-nowrap"
+                  >
+                    Skip →
+                  </button>
                 </div>
               </>
             )}
