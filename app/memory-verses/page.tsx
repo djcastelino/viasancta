@@ -3,7 +3,7 @@ import memoryVersesData from '@/public/memory-verses.json';
 
 export const metadata = {
   title: 'Memory Verses - Divine Pilgrim',
-  description: 'Out of 31,000+ Bible verses, memorize 77 handpicked treasures with your personal AI coach. Carry God\'s Word in your heart forever through proven techniques and spaced repetition.',
+  description: 'Out of 36,000+ verses in the Catholic Bible, memorize 77 handpicked treasures with your personal AI coach. Carry God\'s Word in your heart forever through proven techniques and spaced repetition.',
 };
 
 export default function MemoryVersesPage() {
@@ -16,7 +16,7 @@ export default function MemoryVersesPage() {
             Scripture Memory Coach
           </h1>
           <p className="text-xl md:text-2xl mb-3 text-amber-100">
-            The Bible contains over 31,000 verses. Memorizing just 77 of these treasures means you'll carry God's Word in your heart forever.
+            The Catholic Bible contains over 36,000 verses. Memorizing just 77 of these treasures means you'll carry God's Word in your heart forever.
           </p>
           <p className="text-lg text-amber-50 italic">
             "Heaven and earth will pass away, but my words will never pass away."
@@ -47,7 +47,7 @@ export default function MemoryVersesPage() {
               🔄 <strong>Never forget</strong> - Reviews at 1 day, 7 days, 30 days
             </p>
             <p className="text-amber-700 font-semibold pt-2">
-              Out of 31,000+ verses, these 77 are handpicked treasures. Even mastering just 7 gives you 7 eternal weapons for spiritual warfare! 🗡️
+              Out of 36,000+ verses, these 77 are handpicked treasures. Even mastering just 7 gives you 7 eternal weapons for spiritual warfare! 🗡️
             </p>
           </div>
         </div>
