@@ -206,6 +206,46 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
+  // Advance to next phase
+  const advancePhase = async (nextPhase: Phase) => {
+    setIsLoading(true);
+    setUserInput('');
+    setCurrentPhase(nextPhase);
+
+    try {
+      const response = await fetch('/api/memory-verse-coach', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          verse: todaysVerse.verse,
+          reference: todaysVerse.reference,
+          testament: todaysVerse.testament,
+          category: todaysVerse.category,
+          difficulty: todaysVerse.difficulty,
+          bibleTranslation: todaysVerse.bibleTranslation,
+          totalVersesMemorized: totalMemorized,
+          totalReferencesMemorized: totalReferencesMemorized,
+          currentPhase: nextPhase,
+          phaseRound: phaseRound,
+          attemptNumber: 1,
+          userTypedText: '',
+          previousVersesToReview: getVersesNeedingReview(),
+          isFirstVerse: false,
+          hasCompletedReviewToday: false,
+          userMessage: 'Ready for next phase!',
+        }),
+      });
+
+      const data = await response.json();
+      setCoachResponse(data.coachResponse);
+    } catch (error) {
+      console.error('Error advancing phase:', error);
+      setCoachResponse('Error advancing. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Submit user's typed verse
   const handleSubmit = async () => {
     if (!userInput.trim()) return;
@@ -387,14 +427,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             {/* Next button for Phase 1 */}
             {currentPhase === 'phase1_read' && (
               <button
-                onClick={() => {
-                  setCurrentPhase('phase2_type');
-                  setCoachResponse('');
-                  startLearning();
-                }}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition"
+                onClick={() => advancePhase('phase2_type')}
+                disabled={isLoading}
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
               >
-                Next: Start Typing →
+                {isLoading ? 'Loading...' : 'Next: Start Typing →'}
               </button>
             )}
           </div>
