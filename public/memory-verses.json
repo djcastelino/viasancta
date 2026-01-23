@@ -1,0 +1,695 @@
+[
+  {
+    "id": 1,
+    "verse": "I can do all things through Christ who strengthens me.",
+    "reference": "Philippians 4:13",
+    "testament": "NT",
+    "category": "Strength",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 2,
+    "verse": "Take delight in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalms 37:4",
+    "testament": "OT",
+    "category": "Trust",
+    "difficulty": "short",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 3,
+    "verse": "Jesus Christ is the same yesterday, today and forever.",
+    "reference": "Hebrews 13:8",
+    "testament": "NT",
+    "category": "Faithfulness",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 4,
+    "verse": "And God is able to provide you with every blessing in abundance, so that you may always have enough of everything and may provide in abundance for every good work.",
+    "reference": "2 Corinthians 9:8",
+    "testament": "NT",
+    "category": "Provision",
+    "difficulty": "long",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 5,
+    "verse": "For you can do nothing without me.",
+    "reference": "John 15:5",
+    "testament": "NT",
+    "category": "Dependence",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 6,
+    "verse": "My presence will go with you, and I will give you rest.",
+    "reference": "Exodus 33:14",
+    "testament": "OT",
+    "category": "Rest",
+    "difficulty": "short",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 7,
+    "verse": "I have come in order that you might have life—life in all its fullness.",
+    "reference": "John 10:10",
+    "testament": "NT",
+    "category": "Abundant Life",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 8,
+    "verse": "My people are destroyed for lack of knowledge.",
+    "reference": "Hosea 4:6",
+    "testament": "OT",
+    "category": "Wisdom",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 9,
+    "verse": "I will ask the Father, and he will give you another Helper, who will stay with you forever.",
+    "reference": "John 14:16",
+    "testament": "NT",
+    "category": "Holy Spirit",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 10,
+    "verse": "But you, O Lord, are a shield around me, my glory and the lifter of my head.",
+    "reference": "Psalms 3:3",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 11,
+    "verse": "Remembering the words of the Lord Jesus, how he said, 'It is more blessed to give than to receive.'",
+    "reference": "Acts 20:35",
+    "testament": "NT",
+    "category": "Generosity",
+    "difficulty": "medium",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 12,
+    "verse": "I am the bread of life. Whoever comes to me will never be hungry, and whoever believes in me will never be thirsty.",
+    "reference": "John 6:35",
+    "testament": "NT",
+    "category": "Salvation",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 13,
+    "verse": "You will succeed not by military might or by your strength but by my spirit.",
+    "reference": "Zechariah 4:6",
+    "testament": "OT",
+    "category": "Holy Spirit",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 14,
+    "verse": "The people whom I formed for myself so that they might declare my praise.",
+    "reference": "Isaiah 43:21",
+    "testament": "OT",
+    "category": "Purpose",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 15,
+    "verse": "But for you who obey me, my saving power will rise on you like the sun and bring healing like sun's rays. You will be as free and happy as calves let out of a stall.",
+    "reference": "Malachi 4:2",
+    "testament": "OT",
+    "category": "Healing",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 16,
+    "verse": "Humble yourselves therefore under the mighty hand of God, so that he may exalt you in due time.",
+    "reference": "1 Peter 5:6",
+    "testament": "NT",
+    "category": "Humility",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 17,
+    "verse": "Leave all your worries with him, because he cares for you.",
+    "reference": "1 Peter 5:7",
+    "testament": "NT",
+    "category": "Trust",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 18,
+    "verse": "For the joy of the Lord is your strength.",
+    "reference": "Nehemiah 8:10",
+    "testament": "OT",
+    "category": "Joy",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 19,
+    "verse": "The Lord your God is with you; his power gives you victory. The Lord will take delight in you, and in his love he will give you new life. He will sing and be joyful over you.",
+    "reference": "Zephaniah 3:17",
+    "testament": "OT",
+    "category": "God's Love",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 20,
+    "verse": "May the Lord give you increase, both you and your children.",
+    "reference": "Psalms 115:14",
+    "testament": "OT",
+    "category": "Blessing",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 21,
+    "verse": "The Lord has promised that he himself will be a wall of fire around the city to protect it and that he will live there in all his glory.",
+    "reference": "Zechariah 2:5",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 22,
+    "verse": "The word of God is alive and active, sharper than any double-edged sword. It cuts all the way through, to where soul and spirit meet, to where joints and marrow come together. It judges the desires and thoughts of man's heart.",
+    "reference": "Hebrews 4:12",
+    "testament": "NT",
+    "category": "Word of God",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 23,
+    "verse": "The Lord is good, a stronghold in a day of trouble; he protects those who take refuge in him.",
+    "reference": "Nahum 1:7",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "medium",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 24,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 25,
+    "verse": "Your word is a lamp to guide me and a light for my path.",
+    "reference": "Psalms 119:105",
+    "testament": "OT",
+    "category": "Word of God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 26,
+    "verse": "As for my family and me, we will serve the Lord.",
+    "reference": "Joshua 24:15",
+    "testament": "OT",
+    "category": "Commitment",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 27,
+    "verse": "In your presence there is fullness of joy; in your right hand are pleasures forevermore.",
+    "reference": "Psalms 16:11",
+    "testament": "OT",
+    "category": "Joy",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 28,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 29,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 30,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 31,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 32,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 33,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 34,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 35,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 36,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 37,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 38,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 39,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 40,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 41,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 42,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 43,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 44,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 45,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 46,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 47,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 48,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 49,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 50,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 51,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 52,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 53,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 54,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 55,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 56,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 57,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 58,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 59,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 60,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 61,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 62,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 63,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 64,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 65,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 66,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 67,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 68,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 69,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 70,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 71,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 72,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 73,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 74,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 75,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 76,
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
+  },
+  {
+    "id": 77,
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
+  }
+]
