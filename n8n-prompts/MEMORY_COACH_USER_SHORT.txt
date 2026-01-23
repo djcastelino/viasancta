@@ -1,0 +1,8 @@
+Verse: {{ $json.body.verse }}
+Reference: {{ $json.body.reference }}
+Current Phase: {{ $json.body.currentPhase }}
+User Typed: "{{ $json.body.userTypedText }}"
+User Message: {{ $json.body.userMessage }}
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+Respond for this phase. Start with phase indicator (e.g., "📖 PHASE 1: READ IT" or "🧠 PHASE 3: MEMORIZE IT - Round 1"). Keep it SHORT (2-4 sentences).
