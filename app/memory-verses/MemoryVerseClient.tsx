@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface MemoryVerse {
   id: number;
@@ -19,11 +20,15 @@ interface MemoryProgress {
   lastReviewedDate: string;
   nextReviewDate: string;
   attemptCount: number;
+  currentPhase: string;
+  phaseRound: number;
 }
 
 interface MemoryVerseClientProps {
   verses: MemoryVerse[];
 }
+
+type Phase = 'phase1_read' | 'phase2_type' | 'phase3_first_letters' | 'phase4_round1' | 'phase4_round2' | 'phase4_round3' | 'phase5_mastery' | 'phase6_reference';
 
 export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [currentDay, setCurrentDay] = useState(1);
@@ -31,8 +36,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [coachResponse, setCoachResponse] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState<MemoryProgress[]>([]);
-  const [currentPhase, setCurrentPhase] = useState<'learn' | 'practice' | 'review'>('learn');
+  const [currentPhase, setCurrentPhase] = useState<Phase>('phase1_read');
+  const [phaseRound, setPhaseRound] = useState(1);
   const [showStats, setShowStats] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Load progress from localStorage
   useEffect(() => {
@@ -65,7 +73,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const totalMemorized = progress.filter(p => p.verseMemorized).length;
   const totalReferencesMemorized = progress.filter(p => p.referenceMemorized).length;
 
-  // Get verses that need review (memorized more than 1 day ago)
+  // Get verses that need review
   const getVersesNeedingReview = () => {
     const today = new Date().toISOString().split('T')[0];
     return progress
@@ -88,10 +96,81 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       .filter(Boolean);
   };
 
+  // Play audio with Azure TTS
+  const playAudio = async () => {
+    setIsPlayingAudio(true);
+
+    try {
+      const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const speechRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!speechKey || !speechRegion) {
+        alert('Azure Speech credentials not configured');
+        setIsPlayingAudio(false);
+        return;
+      }
+
+      const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
+      speechConfig.speechSynthesisVoiceName = 'en-US-ChristopherNeural';
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+        <voice name="en-US-ChristopherNeural">
+          <prosody rate="0.85">
+            ${todaysVerse.verse}
+          </prosody>
+        </voice>
+      </speak>`;
+
+      synthesizer.speakSsmlAsync(
+        ssml,
+        result => {
+          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audioElement = new Audio(audioUrl);
+            audioRef.current = audioElement;
+
+            audioElement.play();
+            audioElement.onended = () => {
+              setIsPlayingAudio(false);
+            };
+          } else {
+            console.error('Speech synthesis failed:', result.errorDetails);
+            setIsPlayingAudio(false);
+          }
+          synthesizer.close();
+        },
+        error => {
+          console.error('Error:', error);
+          setIsPlayingAudio(false);
+          synthesizer.close();
+        }
+      );
+    } catch (error) {
+      console.error('Error playing audio:', error);
+      setIsPlayingAudio(false);
+    }
+  };
+
+  // Stop audio
+  const stopAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+    setIsPlayingAudio(false);
+  };
+
   // Initial coaching prompt
   const startLearning = async () => {
     setIsLoading(true);
     setUserInput('');
+    setCurrentPhase('phase1_read');
+    setPhaseRound(1);
 
     try {
       const response = await fetch('/api/memory-verse-coach', {
@@ -106,7 +185,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           bibleTranslation: todaysVerse.bibleTranslation,
           totalVersesMemorized: totalMemorized,
           totalReferencesMemorized: totalReferencesMemorized,
-          currentPhase: 'learn',
+          currentPhase: 'phase1_read',
+          phaseRound: 1,
           attemptNumber: 1,
           userTypedText: '',
           previousVersesToReview: getVersesNeedingReview(),
@@ -146,6 +226,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           totalVersesMemorized: totalMemorized,
           totalReferencesMemorized: totalReferencesMemorized,
           currentPhase: currentPhase,
+          phaseRound: phaseRound,
           attemptNumber: progress.find(p => p.verseId === currentDay)?.attemptCount || 1,
           userTypedText: userInput,
           previousVersesToReview: getVersesNeedingReview(),
@@ -158,35 +239,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       const data = await response.json();
       setCoachResponse(data.coachResponse);
 
-      // Check if verse is correct (simple check - should be more sophisticated)
-      if (userInput.toLowerCase().trim() === todaysVerse.verse.toLowerCase().trim()) {
-        // Mark as memorized
-        const existingProgress = progress.find(p => p.verseId === currentDay);
-        const today = new Date().toISOString().split('T')[0];
-        const nextReview = new Date();
-        nextReview.setDate(nextReview.getDate() + 7); // Review in 7 days
-
-        if (existingProgress) {
-          const updatedProgress = progress.map(p =>
-            p.verseId === currentDay
-              ? { ...p, verseMemorized: true, lastReviewedDate: today, nextReviewDate: nextReview.toISOString().split('T')[0] }
-              : p
-          );
-          saveProgress(updatedProgress);
-        } else {
-          saveProgress([
-            ...progress,
-            {
-              verseId: currentDay,
-              verseMemorized: true,
-              referenceMemorized: false,
-              lastReviewedDate: today,
-              nextReviewDate: nextReview.toISOString().split('T')[0],
-              attemptCount: 1,
-            },
-          ]);
-        }
-      }
+      // Check if phase should advance (simple check - Llama should guide this)
+      // You might want to parse Llama's response to detect phase advancement
 
       setUserInput('');
     } catch (error) {
@@ -203,6 +257,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       saveCurrentDay(currentDay + 1);
       setCoachResponse('');
       setUserInput('');
+      setCurrentPhase('phase1_read');
+      setPhaseRound(1);
     }
   };
 
@@ -281,43 +337,66 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               <p className="text-gray-800 whitespace-pre-line">{coachResponse}</p>
             </div>
 
-            {/* User Input */}
-            <div>
-              <textarea
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                placeholder="Type your answer here..."
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                disabled={isLoading}
-              />
-            </div>
+            {/* Audio Player (Phase 1) */}
+            {currentPhase === 'phase1_read' && (
+              <div className="flex gap-3">
+                <button
+                  onClick={isPlayingAudio ? stopAudio : playAudio}
+                  disabled={isPlayingAudio && audioRef.current !== null}
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {isPlayingAudio ? '⏸️ Stop Audio' : '🔊 Play Audio'}
+                </button>
+              </div>
+            )}
 
-            {/* Action Buttons */}
-            <div className="flex gap-3">
-              <button
-                onClick={handleSubmit}
-                disabled={isLoading || !userInput.trim()}
-                className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-              >
-                {isLoading ? 'Checking...' : '✓ Submit'}
-              </button>
-              <button
-                onClick={nextVerse}
-                disabled={currentDay >= 77}
-                className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-              >
-                Next Verse →
-              </button>
-            </div>
+            {/* User Input (Phases 2-6) */}
+            {currentPhase !== 'phase1_read' && (
+              <>
+                <div>
+                  <textarea
+                    value={userInput}
+                    onChange={(e) => setUserInput(e.target.value)}
+                    placeholder="Type your answer here..."
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    disabled={isLoading}
+                  />
+                </div>
 
-            {/* Hint Button */}
-            <button
-              onClick={() => setCoachResponse(coachResponse + `\n\n💡 Hint: The verse starts with "${todaysVerse.verse.split(' ').slice(0, 3).join(' ')}..."`)}
-              className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg transition text-sm"
-            >
-              💡 Need a hint?
-            </button>
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isLoading || !userInput.trim()}
+                    className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                  >
+                    {isLoading ? 'Checking...' : '✓ Submit'}
+                  </button>
+                  <button
+                    onClick={nextVerse}
+                    disabled={currentDay >= 77}
+                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                  >
+                    Skip →
+                  </button>
+                </div>
+              </>
+            )}
+
+            {/* Next button for Phase 1 */}
+            {currentPhase === 'phase1_read' && (
+              <button
+                onClick={() => {
+                  setCurrentPhase('phase2_type');
+                  setCoachResponse('');
+                  startLearning();
+                }}
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition"
+              >
+                Next: Start Typing →
+              </button>
+            )}
           </div>
         )}
       </div>
