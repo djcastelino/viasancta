@@ -1,0 +1,15 @@
+Verse: {{ $json.body.verse }}
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Reference: {{ $json.body.reference }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+INSTRUCTIONS:
+- If user typed is EMPTY, give instructions only (don't validate)
+- If user typed has content, validate it:
+  * For phase5_reference: Check if they typed "[Reference] - [Verse]" correctly
+  * For other phases: Check if they typed the verse correctly
+- If correct: Respond with "✓ Perfect! Moving to Phase X"
+
+Respond for this phase. Start with phase indicator. Be brief (1-2 sentences).

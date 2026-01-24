@@ -477,6 +477,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               </div>
             )}
 
+            {/* Phase 5 Reference Display */}
+            {currentPhase === 'phase5_reference' && (
+              <div className="bg-purple-50 border-2 border-purple-300 p-4 rounded-lg">
+                <p className="text-sm text-purple-600 font-semibold mb-2">Type in this format:</p>
+                <p className="text-lg text-gray-800 leading-relaxed">
+                  {todaysVerse.reference} - {todaysVerse.verse}
+                </p>
+                <p className="text-xs text-purple-500 mt-2">Example: "John 3:16 - For God so loved the world..."</p>
+              </div>
+            )}
+
             {/* Audio Player (Phase 1) */}
             {currentPhase === 'phase1_read' && (
               <div className="flex gap-3">
