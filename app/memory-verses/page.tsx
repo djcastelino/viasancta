@@ -3,7 +3,7 @@ import memoryVersesData from '@/public/memory-verses.json';
 
 export const metadata = {
   title: 'Memory Verses - Divine Pilgrim',
-  description: 'Out of 35,000+ verses in the Catholic Bible, memorize 77 handpicked treasures with your personal AI coach. Carry God\'s Word in your heart forever through proven techniques and spaced repetition.',
+  description: 'Master 77 essential treasures from Sacred Scripture through proven memorization techniques and spaced repetition. Hide God\'s Word in your heart forever.',
 };
 
 export default function MemoryVersesPage() {
@@ -16,7 +16,7 @@ export default function MemoryVersesPage() {
             Scripture Memory Coach
           </h1>
           <p className="text-xl md:text-2xl mb-3 text-amber-100">
-            The Catholic Bible contains over 35,000 verses. Memorizing just 77 of these treasures means you'll carry God's Word in your heart forever.
+            The Catholic Bible holds over 35,000 verses. Master these 77 essential treasures through proven techniques and hide God's Word in your heart.
           </p>
           <p className="text-lg text-amber-50 italic">
             "Heaven and earth will pass away, but my words will never pass away."
@@ -28,7 +28,7 @@ export default function MemoryVersesPage() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Your AI Memory Coach
+            How It Works
           </h2>
           <div className="space-y-3 text-gray-700">
             <p>
