@@ -402,15 +402,6 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               });
             }
             saveProgress(newProgress);
-
-            // Auto-advance to next day
-            setTimeout(() => {
-              if (currentDay < 77) {
-                saveCurrentDay(currentDay + 1);
-                setCoachResponse('');
-                setCurrentPhase('phase1_read');
-              }
-            }, 10000); // 10 seconds to read homework
           }
         }, 1500); // 1.5 second delay to let user see validation
       }
@@ -616,6 +607,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
               >
                 {isLoading ? 'Loading...' : 'Next: Start Typing →'}
+              </button>
+            )}
+
+            {/* Continue button after homework completion */}
+            {coachResponse.includes('HOMEWORK TO REINFORCE LEARNING') && (
+              <button
+                onClick={nextVerse}
+                disabled={currentDay >= 77}
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50 shadow-lg"
+              >
+                {currentDay >= 77 ? '🎉 All Verses Completed!' : '✅ Continue to Next Verse'}
               </button>
             )}
           </div>
