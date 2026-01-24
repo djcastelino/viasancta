@@ -1,0 +1,20 @@
+Verse: {{ $json.body.verse }}
+Reference: {{ $json.body.reference }}
+Testament: {{ $json.body.testament }}
+Category: {{ $json.body.category }}
+Translation: {{ $json.body.bibleTranslation }}
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+INSTRUCTIONS:
+- For phase1_read: Generate UNIQUE context based on THIS SPECIFIC verse (look at the actual verse text, reference, and category)
+- NEVER call non-Psalms "psalms" - check the testament and reference
+- If user typed is EMPTY, give instructions only (don't validate)
+- If user typed has content, validate it:
+  * For phase5_reference: Check if they typed "[Reference] - [Verse]" correctly
+  * For other phases: Check if they typed the verse correctly
+- If correct: Respond with "✓ Perfect! Moving to Phase X"
+
+Respond for this phase. Start with phase indicator. Be brief (1-2 sentences).
