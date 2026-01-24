@@ -622,7 +622,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
         {!coachResponse ? (
           <button
-            onClick={startLearning}
+            onClick={() => startLearning()}
             disabled={isLoading}
             className="w-full bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
           >
