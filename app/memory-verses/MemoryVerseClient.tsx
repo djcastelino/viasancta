@@ -40,9 +40,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [phaseRound, setPhaseRound] = useState(1);
   const [showStats, setShowStats] = useState(false);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [isPlayingCoachAudio, setIsPlayingCoachAudio] = useState(false);
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [reviewVerseId, setReviewVerseId] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const coachAudioRef = useRef<HTMLAudioElement | null>(null);
 
   // Load progress from localStorage
   useEffect(() => {
@@ -168,6 +170,84 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     setIsPlayingAudio(false);
   };
 
+  // Play coach audio with Azure TTS
+  const playCoachAudio = async (text: string) => {
+    // Stop any existing coach audio
+    if (coachAudioRef.current) {
+      coachAudioRef.current.pause();
+      coachAudioRef.current = null;
+    }
+
+    setIsPlayingCoachAudio(true);
+
+    try {
+      const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const speechRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!speechKey || !speechRegion) {
+        console.error('Azure Speech credentials not configured');
+        setIsPlayingCoachAudio(false);
+        return;
+      }
+
+      const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
+      speechConfig.speechSynthesisVoiceName = 'en-US-GuyNeural'; // Different voice for coach
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      // Clean text: remove emojis and special formatting for better TTS
+      const cleanText = text.replace(/[📖✍️🧠💎✓🎉📚🌙🌅📝🗣️⏰]/g, '').trim();
+
+      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+        <voice name="en-US-GuyNeural">
+          <prosody rate="0.95">
+            ${cleanText}
+          </prosody>
+        </voice>
+      </speak>`;
+
+      synthesizer.speakSsmlAsync(
+        ssml,
+        result => {
+          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audioElement = new Audio(audioUrl);
+            coachAudioRef.current = audioElement;
+
+            audioElement.play();
+            audioElement.onended = () => {
+              setIsPlayingCoachAudio(false);
+            };
+          } else {
+            console.error('Speech synthesis failed:', result.errorDetails);
+            setIsPlayingCoachAudio(false);
+          }
+          synthesizer.close();
+        },
+        error => {
+          console.error('Error:', error);
+          setIsPlayingCoachAudio(false);
+          synthesizer.close();
+        }
+      );
+    } catch (error) {
+      console.error('Error playing coach audio:', error);
+      setIsPlayingCoachAudio(false);
+    }
+  };
+
+  // Stop coach audio
+  const stopCoachAudio = () => {
+    if (coachAudioRef.current) {
+      coachAudioRef.current.pause();
+      coachAudioRef.current.currentTime = 0;
+      coachAudioRef.current = null;
+    }
+    setIsPlayingCoachAudio(false);
+  };
+
   // Initial coaching prompt
   const startLearning = async () => {
     // Check if we need to review yesterday's verse first
@@ -184,7 +264,10 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
         const yesterdayVerse = verses.find(v => v.id === yesterdayVerseId);
         if (yesterdayVerse) {
-          setCoachResponse(`📖 REVIEW TIME!\n\nBefore learning today's verse, let's review yesterday's verse.\n\nType from memory: ${yesterdayVerse.reference}`);
+          const reviewMessage = `📖 REVIEW TIME!\n\nBefore learning today's verse, let's review yesterday's verse.\n\nType from memory: ${yesterdayVerse.reference}`;
+          setCoachResponse(reviewMessage);
+          // Auto-play review audio
+          playCoachAudio(reviewMessage);
         }
         return;
       }
@@ -221,6 +304,10 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
       const data = await response.json();
       setCoachResponse(data.coachResponse);
+      // Auto-play coach audio
+      if (data.coachResponse) {
+        playCoachAudio(data.coachResponse);
+      }
     } catch (error) {
       console.error('Error starting learning:', error);
       setCoachResponse('Error connecting to coach. Please try again.');
@@ -304,6 +391,10 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
       const data = await response.json();
       setCoachResponse(data.coachResponse);
+      // Auto-play coach audio
+      if (data.coachResponse) {
+        playCoachAudio(data.coachResponse);
+      }
     } catch (error) {
       console.error('Error advancing phase:', error);
       setCoachResponse('Error advancing. Please try again.');
@@ -349,6 +440,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       const responseText = data.coachResponse;
       setCoachResponse(responseText);
 
+      // Auto-play coach audio
+      if (responseText) {
+        playCoachAudio(responseText);
+      }
+
       // Auto-advance if AI says correct and suggests next phase
       const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for', 'mastered', 'great job'];
       const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword.toLowerCase()));
@@ -378,6 +474,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
 
             setCoachResponse(homeworkMessage);
+            // Auto-play homework audio
+            playCoachAudio(homeworkMessage);
 
             // Mark verse as memorized and schedule next day
             const newProgress = [...progress];
@@ -521,7 +619,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           <div className="space-y-4">
             {/* Coach Response */}
             <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
-              <p className="text-gray-800 whitespace-pre-line">{coachResponse}</p>
+              <div className="flex items-start justify-between gap-4">
+                <p className="text-gray-800 whitespace-pre-line flex-1">{coachResponse}</p>
+                <button
+                  onClick={() => playCoachAudio(coachResponse)}
+                  disabled={isPlayingCoachAudio}
+                  className="flex-shrink-0 bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 rounded text-sm transition disabled:opacity-50"
+                  title="Replay coach audio"
+                >
+                  {isPlayingCoachAudio ? '🔊 Playing...' : '🔊 Replay'}
+                </button>
+              </div>
             </div>
 
             {/* Blanked Verse Display (Phase 3) */}
