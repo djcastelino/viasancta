@@ -1,0 +1,28 @@
+Verse: {{ $json.body.verse }}
+Reference: {{ $json.body.reference }}
+Testament: {{ $json.body.testament }}
+Category: {{ $json.body.category }}
+Translation: {{ $json.body.bibleTranslation }}
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+INSTRUCTIONS:
+- For phase1_read: Generate UNIQUE context based on THIS SPECIFIC verse (look at the actual verse text, reference, and category)
+- NEVER call non-Psalms "psalms" - check the testament and reference
+- If user typed is EMPTY, give phase instructions only (don't validate)
+- If user typed has content, validate it:
+  * Compare what they typed to the correct verse
+  * If WRONG: Say "You wrote: '[user typed text]' but the verse is: '[correct verse]'. Try again."
+  * If CORRECT for phase5_reference: Check both reference AND verse, say "Perfect! Moving to Phase X"
+  * If CORRECT for other phases: Say "Perfect! Moving to Phase X"
+
+CRITICAL: When user is wrong, ALWAYS show:
+1. What they actually typed (exact text)
+2. What the correct text should be
+3. Ask them to try again
+
+Example wrong response: "You wrote: 'Jesus Christ is the same yesterday and today and forever' but the verse is: 'Jesus Christ is the same yesterday, today and forever.' Try again."
+
+Respond for this phase. For instructions, include phase indicator. For validation feedback, skip phase indicator and just give the feedback.
