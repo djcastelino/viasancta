@@ -84,10 +84,10 @@ export default function Home() {
                     </div>
 
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif">
-                      AI Memory Coach
+                      Scripture Memory Coach
                     </h2>
                     <p className="text-white/90 text-lg mb-4 leading-relaxed">
-                      Memorize 77 essential Bible verses with your personal AI coach. Progressive learning, spaced repetition, proven techniques. Take God's Word to heaven!
+                      Memorize 77 essential Bible verses through progressive learning, spaced repetition, and proven techniques. Take God's Word to heaven!
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
@@ -97,7 +97,7 @@ export default function Home() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl">🧠</span>
-                        <span>AI Coaching</span>
+                        <span>Proven Methods</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-2xl">✍️</span>
