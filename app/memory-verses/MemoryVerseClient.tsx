@@ -40,6 +40,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [phaseRound, setPhaseRound] = useState(1);
   const [showStats, setShowStats] = useState(false);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [isReviewMode, setIsReviewMode] = useState(false);
+  const [reviewVerseId, setReviewVerseId] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Load progress from localStorage
@@ -66,8 +68,9 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     localStorage.setItem('memoryVerseCurrentDay', day.toString());
   };
 
-  // Get today's verse
-  const todaysVerse = verses.find(v => v.id === currentDay) || verses[0];
+  // Get today's verse (or review verse if in review mode)
+  const displayVerseId = isReviewMode && reviewVerseId ? reviewVerseId : currentDay;
+  const todaysVerse = verses.find(v => v.id === displayVerseId) || verses[0];
 
   // Calculate statistics
   const totalMemorized = progress.filter(p => p.verseMemorized).length;
@@ -167,6 +170,26 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
   // Initial coaching prompt
   const startLearning = async () => {
+    // Check if we need to review yesterday's verse first
+    if (currentDay > 1 && !isReviewMode) {
+      const yesterdayVerseId = currentDay - 1;
+      const yesterdayProgress = progress.find(p => p.verseId === yesterdayVerseId);
+
+      // If yesterday's verse was memorized, make them review it first
+      if (yesterdayProgress?.verseMemorized) {
+        setIsReviewMode(true);
+        setReviewVerseId(yesterdayVerseId);
+        setCurrentPhase('phase4_master');
+        setUserInput('');
+
+        const yesterdayVerse = verses.find(v => v.id === yesterdayVerseId);
+        if (yesterdayVerse) {
+          setCoachResponse(`📖 REVIEW TIME!\n\nBefore learning today's verse, let's review yesterday's verse.\n\nType from memory: ${yesterdayVerse.reference}`);
+        }
+        return;
+      }
+    }
+
     setIsLoading(true);
     setUserInput('');
     setCurrentPhase('phase1_read');
@@ -335,6 +358,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       if (isCorrect) {
         // Auto-advance to next phase after a brief delay
         setTimeout(() => {
+          // Handle review mode completion
+          if (isReviewMode && currentPhase === 'phase4_master') {
+            setIsReviewMode(false);
+            setReviewVerseId(null);
+            setCoachResponse('');
+            setCurrentPhase('phase1_read');
+            // Now start today's verse
+            startLearning();
+            return;
+          }
+
           const next = getNextPhase();
           if (next) {
             setCurrentPhase(next);
@@ -342,8 +376,41 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             // Immediately fetch next phase instructions
             advancePhase(next);
           } else if (currentPhase === 'phase5_reference') {
-            // Phase 5 complete - show completion message
-            setCoachResponse('🎉 Verse and reference MASTERED! Click "Skip →" to move to the next verse.');
+            // Phase 5 complete - show homework message with tips
+            const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\nCome back tomorrow to review this verse before learning the next one!`;
+
+            setCoachResponse(homeworkMessage);
+
+            // Mark verse as memorized and schedule next day
+            const newProgress = [...progress];
+            const verseProgress = newProgress.find(p => p.verseId === currentDay);
+            if (verseProgress) {
+              verseProgress.verseMemorized = true;
+              verseProgress.referenceMemorized = true;
+              verseProgress.lastReviewedDate = new Date().toISOString().split('T')[0];
+              verseProgress.nextReviewDate = new Date(Date.now() + 86400000).toISOString().split('T')[0]; // Tomorrow
+            } else {
+              newProgress.push({
+                verseId: currentDay,
+                verseMemorized: true,
+                referenceMemorized: true,
+                lastReviewedDate: new Date().toISOString().split('T')[0],
+                nextReviewDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
+                attemptCount: 1,
+                currentPhase: 'phase5_reference',
+                phaseRound: 1,
+              });
+            }
+            saveProgress(newProgress);
+
+            // Auto-advance to next day
+            setTimeout(() => {
+              if (currentDay < 77) {
+                saveCurrentDay(currentDay + 1);
+                setCoachResponse('');
+                setCurrentPhase('phase1_read');
+              }
+            }, 10000); // 10 seconds to read homework
           }
         }, 1500); // 1.5 second delay to let user see validation
       }
@@ -527,25 +594,14 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   />
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={handleSubmit}
-                    disabled={isLoading || !userInput.trim()}
-                    className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-                  >
-                    {isLoading ? 'Checking...' : '✓ Submit Answer'}
-                  </button>
-
-                  {/* Skip to Next Verse button */}
-                  <button
-                    onClick={nextVerse}
-                    disabled={currentDay >= 77 || isLoading}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 whitespace-nowrap"
-                  >
-                    Skip →
-                  </button>
-                </div>
+                {/* Action Button */}
+                <button
+                  onClick={handleSubmit}
+                  disabled={isLoading || !userInput.trim()}
+                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                >
+                  {isLoading ? 'Checking...' : '✓ Submit Answer'}
+                </button>
               </>
             )}
 
