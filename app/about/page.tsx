@@ -54,7 +54,8 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Blessed Carlo Acutis's research</li>
                   <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
-                  <li><strong>Coming Soon:</strong> Marian Apparitions, Shrines of Saints, Sacred Architecture</li>
+                  <li><strong>Marian Apparitions:</strong> Visit 20 Church-approved apparition sites worldwide with AI-guided narrations and immersive experiences</li>
+                  <li><strong>Coming Soon:</strong> Shrines of Saints, Sacred Architecture</li>
                 </ul>
               </div>
               <div>
@@ -63,6 +64,7 @@ export default function AboutPage() {
                   <li><strong>Today's Promise:</strong> Daily Bible promises with AI-generated reflections and audio narration</li>
                   <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
                   <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing Christ throughout the Scriptures</li>
+                  <li><strong>Scripture Memory Coach:</strong> Master 77 essential Bible verses through proven memorization techniques and spaced repetition</li>
                 </ul>
               </div>
             </div>
