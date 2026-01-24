@@ -431,12 +431,24 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               </span>
             </div>
           </div>
-          <p className="text-2xl text-gray-700 mb-2 leading-relaxed">
-            "{todaysVerse.verse}"
-          </p>
-          <p className="text-lg text-amber-600 font-semibold">
-            {todaysVerse.reference} ({todaysVerse.bibleTranslation})
-          </p>
+
+          {/* Hide verse during pure memory phases */}
+          {!coachResponse || (currentPhase !== 'phase3_round4' && currentPhase !== 'phase4_master') ? (
+            <>
+              <p className="text-2xl text-gray-700 mb-2 leading-relaxed">
+                "{todaysVerse.verse}"
+              </p>
+              <p className="text-lg text-amber-600 font-semibold">
+                {todaysVerse.reference} ({todaysVerse.bibleTranslation})
+              </p>
+            </>
+          ) : (
+            <div className="bg-gray-100 border-2 border-dashed border-gray-400 p-6 rounded-lg text-center">
+              <p className="text-lg text-gray-600 font-semibold">🧠 Pure Memory Test</p>
+              <p className="text-sm text-gray-500 mt-1">Verse hidden - recall from memory!</p>
+            </div>
+          )}
+
           <p className="text-sm text-gray-500 mt-2">
             Category: {todaysVerse.category} • {todaysVerse.testament === 'OT' ? 'Old Testament' : 'New Testament'}
           </p>
