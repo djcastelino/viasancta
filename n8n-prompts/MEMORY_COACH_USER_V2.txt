@@ -1,0 +1,8 @@
+Verse: {{ $json.body.verse }}
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Reference: {{ $json.body.reference }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+Respond for this phase. Start with phase indicator. Be brief (2-3 sentences).

@@ -206,6 +206,33 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
+  // Generate blanked verse based on phase
+  const getBlankedVerse = (phase: Phase): string => {
+    const words = todaysVerse.verse.split(' ');
+
+    switch (phase) {
+      case 'phase3_round1': // Hide every 3rd word
+        return words.map((word, i) => (i + 1) % 3 === 0 ? '___' : word).join(' ');
+
+      case 'phase3_round2': // Hide every 2nd word
+        return words.map((word, i) => (i + 1) % 2 === 0 ? '___' : word).join(' ');
+
+      case 'phase3_round3': // First letters only
+        return words.map(word => {
+          const firstLetter = word[0];
+          const underscores = '_'.repeat(Math.max(1, word.length - 1));
+          return firstLetter + underscores;
+        }).join(' ');
+
+      case 'phase3_round4': // Completely blank
+      case 'phase4_master':
+        return '___________________________';
+
+      default:
+        return todaysVerse.verse;
+    }
+  };
+
   // Get next phase
   const getNextPhase = (): Phase | null => {
     switch (currentPhase) {
@@ -227,12 +254,15 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     setUserInput('');
     setCurrentPhase(nextPhase);
 
+    const blankedVerse = getBlankedVerse(nextPhase);
+
     try {
       const response = await fetch('/api/memory-verse-coach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           verse: todaysVerse.verse,
+          blankedVerse: blankedVerse,
           reference: todaysVerse.reference,
           testament: todaysVerse.testament,
           category: todaysVerse.category,
@@ -267,12 +297,15 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
     setIsLoading(true);
 
+    const blankedVerse = getBlankedVerse(currentPhase);
+
     try {
       const response = await fetch('/api/memory-verse-coach', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           verse: todaysVerse.verse,
+          blankedVerse: blankedVerse,
           reference: todaysVerse.reference,
           testament: todaysVerse.testament,
           category: todaysVerse.category,
@@ -420,6 +453,26 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
               <p className="text-gray-800 whitespace-pre-line">{coachResponse}</p>
             </div>
+
+            {/* Blanked Verse Display (Phase 3 & 4) */}
+            {(currentPhase.startsWith('phase3_') || currentPhase === 'phase4_master') && (
+              <div className="bg-blue-50 border-2 border-blue-300 p-4 rounded-lg">
+                <p className="text-sm text-blue-600 font-semibold mb-2">Hints:</p>
+                <p className="text-xl text-gray-800 leading-relaxed font-mono">
+                  {getBlankedVerse(currentPhase)}
+                </p>
+              </div>
+            )}
+
+            {/* Full Verse Display (Phase 2) */}
+            {currentPhase === 'phase2_type' && (
+              <div className="bg-green-50 border-2 border-green-300 p-4 rounded-lg">
+                <p className="text-sm text-green-600 font-semibold mb-2">Type this:</p>
+                <p className="text-xl text-gray-800 leading-relaxed">
+                  {todaysVerse.verse}
+                </p>
+              </div>
+            )}
 
             {/* Audio Player (Phase 1) */}
             {currentPhase === 'phase1_read' && (
