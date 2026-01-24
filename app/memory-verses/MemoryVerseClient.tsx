@@ -43,6 +43,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [isPlayingCoachAudio, setIsPlayingCoachAudio] = useState(false);
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [reviewVerseId, setReviewVerseId] = useState<number | null>(null);
+  const [lastCompletionDate, setLastCompletionDate] = useState<string>('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const coachAudioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -50,6 +51,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   useEffect(() => {
     const savedProgress = localStorage.getItem('memoryVerseProgress');
     const savedDay = localStorage.getItem('memoryVerseCurrentDay');
+    const savedLastCompletion = localStorage.getItem('memoryVerseLastCompletion');
 
     if (savedProgress) {
       setProgress(JSON.parse(savedProgress));
@@ -57,7 +59,15 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     if (savedDay) {
       setCurrentDay(parseInt(savedDay));
     }
+    if (savedLastCompletion) {
+      setLastCompletionDate(savedLastCompletion);
+    }
   }, []);
+
+  // Check if user can learn today
+  const getTodayDate = () => new Date().toISOString().split('T')[0];
+  const canLearnToday = lastCompletionDate !== getTodayDate();
+  const hasCompletedToday = lastCompletionDate === getTodayDate();
 
   // Save progress to localStorage
   const saveProgress = (newProgress: MemoryProgress[]) => {
@@ -563,6 +573,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             });
           }
           saveProgress(newProgress);
+
+          // Save completion date (one verse per day enforcement)
+          const today = getTodayDate();
+          setLastCompletionDate(today);
+          localStorage.setItem('memoryVerseLastCompletion', today);
         }
       }, 1500); // 1.5 second delay to let user see validation
     }
@@ -585,7 +600,11 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   // Show homework tips (called after celebration)
   const showHomework = () => {
     stopCoachAudio(); // Stop celebration audio if still playing
-    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowFormatted = tomorrow.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back ${tomorrowFormatted} at midnight to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
     setCoachResponse(homeworkMessage);
   };
 
@@ -684,13 +703,23 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
         </div>
 
         {!coachResponse ? (
-          <button
-            onClick={() => startLearning()}
-            disabled={isLoading}
-            className="w-full bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
-          >
-            {isLoading ? 'Loading Coach...' : '🎯 Start Learning'}
-          </button>
+          <>
+            {hasCompletedToday && (
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
+                <p className="text-blue-800 font-semibold">✅ You've already completed today's verse!</p>
+                <p className="text-blue-700 text-sm mt-2">
+                  Come back tomorrow at midnight to review it and learn the next verse. One verse per day ensures deep, lasting memorization.
+                </p>
+              </div>
+            )}
+            <button
+              onClick={() => startLearning()}
+              disabled={isLoading || hasCompletedToday}
+              className="w-full bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
+            >
+              {hasCompletedToday ? '🔒 Come Back Tomorrow' : isLoading ? 'Loading Coach...' : '🎯 Start Learning'}
+            </button>
+          </>
         ) : (
           <div className="space-y-4">
             {/* Coach Response */}
@@ -808,8 +837,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               </button>
             )}
 
-            {/* Continue button after homework completion */}
-            {coachResponse.includes('HOMEWORK TO REINFORCE LEARNING') && (
+            {/* Continue button after homework completion - HIDDEN if already completed today */}
+            {coachResponse.includes('HOMEWORK TO REINFORCE LEARNING') && !hasCompletedToday && (
               <button
                 onClick={nextVerse}
                 disabled={currentDay >= 77}
