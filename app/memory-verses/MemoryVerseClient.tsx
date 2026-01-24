@@ -329,8 +329,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       setCoachResponse(responseText);
 
       // Auto-advance if AI says correct and suggests next phase
-      const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for'];
-      const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword));
+      const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for', 'mastered', 'great job'];
+      const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword.toLowerCase()));
 
       if (isCorrect) {
         // Auto-advance to next phase after a brief delay
@@ -341,6 +341,9 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             setCoachResponse('');
             // Immediately fetch next phase instructions
             advancePhase(next);
+          } else if (currentPhase === 'phase5_reference') {
+            // Phase 5 complete - show completion message
+            setCoachResponse('🎉 Verse and reference MASTERED! Click "Skip →" to move to the next verse.');
           }
         }, 1500); // 1.5 second delay to let user see validation
       }

@@ -1,0 +1,10 @@
+Verse: {{ $json.body.verse }}
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Reference: {{ $json.body.reference }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+IMPORTANT: If user typed text matches the verse (or reference for phase5), respond with "✓ Perfect! Moving to Phase X" to trigger auto-advance.
+
+Respond for this phase. Start with phase indicator. Be brief (1-2 sentences).
