@@ -375,6 +375,68 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
+  // Get phase display name for validation messages
+  const getPhaseDisplayName = (phase: Phase): string => {
+    switch (phase) {
+      case 'phase1_read': return 'Phase 1';
+      case 'phase2_type': return 'Phase 2';
+      case 'phase3_round1': return 'Phase 3 Round 1';
+      case 'phase3_round2': return 'Phase 3 Round 2';
+      case 'phase3_round3': return 'Phase 3 Round 3';
+      case 'phase3_round4': return 'Phase 3 Round 4';
+      case 'phase5_reference': return 'Phase 4';
+      default: return 'next phase';
+    }
+  };
+
+  // Client-side validation (more reliable than AI)
+  const validateUserInput = (userText: string): { isCorrect: boolean; feedback: string } => {
+    const cleanInput = userText.trim().toLowerCase().replace(/[.,!?;:"']/g, '');
+
+    // For Phase 5, expect "reference - verse" format
+    if (currentPhase === 'phase5_reference') {
+      const expectedFull = `${todaysVerse.reference} - ${todaysVerse.verse}`;
+      const cleanExpected = expectedFull.toLowerCase().replace(/[.,!?;:"']/g, '');
+
+      if (cleanInput === cleanExpected) {
+        const nextPhase = getNextPhase();
+        const nextPhaseName = nextPhase ? getPhaseDisplayName(nextPhase) : 'completion';
+        return {
+          isCorrect: true,
+          feedback: `Perfect! You've mastered the complete verse with reference!`
+        };
+      } else {
+        return {
+          isCorrect: false,
+          feedback: `Almost! Remember to type BOTH the reference AND verse together.\n\nExpected format: "${todaysVerse.reference} - ${todaysVerse.verse}"\n\nYou typed: "${userText}"\n\nTry again!`
+        };
+      }
+    }
+
+    // For all other phases, validate verse text only
+    const cleanVerse = todaysVerse.verse.toLowerCase().replace(/[.,!?;:"']/g, '');
+
+    if (cleanInput === cleanVerse) {
+      const nextPhase = getNextPhase();
+      const nextPhaseName = nextPhase ? getPhaseDisplayName(nextPhase) : 'completion';
+      return {
+        isCorrect: true,
+        feedback: `Perfect! Moving to ${nextPhaseName}.`
+      };
+    } else if (cleanInput === '') {
+      return {
+        isCorrect: false,
+        feedback: 'Please type your answer.'
+      };
+    } else {
+      // Show diff for incorrect answer
+      return {
+        isCorrect: false,
+        feedback: `Not quite right. Try again!\n\nYou typed: "${userText}"\n\nCorrect verse: "${todaysVerse.verse}"`
+      };
+    }
+  };
+
   // Generate phase instruction message client-side
   const getPhaseInstruction = (phase: Phase): string => {
     switch (phase) {
@@ -409,112 +471,77 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     playCoachAudio(instruction);
   };
 
-  // Submit user's typed verse
+  // Submit user's typed verse (client-side validation)
   const handleSubmit = async () => {
     if (!userInput.trim()) return;
 
     setIsLoading(true);
 
-    const blankedVerse = getBlankedVerse(currentPhase);
+    // Client-side validation (faster and more reliable than AI)
+    const validation = validateUserInput(userInput);
+    const responseText = validation.feedback;
+    setCoachResponse(responseText);
 
-    try {
-      const response = await fetch('/api/memory-verse-coach', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          verse: todaysVerse.verse,
-          blankedVerse: blankedVerse,
-          reference: todaysVerse.reference,
-          testament: todaysVerse.testament,
-          category: todaysVerse.category,
-          difficulty: todaysVerse.difficulty,
-          bibleTranslation: todaysVerse.bibleTranslation,
-          totalVersesMemorized: totalMemorized,
-          totalReferencesMemorized: totalReferencesMemorized,
-          currentPhase: currentPhase,
-          phaseRound: phaseRound,
-          attemptNumber: progress.find(p => p.verseId === currentDay)?.attemptCount || 1,
-          userTypedText: userInput,
-          previousVersesToReview: getVersesNeedingReview(),
-          isFirstVerse: false,
-          hasCompletedReviewToday: false,
-          userMessage: 'Here is what I typed',
-        }),
-      });
-
-      const data = await response.json();
-      const responseText = data.coachResponse;
-      setCoachResponse(responseText);
-
-      // Auto-advance if AI says correct and suggests next phase
-      const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for', 'mastered', 'great job'];
-      const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword.toLowerCase()));
-
-      // Only play audio if NOT auto-advancing (let next phase audio play instead)
-      if (responseText && !isCorrect) {
-        playCoachAudio(responseText);
-      }
-
-      if (isCorrect) {
-        // Stop any playing audio before advancing
-        stopCoachAudio();
-        // Auto-advance to next phase after a brief delay
-        setTimeout(() => {
-          // Handle review mode completion
-          if (isReviewMode && currentPhase === 'phase3_round4') {
-            setIsReviewMode(false);
-            setReviewVerseId(null);
-            setCurrentPhase('phase1_read');
-            // Now start today's verse - pass currentDay explicitly to avoid state delay
-            startLearning(currentDay);
-            return;
-          }
-
-          const next = getNextPhase();
-          if (next) {
-            setCurrentPhase(next);
-            // Immediately fetch next phase instructions (will set coachResponse immediately)
-            advancePhase(next);
-          } else if (currentPhase === 'phase5_reference') {
-            // Phase 5 complete - show celebration (user clicks button to see homework)
-            const celebrationMessage = `🎉 FANTASTIC! You've mastered this verse!\n\nThis is now permanently stored in your heart. Come back tomorrow to review it and learn the next treasure from God's Word!`;
-
-            setCoachResponse(celebrationMessage);
-            // Play celebration audio
-            playCoachAudio(celebrationMessage);
-
-            // Mark verse as memorized and schedule next day
-            const newProgress = [...progress];
-            const verseProgress = newProgress.find(p => p.verseId === currentDay);
-            if (verseProgress) {
-              verseProgress.verseMemorized = true;
-              verseProgress.referenceMemorized = true;
-              verseProgress.lastReviewedDate = new Date().toISOString().split('T')[0];
-              verseProgress.nextReviewDate = new Date(Date.now() + 86400000).toISOString().split('T')[0]; // Tomorrow
-            } else {
-              newProgress.push({
-                verseId: currentDay,
-                verseMemorized: true,
-                referenceMemorized: true,
-                lastReviewedDate: new Date().toISOString().split('T')[0],
-                nextReviewDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
-                attemptCount: 1,
-                currentPhase: 'phase5_reference',
-                phaseRound: 1,
-              });
-            }
-            saveProgress(newProgress);
-          }
-        }, 1500); // 1.5 second delay to let user see validation
-      }
-
-      setUserInput('');
-    } catch (error) {
-      console.error('Error submitting verse:', error);
-      setCoachResponse('Error submitting. Please try again.');
-    } finally {
-      setIsLoading(false);
+    // Only play audio if NOT auto-advancing (let next phase audio play instead)
+    if (responseText && !validation.isCorrect) {
+      playCoachAudio(responseText);
     }
+
+    if (validation.isCorrect) {
+      // Stop any playing audio before advancing
+      stopCoachAudio();
+      // Auto-advance to next phase after a brief delay
+      setTimeout(() => {
+        // Handle review mode completion
+        if (isReviewMode && currentPhase === 'phase3_round4') {
+          setIsReviewMode(false);
+          setReviewVerseId(null);
+          setCurrentPhase('phase1_read');
+          // Now start today's verse - pass currentDay explicitly to avoid state delay
+          startLearning(currentDay);
+          return;
+        }
+
+        const next = getNextPhase();
+        if (next) {
+          setCurrentPhase(next);
+          // Immediately fetch next phase instructions (will set coachResponse immediately)
+          advancePhase(next);
+        } else if (currentPhase === 'phase5_reference') {
+          // Phase 5 complete - show celebration (user clicks button to see homework)
+          const celebrationMessage = `🎉 FANTASTIC! You've mastered this verse!\n\nThis is now permanently stored in your heart. Come back tomorrow to review it and learn the next treasure from God's Word!`;
+
+          setCoachResponse(celebrationMessage);
+          // Play celebration audio
+          playCoachAudio(celebrationMessage);
+
+          // Mark verse as memorized and schedule next day
+          const newProgress = [...progress];
+          const verseProgress = newProgress.find(p => p.verseId === currentDay);
+          if (verseProgress) {
+            verseProgress.verseMemorized = true;
+            verseProgress.referenceMemorized = true;
+            verseProgress.lastReviewedDate = new Date().toISOString().split('T')[0];
+            verseProgress.nextReviewDate = new Date(Date.now() + 86400000).toISOString().split('T')[0]; // Tomorrow
+          } else {
+            newProgress.push({
+              verseId: currentDay,
+              verseMemorized: true,
+              referenceMemorized: true,
+              lastReviewedDate: new Date().toISOString().split('T')[0],
+              nextReviewDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
+              attemptCount: 1,
+              currentPhase: 'phase5_reference',
+              phaseRound: 1,
+            });
+          }
+          saveProgress(newProgress);
+        }
+      }, 1500); // 1.5 second delay to let user see validation
+    }
+
+    setUserInput('');
+    setIsLoading(false);
   };
 
   // Move to next verse
@@ -540,7 +567,16 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       {/* Progress Stats */}
       <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-lg p-6">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-2xl font-bold">Day {currentDay} of 77</h3>
+          <div>
+            <h3 className="text-2xl font-bold">Scripture Memory Journey</h3>
+            <p className="text-amber-100 text-sm mt-1">
+              {totalMemorized > 0 ? (
+                `${totalMemorized} verse${totalMemorized === 1 ? '' : 's'} mastered • Day ${currentDay} of 77`
+              ) : (
+                'Begin your journey of hiding God\'s Word in your heart'
+              )}
+            </p>
+          </div>
           <button
             onClick={() => setShowStats(!showStats)}
             className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition"
