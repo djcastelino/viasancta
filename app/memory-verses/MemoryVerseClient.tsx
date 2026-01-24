@@ -286,9 +286,13 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   };
 
   // Initial coaching prompt
-  const startLearning = async () => {
-    // Check if we need to review yesterday's verse first
-    if (currentDay > 1 && !isReviewMode) {
+  const startLearning = async (forceVerseId?: number) => {
+    // Use forced verse ID (for post-review) or current day
+    const targetVerseId = forceVerseId || currentDay;
+    const targetVerse = verses.find(v => v.id === targetVerseId) || verses[0];
+
+    // Check if we need to review yesterday's verse first (only if not forced)
+    if (!forceVerseId && currentDay > 1 && !isReviewMode) {
       const yesterdayVerseId = currentDay - 1;
       const yesterdayProgress = progress.find(p => p.verseId === yesterdayVerseId);
 
@@ -315,13 +319,14 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     setPhaseRound(1);
 
     // Generate Phase 1 message client-side (more reliable than AI)
-    const context = generateVerseContext(todaysVerse.reference, todaysVerse.category, todaysVerse.testament);
+    const context = generateVerseContext(targetVerse.reference, targetVerse.category, targetVerse.testament);
     const phase1Message = `Phase 1. Read this verse aloud 3 times and click Play Audio. ${context}`;
 
     console.log('🔍 DEBUG Phase 1 Generation:', {
-      reference: todaysVerse.reference,
-      category: todaysVerse.category,
-      testament: todaysVerse.testament,
+      targetVerseId,
+      reference: targetVerse.reference,
+      category: targetVerse.category,
+      testament: targetVerse.testament,
       generatedContext: context,
       fullMessage: phase1Message
     });
@@ -460,8 +465,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             setIsReviewMode(false);
             setReviewVerseId(null);
             setCurrentPhase('phase1_read');
-            // Now start today's verse (will set coachResponse immediately)
-            startLearning();
+            // Now start today's verse - pass currentDay explicitly to avoid state delay
+            startLearning(currentDay);
             return;
           }
 
