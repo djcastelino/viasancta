@@ -252,6 +252,31 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     setIsPlayingCoachAudio(false);
   };
 
+  // Generate context for Phase 1 based on verse reference and category
+  const generateVerseContext = (reference: string, category: string, testament: string): string => {
+    // Extract book name from reference
+    const book = reference.split(' ')[0];
+    const isPsalm = book === 'Psalms' || book === 'Psalm';
+
+    // Generate appropriate context based on book and category
+    const contexts: { [key: string]: string } = {
+      'Philippians 4:13': "Paul's powerful declaration of strength and confidence through Christ in all circumstances.",
+      'Psalms 37:4': "This psalm teaches that delighting in God aligns our desires with His perfect will.",
+      'Hebrews 13:8': "This verse from Hebrews reminds us of Christ's unchanging nature and eternal faithfulness.",
+      'John 3:16': "The most famous verse in the Bible about God's love and the gift of salvation through His Son.",
+      'Romans 8:28': "Paul's assurance that God works all circumstances together for good for those who love Him.",
+    };
+
+    // Use specific context if available, otherwise generate generic one
+    if (contexts[reference]) {
+      return contexts[reference];
+    }
+
+    // Generic context based on testament and category
+    const bookType = isPsalm ? 'psalm' : testament === 'OT' ? 'Old Testament passage' : 'New Testament passage';
+    return `This ${bookType} teaches us about ${category.toLowerCase()} and God's character.`;
+  };
+
   // Initial coaching prompt
   const startLearning = async () => {
     // Check if we need to review yesterday's verse first
@@ -277,47 +302,16 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       }
     }
 
-    setIsLoading(true);
     setUserInput('');
     setCurrentPhase('phase1_read');
     setPhaseRound(1);
 
-    try {
-      const response = await fetch('/api/memory-verse-coach', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          verse: todaysVerse.verse,
-          reference: todaysVerse.reference,
-          testament: todaysVerse.testament,
-          category: todaysVerse.category,
-          difficulty: todaysVerse.difficulty,
-          bibleTranslation: todaysVerse.bibleTranslation,
-          totalVersesMemorized: totalMemorized,
-          totalReferencesMemorized: totalReferencesMemorized,
-          currentPhase: 'phase1_read',
-          phaseRound: 1,
-          attemptNumber: 1,
-          userTypedText: '',
-          previousVersesToReview: getVersesNeedingReview(),
-          isFirstVerse: currentDay === 1 && totalMemorized === 0,
-          hasCompletedReviewToday: false,
-          userMessage: 'Ready to learn today\'s verse!',
-        }),
-      });
+    // Generate Phase 1 message client-side (more reliable than AI)
+    const context = generateVerseContext(todaysVerse.reference, todaysVerse.category, todaysVerse.testament);
+    const phase1Message = `Phase 1. Read this verse aloud 3 times and click Play Audio. ${context}`;
 
-      const data = await response.json();
-      setCoachResponse(data.coachResponse);
-      // Auto-play coach audio
-      if (data.coachResponse) {
-        playCoachAudio(data.coachResponse);
-      }
-    } catch (error) {
-      console.error('Error starting learning:', error);
-      setCoachResponse('Error connecting to coach. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
+    setCoachResponse(phase1Message);
+    playCoachAudio(phase1Message);
   };
 
   // Generate blanked verse based on phase
@@ -360,51 +354,38 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
-  // Advance to next phase
+  // Generate phase instruction message client-side
+  const getPhaseInstruction = (phase: Phase): string => {
+    switch (phase) {
+      case 'phase1_read':
+        const context = generateVerseContext(todaysVerse.reference, todaysVerse.category, todaysVerse.testament);
+        return `Phase 1. Read this verse aloud 3 times and click Play Audio. ${context}`;
+      case 'phase2_type':
+        return 'Phase 2. Type the full verse shown above.';
+      case 'phase3_round1':
+        return 'Phase 3 Round 1. Type the FULL verse using the hints above.';
+      case 'phase3_round2':
+        return 'Phase 3 Round 2. Type the FULL verse using the hints above.';
+      case 'phase3_round3':
+        return 'Phase 3 Round 3. Type the FULL verse using the hints above.';
+      case 'phase3_round4':
+        return 'Phase 3 Round 4. Type the verse from pure memory.';
+      case 'phase5_reference':
+        return `Phase 4. Type the reference AND verse together. Format: '${todaysVerse.reference} - ${todaysVerse.verse}'`;
+      default:
+        return 'Continue to the next phase.';
+    }
+  };
+
+  // Advance to next phase (client-side instruction generation)
   const advancePhase = async (nextPhase: Phase) => {
-    setIsLoading(true);
     setUserInput('');
     setCurrentPhase(nextPhase);
 
-    const blankedVerse = getBlankedVerse(nextPhase);
-
-    try {
-      const response = await fetch('/api/memory-verse-coach', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          verse: todaysVerse.verse,
-          blankedVerse: blankedVerse,
-          reference: todaysVerse.reference,
-          testament: todaysVerse.testament,
-          category: todaysVerse.category,
-          difficulty: todaysVerse.difficulty,
-          bibleTranslation: todaysVerse.bibleTranslation,
-          totalVersesMemorized: totalMemorized,
-          totalReferencesMemorized: totalReferencesMemorized,
-          currentPhase: nextPhase,
-          phaseRound: phaseRound,
-          attemptNumber: 1,
-          userTypedText: '',
-          previousVersesToReview: getVersesNeedingReview(),
-          isFirstVerse: false,
-          hasCompletedReviewToday: false,
-          userMessage: 'Ready for next phase!',
-        }),
-      });
-
-      const data = await response.json();
-      setCoachResponse(data.coachResponse);
-      // Auto-play coach audio
-      if (data.coachResponse) {
-        playCoachAudio(data.coachResponse);
-      }
-    } catch (error) {
-      console.error('Error advancing phase:', error);
-      setCoachResponse('Error advancing. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
+    // Generate instruction client-side (no AI needed for simple instructions)
+    const instruction = getPhaseInstruction(nextPhase);
+    setCoachResponse(instruction);
+    playCoachAudio(instruction);
   };
 
   // Submit user's typed verse
