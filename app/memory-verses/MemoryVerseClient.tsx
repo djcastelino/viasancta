@@ -267,6 +267,14 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       'Romans 8:28': "Paul's assurance that God works all circumstances together for good for those who love Him.",
     };
 
+    console.log('🔍 Context Lookup:', {
+      lookingFor: reference,
+      found: contexts[reference] ? 'YES' : 'NO',
+      availableKeys: Object.keys(contexts),
+      book: book,
+      isPsalm: isPsalm
+    });
+
     // Use specific context if available, otherwise generate generic one
     if (contexts[reference]) {
       return contexts[reference];
@@ -309,6 +317,14 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     // Generate Phase 1 message client-side (more reliable than AI)
     const context = generateVerseContext(todaysVerse.reference, todaysVerse.category, todaysVerse.testament);
     const phase1Message = `Phase 1. Read this verse aloud 3 times and click Play Audio. ${context}`;
+
+    console.log('🔍 DEBUG Phase 1 Generation:', {
+      reference: todaysVerse.reference,
+      category: todaysVerse.category,
+      testament: todaysVerse.testament,
+      generatedContext: context,
+      fullMessage: phase1Message
+    });
 
     setCoachResponse(phase1Message);
     playCoachAudio(phase1Message);
