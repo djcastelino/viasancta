@@ -196,8 +196,12 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
       const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
 
-      // Clean text: remove emojis and special formatting for better TTS
-      const cleanText = text.replace(/[📖✍️🧠💎✓🎉📚🌙🌅📝🗣️⏰]/g, '').trim();
+      // Clean text: remove emojis, phase indicators, and special formatting for better TTS
+      let cleanText = text
+        .replace(/[📖✍️🧠💎✓🎉📚🌙🌅📝🗣️⏰🏆]/g, '') // Remove emojis
+        .replace(/PHASE \d+:\s*(READ IT|TYPE IT|MEMORIZE IT|MASTER IT|REFERENCE BONUS|Reference)/gi, '') // Remove old phase indicators
+        .replace(/Phase \d+-\d+/gi, '') // Remove phase indicators like "Phase 3-1"
+        .trim();
 
       const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
         <voice name="en-US-GuyNeural">
