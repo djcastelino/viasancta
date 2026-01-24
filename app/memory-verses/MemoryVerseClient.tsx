@@ -444,16 +444,18 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       const responseText = data.coachResponse;
       setCoachResponse(responseText);
 
-      // Auto-play coach audio
-      if (responseText) {
-        playCoachAudio(responseText);
-      }
-
       // Auto-advance if AI says correct and suggests next phase
       const correctKeywords = ['✓', 'correct', 'perfect', 'moving to', 'let\'s move', 'proceed to', 'ready for', 'mastered', 'great job'];
       const isCorrect = correctKeywords.some(keyword => responseText.toLowerCase().includes(keyword.toLowerCase()));
 
+      // Only play audio if NOT auto-advancing (let next phase audio play instead)
+      if (responseText && !isCorrect) {
+        playCoachAudio(responseText);
+      }
+
       if (isCorrect) {
+        // Stop any playing audio before advancing
+        stopCoachAudio();
         // Auto-advance to next phase after a brief delay
         setTimeout(() => {
           // Handle review mode completion
@@ -478,8 +480,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
 
             setCoachResponse(homeworkMessage);
-            // Auto-play homework audio
-            playCoachAudio(homeworkMessage);
+            // Don't play audio for homework - let users read at their own pace
 
             // Mark verse as memorized and schedule next day
             const newProgress = [...progress];
