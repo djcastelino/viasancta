@@ -420,16 +420,62 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   };
 
+  // Calculate similarity between two strings (Levenshtein distance based)
+  const calculateSimilarity = (str1: string, str2: string): number => {
+    const longer = str1.length > str2.length ? str1 : str2;
+    const shorter = str1.length > str2.length ? str2 : str1;
+    const longerLength = longer.length;
+
+    if (longerLength === 0) return 1.0;
+
+    const editDistance = getEditDistance(longer, shorter);
+    return (longerLength - editDistance) / longerLength;
+  };
+
+  // Levenshtein distance calculation
+  const getEditDistance = (str1: string, str2: string): number => {
+    const costs: number[] = [];
+    for (let i = 0; i <= str1.length; i++) {
+      let lastValue = i;
+      for (let j = 0; j <= str2.length; j++) {
+        if (i === 0) {
+          costs[j] = j;
+        } else if (j > 0) {
+          let newValue = costs[j - 1];
+          if (str1.charAt(i - 1) !== str2.charAt(j - 1)) {
+            newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
+          }
+          costs[j - 1] = lastValue;
+          lastValue = newValue;
+        }
+      }
+      if (i > 0) costs[str2.length] = lastValue;
+    }
+    return costs[str2.length];
+  };
+
+  // Normalize text for comparison (lenient on spaces, punctuation)
+  const normalizeText = (text: string): string => {
+    return text
+      .toLowerCase()
+      .replace(/[.,!?;:"']/g, '') // Remove punctuation
+      .replace(/\s+/g, ' ') // Collapse multiple spaces to single space
+      .trim();
+  };
+
   // Client-side validation (more reliable than AI)
   const validateUserInput = (userText: string): { isCorrect: boolean; feedback: string } => {
-    const cleanInput = userText.trim().toLowerCase().replace(/[.,!?;:"']/g, '');
+    const normalizedInput = normalizeText(userText);
 
     // For Phase 5, expect "reference - verse" format
     if (currentPhase === 'phase5_reference') {
       const expectedFull = `${todaysVerse.reference} - ${todaysVerse.verse}`;
-      const cleanExpected = expectedFull.toLowerCase().replace(/[.,!?;:"']/g, '');
+      const normalizedExpected = normalizeText(expectedFull);
 
-      if (cleanInput === cleanExpected) {
+      // Calculate similarity (allow 95% match - lenient for typos)
+      const similarity = calculateSimilarity(normalizedInput, normalizedExpected);
+
+      if (similarity >= 0.95) {
         return {
           isCorrect: true,
           feedback: `Perfect! You've mastered the complete verse with reference!`
@@ -437,15 +483,18 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       } else {
         return {
           isCorrect: false,
-          feedback: `Almost! Remember to type BOTH the reference AND verse together.\n\nExpected format: "${todaysVerse.reference} - ${todaysVerse.verse}"\n\nYou typed: "${userText}"\n\nTry again!`
+          feedback: `Almost! Remember to type BOTH the reference AND verse together.\n\nExpected: "${todaysVerse.reference} - ${todaysVerse.verse}"\n\nYou typed: "${userText}"\n\nTry again!`
         };
       }
     }
 
     // For all other phases, validate verse text only
-    const cleanVerse = todaysVerse.verse.toLowerCase().replace(/[.,!?;:"']/g, '');
+    const normalizedVerse = normalizeText(todaysVerse.verse);
 
-    if (cleanInput === cleanVerse) {
+    // Calculate similarity (allow 95% match - about 1 typo per 20 characters)
+    const similarity = calculateSimilarity(normalizedInput, normalizedVerse);
+
+    if (similarity >= 0.95) {
       // Special message for review mode completion
       if (isReviewMode && currentPhase === 'phase3_round4') {
         return {
@@ -458,18 +507,21 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       const nextPhaseName = nextPhase ? getPhaseDisplayName(nextPhase) : 'completion';
       return {
         isCorrect: true,
-        feedback: `Perfect! Moving to ${nextPhaseName}.`
+        feedback: similarity === 1.0
+          ? `Perfect! Moving to ${nextPhaseName}.`
+          : `Great job! (Minor typo but close enough) Moving to ${nextPhaseName}.`
       };
-    } else if (cleanInput === '') {
+    } else if (normalizedInput === '') {
       return {
         isCorrect: false,
         feedback: 'Please type your answer.'
       };
     } else {
-      // Show diff for incorrect answer
+      // Show similarity percentage for encouragement
+      const percentMatch = Math.round(similarity * 100);
       return {
         isCorrect: false,
-        feedback: `Not quite right. Try again!\n\nYou typed: "${userText}"\n\nCorrect verse: "${todaysVerse.verse}"`
+        feedback: `Not quite right (${percentMatch}% match). Try again!\n\nYou typed: "${userText}"\n\nCorrect verse: "${todaysVerse.verse}"`
       };
     }
   };
