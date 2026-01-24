@@ -1,0 +1,7 @@
+Correct Verse: {{ $json.body.verse }}
+User Typed: "{{ $json.body.userTypedText }}"
+
+Compare them and respond:
+- If empty: Ask them to type
+- If correct: "Perfect! Moving to Phase X"
+- If wrong: Show what they typed vs correct verse
