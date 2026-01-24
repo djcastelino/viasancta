@@ -260,11 +260,32 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
     // Generate appropriate context based on book and category
     const contexts: { [key: string]: string } = {
+      'John 15:5': "Jesus teaches that we are completely dependent on Him for spiritual life and fruitfulness.",
+      'Nehemiah 8:10': "This verse reminds us that true strength comes from the joy we find in God's presence.",
+      'Hosea 4:6': "God's prophet warns that lacking knowledge of Him leads to spiritual destruction.",
+      'Joshua 24:15': "Joshua's bold declaration of commitment challenges us to choose whom we will serve.",
+      'Exodus 33:14': "God promises Moses His constant presence and the rest that comes from being with Him.",
+      'Hebrews 13:8': "This verse from Hebrews reminds us of Christ's unchanging nature and eternal faithfulness.",
+      'Psalms 119:105': "The psalmist beautifully describes how God's Word guides our steps through life.",
+      '1 Peter 5:7': "Peter encourages us to cast all anxiety on God because He genuinely cares for us.",
+      'Psalms 115:14': "A blessing prayer for God's abundance and increase on His people and their families.",
       'Philippians 4:13': "Paul's powerful declaration of strength and confidence through Christ in all circumstances.",
       'Psalms 37:4': "This psalm teaches that delighting in God aligns our desires with His perfect will.",
-      'Hebrews 13:8': "This verse from Hebrews reminds us of Christ's unchanging nature and eternal faithfulness.",
-      'John 3:16': "The most famous verse in the Bible about God's love and the gift of salvation through His Son.",
-      'Romans 8:28': "Paul's assurance that God works all circumstances together for good for those who love Him.",
+      'John 10:10': "Jesus declares His purpose: to give abundant, full life to all who follow Him.",
+      'Isaiah 43:21': "God reveals the purpose for which He formed His people - to declare His praise.",
+      'Zechariah 4:6': "The prophet reveals that true success comes through God's Spirit, not human strength.",
+      'Psalms 3:3': "David expresses confidence in God as his protector and the one who lifts his head.",
+      'Psalms 16:11': "The psalmist celebrates the complete joy found in God's presence.",
+      'John 14:16': "Jesus promises the Holy Spirit who will be our constant Helper and companion.",
+      'Nahum 1:7': "This verse from the prophet Nahum reveals God as our refuge in times of trouble.",
+      '1 Peter 5:6': "Peter instructs believers to humble themselves so God can lift them up at the right time.",
+      'Acts 20:35': "Paul quotes Jesus' teaching about the blessing that comes from giving generously.",
+      'John 6:35': "Jesus declares Himself as the bread of life who satisfies our deepest spiritual hunger.",
+      'Zechariah 2:5': "God promises to be a protective wall of fire around His people and to dwell among them.",
+      '2 Corinthians 9:8': "Paul assures believers that God provides abundantly so we can give generously.",
+      'Malachi 4:2': "The prophet promises God's healing power like the rising sun for those who obey Him.",
+      'Zephaniah 3:17': "This beautiful verse describes how God delights in us and rejoices over us with singing.",
+      'Hebrews 4:12': "This verse describes the living, active, and penetrating power of God's Word."
     };
 
     console.log('🔍 Context Lookup:', {
