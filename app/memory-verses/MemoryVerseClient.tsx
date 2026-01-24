@@ -28,7 +28,7 @@ interface MemoryVerseClientProps {
   verses: MemoryVerse[];
 }
 
-type Phase = 'phase1_read' | 'phase2_type' | 'phase3_round1' | 'phase3_round2' | 'phase3_round3' | 'phase3_round4' | 'phase4_master' | 'phase5_reference';
+type Phase = 'phase1_read' | 'phase2_type' | 'phase3_round1' | 'phase3_round2' | 'phase3_round3' | 'phase3_round4' | 'phase5_reference';
 
 export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [currentDay, setCurrentDay] = useState(1);
@@ -179,7 +179,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       if (yesterdayProgress?.verseMemorized) {
         setIsReviewMode(true);
         setReviewVerseId(yesterdayVerseId);
-        setCurrentPhase('phase4_master');
+        setCurrentPhase('phase3_round4');
         setUserInput('');
 
         const yesterdayVerse = verses.find(v => v.id === yesterdayVerseId);
@@ -247,8 +247,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           return firstLetter + underscores;
         }).join(' ');
 
-      case 'phase3_round4': // Completely blank
-      case 'phase4_master':
+      case 'phase3_round4': // Completely blank - final memory test
         return '___________________________';
 
       default:
@@ -264,8 +263,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       case 'phase3_round1': return 'phase3_round2';
       case 'phase3_round2': return 'phase3_round3';
       case 'phase3_round3': return 'phase3_round4';
-      case 'phase3_round4': return 'phase4_master';
-      case 'phase4_master': return 'phase5_reference';
+      case 'phase3_round4': return 'phase5_reference'; // Skip phase4, go straight to reference
       case 'phase5_reference': return null; // Done, move to next verse
       default: return null;
     }
@@ -359,7 +357,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
         // Auto-advance to next phase after a brief delay
         setTimeout(() => {
           // Handle review mode completion
-          if (isReviewMode && currentPhase === 'phase4_master') {
+          if (isReviewMode && currentPhase === 'phase3_round4') {
             setIsReviewMode(false);
             setReviewVerseId(null);
             setCoachResponse('');
@@ -377,7 +375,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             advancePhase(next);
           } else if (currentPhase === 'phase5_reference') {
             // Phase 5 complete - show homework message with tips
-            const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\nCome back tomorrow to review this verse before learning the next one!`;
+            const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
 
             setCoachResponse(homeworkMessage);
 
@@ -475,9 +473,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   {currentPhase === 'phase3_round1' && '🧠 Phase 3-1'}
                   {currentPhase === 'phase3_round2' && '🧠 Phase 3-2'}
                   {currentPhase === 'phase3_round3' && '🧠 Phase 3-3'}
-                  {currentPhase === 'phase3_round4' && '🧠 Phase 3-4'}
-                  {currentPhase === 'phase4_master' && '🏆 Phase 4: Master'}
-                  {currentPhase === 'phase5_reference' && '💎 Phase 5: Bonus'}
+                  {currentPhase === 'phase3_round4' && '🧠 Phase 3-4 (Final)'}
+                  {currentPhase === 'phase5_reference' && '💎 Phase 4: Reference'}
                 </span>
               )}
               <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
@@ -490,8 +487,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             </div>
           </div>
 
-          {/* Hide verse during pure memory phases */}
-          {!coachResponse || (currentPhase !== 'phase3_round4' && currentPhase !== 'phase4_master') ? (
+          {/* Hide verse during pure memory phase */}
+          {!coachResponse || currentPhase !== 'phase3_round4' ? (
             <>
               <p className="text-2xl text-gray-700 mb-2 leading-relaxed">
                 "{todaysVerse.verse}"
@@ -527,8 +524,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               <p className="text-gray-800 whitespace-pre-line">{coachResponse}</p>
             </div>
 
-            {/* Blanked Verse Display (Phase 3 & 4) */}
-            {(currentPhase.startsWith('phase3_') || currentPhase === 'phase4_master') && (
+            {/* Blanked Verse Display (Phase 3) */}
+            {currentPhase.startsWith('phase3_') && (
               <div className="bg-blue-50 border-2 border-blue-300 p-4 rounded-lg">
                 <p className="text-sm text-blue-600 font-semibold mb-2">Hints:</p>
                 <p className="text-xl text-gray-800 leading-relaxed font-mono">
@@ -617,7 +614,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                 disabled={currentDay >= 77}
                 className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50 shadow-lg"
               >
-                {currentDay >= 77 ? '🎉 All Verses Completed!' : '✅ Continue to Next Verse'}
+                {currentDay >= 77 ? '🎉 All Verses Completed!' : '📖 Back to Memory Verses'}
               </button>
             )}
           </div>
