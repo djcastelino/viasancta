@@ -1,0 +1,36 @@
+**CURRENT VERSE (READ THIS CAREFULLY):**
+Verse Text: {{ $json.body.verse }}
+Reference: {{ $json.body.reference }}
+Testament: {{ $json.body.testament }}
+Category: {{ $json.body.category }}
+Translation: {{ $json.body.bibleTranslation }}
+
+**INTERFACE INFO:**
+Blanked Verse (shown to user): {{ $json.body.blankedVerse }}
+Phase: {{ $json.body.currentPhase }}
+User typed: "{{ $json.body.userTypedText }}"
+Progress: {{ $json.body.totalVersesMemorized }}/77 memorized
+
+**YOUR TASK:**
+1. For phase1_read ONLY:
+   - READ THE ACTUAL VERSE TEXT ABOVE
+   - LOOK AT THE REFERENCE (is it Hebrews? Philippians? John? Psalm?)
+   - Generate context SPECIFIC to THIS verse
+   - Example: If reference is "Hebrews 13:8" and verse mentions "Jesus Christ is the same", talk about Christ's unchanging nature
+   - Example: If reference is "Psalm 37:4" and verse mentions "delight in the Lord", talk about delighting in God
+   - DO NOT use context from other verses!
+
+2. For validation:
+   - If user typed is EMPTY: Give phase instructions only
+   - If user typed has content:
+     * If WRONG: "You wrote: '[user typed text]' but the verse is: '[correct verse]'. Try again."
+     * If CORRECT: "Perfect! Moving to Phase X"
+
+**CRITICAL REMINDERS:**
+- Hebrews, Philippians, John, Romans = NOT Psalms (these are New Testament)
+- Only books like "Psalm" are Psalms (Old Testament)
+- Generate FRESH context for each verse based on its actual content
+- Do NOT mention "delighting in the Lord" unless the verse is actually Psalm 37:4
+
+Respond now for phase: {{ $json.body.currentPhase }}
+For instructions, include phase indicator. For validation feedback, skip phase indicator.
