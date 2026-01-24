@@ -457,19 +457,12 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             // Immediately fetch next phase instructions
             advancePhase(next);
           } else if (currentPhase === 'phase5_reference') {
-            // Phase 5 complete - show celebration then homework
+            // Phase 5 complete - show celebration (user clicks button to see homework)
             const celebrationMessage = `🎉 FANTASTIC! You've mastered this verse!\n\nThis is now permanently stored in your heart. Come back tomorrow to review it and learn the next treasure from God's Word!`;
 
             setCoachResponse(celebrationMessage);
             // Play celebration audio
             playCoachAudio(celebrationMessage);
-
-            // Show homework tips after 4 seconds
-            setTimeout(() => {
-              const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
-              setCoachResponse(homeworkMessage);
-              stopCoachAudio(); // Stop celebration audio if still playing
-            }, 4000); // 4 seconds to hear celebration
 
             // Mark verse as memorized and schedule next day
             const newProgress = [...progress];
@@ -514,6 +507,13 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       setCurrentPhase('phase1_read');
       setPhaseRound(1);
     }
+  };
+
+  // Show homework tips (called after celebration)
+  const showHomework = () => {
+    stopCoachAudio(); // Stop celebration audio if still playing
+    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back tomorrow to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
+    setCoachResponse(homeworkMessage);
   };
 
   return (
@@ -706,6 +706,16 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
               >
                 {isLoading ? 'Loading...' : 'Next: Start Typing →'}
+              </button>
+            )}
+
+            {/* View Homework button after celebration */}
+            {coachResponse.includes('FANTASTIC! You\'ve mastered this verse!') && (
+              <button
+                onClick={showHomework}
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg"
+              >
+                📚 View Homework Tips
               </button>
             )}
 
