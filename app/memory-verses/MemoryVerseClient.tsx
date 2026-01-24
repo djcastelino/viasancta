@@ -420,8 +420,6 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       const cleanExpected = expectedFull.toLowerCase().replace(/[.,!?;:"']/g, '');
 
       if (cleanInput === cleanExpected) {
-        const nextPhase = getNextPhase();
-        const nextPhaseName = nextPhase ? getPhaseDisplayName(nextPhase) : 'completion';
         return {
           isCorrect: true,
           feedback: `Perfect! You've mastered the complete verse with reference!`
@@ -438,6 +436,14 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     const cleanVerse = todaysVerse.verse.toLowerCase().replace(/[.,!?;:"']/g, '');
 
     if (cleanInput === cleanVerse) {
+      // Special message for review mode completion
+      if (isReviewMode && currentPhase === 'phase3_round4') {
+        return {
+          isCorrect: true,
+          feedback: `Perfect! Review complete. Now let's learn today's verse.`
+        };
+      }
+
       const nextPhase = getNextPhase();
       const nextPhaseName = nextPhase ? getPhaseDisplayName(nextPhase) : 'completion';
       return {
@@ -753,6 +759,13 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   <textarea
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
+                    onPaste={(e) => {
+                      e.preventDefault();
+                      setCoachResponse('⚠️ Copy-paste is disabled. Please type from memory to strengthen your learning!');
+                      playCoachAudio('Copy-paste is disabled. Please type from memory to strengthen your learning!');
+                    }}
+                    onCopy={(e) => e.preventDefault()}
+                    onCut={(e) => e.preventDefault()}
                     placeholder="Type your answer here..."
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
