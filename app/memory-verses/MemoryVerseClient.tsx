@@ -443,9 +443,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           if (isReviewMode && currentPhase === 'phase3_round4') {
             setIsReviewMode(false);
             setReviewVerseId(null);
-            setCoachResponse('Great! Now loading today\'s verse...');
             setCurrentPhase('phase1_read');
-            // Now start today's verse
+            // Now start today's verse (will set coachResponse immediately)
             startLearning();
             return;
           }
@@ -453,8 +452,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           const next = getNextPhase();
           if (next) {
             setCurrentPhase(next);
-            setCoachResponse('Loading next phase...'); // Show loading message instead of clearing
-            // Immediately fetch next phase instructions
+            // Immediately fetch next phase instructions (will set coachResponse immediately)
             advancePhase(next);
           } else if (currentPhase === 'phase5_reference') {
             // Phase 5 complete - show celebration (user clicks button to see homework)
