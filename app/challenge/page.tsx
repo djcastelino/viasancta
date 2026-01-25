@@ -78,12 +78,20 @@ export default function ChallengePage() {
         console.log('✨ New day detected - resetting challenge');
         // New day - reset game
         const todaysChallenge = getTodaysChallenge();
+
+        // Calculate yesterday's date to check streak continuity
+        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+        const playedYesterday = savedState.lastPlayedDate === yesterday;
+
+        // Keep streak if played yesterday, otherwise reset to 0
+        const newCurrentStreak = playedYesterday ? savedState.currentStreak : 0;
+
         const newState: ChallengeGameState = {
           targetChallenge: todaysChallenge,
           guesses: [],
           isComplete: false,
           isWon: false,
-          currentStreak: 0,
+          currentStreak: newCurrentStreak, // Preserve streak if played yesterday
           maxStreak: savedState.maxStreak,
           gamesPlayed: savedState.gamesPlayed,
           gamesWon: savedState.gamesWon,
@@ -128,7 +136,7 @@ export default function ChallengePage() {
   }, []);
 
   const handleGuess = () => {
-    if (!gameState || !guess.trim()) return;
+    if (!gameState || !guess.trim() || gameState.isComplete) return;
 
     const normalizedGuess = guess.trim().toLowerCase();
     const normalizedAnswer = gameState.targetChallenge!.name.toLowerCase();
@@ -136,6 +144,14 @@ export default function ChallengePage() {
     const isCorrect = normalizedGuess === normalizedAnswer;
     const isGameComplete = isCorrect || revealedClues >= 6;
     const today = new Date().toISOString().split('T')[0];
+    const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+    // Calculate streak properly - only increment if played yesterday AND won today
+    let newStreak = 0;
+    if (isCorrect) {
+      const playedYesterday = gameState.lastPlayedDate === yesterday;
+      newStreak = playedYesterday ? gameState.currentStreak + 1 : 1; // Reset to 1 if gap in days
+    }
 
     const updatedState: ChallengeGameState = {
       ...gameState,
@@ -144,8 +160,8 @@ export default function ChallengePage() {
       isWon: isCorrect,
       gamesPlayed: isGameComplete ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
       gamesWon: isCorrect ? gameState.gamesWon + 1 : gameState.gamesWon,
-      currentStreak: isCorrect ? gameState.currentStreak + 1 : 0,
-      maxStreak: isCorrect ? Math.max(gameState.maxStreak, gameState.currentStreak + 1) : gameState.maxStreak,
+      currentStreak: newStreak,
+      maxStreak: isCorrect ? Math.max(gameState.maxStreak, newStreak) : gameState.maxStreak,
       cluesRevealed: revealedClues,
       lastPlayedDate: isGameComplete ? today : gameState.lastPlayedDate // Update lastPlayedDate when completing
     };
@@ -167,7 +183,7 @@ export default function ChallengePage() {
   };
 
   const handleSkip = () => {
-    if (!gameState || revealedClues >= 6) return;
+    if (!gameState || revealedClues >= 6 || gameState.isComplete) return;
 
     const newRevealed = revealedClues + 1;
     setRevealedClues(newRevealed);
@@ -531,7 +547,7 @@ export default function ChallengePage() {
   };
 
   const handleGiveUp = () => {
-    if (!gameState) return;
+    if (!gameState || gameState.isComplete) return;
 
     const today = new Date().toISOString().split('T')[0];
 
