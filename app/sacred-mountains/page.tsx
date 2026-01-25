@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import mountainsData from '@/public/sacred-mountains.json';
+import SacredMountainsClient from './SacredMountainsClient';
 
 export const metadata = {
   title: 'Sacred Mountains of the Bible - Divine Pilgrim',
@@ -9,6 +9,13 @@ export const metadata = {
 export default function SacredMountainsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Back Link */}
+      <div className="max-w-7xl mx-auto px-5 pt-8 pb-4">
+        <Link href="/" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
+          ← Back to Home
+        </Link>
+      </div>
+
       {/* Hero Section */}
       <div className="relative h-[400px] overflow-hidden">
         <img
@@ -62,60 +69,8 @@ export default function SacredMountainsPage() {
           </div>
         </div>
 
-        {/* Mountain Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mountainsData.map((mountain) => {
-            const heroImage = mountain.images.find(img => img.isHero) || mountain.images[0];
-
-            return (
-              <Link
-                key={mountain.id}
-                href={`/sacred-mountains/${mountain.id}`}
-                className="block group"
-              >
-                <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                  <div className="h-60 relative overflow-hidden">
-                    <img
-                      src={heroImage.url}
-                      alt={mountain.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="text-sm text-[#D4AF37] font-semibold mb-1">
-                        {mountain.testament}
-                      </div>
-                      <h3 className="text-2xl font-bold drop-shadow-md">
-                        {mountain.name}
-                      </h3>
-                      <p className="text-sm text-slate-200 mt-1">
-                        {mountain.elevation}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-700 font-semibold mb-3">
-                      {mountain.significance}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
-                      <span>📍 {mountain.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-slate-500">
-                      <span>💡 {mountain.funFacts.length} Fun Facts</span>
-                      <span>•</span>
-                      <span>📖 {mountain.biblicalReferences.length} References</span>
-                    </div>
-                    <div className="mt-4">
-                      <span className="inline-block bg-[#D4AF37] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                        Explore →
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        {/* Mountain Cards with Modal */}
+        <SacredMountainsClient />
       </div>
     </div>
   );
