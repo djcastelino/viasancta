@@ -323,11 +323,10 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Shrines of Saints */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+          {/* Shrines of Saints - HIDDEN FOR PHASE 2 */}
+          {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* St. Stephen's Basilica Budapest from Wikimedia Commons */}
-              <img 
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Saint_Andrew%2C_Saint_Peter_and_Jesus_Christ_blessing%2C_St._Stephen%27s_Basilica%2C_2016_Budapest.jpg/800px-Saint_Andrew%2C_Saint_Peter_and_Jesus_Christ_blessing%2C_St._Stephen%27s_Basilica%2C_2016_Budapest.jpg"
                 alt="Saints in St. Stephen's Basilica Budapest"
                 className="w-full h-full object-cover"
@@ -347,7 +346,7 @@ export default function Home() {
                 Coming Soon
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Sacred Architecture */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
@@ -385,11 +384,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Biblical Sites */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+          {/* Biblical Sites - HIDDEN FOR PHASE 2 */}
+          {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Jerusalem Dome of the Rock from Wikimedia Commons */}
-              <img 
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jerusalem-2013%282%29-View_of_the_Dome_of_the_Rock_%26_Temple_Mount_02.jpg/800px-Jerusalem-2013%282%29-View_of_the_Dome_of_the_Rock_%26_Temple_Mount_02.jpg"
                 alt="Jerusalem Dome of the Rock"
                 className="w-full h-full object-cover"
@@ -409,7 +407,7 @@ export default function Home() {
                 Coming Soon
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
