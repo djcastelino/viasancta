@@ -365,18 +365,8 @@ export default function Home() {
               </div>
             </div>
             <div className="p-7">
-              <div className="flex gap-6 mb-5">
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">30</div>
-                  <div className="text-sm text-gray-500">Sacred Stops</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-[#D4AF37]">~6 hours</div>
-                  <div className="text-sm text-gray-500">Estimated Time</div>
-                </div>
-              </div>
               <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Tour the world's most magnificent churches and basilicas. From St. Peter's to Sagrada Família.
+                Tour the world's most magnificent churches and basilicas. From St. Peter's to Sagrada Família, experience the pinnacle of sacred architecture.
               </p>
               <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
                 Coming Soon
