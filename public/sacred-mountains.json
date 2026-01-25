@@ -832,5 +832,147 @@
     ],
     "mapUrl": "https://www.google.com/maps/place/Church+of+the+Holy+Sepulchre/@31.7784,35.2296,17z",
     "totalAudioDuration": 725
+  },
+  {
+    "id": 7,
+    "name": "Mount Zion",
+    "location": "Jerusalem, Israel",
+    "coordinates": {
+      "lat": 31.7725,
+      "lng": 35.2285
+    },
+    "elevation": "2,550 feet (777 meters)",
+    "testament": "Both OT & NT",
+    "category": "Royal & Messianic",
+    "significance": "City of David, site of the Upper Room, symbol of God's eternal reign and the heavenly Jerusalem",
+    "biblicalReferences": [
+      "2 Samuel 5:6-10",
+      "Psalm 2:6",
+      "Psalm 48:1-2",
+      "Psalm 132:13-14",
+      "Isaiah 2:3",
+      "Joel 2:32",
+      "Hebrews 12:22-24",
+      "Revelation 14:1"
+    ],
+    "keyEvents": [
+      "David conquers the Jebusite fortress and establishes it as his capital (2 Sam 5:6-10)",
+      "David brings the Ark of the Covenant to Zion with great celebration (2 Sam 6)",
+      "God makes covenant with David promising an eternal kingdom (2 Sam 7)",
+      "Solomon builds the Temple on adjacent Mount Moriah, extending Zion's significance",
+      "Prophets declare Zion as the center of God's reign and messianic hope",
+      "The Upper Room on Zion: Jesus celebrates Last Supper and institutes the Eucharist",
+      "The Holy Spirit descends at Pentecost in the Upper Room",
+      "Early Christian community gathers on Mount Zion"
+    ],
+    "cccReferences": [
+      "CCC 436 - The Messiah king in the City of David",
+      "CCC 667 - Christ's kingship already inaugurated",
+      "CCC 755-757 - The Church as new Jerusalem",
+      "CCC 1329-1330 - The Last Supper instituting the Eucharist",
+      "CCC 731-732 - Pentecost and the gift of the Spirit",
+      "CCC 2619 - Prayer of the Church in the Upper Room"
+    ],
+    "sources": [
+      "CCC 436",
+      "CCC 667",
+      "CCC 755",
+      "CCC 1329",
+      "CCC 731",
+      "2 Samuel 5:6-10 (RSV-CE)",
+      "Psalm 132:13-14 (RSV-CE)",
+      "Hebrews 12:22-24 (RSV-CE)",
+      "Augustine, City of God XVII.16 - Zion and the Church",
+      "Chrysostom, Homilies on Acts 4 - Pentecost on Zion"
+    ],
+    "historicalContext": "Mount Zion's history spans 3,000 years. Originally a Jebusite stronghold called 'the fortress of Zion,' it was conquered by King David around 1000 BC and became 'the City of David.' This southeastern hill became Israel's political and spiritual center when David brought the Ark of the Covenant here. Though Solomon built the Temple on adjacent Mount Moriah, the entire area came to be called Zion in prophetic literature. The name 'Zion' appears 152 times in the Old Testament, becoming synonymous with Jerusalem, God's dwelling place, and the hope of redemption. In Christian tradition, the southwestern hill now called Mount Zion holds the Cenacle (Upper Room) where Jesus celebrated the Last Supper and where the apostles received the Holy Spirit at Pentecost. The site also contains the traditional Tomb of David. For 2,000 years, Mount Zion has symbolized both earthly Jerusalem and the heavenly city to come.",
+    "theologicalSignificance": "Mount Zion carries profound theological weight spanning both Testaments. In the Old Testament, Zion represents God's chosen dwelling place. Psalm 132:13-14 declares, 'For the LORD has chosen Zion; he has desired it for his habitation: This is my resting place for ever.' It became the seat of David's kingdom and the symbol of messianic hope. Psalm 2:6 prophesies, 'I have set my king on Zion, my holy hill.' The prophets envisioned a future when 'out of Zion shall go forth the law, and the word of the LORD from Jerusalem' (Isaiah 2:3). In the New Testament, Zion's significance reaches fulfillment. The Catechism teaches that Christ is the Messiah king in the City of David (CCC 436). The Upper Room on Zion witnessed two earth-shaking events: the institution of the Eucharist at the Last Supper, and the descent of the Holy Spirit at Pentecost, birthing the Church. Hebrews 12:22 declares, 'But you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem.' Zion transcends geography—it represents the Church, the communion of saints, the New Jerusalem. Revelation 14:1 describes the Lamb standing on Mount Zion with the 144,000. Zion is where God's kingdom breaks into history, where promise becomes reality, where the earthly points to the eternal.",
+    "funFacts": [
+      "👑 'City of David' originally referred only to the small fortress David captured, just 12 acres—about the size of 9 football fields",
+      "🎶 The word 'Zion' appears 152 times in the Old Testament, making it one of the most frequently mentioned locations",
+      "⛪ The Cenacle (Upper Room) has been destroyed and rebuilt multiple times, with the current structure dating to the Crusader period (12th century)",
+      "🏛️ The same room tradition holds witnessed BOTH the Last Supper and Pentecost—the birth of the Eucharist and the birth of the Church",
+      "🔑 According to tradition, King David's tomb is located directly below the Upper Room, connecting Old and New Testament kingship",
+      "🎺 Psalm 87 declares 'Glorious things are spoken of you, O city of God'—this inspired John Newton's famous hymn 'Glorious Things of Thee Are Spoken'",
+      "📖 When ancient Jews prayed, they faced toward Zion no matter where they were in the world—Daniel did this even in Babylonian exile",
+      "🕊️ The Holy Spirit descended at Pentecost around 9 AM (the third hour), the same time as the morning sacrifice in the nearby Temple",
+      "⚔️ The Jebusites taunted David saying 'even the blind and lame' could defend their fortress—but David conquered it anyway",
+      "🌆 'Heavenly Jerusalem' in Revelation is called 'Mount Zion'—the earthly city became a symbol of eternal reality"
+    ],
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction",
+        "type": "introduction",
+        "voice": "en-US-AndrewNeural",
+        "duration": 105,
+        "icon": "👑",
+        "script": "Welcome to Mount Zion, one of the most beloved names in all of Scripture. The word 'Zion' appears 152 times in the Old Testament—more than almost any other place name. But Zion is more than a location; it's a promise, a hope, a symbol of God's eternal reign. Originally the fortress of a pagan people, Zion became the City of David, Israel's capital and spiritual center. The Psalms overflow with praise for Zion: 'Out of Zion, the perfection of beauty, God shines forth.' 'The LORD has chosen Zion; he has desired it for his habitation.' On this mountain, David danced before the Ark of the Covenant. Here God made covenant with David, promising an eternal kingdom. Prophets declared that out of Zion would go forth God's law and word. In the New Testament, Zion's significance reaches fulfillment. In the Upper Room on this mount, Jesus instituted the Eucharist at the Last Supper. In that same room, the Holy Spirit descended at Pentecost, birthing the Church. The Letter to the Hebrews proclaims, 'You have come to Mount Zion and to the city of the living God, the heavenly Jerusalem.' Zion connects past, present, and future—David's earthly kingdom, Christ's spiritual kingdom, and the eternal city to come."
+      },
+      {
+        "id": "david-conquers",
+        "title": "David Conquers Zion",
+        "type": "history",
+        "voice": "en-US-EricNeural",
+        "duration": 95,
+        "icon": "⚔️",
+        "script": "Around 1000 BC, David faced a problem. He had been anointed king of Israel, but he needed a capital—a city that belonged neither to the northern nor southern tribes, a neutral location that could unite the nation. He chose the Jebusite fortress perched on a hill in Jerusalem. The Jebusites mocked him, saying, 'You will not come in here, but the blind and the lame will ward you off.' They believed their fortress was impregnable. But Second Samuel records, 'David took the stronghold of Zion, that is, the city of David.' He captured the fortress and made it his capital. Then David did something revolutionary. He brought the Ark of the Covenant—God's throne on earth—to Zion. Second Samuel describes the scene: David and all Israel brought up the Ark with shouting and the sound of trumpets. David danced before the LORD with all his might. When the Ark entered Zion, God's presence entered with it. This fortress of pagans became the dwelling place of the Most High. God then made covenant with David on this mountain, promising, 'Your throne shall be established for ever.' That promise found its ultimate fulfillment in Jesus Christ, the Son of David, whose kingdom has no end."
+      },
+      {
+        "id": "upper-room",
+        "title": "The Upper Room",
+        "type": "event",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 120,
+        "icon": "🍷",
+        "script": "On Mount Zion stands a room that witnessed two of the most significant events in Christian history. First, the Last Supper. On the night before His crucifixion, Jesus gathered His apostles in this Upper Room. Luke describes it as 'a large upper room furnished.' Here, Jesus took bread, blessed it, broke it, and said, 'This is my body which is given for you.' Then He took the cup of wine and declared, 'This cup is the new covenant in my blood.' The Catechism teaches that Jesus 'instituted the Eucharist as the memorial of his death and Resurrection' (CCC 1337). In this room on Mount Zion, the sacrifice of Calvary was anticipated and the Mass was born. After His resurrection and ascension, the apostles returned to this same room and devoted themselves to prayer with Mary, the mother of Jesus. Then, on the fiftieth day after Passover—Pentecost—something extraordinary happened. Acts chapter 2 records, 'Suddenly a sound came from heaven like the rush of a mighty wind, and it filled all the house where they were sitting. And there appeared to them tongues as of fire, distributed and resting on each one of them. And they were all filled with the Holy Spirit.' The promised Comforter had arrived. Peter, empowered by the Spirit, preached to the crowds in Jerusalem. Three thousand souls were baptized that day. The Church was born. The Upper Room on Mount Zion witnessed both the institution of the Eucharist and the descent of the Holy Spirit—the two great gifts that sustain the Church."
+      },
+      {
+        "id": "scripture",
+        "title": "The LORD Has Chosen Zion",
+        "type": "scripture",
+        "voice": "en-US-BrianNeural",
+        "duration": 75,
+        "icon": "📜",
+        "script": "Listen now to Psalm 132, verses 13 through 18, which declares God's love for Zion. 'For the LORD has chosen Zion; he has desired it for his habitation: This is my resting place for ever; here I will dwell, for I have desired it. I will abundantly bless her provisions; I will satisfy her poor with bread. Her priests I will clothe with salvation, and her saints will shout for joy. There I will make a horn to sprout for David; I have prepared a lamp for my anointed. His enemies I will clothe with shame, but upon himself his crown will shed its luster.' God chose Zion as His dwelling place forever. He promised to raise up a horn—a king—from David. That promise was fulfilled in Jesus Christ, who said, 'I am the light of the world.' Zion is where God dwells with His people, where His promises become reality, where His kingdom breaks into history."
+      },
+      {
+        "id": "theology",
+        "title": "Theological Meaning",
+        "type": "theology",
+        "voice": "en-US-BrianNeural",
+        "duration": 120,
+        "icon": "📖",
+        "script": "Mount Zion carries layer upon layer of theological significance. In the Old Testament, Zion was the seat of David's kingdom and the symbol of God's presence. Psalm 48 declares, 'Great is the LORD and greatly to be praised in the city of our God! His holy mountain, beautiful in elevation, is the joy of all the earth, Mount Zion.' The prophets spoke of Zion as the center of God's future reign. Isaiah prophesied, 'Out of Zion shall go forth the law, and the word of the LORD from Jerusalem' (Isaiah 2:3). When the people were exiled to Babylon, they wept remembering Zion. Psalm 137 laments, 'By the waters of Babylon, there we sat down and wept, when we remembered Zion.' Zion represented home, hope, and God's promise. In the New Testament, Zion's meaning expands. The Catechism teaches that Christ is the Messiah king in the City of David (CCC 436). The Upper Room events—the Last Supper and Pentecost—connect Zion to the Church. The Eucharist instituted on Zion becomes the source and summit of Christian life. The Holy Spirit descending on Zion gives birth to the Church. Most profoundly, Hebrews 12:22-24 declares, 'But you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem, and to innumerable angels in festal gathering, and to the assembly of the first-born who are enrolled in heaven.' Zion transcends geography. It represents the Church, the communion of saints, the New Jerusalem. When Revelation describes the final victory, it shows the Lamb standing on Mount Zion with the 144,000 who bear His name. Zion is past, present, and future. It's David's city, the Church's birthplace, and the eternal city to come. It's where God dwells with His people—then, now, and forever."
+      },
+      {
+        "id": "funFacts",
+        "title": "Fascinating Facts",
+        "type": "funFacts",
+        "voice": "en-US-GuyNeural",
+        "duration": 90,
+        "icon": "💡",
+        "script": "Let me share some fascinating facts about Mount Zion. First, the City of David that David originally captured was tiny—only about 12 acres, roughly the size of 9 football fields. Yet from this small fortress, he ruled all of Israel. Second, the word 'Zion' appears 152 times in the Old Testament, making it one of the most frequently mentioned locations in Scripture. God really loved this place! Third, the Cenacle—the Upper Room—has been destroyed and rebuilt multiple times over 2,000 years. The current structure dates to the Crusader period in the 12th century. Fourth, tradition holds that King David's tomb is located directly below the Upper Room. Imagine—Old Testament king buried beneath the room where the New Testament King instituted the Eucharist and sent the Holy Spirit! Fifth, that same Upper Room witnessed both the Last Supper and Pentecost—the birth of the Eucharist and the birth of the Church, in the same location. Sixth, Psalm 87's words 'Glorious things are spoken of you, O city of God' inspired John Newton to write the famous hymn 'Glorious Things of Thee Are Spoken.' Seventh, ancient Jews prayed facing toward Zion no matter where they were in the world. Daniel continued this practice even in Babylonian exile, opening his windows toward Jerusalem. Eighth, the Holy Spirit descended at Pentecost around 9 AM—the third hour—the exact time of the morning sacrifice in the Temple just across the valley. Finally, when the Jebusites taunted David before he conquered their fortress, they said even 'the blind and the lame' could defend it. David responded by taking it anyway, establishing the city where God would dwell forever."
+      },
+      {
+        "id": "prayer",
+        "title": "Closing Prayer",
+        "type": "prayer",
+        "voice": "en-US-RogerNeural",
+        "duration": 75,
+        "icon": "🙏",
+        "script": "Let us pray. LORD God, You who chose Mount Zion as Your dwelling place, who made it the City of David and the birthplace of the Church, we thank You for Your faithfulness. From this mountain You established David's throne forever in Jesus Christ. On this mountain You instituted the Eucharist, giving us Your Body and Blood as spiritual food. On this mountain You poured out Your Holy Spirit at Pentecost, empowering the Church to proclaim the Gospel to all nations. Thank You for the promise that out of Zion goes forth Your law and Your word. Thank You that Zion is not just a place but a reality—the Church, the communion of saints, the heavenly Jerusalem. Help us to be living stones in Your spiritual house, built on the foundation of the apostles who gathered in the Upper Room. May we receive the Eucharist with the same devotion as those who first received it on Mount Zion. May we be filled with the same Holy Spirit who descended at Pentecost. And as we journey through this earthly life, may we remember that we are citizens of the heavenly Zion, the city whose builder and maker is God. 'Pray for the peace of Jerusalem! May they prosper who love you!' For You are the King of Zion, the Lord of the Church, the hope of all who call upon Your name. To You be glory forever. Amen."
+      }
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jerusalem_Zion_Gate_BW_1.JPG/1024px-Jerusalem_Zion_Gate_BW_1.JPG",
+        "caption": "Zion Gate leading to Mount Zion, Jerusalem",
+        "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Mount+Zion/@31.7725,35.2285,17z",
+    "totalAudioDuration": 680
   }
 ]
