@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface AudioSection {
@@ -62,6 +62,27 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
 
   // Background music URL
   const backgroundMusicUrl = 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3';
+
+  // Auto-play background music on mount
+  useEffect(() => {
+    const music = new Audio(backgroundMusicUrl);
+    music.loop = true;
+    music.volume = 0.15;
+    musicRef.current = music;
+
+    music.play().catch(err => {
+      console.log('Music autoplay prevented:', err);
+      setIsMusicPlaying(false);
+    });
+    setIsMusicPlaying(true);
+
+    return () => {
+      if (musicRef.current) {
+        musicRef.current.pause();
+        musicRef.current = null;
+      }
+    };
+  }, [selectedMountain.id]);
 
   // Play individual audio section
   const playAudioSection = async (section: AudioSection) => {
@@ -267,17 +288,6 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
           ))}
         </div>
       )}
-
-      {/* Music Toggle */}
-      <div className="text-center">
-        <button
-          onClick={toggleMusic}
-          className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold transition shadow-lg"
-        >
-          {isMusicPlaying ? '🔇 Stop Background Music' : '🎵 Play Background Music'}
-        </button>
-        <p className="text-slate-500 text-xs mt-2">Contemplative piano music for meditation</p>
-      </div>
 
       {/* Audio Sections */}
       <div className="bg-white rounded-lg shadow-lg p-6">
