@@ -126,7 +126,7 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Jerusalem_Blick_vom_%C3%96lberg_auf_Tempelberg.jpg/1280px-Jerusalem_Blick_vom_%C3%96lberg_auf_Tempelberg.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Jerusalem_Blick_vom_%C3%96lberg_auf_Tempelberg.jpg",
         "caption": "Panoramic view of Jerusalem and the Temple Mount from the Mount of Olives",
         "attribution": "Photo: Berthold Werner, Wikimedia Commons (CC BY-SA 3.0)",
         "isHero": true
@@ -219,7 +219,7 @@
     "audioSections": [],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mount_Sinai_from_the_south.jpg/1280px-Mount_Sinai_from_the_south.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Mount_Sinai_from_the_south.jpg",
         "caption": "Mount Sinai rising from the Sinai desert",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
         "isHero": true
@@ -284,7 +284,7 @@
     "audioSections": [],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Temple_Mount_%28Aerial_view%2C_2007%29_02.jpg/1280px-Temple_Mount_%28Aerial_view%2C_2007%29_02.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Temple_Mount_%28Aerial_view%2C_2007%29_02.jpg",
         "caption": "Aerial view of the Temple Mount (Mount Moriah) in Jerusalem",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
         "isHero": true
@@ -349,7 +349,7 @@
     "audioSections": [],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Mount_Carmel_03.jpg/1280px-Mount_Carmel_03.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Mount_Carmel_03.jpg",
         "caption": "Mount Carmel overlooking the Mediterranean Sea and Haifa",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
         "isHero": true
@@ -416,7 +416,7 @@
     "audioSections": [],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mount_Tabor_by_David_Shankbone.jpg/1280px-Mount_Tabor_by_David_Shankbone.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Mount_Tabor_by_David_Shankbone.jpg",
         "caption": "Mount Tabor's distinctive dome rising from the Jezreel Valley",
         "attribution": "Photo: David Shankbone, Wikimedia Commons (CC BY-SA 3.0)",
         "isHero": true

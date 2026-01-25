@@ -56,7 +56,12 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
   const [showFullContext, setShowFullContext] = useState(false);
   const [showTheology, setShowTheology] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const musicRef = useRef<HTMLAudioElement | null>(null);
+
+  // Background music URL
+  const backgroundMusicUrl = 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3';
 
   // Play individual audio section
   const playAudioSection = async (section: AudioSection) => {
@@ -155,6 +160,44 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
     setIsPlayingAll(false);
   };
 
+  // Toggle background music
+  const toggleMusic = () => {
+    if (!musicRef.current) {
+      const music = new Audio(backgroundMusicUrl);
+      music.loop = true;
+      music.volume = 0.2;
+      musicRef.current = music;
+    }
+
+    if (isMusicPlaying) {
+      musicRef.current.pause();
+      setIsMusicPlaying(false);
+    } else {
+      musicRef.current.play().catch(err => {
+        console.log('Music autoplay prevented:', err);
+      });
+      setIsMusicPlaying(true);
+    }
+  };
+
+  // Make source clickable
+  const makeSourceClickable = (source: string) => {
+    if (source.includes('NewAdvent.org')) {
+      const topic = source.split(' - ')[1]?.split(' (')[0];
+      if (topic) {
+        const slug = topic.toLowerCase().replace(/\s+/g, '_');
+        return `https://www.newadvent.org/cathen/${slug}.htm`;
+      }
+    }
+    if (source.includes('CCC') || source.includes('Catechism')) {
+      return 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
+    }
+    if (source.includes('RSV-CE') || source.includes('Scripture')) {
+      return 'https://www.biblegateway.com/';
+    }
+    return null;
+  };
+
   const formatDuration = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -224,6 +267,17 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
           ))}
         </div>
       )}
+
+      {/* Music Toggle */}
+      <div className="text-center">
+        <button
+          onClick={toggleMusic}
+          className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold transition shadow-lg"
+        >
+          {isMusicPlaying ? '🔇 Stop Background Music' : '🎵 Play Background Music'}
+        </button>
+        <p className="text-slate-500 text-xs mt-2">Contemplative piano music for meditation</p>
+      </div>
 
       {/* Audio Sections */}
       <div className="bg-white rounded-lg shadow-lg p-6">
@@ -377,11 +431,26 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
       <div className="bg-slate-50 rounded-lg p-6">
         <h3 className="text-xl font-bold text-slate-800 mb-3">📚 Sources</h3>
         <div className="space-y-1">
-          {selectedMountain.sources.map((source, index) => (
-            <p key={index} className="text-slate-600 text-sm">
-              • {source}
-            </p>
-          ))}
+          {selectedMountain.sources.map((source, index) => {
+            const link = makeSourceClickable(source);
+            return link ? (
+              <p key={index} className="text-slate-600 text-sm">
+                •{' '}
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 hover:underline"
+                >
+                  {source}
+                </a>
+              </p>
+            ) : (
+              <p key={index} className="text-slate-600 text-sm">
+                • {source}
+              </p>
+            );
+          })}
         </div>
       </div>
 

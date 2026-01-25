@@ -297,7 +297,7 @@ export default function Home() {
               <div className="h-60 relative overflow-hidden">
                 {/* Mount Sinai from Wikimedia Commons */}
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mount_Sinai_from_the_south.jpg/800px-Mount_Sinai_from_the_south.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Mount_Sinai_from_the_south.jpg"
                   alt="Mount Sinai"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
