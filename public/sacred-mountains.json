@@ -158,5 +158,271 @@
     ],
     "mapUrl": "https://www.google.com/maps/place/Mount+of+Olives/@31.7784,35.2412,15z",
     "totalAudioDuration": 790
+  },
+  {
+    "id": 2,
+    "name": "Mount Sinai",
+    "location": "Sinai Peninsula, Egypt",
+    "coordinates": {
+      "lat": 28.5392,
+      "lng": 33.9751
+    },
+    "elevation": "7,497 feet (2,285 meters)",
+    "testament": "Old Testament",
+    "category": "Law & Covenant",
+    "significance": "Where Moses received the Ten Commandments and the Law from God",
+    "biblicalReferences": [
+      "Exodus 19:1-25",
+      "Exodus 20:1-17",
+      "Exodus 24:12-18",
+      "Exodus 31:18",
+      "Exodus 34:1-35",
+      "Deuteronomy 4:10-13",
+      "1 Kings 19:8-18"
+    ],
+    "keyEvents": [
+      "God called Moses from the burning bush (Exodus 3:1-6)",
+      "God descended on the mountain in fire and thunder (Exodus 19:16-20)",
+      "Moses received the Ten Commandments written by God's finger (Exodus 31:18)",
+      "Moses broke the first tablets upon seeing the golden calf (Exodus 32:19)",
+      "Moses returned for forty more days and received new tablets (Exodus 34:28)",
+      "Elijah fled here and heard God's still, small voice (1 Kings 19:11-13)"
+    ],
+    "cccReferences": [
+      "CCC 2056 - The word Decalogue means literally 'ten words'",
+      "CCC 2058 - The Ten Commandments were given in the context of the Exodus, God's great liberating event",
+      "CCC 2060 - The gift of the Commandments is a gift of God himself and his holy will",
+      "CCC 2061 - The Commandments are a privileged expression of the natural law",
+      "CCC 2071 - The Commandments of the Decalogue form an organic unity"
+    ],
+    "sources": [
+      "Catechism of the Catholic Church (2056-2082)",
+      "Catholic Encyclopedia - Mount Sinai (NewAdvent.org)",
+      "Catholic Encyclopedia - Ten Commandments (NewAdvent.org)",
+      "Exodus 19-20 (RSV-CE)",
+      "Deuteronomy 5:1-22 (RSV-CE)",
+      "St. Gregory of Nyssa - Life of Moses"
+    ],
+    "historicalContext": "Mount Sinai, also called Horeb, rises dramatically from the barren Sinai desert, its granite peak towering 7,497 feet above sea level. The traditional location is Jebel Musa in southern Sinai, though the exact identification has been debated. At its base sits St. Catherine's Monastery, built in the 6th century and one of the oldest continuously operating Christian monasteries in the world. The monastery houses priceless manuscripts and icons, including what many believe to be the site of the burning bush. Pilgrims have climbed the 3,750 'Steps of Repentance' carved into the mountainside for over 1,500 years, many ascending before dawn to witness sunrise from the summit. The mountain's isolation and majesty make it easy to understand why God chose this place for such a momentous revelation. Here, three months after the Exodus from Egypt, the Israelites camped at the mountain's base while Moses ascended into the cloud of God's presence.",
+    "theologicalSignificance": "Mount Sinai represents one of the most pivotal moments in salvation history: the giving of the Law. The Catechism teaches that 'the gift of the Commandments is a gift of God himself and his holy will' (CCC 2060). God did not simply give rules—He gave Himself, entering into covenant with His people. The Ten Commandments were 'written with the finger of God' (Exodus 31:18), signifying their divine origin and authority. Yet Sinai also reveals the terrifying holiness of God. The mountain shook violently, fire and smoke covered it, and God warned Moses that anyone who touched it would die. This was not arbitrary severity but a profound truth: sinful humanity cannot approach the Holy One without mediation. Moses became that mediator, ascending the mountain forty days and nights, fasting in God's presence. The Catechism notes that 'the Commandments were given in the context of the Exodus' (CCC 2058)—God first freed His people, then gave them the Law. Grace precedes law. Yet for all its glory, Sinai pointed forward to something greater. St. Paul writes that we have not come to 'what may be touched, a blazing fire... and darkness' but to Mount Zion and Jesus, the mediator of a new covenant (Hebrews 12:18-24). The Law given on Sinai was 'our custodian until Christ came' (Galatians 3:24). What began on Sinai was fulfilled on Calvary.",
+    "funFacts": [
+      "⛪ St. Catherine's Monastery at Sinai's base is the world's oldest continuously operating Christian monastery, founded in 548 AD",
+      "🔥 The monastery contains what is believed to be the burning bush that never consumed, still alive after 3,000+ years",
+      "📚 The monastery library holds the second-largest collection of ancient manuscripts in the world, after the Vatican",
+      "🌅 Over 1,000 pilgrims climb Sinai before dawn each day to watch sunrise from the summit where Moses received the Law",
+      "⚡ Exodus describes the mountain experience with thunder, lightning, thick cloud, trumpet blast, and the whole mountain shaking violently",
+      "📜 The Ten Commandments were written on stone tablets 'by the finger of God'—the only words in Scripture God personally wrote",
+      "⏱️ Moses spent a total of 80 days on the mountain—40 days for the first tablets, 40 days for the second",
+      "🏔️ Elijah walked 40 days and nights to reach this mountain, fleeing Queen Jezebel's death threat, hearing God's 'still small voice'",
+      "🗿 Some scholars suggest Mount Sinai may have been a volcano, which would explain the fire, smoke, and trembling described in Exodus"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Mount_Sinai_from_the_south.jpg/1280px-Mount_Sinai_from_the_south.jpg",
+        "caption": "Mount Sinai rising from the Sinai desert",
+        "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Mount+Sinai/@28.5392,33.9751,15z",
+    "totalAudioDuration": 0
+  },
+  {
+    "id": 3,
+    "name": "Mount Moriah",
+    "location": "Temple Mount, Jerusalem, Israel",
+    "coordinates": {
+      "lat": 31.7780,
+      "lng": 35.2354
+    },
+    "elevation": "2,428 feet (740 meters)",
+    "testament": "Old Testament",
+    "category": "Sacrifice & Temple",
+    "significance": "Where Abraham prepared to sacrifice Isaac and where Solomon built the Temple",
+    "biblicalReferences": [
+      "Genesis 22:1-19",
+      "2 Chronicles 3:1",
+      "2 Samuel 24:18-25",
+      "1 Chronicles 21:18-28",
+      "Psalm 24:3"
+    ],
+    "keyEvents": [
+      "Abraham prepared to sacrifice Isaac in obedience to God (Genesis 22:1-14)",
+      "God provided a ram caught in the thicket as substitute (Genesis 22:13)",
+      "Abraham named the place 'The Lord will provide' (Genesis 22:14)",
+      "David purchased the threshing floor and built an altar (2 Samuel 24:24-25)",
+      "Solomon built the First Temple on this exact spot (2 Chronicles 3:1)",
+      "The Ark of the Covenant was placed in the Holy of Holies here"
+    ],
+    "cccReferences": [
+      "CCC 59 - Abraham's obedience prefigures the obedience of Christ",
+      "CCC 2572 - Abraham's faith tested by the sacrifice of Isaac",
+      "CCC 2100 - Abraham's obedience to God's command shows perfect religion",
+      "CCC 614 - Christ's sacrifice fulfills all the sacrifices of the Old Covenant"
+    ],
+    "sources": [
+      "Catechism of the Catholic Church (59, 614, 2572, 2100)",
+      "Catholic Encyclopedia - Abraham (NewAdvent.org)",
+      "Catholic Encyclopedia - Temple of Jerusalem (NewAdvent.org)",
+      "Genesis 22 (RSV-CE)",
+      "2 Chronicles 3:1 (RSV-CE)",
+      "St. John Chrysostom - Homilies on Genesis"
+    ],
+    "historicalContext": "Mount Moriah is identified with the Temple Mount in Jerusalem, making it one of the most contested and sacred sites on earth. Here, around 1900 BC, Abraham climbed with his son Isaac, carrying wood for a sacrifice neither imagined would be so costly. The traditional site is marked by the Foundation Stone, now housed under the Dome of the Rock. One thousand years after Abraham, King David purchased this threshing floor from Araunah the Jebusite for 50 shekels of silver, building an altar that stopped a plague devastating Israel. David's son Solomon constructed the magnificent First Temple here, which stood nearly 400 years before Babylon destroyed it in 586 BC. The Second Temple, rebuilt under Ezra and massively expanded by Herod, was destroyed by Rome in 70 AD. Today, the Western Wall—a retaining wall from Herod's expansion—is the closest Jews can approach their holiest site. For Christians, Moriah connects Abraham's near-sacrifice of his son with God's actual sacrifice of His Son on Calvary, just a quarter mile away.",
+    "theologicalSignificance": "Mount Moriah stands at the heart of salvation history, where substitutionary sacrifice was first dramatically demonstrated. When Abraham raised the knife over his bound son, God intervened: 'Do not lay your hand on the lad... for now I know that you fear God, seeing you have not withheld your son, your only son, from me' (Genesis 22:12). Abraham named the place 'The Lord will provide,' and Genesis adds prophetically, 'On the mount of the Lord it shall be provided' (22:14). The Catechism teaches that Abraham's obedience 'prefigures the obedience of Christ' (CCC 59). Isaac, carrying the wood up the mountain, prefigures Christ carrying His cross. The ram caught in the thorns prefigures Christ crowned with thorns. Abraham's willingness to offer his 'only son' foreshadows the Father giving His only Son. Yet the contrast is striking: Isaac was spared. Jesus was not. God provided a substitute for Isaac. For Jesus, there was no substitute—He was the substitute, 'the Lamb of God who takes away the sin of the world' (John 1:29). The Catechism affirms that 'Christ's sacrifice fulfills all the sacrifices of the Old Covenant' (CCC 614). What began symbolically on Moriah was completed literally on Calvary.",
+    "funFacts": [
+      "🗿 The Foundation Stone under the Dome of the Rock is believed by Jews to be the stone from which the world was created",
+      "📏 Mount Moriah is less than half a mile from Calvary—Isaac's near-sacrifice and Christ's actual sacrifice happened within sight of each other",
+      "⏱️ Genesis 22:4 says 'on the third day Abraham lifted up his eyes and saw the place'—the three-day journey prefigures Christ's resurrection on the third day",
+      "🐏 The ram caught in thorns prefigures Christ with His crown of thorns—both provided by God as substitutes",
+      "🔥 For 1,000 years, from Solomon to the Romans, sacrifices were offered daily on this mountain in the Temple",
+      "💰 David paid 50 shekels of silver for the land, but 1 Chronicles 21:25 says he paid 600 shekels of gold—possibly 50 for the threshing floor, 600 for the entire mountain",
+      "⛪ Three major world religions consider this mountain sacred: Judaism (Temple Mount), Christianity (Abraham and Jesus connection), Islam (Dome of the Rock)",
+      "🪨 The Western Wall below contains stones weighing up to 600 tons—no one knows how Herod's engineers moved them"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Temple_Mount_%28Aerial_view%2C_2007%29_02.jpg/1280px-Temple_Mount_%28Aerial_view%2C_2007%29_02.jpg",
+        "caption": "Aerial view of the Temple Mount (Mount Moriah) in Jerusalem",
+        "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Temple+Mount/@31.7780,35.2354,17z",
+    "totalAudioDuration": 0
+  },
+  {
+    "id": 4,
+    "name": "Mount Carmel",
+    "location": "Northern Israel, near Haifa",
+    "coordinates": {
+      "lat": 32.7647,
+      "lng": 35.0547
+    },
+    "elevation": "1,791 feet (546 meters)",
+    "testament": "Old Testament",
+    "category": "God's Power",
+    "significance": "Where Elijah challenged the prophets of Baal and fire fell from heaven",
+    "biblicalReferences": [
+      "1 Kings 18:16-40",
+      "1 Kings 19:1-8",
+      "2 Kings 2:25",
+      "2 Kings 4:25",
+      "Song of Songs 7:5",
+      "Isaiah 35:2"
+    ],
+    "keyEvents": [
+      "Elijah challenged King Ahab and 450 prophets of Baal (1 Kings 18:19)",
+      "Elijah mocked the false prophets as they called on Baal fruitlessly (1 Kings 18:27)",
+      "Elijah prayed and fire fell from heaven consuming the sacrifice, wood, stones, and water (1 Kings 18:38)",
+      "The people cried 'The Lord, he is God!' and killed the false prophets (1 Kings 18:39-40)",
+      "Elijah prayed seven times and rain ended the three-year drought (1 Kings 18:41-45)",
+      "Elisha lived on Mount Carmel and performed miracles there (2 Kings 2:25, 4:25)"
+    ],
+    "cccReferences": [
+      "CCC 2582 - Elijah's prayer proves God alone is God in Israel",
+      "CCC 696 - Fire symbolizes the transforming energy of the Holy Spirit",
+      "CCC 2583 - Elijah intercedes to convert the hearts of the people"
+    ],
+    "sources": [
+      "Catechism of the Catholic Church (2582-2583, 696)",
+      "Catholic Encyclopedia - Elijah (NewAdvent.org)",
+      "Catholic Encyclopedia - Mount Carmel (NewAdvent.org)",
+      "1 Kings 18 (RSV-CE)",
+      "St. John of the Cross - patron of Carmelites",
+      "St. Teresa of Avila - Carmelite spirituality"
+    ],
+    "historicalContext": "Mount Carmel is a 25-mile-long mountain range extending from the Mediterranean Sea inland, its name meaning 'Garden-Land' or 'Fruitful Field.' In Elijah's day (9th century BC), Israel had fallen into idolatry under King Ahab and his pagan wife Jezebel, who promoted Baal worship. The showdown on Carmel was not merely a prophet's dispute—it was a national crisis of faith. Would Israel serve the Lord or Baal? Elijah challenged the nation: 'How long will you go limping between two different opinions? If the Lord is God, follow him; but if Baal, then follow him' (1 Kings 18:21). The people said nothing. After Baal's prophets failed spectacularly, Elijah repaired the Lord's abandoned altar, drenched everything with water to remove all doubt, and prayed simply. Fire fell. The people fell on their faces. The drought ended. Mount Carmel became synonymous with God's power and Elijah's bold faith. Later, hermits retreated to Carmel's caves, eventually forming the Carmelite Order in the 12th century. Today, Stella Maris Monastery crowns the mountain, honoring Elijah and the Carmelite tradition.",
+    "theologicalSignificance": "Mount Carmel demonstrates that the Lord alone is God. The Catechism states that Elijah's prayer 'proves that God alone is God in Israel' (CCC 2582). Baal was supposedly the storm god who brought rain and fertility. Yet for three years, at Elijah's word, no rain fell. Baal was powerless. On Carmel, the showdown revealed the truth: Baal prophets could shout, dance, and cut themselves, but 'there was no voice; no one answered, no one heeded' (1 Kings 18:29). In contrast, Elijah simply prayed, and fire fell from heaven so powerfully it consumed not only the sacrifice but the wood, stones, dust, and even the water in the trench. This was no natural fire—it was divine vindication. The Catechism notes that 'fire symbolizes the transforming energy of the Holy Spirit' (CCC 696). On Carmel, God's fire transformed hearts. The people who had wavered moments before now confessed, 'The Lord, he is God!' Elijah's prayer was intercessory, seeking to 'convert the hearts of the people' (CCC 2583). Mount Carmel teaches us that God will not share His glory with idols. He is a jealous God, demanding exclusive worship. Yet He is also a God who answers prayer with fire, consuming our sacrifices and our doubts.",
+    "funFacts": [
+      "⛪ The Carmelite Order traces its origins to hermits who lived in Mount Carmel's caves in the 12th century",
+      "💧 Elijah ordered four jars of water poured on the sacrifice three times—12 jars total—symbolizing the 12 tribes of Israel",
+      "🔥 The fire consumed not just the sacrifice but the wood, stones, dust, and even water in the trench—a supernatural inferno",
+      "☔ After fire fell, Elijah prayed seven times for rain before the first cloud appeared—teaching persistence in prayer",
+      "🏃 After the rain came, 'the hand of the Lord' empowered Elijah to outrun King Ahab's chariot 20+ miles to Jezreel!",
+      "⚔️ The 450 prophets of Baal were executed at the Kishon River at the mountain's base after their defeat",
+      "🌊 Mount Carmel's western slopes overlook the Mediterranean Sea, making it a strategic and beautiful location",
+      "👑 Jezebel threatened Elijah's life after Carmel, causing him to flee to Mount Sinai where God spoke in a 'still small voice'"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Mount_Carmel_03.jpg/1280px-Mount_Carmel_03.jpg",
+        "caption": "Mount Carmel overlooking the Mediterranean Sea and Haifa",
+        "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Mount+Carmel/@32.7647,35.0547,13z",
+    "totalAudioDuration": 0
+  },
+  {
+    "id": 5,
+    "name": "Mount Tabor",
+    "location": "Lower Galilee, Israel",
+    "coordinates": {
+      "lat": 32.6866,
+      "lng": 35.3897
+    },
+    "elevation": "1,886 feet (575 meters)",
+    "testament": "New Testament",
+    "category": "Christ's Glory Revealed",
+    "significance": "Traditional site of Christ's Transfiguration where He appeared in glory with Moses and Elijah",
+    "biblicalReferences": [
+      "Matthew 17:1-9",
+      "Mark 9:2-8",
+      "Luke 9:28-36",
+      "2 Peter 1:16-18",
+      "Psalm 89:12"
+    ],
+    "keyEvents": [
+      "Jesus took Peter, James, and John up a high mountain (Matthew 17:1)",
+      "Jesus was transfigured, His face shining like the sun and clothes white as light (Matthew 17:2)",
+      "Moses and Elijah appeared talking with Jesus about His exodus in Jerusalem (Luke 9:30-31)",
+      "Peter offered to build three tents for Jesus, Moses, and Elijah (Matthew 17:4)",
+      "A bright cloud overshadowed them and God's voice declared 'This is my beloved Son' (Matthew 17:5)",
+      "The disciples fell on their faces in fear, then Jesus touched them saying 'Rise, have no fear' (Matthew 17:6-7)"
+    ],
+    "cccReferences": [
+      "CCC 554 - The Transfiguration gives us a foretaste of Christ's glorious coming",
+      "CCC 555 - Jesus' glory shines through His humanity",
+      "CCC 556 - Moses and Elijah represent the Law and Prophets testifying to Christ",
+      "CCC 568 - The Transfiguration strengthens the apostles for the scandal of the Cross",
+      "CCC 2583 - The Transfiguration is associated with prayer"
+    ],
+    "sources": [
+      "Catechism of the Catholic Church (554-556, 568, 2583)",
+      "Catholic Encyclopedia - Transfiguration (NewAdvent.org)",
+      "Catholic Encyclopedia - Mount Tabor (NewAdvent.org)",
+      "Matthew 17:1-9 (RSV-CE)",
+      "St. Leo the Great - Sermons on the Transfiguration",
+      "St. Thomas Aquinas - Summa Theologica on the Transfiguration"
+    ],
+    "historicalContext": "Mount Tabor rises dramatically from the Jezreel Valley like a perfect dome, its distinctive shape visible for miles. Its name appears in the Old Testament as a boundary marker and military site, but its supreme significance comes from the New Testament. Though the Gospels don't name the mountain, saying only 'a high mountain apart' (Matthew 17:1), Christian tradition since the 4th century has identified Tabor as the site of Christ's Transfiguration. The mountain's isolated position and stunning views made it ideal for this divine revelation. Byzantine Christians built churches here as early as the 4th century. Crusaders fortified it in the 12th century. Today, the Basilica of the Transfiguration, completed in 1924, crowns the summit. Its three chapels honor Jesus, Moses, and Elijah—fulfilling Peter's impulsive offer to build three tents. From Tabor's peak, you can see much of Galilee: Nazareth where Jesus grew up, the Sea of Galilee where He called His disciples, Mount Carmel where Elijah called down fire, and even snow-capped Mount Hermon to the north.",
+    "theologicalSignificance": "The Transfiguration reveals Christ's divine glory breaking through His human nature. The Catechism teaches that this event 'gives us a foretaste of Christ's glorious coming' (CCC 554) and shows 'how Jesus' glory shines through his humanity' (CCC 555). For a brief moment, the disciples saw who Jesus truly is—not merely a teacher or prophet, but the divine Son of God clothed in unapproachable light. The appearance of Moses and Elijah is significant. Moses represents the Law; Elijah represents the Prophets. Both testify that Jesus is the fulfillment of all Scripture. Luke reveals they spoke with Jesus about His 'exodus' He would accomplish in Jerusalem (Luke 9:31)—His death, resurrection, and ascension. The Transfiguration thus links past, present, and future: the Old Covenant witnesses give way to the New. The Father's voice echoes His declaration at Jesus' baptism but adds a crucial command: 'Listen to him' (Matthew 17:5). The Law and Prophets have spoken; now the Son speaks with final authority. The Catechism notes that the Transfiguration strengthens the apostles 'for the scandal of the cross' (CCC 568). Six days earlier, Jesus had predicted His suffering and death—shocking and confusing the disciples. Now, on the mountain, they glimpse His glory. When darkness comes at Calvary, they will remember Tabor. The Cross is not defeat but the path to glory.",
+    "funFacts": [
+      "🏔️ Mount Tabor's perfect dome shape makes it one of the most recognizable mountains in Israel—visible from miles away",
+      "⛪ Three churches crown Tabor's summit: the main Basilica of the Transfiguration plus Greek Orthodox and Franciscan chapels",
+      "💡 The Transfiguration is celebrated on August 6 in the Western Church and is one of the Great Feasts in Eastern Christianity",
+      "👥 Only three disciples witnessed the Transfiguration—Peter, James, and John—the same three present at Gethsemane",
+      "⚪ Matthew says Jesus' face 'shone like the sun' and His clothes became 'white as light'—a glory no earthly bleach could produce",
+      "☁️ The bright cloud that overshadowed them recalls the Shekinah glory cloud that filled the Tabernacle and Temple",
+      "🗣️ This is the second time God's voice speaks from heaven in the Gospels—the first was at Jesus' baptism",
+      "📖 2 Peter 1:16-18 confirms Peter personally witnessed this event and describes the 'Majestic Glory' speaking from the cloud",
+      "🏃 Jesus commanded the disciples to 'tell no one the vision until the Son of man is raised from the dead'—they kept silent until Easter"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Mount_Tabor_by_David_Shankbone.jpg/1280px-Mount_Tabor_by_David_Shankbone.jpg",
+        "caption": "Mount Tabor's distinctive dome rising from the Jezreel Valley",
+        "attribution": "Photo: David Shankbone, Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Mount+Tabor/@32.6866,35.3897,14z",
+    "totalAudioDuration": 0
   }
 ]
