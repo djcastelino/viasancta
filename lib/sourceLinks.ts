@@ -32,6 +32,34 @@ export function getSourceLink(source: string): LinkedSource {
 
   // Church Fathers and Aquinas
   if (source.match(/Irenaeus|Origen|Chrysostom|Ambrose|Jerome|Cyril|Gregory|Basil|Athanasius|Clement|Tertullian|Justin Martyr|Melito|Leo the Great|Hippolytus/i)) {
+    // Jerome - most commentaries not available on NewAdvent
+    if (source.match(/Jerome/i)) {
+      // Only Letters, Against Jovinianus, Against Vigilantius, Against Pelagians, Lives, Prefaces available
+      if (source.includes('Letters') || source.includes('Letter')) {
+        return {
+          text,
+          url: 'https://www.newadvent.org/fathers/3001.htm',
+          type: 'ChurchFather'
+        };
+      }
+      if (source.includes('Perpetual Virginity')) {
+        return {
+          text,
+          url: 'https://www.newadvent.org/fathers/3007.htm',
+          type: 'ChurchFather'
+        };
+      }
+      // Commentary on Jeremiah, Ezekiel, Isaiah, etc. NOT available on NewAdvent
+      // Return null to show as non-linked text
+      if (source.includes('Commentary')) {
+        return {
+          text: text + ' (not available online)',
+          url: null,
+          type: 'ChurchFather'
+        };
+      }
+    }
+
     // Check for specific works
     if (source.includes('Against Heresies')) {
       return {
