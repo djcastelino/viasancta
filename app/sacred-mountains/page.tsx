@@ -1,4 +1,4 @@
-import SacredMountainClient from './SacredMountainClient';
+import Link from 'next/link';
 import mountainsData from '@/public/sacred-mountains.json';
 
 export const metadata = {
@@ -9,53 +9,113 @@ export const metadata = {
 export default function SacredMountainsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-slate-700 to-slate-900 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Sacred Mountains of the Bible
-          </h1>
-          <p className="text-xl md:text-2xl mb-3 text-slate-200">
-            Where Heaven Met Earth on Holy Ground
-          </p>
-          <p className="text-lg text-slate-300 italic">
-            "I lift up my eyes to the mountains—where does my help come from?"
-          </p>
-          <p className="text-sm text-slate-400 mt-1">
-            — Psalm 121:1
-          </p>
+      {/* Hero Section */}
+      <div className="relative h-[400px] overflow-hidden">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Mount_Sinai_morning_02.jpg/1920px-Mount_Sinai_morning_02.jpg"
+          alt="Sacred Mountains"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+              Sacred Mountains of the Bible
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-200 mb-3">
+              Where Heaven Met Earth on Holy Ground
+            </p>
+            <p className="text-lg text-slate-300 italic">
+              "I lift up my eyes to the mountains—where does my help come from?"
+            </p>
+            <p className="text-sm text-slate-400 mt-1">
+              — Psalm 121:1
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Mountains of Revelation
+            Mountains of Divine Encounter
           </h2>
           <div className="text-gray-700 space-y-3">
             <p>
-              Throughout Scripture, mountains are places of divine encounter. On mountaintops,
+              Throughout Scripture, mountains are places of divine revelation. On mountaintops,
               God gave the Law, prophets received visions, and Christ revealed His glory.
               Mountains witnessed covenant, sacrifice, transfiguration, and ascension.
             </p>
             <p>
-              This audio pilgrimage takes you to the most sacred peaks in biblical history.
-              Each mountain tells a story of God's faithfulness, from Old Testament prophecy
-              to New Testament fulfillment.
+              This pilgrimage takes you to 5 sacred peaks in biblical history. Each mountain
+              tells a story of God's faithfulness, from Old Testament prophecy to New Testament
+              fulfillment.
             </p>
             <div className="bg-slate-50 rounded-lg p-4 mt-4">
               <h3 className="font-bold text-slate-800 mb-2">🎧 Multi-Voice Audio Experience</h3>
               <p className="text-sm text-slate-600">
-                Each mountain features 7 audio sections with different narrators:
-                Introduction • Prophecy • Gospel Events • Scripture • Theology • Fun Facts • Prayer
+                Each mountain features audio sections with different narrators, stunning photography,
+                fun facts, and full Catholic references.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Client Component */}
-        <SacredMountainClient mountains={mountainsData} />
+        {/* Mountain Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {mountainsData.map((mountain) => {
+            const heroImage = mountain.images.find(img => img.isHero) || mountain.images[0];
+
+            return (
+              <Link
+                key={mountain.id}
+                href={`/sacred-mountains/${mountain.id}`}
+                className="block group"
+              >
+                <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                  <div className="h-60 relative overflow-hidden">
+                    <img
+                      src={heroImage.url}
+                      alt={mountain.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <div className="text-sm text-[#D4AF37] font-semibold mb-1">
+                        {mountain.testament}
+                      </div>
+                      <h3 className="text-2xl font-bold drop-shadow-md">
+                        {mountain.name}
+                      </h3>
+                      <p className="text-sm text-slate-200 mt-1">
+                        {mountain.elevation}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-700 font-semibold mb-3">
+                      {mountain.significance}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
+                      <span>📍 {mountain.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-500">
+                      <span>💡 {mountain.funFacts.length} Fun Facts</span>
+                      <span>•</span>
+                      <span>📖 {mountain.biblicalReferences.length} References</span>
+                    </div>
+                    <div className="mt-4">
+                      <span className="inline-block bg-[#D4AF37] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                        Explore →
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
