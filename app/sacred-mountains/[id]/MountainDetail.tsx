@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import SourceLinks from '@/app/components/SourceLinks';
 
 interface AudioSection {
   id: string;
@@ -200,23 +201,6 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
     }
   };
 
-  // Make source clickable
-  const makeSourceClickable = (source: string) => {
-    if (source.includes('NewAdvent.org')) {
-      const topic = source.split(' - ')[1]?.split(' (')[0];
-      if (topic) {
-        const slug = topic.toLowerCase().replace(/\s+/g, '_');
-        return `https://www.newadvent.org/cathen/${slug}.htm`;
-      }
-    }
-    if (source.includes('CCC') || source.includes('Catechism')) {
-      return 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM';
-    }
-    if (source.includes('RSV-CE') || source.includes('Scripture')) {
-      return 'https://www.biblegateway.com/';
-    }
-    return null;
-  };
 
   const formatDuration = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -437,30 +421,12 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
       </div>
 
       {/* Sources */}
-      <div className="bg-slate-50 rounded-lg p-6">
-        <h3 className="text-xl font-bold text-slate-800 mb-3">📚 Sources</h3>
-        <div className="space-y-1">
-          {selectedMountain.sources.map((source, index) => {
-            const link = makeSourceClickable(source);
-            return link ? (
-              <p key={index} className="text-slate-600 text-sm">
-                •{' '}
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 hover:underline"
-                >
-                  {source}
-                </a>
-              </p>
-            ) : (
-              <p key={index} className="text-slate-600 text-sm">
-                • {source}
-              </p>
-            );
-          })}
-        </div>
+      <div className="bg-amber-50 rounded-lg p-6 border border-amber-200">
+        <h3 className="text-xl font-bold text-slate-800 mb-3">📚 Sources & References</h3>
+        <SourceLinks sources={selectedMountain.sources} />
+        <p className="text-xs text-gray-500 mt-4 italic">
+          References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, and Catholic Encyclopedia. Click links to read more.
+        </p>
       </div>
 
       {/* View on Map */}
