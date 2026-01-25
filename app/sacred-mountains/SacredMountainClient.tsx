@@ -63,36 +63,26 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
   // Background music URL
   const backgroundMusicUrl = 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3';
 
-  // Auto-play background music on mount
-  useEffect(() => {
-    const music = new Audio(backgroundMusicUrl);
-    music.loop = true;
-    music.volume = 0.15;
-    musicRef.current = music;
-
-    music.play().catch(err => {
-      console.log('Music autoplay prevented:', err);
-      setIsMusicPlaying(false);
-    });
-    setIsMusicPlaying(true);
-
-    return () => {
-      if (musicRef.current) {
-        musicRef.current.pause();
-        musicRef.current = null;
-      }
-    };
-  }, [selectedMountain.id]);
-
-  // Play individual audio section
+  // Play individual audio section with background music
   const playAudioSection = async (section: AudioSection) => {
-    // Stop any current audio
+    // Stop any current audio and music
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current = null;
     }
+    if (musicRef.current) {
+      musicRef.current.pause();
+      musicRef.current = null;
+    }
 
     setIsPlayingSection(section.id);
+
+    // Start background music
+    const music = new Audio(backgroundMusicUrl);
+    music.loop = true;
+    music.volume = 0.15;
+    musicRef.current = music;
+    music.play().catch(err => console.log('Music playback prevented:', err));
 
     try {
       const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
@@ -131,6 +121,11 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
             audioElement.onended = () => {
               setIsPlayingSection(null);
               URL.revokeObjectURL(audioUrl);
+              // Stop background music when narration ends
+              if (musicRef.current) {
+                musicRef.current.pause();
+                musicRef.current = null;
+              }
             };
           } else {
             console.error('Speech synthesis failed:', result.errorDetails);
@@ -171,11 +166,15 @@ export default function SacredMountainClient({ mountains }: SacredMountainClient
     setIsPlayingAll(false);
   };
 
-  // Stop audio
+  // Stop audio and music
   const stopAudio = () => {
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current = null;
+    }
+    if (musicRef.current) {
+      musicRef.current.pause();
+      musicRef.current = null;
     }
     setIsPlayingSection(null);
     setIsPlayingAll(false);
