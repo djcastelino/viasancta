@@ -302,7 +302,7 @@
     "name": "Mount Moriah",
     "location": "Temple Mount, Jerusalem, Israel",
     "coordinates": {
-      "lat": 31.7780,
+      "lat": 31.778,
       "lng": 35.2354
     },
     "elevation": "2,428 feet (740 meters)",
@@ -688,5 +688,149 @@
     ],
     "mapUrl": "https://www.google.com/maps/place/Mount+Tabor/@32.6866,35.3897,14z",
     "totalAudioDuration": 655
+  },
+  {
+    "id": 6,
+    "name": "Mount Calvary (Golgotha)",
+    "location": "Jerusalem, Israel",
+    "coordinates": {
+      "lat": 31.7784,
+      "lng": 35.2296
+    },
+    "elevation": "2,490 feet (759 meters)",
+    "testament": "New Testament",
+    "category": "Redemption & Sacrifice",
+    "significance": "Site of Jesus Christ's crucifixion, death, burial, and resurrection—the central event of human history and Christian faith",
+    "biblicalReferences": [
+      "Matthew 27:33-56",
+      "Mark 15:22-41",
+      "Luke 23:33-49",
+      "John 19:17-37",
+      "Hebrews 13:12",
+      "1 Peter 2:24",
+      "Colossians 1:20"
+    ],
+    "keyEvents": [
+      "Jesus carries His cross via the Via Dolorosa to Golgotha",
+      "Jesus is crucified between two thieves at the third hour (9 AM)",
+      "Jesus speaks the Seven Last Words from the cross",
+      "Darkness covers the land from the sixth to ninth hour (noon to 3 PM)",
+      "Jesus dies with the words 'It is finished' - the Greek word 'Tetelestai' meaning the debt is paid in full",
+      "The temple veil tears in two from top to bottom, opening access to the Holy of Holies",
+      "An earthquake shakes Jerusalem, rocks split, and tombs open",
+      "Jesus is buried in Joseph of Arimathea's new tomb",
+      "On the third day, Jesus rises from the dead, conquering sin and death"
+    ],
+    "cccReferences": [
+      "CCC 571-573 - The trial and condemnation of Jesus",
+      "CCC 595-598 - Universal significance of Christ's death",
+      "CCC 599-605 - Christ's redemptive death in God's plan",
+      "CCC 606-618 - Christ offered himself to the Father for our sins",
+      "CCC 619-623 - Christ's death is the unique and definitive sacrifice",
+      "CCC 624-628 - Our participation in Christ's sacrifice"
+    ],
+    "sources": [
+      "CCC 571",
+      "CCC 595",
+      "CCC 599",
+      "CCC 606",
+      "CCC 616",
+      "CCC 619",
+      "Matthew 27:33-56 (RSV-CE)",
+      "John 19:17-37 (RSV-CE)",
+      "Isaiah 53 (RSV-CE)",
+      "Augustine, Tractates on John 119 - On Christ's death",
+      "Chrysostom, Homilies on Matthew 88 - On the Crucifixion",
+      "Aquinas, ST III, q. 46-49 - On Christ's Passion"
+    ],
+    "historicalContext": "Golgotha, meaning 'place of the skull' in Aramaic, was located just outside Jerusalem's city walls in the first century. Roman law forbade executions within city limits, so crucifixions took place along major roads where the public spectacle would serve as a deterrent. The site was likely a rocky outcrop or small hill visible from the city gates. The exact location has been debated, but the Church of the Holy Sepulchre, built by Constantine in 326 AD, has been venerated as the site since the 4th century. Archaeological evidence supports this location: it was outside the city walls in Jesus' time, contained a quarry with tombs, and shows continuous Christian veneration. The church now encompasses both Calvary (the crucifixion site) and the tomb where Jesus was buried. For nearly 2,000 years, pilgrims have journeyed here to stand where redemption was accomplished, where love conquered death, where the greatest sacrifice in history took place.",
+    "theologicalSignificance": "Mount Calvary is the geographic and theological center of Christian faith. Here, the eternal Son of God died in our place, bearing the sins of the world. The Catechism teaches that Christ 'offered himself to his Father for our sins' (CCC 606) and that His death is 'the unique and definitive sacrifice' (CCC 614). This was substitutionary atonement—the innocent dying for the guilty. When Jesus cried 'It is finished' using the Greek word 'tetelestai,' He declared the debt of sin paid in full, the ancient promissory note marked 'satisfied.' The tearing of the temple veil symbolized that the barrier between God and humanity was removed, access to the Father opened through Christ's blood. Calvary fulfills countless Old Testament prophecies and types: the Passover lamb, the scapegoat, the bronze serpent, Isaac's near-sacrifice. The connection to Mount Moriah is profound—there, God provided a ram to spare Isaac; here, God provided His Son to save us all. The Catechism declares, 'By his loving obedience to the Father, unto death, even death on a cross, Jesus fulfills the atoning mission of the suffering Servant' (CCC 623). Calvary is where justice and mercy meet, where wrath and love embrace, where death is swallowed up in victory.",
+    "funFacts": [
+      "⛪ The Church of the Holy Sepulchre contains both Calvary (upstairs chapel) and Christ's tomb (downstairs) under one roof",
+      "🔑 The church keys have been held by a Muslim family (Nuseibeh) for over 800 years due to disputes among Christian denominations",
+      "🪜 The 'Immovable Ladder' has sat on the church's facade since at least 1852—no one can move it due to the Status Quo agreement among 6 Christian denominations",
+      "🇪🇹 The Ethiopian Orthodox Church maintains a monastery on the ROOF of the Holy Sepulchre, accessed by a separate entrance",
+      "💀 Medieval tradition held that Adam was buried at Golgotha, so Christ's blood flowed down to cleanse Adam's skull—some icons show a skull at the cross's base",
+      "⚡ The temple veil that tore was 60 feet high, 30 feet wide, and 4 inches thick—it would take 300 men to move it, yet God ripped it from top to bottom",
+      "🪨 The Stone of Unction inside the church marks where Jesus' body was prepared for burial with myrrh and aloes",
+      "🕯️ The Aedicule (small shrine) containing Christ's tomb has been destroyed and rebuilt multiple times, most recently restored in 2016-2017",
+      "📅 Golgotha means 'skull' possibly because: (1) skull-shaped hill, (2) site of executions with skulls nearby, or (3) tradition of Adam's burial there",
+      "⏰ Jesus died at the ninth hour (3 PM)—the exact time the Passover lamb was sacrificed in the Temple, fulfilling His role as the Lamb of God"
+    ],
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction",
+        "type": "introduction",
+        "voice": "en-US-AndrewNeural",
+        "duration": 110,
+        "icon": "✝️",
+        "script": "Welcome to Mount Calvary—Golgotha in Aramaic, meaning 'place of the skull.' Of all the sacred mountains in Scripture, this is the most important. Not the highest, not the grandest, but the place where redemption was accomplished, where love conquered death, where the Son of God died for the sins of the world. Located just outside Jerusalem's ancient walls, this rocky outcrop witnessed the central event of human history: the crucifixion of Jesus Christ. Here, prophecy met fulfillment. Here, justice and mercy embraced. Here, the innocent died for the guilty. Every sacrifice in the Old Testament pointed to this moment. Every Passover lamb foreshadowed this Lamb. On Mount Moriah, God provided a ram to spare Isaac. On Mount Calvary, God provided His Son to save us all. What happened here 2,000 years ago changed everything. The Apostle Paul would later write, 'God forbid that I should glory, save in the cross of our Lord Jesus Christ.' For Christians, Calvary is not a place of defeat but of victory, not of death but of life, not of an ending but of the beginning of eternal hope. As we journey through this mountain's story, we stand on the most sacred ground on earth—where heaven touched earth, where God's love was made manifest, where our salvation was won."
+      },
+      {
+        "id": "via-dolorosa",
+        "title": "The Via Dolorosa",
+        "type": "history",
+        "voice": "en-US-EricNeural",
+        "duration": 90,
+        "icon": "🚶",
+        "script": "The journey to Calvary began at Pilate's Praetorium after Jesus was scourged and crowned with thorns. Roman soldiers mocked Him, struck Him, and spat upon Him. Then they laid the heavy wooden crossbeam—weighing perhaps 75 to 125 pounds—across His already lacerated shoulders. The path He walked, now called the Via Dolorosa, 'Way of Sorrows,' wound through Jerusalem's narrow streets. Weakened by blood loss, sleep deprivation, and brutal beating, Jesus stumbled under the weight. Roman soldiers seized Simon of Cyrene from the crowd and compelled him to carry the cross. The procession included soldiers, criminals, mourning women, and hostile crowds. Luke records that Jesus turned to the weeping women and said, 'Daughters of Jerusalem, do not weep for me, but weep for yourselves and for your children.' Even in His agony, He thought of others. The journey ended at Golgotha, a place of execution visible from the city, where criminals died as public spectacles. Here, at the place of the skull, they would nail the King of Kings to the wood. Isaiah had prophesied it centuries earlier: 'He was oppressed, and he was afflicted, yet he opened not his mouth; like a lamb that is led to the slaughter.' The Lamb of God had arrived at the altar."
+      },
+      {
+        "id": "crucifixion",
+        "title": "The Crucifixion",
+        "type": "event",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 140,
+        "icon": "⚫",
+        "script": "At the third hour—9 AM by our reckoning—they crucified Him. The soldiers drove iron spikes through His wrists and feet, affixing Him to the wood. Above His head, Pilate had ordered a sign in three languages: 'Jesus of Nazareth, the King of the Jews.' They crucified Him between two thieves, fulfilling Isaiah's prophecy that He would be 'numbered with the transgressors.' From the cross, Jesus spoke seven times. First: 'Father, forgive them, for they know not what they do.' Then to the repentant thief: 'Today you will be with me in Paradise.' To His mother and the beloved disciple: 'Woman, behold your son. Son, behold your mother.' After three hours, darkness fell over the land—not an eclipse, which is impossible during Passover's full moon, but a supernatural darkness. At the ninth hour, 3 PM, Jesus cried out in Aramaic, 'Eloi, Eloi, lema sabachthani?'—'My God, my God, why have you forsaken me?' He was quoting Psalm 22, bearing the full weight of humanity's sin, experiencing the separation from the Father that our sin deserves. Then He said, 'I thirst.' They offered Him sour wine. After receiving it, He cried out, 'It is finished!' In Greek, 'tetelestai'—the word written on ancient promissory notes when a debt was paid in full. The debt of sin was satisfied. Then His final words: 'Father, into your hands I commit my spirit.' And He died. Immediately, the massive temple veil tore in two from top to bottom—God's hand ripping open access to the Holy of Holies. An earthquake shook Jerusalem. Rocks split. Tombs opened. The centurion, witnessing it all, declared, 'Truly this was the Son of God!' The Lamb had been slain. Redemption was accomplished. The price was paid."
+      },
+      {
+        "id": "scripture",
+        "title": "Isaiah's Prophecy",
+        "type": "scripture",
+        "voice": "en-US-BrianNeural",
+        "duration": 80,
+        "icon": "📜",
+        "script": "Listen now to the prophet Isaiah's stunning prophecy of Calvary, written 700 years before the crucifixion, from Isaiah chapter 53. 'He was despised and rejected by men; a man of sorrows, and acquainted with grief. Surely he has borne our griefs and carried our sorrows. But he was wounded for our transgressions, he was bruised for our iniquities; upon him was the chastisement that made us whole, and with his stripes we are healed. All we like sheep have gone astray; we have turned every one to his own way; and the LORD has laid on him the iniquity of us all. He was oppressed, and he was afflicted, yet he opened not his mouth; like a lamb that is led to the slaughter, and like a sheep that before its shearers is dumb, so he opened not his mouth. Yet it was the will of the LORD to bruise him; he has put him to grief; when he makes himself an offering for sin, he shall see his offspring, he shall prolong his days.' Every word was fulfilled on Mount Calvary. The suffering servant, the Lamb of God, the one who bore our sins—Jesus Christ crucified."
+      },
+      {
+        "id": "theology",
+        "title": "Theological Meaning",
+        "type": "theology",
+        "voice": "en-US-BrianNeural",
+        "duration": 130,
+        "icon": "📖",
+        "script": "The Catechism of the Catholic Church unpacks the profound mystery of Calvary. Paragraph 606 teaches that Christ 'offered himself to his Father for our sins.' This was not murder—it was sacrifice. Paragraph 614 declares, 'This sacrifice of Christ is unique; it completes and surpasses all other sacrifices.' Every Old Testament sacrifice pointed to this moment. The Passover lamb, the scapegoat, the Day of Atonement offerings—all were shadows of the substance found in Christ. Paragraph 616 explains, 'By his loving obedience to the Father, even unto death on the cross, Jesus fulfills the atoning mission of the suffering Servant.' This was substitutionary atonement. The innocent took the place of the guilty. He who knew no sin became sin for us, that we might become the righteousness of God in Him. When Jesus cried 'It is finished'—tetelestai in Greek—He used the word stamped on ancient promissory notes when a debt was paid in full. Our sin-debt was infinite; only an infinite sacrifice could satisfy it. God Himself, in Christ, paid what we could never pay. Paragraph 619 teaches, 'Christ died for our sins in accordance with the Scriptures.' This was the Father's plan from before the foundation of the world. The Lamb was slain before time began in God's eternal counsel. Calvary reveals both God's justice and His love. Justice, because sin must be punished—and it was, in Christ. Love, because God Himself bore the punishment. Romans 5:8 declares, 'God shows his love for us in that while we were still sinners, Christ died for us.' The temple veil tearing symbolized that the barrier between God and humanity was removed. Access to the Father was opened through Christ's blood. Calvary is the hinge of history, the intersection of time and eternity, where redemption was accomplished once for all."
+      },
+      {
+        "id": "funFacts",
+        "title": "Fascinating Facts",
+        "type": "funFacts",
+        "voice": "en-US-GuyNeural",
+        "duration": 95,
+        "icon": "💡",
+        "script": "Let me share some remarkable facts about Mount Calvary and the Church of the Holy Sepulchre. First, the church contains both Calvary and Christ's tomb under one roof. You can climb stairs to stand on the rock of Golgotha, then descend to enter the tomb where He was buried—and where He rose. Second, the church keys have been held by a Muslim family, the Nuseibehs, for over 800 years. Why? Because the six Christian denominations who share the church couldn't agree on who should hold them, so they entrusted them to a neutral party. Third, there's a ladder on the church's facade that hasn't moved since at least 1852. It's called the 'Immovable Ladder' because the Status Quo agreement among the denominations means nothing can be moved without unanimous consent—and they can't agree. Fourth, the Ethiopian Orthodox Church maintains a monastery on the church's ROOF, accessed by a separate entrance, because they lost their holdings inside the building centuries ago. Fifth, medieval tradition held that Adam was buried at Golgotha, so Christ's blood flowed down to cleanse Adam's skull. Some icons show a skull at the cross's base for this reason. Sixth, the temple veil that tore at Christ's death was massive: 60 feet high, 30 feet wide, 4 inches thick. It would take 300 men to move it, yet God ripped it from top to bottom. Seventh, Jesus died at 3 PM—the exact hour the Passover lamb was sacrificed in the Temple, perfectly fulfilling His role as the Lamb of God. Eighth, the Stone of Unction inside the church marks where Jesus' body was prepared for burial with myrrh and aloes. Finally, the small shrine containing Christ's tomb, called the Aedicule, has been destroyed and rebuilt multiple times over the centuries, most recently restored in 2016 to 2017. Standing here, you stand where death was conquered, where love triumphed, where our salvation was won."
+      },
+      {
+        "id": "prayer",
+        "title": "Closing Prayer",
+        "type": "prayer",
+        "voice": "en-US-RogerNeural",
+        "duration": 80,
+        "icon": "🙏",
+        "script": "Let us pray. Lord Jesus Christ, on Mount Calvary You laid down Your life for us. You who were without sin became sin for us. You who were innocent died in the place of the guilty. We can never fully comprehend the depth of Your sacrifice, the weight of Your suffering, the magnitude of Your love. Thank You for the cross. Thank You for bearing our sins, our shame, our punishment. Thank You for the nails that held You there, for the thorns that pierced Your brow, for the spear that opened Your side. Thank You for the words 'It is finished'—our debt paid in full, our salvation accomplished, our redemption secured. Thank You that the temple veil was torn, that access to the Father was opened, that we can now boldly approach the throne of grace. Forgive us for the times we take Your sacrifice for granted, when we treat the cross casually, when we forget the price You paid. Help us to never glory in anything except the cross of our Lord Jesus Christ. As we leave this sacred place, may we carry the message of Calvary with us—that God so loved the world that He gave His only Son. May we be living testimonies of Your resurrection power, transformed by the love demonstrated on this mountain. For You are the Lamb who was slain, worthy to receive power and wealth and wisdom and might and honor and glory and blessing. To You be glory forever and ever. Amen."
+      }
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Holy_Sepulchre_Golgotha.jpg/1024px-Holy_Sepulchre_Golgotha.jpg",
+        "caption": "Golgotha (Calvary) inside the Church of the Holy Sepulchre",
+        "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
+        "isHero": true
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/Church+of+the+Holy+Sepulchre/@31.7784,35.2296,17z",
+    "totalAudioDuration": 725
   }
 ]
