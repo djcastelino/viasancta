@@ -429,11 +429,11 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Pastoral Care / Pastoral Rule
+    // Pastoral Care / Pastoral Rule - link directly to Book 1
     if (source.match(/Pastoral (Care|Rule)/i)) {
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/3601.htm',
+        url: 'https://www.newadvent.org/fathers/36011.htm',
         type: 'ChurchFather'
       };
     }
@@ -445,10 +445,10 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Generic Gregory the Great - link to Pastoral Rule
+    // Generic Gregory the Great - link to Pastoral Rule Book 1
     return {
       text,
-      url: 'https://www.newadvent.org/fathers/3601.htm',
+      url: 'https://www.newadvent.org/fathers/36011.htm',
       type: 'ChurchFather'
     };
   }
