@@ -11,6 +11,29 @@ export interface LinkedSource {
 }
 
 /**
+ * Convert Roman numerals to Arabic numbers
+ */
+function romanToArabic(roman: string): number | null {
+  const romanMap: { [key: string]: number } = {
+    'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
+  };
+
+  let result = 0;
+  for (let i = 0; i < roman.length; i++) {
+    const current = romanMap[roman[i]];
+    const next = romanMap[roman[i + 1]];
+
+    if (next && current < next) {
+      result -= current;
+    } else {
+      result += current;
+    }
+  }
+
+  return result || null;
+}
+
+/**
  * Convert a source citation to a URL
  */
 export function getSourceLink(source: string): LinkedSource {
@@ -128,20 +151,80 @@ export function getSourceLink(source: string): LinkedSource {
 
   // Augustine specifically
   if (source.match(/Augustine/)) {
-    if (source.includes('Confessions')) {
-      return {
-        text,
-        url: 'https://www.newadvent.org/fathers/1101.htm',
-        type: 'ChurchFather'
-      };
-    }
+    // City of God with book number (e.g., "City of God XVII.16")
     if (source.includes('City of God')) {
+      const bookMatch = source.match(/City of God\s+([IVX]+)/);
+      if (bookMatch) {
+        const romanBook = bookMatch[1];
+        const bookNum = romanToArabic(romanBook);
+        if (bookNum && bookNum >= 1 && bookNum <= 22) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1201${bookNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      // Generic City of God (Book 1)
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/1201.htm',
+        url: 'https://www.newadvent.org/fathers/120101.htm',
         type: 'ChurchFather'
       };
     }
+
+    // Confessions with book number
+    if (source.includes('Confessions')) {
+      const bookMatch = source.match(/Confessions\s+([IVX]+)/);
+      if (bookMatch) {
+        const romanBook = bookMatch[1];
+        const bookNum = romanToArabic(romanBook);
+        if (bookNum && bookNum >= 1 && bookNum <= 13) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1101${bookNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      // Generic Confessions (Book 1)
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/110101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Tractates on John (e.g., "Tractates on John 119")
+    if (source.match(/Tractates on John/i)) {
+      const tractateMatch = source.match(/Tractates on John\s+(\d+)/i);
+      if (tractateMatch) {
+        const tractateNum = parseInt(tractateMatch[1]);
+        if (tractateNum >= 1 && tractateNum <= 124) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1701${tractateNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      // Generic Tractates
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/170101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Sermons
+    if (source.includes('Sermons') || source.includes('Sermon')) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/160301.htm',
+        type: 'ChurchFather'
+      };
+    }
+
     if (source.includes('On Baptism')) {
       return {
         text,
@@ -149,10 +232,194 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Generic Augustine
+
+    // Generic Augustine (defaults to Confessions)
     return {
       text,
-      url: 'https://www.newadvent.org/fathers/1101.htm',
+      url: 'https://www.newadvent.org/fathers/110101.htm',
+      type: 'ChurchFather'
+    };
+  }
+
+  // Chrysostom (John Chrysostom)
+  if (source.match(/Chrysostom/)) {
+    // Homilies on Matthew
+    if (source.match(/Homilies on Matthew/i)) {
+      const homMatch = source.match(/Homilies on Matthew\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 90) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2001${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/200101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on John
+    if (source.match(/Homilies on (the Gospel of )?John/i)) {
+      const homMatch = source.match(/Homilies on (?:the Gospel of )?John\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 88) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2401${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/240101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on Romans
+    if (source.match(/Homilies on Romans/i)) {
+      const homMatch = source.match(/Homilies on Romans\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 32) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2102${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/210201.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on Acts
+    if (source.match(/Homilies on Acts/i)) {
+      const homMatch = source.match(/Homilies on Acts\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 55) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2101${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/210101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Generic Chrysostom
+    return {
+      text,
+      url: 'https://www.newadvent.org/fathers/2001.htm',
+      type: 'ChurchFather'
+    };
+  }
+
+  // Gregory the Great
+  if (source.match(/Gregory the Great|Pope Gregory I/i)) {
+    // Moralia on Job
+    if (source.match(/Moralia|Commentary on Job/i)) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/36001.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Pastoral Care
+    if (source.includes('Pastoral Care')) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/360201.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Generic Gregory
+    return {
+      text,
+      url: 'https://www.newadvent.org/fathers/36001.htm',
+      type: 'ChurchFather'
+    };
+  }
+
+  // Leo the Great
+  if (source.match(/Leo the Great|Pope Leo I/i)) {
+    // Sermons
+    if (source.match(/Sermon/i)) {
+      const sermMatch = source.match(/Sermon(?:s)?\s+(\d+)/i);
+      if (sermMatch) {
+        const sermNum = parseInt(sermMatch[1]);
+        if (sermNum >= 1 && sermNum <= 96) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/3602${sermNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/360201.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Generic Leo
+    return {
+      text,
+      url: 'https://www.newadvent.org/fathers/360201.htm',
+      type: 'ChurchFather'
+    };
+  }
+
+  // Origen
+  if (source.match(/Origen/i)) {
+    // Commentary on Matthew
+    if (source.match(/Commentary on Matthew/i)) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/101601.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Homilies on Jeremiah
+    if (source.match(/Homilies on Jeremiah/i)) {
+      const homMatch = source.match(/Homilies on Jeremiah\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        return {
+          text,
+          url: `https://www.newadvent.org/fathers/101${homNum}.htm`,
+          type: 'ChurchFather'
+        };
+      }
+    }
+    // On First Principles
+    if (source.includes('First Principles') || source.includes('On First Principles')) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/04121.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Generic Origen
+    return {
+      text,
+      url: 'https://www.newadvent.org/fathers/0412.htm',
       type: 'ChurchFather'
     };
   }
