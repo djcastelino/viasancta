@@ -393,6 +393,24 @@ export function getSourceLink(source: string): LinkedSource {
     };
   }
 
+  // Gregory of Nyssa (MUST come before Gregory the Great check)
+  if (source.match(/Gregory of Nyssa/i)) {
+    // Life of Moses - not available on NewAdvent
+    if (source.match(/Life of Moses/i)) {
+      return {
+        text: text + ' (not available online)',
+        url: null,
+        type: 'ChurchFather'
+      };
+    }
+    // Other Gregory of Nyssa works - mark as unavailable for now
+    return {
+      text: text + ' (not available online)',
+      url: null,
+      type: 'ChurchFather'
+    };
+  }
+
   // Gregory the Great
   if (source.match(/Gregory the Great|Pope Gregory I/i)) {
     // Morals on Job - not fully available on NewAdvent
@@ -406,8 +424,8 @@ export function getSourceLink(source: string): LinkedSource {
     // Moralia on Job (alternate title)
     if (source.match(/Moralia/i)) {
       return {
-        text,
-        url: 'https://www.newadvent.org/fathers/36001.htm',
+        text: text + ' (not available online)',
+        url: null,
         type: 'ChurchFather'
       };
     }
@@ -415,22 +433,22 @@ export function getSourceLink(source: string): LinkedSource {
     if (source.match(/Pastoral (Care|Rule)/i)) {
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/360201.htm',
+        url: 'https://www.newadvent.org/fathers/3601.htm',
         type: 'ChurchFather'
       };
     }
-    // Dialogues
+    // Dialogues - not available on NewAdvent
     if (source.match(/Dialogues/i)) {
       return {
-        text,
-        url: 'https://www.newadvent.org/fathers/360201.htm',
+        text: text + ' (not available online)',
+        url: null,
         type: 'ChurchFather'
       };
     }
-    // Generic Gregory
+    // Generic Gregory the Great - link to Pastoral Rule
     return {
       text,
-      url: 'https://www.newadvent.org/fathers/36001.htm',
+      url: 'https://www.newadvent.org/fathers/3601.htm',
       type: 'ChurchFather'
     };
   }
@@ -519,10 +537,25 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'PapalDoc'
       };
     }
-    if (source.includes('Jesus of Nazareth')) {
+    if (source.includes('Deus Caritas Est')) {
       return {
         text,
-        url: 'https://www.vatican.va/content/benedict-xvi/en.html',
+        url: 'https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20051225_deus-caritas-est.html',
+        type: 'PapalDoc'
+      };
+    }
+    if (source.includes('Jesus of Nazareth')) {
+      // Benedict XVI's book trilogy - link to Amazon or mark as book reference
+      return {
+        text: text + ' (book reference)',
+        url: null,
+        type: 'PapalDoc'
+      };
+    }
+    if (source.includes('Infancy Narratives')) {
+      return {
+        text: text + ' (book reference)',
+        url: null,
         type: 'PapalDoc'
       };
     }
