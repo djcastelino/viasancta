@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import SourceLinks from '@/app/components/SourceLinks';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface KeyFigure {
   name: string;
@@ -60,35 +61,68 @@ export default function BiblicalTimelineClient() {
       audioElement.currentTime = 0;
     }
 
-    // Generate audio using Azure TTS API
+    // Generate audio using Azure Speech SDK
     try {
-      const response = await fetch('/api/generate-audio', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          text: audioSection.script,
-          voice: audioSection.voice
-        })
-      });
+      const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const speechRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION || 'eastus';
 
-      if (!response.ok) throw new Error('Audio generation failed');
+      if (!speechKey) {
+        console.error('Azure Speech Key not configured');
+        alert('Azure Speech service not configured. Please add NEXT_PUBLIC_AZURE_SPEECH_KEY to your environment.');
+        return;
+      }
 
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
+      const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
+      speechConfig.speechSynthesisVoiceName = audioSection.voice;
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
 
-      setAudioElement(audio);
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
       setPlayingAudio(audioSection.id);
 
-      audio.onended = () => {
-        setPlayingAudio(null);
-        setAudioElement(null);
-      };
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="${audioSection.voice}">
+            ${audioSection.script}
+          </voice>
+        </speak>
+      `;
 
-      audio.play();
+      synthesizer.speakSsmlAsync(
+        ssml,
+        result => {
+          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+
+            setAudioElement(audio);
+
+            audio.onended = () => {
+              setPlayingAudio(null);
+              setAudioElement(null);
+              URL.revokeObjectURL(audioUrl);
+            };
+
+            audio.play();
+          } else {
+            console.error('Speech synthesis failed:', result.errorDetails);
+            alert('Failed to generate audio. Please try again.');
+            setPlayingAudio(null);
+          }
+          synthesizer.close();
+        },
+        error => {
+          console.error('Error during speech synthesis:', error);
+          alert('Failed to play audio. Please try again.');
+          setPlayingAudio(null);
+          synthesizer.close();
+        }
+      );
     } catch (error) {
       console.error('Error playing audio:', error);
       alert('Failed to play audio. Please try again.');
+      setPlayingAudio(null);
     }
   };
 
