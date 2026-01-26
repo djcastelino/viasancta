@@ -601,5 +601,70 @@
     "story": "On June 24, 1981, six teenagers saw a luminous woman holding a baby on Apparition Hill near Medjugorje. She identified herself as 'Queen of Peace' and has appeared daily since then - over 43 years and counting. Each visionary has been given 10 secrets about future Church and world events. Despite initial communist persecution and later war, Medjugorje has become one of Christianity's most visited sites with 40+ million pilgrims. The Vatican permits organized pilgrimages while investigation continues. Dramatic conversions and documented healings number in the thousands.",
     "coordinates": { "lat": 43.1942, "lng": 17.6769 },
     "images": ["/images/apparitions/medjugorje.jpg"]
+  },
+  {
+    "id": 21,
+    "name": "Our Lady of the Miraculous Medal",
+    "location": {
+      "city": "Paris",
+      "country": "France",
+      "shrine": "Chapel of Our Lady of the Miraculous Medal"
+    },
+    "year": "1830",
+    "visionaries": ["St. Catherine Labouré (age 24)"],
+    "apparitionCount": 3,
+    "keyMessages": [
+      "Have a medal struck after this model",
+      "All who wear it will receive great graces",
+      "O Mary, conceived without sin, pray for us who have recourse to thee",
+      "Graces will be abundant for those who wear it with confidence"
+    ],
+    "miracles": [
+      "Vision of Our Lady standing on a globe with rays of light streaming from her hands",
+      "Medal design revealed with detailed instructions",
+      "Over 1 billion Miraculous Medals distributed worldwide since 1832",
+      "Countless conversions attributed to the medal - including Alphonse Ratisbonne (1842)",
+      "St. Catherine's body found incorrupt 57 years after death",
+      "Medal associated with thousands of documented miracles and healings"
+    ],
+    "churchApproval": "Archbishop Quélen of Paris approved 1836, St. Catherine canonized 1947",
+    "historicalContext": "Paris 1830 - July Revolution, anti-clerical violence, cholera epidemic approaching",
+    "shrine": "Chapel at 140 Rue du Bac in Paris where Catherine's incorrupt body lies, 1 million visitors annually",
+    "story": "On the night of July 18-19, 1830, novice Catherine Labouré was awakened by a child who led her to the chapel. There, the Blessed Virgin Mary appeared sitting in the sanctuary and spoke with Catherine for two hours about coming trials and her mission. On November 27, Mary appeared again standing on a globe, with rays of light streaming from rings on her fingers representing graces. An oval frame formed around her with the words 'O Mary, conceived without sin, pray for us who have recourse to thee.' The vision flipped showing an M with a cross, two hearts (one crowned with thorns, one pierced with a sword), and twelve stars. Mary told Catherine to have a medal struck. Catherine's confessor had 1,500 medals made in 1832. Miracles multiplied immediately, and the medal spread worldwide. Most famous: Jewish atheist Alphonse Ratisbonne's instant conversion in 1842 after reluctantly wearing the medal. Over 1 billion medals have been distributed. Catherine lived 46 more years in obscurity, her identity as the visionary unknown until her death.",
+    "coordinates": { "lat": 48.8512, "lng": 2.3208 },
+    "images": ["/images/apparitions/miraculous-medal.jpg"]
+  },
+  {
+    "id": 22,
+    "name": "Our Lady of La Salette",
+    "location": {
+      "city": "La Salette-Fallavaux",
+      "country": "France",
+      "shrine": "Basilica of Our Lady of La Salette"
+    },
+    "year": "1846",
+    "visionaries": ["Mélanie Calvat (age 14)", "Maximin Giraud (age 11)"],
+    "apparitionCount": 1,
+    "keyMessages": [
+      "If my people will not submit, I shall be forced to let go the hand of my Son",
+      "The potatoes will spoil, and the grapes will rot",
+      "There will come a great famine",
+      "If the harvest is spoiled, it is only on account of yourselves",
+      "Make this known to all my people"
+    ],
+    "miracles": [
+      "Beautiful Lady in brilliant light appeared weeping on mountainside",
+      "Immediate fulfillment of prophecies - potato blight and famine followed",
+      "Healing spring discovered at apparition site",
+      "Each child given a secret - Mélanie's published 1879 with Pope's permission",
+      "Both children maintained identical testimony despite separation and interrogation",
+      "Thousands of healings documented at shrine"
+    ],
+    "churchApproval": "Bishop Philibert de Bruillard approved September 19, 1851 (5 years after apparition)",
+    "historicalContext": "France September 19, 1846 - Post-Revolutionary irreligion, famine approaching, widespread neglect of Sunday Mass",
+    "shrine": "Mountain basilica at 5,900 feet elevation, pilgrimage site for 300,000+ annually",
+    "story": "On September 19, 1846, two shepherd children, Mélanie Calvat (14) and Maximin Giraud (11), saw a brilliant globe of light on the mountainside near La Salette. As they approached, it opened to reveal a beautiful woman sitting with her face in her hands, weeping. She stood, still crying, and spoke to them in French, then in the local dialect. Wearing a crucifix with hammer and pincers, she lamented France's sins - especially blasphemy and working on Sundays. She prophesied potato blight and grape failure if people didn't repent, warning of famine. The children tried to look at her face but were blinded by her brilliance. After delivering messages including personal secrets for each child, she rose into the air and disappeared. That year and the next, her prophecies came true - potatoes rotted and a great famine struck France. A healing spring appeared at the apparition site. Despite intense interrogation and being separated, both children told identical stories. Bishop de Bruillard approved the apparitions in 1851. Mélanie's secret, published in 1879 with permission, warned of apostasy in the Church and society. The remote mountain shrine now draws hundreds of thousands of pilgrims annually.",
+    "coordinates": { "lat": 44.8667, "lng": 5.9833 },
+    "images": ["/images/apparitions/lasalette.jpg"]
   }
 ]
