@@ -172,10 +172,22 @@
     "timeframe": "1700 - 1280 BC",
     "color": "#2C5F87",
     "keyFigures": [
-      "Moses",
-      "Aaron",
-      "Miriam",
-      "Pharaoh"
+      {
+        "name": "Moses",
+        "description": "Delivered from Nile, encountered God at burning bush, led Exodus, received Ten Commandments, mediator of Old Covenant."
+      },
+      {
+        "name": "Aaron",
+        "description": "Moses' brother and spokesman, first high priest of Israel, made golden calf in Moses' absence yet restored."
+      },
+      {
+        "name": "Miriam",
+        "description": "Prophetess and Moses' sister, led women in worship after Red Sea crossing, challenged Moses and was disciplined."
+      },
+      {
+        "name": "Pharaoh",
+        "description": "Egyptian king who enslaved Israel, hardened his heart against ten plagues, drowned pursuing Israel through Red Sea."
+      }
     ],
     "majorEvents": [
       "Israelites enslaved in Egypt for 400 years",
@@ -218,7 +230,37 @@
       "Aquinas, ST I-II, q. 102 - The Old Law"
     ],
     "theologicalSignificance": "The Exodus is the defining salvation event of the Old Testament. God hears Israel's cry, remembers His covenant, and delivers them with a mighty hand. The Passover lamb whose blood saves the firstborn prefigures Christ, the Lamb of God who takes away the sin of the world. The crossing of the Red Sea prefigures baptism. The covenant at Sinai establishes Israel as God's chosen people, a kingdom of priests and holy nation. The Ten Commandments reveal God's moral law. The Catechism teaches that the Old Covenant prepares for the New: 'The Passover of the Jews...will be fulfilled in the Church of Christ' (CCC 1340). Moses as mediator prefigures Christ, the perfect mediator. The manna in the desert prefigures the Eucharist. This period establishes that salvation requires sacrifice, covenant involves law, and God's people must be set apart as holy.",
-    "narrativeSummary": "From slavery to freedom, from oppression to covenant, the Exodus reveals God as Savior and Lawgiver. Every salvation event that follows echoes this foundational deliverance."
+    "narrativeSummary": "From slavery to freedom, from oppression to covenant, the Exodus reveals God as Savior and Lawgiver. Every salvation event that follows echoes this foundational deliverance.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to Egypt & Exodus",
+        "voice": "en-US-AndrewNeural",
+        "duration": 110,
+        "script": "The Egypt and Exodus period is the defining salvation event of the Old Testament. For 400 years, Abraham's descendants multiply in Egypt—but a new Pharaoh enslaves them. Their cry reaches heaven. God remembers His covenant with Abraham, Isaac, and Jacob. He calls Moses from a burning bush: 'I AM WHO I AM. I have seen my people's affliction. I will deliver them.' Through ten devastating plagues, God demonstrates His power over Egypt's gods. The final plague—death of the firstborn—brings Pharaoh to his knees. But God provides a way of escape: the Passover lamb. Israelite families slaughter a lamb, paint its blood on their doorposts. When the angel of death sees the blood, he passes over. That same night, Israel departs Egypt in haste. Pharaoh pursues with his army. Trapped between the sea and the chariots, Israel witnesses God's greatest miracle: the waters part, they cross on dry ground, and the sea swallows their enemies. Three months later at Mount Sinai, God establishes His covenant, gives the Ten Commandments, and designates Israel as His treasured possession—a kingdom of priests. The Exodus becomes the pattern for every subsequent deliverance, culminating in Christ our Passover Lamb who delivers us from sin's slavery."
+      },
+      {
+        "id": "moses",
+        "title": "Moses: The Great Deliverer",
+        "voice": "en-US-BrianNeural",
+        "duration": 100,
+        "script": "Moses' life divides into three 40-year periods. First 40 years: raised as Egyptian royalty, yet aware of his Hebrew identity. He kills an Egyptian taskmaster and flees to Midian. Second 40 years: shepherd in the wilderness, marries Zipporah, tends his father-in-law's flocks. At age 80, tending sheep near Mount Horeb, he encounters God in a burning bush that burns but isn't consumed. God reveals His name: 'I AM WHO I AM'—the self-existent eternal One. God commissions Moses to deliver Israel. Moses objects: 'Who am I?' God promises, 'I will be with you.' Moses returns to Egypt with his brother Aaron. Through ten plagues—water to blood, frogs, gnats, flies, livestock disease, boils, hail, locusts, darkness, death of firstborn—God demonstrates His supremacy over Pharaoh and Egypt's gods. After the tenth plague, Pharaoh releases Israel. Moses leads them through the Red Sea, receives the Law at Sinai, intercedes repeatedly when they rebel. Final 40 years: Moses guides Israel through wilderness, mediates between God and people, writes the Torah. He sees the Promised Land from Mount Nebo but doesn't enter—his role was to deliver them from slavery, Joshua's to lead them into rest. Moses prefigures Christ: both escape infant massacre, spend time in Egypt, deliver God's people, mediate a covenant, and give God's law."
+      },
+      {
+        "id": "passover",
+        "title": "The Passover",
+        "voice": "en-US-EmmaNeural",
+        "duration": 95,
+        "script": "The tenth plague brings death to every Egyptian firstborn—from Pharaoh's son to the prisoner's son, even livestock. But God provides a way of salvation. Each Israelite family must take a year-old male lamb without blemish. On the fourteenth day of the first month, at twilight, slaughter it. Take the blood and paint it on the doorposts and lintel of your house. Roast the lamb and eat it that night with unleavened bread and bitter herbs. Eat in haste, sandals on feet, staff in hand, ready to depart. For the LORD will pass through Egypt striking the firstborn, but when He sees the blood, He will pass over that house. The blood is your sign of protection. This becomes Israel's most sacred feast—Passover. Every year they must reenact it, telling their children: 'It is the sacrifice of the LORD's passover, for he passed over the houses of Israel in Egypt.' The Catechism teaches that Christ is our Passover Lamb. Paul declares, 'Christ, our paschal lamb, has been sacrificed.' At the Last Supper on Passover, Jesus transforms the feast. The lamb is His Body given for us. The blood is His Blood of the New Covenant. Just as the lamb's blood saved Israel from death, Christ's Blood saves us from eternal death. The Eucharist is the Christian Passover, participation in Christ's once-for-all sacrifice."
+      },
+      {
+        "id": "covenant",
+        "title": "The Sinai Covenant",
+        "voice": "en-US-GuyNeural",
+        "duration": 90,
+        "script": "Three months after leaving Egypt, Israel camps at the foot of Mount Sinai. God summons Moses up the mountain and declares: 'You have seen what I did to Egypt, how I bore you on eagles' wings and brought you to myself. Now if you obey my voice and keep my covenant, you shall be my treasured possession among all peoples, a kingdom of priests and a holy nation.' The people respond, 'All that the LORD has spoken we will do.' On the third day, thunder, lightning, thick cloud, and trumpet blast terrify the mountain. Moses brings the people out to meet God. The LORD descends in fire, the mountain shakes violently. God speaks the Ten Commandments—the moral law written by His finger on stone tablets. Worship God alone. No idols. Don't misuse God's name. Keep the Sabbath holy. Honor parents. Don't murder, commit adultery, steal, lie, or covet. Moses receives detailed laws for worship, justice, and daily life. The covenant is ratified with blood: Moses reads the Book of the Covenant, the people pledge obedience, he sprinkles them with sacrificial blood declaring, 'Behold the blood of the covenant.' Jesus echoes these words at the Last Supper: 'This is my blood of the covenant.' The Old Covenant at Sinai prepares for the New Covenant in Christ—written not on stone but on hearts."
+      }
+    ]
   },
   {
     "id": 4,
@@ -226,11 +268,26 @@
     "timeframe": "1280 - 1240 BC",
     "color": "#C49D2F",
     "keyFigures": [
-      "Moses",
-      "Aaron",
-      "Miriam",
-      "Joshua",
-      "Caleb"
+      {
+        "name": "Moses",
+        "description": "Interceded for rebellious Israel, struck rock in anger, saw Promised Land from afar but couldn't enter."
+      },
+      {
+        "name": "Aaron",
+        "description": "High priest who died on Mount Hor at age 123, his son Eleazar succeeded him in priestly office."
+      },
+      {
+        "name": "Miriam",
+        "description": "Prophetess who died at Kadesh, led worship but also challenged Moses' authority and was struck with leprosy."
+      },
+      {
+        "name": "Joshua",
+        "description": "Moses' faithful assistant, one of two faithful spies, chosen to succeed Moses and lead conquest of Canaan."
+      },
+      {
+        "name": "Caleb",
+        "description": "With Joshua, gave good report of Promised Land, believed God despite obstacles, rewarded with inheritance at age 85."
+      }
     ],
     "majorEvents": [
       "Israel wanders 40 years due to unbelief",
@@ -270,7 +327,30 @@
       "Gregory of Nyssa, Life of Moses - Moses as type"
     ],
     "theologicalSignificance": "The Desert Wanderings reveal the consequences of unbelief and the necessity of faith. An 11-day journey becomes 40 years because Israel refuses to trust God's promise. Yet even in judgment, God provides: manna daily, water from rocks, clothes that don't wear out. The bronze serpent that heals those who look upon it prefigures Christ lifted up on the cross (John 3:14). Deuteronomy restates the Law for the new generation and emphasizes covenant love - the Shema ('Hear, O Israel') becomes the central prayer of Judaism. Moses' farewell addresses call Israel to choose life by loving God and keeping His commands. This period teaches that the journey to the Promised Land requires faith, obedience, and perseverance through testing.",
-    "narrativeSummary": "Forty years of wilderness wandering demonstrate that unbelief has consequences, yet God remains faithful. His daily provision of manna teaches dependence on Him, prefiguring the Bread of Life to come."
+    "narrativeSummary": "Forty years of wilderness wandering demonstrate that unbelief has consequences, yet God remains faithful. His daily provision of manna teaches dependence on Him, prefiguring the Bread of Life to come.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to Desert Wanderings",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 105,
+        "script": "What should have been an 11-day journey from Mount Sinai to the Promised Land becomes 40 years of wilderness wandering. Why? Unbelief. At Kadesh Barnea, Moses sends twelve spies into Canaan. They return after 40 days. Ten spies report: 'The land flows with milk and honey, but the people are giants! We seemed like grasshoppers. We cannot take it.' Only Joshua and Caleb dissent: 'The LORD is with us. Do not fear!' But Israel believes the majority and rebels. They propose returning to Egypt, even stoning Moses. God's judgment is severe: 'Your children will enter the Promised Land, but you—everyone 20 years and older—will die in the wilderness. Forty years, one year for each day the spies explored.' That entire generation perishes in the desert, except Joshua and Caleb. Yet God doesn't abandon them. Daily He provides manna—bread from heaven. Water flows from rocks. Their clothes don't wear out. The pillar of cloud by day and fire by night never leaves. This period teaches that God's promises require faith to inherit. Unbelief excludes us from God's rest. But divine provision never fails—even in discipline, God sustains His people."
+      },
+      {
+        "id": "manna",
+        "title": "Daily Bread from Heaven",
+        "voice": "en-US-EmmaNeural",
+        "duration": 90,
+        "script": "Each morning, as dew lifts, a fine flake-like substance covers the ground. The Israelites ask, 'What is it?' Moses answers, 'It is the bread which the LORD has given you to eat.' They call it manna—meaning 'What is it?' God's instructions are specific: gather an omer per person, enough for each day. Don't hoard it—whatever you keep overnight breeds worms and stinks. Trust God for tomorrow's provision. On the sixth day, gather double, for the Sabbath requires rest—no manna falls that day. For 40 years, six days a week, manna appears. It tastes like wafers made with honey. They grind it, boil it, make cakes. It sustains two million people throughout their wandering. Deuteronomy 8:3 explains God's purpose: 'He humbled you and let you hunger and fed you with manna...that he might make you know that man does not live by bread alone, but by every word that comes from the mouth of the LORD.' Jesus applies this to Himself in John 6: 'Your fathers ate manna and died. I am the living bread from heaven. Whoever eats this bread will live forever.' The Catechism teaches that manna prefigures the Eucharist—the true Bread of Life. Just as Israel needed daily manna, we need daily Eucharist to sustain our souls."
+      },
+      {
+        "id": "bronze-serpent",
+        "title": "The Bronze Serpent",
+        "voice": "en-US-GuyNeural",
+        "duration": 85,
+        "script": "Israel complains—again. 'Why have you brought us into this wilderness to die? There's no food, no water, and we detest this miserable manna!' God's patience reaches its limit. He sends fiery serpents among the people. Their venom brings agonizing death. Many Israelites die. The people cry to Moses: 'We have sinned! We spoke against the LORD and you. Pray that He removes these serpents.' Moses intercedes. God responds with a strange remedy: 'Make a fiery serpent and set it on a pole. Everyone who is bitten, when he sees it, shall live.' Moses fashions a bronze serpent, lifts it high on a pole. Anyone bitten who looks at the bronze serpent lives. Simple faith saves them. Jesus references this event in His night conversation with Nicodemus: 'As Moses lifted up the serpent in the wilderness, so must the Son of Man be lifted up, that whoever believes in him may have eternal life.' The bronze serpent prefigures the Cross. Sin's venom brings death. But those who look in faith to Christ crucified receive life. The remedy seems foolish—a serpent to cure serpent bites? The Cross seems foolish—life through death? Yet God's wisdom surpasses human understanding. Look and live. Believe and be saved."
+      }
+    ]
   },
   {
     "id": 5,
@@ -278,12 +358,30 @@
     "timeframe": "1240 - 1050 BC",
     "color": "#8B4513",
     "keyFigures": [
-      "Joshua",
-      "Deborah",
-      "Gideon",
-      "Samson",
-      "Ruth",
-      "Samuel"
+      {
+        "name": "Joshua",
+        "description": "Moses' successor who led conquest of Canaan, his name means 'The LORD saves'—same as Jesus in Greek."
+      },
+      {
+        "name": "Deborah",
+        "description": "Prophetess and only female judge, led Israel to victory over Canaanite oppression with Barak."
+      },
+      {
+        "name": "Gideon",
+        "description": "Reluctant deliverer who defeated vast Midianite army with just 300 men armed with trumpets and torches."
+      },
+      {
+        "name": "Samson",
+        "description": "Nazirite with supernatural strength who judged Israel 20 years, brought down by Delilah but died defeating Philistines."
+      },
+      {
+        "name": "Ruth",
+        "description": "Moabite widow whose faithfulness to Naomi led her to Boaz, becoming King David's great-grandmother."
+      },
+      {
+        "name": "Samuel",
+        "description": "Last judge and first prophet, anointed both Saul and David as Israel's first kings."
+      }
     ],
     "majorEvents": [
       "Joshua leads Israel across Jordan River",
@@ -322,7 +420,30 @@
       "Origen, Homilies on Joshua - Spiritual conquest"
     ],
     "theologicalSignificance": "The Conquest and Judges period reveals Israel's repeated cycle of faithfulness, apostasy, oppression, repentance, and deliverance. Judges 2:16 summarizes: 'The LORD raised up judges, who saved them.' Yet each deliverance is temporary because Israel keeps returning to idolatry. The refrain 'every man did what was right in his own eyes' shows the chaos of relativism. Joshua (Hebrew 'Yeshua') leads Israel into the Promised Land, prefiguring Jesus who leads us into heavenly rest. Ruth the Moabite becomes David's ancestor, showing God includes Gentiles in His plan. The judges are charismatic leaders raised up by God, but none brings lasting peace - Israel needs a king. This period demonstrates that human deliverers are insufficient; only a perfect King can bring eternal salvation.",
-    "narrativeSummary": "From the conquest of Canaan to the chaos of the judges, Israel struggles to remain faithful. Repeated cycles of sin and salvation reveal humanity's need for a perfect and eternal King."
+    "narrativeSummary": "From the conquest of Canaan to the chaos of the judges, Israel struggles to remain faithful. Repeated cycles of sin and salvation reveal humanity's need for a perfect and eternal King.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to Conquest & Judges",
+        "voice": "en-US-AndrewNeural",
+        "duration": 100,
+        "script": "After 40 years of wandering, a new generation stands on the banks of the Jordan River. Moses has died. Joshua, whose name means 'The LORD saves,' now leads Israel. God commands: 'Be strong and courageous! I will be with you as I was with Moses.' The Jordan River miraculously stops flowing. Israel crosses on dry ground—echoing the Red Sea crossing. Jericho's impregnable walls fall flat after seven days of marching and trumpet blasts. City after city falls as Joshua conquers the land. But Israel fails to completely drive out the Canaanites as commanded. This disobedience haunts them. Joshua dies. A new generation arises 'who did not know the LORD or the work he had done for Israel.' A destructive cycle begins: Israel serves the LORD. Israel prospers. Israel forgets God and worships Canaanite idols. God allows enemies to oppress them. Israel cries out in misery. God raises up a judge who delivers them. Israel serves the LORD. Then the cycle repeats. Twelve judges rise and fall over 200 years. Each brings temporary deliverance, but none brings lasting change. The book ends with the ominous refrain: 'In those days there was no king in Israel. Every man did what was right in his own eyes.' Israel needs a king. But not just any king—she needs the King of Kings."
+      },
+      {
+        "id": "joshua-jericho",
+        "title": "Joshua and the Fall of Jericho",
+        "voice": "en-US-BrianNeural",
+        "duration": 90,
+        "script": "Jericho. A fortified city with massive double walls. Humanly impenetrable. Joshua's military strategy? March around the city once a day for six days, silent except for rams' horns. On the seventh day, march seven times, blow the trumpets, then everyone shout. The walls will collapse. Absurd by military standards. But Israel obeys. Six days of marching. Jericho's inhabitants must have mocked them. On the seventh day, they march seven times. Priests blow the rams' horns. At Joshua's command, the people shout with a great shout. The walls fall flat. Israel rushes in and takes the city. Only Rahab the prostitute and her family are spared—because she hid the Israelite spies. Hebrews 11:30 declares, 'By faith the walls of Jericho fell down after they had been encircled for seven days.' This was spiritual warfare, not conventional battle. God fought for Israel. Jericho's fall demonstrates that God's ways transcend human wisdom. His methods may seem foolish, but His power accomplishes what man cannot. Just as Jericho's walls fell by faith, so spiritual strongholds in our lives fall not by human effort but by trusting God's Word and obeying His commands."
+      },
+      {
+        "id": "cycle",
+        "title": "The Cycle of Judges",
+        "voice": "en-US-EmmaNeural",
+        "duration": 95,
+        "script": "The book of Judges reveals a tragic pattern. Israel serves the LORD while Joshua's generation lives. But when that generation dies, 'there arose another generation who did not know the LORD.' They worship Baal and Asherah, Canaanite fertility gods. God's anger burns. He allows Midianites, Moabites, Philistines to oppress Israel. After years of suffering, Israel cries to the LORD. He raises up a judge—a deliverer. Othniel defeats Mesopotamia. Ehud assassinates the Moabite king. Deborah and Barak defeat Sisera. Gideon, with only 300 men, routs the vast Midianite army using trumpets, torches, and jars. Samson single-handedly kills thousands of Philistines with a donkey's jawbone. Yet each deliverance is temporary. When the judge dies, Israel returns to idolatry, often worse than before. The judges themselves decline in quality. Gideon makes an ephod that becomes a snare. Samson repeatedly breaks his Nazirite vow. The cycle accelerates. The judges period demonstrates three truths: First, sin has consequences—idolatry brings oppression. Second, God is merciful—He sends deliverers when His people repent. Third, human saviors are insufficient—even the best judges bring only temporary relief. Israel needs an eternal King whose deliverance lasts forever."
+      }
+    ]
   },
   {
     "id": 6,
@@ -330,10 +451,22 @@
     "timeframe": "1050 - 930 BC",
     "color": "#FFD700",
     "keyFigures": [
-      "Saul",
-      "David",
-      "Solomon",
-      "Nathan"
+      {
+        "name": "Saul",
+        "description": "Israel's first king, tall and handsome, started well but disobeyed God and was rejected, died by suicide after defeat."
+      },
+      {
+        "name": "David",
+        "description": "Shepherd boy anointed king, slayed Goliath, 'man after God's own heart,' received promise of eternal dynasty, sinned with Bathsheba but repented."
+      },
+      {
+        "name": "Solomon",
+        "description": "David's son granted wisdom by God, built the Temple, wrote Proverbs and Ecclesiastes, but his many foreign wives led him into idolatry."
+      },
+      {
+        "name": "Nathan",
+        "description": "Prophet who confronted David over Bathsheba with the parable of the ewe lamb, 'You are the man!'"
+      }
     ],
     "majorEvents": [
       "Israel demands a king like other nations",
@@ -381,7 +514,30 @@
       "Aquinas, ST III, q. 31 - Christ's royal lineage"
     ],
     "theologicalSignificance": "The Royal Kingdom reaches its zenith under David and Solomon. God's covenant with David (2 Sam 7) promises an eternal dynasty - fulfilled ultimately in Christ, the Son of David who reigns forever. David is a man after God's own heart, yet he sins grievously with Bathsheba. His repentance (Psalm 51) becomes a model for all sinners. The Psalms attributed to David express every human emotion before God. Solomon's wisdom and Temple represent Israel's glory, yet his idolatry shows that even the wisest king falls without God's grace. The Temple becomes the dwelling place of God's presence, prefiguring the Incarnation and the Church. The Catechism teaches that Jesus as 'Son of David' is a messianic title (CCC 441). This period reveals that earthly kingship, even at its best, points to the need for a perfect eternal King - Jesus Christ.",
-    "narrativeSummary": "From shepherd boy to mighty king, David's reign establishes Jerusalem and receives God's promise of an eternal throne. Yet even David and Solomon's glory fades, pointing to the need for a greater King to come."
+    "narrativeSummary": "From shepherd boy to mighty king, David's reign establishes Jerusalem and receives God's promise of an eternal throne. Yet even David and Solomon's glory fades, pointing to the need for a greater King to come.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Royal Kingdom",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 105,
+        "script": "After 200 years of judges, Israel demands a king. Samuel warns them: a king will tax you, draft your sons, take your daughters, and confiscate your property. But Israel insists: 'We want to be like other nations!' God tells Samuel, 'They have not rejected you, but they have rejected me from being king over them.' God gives them what they want—Saul, tall and handsome, from the tribe of Benjamin. Saul starts well but repeatedly disobeys God. He offers unauthorized sacrifice. He spares the Amalekite king against God's command. Samuel pronounces judgment: 'The LORD has torn the kingdom from you and given it to your neighbor who is better than you.' Meanwhile, God sends Samuel to Bethlehem to Jesse's house. Seven sons pass before him. None is chosen. 'Is there not one more?' Samuel asks. They bring the youngest, David, ruddy and handsome, tending sheep. God says, 'Arise, anoint him, for this is he.' David is anointed while still a teenager. He defeats Goliath with a sling and five stones. He serves Saul faithfully despite Saul's murderous jealousy. After Saul's death, David reigns 40 years. God makes an astounding covenant: 'Your throne shall be established forever.' This points to Christ, the Son of David who reigns eternally."
+      },
+      {
+        "id": "david-goliath",
+        "title": "David and Goliath",
+        "voice": "en-US-GuyNeural",
+        "duration": 95,
+        "script": "The Philistines and Israelites face each other across the Valley of Elah. For 40 days, morning and evening, a champion emerges from the Philistine camp. Goliath of Gath—over nine feet tall, wearing bronze armor weighing 125 pounds, spear like a weaver's beam. He mocks Israel and their God: 'Send a man to fight me! If he kills me, we'll be your servants. If I kill him, you'll serve us.' Saul and Israel are terrified. Then David arrives, bringing food to his brothers. He hears Goliath's taunts. 'Who is this uncircumcised Philistine that he should defy the armies of the living God?' Saul offers David his armor. David tries it on but can't move. 'I'm not used to these.' He takes them off. Instead, he chooses five smooth stones from the brook and his shepherd's sling. Goliath sees him approaching and laughs. 'Am I a dog that you come at me with sticks?' David responds, 'You come against me with sword, spear, and javelin, but I come against you in the name of the LORD of hosts! This day the LORD will deliver you into my hand!' David slings one stone. It sinks into Goliath's forehead. The giant crashes to the ground. David runs, takes Goliath's own sword, and cuts off his head. The Philistines flee. David's faith in God defeated what Israel's army feared."
+      },
+      {
+        "id": "davidic-covenant",
+        "title": "The Davidic Covenant",
+        "voice": "en-US-EmmaNeural",
+        "duration": 100,
+        "script": "David has conquered Jerusalem, established it as his capital, brought the Ark of the Covenant there. He lives in a palace of cedar. One day he tells Nathan the prophet, 'I dwell in a house of cedar, but the ark of God dwells in a tent.' Nathan initially approves David building a Temple. But that night, God speaks to Nathan: 'Go tell my servant David—you will not build me a house. Instead, I will build you a house!' God promises David: 'Your throne shall be established forever. I will be his father, and he shall be my son. My steadfast love will not depart from him.' This is the Davidic Covenant—one of history's most important promises. David's son Solomon will build the Temple. But ultimately, this covenant points to Christ. Jesus is the Son of David whose kingdom has no end. Gabriel tells Mary that Jesus 'will reign over the house of Jacob forever, and of his kingdom there will be no end.' When crowds cry 'Hosanna to the Son of David!' they recognize Jesus as the promised eternal King. The Catechism declares that 'Son of David' is a messianic title. Every subsequent king of Judah sits on 'the throne of David.' But they all fail. They all die. Only Jesus, the ultimate Son of David, fulfills this covenant perfectly. His is the kingdom that shall never be destroyed."
+      }
+    ]
   },
   {
     "id": 7,
@@ -389,15 +545,42 @@
     "timeframe": "930 - 586 BC",
     "color": "#DC143C",
     "keyFigures": [
-      "Rehoboam",
-      "Jeroboam",
-      "Elijah",
-      "Elisha",
-      "Isaiah",
-      "Jeremiah",
-      "Hosea",
-      "Amos",
-      "Micah"
+      {
+        "name": "Rehoboam",
+        "description": "Solomon's son whose harsh policies split the kingdom, reigned over Judah while northern tribes rebelled."
+      },
+      {
+        "name": "Jeroboam",
+        "description": "Led northern rebellion, established golden calves at Dan and Bethel, leading all Northern Kingdom kings into idolatry."
+      },
+      {
+        "name": "Elijah",
+        "description": "Fiery prophet who confronted Baal worship, called down fire from heaven, taken to heaven in whirlwind, prefigures John the Baptist."
+      },
+      {
+        "name": "Elisha",
+        "description": "Elijah's successor who received double portion of his spirit, performed numerous miracles including raising the dead."
+      },
+      {
+        "name": "Isaiah",
+        "description": "Major prophet who saw the LORD on His throne, prophesied virgin birth and Suffering Servant, called to preach though hearts would be hardened."
+      },
+      {
+        "name": "Jeremiah",
+        "description": "Weeping prophet who warned of Babylon's destruction, persecuted for unpopular message, prophesied New Covenant written on hearts."
+      },
+      {
+        "name": "Hosea",
+        "description": "Prophet whose faithful love for unfaithful wife Gomer depicted God's love for Israel, 'Out of Egypt I called my son.'"
+      },
+      {
+        "name": "Amos",
+        "description": "Shepherd from Tekoa called to prophesy against Israel's social injustice, declared 'Let justice roll down like waters.'"
+      },
+      {
+        "name": "Micah",
+        "description": "Prophet who condemned exploitation of poor, prophesied Messiah's birth in Bethlehem, summarized true religion: act justly, love mercy, walk humbly."
+      }
     ],
     "majorEvents": [
       "Solomon's son Rehoboam rejects counsel, kingdom divides",
@@ -447,7 +630,30 @@
       "Aquinas, ST III, q. 31 - Prophecies of Christ"
     ],
     "theologicalSignificance": "The Divided Kingdom demonstrates the consequences of idolatry and disobedience. Despite repeated warnings from prophets, both kingdoms fall. Yet the prophetic period is rich in messianic prophecies. Isaiah foresees the virgin birth (7:14), the Suffering Servant (53), and the Prince of Peace (9:6). Jeremiah prophesies a New Covenant written on hearts (31:31-33). Hosea's faithful love for his unfaithful wife depicts God's love for Israel. Micah pinpoints Bethlehem as the Messiah's birthplace (5:2). The Catechism teaches that God 'forms his people in the hope of salvation, in the expectation of a new and everlasting Covenant' (CCC 64). This period shows that political and religious disintegration prepares Israel to long for the Messiah. Exile becomes necessary to purge idolatry and create a people ready to receive God's ultimate revelation in Christ.",
-    "narrativeSummary": "Divided, rebellious, and warned by prophets, Israel and Judah spiral toward judgment. Yet through the darkness shine brilliant prophecies of the coming Messiah who will restore all things."
+    "narrativeSummary": "Divided, rebellious, and warned by prophets, Israel and Judah spiral toward judgment. Yet through the darkness shine brilliant prophecies of the coming Messiah who will restore all things.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Divided Kingdom",
+        "voice": "en-US-AndrewNeural",
+        "duration": 110,
+        "script": "Solomon's glory doesn't last. His foreign wives turn his heart to their gods. God declares judgment: 'I will tear the kingdom from your son.' After Solomon's death, his son Rehoboam goes to Shechem for coronation. The people plead: 'Your father made our yoke heavy. Lighten it, and we'll serve you.' Older counselors advise: 'Serve them today, and they'll be your servants forever.' But Rehoboam consults his young friends. They advise: 'Tell them, My little finger is thicker than my father's waist! My father disciplined you with whips; I'll discipline you with scorpions!' Rehoboam follows the foolish counsel. Ten northern tribes rebel under Jeroboam. Only Judah and Benjamin remain loyal to David's line. The kingdom divides—never to reunite. Jeroboam, fearing his people will return to Jerusalem for worship, sets up golden calves at Dan and Bethel. 'Behold your gods, O Israel, who brought you up out of Egypt!' he declares—echoing Aaron's sin. This idolatry becomes 'the sin of Jeroboam' that every Northern Kingdom king follows. For 210 years, both kingdoms spiral downward. Assyria conquers the North in 722 BC. Babylon destroys Judah in 586 BC. Yet through this darkness, God sends prophets who warn of judgment and promise a coming Messiah who will restore all things."
+      },
+      {
+        "id": "elijah",
+        "title": "Elijah on Mount Carmel",
+        "voice": "en-US-BrianNeural",
+        "duration": 105,
+        "script": "King Ahab and Queen Jezebel lead Israel into Baal worship. God sends Elijah to pronounce drought: 'As the LORD lives, there shall be neither dew nor rain except by my word.' Three years of famine devastate the land. Then God sends Elijah back to Ahab: 'Gather all Israel to Mount Carmel, with the 450 prophets of Baal and 400 prophets of Asherah.' On the mountain, Elijah challenges the people: 'How long will you go limping between two opinions? If the LORD is God, follow him; but if Baal, then follow him.' He proposes a test: two bulls, two altars. The prophets of Baal will call on their god, Elijah on the LORD. 'The God who answers by fire, he is God.' The prophets of Baal cry out from morning till evening. They slash themselves with swords. Nothing happens. Elijah mocks: 'Cry louder! Perhaps he's meditating, or relieving himself, or on a journey, or asleep!' Evening comes. Elijah rebuilds the LORD's altar with twelve stones. He digs a trench around it, lays the wood and bull. Then he drenches everything with water—four jars, three times. Water fills the trench. Elijah prays simply: 'O LORD, let it be known today that you are God in Israel.' Fire falls from heaven. It consumes the sacrifice, the wood, the stones, the dust, and licks up the water in the trench. The people fall on their faces: 'The LORD, he is God!'"
+      },
+      {
+        "id": "isaiah",
+        "title": "Isaiah's Prophecies of the Messiah",
+        "voice": "en-US-EmmaNeural",
+        "duration": 100,
+        "script": "Isaiah sees the Lord sitting on a throne, high and lifted up. Seraphim cry 'Holy, holy, holy is the LORD of hosts!' Isaiah recognizes his sinfulness: 'Woe is me! I am a man of unclean lips!' A seraph touches his lips with a burning coal: 'Your guilt is taken away, your sin atoned for.' Then Isaiah receives his commission. His 66-chapter book contains more messianic prophecies than any other. Chapter 7: 'Behold, a virgin shall conceive and bear a son, and shall call his name Immanuel'—God with us. Matthew quotes this when Jesus is born to Mary. Chapter 9: 'Unto us a child is born, unto us a son is given...His name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.' Chapter 11: 'A shoot from the stump of Jesse'—the Messiah from David's line. Most stunning is chapter 53, the Suffering Servant: 'He was despised and rejected by men, a man of sorrows, acquainted with grief...He was wounded for our transgressions, crushed for our iniquities...By his stripes we are healed...The LORD has laid on him the iniquity of us all.' Philip the evangelist explains this passage to the Ethiopian eunuch, showing that it speaks of Jesus. Isaiah saw Christ's glory and spoke of Him. His prophecies prove that Jesus' suffering wasn't failure—it was the plan all along."
+      }
+    ]
   },
   {
     "id": 8,
@@ -455,9 +661,18 @@
     "timeframe": "586 - 538 BC",
     "color": "#696969",
     "keyFigures": [
-      "Daniel",
-      "Ezekiel",
-      "Shadrach, Meshach, Abednego"
+      {
+        "name": "Daniel",
+        "description": "Judean noble taken to Babylon, refused to defile himself, interpreted dreams, survived lions' den, received visions of Son of Man and seventy weeks."
+      },
+      {
+        "name": "Ezekiel",
+        "description": "Priest-prophet in Babylon who saw God's glory depart Temple, prophesied dry bones coming to life, promised new heart and new spirit."
+      },
+      {
+        "name": "Shadrach, Meshach, Abednego",
+        "description": "Daniel's three friends who refused to bow to Nebuchadnezzar's golden statue, thrown into fiery furnace but unharmed, joined by fourth figure."
+      }
     ],
     "majorEvents": [
       "Jerusalem and Temple destroyed by Babylon",
@@ -499,7 +714,30 @@
       "Jerome, Commentary on Daniel - Messianic prophecies"
     ],
     "theologicalSignificance": "The Exile is Israel's darkest hour, yet also a time of purification and hope. Jerusalem's fall demonstrates that God's judgment is real - centuries of prophetic warnings come to pass. Yet even in Babylon, God preserves a faithful remnant. Daniel and his friends show that holiness is possible even in pagan exile. Ezekiel's vision of dry bones coming to life prophesies national restoration and, ultimately, resurrection. His promise of a new heart and new spirit points to the New Covenant (Ezek 36:26). Daniel's 'Son of Man' vision (7:13-14) becomes Jesus' favorite self-designation. The Exile purges Israel of idolatry forever - after 586 BC, Jews never worship idols again. The Catechism teaches that 'the Exile itself prepared them, darkly, for this Return' (CCC 710) - both the return from Babylon and the ultimate return of all creation to God through Christ.",
-    "narrativeSummary": "In exile's darkness, God preserves His people and refines their hope. Through visions of dry bones and Son of Man, the prophets promise restoration and a coming Savior."
+    "narrativeSummary": "In exile's darkness, God preserves His people and refines their hope. Through visions of dry bones and Son of Man, the prophets promise restoration and a coming Savior.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Exile",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 100,
+        "script": "In 586 BC, the unthinkable happens. Babylon breaches Jerusalem's walls. Nebuchadnezzar's army burns Solomon's Temple—the dwelling place of God's glory. They slaughter princes, blind King Zedekiah, carry him in chains to Babylon. The city lies in ruins. Jeremiah walks through the rubble weeping: 'How lonely sits the city that was full of people!' The Exile fulfills every prophetic warning. For 70 years, Judah remains desolate. Yet even in this darkest hour, God preserves a remnant. In Babylon, young Hebrew nobles—Daniel, Hananiah, Mishael, and Azariah—refuse to defile themselves with the king's food. They resolve to remain faithful to the God of their fathers. The Exile becomes a crucible of purification. Cut off from Temple and land, Jews must practice their faith in a pagan environment. They never worship idols again. Synagogues emerge. Scripture is studied intensely. Hope intensifies for the promised Messiah. Ezekiel prophesies dry bones coming to life—national resurrection. Daniel sees the Son of Man receiving eternal dominion. The Exile teaches that God's presence isn't confined to one location. His people can worship Him anywhere. And His promises will be fulfilled—judgment gives way to restoration."
+      },
+      {
+        "id": "fiery-furnace",
+        "title": "The Fiery Furnace",
+        "voice": "en-US-GuyNeural",
+        "duration": 95,
+        "script": "King Nebuchadnezzar erects a golden statue 90 feet high. All officials must bow when the music plays. Whoever refuses will be thrown into a blazing furnace. The music sounds. Everyone bows—except three young Hebrews: Shadrach, Meshach, and Abednego. Accusers report to the king: 'These Jews you appointed pay no attention to you. They neither serve your gods nor worship the golden image.' Nebuchadnezzar, furious, summons them. 'Is it true? If you don't worship, you'll be thrown into the blazing furnace. Then what god can deliver you?' They answer without hesitation: 'Our God whom we serve is able to deliver us from the burning fiery furnace. But even if he does not, be it known to you, O king, that we will not serve your gods or worship the golden image.' Enraged, Nebuchadnezzar orders the furnace heated seven times hotter. Soldiers bind the three men and throw them in. The flames are so intense that the soldiers who threw them in are killed. But look! Nebuchadnezzar leaps up amazed: 'Didn't we throw three men bound into the fire? I see four men unbound, walking in the fire, unharmed! And the fourth looks like a son of the gods!' He calls them out. Not a hair singed. No smell of fire. The king declares: 'Blessed be the God of Shadrach, Meshach, and Abednego!'"
+      },
+      {
+        "id": "dry-bones",
+        "title": "Ezekiel's Vision of Dry Bones",
+        "voice": "en-US-EmmaNeural",
+        "duration": 90,
+        "script": "The hand of the LORD comes upon Ezekiel. The Spirit carries him to a valley full of bones—very many, very dry. God asks, 'Son of man, can these bones live?' Ezekiel wisely answers, 'O Lord GOD, you know.' God commands: 'Prophesy to these bones. Say to them, O dry bones, hear the word of the LORD! Behold, I will cause breath to enter you, and you shall live.' Ezekiel prophesies as commanded. Suddenly there's a rattling sound. Bones come together, bone to bone. Tendons appear, flesh covers them, skin grows over—but there's no breath. God says, 'Prophesy to the breath! Say, Come from the four winds, O breath, and breathe on these slain, that they may live.' Ezekiel prophesies. Breath enters them. They stand on their feet—a vast army. God explains: 'These bones are the whole house of Israel. They say, Our bones are dried up, our hope is lost, we are cut off. Therefore prophesy: Thus says the Lord GOD, I will open your graves and raise you from your graves, O my people. I will put my Spirit within you, and you shall live.' This vision promises national restoration for Israel. But it also prophesies the resurrection of the dead—a truth that becomes explicit in Christ. Jesus is the fulfillment. He raises the dead physically. And through His resurrection, He guarantees our resurrection."
+      }
+    ]
   },
   {
     "id": 9,
@@ -507,13 +745,34 @@
     "timeframe": "538 - 400 BC",
     "color": "#32CD32",
     "keyFigures": [
-      "Zerubbabel",
-      "Ezra",
-      "Nehemiah",
-      "Esther",
-      "Haggai",
-      "Zechariah",
-      "Malachi"
+      {
+        "name": "Zerubbabel",
+        "description": "Governor who led first wave of exiles back to Jerusalem, laid foundation of Second Temple, from David's line."
+      },
+      {
+        "name": "Ezra",
+        "description": "Priest and scribe who returned with the Law, taught Scripture to restored community, renewed covenant commitment."
+      },
+      {
+        "name": "Nehemiah",
+        "description": "Cupbearer to Persian king who became governor, rebuilt Jerusalem's walls in 52 days despite opposition, reformed worship."
+      },
+      {
+        "name": "Esther",
+        "description": "Jewish girl who became Persian queen, risked her life to save Jews from Haman's genocide plot, 'For such a time as this.'"
+      },
+      {
+        "name": "Haggai",
+        "description": "Post-exilic prophet who urged completion of Second Temple, promised latter glory would exceed former glory."
+      },
+      {
+        "name": "Zechariah",
+        "description": "Contemporary of Haggai who prophesied the king riding on donkey, piercing of Messiah, fountain opened for sin."
+      },
+      {
+        "name": "Malachi",
+        "description": "Last Old Testament prophet who rebuked priests for corrupt worship, promised Elijah's return before the Day of the LORD."
+      }
     ],
     "majorEvents": [
       "Cyrus decrees Jews can return to Jerusalem (538 BC)",
@@ -558,7 +817,30 @@
       "Jerome, Commentary on Zechariah - Messianic prophecies"
     ],
     "theologicalSignificance": "The Return fulfills God's promise through Jeremiah that exile would last 70 years. It demonstrates God's sovereignty - He moves the heart of a pagan king (Cyrus) to accomplish His purposes. The rebuilt Temple, though less glorious than Solomon's, will be honored by the Messiah's presence. Haggai prophesies that this Temple's latter glory will exceed the former (2:9) - fulfilled when Jesus teaches there. Zechariah's prophecy of the king riding on a donkey (9:9) is fulfilled on Palm Sunday. Ezra's emphasis on Scripture and Nehemiah's on prayer and action establish post-exilic Judaism. Esther shows God's providence even when He seems hidden. Malachi, the last Old Testament prophet, promises that Elijah will return before the great Day of the Lord - fulfilled in John the Baptist. After Malachi, 400 years of prophetic silence follows, heightening expectation for the Messiah. The Return period reestablishes Israel in the land, purifies worship, and sets the stage for Christ's coming.",
-    "narrativeSummary": "From exile to restoration, God brings His people home and rebuilds their Temple and walls. Yet even renewed Israel longs for the promised Messiah who will bring complete and eternal restoration."
+    "narrativeSummary": "From exile to restoration, God brings His people home and rebuilds their Temple and walls. Yet even renewed Israel longs for the promised Messiah who will bring complete and eternal restoration.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Return",
+        "voice": "en-US-AndrewNeural",
+        "duration": 95,
+        "script": "Seventy years after Jerusalem's destruction, the unthinkable happens—God moves a pagan king's heart. Cyrus of Persia conquers Babylon in 539 BC. The next year, he issues an unprecedented decree: 'The LORD, the God of heaven, has charged me to build him a house at Jerusalem. Whoever is among you of all his people, may the LORD his God be with him. Let him go up!' Nearly 50,000 Jews return under Zerubbabel. They lay the Temple foundation. Old men who remember Solomon's Temple weep—this one is so much smaller. Enemies oppose. Work stops. For 16 years the foundation sits abandoned. Then God sends prophets Haggai and Zechariah. Haggai challenges: 'Is it time for you to dwell in your paneled houses while this house lies in ruins?' Zechariah promises: 'Not by might, nor by power, but by my Spirit, says the LORD.' Work resumes. The Temple is completed in 516 BC. Later, Ezra returns with the Law and teaches Scripture. Nehemiah rebuilds Jerusalem's walls in just 52 days. Esther saves Jews in Persia from genocide. Malachi, the final Old Testament prophet, closes the Hebrew Bible with a promise: 'Behold, I will send you Elijah the prophet before the great Day of the LORD comes.' Then 400 years of silence. Israel waits. Anticipation builds. The stage is set for the Messiah."
+      },
+      {
+        "id": "nehemiah",
+        "title": "Nehemiah Rebuilds the Walls",
+        "voice": "en-US-BrianNeural",
+        "duration": 90,
+        "script": "Nehemiah serves as cupbearer to King Artaxerxes of Persia—a position of trust and honor. His brother arrives from Judah with terrible news: 'The wall of Jerusalem is broken down, its gates destroyed by fire. The remnant there are in great trouble and shame.' Nehemiah weeps, fasts, and prays for days. When the king notices his sadness, Nehemiah explains his grief. The king asks, 'What do you request?' Nehemiah silently prays, then asks permission to rebuild Jerusalem. Remarkably, the king grants it, providing timber and military escort. Nehemiah arrives in Jerusalem and secretly surveys the ruins at night. He rallies the people: 'Come, let us build the wall of Jerusalem, that we may no longer suffer disgrace.' The people respond: 'Let us rise up and build!' Opposition arises immediately. Sanballat and Tobiah mock: 'What are these feeble Jews doing? Will they restore things?' As work progresses, enemies plot attack. Nehemiah arms half the workers while half build. 'We will build, and our God will fight for us.' Workers hold weapons in one hand, tools in the other. After just 52 days, the wall is complete. Even enemies recognize: 'This work was accomplished with the help of our God.' Nehemiah's combination of prayer and action, faith and works, becomes a model for all who serve God's purposes."
+      },
+      {
+        "id": "malachi",
+        "title": "Malachi: The Last Prophet",
+        "voice": "en-US-EmmaNeural",
+        "duration": 85,
+        "script": "Around 430 BC, approximately 100 years after the Return, God sends one final prophet—Malachi, whose name means 'My Messenger.' The Temple has been rebuilt. Sacrifices are offered. But spiritual apathy pervades. Priests offer blind, lame, sick animals—exactly what God forbids. Malachi confronts them: 'When you offer blind animals in sacrifice, is that not evil? Try presenting that to your governor! Would he accept you?' People rob God by withholding tithes. They practice divorce casually. They complain that serving God is useless. Yet Malachi also brings hope. He prophesies the coming Messenger: 'Behold, I send my messenger, and he will prepare the way before me. And the Lord whom you seek will suddenly come to his temple.' This points to John the Baptist preparing for Jesus. Malachi's final words are stunning: 'Behold, I will send you Elijah the prophet before the great and awesome day of the LORD comes. And he will turn the hearts of fathers to children and the hearts of children to their fathers.' Jesus confirms that John the Baptist is the Elijah who was to come. With Malachi, the Old Testament closes. Four centuries of silence follow. No prophet. No divine word. Israel waits in growing expectation. The long night precedes the dawn. And then, in the fullness of time, the silence breaks with an angel's announcement to a virgin in Nazareth."
+      }
+    ]
   },
   {
     "id": 10,
@@ -566,11 +848,26 @@
     "timeframe": "400 BC - 4 BC",
     "color": "#800080",
     "keyFigures": [
-      "Alexander the Great",
-      "Antiochus IV Epiphanes",
-      "Mattathias",
-      "Judas Maccabeus",
-      "John Hyrcanus"
+      {
+        "name": "Alexander the Great",
+        "description": "Macedonian conqueror who spread Greek culture across ancient world, died young, empire divided among generals."
+      },
+      {
+        "name": "Antiochus IV Epiphanes",
+        "description": "Seleucid king who desecrated Temple with pig sacrifice, outlawed Judaism, called himself 'God Manifest,' sparked Maccabean Revolt."
+      },
+      {
+        "name": "Mattathias",
+        "description": "Elderly priest who refused to offer pagan sacrifice, killed Greek official, fled to mountains with five sons to resist."
+      },
+      {
+        "name": "Judas Maccabeus",
+        "description": "Mattathias' son, brilliant military leader, 'The Hammer,' defeated Seleucids, cleansed and rededicated Temple (Hanukkah)."
+      },
+      {
+        "name": "John Hyrcanus",
+        "description": "Hasmonean ruler who expanded territory, forced conversions, combined roles of king and high priest, causing corruption."
+      }
     ],
     "majorEvents": [
       "Alexander conquers Persian Empire, spreads Greek culture",
@@ -607,7 +904,23 @@
       "Josephus, Antiquities of the Jews XIII - Maccabean period"
     ],
     "theologicalSignificance": "The Maccabean period bridges Old and New Testaments. It's the 'intertestamental' era when no new Scripture is written, yet crucial developments unfold. The revolt against Antiochus' persecution shows faithful Jews willing to die for God's Law - a precursor to Christian martyrdom. The cleansing of the Temple and Feast of Dedication (Hanukkah) celebrates God's faithfulness. Second Maccabees provides biblical basis for the resurrection of the dead (7:9) and prayer for the dead (12:43-46), supporting Catholic doctrines of bodily resurrection and Purgatory. The period sees the rise of religious parties: Pharisees, Sadducees, Essenes, Zealots - all prominent in Jesus' time. Roman occupation creates the political situation into which Jesus is born. Messianic expectation intensifies as Jews long for a deliverer like Judas Maccabeus, but greater. The stage is set for God's ultimate intervention.",
-    "narrativeSummary": "Through persecution, revolt, and political turmoil, faithful Jews preserve their identity and intensify their hope. The world awaits the promised Messiah who will bring not just political freedom, but eternal salvation."
+    "narrativeSummary": "Through persecution, revolt, and political turmoil, faithful Jews preserve their identity and intensify their hope. The world awaits the promised Messiah who will bring not just political freedom, but eternal salvation.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Maccabean Revolt",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 100,
+        "script": "Four hundred years of prophetic silence. During this 'intertestamental period,' Alexander the Great conquers the known world, spreading Greek culture everywhere. After his death in 323 BC, his empire splits among his generals. Judea comes under Syrian Seleucid control. In 167 BC, Antiochus IV Epiphanes—'God Manifest'—launches the most severe persecution Jews have faced. He outlaws Judaism. No Sabbath. No circumcision. No Torah scrolls. He erects a statue of Zeus in the Temple and sacrifices a pig on the altar—the 'abomination of desolation' prophesied by Daniel. Jews who resist are tortured and killed. A mother watches all seven sons martyred for refusing to eat pork. But in the village of Modein, an elderly priest named Mattathias refuses to sacrifice to pagan gods. When a Jew steps forward to offer the sacrifice, Mattathias kills him and the Greek official. He and his five sons flee to the mountains. 'Let everyone who is zealous for the Law follow me!' Thousands join the revolt. After Mattathias dies, his son Judah takes command. They call him 'Maccabeus'—The Hammer. Against impossible odds, his guerrilla forces defeat the Seleucid army. In 164 BC, they liberate Jerusalem, cleanse the Temple, and relight the menorah. This becomes Hanukkah, the Feast of Dedication. Jesus Himself celebrates it in John 10."
+      },
+      {
+        "id": "martyrs",
+        "title": "The Mother and Her Seven Sons",
+        "voice": "en-US-EmmaNeural",
+        "duration": 95,
+        "script": "Second Maccabees records one of history's most powerful testimonies to faith. A Jewish mother and her seven sons are arrested for refusing to eat pork—violating God's law. King Antiochus orders them tortured. The first son is brought forward. Soldiers cut out his tongue, scalp him, and cut off his extremities while he's still alive. Before dying, he declares: 'You dismiss us from this present life, but the King of the universe will raise us up to an everlasting renewal of life.' The second son, before dying, says: 'You accursed wretch, you dismiss us from this present life, but the King of the world will raise us up!' One by one, all seven brothers suffer gruesome torture and death. Each affirms belief in bodily resurrection. The seventh son declares: 'I will not obey the king's command, but I obey the command of the law that was given to our fathers through Moses.' Finally the mother, who has watched all seven sons die, is offered her life if she'll persuade her last son to comply. Instead, she urges him to remain faithful. He refuses to apostatize and is killed. Then the mother is executed. The Catechism cites this passage as evidence that Old Testament believers expected bodily resurrection. Their martyrdom prefigures Christian martyrdom. They chose death over sin. They trusted God's power to raise the dead. Their witness inspires all who face persecution."
+      }
+    ]
   },
   {
     "id": 11,
@@ -615,11 +928,26 @@
     "timeframe": "4 BC - 33 AD",
     "color": "#FF6347",
     "keyFigures": [
-      "Jesus Christ",
-      "Mary",
-      "John the Baptist",
-      "The Twelve Apostles",
-      "Mary Magdalene"
+      {
+        "name": "Jesus Christ",
+        "description": "The eternal Son of God incarnate, born of Virgin Mary, perfect God and perfect man, died for our sins, rose from dead, ascended to Father's right hand."
+      },
+      {
+        "name": "Mary",
+        "description": "Virgin Mother of God, said 'Yes' to Gabriel's announcement, stood at foot of Cross, Mother of the Church."
+      },
+      {
+        "name": "John the Baptist",
+        "description": "Son of Zechariah and Elizabeth, Elijah who was to come, prepared the way, baptized Jesus, beheaded by Herod."
+      },
+      {
+        "name": "The Twelve Apostles",
+        "description": "Chosen by Jesus to be with Him, sent to preach Gospel, witnesses of Resurrection, foundation of the Church."
+      },
+      {
+        "name": "Mary Magdalene",
+        "description": "Delivered from seven demons, followed Jesus, stood at Cross, first witness of Resurrection, 'Apostle to the Apostles.'"
+      }
     ],
     "majorEvents": [
       "Angel Gabriel announces Jesus' birth to Mary",
@@ -671,7 +999,30 @@
       "Pope Benedict XVI, Jesus of Nazareth trilogy"
     ],
     "theologicalSignificance": "Messianic Fulfillment is the center of all human history. The eternal Son of God assumes human nature, born of the Virgin Mary. Jesus fulfills every Old Testament prophecy, type, and promise. He is the New Adam who obeys where the first Adam failed. He is the New Moses who gives the New Law. He is the New Israel who succeeds where Israel failed. He is the Davidic King whose kingdom has no end. He is the Suffering Servant who bears our sins. He is the Paschal Lamb whose blood saves us. The Catechism declares, 'The Word became flesh to make us partakers of the divine nature' (CCC 460). Through His Cross and Resurrection, Jesus conquers sin and death, opening heaven to all who believe. His institution of the Eucharist gives us His Body and Blood as spiritual food. His Resurrection is the foundation of Christian faith (1 Cor 15:14). His Ascension inaugurates His eternal reign. This period is the culmination of salvation history - God's rescue plan executed perfectly in His Son.",
-    "narrativeSummary": "The long-awaited Messiah arrives! In Jesus Christ, God becomes man, teaches with authority, works miracles, dies for our sins, rises from the dead, and ascends to heaven. Every promise is fulfilled, every prophecy accomplished. From Adam to the King of Kings - salvation history reaches its climax."
+    "narrativeSummary": "The long-awaited Messiah arrives! In Jesus Christ, God becomes man, teaches with authority, works miracles, dies for our sins, rises from the dead, and ascends to heaven. Every promise is fulfilled, every prophecy accomplished. From Adam to the King of Kings - salvation history reaches its climax.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to Messianic Fulfillment",
+        "voice": "en-US-AndrewNeural",
+        "duration": 110,
+        "script": "In the fullness of time, God sends His Son. The angel Gabriel appears to a virgin in Nazareth: 'Hail, full of grace! You will conceive and bear a son. He will be great and called Son of the Most High. The Lord God will give him the throne of his father David, and his kingdom will have no end.' Mary responds, 'Behold, I am the handmaid of the Lord. Let it be done according to your word.' The Word becomes flesh. Born in Bethlehem, exactly as Micah prophesied. Shepherds and Magi worship Him. Simeon recognizes the infant as 'a light for revelation to the Gentiles and glory to your people Israel.' At age 30, Jesus begins His public ministry. John the Baptist baptizes Him. The Spirit descends like a dove. The Father's voice declares, 'This is my beloved Son.' For three years, Jesus teaches with unprecedented authority, heals the sick, casts out demons, raises the dead, calms storms, feeds thousands with a few loaves. He is everything Israel hoped for—and more than they imagined. He claims to be one with the Father. 'Before Abraham was, I AM.' The religious leaders plot His death. At the Last Supper, He institutes the Eucharist. Betrayed, arrested, tried, and condemned, He dies on a Roman cross. But the tomb cannot hold Him. On the third day, He rises. Death is defeated. Salvation is accomplished. From Adam to the King of Kings—the story reaches its climax."
+      },
+      {
+        "id": "incarnation",
+        "title": "The Word Became Flesh",
+        "voice": "en-US-BrianNeural",
+        "duration": 100,
+        "script": "John's Gospel opens with the most profound words ever written: 'In the beginning was the Word, and the Word was with God, and the Word was God. All things were made through him, and without him was not anything made that was made. In him was life, and the life was the light of men.' Then comes the stunning announcement: 'And the Word became flesh and dwelt among us, and we have seen his glory, glory as of the only Son from the Father, full of grace and truth.' The eternal Son of God, through whom all things were created, takes on human nature in the womb of the Virgin Mary. This is the Incarnation—the central mystery of Christian faith. Why? The Catechism gives multiple reasons. To save us by reconciling us with God. To reveal God's love. To be our model of holiness. To make us partakers of the divine nature. Fully God and fully man—two natures in one divine Person. He hungers, thirsts, weeps, sleeps. Yet He forgives sins, calms storms, raises the dead. The Fathers say, 'What is not assumed is not healed.' Jesus assumes complete human nature—body and soul—to heal our complete nature. St. Athanasius declares, 'God became man so that man might become god.' Not gods by nature, but partakers of the divine nature through grace. This is the good news: Emmanuel, God with us."
+      },
+      {
+        "id": "resurrection",
+        "title": "The Resurrection",
+        "voice": "en-US-EmmaNeural",
+        "duration": 105,
+        "script": "Early Sunday morning, women approach Jesus' tomb carrying spices. The stone is rolled away. An angel announces, 'He is not here. He has risen!' They run to tell the disciples. Peter and John race to the tomb. They find the burial cloths but no body. That evening, Jesus appears to the disciples in the upper room. 'Peace be with you.' He shows them His hands and side. Thomas is absent. When told, he refuses to believe: 'Unless I see the nail marks and put my finger where the nails were, I will not believe.' A week later, Jesus appears again. 'Thomas, put your finger here. See my hands. Put your hand into my side. Stop doubting and believe.' Thomas responds with the greatest confession: 'My Lord and my God!' Jesus replies, 'Because you have seen me, you have believed. Blessed are those who have not seen and yet have believed.' For 40 days, Jesus appears to the disciples—by the sea, on a mountain, to 500 at once. He eats with them, proving He truly rose bodily. Paul declares, 'If Christ has not been raised, our faith is futile. But in fact Christ has been raised from the dead, the firstfruits of those who have fallen asleep.' The Resurrection proves Jesus is who He claimed to be. It guarantees our resurrection. It is the foundation of Christian hope. Christ is risen! He is risen indeed!"
+      }
+    ]
   },
   {
     "id": 12,
@@ -679,13 +1030,34 @@
     "timeframe": "33 AD - Present",
     "color": "#4169E1",
     "keyFigures": [
-      "The Twelve Apostles",
-      "Paul",
-      "Stephen",
-      "Peter",
-      "James",
-      "The Church Fathers",
-      "Saints throughout history"
+      {
+        "name": "The Twelve Apostles",
+        "description": "Chosen by Jesus, empowered at Pentecost, preached Gospel, established churches, most died as martyrs, foundation of the Church."
+      },
+      {
+        "name": "Paul",
+        "description": "Pharisee who persecuted Church, converted on Damascus road, apostle to Gentiles, wrote half of New Testament, beheaded in Rome."
+      },
+      {
+        "name": "Stephen",
+        "description": "First Christian martyr, full of grace and power, stoned for testifying about Jesus, saw Jesus standing at God's right hand."
+      },
+      {
+        "name": "Peter",
+        "description": "Fisherman called by Jesus, denied Him but restored, preached at Pentecost, led early Church, crucified upside down in Rome."
+      },
+      {
+        "name": "James",
+        "description": "Son of Zebedee, first apostle martyred (AD 44), brother of John, part of Jesus' inner circle at Transfiguration."
+      },
+      {
+        "name": "The Church Fathers",
+        "description": "Early Christian writers who defended faith, defined doctrine, combated heresies—Ignatius, Irenaeus, Athanasius, Augustine, and many others."
+      },
+      {
+        "name": "Saints throughout history",
+        "description": "Faithful witnesses in every generation who lived heroically virtuous lives, intercede for us, model discipleship, glory of the Church."
+      }
     ],
     "majorEvents": [
       "Pentecost - Holy Spirit descends, Church born",
@@ -748,6 +1120,29 @@
       "Pope Francis, Evangelii Gaudium - The joy of the Gospel"
     ],
     "theologicalSignificance": "The Church is not an afterthought but the goal toward which all salvation history aimed. Born at Pentecost when the Holy Spirit descended, the Church is Christ's Mystical Body continuing His mission on earth. The Catechism teaches, 'The Church is the goal of all things' (CCC 760). Empowered by the Spirit, the apostles preach boldly, perform miracles, and establish communities. Paul's conversion shows that Christ builds His Church even through former persecutors. The inclusion of Gentiles fulfills God's promise to Abraham that all nations would be blessed. The Church endures persecutions yet grows - 'the blood of martyrs is the seed of the Church' (Tertullian). Through Sacraments instituted by Christ, the Church dispenses grace. Through apostolic succession, she preserves authentic teaching. Through missionary zeal, she proclaims the Gospel to every nation. The Church continues Christ's threefold office: teaching (prophet), sanctifying (priest), and governing (king). We live in 'the Church age,' awaiting Christ's Second Coming when He will judge the living and dead and establish His kingdom fully. Until then, the Church is pilgrim people, journeying toward the New Jerusalem.",
-    "narrativeSummary": "From Pentecost to present day, the Church continues Christ's mission empowered by the Holy Spirit. She preaches the Gospel, celebrates the Sacraments, serves the poor, and awaits her Bridegroom's return. The story begun in Genesis reaches its fulfillment when Christ returns - From Adam to the King of Kings!"
+    "narrativeSummary": "From Pentecost to present day, the Church continues Christ's mission empowered by the Holy Spirit. She preaches the Gospel, celebrates the Sacraments, serves the poor, and awaits her Bridegroom's return. The story begun in Genesis reaches its fulfillment when Christ returns - From Adam to the King of Kings!",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Church",
+        "voice": "en-US-ChristopherNeural",
+        "duration": 110,
+        "script": "Ten days after Jesus ascends, 120 disciples gather in the upper room. Suddenly a sound like rushing wind fills the house. Tongues of fire rest on each person. They're filled with the Holy Spirit and begin speaking in other languages. Jews from every nation, gathered for Pentecost, hear the Gospel in their own tongues. Peter stands and preaches: 'This Jesus, whom you crucified, God raised from the dead. Repent and be baptized for the forgiveness of sins, and you will receive the Holy Spirit.' Three thousand are baptized that day. The Church is born. The early community devotes themselves to the apostles' teaching, fellowship, breaking of bread, and prayers. They share all things. Signs and wonders abound. Persecution scatters believers, but wherever they go, they preach Christ. Philip in Samaria. Paul to the Gentiles. Thomas to India. The Gospel spreads throughout the Roman Empire. Emperors try to crush the Church through persecution. Yet as Tertullian says, 'The blood of martyrs is the seed of the Church.' For 2,000 years, through heresies and schisms, corruption and renewal, the Church endures. She's the Mystical Body of Christ on earth. She dispenses grace through Sacraments. She proclaims truth through teaching. She serves the poor and suffering. She's one, holy, catholic, and apostolic. This is the Church age, awaiting Christ's glorious return."
+      },
+      {
+        "id": "pentecost",
+        "title": "The Day of Pentecost",
+        "voice": "en-US-GuyNeural",
+        "duration": 105,
+        "script": "Before ascending, Jesus commands the apostles: 'Do not leave Jerusalem, but wait for the gift my Father promised. John baptized with water, but you will be baptized with the Holy Spirit.' They wait. They pray. Mary, the mother of Jesus, is with them. Then on Pentecost—the fiftieth day after Passover—God acts decisively. Suddenly a sound like violent wind fills the house. Tongues of fire appear and rest on each person. They're filled with the Holy Spirit and speak in other languages as the Spirit enables. Jews from Parthia, Media, Elam, Mesopotamia, Judea, Cappadocia, Pontus, Asia, Phrygia, Egypt, Libya, Rome, Crete, and Arabia hear the apostles declaring God's wonders in their native languages. Some mock: 'They've had too much wine!' Peter stands with the Eleven and addresses the crowd. He quotes Joel's prophecy: 'In the last days, God says, I will pour out my Spirit on all people.' He proclaims Jesus—crucified by their hands, raised by God, exalted at God's right hand, who poured out this Spirit. The crowd is cut to the heart: 'What shall we do?' Peter answers: 'Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of sins, and you will receive the Holy Spirit.' That day, 3,000 are added. The Church's mission begins. From Jerusalem to the ends of the earth. The promised Spirit empowers the Church for 2,000 years."
+      },
+      {
+        "id": "mission",
+        "title": "The Church's Mission Continues",
+        "voice": "en-US-EmmaNeural",
+        "duration": 100,
+        "script": "Jesus commissions His Church: 'All authority in heaven and earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe everything I commanded you. And behold, I am with you always, to the end of the age.' For 2,000 years, the Church has obeyed this commission. Through persecutions under Roman emperors. Through heresies combated by councils. Through the witness of countless martyrs. Through missionaries who carried the Gospel to every continent. Patrick to Ireland. Boniface to Germany. Cyril and Methodius to the Slavs. Francis Xavier to Asia. Countless others unnamed. The Church is one—united in faith under the successor of Peter. The Church is holy—made holy by Christ, sanctifying members through Sacraments and grace. The Church is catholic—universal, for all people, all times, all places. The Church is apostolic—founded on the apostles, preserving their teaching, continuing their mission. Today, over two billion Christians confess Jesus as Lord. The Church continues Christ's work: preaching the Gospel, celebrating the Eucharist, baptizing, forgiving sins, caring for the poor, defending life, pursuing justice. We await Christ's return. Until then, we're pilgrim people journeying toward the New Jerusalem. From Adam to the King of Kings—the story continues in us, the Church, Christ's Body on earth."
+      }
+    ]
   }
 ]
