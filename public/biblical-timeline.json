@@ -1,0 +1,686 @@
+[
+  {
+    "id": 1,
+    "name": "Early World",
+    "timeframe": "Creation - 2000 BC",
+    "color": "#8B4789",
+    "keyFigures": [
+      "Adam & Eve",
+      "Noah",
+      "Tower of Babel builders"
+    ],
+    "majorEvents": [
+      "Creation of the world in six days",
+      "Fall of Man - Original Sin",
+      "Cain kills Abel - first murder",
+      "The Great Flood - Noah's Ark",
+      "God's covenant with Noah (rainbow)",
+      "Tower of Babel - confusion of languages",
+      "Call of Abraham"
+    ],
+    "biblicalBooks": [
+      "Genesis 1-11"
+    ],
+    "keyScriptures": [
+      "Genesis 1:1 - In the beginning God created the heavens and the earth",
+      "Genesis 1:27 - God created man in His own image",
+      "Genesis 3:15 - Protoevangelium: I will put enmity between you and the woman",
+      "Genesis 6:5-8 - The wickedness of man and Noah found favor",
+      "Genesis 9:8-17 - God's covenant with Noah and all creation",
+      "Genesis 11:1-9 - Tower of Babel",
+      "Genesis 12:1-3 - The Lord said to Abram, Go from your country"
+    ],
+    "cccReferences": [
+      "CCC 279-324 - Creation",
+      "CCC 385-421 - The Fall and Original Sin",
+      "CCC 56-58 - The Covenant with Noah",
+      "CCC 401 - All subsequent sin will be disobedience"
+    ],
+    "sources": [
+      "CCC 279",
+      "CCC 385",
+      "CCC 56",
+      "Genesis 1-11 (RSV-CE)",
+      "Augustine, City of God XV - The earthly city",
+      "Aquinas, ST I, q. 91-102 - Creation of man"
+    ],
+    "theologicalSignificance": "The Early World establishes foundational truths of salvation history. God creates all things good, with humanity as the crown of creation made in His image and likeness. The Fall introduces sin, suffering, and death into the world, but Genesis 3:15 immediately promises redemption through the woman's seed who will crush the serpent's head. The Flood demonstrates God's justice against sin yet His mercy in preserving Noah. The covenant with Noah is universal, extending to all creation. The Tower of Babel shows human pride and God's response of scattering nations. This period reveals humanity's desperate need for a Savior and sets the stage for God's plan of redemption through Abraham's lineage.",
+    "narrativeSummary": "From perfection in Eden to the chaos of sin and rebellion, the Early World reveals the human condition: created for communion with God, fallen through disobedience, yet promised redemption. Every subsequent chapter of salvation history flows from these foundational eleven chapters of Genesis."
+  },
+  {
+    "id": 2,
+    "name": "Patriarchs",
+    "timeframe": "2000 - 1700 BC",
+    "color": "#D4AF37",
+    "keyFigures": [
+      "Abraham",
+      "Isaac",
+      "Jacob (Israel)",
+      "Joseph"
+    ],
+    "majorEvents": [
+      "God calls Abraham out of Ur",
+      "Covenant with Abraham - promise of land, descendants, blessing",
+      "Abraham's faith tested - binding of Isaac on Mount Moriah",
+      "Isaac born to Sarah in old age",
+      "Jacob wrestles with God, named Israel",
+      "Joseph sold into slavery by his brothers",
+      "Joseph rises to power in Egypt",
+      "Jacob's family moves to Egypt during famine",
+      "Joseph forgives his brothers"
+    ],
+    "biblicalBooks": [
+      "Genesis 12-50"
+    ],
+    "keyScriptures": [
+      "Genesis 12:1-3 - I will make of you a great nation, and I will bless you",
+      "Genesis 15:6 - Abraham believed the LORD, and he reckoned it to him as righteousness",
+      "Genesis 17:1-8 - I will establish my covenant between me and you",
+      "Genesis 22:1-18 - Take your son, your only son Isaac, whom you love",
+      "Genesis 28:10-17 - Jacob's ladder - gate of heaven",
+      "Genesis 32:22-32 - Jacob wrestles with God at Peniel",
+      "Genesis 50:20 - You meant evil, but God meant it for good"
+    ],
+    "cccReferences": [
+      "CCC 59-61 - The Covenant with Abraham",
+      "CCC 145-146 - Abraham's obedience of faith",
+      "CCC 162 - Faith is certain, more certain than all human knowledge",
+      "CCC 489 - Mary's faith contrasted with Eve's disobedience"
+    ],
+    "sources": [
+      "CCC 59",
+      "CCC 145",
+      "CCC 146",
+      "Genesis 12-50 (RSV-CE)",
+      "Hebrews 11:8-22 (RSV-CE)",
+      "Augustine, City of God XVI - The patriarchs",
+      "Aquinas, ST II-II, q. 2 - The act of faith"
+    ],
+    "theologicalSignificance": "The Patriarchs period reveals God's faithfulness to His covenant promises across generations. Abraham's faith becomes the model for all believers - he trusts God's promise of a son despite impossibility, and obeys even when commanded to sacrifice Isaac. The Catechism teaches that Abraham is 'the father of all who believe' (CCC 146). The binding of Isaac on Mount Moriah prefigures the Father's sacrifice of His only Son. Jacob's wrestling with God and transformation into 'Israel' shows that relationship with God involves struggle and surrender. Joseph's story demonstrates divine providence - God brings good from evil, using Joseph's suffering to save his family and preserve the covenant line. This period establishes that salvation comes through faith, that God keeps His promises even across centuries, and that one family (Israel) will be the means of blessing for all nations.",
+    "narrativeSummary": "Through four generations of patriarchs, God establishes His covenant and demonstrates His faithfulness. From Abraham's call to Joseph's providential rise in Egypt, we see faith tested, promises kept, and God's plan advancing even through human sin and suffering."
+  },
+  {
+    "id": 3,
+    "name": "Egypt & Exodus",
+    "timeframe": "1700 - 1280 BC",
+    "color": "#2C5F87",
+    "keyFigures": [
+      "Moses",
+      "Aaron",
+      "Miriam",
+      "Pharaoh"
+    ],
+    "majorEvents": [
+      "Israelites enslaved in Egypt for 400 years",
+      "Moses born and saved from Nile",
+      "Moses encounters God in burning bush",
+      "Ten plagues on Egypt",
+      "Passover instituted - firstborn spared",
+      "Exodus from Egypt through Red Sea",
+      "Covenant at Mount Sinai",
+      "Ten Commandments given",
+      "Golden calf rebellion",
+      "Tabernacle constructed"
+    ],
+    "biblicalBooks": [
+      "Exodus",
+      "Leviticus"
+    ],
+    "keyScriptures": [
+      "Exodus 3:14 - God reveals His name: I AM WHO I AM",
+      "Exodus 12:12-13 - The blood shall be a sign for you",
+      "Exodus 14:13-14 - Fear not, stand firm, the LORD will fight for you",
+      "Exodus 19:5-6 - You shall be my own possession, a kingdom of priests",
+      "Exodus 20:1-17 - The Ten Commandments",
+      "Exodus 24:7-8 - Behold the blood of the covenant",
+      "Leviticus 19:2 - You shall be holy, for I the LORD your God am holy"
+    ],
+    "cccReferences": [
+      "CCC 62-64 - God forms His people Israel",
+      "CCC 2057-2063 - The Ten Commandments",
+      "CCC 1334 - Old Covenant prefigures New Covenant",
+      "CCC 608 - Lamb of God takes away sin"
+    ],
+    "sources": [
+      "CCC 62",
+      "CCC 2057",
+      "CCC 1334",
+      "Exodus (RSV-CE)",
+      "Leviticus (RSV-CE)",
+      "Augustine, Against Faustus XII - The Passover",
+      "Aquinas, ST I-II, q. 102 - The Old Law"
+    ],
+    "theologicalSignificance": "The Exodus is the defining salvation event of the Old Testament. God hears Israel's cry, remembers His covenant, and delivers them with a mighty hand. The Passover lamb whose blood saves the firstborn prefigures Christ, the Lamb of God who takes away the sin of the world. The crossing of the Red Sea prefigures baptism. The covenant at Sinai establishes Israel as God's chosen people, a kingdom of priests and holy nation. The Ten Commandments reveal God's moral law. The Catechism teaches that the Old Covenant prepares for the New: 'The Passover of the Jews...will be fulfilled in the Church of Christ' (CCC 1340). Moses as mediator prefigures Christ, the perfect mediator. The manna in the desert prefigures the Eucharist. This period establishes that salvation requires sacrifice, covenant involves law, and God's people must be set apart as holy.",
+    "narrativeSummary": "From slavery to freedom, from oppression to covenant, the Exodus reveals God as Savior and Lawgiver. Every salvation event that follows echoes this foundational deliverance."
+  },
+  {
+    "id": 4,
+    "name": "Desert Wanderings",
+    "timeframe": "1280 - 1240 BC",
+    "color": "#C49D2F",
+    "keyFigures": [
+      "Moses",
+      "Aaron",
+      "Miriam",
+      "Joshua",
+      "Caleb"
+    ],
+    "majorEvents": [
+      "Israel wanders 40 years due to unbelief",
+      "Twelve spies sent to Canaan - ten bring bad report",
+      "Rebellion of Korah, Dathan, and Abiram",
+      "Bronze serpent raised for healing",
+      "Water from the rock at Meribah",
+      "Balaam hired to curse Israel, blesses instead",
+      "Aaron dies on Mount Hor",
+      "Moses views Promised Land from Mount Nebo",
+      "Moses dies, Joshua becomes leader"
+    ],
+    "biblicalBooks": [
+      "Numbers",
+      "Deuteronomy"
+    ],
+    "keyScriptures": [
+      "Numbers 14:28-34 - Forty years, one year for each day",
+      "Numbers 21:8-9 - Make a fiery serpent and set it on a pole",
+      "Deuteronomy 6:4-5 - Hear, O Israel: The LORD our God is one LORD",
+      "Deuteronomy 8:3 - Man does not live by bread alone",
+      "Deuteronomy 30:19-20 - I have set before you life and death, choose life",
+      "Deuteronomy 34:5 - So Moses died there, and no man knows his burial place"
+    ],
+    "cccReferences": [
+      "CCC 1334 - Manna prefigures the Eucharist",
+      "CCC 2577 - Moses' prayer and intercession",
+      "CCC 2836 - Our daily bread"
+    ],
+    "sources": [
+      "CCC 1334",
+      "CCC 2577",
+      "Numbers (RSV-CE)",
+      "Deuteronomy (RSV-CE)",
+      "John 3:14 (RSV-CE)",
+      "Augustine, Tractates on John 12 - The bronze serpent",
+      "Gregory of Nyssa, Life of Moses - Moses as type"
+    ],
+    "theologicalSignificance": "The Desert Wanderings reveal the consequences of unbelief and the necessity of faith. An 11-day journey becomes 40 years because Israel refuses to trust God's promise. Yet even in judgment, God provides: manna daily, water from rocks, clothes that don't wear out. The bronze serpent that heals those who look upon it prefigures Christ lifted up on the cross (John 3:14). Deuteronomy restates the Law for the new generation and emphasizes covenant love - the Shema ('Hear, O Israel') becomes the central prayer of Judaism. Moses' farewell addresses call Israel to choose life by loving God and keeping His commands. This period teaches that the journey to the Promised Land requires faith, obedience, and perseverance through testing.",
+    "narrativeSummary": "Forty years of wilderness wandering demonstrate that unbelief has consequences, yet God remains faithful. His daily provision of manna teaches dependence on Him, prefiguring the Bread of Life to come."
+  },
+  {
+    "id": 5,
+    "name": "Conquest & Judges",
+    "timeframe": "1240 - 1050 BC",
+    "color": "#8B4513",
+    "keyFigures": [
+      "Joshua",
+      "Deborah",
+      "Gideon",
+      "Samson",
+      "Ruth",
+      "Samuel"
+    ],
+    "majorEvents": [
+      "Joshua leads Israel across Jordan River",
+      "Walls of Jericho fall",
+      "Covenant renewal at Shechem",
+      "Cycle repeats: sin, oppression, repentance, deliverance",
+      "Deborah leads Israel to victory",
+      "Gideon defeats Midianites with 300 men",
+      "Samson's strength and downfall",
+      "Ruth's faithfulness - ancestor of David",
+      "Samuel anoints first kings"
+    ],
+    "biblicalBooks": [
+      "Joshua",
+      "Judges",
+      "Ruth"
+    ],
+    "keyScriptures": [
+      "Joshua 1:9 - Be strong and of good courage, the LORD your God is with you",
+      "Joshua 24:15 - Choose this day whom you will serve",
+      "Judges 2:16-19 - The LORD raised up judges who saved them",
+      "Judges 21:25 - Every man did what was right in his own eyes",
+      "Ruth 1:16 - Your people shall be my people, and your God my God"
+    ],
+    "cccReferences": [
+      "CCC 708 - God's pedagogy preparing for Christ",
+      "CCC 64 - Through prophets God forms His people"
+    ],
+    "sources": [
+      "CCC 708",
+      "CCC 64",
+      "Joshua (RSV-CE)",
+      "Judges (RSV-CE)",
+      "Ruth (RSV-CE)",
+      "Augustine, City of God XVII.8 - Joshua as type of Christ",
+      "Origen, Homilies on Joshua - Spiritual conquest"
+    ],
+    "theologicalSignificance": "The Conquest and Judges period reveals Israel's repeated cycle of faithfulness, apostasy, oppression, repentance, and deliverance. Judges 2:16 summarizes: 'The LORD raised up judges, who saved them.' Yet each deliverance is temporary because Israel keeps returning to idolatry. The refrain 'every man did what was right in his own eyes' shows the chaos of relativism. Joshua (Hebrew 'Yeshua') leads Israel into the Promised Land, prefiguring Jesus who leads us into heavenly rest. Ruth the Moabite becomes David's ancestor, showing God includes Gentiles in His plan. The judges are charismatic leaders raised up by God, but none brings lasting peace - Israel needs a king. This period demonstrates that human deliverers are insufficient; only a perfect King can bring eternal salvation.",
+    "narrativeSummary": "From the conquest of Canaan to the chaos of the judges, Israel struggles to remain faithful. Repeated cycles of sin and salvation reveal humanity's need for a perfect and eternal King."
+  },
+  {
+    "id": 6,
+    "name": "Royal Kingdom",
+    "timeframe": "1050 - 930 BC",
+    "color": "#FFD700",
+    "keyFigures": [
+      "Saul",
+      "David",
+      "Solomon",
+      "Nathan"
+    ],
+    "majorEvents": [
+      "Israel demands a king like other nations",
+      "Saul anointed first king, later rejected",
+      "David kills Goliath",
+      "David anointed king, establishes Jerusalem as capital",
+      "God's covenant with David - eternal dynasty",
+      "David's sin with Bathsheba, repentance",
+      "Solomon builds the Temple",
+      "Solomon's wisdom and wealth",
+      "Queen of Sheba visits",
+      "Solomon's idolatry in old age"
+    ],
+    "biblicalBooks": [
+      "1 Samuel",
+      "2 Samuel",
+      "1 Kings 1-11",
+      "1 Chronicles",
+      "2 Chronicles 1-9",
+      "Psalms",
+      "Proverbs",
+      "Ecclesiastes",
+      "Song of Songs"
+    ],
+    "keyScriptures": [
+      "1 Samuel 16:7 - Man looks on outward appearance, but the LORD looks on the heart",
+      "2 Samuel 7:12-16 - I will establish the throne of his kingdom forever",
+      "2 Samuel 12:13 - I have sinned against the LORD",
+      "Psalm 51:1-2 - Have mercy on me, O God, wash me thoroughly",
+      "1 Kings 3:9 - Give thy servant an understanding mind to govern",
+      "1 Kings 8:27 - Will God indeed dwell on the earth?"
+    ],
+    "cccReferences": [
+      "CCC 436 - The Messiah king in the City of David",
+      "CCC 709 - David receives promise of eternal kingdom",
+      "CCC 441 - Son of David is Jesus' messianic title"
+    ],
+    "sources": [
+      "CCC 436",
+      "CCC 709",
+      "CCC 441",
+      "2 Samuel 7 (RSV-CE)",
+      "Psalm 89 (RSV-CE)",
+      "Augustine, City of God XVII.8 - David and Christ",
+      "Aquinas, ST III, q. 31 - Christ's royal lineage"
+    ],
+    "theologicalSignificance": "The Royal Kingdom reaches its zenith under David and Solomon. God's covenant with David (2 Sam 7) promises an eternal dynasty - fulfilled ultimately in Christ, the Son of David who reigns forever. David is a man after God's own heart, yet he sins grievously with Bathsheba. His repentance (Psalm 51) becomes a model for all sinners. The Psalms attributed to David express every human emotion before God. Solomon's wisdom and Temple represent Israel's glory, yet his idolatry shows that even the wisest king falls without God's grace. The Temple becomes the dwelling place of God's presence, prefiguring the Incarnation and the Church. The Catechism teaches that Jesus as 'Son of David' is a messianic title (CCC 441). This period reveals that earthly kingship, even at its best, points to the need for a perfect eternal King - Jesus Christ.",
+    "narrativeSummary": "From shepherd boy to mighty king, David's reign establishes Jerusalem and receives God's promise of an eternal throne. Yet even David and Solomon's glory fades, pointing to the need for a greater King to come."
+  },
+  {
+    "id": 7,
+    "name": "Divided Kingdom",
+    "timeframe": "930 - 586 BC",
+    "color": "#DC143C",
+    "keyFigures": [
+      "Rehoboam",
+      "Jeroboam",
+      "Elijah",
+      "Elisha",
+      "Isaiah",
+      "Jeremiah",
+      "Hosea",
+      "Amos",
+      "Micah"
+    ],
+    "majorEvents": [
+      "Solomon's son Rehoboam rejects counsel, kingdom divides",
+      "Northern Kingdom (Israel) worships golden calves",
+      "Elijah confronts prophets of Baal on Mount Carmel",
+      "Elisha performs miracles, raises dead",
+      "Assyria conquers Northern Kingdom (722 BC)",
+      "Isaiah prophesies virgin birth, Suffering Servant",
+      "Hezekiah's reforms, miraculous deliverance from Assyria",
+      "Josiah discovers Book of Law, reforms worship",
+      "Jeremiah warns of coming judgment",
+      "Babylon destroys Jerusalem and Temple (586 BC)"
+    ],
+    "biblicalBooks": [
+      "1 Kings 12-22",
+      "2 Kings",
+      "2 Chronicles 10-36",
+      "Isaiah",
+      "Jeremiah",
+      "Hosea",
+      "Amos",
+      "Micah",
+      "Zephaniah",
+      "Nahum",
+      "Habakkuk"
+    ],
+    "keyScriptures": [
+      "1 Kings 18:21 - How long will you go limping with two different opinions?",
+      "Isaiah 7:14 - Behold, a virgin shall conceive and bear a son",
+      "Isaiah 53:5 - He was wounded for our transgressions",
+      "Jeremiah 31:31-33 - I will make a new covenant",
+      "Hosea 11:1 - Out of Egypt I called my son",
+      "Micah 5:2 - From you shall come forth a ruler in Israel"
+    ],
+    "cccReferences": [
+      "CCC 64 - Through the prophets God forms His people",
+      "CCC 711-716 - The prophets and expectation of Messiah",
+      "CCC 762 - Remote preparation for the Church"
+    ],
+    "sources": [
+      "CCC 64",
+      "CCC 711",
+      "CCC 762",
+      "Isaiah 53 (RSV-CE)",
+      "Jeremiah 31:31-33 (RSV-CE)",
+      "Augustine, City of God XVIII - The prophets",
+      "Aquinas, ST III, q. 31 - Prophecies of Christ"
+    ],
+    "theologicalSignificance": "The Divided Kingdom demonstrates the consequences of idolatry and disobedience. Despite repeated warnings from prophets, both kingdoms fall. Yet the prophetic period is rich in messianic prophecies. Isaiah foresees the virgin birth (7:14), the Suffering Servant (53), and the Prince of Peace (9:6). Jeremiah prophesies a New Covenant written on hearts (31:31-33). Hosea's faithful love for his unfaithful wife depicts God's love for Israel. Micah pinpoints Bethlehem as the Messiah's birthplace (5:2). The Catechism teaches that God 'forms his people in the hope of salvation, in the expectation of a new and everlasting Covenant' (CCC 64). This period shows that political and religious disintegration prepares Israel to long for the Messiah. Exile becomes necessary to purge idolatry and create a people ready to receive God's ultimate revelation in Christ.",
+    "narrativeSummary": "Divided, rebellious, and warned by prophets, Israel and Judah spiral toward judgment. Yet through the darkness shine brilliant prophecies of the coming Messiah who will restore all things."
+  },
+  {
+    "id": 8,
+    "name": "Exile",
+    "timeframe": "586 - 538 BC",
+    "color": "#696969",
+    "keyFigures": [
+      "Daniel",
+      "Ezekiel",
+      "Shadrach, Meshach, Abednego"
+    ],
+    "majorEvents": [
+      "Jerusalem and Temple destroyed by Babylon",
+      "Jews deported to Babylon in three waves",
+      "Daniel refuses to defile himself, interprets dreams",
+      "Three men in fiery furnace refuse idolatry",
+      "Daniel in lions' den",
+      "Ezekiel's visions: dry bones, new Temple",
+      "Daniel's prophecy of seventy weeks",
+      "Persian Empire conquers Babylon (539 BC)"
+    ],
+    "biblicalBooks": [
+      "2 Kings 25",
+      "2 Chronicles 36",
+      "Ezekiel",
+      "Daniel",
+      "Lamentations",
+      "Obadiah"
+    ],
+    "keyScriptures": [
+      "Lamentations 3:22-23 - The steadfast love of the LORD never ceases",
+      "Ezekiel 36:26 - A new heart I will give you, a new spirit",
+      "Ezekiel 37:1-14 - Can these bones live? Vision of dry bones",
+      "Daniel 3:17 - Our God is able to deliver us",
+      "Daniel 7:13-14 - One like a son of man coming on clouds of heaven",
+      "Daniel 9:24-27 - Seventy weeks of years decreed"
+    ],
+    "cccReferences": [
+      "CCC 64 - God forms His people through trials",
+      "CCC 710 - Exile purifies hope",
+      "CCC 2795 - Lord's Prayer echoes Ezekiel's new heart"
+    ],
+    "sources": [
+      "CCC 64",
+      "CCC 710",
+      "Ezekiel 36-37 (RSV-CE)",
+      "Daniel 7 (RSV-CE)",
+      "Augustine, City of God XVIII.32 - The Babylonian captivity",
+      "Jerome, Commentary on Daniel - Messianic prophecies"
+    ],
+    "theologicalSignificance": "The Exile is Israel's darkest hour, yet also a time of purification and hope. Jerusalem's fall demonstrates that God's judgment is real - centuries of prophetic warnings come to pass. Yet even in Babylon, God preserves a faithful remnant. Daniel and his friends show that holiness is possible even in pagan exile. Ezekiel's vision of dry bones coming to life prophesies national restoration and, ultimately, resurrection. His promise of a new heart and new spirit points to the New Covenant (Ezek 36:26). Daniel's 'Son of Man' vision (7:13-14) becomes Jesus' favorite self-designation. The Exile purges Israel of idolatry forever - after 586 BC, Jews never worship idols again. The Catechism teaches that 'the Exile itself prepared them, darkly, for this Return' (CCC 710) - both the return from Babylon and the ultimate return of all creation to God through Christ.",
+    "narrativeSummary": "In exile's darkness, God preserves His people and refines their hope. Through visions of dry bones and Son of Man, the prophets promise restoration and a coming Savior."
+  },
+  {
+    "id": 9,
+    "name": "Return",
+    "timeframe": "538 - 400 BC",
+    "color": "#32CD32",
+    "keyFigures": [
+      "Zerubbabel",
+      "Ezra",
+      "Nehemiah",
+      "Esther",
+      "Haggai",
+      "Zechariah",
+      "Malachi"
+    ],
+    "majorEvents": [
+      "Cyrus decrees Jews can return to Jerusalem (538 BC)",
+      "First group returns under Zerubbabel",
+      "Foundation of Second Temple laid",
+      "Work stops due to opposition, resumes under Haggai",
+      "Second Temple completed (516 BC)",
+      "Esther saves Jews from genocide in Persia",
+      "Ezra returns with Law, teaches Scripture",
+      "Nehemiah rebuilds Jerusalem's walls in 52 days",
+      "Covenant renewed, Law read publicly",
+      "Malachi prophesies Elijah's return before Messiah"
+    ],
+    "biblicalBooks": [
+      "Ezra",
+      "Nehemiah",
+      "Esther",
+      "Haggai",
+      "Zechariah",
+      "Malachi"
+    ],
+    "keyScriptures": [
+      "Ezra 1:1-3 - The LORD stirred up the spirit of Cyrus",
+      "Nehemiah 8:10 - The joy of the LORD is your strength",
+      "Esther 4:14 - Who knows whether you have come for such a time as this?",
+      "Haggai 2:9 - The latter splendor of this house shall be greater",
+      "Zechariah 9:9 - Your king comes to you, humble and riding on a donkey",
+      "Malachi 3:1 - Behold, I send my messenger to prepare the way",
+      "Malachi 4:5 - Behold, I will send you Elijah the prophet"
+    ],
+    "cccReferences": [
+      "CCC 64 - God continues to form His people",
+      "CCC 711 - The people gathered is first-fruits of Church"
+    ],
+    "sources": [
+      "CCC 64",
+      "CCC 711",
+      "Ezra-Nehemiah (RSV-CE)",
+      "Zechariah 9:9 (RSV-CE)",
+      "Malachi 3-4 (RSV-CE)",
+      "Augustine, City of God XVIII.45 - The return from captivity",
+      "Jerome, Commentary on Zechariah - Messianic prophecies"
+    ],
+    "theologicalSignificance": "The Return fulfills God's promise through Jeremiah that exile would last 70 years. It demonstrates God's sovereignty - He moves the heart of a pagan king (Cyrus) to accomplish His purposes. The rebuilt Temple, though less glorious than Solomon's, will be honored by the Messiah's presence. Haggai prophesies that this Temple's latter glory will exceed the former (2:9) - fulfilled when Jesus teaches there. Zechariah's prophecy of the king riding on a donkey (9:9) is fulfilled on Palm Sunday. Ezra's emphasis on Scripture and Nehemiah's on prayer and action establish post-exilic Judaism. Esther shows God's providence even when He seems hidden. Malachi, the last Old Testament prophet, promises that Elijah will return before the great Day of the Lord - fulfilled in John the Baptist. After Malachi, 400 years of prophetic silence follows, heightening expectation for the Messiah. The Return period reestablishes Israel in the land, purifies worship, and sets the stage for Christ's coming.",
+    "narrativeSummary": "From exile to restoration, God brings His people home and rebuilds their Temple and walls. Yet even renewed Israel longs for the promised Messiah who will bring complete and eternal restoration."
+  },
+  {
+    "id": 10,
+    "name": "Maccabean Revolt",
+    "timeframe": "400 BC - 4 BC",
+    "color": "#800080",
+    "keyFigures": [
+      "Alexander the Great",
+      "Antiochus IV Epiphanes",
+      "Mattathias",
+      "Judas Maccabeus",
+      "John Hyrcanus"
+    ],
+    "majorEvents": [
+      "Alexander conquers Persian Empire, spreads Greek culture",
+      "Egypt (Ptolemies) then Syria (Seleucids) rule Judea",
+      "Antiochus IV desecrates Temple, outlaws Judaism (167 BC)",
+      "Mattathias and sons resist, Maccabean Revolt begins",
+      "Judas Maccabeus defeats Seleucids, cleanses Temple (Hanukkah)",
+      "Hasmonean dynasty established, independence won",
+      "Internal conflicts, corruption among priests",
+      "Rome conquers region, Pompey enters Temple (63 BC)",
+      "Herod the Great appointed king by Rome (37 BC)",
+      "Herod rebuilds Temple on grand scale"
+    ],
+    "biblicalBooks": [
+      "1 Maccabees",
+      "2 Maccabees (Deuterocanonical books)"
+    ],
+    "keyScriptures": [
+      "1 Maccabees 2:19-22 - We will not obey the king's words",
+      "1 Maccabees 3:18-19 - Victory does not depend on the size of the army",
+      "2 Maccabees 7:9 - The King of the universe will raise us up",
+      "2 Maccabees 12:43-46 - Prayer for the dead (supports Purgatory)",
+      "Daniel 11:31 - Abomination that makes desolate (fulfilled by Antiochus)"
+    ],
+    "cccReferences": [
+      "CCC 1032 - Prayer for the dead (2 Macc 12:46)",
+      "CCC 992 - Resurrection hope (2 Macc 7)"
+    ],
+    "sources": [
+      "CCC 1032",
+      "CCC 992",
+      "1 Maccabees (RSV-CE)",
+      "2 Maccabees (RSV-CE)",
+      "Josephus, Antiquities of the Jews XIII - Maccabean period"
+    ],
+    "theologicalSignificance": "The Maccabean period bridges Old and New Testaments. It's the 'intertestamental' era when no new Scripture is written, yet crucial developments unfold. The revolt against Antiochus' persecution shows faithful Jews willing to die for God's Law - a precursor to Christian martyrdom. The cleansing of the Temple and Feast of Dedication (Hanukkah) celebrates God's faithfulness. Second Maccabees provides biblical basis for the resurrection of the dead (7:9) and prayer for the dead (12:43-46), supporting Catholic doctrines of bodily resurrection and Purgatory. The period sees the rise of religious parties: Pharisees, Sadducees, Essenes, Zealots - all prominent in Jesus' time. Roman occupation creates the political situation into which Jesus is born. Messianic expectation intensifies as Jews long for a deliverer like Judas Maccabeus, but greater. The stage is set for God's ultimate intervention.",
+    "narrativeSummary": "Through persecution, revolt, and political turmoil, faithful Jews preserve their identity and intensify their hope. The world awaits the promised Messiah who will bring not just political freedom, but eternal salvation."
+  },
+  {
+    "id": 11,
+    "name": "Messianic Fulfillment",
+    "timeframe": "4 BC - 33 AD",
+    "color": "#FF6347",
+    "keyFigures": [
+      "Jesus Christ",
+      "Mary",
+      "John the Baptist",
+      "The Twelve Apostles",
+      "Mary Magdalene"
+    ],
+    "majorEvents": [
+      "Angel Gabriel announces Jesus' birth to Mary",
+      "Jesus born in Bethlehem, visited by shepherds and Magi",
+      "Presentation in Temple, Simeon and Anna recognize Messiah",
+      "Flight to Egypt, return to Nazareth",
+      "John the Baptist prepares the way",
+      "Jesus baptized, tempted in wilderness",
+      "Jesus' public ministry: teaching, healing, miracles",
+      "Sermon on the Mount, parables of the Kingdom",
+      "Transfiguration, Peter's confession",
+      "Triumphal entry into Jerusalem (Palm Sunday)",
+      "Last Supper - Eucharist instituted",
+      "Crucifixion on Good Friday",
+      "Resurrection on Easter Sunday",
+      "Forty days of appearances",
+      "Ascension into heaven"
+    ],
+    "biblicalBooks": [
+      "Matthew",
+      "Mark",
+      "Luke",
+      "John"
+    ],
+    "keyScriptures": [
+      "Matthew 1:23 - They shall call his name Emmanuel, God with us",
+      "Mark 1:15 - The kingdom of God is at hand; repent",
+      "Luke 4:18-19 - The Spirit of the Lord is upon me",
+      "John 1:14 - The Word became flesh and dwelt among us",
+      "John 3:16 - God so loved the world that he gave his only Son",
+      "John 14:6 - I am the way, the truth, and the life",
+      "Matthew 28:18-20 - All authority has been given to me, go make disciples"
+    ],
+    "cccReferences": [
+      "CCC 422-682 - The entire Christology section",
+      "CCC 456 - Why the Word became flesh",
+      "CCC 571-573 - Jesus and the Law",
+      "CCC 599-618 - Christ's redemptive death",
+      "CCC 638-658 - The Resurrection"
+    ],
+    "sources": [
+      "CCC 456",
+      "CCC 571",
+      "CCC 599",
+      "CCC 638",
+      "Matthew-John (RSV-CE)",
+      "Augustine, Tractates on John - Full commentary",
+      "Aquinas, ST III - The Incarnation and life of Christ",
+      "Pope Benedict XVI, Jesus of Nazareth trilogy"
+    ],
+    "theologicalSignificance": "Messianic Fulfillment is the center of all human history. The eternal Son of God assumes human nature, born of the Virgin Mary. Jesus fulfills every Old Testament prophecy, type, and promise. He is the New Adam who obeys where the first Adam failed. He is the New Moses who gives the New Law. He is the New Israel who succeeds where Israel failed. He is the Davidic King whose kingdom has no end. He is the Suffering Servant who bears our sins. He is the Paschal Lamb whose blood saves us. The Catechism declares, 'The Word became flesh to make us partakers of the divine nature' (CCC 460). Through His Cross and Resurrection, Jesus conquers sin and death, opening heaven to all who believe. His institution of the Eucharist gives us His Body and Blood as spiritual food. His Resurrection is the foundation of Christian faith (1 Cor 15:14). His Ascension inaugurates His eternal reign. This period is the culmination of salvation history - God's rescue plan executed perfectly in His Son.",
+    "narrativeSummary": "The long-awaited Messiah arrives! In Jesus Christ, God becomes man, teaches with authority, works miracles, dies for our sins, rises from the dead, and ascends to heaven. Every promise is fulfilled, every prophecy accomplished. From Adam to the King of Kings - salvation history reaches its climax."
+  },
+  {
+    "id": 12,
+    "name": "The Church",
+    "timeframe": "33 AD - Present",
+    "color": "#4169E1",
+    "keyFigures": [
+      "The Twelve Apostles",
+      "Paul",
+      "Stephen",
+      "Peter",
+      "James",
+      "The Church Fathers",
+      "Saints throughout history"
+    ],
+    "majorEvents": [
+      "Pentecost - Holy Spirit descends, Church born",
+      "3,000 baptized on first day",
+      "Early community shares all things",
+      "Stephen martyred, persecution scatters believers",
+      "Paul's conversion on Damascus road",
+      "Gospel spreads to Gentiles through Peter and Paul",
+      "Council of Jerusalem settles Law observance question",
+      "Paul's missionary journeys plant churches across Roman Empire",
+      "New Testament books written",
+      "Apostles martyred, successors appointed",
+      "Church endures persecutions, grows exponentially",
+      "Councils define doctrines, combat heresies",
+      "Church continues Christ's mission until He returns"
+    ],
+    "biblicalBooks": [
+      "Acts",
+      "Romans",
+      "1-2 Corinthians",
+      "Galatians",
+      "Ephesians",
+      "Philippians",
+      "Colossians",
+      "1-2 Thessalonians",
+      "1-2 Timothy",
+      "Titus",
+      "Philemon",
+      "Hebrews",
+      "James",
+      "1-2 Peter",
+      "1-2-3 John",
+      "Jude",
+      "Revelation"
+    ],
+    "keyScriptures": [
+      "Acts 1:8 - You shall be my witnesses to the end of the earth",
+      "Acts 2:4 - They were all filled with the Holy Spirit",
+      "Acts 2:42 - They devoted themselves to the apostles' teaching and fellowship",
+      "Acts 4:12 - There is salvation in no one else",
+      "Romans 8:28 - All things work together for good for those who love God",
+      "Ephesians 2:8-9 - By grace you have been saved through faith",
+      "Revelation 21:5 - Behold, I make all things new"
+    ],
+    "cccReferences": [
+      "CCC 731-747 - The Holy Spirit and the Church",
+      "CCC 748-945 - The entire Ecclesiology section",
+      "CCC 849-856 - The Church is missionary",
+      "CCC 2044-2046 - Moral life and missionary witness"
+    ],
+    "sources": [
+      "CCC 731",
+      "CCC 748",
+      "CCC 849",
+      "Acts (RSV-CE)",
+      "Epistles (RSV-CE)",
+      "Revelation (RSV-CE)",
+      "Augustine, City of God - The two cities",
+      "Lumen Gentium - Vatican II on the Church",
+      "Pope Francis, Evangelii Gaudium - The joy of the Gospel"
+    ],
+    "theologicalSignificance": "The Church is not an afterthought but the goal toward which all salvation history aimed. Born at Pentecost when the Holy Spirit descended, the Church is Christ's Mystical Body continuing His mission on earth. The Catechism teaches, 'The Church is the goal of all things' (CCC 760). Empowered by the Spirit, the apostles preach boldly, perform miracles, and establish communities. Paul's conversion shows that Christ builds His Church even through former persecutors. The inclusion of Gentiles fulfills God's promise to Abraham that all nations would be blessed. The Church endures persecutions yet grows - 'the blood of martyrs is the seed of the Church' (Tertullian). Through Sacraments instituted by Christ, the Church dispenses grace. Through apostolic succession, she preserves authentic teaching. Through missionary zeal, she proclaims the Gospel to every nation. The Church continues Christ's threefold office: teaching (prophet), sanctifying (priest), and governing (king). We live in 'the Church age,' awaiting Christ's Second Coming when He will judge the living and dead and establish His kingdom fully. Until then, the Church is pilgrim people, journeying toward the New Jerusalem.",
+    "narrativeSummary": "From Pentecost to present day, the Church continues Christ's mission empowered by the Holy Spirit. She preaches the Gospel, celebrates the Sacraments, serves the poor, and awaits her Bridegroom's return. The story begun in Genesis reaches its fulfillment when Christ returns - From Adam to the King of Kings!"
+  }
+]
