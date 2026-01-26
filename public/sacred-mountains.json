@@ -1375,5 +1375,242 @@
     ],
     "mapUrl": "https://www.google.com/maps/place/32.2042,35.2722",
     "totalAudioDuration": 0
+  },
+  {
+    "id": 13,
+    "name": "Mount of Temptation (Quarantania)",
+    "location": "Northwest of Jericho, West Bank",
+    "coordinates": {
+      "lat": 31.8714,
+      "lng": 35.4144
+    },
+    "elevation": "1,150 feet (350 meters) above sea level",
+    "testament": "New Testament",
+    "category": "Spiritual Warfare & Victory",
+    "significance": "Where Jesus fasted 40 days and defeated Satan's three temptations, demonstrating His obedience as the New Adam",
+    "biblicalReferences": [
+      "Matthew 4:1-11",
+      "Luke 4:1-13",
+      "Mark 1:12-13",
+      "Hebrews 2:18",
+      "Hebrews 4:15",
+      "James 1:13-14"
+    ],
+    "keyEvents": [
+      "After His baptism, Jesus is led by the Spirit into the wilderness to be tempted (Matt 4:1)",
+      "Jesus fasts for 40 days and 40 nights, becoming hungry",
+      "First temptation: Satan says 'command these stones to become loaves of bread' - Jesus responds with Deuteronomy 8:3",
+      "Second temptation: Satan takes Jesus to pinnacle of temple, 'throw yourself down' - Jesus quotes Deuteronomy 6:16",
+      "Third temptation: Satan shows all kingdoms of the world, 'worship me and I'll give you these' - Jesus quotes Deuteronomy 6:13",
+      "Jesus commands: 'Be gone, Satan!' - the devil departs",
+      "Angels come and minister to Jesus",
+      "Jesus returns to Galilee in the power of the Spirit to begin His ministry"
+    ],
+    "cccReferences": [
+      "CCC 538-540 - The temptations of Jesus",
+      "CCC 2119 - Temptation and testing of God",
+      "CCC 2846-2849 - Lead us not into temptation"
+    ],
+    "sources": [
+      "CCC 538",
+      "CCC 539",
+      "CCC 540",
+      "CCC 2846",
+      "Matthew 4:1-11 (RSV-CE)",
+      "Luke 4:1-13 (RSV-CE)",
+      "Hebrews 2:18 (RSV-CE)",
+      "Hebrews 4:15 (RSV-CE)",
+      "Augustine, Sermons 284 - Christ's temptations",
+      "Aquinas, ST III, q. 41 - Christ's temptation",
+      "John Chrysostom, Homilies on Matthew 13 - The temptation"
+    ],
+    "historicalContext": "The Mount of Temptation (called Jebel Quruntul in Arabic, meaning 'Quarantine' or '40') is a barren cliff overlooking Jericho and the Jordan Valley. Christian tradition since the 4th century identifies this desolate mountain as the site of Jesus' 40-day fast and temptation. The location's stark wilderness perfectly matches the Gospel descriptions. A Greek Orthodox monastery clings to the cliff face, built in 1895 but incorporating remains of earlier Byzantine structures dating to the 4th century. Monks have lived in caves on this mountain for centuries, following Jesus' example of desert solitude. A cable car now brings pilgrims to the summit where remains of a fortress built by Herod and later used by Crusaders can still be seen.",
+    "theologicalSignificance": "The Mount of Temptation reveals Jesus as the New Adam who succeeds where the first Adam failed. The Catechism teaches, 'By the solemn forty days of Lent the Church unites herself each year to the mystery of Jesus in the desert' (CCC 540). Jesus' 40-day fast echoes Israel's 40 years in the wilderness\u2014but where Israel grumbled and failed, Jesus trusts and obeys. Satan's three temptations attack Jesus' identity as Son of God: 'If you are the Son of God...' But Jesus will prove His sonship not through spectacular signs or worldly power, but through obedience unto death. Each temptation Jesus defeats with Scripture from Deuteronomy, showing that God's Word is our weapon against evil. The first temptation (stones to bread) attacks physical need\u2014Jesus responds that spiritual food matters more. The second (throw yourself down) tests presumption\u2014Jesus won't test God. The third (worship Satan for kingdoms) offers a shortcut to glory without the Cross\u2014Jesus will worship God alone. Hebrews 4:15 declares Jesus 'was tempted as we are, yet without sin.' The Mount of Temptation shows us that victory over temptation is possible through reliance on God's Word and the Spirit's power. As the Catechism teaches, 'Jesus is the new Adam who remained faithful just where the first Adam had given in to temptation' (CCC 539).",
+    "funFacts": [
+      "\u26f0\ufe0f The Arabic name 'Quarantania' or 'Quruntul' comes from Latin 'quadraginta' meaning '40'\u2014for Jesus' 40 days",
+      "\ud83c\udfd4\ufe0f The monastery is literally built into the cliff face, accessible only by steep stairs or modern cable car",
+      "\u26ea Monks have lived in caves on this mountain since the 4th century, following Christ's example of desert solitude",
+      "\ud83d\udccf The mountain rises 1,150 feet above sea level but 1,200 feet above the Jordan Valley below",
+      "\ud83d\udc40 From the summit, you can see Jericho (oldest city in world), the Jordan River, and Dead Sea",
+      "\ud83c\udff0 Remains of Herod's fortress 'Dok' sit atop the mountain\u2014later used by Crusaders as a stronghold",
+      "\ud83c\udf5e Medieval tradition claimed the stones here look like loaves of bread, matching Satan's first temptation",
+      "\ud83d\udd4a\ufe0f The 40 days parallel Moses' 40 days on Sinai, Elijah's 40-day journey to Horeb, and Israel's 40 years wandering",
+      "\u271d\ufe0f Jesus quotes Deuteronomy three times to defeat Satan\u2014'Man shall not live by bread alone' (Deut 8:3)",
+      "\ud83c\udf35 The barren wilderness setting emphasizes Jesus' total dependence on God without physical comforts"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "/images/mountains/temptation-monastery.jpg",
+        "caption": "Greek Orthodox Monastery clinging to Mount of Temptation cliff face",
+        "isHero": true
+      },
+      {
+        "url": "/images/mountains/temptation-view.jpg",
+        "caption": "View from Mount of Temptation over Jericho and Jordan Valley"
+      },
+      {
+        "url": "/images/mountains/temptation-wilderness.jpg",
+        "caption": "Barren wilderness of Mount of Temptation"
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/31.8714,35.4144",
+    "totalAudioDuration": 0
+  },
+  {
+    "id": 14,
+    "name": "Mount Ebal",
+    "location": "West Bank, north of Shechem (Nablus)",
+    "coordinates": {
+      "lat": 32.2314,
+      "lng": 35.2742
+    },
+    "elevation": "3,084 feet (940 meters)",
+    "testament": "Old Testament",
+    "category": "Curses & Covenant Warnings",
+    "significance": "Mountain of Curses opposite Mount Gerizim, site of Joshua's altar and covenant renewal ceremony",
+    "biblicalReferences": [
+      "Deuteronomy 11:29",
+      "Deuteronomy 27:4-13",
+      "Deuteronomy 27:14-26",
+      "Joshua 8:30-35"
+    ],
+    "keyEvents": [
+      "Moses commands Israel to set up stones on Mount Ebal and write the Law upon them (Deut 27:4)",
+      "Build an altar of uncut stones on Mount Ebal for burnt offerings (Deut 27:5-6)",
+      "Six tribes stand on Ebal to pronounce curses: Reuben, Gad, Asher, Zebulun, Dan, Naphtali (Deut 27:13)",
+      "Levites proclaim 12 curses, and all the people say 'Amen' after each one",
+      "After conquering Ai, Joshua builds altar on Mount Ebal exactly as Moses commanded (Josh 8:30-31)",
+      "Joshua writes a copy of the Law of Moses on stones",
+      "All Israel, elders, officers, judges, aliens, and natives stand before the ark - half toward Gerizim, half toward Ebal",
+      "Joshua reads all the words of the Law\u2014blessings and curses\u2014before the entire assembly"
+    ],
+    "cccReferences": [
+      "CCC 1961 - The Old Law as preparation for Gospel",
+      "CCC 1963 - The Law of Moses",
+      "CCC 578-582 - Jesus and the Law"
+    ],
+    "sources": [
+      "CCC 1961",
+      "CCC 1963",
+      "CCC 578",
+      "Deuteronomy 11:29 (RSV-CE)",
+      "Deuteronomy 27:4-26 (RSV-CE)",
+      "Joshua 8:30-35 (RSV-CE)",
+      "Augustine, City of God XVI.43 - Blessings and curses",
+      "Origen, Homilies on Joshua 9 - The altar on Ebal"
+    ],
+    "historicalContext": "Mount Ebal rises north of ancient Shechem, facing Mount Gerizim across the valley. At 3,084 feet, Ebal is 195 feet higher than Gerizim. The valley between them creates a natural amphitheater with remarkable acoustics\u2014enabling the entire assembly of Israel (possibly over a million people) to hear the covenant ceremony. In 1980, archaeologist Adam Zertal discovered an ancient altar structure on Mount Ebal dating to approximately 1250-1200 BC\u2014matching the timeframe of Joshua's conquest. The altar consists of an earthen ramp leading to a platform, fitting the biblical description of an altar of uncut stones (Deut 27:5). Animal bones found at the site show signs of burning, consistent with sacrificial use. The discovery provides archaeological support for the biblical account of Joshua's altar on Ebal.",
+    "theologicalSignificance": "Mount Ebal represents the sobering reality of covenant curses\u2014the consequences of disobedience. While Gerizim proclaimed blessings for obedience, Ebal announced curses for disobedience. The 12 curses in Deuteronomy 27 cover secret sins: dishonoring parents, moving boundary stones, misleading the blind, perverting justice, illicit sexual relations, murder for hire, and more. After each curse, all Israel said 'Amen'\u2014accepting responsibility. The pairing of Gerizim and Ebal shows that covenant relationship involves both promise and warning, grace and responsibility. Paradoxically, Joshua builds the altar for offerings on Ebal (the curse mountain), not Gerizim. Why? Perhaps to show that even under threat of curses, God provides a way of atonement through sacrifice. The altar on the curse mountain foreshadows Christ who 'became a curse for us' (Gal 3:13) to deliver us from the Law's condemnation. Mount Ebal reminds us that the Law reveals sin and pronounces judgment\u2014but cannot save. Only the sacrifice of Christ, our altar, removes the curse. As the Catechism teaches, Christ fulfills the Law (CCC 577-582) and frees us from its curse through His death.",
+    "funFacts": [
+      "\u26f0\ufe0f At 3,084 feet, Mount Ebal is 195 feet higher than its twin Mount Gerizim across the valley",
+      "\ud83d\udd0a The natural amphitheater between Ebal and Gerizim has acoustics that allow voices to carry to massive crowds",
+      "\ud83c\udffa Archaeologist Adam Zertal discovered an altar on Ebal (1980) dating to Joshua's era\u201413th-12th century BC",
+      "\ud83d\udd25 Animal bones at the site show burn marks consistent with biblical sacrifices",
+      "\ud83d\udcdc The altar was built of uncut stones exactly as commanded: 'If you make me an altar of stone, do not build it of hewn stones' (Ex 20:25)",
+      "\u2696\ufe0f 12 curses were proclaimed from Ebal, covering sins typically committed in secret",
+      "\ud83c\udfad 'Ebal' possibly means 'bare' or 'bald'\u2014the mountain is rockier and more barren than Gerizim",
+      "\ud83d\udcd6 Every Israelite\u2014native and alien\u2014said 'Amen' after each curse, accepting covenant responsibility",
+      "\u271d\ufe0f Building the altar on the curse mountain (not blessing mountain) foreshadows Christ becoming a curse for us (Gal 3:13)",
+      "\ud83c\udf0d The Ebal-Gerizim ceremony was Israel's first act after conquering central Canaan\u2014immediately renewing the covenant"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "/images/mountains/ebal-gerizim.jpg",
+        "caption": "Mount Ebal (left) and Mount Gerizim (right) with Shechem valley between",
+        "isHero": true
+      },
+      {
+        "url": "/images/mountains/ebal-altar.jpg",
+        "caption": "Archaeological remains of ancient altar discovered on Mount Ebal"
+      },
+      {
+        "url": "/images/mountains/ebal-view.jpg",
+        "caption": "View from Mount Ebal summit overlooking the valley"
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/32.2314,35.2742",
+    "totalAudioDuration": 0
+  },
+  {
+    "id": 15,
+    "name": "Mount Horeb",
+    "location": "Sinai Peninsula (often identified with Mount Sinai)",
+    "coordinates": {
+      "lat": 28.5392,
+      "lng": 33.975
+    },
+    "elevation": "Approximately 7,500 feet (2,285 meters)",
+    "testament": "Old Testament",
+    "category": "Divine Encounter & Still Small Voice",
+    "significance": "Where Elijah encountered God in the 'still small voice' after fleeing Jezebel, often identified with Mount Sinai",
+    "biblicalReferences": [
+      "Exodus 3:1",
+      "Exodus 17:6",
+      "Deuteronomy 1:6",
+      "1 Kings 19:8-18",
+      "Malachi 4:4"
+    ],
+    "keyEvents": [
+      "Moses encounters the burning bush at Horeb\u2014God reveals His name 'I AM' (Ex 3:1-15)",
+      "Moses strikes the rock at Horeb to provide water for Israel (Ex 17:6)",
+      "After fleeing Jezebel, Elijah journeys 40 days to Horeb, discouraged and suicidal (1 Kings 19:3-8)",
+      "Elijah shelters in a cave on the mountain",
+      "God asks: 'What are you doing here, Elijah?' (1 Kings 19:9)",
+      "God demonstrates His presence: violent wind, earthquake, fire\u2014but God is not in these",
+      "After the fire, a 'still small voice' (or 'sound of sheer silence')\u2014there is the LORD",
+      "God commissions Elijah to anoint Hazael, Jehu, and Elisha",
+      "God reveals 7,000 in Israel who have not bowed to Baal\u2014Elijah is not alone"
+    ],
+    "cccReferences": [
+      "CCC 2576-2577 - Elijah, man of prayer",
+      "CCC 696 - Fire as symbol of Spirit's transforming energy",
+      "CCC 2709 - Contemplative prayer"
+    ],
+    "sources": [
+      "CCC 2576",
+      "CCC 2577",
+      "CCC 696",
+      "CCC 2709",
+      "Exodus 3:1-15 (RSV-CE)",
+      "1 Kings 19:8-18 (RSV-CE)",
+      "Malachi 4:4 (RSV-CE)",
+      "Augustine, Expositions on Psalms 30 - Elijah and God's voice",
+      "Gregory the Great, Moralia in Job - Elijah's flight",
+      "John of the Cross, Dark Night of the Soul - Elijah's journey"
+    ],
+    "historicalContext": "Mount Horeb is often identified with Mount Sinai, both referring to the mountain where God gave the Law to Moses. The name 'Horeb' appears 17 times in the Old Testament, primarily in Deuteronomy and 1 Kings 19. 'Horeb' may mean 'glowing/heat' or 'desolate,' while 'Sinai' may derive from the thorn bushes on its slopes. Most scholars view them as the same physical mountain with different names, though some ancient traditions distinguish them. Elijah's 40-day journey to Horeb parallels Moses' 40 days on Sinai and Jesus' 40 days in the wilderness. The mountain's remote location in the Sinai wilderness made it an ideal place for divine encounter away from the distractions and dangers of Israel. Saint Catherine's Monastery, built at the base of Mount Sinai/Horeb in the 6th century AD, preserves the tradition of the burning bush site and remains a living monastery to this day.",
+    "theologicalSignificance": "Mount Horeb teaches that God often speaks not in spectacular displays but in silence. Elijah expected to find God in wind, earthquake, and fire\u2014natural phenomena associated with divine power. But God was not in these. Instead, God spoke in 'a still small voice' (KJV) or 'a sound of sheer silence' (NRSV). The Catechism honors Elijah as a 'man of prayer' who teaches us that 'Faith in God's word...must be tested by the crucible of tribulation' (CCC 2583). Elijah came to Horeb depressed, suicidal, convinced he alone remained faithful. God's gentle voice corrected his despair: 7,000 have not bowed to Baal. God often works quietly, invisibly. We want earthquakes; God gives whispers. Mount Horeb thus represents contemplative prayer, interior listening, the divine silence that speaks louder than thunder. As the Catechism teaches, contemplative prayer seeks the Lord 'in silence and symbols' (CCC 2709). Horeb reminds us that God met Moses in the burning bush (Ex 3), provided water from the rock (Ex 17), gave the Law to all Israel\u2014and centuries later ministered personally to a broken prophet in a cave. The same mountain that witnessed national covenant renewal also hosted individual pastoral care. God is found both in public revelation and private consolation.",
+    "funFacts": [
+      "\ud83d\udd25 'Horeb' means 'glowing/heat' or 'desolate'\u2014likely referring to the hot, barren wilderness surrounding it",
+      "\u26f0\ufe0f Most scholars identify Horeb and Sinai as the same mountain with two different names",
+      "\ud83d\udcd6 'Horeb' appears 17 times in Scripture, mainly in Deuteronomy (9x) and 1 Kings 19 (4x)",
+      "\ud83c\udfc3 Elijah's 40-day journey to Horeb parallels Moses' 40 days on Sinai and Jesus' 40 days fasting",
+      "\ud83c\udf2a\ufe0f God demonstrated wind, earthquake, fire\u2014but spoke in 'still small voice' or 'sound of sheer silence'",
+      "\ud83d\udca7 Moses struck the rock at Horeb to provide water\u2014Paul says the rock was Christ (1 Cor 10:4)",
+      "\ud83d\udd25 The burning bush appeared to Moses at Horeb\u2014God's presence without consumption",
+      "\u26ea St. Catherine's Monastery (6th century) at the mountain's base is the world's oldest continuously operating monastery",
+      "\ud83d\udc65 God told Elijah 7,000 in Israel remained faithful\u2014Elijah's despair was proven wrong",
+      "\ud83c\udfad Malachi 4:4 calls it 'Horeb' when commanding Israel to 'Remember the law of Moses, my servant, which I commanded him at Horeb'"
+    ],
+    "audioSections": [],
+    "images": [
+      {
+        "url": "/images/mountains/horeb-sinai.jpg",
+        "caption": "Mount Sinai/Horeb with St. Catherine's Monastery at its base",
+        "isHero": true
+      },
+      {
+        "url": "/images/mountains/horeb-cave.jpg",
+        "caption": "Cave on Mount Horeb traditionally identified as Elijah's refuge"
+      },
+      {
+        "url": "/images/mountains/horeb-burning-bush.jpg",
+        "caption": "Chapel of the Burning Bush at St. Catherine's Monastery"
+      }
+    ],
+    "mapUrl": "https://www.google.com/maps/place/28.5392,33.9750",
+    "totalAudioDuration": 0
   }
 ]
