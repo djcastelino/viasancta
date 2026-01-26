@@ -544,8 +544,29 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'PapalDoc'
       };
     }
+    if (source.includes('Spe Salvi')) {
+      return {
+        text,
+        url: 'https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html',
+        type: 'PapalDoc'
+      };
+    }
+    if (source.includes('Verbum Domini')) {
+      return {
+        text,
+        url: 'https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20100930_verbum-domini.html',
+        type: 'PapalDoc'
+      };
+    }
+    if (source.includes('General Audience')) {
+      return {
+        text,
+        url: 'https://www.vatican.va/content/benedict-xvi/en/audiences.index.html',
+        type: 'PapalDoc'
+      };
+    }
     if (source.includes('Jesus of Nazareth')) {
-      // Benedict XVI's book trilogy - link to Amazon or mark as book reference
+      // Benedict XVI's book trilogy - mark as book reference
       return {
         text: text + ' (book reference)',
         url: null,
@@ -553,6 +574,13 @@ export function getSourceLink(source: string): LinkedSource {
       };
     }
     if (source.includes('Infancy Narratives')) {
+      return {
+        text: text + ' (book reference)',
+        url: null,
+        type: 'PapalDoc'
+      };
+    }
+    if (source.includes('Spirit of Liturgy')) {
       return {
         text: text + ' (book reference)',
         url: null,
