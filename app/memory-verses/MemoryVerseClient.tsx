@@ -64,8 +64,24 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     }
   }, []);
 
-  // Check if user can learn today
-  const getTodayDate = () => new Date().toISOString().split('T')[0];
+  // Check if user can learn today (using local timezone)
+  const getTodayDate = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const getTomorrowDate = () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const year = tomorrow.getFullYear();
+    const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const day = String(tomorrow.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   const canLearnToday = lastCompletionDate !== getTodayDate();
   const hasCompletedToday = lastCompletionDate === getTodayDate();
 
@@ -90,7 +106,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
   // Get verses that need review
   const getVersesNeedingReview = () => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = getTodayDate();
     return progress
       .filter(p => p.verseMemorized && p.nextReviewDate <= today)
       .map(p => {
@@ -610,15 +626,15 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           if (verseProgress) {
             verseProgress.verseMemorized = true;
             verseProgress.referenceMemorized = true;
-            verseProgress.lastReviewedDate = new Date().toISOString().split('T')[0];
-            verseProgress.nextReviewDate = new Date(Date.now() + 86400000).toISOString().split('T')[0]; // Tomorrow
+            verseProgress.lastReviewedDate = getTodayDate();
+            verseProgress.nextReviewDate = getTomorrowDate();
           } else {
             newProgress.push({
               verseId: currentDay,
               verseMemorized: true,
               referenceMemorized: true,
-              lastReviewedDate: new Date().toISOString().split('T')[0],
-              nextReviewDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
+              lastReviewedDate: getTodayDate(),
+              nextReviewDate: getTomorrowDate(),
               attemptCount: 1,
               currentPhase: 'phase5_reference',
               phaseRound: 1,

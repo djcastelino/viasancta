@@ -40,6 +40,7 @@ export default function BiblicalTimelineClient() {
   const [isLoading, setIsLoading] = useState(true);
   const [playingAudio, setPlayingAudio] = useState<string | null>(null);
   const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(null);
+  const [backgroundMusicElement, setBackgroundMusicElement] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     fetch('/biblical-timeline.json')
@@ -53,6 +54,45 @@ export default function BiblicalTimelineClient() {
         setIsLoading(false);
       });
   }, []);
+
+  const startBackgroundMusic = () => {
+    if (!backgroundMusicElement) {
+      const bgMusic = new Audio('https://www.bensound.com/bensound-music/bensound-slowmotion.mp3');
+      bgMusic.loop = true;
+      bgMusic.volume = 0;
+      setBackgroundMusicElement(bgMusic);
+
+      bgMusic.play().catch(console.error);
+
+      let volume = 0;
+      const fadeIn = setInterval(() => {
+        if (volume < 0.15) {
+          volume += 0.01;
+          bgMusic.volume = Math.min(volume, 0.15);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 50);
+    }
+  };
+
+  const fadeOutMusic = () => {
+    if (backgroundMusicElement) {
+      let volume = backgroundMusicElement.volume;
+
+      const fadeOut = setInterval(() => {
+        if (volume > 0.01) {
+          volume -= 0.01;
+          backgroundMusicElement.volume = Math.max(volume, 0);
+        } else {
+          clearInterval(fadeOut);
+          backgroundMusicElement.pause();
+          backgroundMusicElement.currentTime = 0;
+          setBackgroundMusicElement(null);
+        }
+      }, 50);
+    }
+  };
 
   const playAudio = async (audioSection: AudioSection) => {
     // Stop current audio if playing
@@ -105,6 +145,7 @@ export default function BiblicalTimelineClient() {
             };
 
             audio.play();
+            startBackgroundMusic();
           } else {
             console.error('Speech synthesis failed:', result.errorDetails);
             alert('Failed to generate audio. Please try again.');
@@ -132,6 +173,9 @@ export default function BiblicalTimelineClient() {
       audioElement.currentTime = 0;
       setAudioElement(null);
       setPlayingAudio(null);
+    }
+    if (backgroundMusicElement) {
+      fadeOutMusic();
     }
   };
 
