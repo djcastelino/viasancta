@@ -53,8 +53,8 @@ export function getSourceLink(source: string): LinkedSource {
     }
   }
 
-  // Church Fathers and Aquinas
-  if (source.match(/Irenaeus|Origen|Chrysostom|Ambrose|Jerome|Cyril|Gregory|Basil|Athanasius|Clement|Tertullian|Justin Martyr|Melito|Leo the Great|Hippolytus/i)) {
+  // Church Fathers and Aquinas (NOTE: Gregory handled separately below, not in this generic check)
+  if (source.match(/Irenaeus|Origen|Chrysostom|Ambrose|Jerome|Cyril|Basil|Athanasius|Clement|Tertullian|Justin Martyr|Melito|Leo the Great|Hippolytus/i)) {
     // Jerome - most commentaries not available on NewAdvent
     if (source.match(/Jerome/i)) {
       // Only Letters, Against Jovinianus, Against Vigilantius, Against Pelagians, Lives, Prefaces available
