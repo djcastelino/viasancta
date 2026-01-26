@@ -37,6 +37,8 @@ export default function BiblicalTimelineClient() {
   const [periods, setPeriods] = useState<BiblicalPeriod[]>([]);
   const [selectedPeriod, setSelectedPeriod] = useState<BiblicalPeriod | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [playingAudio, setPlayingAudio] = useState<string | null>(null);
+  const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     fetch('/biblical-timeline.json')
@@ -50,6 +52,59 @@ export default function BiblicalTimelineClient() {
         setIsLoading(false);
       });
   }, []);
+
+  const playAudio = async (audioSection: AudioSection) => {
+    // Stop current audio if playing
+    if (audioElement) {
+      audioElement.pause();
+      audioElement.currentTime = 0;
+    }
+
+    // Generate audio using Azure TTS API
+    try {
+      const response = await fetch('/api/generate-audio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text: audioSection.script,
+          voice: audioSection.voice
+        })
+      });
+
+      if (!response.ok) throw new Error('Audio generation failed');
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+
+      setAudioElement(audio);
+      setPlayingAudio(audioSection.id);
+
+      audio.onended = () => {
+        setPlayingAudio(null);
+        setAudioElement(null);
+      };
+
+      audio.play();
+    } catch (error) {
+      console.error('Error playing audio:', error);
+      alert('Failed to play audio. Please try again.');
+    }
+  };
+
+  const stopAudio = () => {
+    if (audioElement) {
+      audioElement.pause();
+      audioElement.currentTime = 0;
+      setAudioElement(null);
+      setPlayingAudio(null);
+    }
+  };
+
+  const closeModal = () => {
+    stopAudio();
+    setSelectedPeriod(null);
+  };
 
   if (isLoading) {
     return (
@@ -157,7 +212,7 @@ export default function BiblicalTimelineClient() {
       {selectedPeriod && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedPeriod(null)}
+          onClick={() => closeModal()}
         >
           <div
             className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
@@ -174,7 +229,7 @@ export default function BiblicalTimelineClient() {
                   <h2 className="text-3xl font-bold text-white">{selectedPeriod.name}</h2>
                 </div>
                 <button
-                  onClick={() => setSelectedPeriod(null)}
+                  onClick={() => closeModal()}
                   className="text-white hover:text-gray-200 text-3xl font-bold leading-none ml-4"
                 >
                   ×
@@ -191,6 +246,52 @@ export default function BiblicalTimelineClient() {
                   {selectedPeriod.narrativeSummary}
                 </p>
               </div>
+
+              {/* Audio Tour */}
+              {selectedPeriod.audioSections && selectedPeriod.audioSections.length > 0 && (
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <span className="mr-2">🎧</span> Audio Tour
+                  </h3>
+                  <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg p-4 space-y-3">
+                    {selectedPeriod.audioSections.map((audio) => (
+                      <div
+                        key={audio.id}
+                        className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex-1">
+                            <h4 className="font-semibold text-gray-800">{audio.title}</h4>
+                            <p className="text-xs text-gray-500 mt-1">
+                              {Math.floor(audio.duration / 60)}:{(audio.duration % 60).toString().padStart(2, '0')} minutes
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => playingAudio === audio.id ? stopAudio() : playAudio(audio)}
+                            className="ml-4 px-4 py-2 rounded-full font-semibold text-white transition-colors flex items-center gap-2"
+                            style={{ backgroundColor: selectedPeriod.color }}
+                          >
+                            {playingAudio === audio.id ? (
+                              <>
+                                <span>⏸</span>
+                                <span>Stop</span>
+                              </>
+                            ) : (
+                              <>
+                                <span>▶</span>
+                                <span>Play</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="text-xs text-gray-600 text-center pt-2 border-t border-gray-200">
+                      💡 Audio generated using Azure AI Text-to-Speech
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Key Figures */}
               <div>
