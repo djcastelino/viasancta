@@ -59,6 +59,74 @@ export default function Home() {
       {/* Jesus in the OT Section */}
       <JesusInOT />
 
+      {/* Biblical Timeline Section */}
+      <section className="max-w-7xl mx-auto px-5 py-8">
+        <Link href="/biblical-timeline" className="block group">
+          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div className="p-8 md:p-12 text-white relative">
+              {/* Decorative background pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  {/* Content */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                      <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
+                        SALVATION HISTORY
+                      </span>
+                      <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
+                        12 PERIODS
+                      </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">
+                      Biblical Timeline
+                    </h2>
+                    <p className="text-2xl text-purple-200 italic mb-4">
+                      From Adam to King of Kings
+                    </p>
+                    <p className="text-white/90 text-lg mb-4 leading-relaxed">
+                      Journey through salvation history with 12 key periods from Creation to the Church.
+                      Explore God's redemptive plan unfolding through patriarchs, prophets, kings, and ultimately Christ.
+                    </p>
+
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">📖</span>
+                        <span>12 Time Periods</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">✝️</span>
+                        <span>Key Scriptures</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">📚</span>
+                        <span>CCC References</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-2xl">👑</span>
+                        <span>Christ-Centered</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="text-center">
+                    <div className="inline-block bg-white text-indigo-600 hover:bg-purple-50 px-8 py-4 rounded-full font-bold text-xl shadow-xl group-hover:scale-105 transition-transform">
+                      Explore Timeline →
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Memory Verses Section */}
       <section className="max-w-7xl mx-auto px-5 py-8">
         <Link href="/memory-verses" className="block group">
