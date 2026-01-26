@@ -195,9 +195,10 @@ export function getSourceLink(source: string): LinkedSource {
       };
     }
 
-    // Tractates on John (e.g., "Tractates on John 119")
+    // Tractates on John (e.g., "Tractates on John 7.23" or "Tractates on John 119")
     if (source.match(/Tractates on John/i)) {
-      const tractateMatch = source.match(/Tractates on John\s+(\d+)/i);
+      // Match integer or decimal format (7.23 → extract "7")
+      const tractateMatch = source.match(/Tractates on John\s+(\d+)(?:\.\d+)?/i);
       if (tractateMatch) {
         const tractateNum = parseInt(tractateMatch[1]);
         if (tractateNum >= 1 && tractateNum <= 124) {
@@ -212,6 +213,67 @@ export function getSourceLink(source: string): LinkedSource {
       return {
         text,
         url: 'https://www.newadvent.org/fathers/170101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Against Faustus (e.g., "Against Faustus XII.41")
+    if (source.match(/Against Faustus/i)) {
+      const bookMatch = source.match(/Against Faustus\s+([IVX]+)/i);
+      if (bookMatch) {
+        const romanBook = bookMatch[1];
+        const bookNum = romanToArabic(romanBook);
+        if (bookNum && bookNum >= 1 && bookNum <= 33) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1406.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/1406.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Letters (e.g., "Letter 102.6-8")
+    if (source.match(/Letter\s+\d+/i)) {
+      const letterMatch = source.match(/Letter\s+(\d+)/i);
+      if (letterMatch) {
+        const letterNum = parseInt(letterMatch[1]);
+        if (letterNum >= 1 && letterNum <= 270) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1102${letterNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/110201.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Expositions on Psalms (e.g., "Expositions on Psalms 23")
+    if (source.match(/Expositions on (the )?Psalms?/i)) {
+      const psalmMatch = source.match(/Expositions on (?:the )?Psalms?\s+(\d+)/i);
+      if (psalmMatch) {
+        const psalmNum = parseInt(psalmMatch[1]);
+        if (psalmNum >= 1 && psalmNum <= 150) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/1801${psalmNum.toString().padStart(3, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/180101.htm',
         type: 'ChurchFather'
       };
     }
@@ -333,16 +395,32 @@ export function getSourceLink(source: string): LinkedSource {
 
   // Gregory the Great
   if (source.match(/Gregory the Great|Pope Gregory I/i)) {
-    // Moralia on Job
-    if (source.match(/Moralia|Commentary on Job/i)) {
+    // Morals on Job - not fully available on NewAdvent
+    if (source.match(/Morals on Job/i)) {
+      return {
+        text: text + ' (not available online)',
+        url: null,
+        type: 'ChurchFather'
+      };
+    }
+    // Moralia on Job (alternate title)
+    if (source.match(/Moralia/i)) {
       return {
         text,
         url: 'https://www.newadvent.org/fathers/36001.htm',
         type: 'ChurchFather'
       };
     }
-    // Pastoral Care
-    if (source.includes('Pastoral Care')) {
+    // Pastoral Care / Pastoral Rule
+    if (source.match(/Pastoral (Care|Rule)/i)) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/360201.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Dialogues
+    if (source.match(/Dialogues/i)) {
       return {
         text,
         url: 'https://www.newadvent.org/fathers/360201.htm',
