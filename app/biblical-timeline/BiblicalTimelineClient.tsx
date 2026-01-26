@@ -4,12 +4,25 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import SourceLinks from '@/app/components/SourceLinks';
 
+interface KeyFigure {
+  name: string;
+  description: string;
+}
+
+interface AudioSection {
+  id: string;
+  title: string;
+  voice: string;
+  duration: number;
+  script: string;
+}
+
 interface BiblicalPeriod {
   id: number;
   name: string;
   timeframe: string;
   color: string;
-  keyFigures: string[];
+  keyFigures: (string | KeyFigure)[];  // Support both old and new format
   majorEvents: string[];
   biblicalBooks: string[];
   keyScriptures: string[];
@@ -17,6 +30,7 @@ interface BiblicalPeriod {
   sources: string[];
   theologicalSignificance: string;
   narrativeSummary: string;
+  audioSections?: AudioSection[];
 }
 
 export default function BiblicalTimelineClient() {
@@ -105,7 +119,9 @@ export default function BiblicalTimelineClient() {
                   <div className="space-y-2 text-left">
                     <div>
                       <span className="font-semibold text-gray-700">Key Figures:</span>
-                      <p className="text-gray-600 text-sm">{period.keyFigures.join(', ')}</p>
+                      <p className="text-gray-600 text-sm">
+                        {period.keyFigures.map(f => typeof f === 'string' ? f : f.name).join(', ')}
+                      </p>
                     </div>
                     <div>
                       <span className="font-semibold text-gray-700">Major Events:</span>
@@ -181,16 +197,26 @@ export default function BiblicalTimelineClient() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
                   <span className="mr-2">👥</span> Key Figures
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedPeriod.keyFigures.map((figure, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 rounded-full text-sm font-medium text-white"
-                      style={{ backgroundColor: selectedPeriod.color }}
-                    >
-                      {figure}
-                    </span>
-                  ))}
+                <div className="space-y-3">
+                  {selectedPeriod.keyFigures.map((figure, idx) => {
+                    const isObject = typeof figure === 'object';
+                    const figureName = isObject ? figure.name : figure;
+                    const figureDesc = isObject ? figure.description : null;
+
+                    return (
+                      <div key={idx} className="bg-gray-50 rounded-lg p-3">
+                        <span
+                          className="inline-block px-3 py-1 rounded-full text-sm font-bold text-white mb-1"
+                          style={{ backgroundColor: selectedPeriod.color }}
+                        >
+                          {figureName}
+                        </span>
+                        {figureDesc && (
+                          <p className="text-sm text-gray-700 mt-2">{figureDesc}</p>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

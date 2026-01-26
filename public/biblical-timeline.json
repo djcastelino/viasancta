@@ -5,9 +5,18 @@
     "timeframe": "Creation - 2000 BC",
     "color": "#8B4789",
     "keyFigures": [
-      "Adam & Eve",
-      "Noah",
-      "Tower of Babel builders"
+      {
+        "name": "Adam & Eve",
+        "description": "First humans created in God's image, fell through disobedience but received promise of redemption."
+      },
+      {
+        "name": "Noah",
+        "description": "Righteous man who built the ark, saved humanity from the flood, received God's rainbow covenant."
+      },
+      {
+        "name": "Abraham (called)",
+        "description": "Called by God to leave Ur at age 75, father of faith who would become patriarch of God's chosen people."
+      }
     ],
     "majorEvents": [
       "Creation of the world in six days",
@@ -45,7 +54,37 @@
       "Aquinas, ST I, q. 91-102 - Creation of man"
     ],
     "theologicalSignificance": "The Early World establishes foundational truths of salvation history. God creates all things good, with humanity as the crown of creation made in His image and likeness. The Fall introduces sin, suffering, and death into the world, but Genesis 3:15 immediately promises redemption through the woman's seed who will crush the serpent's head. The Flood demonstrates God's justice against sin yet His mercy in preserving Noah. The covenant with Noah is universal, extending to all creation. The Tower of Babel shows human pride and God's response of scattering nations. This period reveals humanity's desperate need for a Savior and sets the stage for God's plan of redemption through Abraham's lineage.",
-    "narrativeSummary": "From perfection in Eden to the chaos of sin and rebellion, the Early World reveals the human condition: created for communion with God, fallen through disobedience, yet promised redemption. Every subsequent chapter of salvation history flows from these foundational eleven chapters of Genesis."
+    "narrativeSummary": "From perfection in Eden to the chaos of sin and rebellion, the Early World reveals the human condition: created for communion with God, fallen through disobedience, yet promised redemption. Every subsequent chapter of salvation history flows from these foundational eleven chapters of Genesis.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Early World",
+        "voice": "en-US-AndrewNeural",
+        "duration": 105,
+        "script": "Welcome to the beginning\u2014the Early World period. 'In the beginning, God created the heavens and the earth.' These opening words of Genesis establish the foundation of all reality. God creates a perfect world, crowns it with humanity made in His image, and declares it 'very good.' But perfection doesn't last. Through the serpent's deception and human pride, Adam and Eve rebel, introducing sin, suffering, and death into God's good creation. Yet even in the moment of judgment, God promises redemption. Genesis 3:15, the Protoevangelium or 'first gospel,' prophesies that the woman's seed will crush the serpent's head. As wickedness multiplies, God sends the flood\u2014yet preserves Noah and establishes the first universal covenant. The Tower of Babel scatters the nations. Every event in these eleven foundational chapters reveals humanity's desperate need for a Savior. From perfection to fall, from judgment to covenant, the Early World sets the stage for God's great rescue plan."
+      },
+      {
+        "id": "fall",
+        "title": "The Fall and Its Consequences",
+        "voice": "en-US-BrianNeural",
+        "duration": 90,
+        "script": "Paradise lost. The serpent, craftier than any beast, asks Eve: 'Did God actually say you shall not eat?' He sows doubt about God's goodness. Eve sees the fruit is good for food, pleasing to the eye, desirable for wisdom. She eats. Adam, standing beside her, also eats. Immediately their eyes are opened\u2014not to divine wisdom, but to shame. They hear God walking in the garden and hide. The fall brings devastating consequences: expulsion from Eden, pain in childbirth, toil in work, enmity with creation, and ultimately death. Yet in pronouncing judgment, God simultaneously promises grace. 'I will put enmity between you and the woman, between your offspring and hers; he will strike your head, and you will strike his heel.' This first gospel points forward to Christ, the New Adam, who will undo the first Adam's disobedience. Every sin throughout history flows from this original rebellion. But every hope for redemption begins here too."
+      },
+      {
+        "id": "noah",
+        "title": "Noah and the Flood",
+        "voice": "en-US-EmmaNeural",
+        "duration": 95,
+        "script": "The earth had become corrupt in God's sight, filled with violence. 'The LORD saw that the wickedness of man was great, and every intention of his heart was only evil continually.' It grieved God to His heart. But Noah found favor. God commanded him to build an ark\u2014450 feet long, 75 feet wide, 45 feet high. For perhaps 120 years, Noah built while preaching righteousness. The world mocked. Then came the flood. Rain fell for 40 days and nights. Springs of the deep burst forth. Waters covered the earth for 150 days. Every living thing perished\u2014except those in the ark. When the waters receded, Noah's first act was worship. He built an altar and offered sacrifice. God was pleased and made a covenant: 'Never again will I destroy all life by flood.' The rainbow became an eternal sign. The Catechism teaches that Noah's ark prefigures the Church, the vessel of salvation. Just as eight souls were saved through water, so we are saved through the waters of baptism. Noah's obedience in building the ark despite ridicule models faith that trusts God's word even when it seems impossible."
+      },
+      {
+        "id": "significance",
+        "title": "Theological Significance",
+        "voice": "en-US-JennyNeural",
+        "duration": 85,
+        "script": "The Early World establishes theology's foundation. First, creation reveals God as sovereign, purposeful, and good. We are not cosmic accidents but bearers of the divine image, created for relationship with God. Second, the fall explains the human condition. We're born into a world marred by sin, yet we're accountable for our own choices. Original sin is both inherited condition and personal choice. Third, the promise in Genesis 3:15 introduces the theme that dominates all Scripture: God will send a Redeemer. The woman's seed who crushes the serpent is ultimately Christ. Fourth, Noah's flood demonstrates that God's mercy and justice coexist. He judges sin yet preserves a remnant. The ark becomes a type of the Church. The covenant with Noah is universal\u2014with all humanity and creation. Every rainbow reminds us that God keeps His promises. The Early World teaches that we cannot save ourselves. Our repeated rebellion\u2014Adam's disobedience, Cain's murder, humanity's wickedness, Babel's pride\u2014proves we need divine intervention. God's rescue plan begins here, pointing toward the Savior who will come from Adam's line to restore what Adam lost."
+      }
+    ]
   },
   {
     "id": 2,
@@ -53,10 +92,22 @@
     "timeframe": "2000 - 1700 BC",
     "color": "#D4AF37",
     "keyFigures": [
-      "Abraham",
-      "Isaac",
-      "Jacob (Israel)",
-      "Joseph"
+      {
+        "name": "Abraham",
+        "description": "Father of faith who left everything to follow God's call, believed the impossible promise of a son, offered Isaac in obedience."
+      },
+      {
+        "name": "Isaac",
+        "description": "Son of promise born miraculously to elderly parents, offered on Mount Moriah, prefigures Christ's sacrifice."
+      },
+      {
+        "name": "Jacob (Israel)",
+        "description": "Deceiver transformed into Israel after wrestling with God, father of twelve tribes, experienced God's faithfulness despite his flaws."
+      },
+      {
+        "name": "Joseph",
+        "description": "Dreamer sold into slavery by brothers, rose to Egyptian power, saved his family from famine, embodied forgiveness and providence."
+      }
     ],
     "majorEvents": [
       "God calls Abraham out of Ur",
@@ -97,7 +148,23 @@
       "Aquinas, ST II-II, q. 2 - The act of faith"
     ],
     "theologicalSignificance": "The Patriarchs period reveals God's faithfulness to His covenant promises across generations. Abraham's faith becomes the model for all believers - he trusts God's promise of a son despite impossibility, and obeys even when commanded to sacrifice Isaac. The Catechism teaches that Abraham is 'the father of all who believe' (CCC 146). The binding of Isaac on Mount Moriah prefigures the Father's sacrifice of His only Son. Jacob's wrestling with God and transformation into 'Israel' shows that relationship with God involves struggle and surrender. Joseph's story demonstrates divine providence - God brings good from evil, using Joseph's suffering to save his family and preserve the covenant line. This period establishes that salvation comes through faith, that God keeps His promises even across centuries, and that one family (Israel) will be the means of blessing for all nations.",
-    "narrativeSummary": "Through four generations of patriarchs, God establishes His covenant and demonstrates His faithfulness. From Abraham's call to Joseph's providential rise in Egypt, we see faith tested, promises kept, and God's plan advancing even through human sin and suffering."
+    "narrativeSummary": "Through four generations of patriarchs, God establishes His covenant and demonstrates His faithfulness. From Abraham's call to Joseph's providential rise in Egypt, we see faith tested, promises kept, and God's plan advancing even through human sin and suffering.",
+    "audioSections": [
+      {
+        "id": "intro",
+        "title": "Introduction to the Patriarchs",
+        "voice": "en-US-AndrewNeural",
+        "duration": 100,
+        "script": "The Patriarchs period spans four generations and 300 years\u2014from Abraham's call around 2000 BC to Joseph's death in Egypt around 1700 BC. This is the age of promise, when God narrows His focus from all humanity to one family through whom He will bless all nations. 'Go from your country to the land I will show you. I will make of you a great nation.' With these words, God calls Abraham to leave everything familiar and journey to Canaan. Through Abraham, Isaac, Jacob, and Joseph, God establishes His covenant and demonstrates His faithfulness across generations. These patriarchs are far from perfect. Abraham lies about his wife. Jacob deceives his father. Joseph's brothers sell him into slavery. Yet God works through their flaws, proving that His plan depends not on human righteousness but on divine grace. The Catechism teaches that Abraham is the father of all who believe. His faith becomes the model for ours. The promises God makes to these patriarchs\u2014land, descendants, blessing\u2014reach ultimate fulfillment in Christ."
+      },
+      {
+        "id": "abraham",
+        "title": "Abraham: Father of Faith",
+        "voice": "en-US-GuyNeural",
+        "duration": 95,
+        "script": "At age 75, Abraham hears God's call and obeys without knowing the destination. He's promised land, but lives in tents as a nomad. He's promised descendants numerous as stars, yet remains childless into old age. When Sarah finally conceives at 90, Isaac is born\u2014the son of promise. Abraham's faith reaches its zenith on Mount Moriah. 'Take your son, your only son Isaac, whom you love, and offer him as a burnt offering.' Every step up that mountain must have been agony. Yet Abraham trusted that God could even raise the dead. As he raised the knife, God intervened: 'Do not lay your hand on the boy. Now I know you fear God.' A ram caught in the thicket became the substitute. This scene prefigures Calvary\u2014the Father sacrificing His only beloved Son, but this time no substitute intervenes. Genesis 15:6 declares, 'Abraham believed the LORD, and he counted it to him as righteousness.' This becomes the foundation for Paul's teaching on justification by faith. Abraham shows us that faith means trusting God's promises even when circumstances seem impossible, obeying even when we don't understand, believing that God will provide."
+      }
+    ]
   },
   {
     "id": 3,
