@@ -197,14 +197,14 @@ export function getSourceLink(source: string): LinkedSource {
 
     // Tractates on John (e.g., "Tractates on John 7.23" or "Tractates on John 119")
     if (source.match(/Tractates on John/i)) {
-      // Match integer or decimal format (7.23 → extract "7")
-      const tractateMatch = source.match(/Tractates on John\s+(\d+)(?:\.\d+)?/i);
+      // Match integer or decimal format (7.23 → extract "7") or range (46-47 → extract "46")
+      const tractateMatch = source.match(/Tractates on John\s+(\d+)(?:[\.\-]\d+)?/i);
       if (tractateMatch) {
         const tractateNum = parseInt(tractateMatch[1]);
         if (tractateNum >= 1 && tractateNum <= 124) {
           return {
             text,
-            url: `https://www.newadvent.org/fathers/1701${tractateNum.toString().padStart(2, '0')}.htm`,
+            url: `https://www.newadvent.org/fathers/1701${tractateNum.toString().padStart(3, '0')}.htm`,
             type: 'ChurchFather'
           };
         }
@@ -212,7 +212,7 @@ export function getSourceLink(source: string): LinkedSource {
       // Generic Tractates
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/170101.htm',
+        url: 'https://www.newadvent.org/fathers/1701001.htm',
         type: 'ChurchFather'
       };
     }
@@ -246,14 +246,14 @@ export function getSourceLink(source: string): LinkedSource {
         if (letterNum >= 1 && letterNum <= 270) {
           return {
             text,
-            url: `https://www.newadvent.org/fathers/1102${letterNum.toString().padStart(2, '0')}.htm`,
+            url: `https://www.newadvent.org/fathers/1102${letterNum.toString().padStart(3, '0')}.htm`,
             type: 'ChurchFather'
           };
         }
       }
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/110201.htm',
+        url: 'https://www.newadvent.org/fathers/1102001.htm',
         type: 'ChurchFather'
       };
     }
