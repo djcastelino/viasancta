@@ -249,14 +249,14 @@ export default function BiblicalTimelineClient() {
                     <div className="text-3xl font-bold text-gray-300">#{period.id}</div>
                   </div>
 
-                  <div className="space-y-2 text-left">
-                    <div>
+                  <div className="space-y-2">
+                    <div className="text-left">
                       <span className="font-semibold text-gray-700">Key Figures:</span>
                       <p className="text-gray-600 text-sm">
                         {period.keyFigures.map(f => typeof f === 'string' ? f : f.name).join(', ')}
                       </p>
                     </div>
-                    <div>
+                    <div className="text-left">
                       <span className="font-semibold text-gray-700">Major Events:</span>
                       <p className="text-gray-600 text-sm">{period.majorEvents.slice(0, 3).join(' • ')}</p>
                     </div>

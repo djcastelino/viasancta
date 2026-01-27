@@ -53,9 +53,17 @@ export default function AboutPage() {
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Blessed Carlo Acutis's research</li>
-                  <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
                   <li><strong>Marian Apparitions:</strong> Visit 20 Church-approved apparition sites worldwide with AI-guided narrations and immersive experiences</li>
-                  <li><strong>Coming Soon:</strong> Shrines of Saints, Sacred Architecture</li>
+                  <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
+                  <li><strong>Sacred Mountains:</strong> Journey to 15 biblical peaks where God met humanity - from Sinai to Calvary - with multi-voice audio tours and rich theological depth</li>
+                  <li><strong>Coming Soon:</strong> Sacred Architecture, Shrines of Saints</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#6e3a6c] mb-2">Salvation History</h3>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><strong>Biblical Timeline:</strong> Journey through 12 key periods from Adam to the Church Age with audio narration, figure descriptions, and rich theological insights (based on Jeff Cavins' Bible Timeline framework)</li>
+                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing how Christ appears throughout the Hebrew Scriptures - from Genesis to Malachi</li>
                 </ul>
               </div>
               <div>
@@ -63,7 +71,6 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Today's Promise:</strong> Daily Bible promises with AI-generated reflections and audio narration</li>
                   <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
-                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing Christ throughout the Scriptures</li>
                   <li><strong>Scripture Memory Coach:</strong> Master 77 essential Bible verses through proven memorization techniques and spaced repetition</li>
                 </ul>
               </div>
@@ -114,6 +121,18 @@ export default function AboutPage() {
               Credits & Attribution
             </h2>
             <div className="text-gray-700 space-y-3 text-sm">
+              <p>
+                <strong>Biblical Timeline:</strong> Structure and framework inspired by{' '}
+                <a
+                  href="https://biblestudyforcatholics.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  Jeff Cavins' The Great Adventure Bible Timeline
+                </a>
+                {' '}— a groundbreaking system for understanding salvation history through 12 key periods
+              </p>
               <p>
                 <strong>Eucharistic Miracles:</strong> Images courtesy of{' '}
                 <a
