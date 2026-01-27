@@ -52,74 +52,64 @@ export default function JesusInOT() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-5 py-8">
-      <Link href="/jesus-in-ot" className="block group">
-        <div className="bg-gradient-to-br from-[#2C5F87]/10 via-[#325847]/10 to-[#6e3a6c]/10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-[#D4AF37]/20 overflow-hidden">
-          <div className="p-8 md:p-12 relative">
-            {/* Decorative background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-10 right-10 w-32 h-32 bg-[#D4AF37] rounded-full blur-2xl"></div>
-              <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#6e3a6c] rounded-full blur-3xl"></div>
+    <Link href="/jesus-in-ot" className="block group">
+      <div className="bg-gradient-to-br from-[#2C5F87] to-[#325847] rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden h-full">
+        <div className="p-8 text-white relative h-full flex flex-col">
+          {/* Decorative background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+            <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10 flex-1 flex flex-col">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
+                365 DAILY
+              </span>
+              <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
+                DAY {todaysEntry.dayOfYear}
+              </span>
             </div>
 
-            <div className="relative z-10">
-              {/* Header */}
-              <div className="text-center mb-6">
-                <div className="flex items-center justify-center gap-3 mb-3">
-                  <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#2C5F87]">
-                    Jesus in the Old Testament
-                  </h2>
-                </div>
-                <p className="text-gray-600">
-                  Day {todaysEntry.dayOfYear} of 365 • {todaysEntry.category}
-                </p>
-              </div>
+            <h3 className="text-3xl font-bold mb-2 font-serif">
+              Jesus in the Old Testament
+            </h3>
+            <p className="text-xl text-[#D4AF37] italic mb-4">
+              {todaysEntry.category}
+            </p>
 
-              {/* Title and Reference */}
-              <div className="text-center mb-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#6e3a6c] mb-3">
-                  {todaysEntry.title}
-                </h3>
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <span className="inline-block bg-[#2C5F87] text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    {todaysEntry.otBook}
-                  </span>
-                  <span className="inline-block bg-[#D4AF37] text-white px-4 py-2 rounded-full text-sm font-semibold">
-                    {todaysEntry.otReference}
-                  </span>
-                </div>
-              </div>
-
-              {/* Scripture Quote */}
-              <blockquote className="mb-6 text-center max-w-4xl mx-auto">
-                <p className="text-xl md:text-2xl text-gray-800 font-serif leading-relaxed italic">
-                  &quot;{todaysEntry.otText}&quot;
-                </p>
+            {/* Today's Entry Preview */}
+            <div className="mb-4 flex-1">
+              <h4 className="text-lg font-semibold mb-2">{todaysEntry.title}</h4>
+              <p className="text-white/90 text-sm mb-3 leading-relaxed">
+                {todaysEntry.otReference}
+              </p>
+              <blockquote className="text-white/80 italic text-sm border-l-2 border-[#D4AF37] pl-3">
+                &quot;{todaysEntry.otText.substring(0, 120)}...&quot;
               </blockquote>
+            </div>
 
-              {/* Key Insights Preview */}
-              <div className="grid md:grid-cols-2 gap-3 mb-6 max-w-3xl mx-auto">
-                {todaysEntry.keyInsights.slice(0, 2).map((insight, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 bg-white/50 rounded-lg p-4"
-                  >
-                    <span className="text-[#D4AF37] text-lg flex-shrink-0">✦</span>
-                    <span className="text-gray-700 text-sm">{insight}</span>
-                  </div>
-                ))}
+            <div className="flex flex-wrap gap-3 text-sm mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">📖</span>
+                <span>365 Entries</span>
               </div>
-
-              {/* CTA Button */}
-              <div className="text-center">
-                <div className="inline-block bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl group-hover:scale-105 transition-transform">
-                  Read Full Entry →
-                </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">✝️</span>
+                <span>Christ-Focused</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">🔍</span>
+                <span>Daily Discovery</span>
               </div>
             </div>
+
+            <span className="inline-block bg-white text-[#2C5F87] hover:bg-[#D4AF37] hover:text-white px-6 py-3 rounded-full font-semibold transition-colors text-center">
+              Read Today's Entry →
+            </span>
           </div>
         </div>
-      </Link>
-    </section>
+      </div>
+    </Link>
   );
 }

@@ -56,75 +56,140 @@ export default function Home() {
       {/* Today's Promise Section */}
       <TodaysPromise />
 
-      {/* Jesus in the OT Section */}
-      <JesusInOT />
-
-      {/* Biblical Timeline Section */}
+      {/* Sacred Pilgrimages Section */}
       <section className="max-w-7xl mx-auto px-5 py-8">
-        <Link href="/biblical-timeline" className="block group">
-          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-            <div className="p-8 md:p-12 text-white relative">
-              {/* Decorative background pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+        <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
+          Sacred Pilgrimages
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+
+          {/* Sacred Mountains */}
+          <Link href="/sacred-mountains" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Mount_Sinai_morning_02.jpg/1920px-Mount_Sinai_morning_02.jpg"
+                  alt="Mount Sinai"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🏔️</span>
+                    <span>15 Mountains of Scripture</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Sacred Mountains
+                  </h3>
+                </div>
               </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Journey to biblical peaks where God met humanity. From Sinai to Calvary, experience <span className="font-semibold text-[#2C5F87]">multi-voice audio tours</span>, stunning photography, and rich theological depth.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
+              </div>
+            </div>
+          </Link>
 
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  {/* Content */}
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                      <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
-                        SALVATION HISTORY
-                      </span>
-                      <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
-                        12 PERIODS
-                      </span>
+          {/* Marian Apparitions */}
+          <Link href="/tours/marian-apparitions" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
+                  alt="Lourdes Grotto"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🕊️</span>
+                    <span>20 Church-Approved Sites</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Marian Apparitions
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Journey through approved Marian apparitions worldwide. From Guadalupe to Lourdes to Fatima, experience where Our Lady appeared with AI-guided narrations.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Salvation History Section */}
+      <section className="max-w-7xl mx-auto px-5 py-8">
+        <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
+          Salvation History
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+
+          {/* Biblical Timeline */}
+          <Link href="/biblical-timeline" className="block group">
+            <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden h-full">
+              <div className="p-8 text-white relative h-full flex flex-col">
+                {/* Decorative background pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+                </div>
+
+                <div className="relative z-10 flex-1 flex flex-col">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
+                      12 PERIODS
+                    </span>
+                    <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
+                      AUDIO NARRATION
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl font-bold mb-2 font-serif">
+                    Biblical Timeline
+                  </h3>
+                  <p className="text-xl text-purple-200 italic mb-4">
+                    From Adam to King of Kings
+                  </p>
+                  <p className="text-white/90 mb-4 leading-relaxed flex-1">
+                    Journey through 12 key periods from Creation to the Church. Experience God's redemptive plan with audio narration and figure descriptions.
+                  </p>
+
+                  <div className="flex flex-wrap gap-3 text-sm mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">📖</span>
+                      <span>12 Periods</span>
                     </div>
-
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">
-                      Biblical Timeline
-                    </h2>
-                    <p className="text-2xl text-purple-200 italic mb-4">
-                      From Adam to King of Kings
-                    </p>
-                    <p className="text-white/90 text-lg mb-4 leading-relaxed">
-                      Journey through salvation history with 12 key periods from Creation to the Church.
-                      Explore God's redemptive plan unfolding through patriarchs, prophets, kings, and ultimately Christ.
-                    </p>
-
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">📖</span>
-                        <span>12 Time Periods</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">✝️</span>
-                        <span>Key Scriptures</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">📚</span>
-                        <span>CCC References</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl">👑</span>
-                        <span>Christ-Centered</span>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">🎧</span>
+                      <span>Audio Tours</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl">✝️</span>
+                      <span>Key Scriptures</span>
                     </div>
                   </div>
 
-                  {/* CTA */}
-                  <div className="text-center">
-                    <div className="inline-block bg-white text-indigo-600 hover:bg-purple-50 px-8 py-4 rounded-full font-bold text-xl shadow-xl group-hover:scale-105 transition-transform">
-                      Explore Timeline →
-                    </div>
-                  </div>
+                  <span className="inline-block bg-white text-indigo-600 hover:bg-purple-50 px-6 py-3 rounded-full font-semibold transition-colors text-center">
+                    Explore Timeline →
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+
+          {/* Jesus in OT */}
+          <JesusInOT />
+        </div>
       </section>
 
       {/* Memory Verses Section */}
@@ -256,10 +321,10 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Tours Section */}
+      {/* Additional Tours Section */}
       <section id="tours" className="max-w-7xl mx-auto px-5 pb-20">
-        <h2 className="text-3xl font-serif text-[#2C5F87] mb-8">
-          Sacred Pilgrimage Tours
+        <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
+          More Sacred Journeys
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           
@@ -299,34 +364,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Marian Apparitions */}
-          <Link href="/tours/marian-apparitions" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="h-60 relative overflow-hidden">
-                {/* Lourdes Grotto from Wikimedia Commons */}
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
-                  alt="Lourdes Grotto"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-3xl font-bold drop-shadow-md">
-                    Marian Apparitions
-                  </h3>
-                </div>
-              </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Journey through 20 Church-approved Marian apparitions worldwide. From Guadalupe to Lourdes to Fatima, experience where Our Lady appeared with AI-guided narrations.
-                </p>
-                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                  Start Tour →
-                </span>
-              </div>
-            </div>
-          </Link>
-
           {/* Stations of the Cross */}
           <Link href="/stations-of-the-cross" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
@@ -351,38 +388,6 @@ export default function Home() {
               <div className="p-7">
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
                   Walk the Via Dolorosa in Jerusalem with <span className="font-semibold text-[#2C5F87]">Google Street View</span>. Experience the actual path Jesus walked with immersive prayer mode and audio meditations.
-                </p>
-                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                  Start Tour →
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          {/* Sacred Mountains */}
-          <Link href="/sacred-mountains" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
-              <div className="h-60 relative overflow-hidden">
-                {/* Mount Sinai from Wikimedia Commons */}
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Mount_Sinai_morning_02.jpg/1920px-Mount_Sinai_morning_02.jpg"
-                  alt="Mount Sinai"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
-                    <span>🏔️</span>
-                    <span>5 Mountains of Scripture</span>
-                  </div>
-                  <h3 className="text-3xl font-bold drop-shadow-md">
-                    Sacred Mountains
-                  </h3>
-                </div>
-              </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Journey to biblical peaks where God met humanity. From Sinai to the Mount of Olives, experience <span className="font-semibold text-[#2C5F87]">multi-voice audio tours</span>, stunning photography, and rich theological depth.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Start Tour →
