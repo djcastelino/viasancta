@@ -239,12 +239,12 @@ export default function BiblicalTimelineClient() {
                   onClick={() => setSelectedPeriod(period)}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <div>
+                    <div className="text-left">
                       <div className="inline-block px-3 py-1 rounded-full text-white text-sm font-semibold mb-2"
                            style={{ backgroundColor: period.color }}>
                         {period.timeframe}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 text-left">{period.name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900">{period.name}</h3>
                     </div>
                     <div className="text-3xl font-bold text-gray-300">#{period.id}</div>
                   </div>
@@ -262,7 +262,7 @@ export default function BiblicalTimelineClient() {
                     </div>
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-200">
+                  <div className="mt-4 pt-4 border-t border-gray-200 text-left">
                     <p className="text-sm italic text-gray-600">"{period.narrativeSummary}"</p>
                   </div>
 
