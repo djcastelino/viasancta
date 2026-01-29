@@ -54,10 +54,12 @@ export default function Home() {
       </section>
 
       {/* Today's Promise Section */}
-      <TodaysPromise />
+      <div id="promise">
+        <TodaysPromise />
+      </div>
 
       {/* Daily Scripture Challenge Section */}
-      <section className="max-w-7xl mx-auto px-5 py-8">
+      <section id="challenge" className="max-w-7xl mx-auto px-5 py-8">
         <Link href="/challenge" className="block group">
           <div className="bg-gradient-to-br from-[#6e3a6c]/95 via-[#8B4789]/90 to-[#6e3a6c]/95 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
             <div className="p-8 md:p-12 text-white relative">
@@ -122,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* Scripture Memory Coach Section */}
-      <section className="max-w-7xl mx-auto px-5 py-8">
+      <section id="memory-verses" className="max-w-7xl mx-auto px-5 py-8">
         <Link href="/memory-verses" className="block group">
           <div className="bg-gradient-to-br from-amber-500 to-yellow-600 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
             <div className="p-8 md:p-12 text-white relative">
@@ -368,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Salvation History Section */}
-      <section className="max-w-7xl mx-auto px-5 py-8">
+      <section id="salvation-history" className="max-w-7xl mx-auto px-5 py-8">
         <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
           Salvation History
         </h2>

@@ -41,34 +41,34 @@ export default function Navigation() {
               Home
             </Link>
             <Link
-              href="/#tours"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
-            >
-              Sacred Pilgrimages
-            </Link>
-            <Link
               href="/#promise"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Today's Promise
             </Link>
             <Link
-              href="/challenge"
+              href="/#challenge"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Daily Challenge
             </Link>
             <Link
-              href="/jesus-in-ot"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
-            >
-              Jesus in the Old Testament
-            </Link>
-            <Link
-              href="/memory-verses"
+              href="/#memory-verses"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Memory Verses
+            </Link>
+            <Link
+              href="/#tours"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+            >
+              Sacred Pilgrimages
+            </Link>
+            <Link
+              href="/#salvation-history"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+            >
+              Salvation History
             </Link>
             <Link
               href="/about"
@@ -105,13 +105,6 @@ export default function Navigation() {
                 Home
               </Link>
               <Link
-                href="/#tours"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
-              >
-                Sacred Pilgrimages
-              </Link>
-              <Link
                 href="/#promise"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
@@ -119,25 +112,32 @@ export default function Navigation() {
                 Today's Promise
               </Link>
               <Link
-                href="/challenge"
+                href="/#challenge"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
               >
                 Daily Challenge
               </Link>
               <Link
-                href="/jesus-in-ot"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
-              >
-                Jesus in the Old Testament
-              </Link>
-              <Link
-                href="/memory-verses"
+                href="/#memory-verses"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
               >
                 Memory Verses
+              </Link>
+              <Link
+                href="/#tours"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
+              >
+                Sacred Pilgrimages
+              </Link>
+              <Link
+                href="/#salvation-history"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
+              >
+                Salvation History
               </Link>
               <Link
                 href="/about"
