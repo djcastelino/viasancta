@@ -52,7 +52,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Blessed Carlo Acutis's research</li>
+                  <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Saint Carlo Acutis's research</li>
                   <li><strong>Marian Apparitions:</strong> Visit 20 Church-approved apparition sites worldwide with AI-guided narrations and immersive experiences</li>
                   <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
                   <li><strong>Sacred Mountains:</strong> Journey to 15 biblical peaks where God met humanity - from Sinai to Calvary - with multi-voice audio tours and rich theological depth</li>
@@ -100,17 +100,17 @@ export default function AboutPage() {
           {/* Inspired by Blessed Carlo */}
           <section className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6">
             <h3 className="text-xl font-serif text-[#2C5F87] mb-3">
-              Inspired by Blessed Carlo Acutis
+              Inspired by Saint Carlo Acutis
             </h3>
             <div className="text-gray-700 space-y-3">
               <p>
-                Our Eucharistic Miracles pilgrimage is directly inspired by <strong>Blessed Carlo Acutis</strong>,
+                Our Eucharistic Miracles pilgrimage is directly inspired by <strong>Saint Carlo Acutis</strong>,
                 who before his death at age 15 in 2006, created a comprehensive exhibition documenting
                 Church-approved Eucharistic miracles worldwide. Carlo showed that technology and deep faith
                 can work together beautifully.
               </p>
               <p className="italic">
-                "The Eucharist is my highway to Heaven." — Blessed Carlo Acutis
+                "The Eucharist is my highway to Heaven." — Saint Carlo Acutis
               </p>
             </div>
           </section>
@@ -143,7 +143,7 @@ export default function AboutPage() {
                 >
                   miracolieucaristici.org
                 </a>
-                {' '}free downloadable web panels. Exhibition created by Blessed Carlo Acutis.
+                {' '}free downloadable web panels. Exhibition created by Saint Carlo Acutis.
               </p>
               <p>
                 <strong>Street View:</strong> Via Dolorosa imagery powered by Google Maps Street View
