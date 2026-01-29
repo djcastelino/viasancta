@@ -244,7 +244,7 @@ export default function BiblicalTimelineClient() {
                            style={{ backgroundColor: period.color }}>
                         {period.timeframe}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900">{period.name}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 text-left">{period.name}</h3>
                     </div>
                     <div className="text-3xl font-bold text-gray-300">#{period.id}</div>
                   </div>
