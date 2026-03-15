@@ -32,7 +32,10 @@ export default function SacredMountainsClient() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const musicRef = useRef<HTMLAudioElement | null>(null);
 
-  const backgroundMusicUrl = 'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3';
+  // Contemplative background music (royalty-free from Incompetech)
+  // Music by Kevin MacLeod (incompetech.com)
+  // Licensed under Creative Commons: By Attribution 4.0 License
+  const backgroundMusicUrl = '/audio/background/contemplative-3.mp3';
 
   const handleCardClick = (mountain: Mountain) => {
     setSelectedMountain(mountain);

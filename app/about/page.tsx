@@ -149,7 +149,24 @@ export default function AboutPage() {
                 <strong>Street View:</strong> Via Dolorosa imagery powered by Google Maps Street View
               </p>
               <p>
-                <strong>Background Music:</strong> Contemplative tracks courtesy of Bensound
+                <strong>Background Music:</strong> Contemplative music by{' '}
+                <a
+                  href="https://incompetech.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  Kevin MacLeod
+                </a>
+                {' '}from incompetech.com. Licensed under{' '}
+                <a
+                  href="http://creativecommons.org/licenses/by/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  Creative Commons: By Attribution 4.0 License
+                </a>
               </p>
             </div>
           </section>

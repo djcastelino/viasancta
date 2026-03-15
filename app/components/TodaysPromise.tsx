@@ -42,11 +42,13 @@ export default function TodaysPromise() {
 
   const startBackgroundMusic = () => {
     if (!backgroundMusicRef.current) {
-      // Multiple soothing ambient music options (royalty-free)
+      // Contemplative background music (royalty-free from Incompetech)
+      // Music by Kevin MacLeod (incompetech.com)
+      // Licensed under Creative Commons: By Attribution 4.0 License
       const musicOptions = [
-        'https://www.bensound.com/bensound-music/bensound-slowmotion.mp3',
-        'https://www.bensound.com/bensound-music/bensound-relaxing.mp3',
-        'https://www.bensound.com/bensound-music/bensound-pianomoment.mp3',
+        '/audio/background/contemplative-1.mp3',
+        '/audio/background/contemplative-2.mp3',
+        '/audio/background/contemplative-3.mp3',
       ];
 
       const bgMusic = new Audio(musicOptions[0]);

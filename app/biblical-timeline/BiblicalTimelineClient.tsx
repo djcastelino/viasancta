@@ -57,7 +57,10 @@ export default function BiblicalTimelineClient() {
 
   const startBackgroundMusic = () => {
     if (!backgroundMusicElement) {
-      const bgMusic = new Audio('https://www.bensound.com/bensound-music/bensound-slowmotion.mp3');
+      // Contemplative background music (royalty-free from Incompetech)
+      // Music by Kevin MacLeod (incompetech.com)
+      // Licensed under Creative Commons: By Attribution 4.0 License
+      const bgMusic = new Audio('/audio/background/contemplative-1.mp3');
       bgMusic.loop = true;
       bgMusic.volume = 0;
       setBackgroundMusicElement(bgMusic);
