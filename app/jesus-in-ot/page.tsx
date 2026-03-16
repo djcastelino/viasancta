@@ -454,6 +454,9 @@ export default function JesusInOTPage() {
                   <p className="text-xs text-gray-500 mt-4 italic">
                     References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, Doctors of the Church, and Magisterial documents. Click links to read more.
                   </p>
+                  <p className="text-xs text-gray-500 mt-2 italic">
+                    † Patristic references (Church Fathers) are provided for further study. While efforts have been made to ensure accuracy, some citations may be approximate. CCC references are exact.
+                  </p>
                 </section>
               )}
 

@@ -1,0 +1,1314 @@
+{
+  "missingScripture": [],
+  "invalidScripture": [],
+  "invalidReferences": [
+    {
+      "day": 70,
+      "title": "Song of Songs: The Divine Bridegroom",
+      "reference": "Song of Songs 2:16"
+    },
+    {
+      "day": 170,
+      "title": "Song of Songs 2: He Has Taken Me to the Banquet Hall",
+      "reference": "Song of Songs 2:4"
+    },
+    {
+      "day": 171,
+      "title": "Song of Songs 5: Open to Me, My Sister",
+      "reference": "Song of Songs 5:2"
+    },
+    {
+      "day": 312,
+      "title": "Song of Songs 4: You Have Stolen My Heart",
+      "reference": "Song of Songs 4:9-10, 12"
+    },
+    {
+      "day": 339,
+      "title": "Song of Songs 8: Love Strong as Death",
+      "reference": "Song of Songs 8:6-7"
+    }
+  ],
+  "missingFields": [],
+  "suspiciousSources": [
+    {
+      "day": 4,
+      "title": "Joseph: Beloved Son Betrayed",
+      "source": "Augustine, Against Faustus XII.41 - Joseph as type of Christ betrayed"
+    },
+    {
+      "day": 12,
+      "title": "The Manna from Heaven",
+      "source": "Augustine, Tractates on John 26 - Manna and Eucharist"
+    },
+    {
+      "day": 15,
+      "title": "David the Shepherd King",
+      "source": "Augustine, Expositions on Psalms 23 - David and Christ"
+    },
+    {
+      "day": 17,
+      "title": "Psalm 22: The Crucifixion Psalm",
+      "source": "Augustine, Expositions on Psalms 22 - Crucifixion prophecy"
+    },
+    {
+      "day": 26,
+      "title": "Ezekiel's Good Shepherd",
+      "source": "Augustine, Tractates on John 46-47 - Good Shepherd discourse"
+    },
+    {
+      "day": 30,
+      "title": "The New Covenant Written on Hearts",
+      "source": "Aquinas, ST I-II, q. 106, a. 1 - New Law of Gospel"
+    },
+    {
+      "day": 32,
+      "title": "Psalm 2: The LORD's Anointed King",
+      "source": "Augustine, Expositions on Psalms 2 - Messianic king"
+    },
+    {
+      "day": 32,
+      "title": "Psalm 2: The LORD's Anointed King",
+      "source": "Aquinas, Commentary on Psalms 2 - Divine sonship"
+    },
+    {
+      "day": 33,
+      "title": "Psalm 110: Sit at My Right Hand",
+      "source": "Augustine, Expositions on Psalms 110 - Christ enthroned"
+    },
+    {
+      "day": 34,
+      "title": "Manna from Heaven",
+      "source": "Augustine, Tractates on John 26 - Manna and Eucharist"
+    },
+    {
+      "day": 35,
+      "title": "Psalm 40: A Body You Prepared for Me",
+      "source": "Augustine, Expositions on Psalms 40 - Obedience over sacrifice"
+    },
+    {
+      "day": 40,
+      "title": "David: The Shepherd King",
+      "source": "Augustine, Expositions on Psalms 23 - David and Christ"
+    },
+    {
+      "day": 43,
+      "title": "Psalm 24: The King of Glory",
+      "source": "Augustine, Expositions on Psalms 24 - King of Glory enters"
+    },
+    {
+      "day": 43,
+      "title": "Psalm 24: The King of Glory",
+      "source": "Aquinas, Commentary on Psalms 24 - Christ's triumph"
+    },
+    {
+      "day": 44,
+      "title": "Isaiah 59: The Redeemer Will Come to Zion",
+      "source": "Aquinas, Commentary on Romans 11 - Mystery of Israel"
+    },
+    {
+      "day": 46,
+      "title": "Pierced Hands and Feet",
+      "source": "Augustine, Expositions on Psalms 22 - Crucifixion prophecy"
+    },
+    {
+      "day": 47,
+      "title": "Not a Bone Broken",
+      "source": "Augustine, Tractates on John 120 - Bones unbroken"
+    },
+    {
+      "day": 49,
+      "title": "Betrayed for Thirty Pieces of Silver",
+      "source": "Augustine, Tractates on John 113 - Betrayal foretold"
+    },
+    {
+      "day": 53,
+      "title": "The Stone the Builders Rejected",
+      "source": "Augustine, Expositions on Psalms 118 - Rejected stone exalted"
+    },
+    {
+      "day": 54,
+      "title": "Given Vinegar to Drink",
+      "source": "Augustine, Expositions on Psalms 69 - Passion prophecy"
+    },
+    {
+      "day": 59,
+      "title": "Out of Egypt I Called My Son",
+      "source": "Augustine, Questions on the Heptateuch - Typological reading"
+    },
+    {
+      "day": 65,
+      "title": "2 Maccabees: Resurrection Hope",
+      "source": "Aquinas, ST Supplement, q. 75 - Bodies will rise"
+    },
+    {
+      "day": 67,
+      "title": "Job: The Innocent Sufferer",
+      "source": "Aquinas, ST II-II, q. 124, a. 4 - Patience in suffering"
+    },
+    {
+      "day": 72,
+      "title": "Rahab: Faith That Saves",
+      "source": "Augustine, Questions on Joshua 2 - Rahab as Church type"
+    },
+    {
+      "day": 78,
+      "title": "Elijah Fed by Ravens and Angels",
+      "source": "Augustine, Tractates on John 26 - True bread from heaven"
+    },
+    {
+      "day": 80,
+      "title": "Elisha Raises the Dead",
+      "source": "Augustine, Tractates on John 49 - Death and resurrection"
+    },
+    {
+      "day": 86,
+      "title": "Ezekiel's River from the Temple",
+      "source": "Augustine, Tractates on John 120 - River from temple = Christ"
+    },
+    {
+      "day": 92,
+      "title": "Jonah and Nineveh's Repentance",
+      "source": "Augustine, Letter 102 - Nineveh's repentance"
+    },
+    {
+      "day": 95,
+      "title": "Habakkuk: The Just Shall Live by Faith",
+      "source": "Augustine, The Spirit and the Letter 26 - Faith justifies"
+    },
+    {
+      "day": 95,
+      "title": "Habakkuk: The Just Shall Live by Faith",
+      "source": "Aquinas, ST I-II, q. 113, a. 4 - Justification"
+    },
+    {
+      "day": 102,
+      "title": "Psalm 22: Crucifixion Foretold",
+      "source": "Augustine, Expositions on Psalms 22 - Christ's voice in suffering"
+    },
+    {
+      "day": 102,
+      "title": "Psalm 22: Crucifixion Foretold",
+      "source": "Aquinas, Commentary on Psalms 22 - Messianic prophecy"
+    },
+    {
+      "day": 104,
+      "title": "Psalm 34: Not a Bone Broken",
+      "source": "Aquinas, Commentary on John 19 - Paschal Lamb typology"
+    },
+    {
+      "day": 105,
+      "title": "Psalm 16: Will Not See Decay",
+      "source": "Augustine, Expositions on Psalms 16 - Christ's body incorrupt"
+    },
+    {
+      "day": 106,
+      "title": "Psalm 69: Crucifixion Details",
+      "source": "John 19:28-29 fulfills Psalm 69:21 per Augustine, Tractates on John"
+    },
+    {
+      "day": 106,
+      "title": "Psalm 69: Crucifixion Details",
+      "source": "Aquinas, Commentary on Psalms 69 - Vinegar and gall prophecy"
+    },
+    {
+      "day": 110,
+      "title": "Isaiah 26: The Dead Will Rise",
+      "source": "Augustine, Enchiridion 84 - Isaiah's resurrection prophecy"
+    },
+    {
+      "day": 110,
+      "title": "Isaiah 26: The Dead Will Rise",
+      "source": "Aquinas, ST Suppl., q. 75 - General resurrection"
+    },
+    {
+      "day": 111,
+      "title": "Isaiah 28: The Precious Cornerstone",
+      "source": "Augustine, Expositions on Psalms 118 - Rejected stone becomes cornerstone"
+    },
+    {
+      "day": 114,
+      "title": "Isaiah 42: Servant Brings Justice",
+      "source": "Aquinas, Commentary on Isaiah 42 - Justice without violence"
+    },
+    {
+      "day": 116,
+      "title": "Isaiah 50: Beaten for Us",
+      "source": "Augustine, Expositions on Psalms 37 - Silent before accusers"
+    },
+    {
+      "day": 118,
+      "title": "Isaiah 55: Come, Buy Wine and Milk",
+      "source": "John 7:37 fulfills Isaiah 55:1 per Augustine, Tractates on John 32"
+    },
+    {
+      "day": 120,
+      "title": "Isaiah 62: The New Name",
+      "source": "Revelation 3:12 and 21:2 fulfill Isaiah 62 per Augustine"
+    },
+    {
+      "day": 123,
+      "title": "Isaiah 66: New Heavens and New Earth",
+      "source": "Aquinas, Commentary on 2 Peter 3 - Final renewal"
+    },
+    {
+      "day": 124,
+      "title": "Psalm 41: Betrayed by a Friend",
+      "source": "Augustine, Expositions on Psalms 41 - Friend's betrayal"
+    },
+    {
+      "day": 124,
+      "title": "Psalm 41: Betrayed by a Friend",
+      "source": "Aquinas, Commentary on John 13 - Judas prefigured"
+    },
+    {
+      "day": 125,
+      "title": "Psalm 45: Royal Wedding Song",
+      "source": "Augustine, Expositions on Psalms 45 - Royal bridegroom"
+    },
+    {
+      "day": 126,
+      "title": "Psalm 68: Ascension Triumph",
+      "source": "Ephesians 4:8-10 applies Psalm 68:18 per Aquinas, Commentary on Ephesians"
+    },
+    {
+      "day": 126,
+      "title": "Psalm 68: Ascension Triumph",
+      "source": "Augustine, Tractates on John 119 - Ascension leads captivity captive"
+    },
+    {
+      "day": 127,
+      "title": "Psalm 72: Universal Kingdom",
+      "source": "Aquinas, Commentary on Psalms 72 - Perpetual kingdom"
+    },
+    {
+      "day": 128,
+      "title": "Psalm 78: Manna from Heaven",
+      "source": "Augustine, Tractates on John 26 - Manna was shadow, Christ is reality"
+    },
+    {
+      "day": 129,
+      "title": "Psalm 80: Restore Us, O God",
+      "source": "Daniel 7:13-14 and Psalm 80:17 refer to Messiah per Jerome"
+    },
+    {
+      "day": 129,
+      "title": "Psalm 80: Restore Us, O God",
+      "source": "Augustine, Expositions on Psalms 80 - Restoration through Christ"
+    },
+    {
+      "day": 129,
+      "title": "Psalm 80: Restore Us, O God",
+      "source": "Aquinas, Commentary on Psalms 80 - Messianic restoration"
+    },
+    {
+      "day": 130,
+      "title": "Psalm 84: Dwelling in God's House",
+      "source": "Augustine, Expositions on Psalms 84 - Longing for God's house"
+    },
+    {
+      "day": 130,
+      "title": "Psalm 84: Dwelling in God's House",
+      "source": "Aquinas, ST II-II, q. 83, a. 3 - Prayer in God's house"
+    },
+    {
+      "day": 131,
+      "title": "Psalm 91: Protection Under His Wings",
+      "source": "Augustine, Expositions on Psalms 91 - Angels guard Christ"
+    },
+    {
+      "day": 132,
+      "title": "Psalm 102: You Will Arise and Have Compassion",
+      "source": "Augustine, Expositions on Psalms 102 - Unchangeable Creator"
+    },
+    {
+      "day": 133,
+      "title": "Psalm 118: The Stone Rejected",
+      "source": "Augustine, Expositions on Psalms 118 - Rejected stone becomes head"
+    },
+    {
+      "day": 133,
+      "title": "Psalm 118: The Stone Rejected",
+      "source": "Aquinas, Commentary on Psalms 118 - Jews reject Messiah"
+    },
+    {
+      "day": 134,
+      "title": "Psalm 132: Dwelling Place for the Mighty One",
+      "source": "Augustine, Expositions on Psalms 132 - Zion fulfilled in Church"
+    },
+    {
+      "day": 134,
+      "title": "Psalm 132: Dwelling Place for the Mighty One",
+      "source": "Aquinas, Commentary on Psalms 132 - Temple points to Incarnation"
+    },
+    {
+      "day": 135,
+      "title": "Proverbs 9: Wisdom's Banquet",
+      "source": "Aquinas, ST II-II, q. 45, a. 2 - Wisdom invites to feast"
+    },
+    {
+      "day": 137,
+      "title": "1 Chronicles 16: Seek His Face Always",
+      "source": "Augustine, Expositions on Psalms 105 - Seek Lord continually"
+    },
+    {
+      "day": 137,
+      "title": "1 Chronicles 16: Seek His Face Always",
+      "source": "Aquinas, ST II-II, q. 81, a. 2 - Adoration belongs to God"
+    },
+    {
+      "day": 138,
+      "title": "1 Chronicles 29: Who Am I?",
+      "source": "Aquinas, ST I-II, q. 109, a. 5 - Need for grace to do good"
+    },
+    {
+      "day": 140,
+      "title": "2 Chronicles 7: If My People Pray",
+      "source": "Aquinas, ST II-II, q. 83, a. 15 - Prayer for others"
+    },
+    {
+      "day": 141,
+      "title": "Ezra 3: Rebuilding the Altar",
+      "source": "Aquinas, Commentary on Hebrews 12 - Old temple passes away"
+    },
+    {
+      "day": 142,
+      "title": "Ezra 6: Passover Celebrated with Joy",
+      "source": "Augustine, Tractates on John 55 - Christian Passover is Christ"
+    },
+    {
+      "day": 143,
+      "title": "Nehemiah 8: The Joy of the LORD",
+      "source": "Aquinas, ST II-II, q. 28, a. 1 - Spiritual joy from charity"
+    },
+    {
+      "day": 144,
+      "title": "Nehemiah 9: You Gave Your Good Spirit",
+      "source": "Augustine, On the Spirit and the Letter - Law written on hearts"
+    },
+    {
+      "day": 144,
+      "title": "Nehemiah 9: You Gave Your Good Spirit",
+      "source": "Aquinas, ST I-II, q. 106, a. 1 - New Law is Holy Spirit"
+    },
+    {
+      "day": 145,
+      "title": "Lamentations 3: His Compassions Never Fail",
+      "source": "Augustine, Expositions on Psalms 136 - His mercy endures forever"
+    },
+    {
+      "day": 145,
+      "title": "Lamentations 3: His Compassions Never Fail",
+      "source": "Aquinas, ST II-II, q. 30, a. 4 - Mercy as greatest virtue"
+    },
+    {
+      "day": 146,
+      "title": "Zechariah 3: The High Priest Cleansed",
+      "source": "Hebrews 7-8 - Joshua as type of Christ per Aquinas"
+    },
+    {
+      "day": 148,
+      "title": "Zechariah 12: They Will Look on the One They Pierced",
+      "source": "Augustine, Tractates on John 120 - They pierced Him"
+    },
+    {
+      "day": 148,
+      "title": "Zechariah 12: They Will Look on the One They Pierced",
+      "source": "Aquinas, Commentary on John 19 - Prophecy fulfilled at cross"
+    },
+    {
+      "day": 149,
+      "title": "Zechariah 13: A Fountain Opened",
+      "source": "John 19:34 fulfills fountain opened per Augustine"
+    },
+    {
+      "day": 151,
+      "title": "Malachi 3: Messenger Prepares the Way",
+      "source": "Aquinas, Commentary on Matthew 11 - Messenger fulfillment"
+    },
+    {
+      "day": 153,
+      "title": "Hosea 2: I Will Betroth You Forever",
+      "source": "Augustine, Expositions on Psalms 44 - Eternal betrothal"
+    },
+    {
+      "day": 154,
+      "title": "Hosea 6: Come, Let Us Return to the LORD",
+      "source": "1 Corinthians 15:4 - Raised on third day per Augustine"
+    },
+    {
+      "day": 155,
+      "title": "Hosea 11: I Led Them with Cords of Kindness",
+      "source": "Augustine, Questions on the Heptateuch - Israel as son prefigures Christ"
+    },
+    {
+      "day": 158,
+      "title": "Joel 3: The LORD Dwells in Zion",
+      "source": "Aquinas, ST I-II, q. 102, a. 4 - Zion prefigures Church"
+    },
+    {
+      "day": 160,
+      "title": "Amos 9: I Will Restore David's Fallen Tent",
+      "source": "Aquinas, Commentary on Acts 15 - Prophecy of Church"
+    },
+    {
+      "day": 161,
+      "title": "Psalm 8: Son of Man Crowned with Glory",
+      "source": "Augustine, Expositions on Psalms 8 - True Man"
+    },
+    {
+      "day": 163,
+      "title": "Micah 6: What Does the LORD Require?",
+      "source": "Augustine, Enchiridion 3 - Faith, hope, love summarized"
+    },
+    {
+      "day": 163,
+      "title": "Micah 6: What Does the LORD Require?",
+      "source": "Aquinas, ST II-II, q. 104, a. 3 - Obedience to God"
+    },
+    {
+      "day": 164,
+      "title": "Micah 7: Shepherd Your People",
+      "source": "Augustine, Tractates on John 47 - Shepherd who gives life"
+    },
+    {
+      "day": 166,
+      "title": "Habakkuk 2: The Righteous Live by Faith",
+      "source": "Augustine, The Spirit and the Letter 26 - Justification by faith"
+    },
+    {
+      "day": 166,
+      "title": "Habakkuk 2: The Righteous Live by Faith",
+      "source": "Aquinas, Commentary on Romans 1 - Living by faith"
+    },
+    {
+      "day": 167,
+      "title": "Habakkuk 3: Yet I Will Rejoice in the LORD",
+      "source": "Aquinas, ST II-II, q. 17, a. 1 - Hope in adversity"
+    },
+    {
+      "day": 169,
+      "title": "Haggai 2: The Desired of All Nations",
+      "source": "Aquinas, Commentary on Hebrews 12 - Unshakeable kingdom"
+    },
+    {
+      "day": 170,
+      "title": "Song of Songs 2: He Has Taken Me to the Banquet Hall",
+      "source": "Augustine, Expositions on Psalms 44 - Royal marriage feast"
+    },
+    {
+      "day": 180,
+      "title": "Exodus 30: Altar of Incense",
+      "source": "Augustine, Expositions on Psalms 141 - Prayer as incense"
+    },
+    {
+      "day": 180,
+      "title": "Exodus 30: Altar of Incense",
+      "source": "Aquinas, ST II-II, q. 83, a. 15 - Prayer rises like incense"
+    },
+    {
+      "day": 182,
+      "title": "Leviticus 23: Feast of Unleavened Bread",
+      "source": "Augustine, Tractates on John 55 - Unleavened sincerity"
+    },
+    {
+      "day": 185,
+      "title": "Numbers 11: Craving Other Food",
+      "source": "Augustine, Tractates on John 26 - Spiritual food satisfies"
+    },
+    {
+      "day": 190,
+      "title": "Judges 6: Gideon's Offering Consumed",
+      "source": "Judges 6:20-21 as theophany per Augustine"
+    },
+    {
+      "day": 193,
+      "title": "1 Samuel 16: The LORD Looks at the Heart",
+      "source": "Aquinas, ST I-II, q. 19, a. 6 - Interior act most important"
+    },
+    {
+      "day": 194,
+      "title": "1 Samuel 17: David and Goliath",
+      "source": "1 Samuel 17 as type of Christ's victory per Augustine"
+    },
+    {
+      "day": 198,
+      "title": "Job 19: My Redeemer Lives",
+      "source": "Job 19:25-27 as messianic hope per Jerome"
+    },
+    {
+      "day": 198,
+      "title": "Job 19: My Redeemer Lives",
+      "source": "Aquinas, Commentary on Job 19 - Living Redeemer"
+    },
+    {
+      "day": 200,
+      "title": "Psalm 23: The LORD is My Shepherd",
+      "source": "Augustine, Expositions on Psalms 23 - Christ as shepherd"
+    },
+    {
+      "day": 200,
+      "title": "Psalm 23: The LORD is My Shepherd",
+      "source": "Aquinas, Commentary on Psalms 23 - Lord guides His flock"
+    },
+    {
+      "day": 201,
+      "title": "Psalm 27: One Thing I Ask",
+      "source": "Augustine, Expositions on Psalms 27 - One thing necessary"
+    },
+    {
+      "day": 201,
+      "title": "Psalm 27: One Thing I Ask",
+      "source": "Aquinas, ST II-II, q. 83, a. 3 - Beauty of the Lord"
+    },
+    {
+      "day": 202,
+      "title": "Psalm 42: My Soul Thirsts for God",
+      "source": "Aquinas, Commentary on Psalms 42 - Soul's desire for God"
+    },
+    {
+      "day": 203,
+      "title": "Psalm 63: Your Love is Better than Life",
+      "source": "Augustine, Expositions on Psalms 63 - Love better than life"
+    },
+    {
+      "day": 203,
+      "title": "Psalm 63: Your Love is Better than Life",
+      "source": "Aquinas, ST II-II, q. 27, a. 3 - Charity above all"
+    },
+    {
+      "day": 204,
+      "title": "Psalm 95: Come, Let Us Bow Down",
+      "source": "Augustine, Expositions on Psalms 95 - Worship the Creator"
+    },
+    {
+      "day": 204,
+      "title": "Psalm 95: Come, Let Us Bow Down",
+      "source": "Aquinas, ST II-II, q. 84, a. 2 - Adoration due to God alone"
+    },
+    {
+      "day": 205,
+      "title": "Psalm 100: Enter His Gates with Thanksgiving",
+      "source": "Augustine, Expositions on Psalms 100 - Enter with thanksgiving"
+    },
+    {
+      "day": 206,
+      "title": "Psalm 116: Cup of Salvation",
+      "source": "Augustine, Expositions on Psalms 116 - Cup of blessing"
+    },
+    {
+      "day": 207,
+      "title": "Psalm 141: My Prayers Like Incense",
+      "source": "Augustine, Expositions on Psalms 141 - Evening sacrifice"
+    },
+    {
+      "day": 207,
+      "title": "Psalm 141: My Prayers Like Incense",
+      "source": "Aquinas, Commentary on Psalms 141 - Sweet odor to God"
+    },
+    {
+      "day": 208,
+      "title": "Psalm 147: He Provides Food",
+      "source": "Augustine, Expositions on Psalms 147 - God feeds His creatures"
+    },
+    {
+      "day": 208,
+      "title": "Psalm 147: He Provides Food",
+      "source": "Aquinas, ST II-II, q. 83, a. 6 - Petition for daily needs"
+    },
+    {
+      "day": 212,
+      "title": "Daniel 12: Many Will Be Purified",
+      "source": "Aquinas, ST Suppl., q. 86, a. 1 - Bodies shine like stars"
+    },
+    {
+      "day": 214,
+      "title": "Tobit 12: Prayer and Fasting Are Good",
+      "source": "Augustine, Enchiridion 72 - Almsgiving atones for sin"
+    },
+    {
+      "day": 214,
+      "title": "Tobit 12: Prayer and Fasting Are Good",
+      "source": "Aquinas, ST II-II, q. 32, a. 1 - Almsgiving as act of mercy"
+    },
+    {
+      "day": 216,
+      "title": "1 Maccabees 4: Rededication of the Temple",
+      "source": "Augustine, Tractates on John 48 - Jesus at Hanukkah"
+    },
+    {
+      "day": 218,
+      "title": "Wisdom 16: Food of Angels",
+      "source": "Augustine, Tractates on John 26 - True bread of angels"
+    },
+    {
+      "day": 219,
+      "title": "Sirach 15: The Fear of the LORD",
+      "source": "Aquinas, ST II-II, q. 19, a. 9 - Fear as beginning of wisdom"
+    },
+    {
+      "day": 221,
+      "title": "Sirach 35: The Sacrifice of the Righteous",
+      "source": "Aquinas, ST II-II, q. 85, a. 2 - Sacrifice of praise"
+    },
+    {
+      "day": 224,
+      "title": "1 Kings 8: Solomon's Temple Dedication",
+      "source": "Aquinas, ST II-II, q. 83, a. 12 - Prayer in holy place"
+    },
+    {
+      "day": 225,
+      "title": "2 Kings 4: Elisha Multiplies Bread",
+      "source": "Augustine, Tractates on John 24 - Elisha prefigures Christ"
+    },
+    {
+      "day": 226,
+      "title": "2 Chronicles 30: Hezekiah's Passover",
+      "source": "Augustine, Questions on 2 Chronicles - Mercy covers ritual defects"
+    },
+    {
+      "day": 228,
+      "title": "Proverbs 30: Give Me Neither Poverty Nor Riches",
+      "source": "Aquinas, ST II-II, q. 55, a. 6 - Mean between extremes"
+    },
+    {
+      "day": 230,
+      "title": "Ezekiel 34: I Myself Will Shepherd",
+      "source": "Augustine, Tractates on John 46-47 - Divine Shepherd"
+    },
+    {
+      "day": 231,
+      "title": "Ezekiel 36: A New Heart and New Spirit",
+      "source": "Augustine, On Grace and Free Will 31 - God creates new heart"
+    },
+    {
+      "day": 231,
+      "title": "Ezekiel 36: A New Heart and New Spirit",
+      "source": "Aquinas, ST I-II, q. 106, a. 1 - New Law written on heart"
+    },
+    {
+      "day": 232,
+      "title": "Ezekiel 37: Valley of Dry Bones",
+      "source": "Aquinas, ST Suppl., q. 75, a. 1 - Bodies will rise"
+    },
+    {
+      "day": 235,
+      "title": "Ezekiel 47: River from the Temple",
+      "source": "Augustine, Tractates on John 120 - Water and blood flow"
+    },
+    {
+      "day": 236,
+      "title": "2 Samuel 9: Mephibosheth at the King's Table",
+      "source": "Augustine, Expositions on Psalms 36 - Grace to the lame"
+    },
+    {
+      "day": 238,
+      "title": "2 Kings 2: Elijah Taken Up",
+      "source": "Augustine, Tractates on John 124 - Ascension type"
+    },
+    {
+      "day": 239,
+      "title": "2 Kings 6: Elisha Feeds the Hundred",
+      "source": "Augustine, Tractates on John 24 - Elisha prefigures Christ"
+    },
+    {
+      "day": 241,
+      "title": "Leviticus 24: The Bread of the Presence",
+      "source": "Augustine, Questions on the Heptateuch - Sacred bread"
+    },
+    {
+      "day": 243,
+      "title": "Deuteronomy 16: Passover Instructions",
+      "source": "Augustine, Tractates on John 55 - Christian Passover"
+    },
+    {
+      "day": 244,
+      "title": "Deuteronomy 26: Offering Firstfruits",
+      "source": "Augustine, Expositions on Psalms 67 - Firstfruits to God"
+    },
+    {
+      "day": 244,
+      "title": "Deuteronomy 26: Offering Firstfruits",
+      "source": "Aquinas, ST II-II, q. 86, a. 1 - Oblation to God"
+    },
+    {
+      "day": 245,
+      "title": "Joshua 3: Crossing the Jordan",
+      "source": "Augustine, Tractates on John 15 - Crossing into promised land"
+    },
+    {
+      "day": 246,
+      "title": "Joshua 24: Choose Whom You Will Serve",
+      "source": "Aquinas, ST I-II, q. 13, a. 6 - Choice between good and evil"
+    },
+    {
+      "day": 248,
+      "title": "1 Samuel 21: David Eats the Holy Bread",
+      "source": "Aquinas, ST II-II, q. 147, a. 3 - Necessity excuses ritual"
+    },
+    {
+      "day": 251,
+      "title": "1 Kings 3: Solomon's Wisdom",
+      "source": "Aquinas, ST I-II, q. 68, a. 4 - Gift of wisdom"
+    },
+    {
+      "day": 253,
+      "title": "Psalm 36: Abundance of Your House",
+      "source": "Augustine, Expositions on Psalms 36 - Fountain of life"
+    },
+    {
+      "day": 253,
+      "title": "Psalm 36: Abundance of Your House",
+      "source": "Aquinas, Commentary on John 7 - Abundance from Christ"
+    },
+    {
+      "day": 254,
+      "title": "Psalm 43: Send Me Your Light",
+      "source": "Augustine, Expositions on Psalms 43 - Light and truth"
+    },
+    {
+      "day": 255,
+      "title": "Psalm 50: I Will Accept No Bull",
+      "source": "Augustine, Expositions on Psalms 50 - Sacrifice of praise"
+    },
+    {
+      "day": 255,
+      "title": "Psalm 50: I Will Accept No Bull",
+      "source": "Aquinas, ST II-II, q. 85, a. 3 - Interior sacrifice"
+    },
+    {
+      "day": 256,
+      "title": "Psalm 51: Create in Me a Pure Heart",
+      "source": "Aquinas, ST II-II, q. 85, a. 2 - Contrition of heart"
+    },
+    {
+      "day": 257,
+      "title": "Psalm 73: Whom Have I in Heaven but You?",
+      "source": "Aquinas, ST I-II, q. 2, a. 8 - God alone is beatitude"
+    },
+    {
+      "day": 258,
+      "title": "Psalm 81: Open Wide Your Mouth",
+      "source": "Augustine, Expositions on Psalms 81 - God fills the open mouth"
+    },
+    {
+      "day": 258,
+      "title": "Psalm 81: Open Wide Your Mouth",
+      "source": "Aquinas, ST II-II, q. 83, a. 2 - Asking from God"
+    },
+    {
+      "day": 259,
+      "title": "Psalm 87: Glorious Things Are Said",
+      "source": "Aquinas, Commentary on Psalms 87 - Zion is Church"
+    },
+    {
+      "day": 260,
+      "title": "Psalm 103: Forget Not All His Benefits",
+      "source": "Augustine, Expositions on Psalms 103 - Remember God's kindness"
+    },
+    {
+      "day": 260,
+      "title": "Psalm 103: Forget Not All His Benefits",
+      "source": "Aquinas, ST II-II, q. 106, a. 1 - Gratitude to God"
+    },
+    {
+      "day": 261,
+      "title": "Psalm 104: He Makes Springs Pour Water",
+      "source": "Augustine, Expositions on Psalms 104 - Providence in creation"
+    },
+    {
+      "day": 262,
+      "title": "Psalm 105: Remember His Covenant",
+      "source": "Augustine, Expositions on Psalms 105 - Covenant faithfulness"
+    },
+    {
+      "day": 262,
+      "title": "Psalm 105: Remember His Covenant",
+      "source": "Aquinas, Commentary on Psalms 105 - God remembers covenant"
+    },
+    {
+      "day": 263,
+      "title": "Psalm 107: Let Them Give Thanks",
+      "source": "Augustine, Expositions on Psalms 107 - Grateful hearts"
+    },
+    {
+      "day": 263,
+      "title": "Psalm 107: Let Them Give Thanks",
+      "source": "Aquinas, ST II-II, q. 83, a. 17 - Thanksgiving to God"
+    },
+    {
+      "day": 264,
+      "title": "Psalm 111: He Provides Food",
+      "source": "Augustine, Expositions on Psalms 111 - God provides for His own"
+    },
+    {
+      "day": 264,
+      "title": "Psalm 111: He Provides Food",
+      "source": "Aquinas, ST II-II, q. 83, a. 6 - Petition for daily needs"
+    },
+    {
+      "day": 265,
+      "title": "Psalm 145: You Open Your Hand",
+      "source": "Augustine, Expositions on Psalms 145 - Open hand satisfies"
+    },
+    {
+      "day": 266,
+      "title": "Isaiah 1: Your Sacrifices Are Meaningless",
+      "source": "Aquinas, ST II-II, q. 85, a. 2 - External rites need interior disposition"
+    },
+    {
+      "day": 268,
+      "title": "Isaiah 6: Holy, Holy, Holy",
+      "source": "Aquinas, ST II-II, q. 81, a. 7 - Adoration of divine majesty"
+    },
+    {
+      "day": 269,
+      "title": "Isaiah 8: The LORD Will Be a Sanctuary",
+      "source": "Augustine, Expositions on Psalms 118 - Stone rejected"
+    },
+    {
+      "day": 269,
+      "title": "Isaiah 8: The LORD Will Be a Sanctuary",
+      "source": "Aquinas, Commentary on Romans 9 - Stumbling stone"
+    },
+    {
+      "day": 270,
+      "title": "Isaiah 10: A Remnant Will Return",
+      "source": "Aquinas, Commentary on Romans 9 - Remnant according to grace"
+    },
+    {
+      "day": 272,
+      "title": "Isaiah 12: Draw Water from Wells of Salvation",
+      "source": "Augustine, Tractates on John 15 - Wells of salvation"
+    },
+    {
+      "day": 273,
+      "title": "Isaiah 22: A Peg in a Firm Place",
+      "source": "Aquinas, ST Suppl., q. 19, a. 3 - Power of keys"
+    },
+    {
+      "day": 273,
+      "title": "Isaiah 22: A Peg in a Firm Place",
+      "source": "Augustine, Tractates on John 124 - Keys to Peter"
+    },
+    {
+      "day": 274,
+      "title": "Isaiah 24: The New Wine Dries Up",
+      "source": "Aquinas, ST Suppl., q. 73, a. 1 - Signs before judgment"
+    },
+    {
+      "day": 275,
+      "title": "Isaiah 27: The Fruitful Vineyard",
+      "source": "Augustine, Tractates on John 80 - Vineyard of the Lord"
+    },
+    {
+      "day": 275,
+      "title": "Isaiah 27: The Fruitful Vineyard",
+      "source": "Aquinas, Commentary on John 15 - Christ as vine"
+    },
+    {
+      "day": 276,
+      "title": "Isaiah 29: Deep But Not from Me",
+      "source": "Aquinas, ST II-II, q. 84, a. 2 - Interior worship"
+    },
+    {
+      "day": 277,
+      "title": "Isaiah 30: Bread of Adversity",
+      "source": "Aquinas, ST I-II, q. 87, a. 8 - Medicinal punishment"
+    },
+    {
+      "day": 278,
+      "title": "Isaiah 32: The Effect of Righteousness",
+      "source": "Aquinas, ST II-II, q. 58, a. 1 - Justice as virtue"
+    },
+    {
+      "day": 279,
+      "title": "Isaiah 33: Your Eyes Will See the King",
+      "source": "Aquinas, ST I-II, q. 3, a. 8 - Beatific vision"
+    },
+    {
+      "day": 280,
+      "title": "Isaiah 37: The Zeal of the LORD",
+      "source": "Augustine, Tractates on John 10 - Zeal for God's glory"
+    },
+    {
+      "day": 280,
+      "title": "Isaiah 37: The Zeal of the LORD",
+      "source": "Aquinas, Commentary on John 2 - Holy zeal"
+    },
+    {
+      "day": 282,
+      "title": "Isaiah 41: Do Not Fear, I Am with You",
+      "source": "Augustine, Expositions on Psalms 23 - Fear not"
+    },
+    {
+      "day": 282,
+      "title": "Isaiah 41: Do Not Fear, I Am with You",
+      "source": "Aquinas, ST II-II, q. 19, a. 1 - Fear and trust"
+    },
+    {
+      "day": 283,
+      "title": "Isaiah 43: I Have Called You by Name",
+      "source": "Augustine, Tractates on John 45 - Known by name"
+    },
+    {
+      "day": 283,
+      "title": "Isaiah 43: I Have Called You by Name",
+      "source": "Aquinas, Commentary on John 10 - Personal calling"
+    },
+    {
+      "day": 288,
+      "title": "Isaiah 52: How Beautiful on the Mountains",
+      "source": "Augustine, Enchiridion 114 - Gospel preaching"
+    },
+    {
+      "day": 288,
+      "title": "Isaiah 52: How Beautiful on the Mountains",
+      "source": "Aquinas, Commentary on Romans 10 - Preachers sent"
+    },
+    {
+      "day": 289,
+      "title": "Isaiah 56: My House a House of Prayer",
+      "source": "Augustine, Tractates on John 10 - Den of robbers"
+    },
+    {
+      "day": 289,
+      "title": "Isaiah 56: My House a House of Prayer",
+      "source": "Aquinas, Commentary on Matthew 21 - Temple cleansing"
+    },
+    {
+      "day": 290,
+      "title": "Isaiah 58: Is Not This the Kind of Fasting?",
+      "source": "Aquinas, ST II-II, q. 147, a. 1 - Interior fasting"
+    },
+    {
+      "day": 292,
+      "title": "Isaiah 65: Before They Call, I Will Answer",
+      "source": "Aquinas, ST II-II, q. 83, a. 16 - God anticipates prayer"
+    },
+    {
+      "day": 296,
+      "title": "Jeremiah 31: A New Covenant",
+      "source": "Aquinas, ST I-II, q. 106, a. 3 - New Law surpasses old"
+    },
+    {
+      "day": 297,
+      "title": "Jeremiah 33: The LORD is There",
+      "source": "Aquinas, Commentary on Jeremiah 33 - Davidic covenant"
+    },
+    {
+      "day": 298,
+      "title": "Lamentations 2: Pour Out Your Heart",
+      "source": "Aquinas, ST II-II, q. 83, a. 17 - Vocal prayer"
+    },
+    {
+      "day": 299,
+      "title": "Lamentations 4: Priests Are More Defiled",
+      "source": "Augustine, Tractates on John 33 - Blind guides"
+    },
+    {
+      "day": 301,
+      "title": "Exodus 17: Water from the Rock",
+      "source": "Augustine, Tractates on John 15 - Living water from rock"
+    },
+    {
+      "day": 307,
+      "title": "Numbers 8: Purifying the Levites",
+      "source": "Augustine, On Baptism - Cleansing by water and Spirit"
+    },
+    {
+      "day": 308,
+      "title": "Numbers 19: Water of Cleansing",
+      "source": "Augustine, Questions on Numbers - Ritual purity"
+    },
+    {
+      "day": 308,
+      "title": "Numbers 19: Water of Cleansing",
+      "source": "Aquinas, ST I-II, q. 102, a. 5 - Ceremonial cleansings"
+    },
+    {
+      "day": 309,
+      "title": "Deuteronomy 24: Marriage Certificate",
+      "source": "Augustine, On the Good of Marriage - Indissolubility"
+    },
+    {
+      "day": 309,
+      "title": "Deuteronomy 24: Marriage Certificate",
+      "source": "Aquinas, ST Suppl., q. 67, a. 1 - Marriage bond"
+    },
+    {
+      "day": 310,
+      "title": "Genesis 2: The First Marriage",
+      "source": "Augustine, On the Good of Marriage 1 - First marriage"
+    },
+    {
+      "day": 310,
+      "title": "Genesis 2: The First Marriage",
+      "source": "Aquinas, ST Suppl., q. 41, a. 1 - Institution of marriage"
+    },
+    {
+      "day": 314,
+      "title": "Tobit 8: Tobias and Sarah's Wedding Prayer",
+      "source": "Augustine, On the Good of Marriage 3 - Marriage as sacrament"
+    },
+    {
+      "day": 314,
+      "title": "Tobit 8: Tobias and Sarah's Wedding Prayer",
+      "source": "Aquinas, ST Suppl., q. 42, a. 3 - Marriage prayer"
+    },
+    {
+      "day": 315,
+      "title": "1 Samuel 3: Speak, LORD, Your Servant Listens",
+      "source": "Aquinas, ST II-II, q. 83, a. 13 - Attention in prayer"
+    },
+    {
+      "day": 316,
+      "title": "2 Samuel 12: Nathan Confronts David",
+      "source": "Aquinas, ST II-II, q. 85, a. 2 - Contrition necessary"
+    },
+    {
+      "day": 317,
+      "title": "Psalm 32: Blessed is the Forgiven",
+      "source": "Augustine, Expositions on Psalms 32 - Joy of forgiveness"
+    },
+    {
+      "day": 317,
+      "title": "Psalm 32: Blessed is the Forgiven",
+      "source": "Aquinas, Commentary on Romans 4 - Imputation of righteousness"
+    },
+    {
+      "day": 318,
+      "title": "Psalm 51: Wash Me Thoroughly",
+      "source": "Aquinas, ST II-II, q. 85, a. 2 - Contrition of heart"
+    },
+    {
+      "day": 319,
+      "title": "Psalm 130: Out of the Depths",
+      "source": "Augustine, Expositions on Psalms 130 - De profundis"
+    },
+    {
+      "day": 319,
+      "title": "Psalm 130: Out of the Depths",
+      "source": "Aquinas, Commentary on Psalms 130 - Cry from depths"
+    },
+    {
+      "day": 320,
+      "title": "Ezekiel 18: A New Heart and Spirit",
+      "source": "Augustine, On Grace and Free Will 31 - New heart from God"
+    },
+    {
+      "day": 320,
+      "title": "Ezekiel 18: A New Heart and Spirit",
+      "source": "Aquinas, ST I-II, q. 113, a. 7 - Justification renews"
+    },
+    {
+      "day": 321,
+      "title": "Ezekiel 47: The Healing River",
+      "source": "Augustine, Tractates on John 120 - Water and blood flow"
+    },
+    {
+      "day": 322,
+      "title": "Joel 2: Rend Your Heart",
+      "source": "Aquinas, ST II-II, q. 147, a. 1 - Interior fast"
+    },
+    {
+      "day": 323,
+      "title": "Micah 7: Who is a God Like You?",
+      "source": "Augustine, Expositions on Psalms 103 - Merciful God"
+    },
+    {
+      "day": 324,
+      "title": "Zechariah 13: A Fountain Will Be Opened",
+      "source": "John 19:34 fulfills fountain opened per Augustine"
+    },
+    {
+      "day": 325,
+      "title": "Malachi 3: He Will Purify",
+      "source": "Aquinas, ST Suppl., q. 70, a. 3 - Purgatorial fire"
+    },
+    {
+      "day": 326,
+      "title": "2 Kings 5: Naaman Healed",
+      "source": "Augustine, Tractates on John 15 - Washing in Jordan"
+    },
+    {
+      "day": 328,
+      "title": "Psalm 23: Anoint My Head with Oil",
+      "source": "Augustine, Expositions on Psalms 23 - Oil of gladness"
+    },
+    {
+      "day": 329,
+      "title": "Psalm 133: Oil Running Down",
+      "source": "Augustine, Expositions on Psalms 133 - Unity and oil"
+    },
+    {
+      "day": 330,
+      "title": "Leviticus 8: Anointing with Oil",
+      "source": "Augustine, Tractates on 1 John 3 - Anointing of Spirit"
+    },
+    {
+      "day": 331,
+      "title": "Psalm 133: Oil Running Down Aaron's Beard",
+      "source": "Augustine, Expositions on Psalms 133 - Unity and oil"
+    },
+    {
+      "day": 333,
+      "title": "Isaiah 44: I Will Pour Water on the Thirsty",
+      "source": "Augustine, Tractates on John 15 - Living water"
+    },
+    {
+      "day": 334,
+      "title": "Exodus 30: The Bronze Basin for Washing",
+      "source": "Augustine, Questions on Exodus - Washings prefigure baptism"
+    },
+    {
+      "day": 334,
+      "title": "Exodus 30: The Bronze Basin for Washing",
+      "source": "Aquinas, ST I-II, q. 102, a. 5 - Ceremonial washings"
+    },
+    {
+      "day": 336,
+      "title": "Deuteronomy 6: Love the LORD Your God",
+      "source": "Augustine, On the Good of Marriage 8 - Teaching children"
+    },
+    {
+      "day": 336,
+      "title": "Deuteronomy 6: Love the LORD Your God",
+      "source": "Aquinas, ST Suppl., q. 49, a. 3 - Purpose of marriage"
+    },
+    {
+      "day": 337,
+      "title": "Tobit 7-8: Tobias and Sarah's Marriage",
+      "source": "Augustine, On the Good of Marriage 3 - Sacrament of marriage"
+    },
+    {
+      "day": 337,
+      "title": "Tobit 7-8: Tobias and Sarah's Marriage",
+      "source": "Aquinas, ST Suppl., q. 42, a. 3 - Marriage prayer"
+    },
+    {
+      "day": 338,
+      "title": "Proverbs 31: The Virtuous Wife",
+      "source": "Augustine, On the Good of Marriage 18 - Mutual service"
+    },
+    {
+      "day": 338,
+      "title": "Proverbs 31: The Virtuous Wife",
+      "source": "Aquinas, ST Suppl., q. 49, a. 3 - Goods of marriage"
+    },
+    {
+      "day": 339,
+      "title": "Song of Songs 8: Love Strong as Death",
+      "source": "Augustine, Expositions on Psalms 44 - Royal marriage"
+    },
+    {
+      "day": 340,
+      "title": "Leviticus 19: Love Your Neighbor as Yourself",
+      "source": "Augustine, On the Good of Marriage 6 - Mutual love"
+    },
+    {
+      "day": 340,
+      "title": "Leviticus 19: Love Your Neighbor as Yourself",
+      "source": "Aquinas, ST II-II, q. 44, a. 7 - Love of neighbor"
+    },
+    {
+      "day": 341,
+      "title": "Proverbs 18: He Who Finds a Wife Finds Good",
+      "source": "Augustine, On the Good of Marriage 1 - Marriage as good"
+    },
+    {
+      "day": 341,
+      "title": "Proverbs 18: He Who Finds a Wife Finds Good",
+      "source": "Aquinas, ST Suppl., q. 41, a. 1 - Institution of marriage"
+    },
+    {
+      "day": 342,
+      "title": "Leviticus 4: The Sin Offering",
+      "source": "Aquinas, ST Suppl., q. 18, a. 1 - Power of absolution"
+    },
+    {
+      "day": 343,
+      "title": "Leviticus 5: Confession of Sin",
+      "source": "Aquinas, ST Suppl., q. 9, a. 1 - Confession to priest"
+    },
+    {
+      "day": 344,
+      "title": "Psalm 32: I Acknowledged My Sin",
+      "source": "Augustine, Expositions on Psalms 32 - Joy of forgiveness"
+    },
+    {
+      "day": 344,
+      "title": "Psalm 32: I Acknowledged My Sin",
+      "source": "Aquinas, ST Suppl., q. 9, a. 2 - Confession brings peace"
+    },
+    {
+      "day": 351,
+      "title": "Genesis 5: Enoch Walked with God",
+      "source": "Aquinas, ST II-II, q. 174, a. 3 - Prophetic gift"
+    },
+    {
+      "day": 354,
+      "title": "Exodus 12: Not a Bone Broken",
+      "source": "Aquinas, Commentary on John 19 - Paschal fulfillment"
+    },
+    {
+      "day": 355,
+      "title": "Exodus 16: Manna Every Morning",
+      "source": "Augustine, Tractates on John 26 - Living bread"
+    },
+    {
+      "day": 356,
+      "title": "Exodus 25: The Bread of the Presence",
+      "source": "Augustine, Questions on Exodus - Sacred bread before God"
+    },
+    {
+      "day": 358,
+      "title": "Numbers 21: Look and Live",
+      "source": "Augustine, Tractates on John 12 - Lifted on cross"
+    },
+    {
+      "day": 359,
+      "title": "Deuteronomy 30: Choose Life",
+      "source": "Aquinas, ST I-II, q. 1, a. 1 - Ultimate end"
+    },
+    {
+      "day": 360,
+      "title": "Psalm 1: Tree Planted by Streams",
+      "source": "Augustine, Expositions on Psalms 1 - Rooted in Christ"
+    },
+    {
+      "day": 360,
+      "title": "Psalm 1: Tree Planted by Streams",
+      "source": "Aquinas, Commentary on Psalms 1 - Fruitful tree"
+    },
+    {
+      "day": 361,
+      "title": "Psalm 34: Taste and See",
+      "source": "Augustine, Expositions on Psalms 34 - Eucharistic taste"
+    },
+    {
+      "day": 362,
+      "title": "Psalm 46: Be Still and Know",
+      "source": "Aquinas, ST II-II, q. 180, a. 3 - Contemplation of truth"
+    },
+    {
+      "day": 363,
+      "title": "Psalm 84: Better One Day",
+      "source": "Augustine, Expositions on Psalms 84 - Courts of the Lord"
+    },
+    {
+      "day": 363,
+      "title": "Psalm 84: Better One Day",
+      "source": "Aquinas, ST II-II, q. 122, a. 4 - Sunday observance"
+    },
+    {
+      "day": 364,
+      "title": "Psalm 150: Let Everything Praise the LORD",
+      "source": "Augustine, Expositions on Psalms 150 - Universal praise"
+    },
+    {
+      "day": 364,
+      "title": "Psalm 150: Let Everything Praise the LORD",
+      "source": "Aquinas, ST II-II, q. 91, a. 1 - Praising God"
+    }
+  ]
+}
