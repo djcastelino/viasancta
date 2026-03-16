@@ -464,6 +464,13 @@ export default function Home() {
                     About Divine Pilgrim
                   </Link>
                 </li>
+                {/* DONATE LINK - Uncomment after 1-3 months when you have traction */}
+                {/* <li>
+                  <Link href="/about#support" className="hover:text-white hover:underline transition-colors flex items-center gap-2">
+                    <span>💝</span>
+                    <span>Support This Ministry</span>
+                  </Link>
+                </li> */}
               </ul>
             </div>
           </div>

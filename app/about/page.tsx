@@ -171,6 +171,100 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* SUPPORT SECTION - Change false to true after 1-3 months when you have user traction
+              Good triggers: 1000+ users, approaching Azure free tier, proven engagement
+          */}
+          {false && <section id="support" className="border-t pt-8 scroll-mt-20">
+            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
+              💝 Support This Ministry
+            </h2>
+            <div className="text-gray-700 space-y-4">
+              <p className="text-lg">
+                Divine Pilgrim will always be <strong>free for everyone</strong>. Your donation helps cover
+                infrastructure costs and allows us to scale as more people discover these sacred experiences.
+              </p>
+
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 my-6">
+                <h3 className="font-bold text-[#2C5F87] mb-3">What Your Donation Supports:</h3>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4AF37] font-bold">☁️</span>
+                    <span><strong>Cloud Hosting:</strong> Server infrastructure and automation workflows (~$20-50/month)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4AF37] font-bold">🎙️</span>
+                    <span><strong>AI Voice Services:</strong> Premium neural voices from Azure (currently free tier, ~$10-30/month as we scale)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4AF37] font-bold">🔧</span>
+                    <span><strong>Ongoing Development:</strong> New tours, features, and content improvements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#D4AF37] font-bold">🌍</span>
+                    <span><strong>Reaching More Souls:</strong> Marketing and outreach to share these sacred stories</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-600 mt-4 italic">
+                  Estimated monthly costs at scale: $50-100
+                </p>
+              </div>
+
+              <div className="bg-white border-2 border-[#D4AF37] rounded-xl p-6 text-center">
+                <h3 className="font-bold text-xl text-[#2C5F87] mb-4">How to Donate</h3>
+
+                <div className="space-y-4 mb-6">
+                  <p className="text-gray-600">Every donation helps:</p>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] px-6 py-3 rounded-lg">
+                      <div className="font-bold text-[#2C5F87]">$5</div>
+                      <div className="text-xs text-gray-600">Support hosting</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] px-6 py-3 rounded-lg">
+                      <div className="font-bold text-[#2C5F87]">$10</div>
+                      <div className="text-xs text-gray-600">Cover weekly costs</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] px-6 py-3 rounded-lg">
+                      <div className="font-bold text-[#2C5F87]">$25</div>
+                      <div className="text-xs text-gray-600">Half month's costs</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] px-6 py-3 rounded-lg">
+                      <div className="font-bold text-[#2C5F87]">Any Amount</div>
+                      <div className="text-xs text-gray-600">Every dollar helps!</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* PayPal Button - User needs to replace with their actual PayPal link */}
+                <div className="space-y-3">
+                  <a
+                    href="YOUR_PAYPAL_DONATE_LINK_HERE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#0070ba] hover:bg-[#005a94] text-white px-8 py-4 rounded-full font-bold text-lg transition-colors shadow-lg hover:shadow-xl"
+                  >
+                    💳 Donate via PayPal
+                  </a>
+                  <p className="text-xs text-gray-500">
+                    Secure payment through PayPal (no account required)
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 text-center">
+                <p className="text-sm text-gray-700 italic">
+                  "Help us bring Saint Carlo Acutis' vision of digital Catholic education to life.
+                  Unlike subscription apps that charge $90/year, Divine Pilgrim will always be free.
+                  Your donation helps us cover infrastructure costs and reach more people with these sacred stories."
+                </p>
+              </div>
+
+              <p className="text-sm text-gray-600 text-center">
+                <strong>Thank you for your generosity!</strong> Every donation, no matter the size,
+                helps us reach more souls and share the beauty of our Catholic faith.
+              </p>
+            </div>
+          </section>}
+
           {/* Back to Tours */}
           <div className="text-center pt-4">
             <Link
