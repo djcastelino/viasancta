@@ -242,7 +242,7 @@ export default function StationsOfTheCross() {
   const fadeInMusic = () => {
     if (!backgroundMusicRef.current) return;
     const music = backgroundMusicRef.current;
-    const targetVolume = 0.08;
+    const targetVolume = 0.15;
     const fadeInterval = setInterval(() => {
       if (music.volume < targetVolume - 0.01) {
         music.volume = Math.min(music.volume + 0.01, targetVolume);

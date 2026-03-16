@@ -290,7 +290,7 @@ export default function JesusInOTPage() {
     if (!backgroundMusicRef.current) return;
 
     const music = backgroundMusicRef.current;
-    const targetVolume = 0.1; // 10% volume
+    const targetVolume = 0.15; // 15% volume
     const duration = 2000; // 2 seconds
     const steps = 50;
     const stepDuration = duration / steps;

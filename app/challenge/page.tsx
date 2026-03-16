@@ -329,8 +329,8 @@ export default function ChallengePage() {
     bgMusic.play()
       .then(() => {
         console.log('🎵 Background music started successfully');
-        // Fade in to 10% volume (very soft, soothing)
-        fadeInMusic(bgMusic, 0.10);
+        // Fade in to 15% volume (soft, soothing)
+        fadeInMusic(bgMusic, 0.15);
       })
       .catch(err => {
         console.log('Background music autoplay blocked (normal browser behavior)');
