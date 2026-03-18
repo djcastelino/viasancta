@@ -15,6 +15,7 @@ interface Station {
     lat: number;
     lng: number;
     description: string;
+    currentSite?: string;
   };
   scripture: {
     reference: string;
@@ -224,16 +225,6 @@ export default function StationsOfTheCross() {
     }
   }, [isPrayerMode, currentStation, mapsLoaded]);
 
-  // Generate Static Street View URL
-  const getStreetViewImageUrl = (lat: number, lng: number) => {
-    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-    const size = '800x600';
-    const heading = 100; // Direction the camera is facing
-    const pitch = 0; // Up/down angle
-    const fov = 90; // Field of view
-
-    return `https://maps.googleapis.com/maps/api/streetview?size=${size}&location=${lat},${lng}&heading=${heading}&pitch=${pitch}&fov=${fov}&key=${apiKey}`;
-  };
 
   const handleReadText = () => {
     setShowText(true);
@@ -510,12 +501,12 @@ export default function StationsOfTheCross() {
                 )}
 
                 <img
-                  src={getStreetViewImageUrl(currentStation.location.lat, currentStation.location.lng)}
-                  alt={`Street View of ${currentStation.location.name}`}
+                  src={`/images/stations/station_${currentStation.number}.png`}
+                  alt={`${currentStation.location.name}`}
                   className={`w-full h-full object-cover ${isPrayerMode ? 'opacity-90' : ''}`}
                   onError={(e) => {
-                    console.error('Failed to load Street View image');
-                    setError('Street View image unavailable for this location');
+                    console.error('Failed to load station image');
+                    setError('Station image unavailable');
                   }}
                 />
 
@@ -568,6 +559,11 @@ export default function StationsOfTheCross() {
                   <p className="text-xs text-gray-400 mt-1">
                     {currentStation.location.description}
                   </p>
+                  {currentStation.location.currentSite && (
+                    <p className="text-xs text-purple-300 mt-2 italic">
+                      🏛️ Today: {currentStation.location.currentSite}
+                    </p>
+                  )}
                 </div>
               )}
             </div>
