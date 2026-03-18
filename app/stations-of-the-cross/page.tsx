@@ -572,7 +572,8 @@ export default function StationsOfTheCross() {
           {/* Station Content Panel */}
           {!isPrayerMode && (
             <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl shadow-2xl p-6 sticky top-4">
+            <div className="bg-white rounded-xl shadow-2xl p-6 flex flex-col h-full">
+              <div className="flex-grow">
               <div className="text-center mb-4">
                 <div className="inline-block bg-purple-900 text-white px-4 py-2 rounded-full font-bold mb-2">
                   Station {currentStation.number} of 14
@@ -663,9 +664,10 @@ export default function StationsOfTheCross() {
                   </div>
                 </div>
               )}
+              </div>
 
               {/* Navigation */}
-              <div className="flex gap-2 mt-6">
+              <div className="flex gap-2 mt-auto pt-6">
                 <button
                   onClick={handlePrevious}
                   className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 rounded-lg font-semibold transition-all"
