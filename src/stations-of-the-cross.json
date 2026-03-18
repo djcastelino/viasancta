@@ -28,7 +28,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78069,
       "lng": 35.23625,
-      "description": "Where Jesus received the instrument of His execution"
+      "description": "Where Jesus received the instrument of His execution",
+      "currentSite": "Now the Monastery of the Flagellation. Here Jesus was flogged by Roman soldiers before receiving the cross."
     },
     "scripture": {
       "reference": "John 19:17",
@@ -47,7 +48,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78055,
       "lng": 35.23689,
-      "description": "Where Jesus fell under the weight of the cross"
+      "description": "Where Jesus fell under the weight of the cross",
+      "currentSite": "Located near the Armenian Catholic Church on the corner of Via Dolorosa and Haja'y Street."
     },
     "scripture": {
       "reference": "Isaiah 53:6",
@@ -66,7 +68,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78048,
       "lng": 35.23745,
-      "description": "Where Mary encountered her Son on the way to crucifixion"
+      "description": "Where Mary encountered her Son on the way to crucifixion",
+      "currentSite": "Now the Armenian Church of Our Lady of Sorrows, with a crypt containing mosaics showing Mary's footprints."
     },
     "scripture": {
       "reference": "Luke 2:34-35",
@@ -85,7 +88,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78038,
       "lng": 35.23802,
-      "description": "Where Simon was compelled to help carry the cross"
+      "description": "Where Simon was compelled to help carry the cross",
+      "currentSite": "A handprint imprint remains on the wall where tradition says Jesus steadied Himself. Pilgrims have deepened the impression over centuries."
     },
     "scripture": {
       "reference": "Mark 15:21",
@@ -104,7 +108,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78028,
       "lng": 35.23845,
-      "description": "Where Veronica courageously ministered to Jesus"
+      "description": "Where Veronica courageously ministered to Jesus",
+      "currentSite": "Now a small Greek Catholic chapel, the Church of the Holy Face. Believed to be the site of Veronica's house."
     },
     "scripture": {
       "reference": "Isaiah 53:2-3",
@@ -123,7 +128,8 @@
       "address": "Via Dolorosa, Muslim Quarter, Jerusalem",
       "lat": 31.78015,
       "lng": 35.23885,
-      "description": "Where Jesus fell again as He neared the gate to Calvary"
+      "description": "Where Jesus fell again as He neared the gate to Calvary",
+      "currentSite": "A small Franciscan chapel now stands at this location."
     },
     "scripture": {
       "reference": "Hebrews 12:2-3",
@@ -142,7 +148,8 @@
       "address": "Via Dolorosa, Christian Quarter, Jerusalem",
       "lat": 31.77998,
       "lng": 35.23921,
-      "description": "Where Jesus consoled the weeping women"
+      "description": "Where Jesus consoled the weeping women",
+      "currentSite": "Marked by a Greek Orthodox monastery with 'NIKA' (Jesus Christ conquers) inscribed here."
     },
     "scripture": {
       "reference": "Luke 23:28-31",
@@ -161,7 +168,8 @@
       "address": "Near Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77865,
       "lng": 35.22965,
-      "description": "Jesus' final fall before reaching Calvary"
+      "description": "Jesus' final fall before reaching Calvary",
+      "currentSite": "Marked by a Roman column outside the Coptic Orthodox Patriarchate entrance, steps from Calvary."
     },
     "scripture": {
       "reference": "Philippians 2:8",
@@ -180,7 +188,8 @@
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77845,
       "lng": 35.22955,
-      "description": "Where Jesus was stripped before crucifixion (Street view shows church entrance - station is inside)"
+      "description": "Where Jesus was stripped before crucifixion (Street view shows church entrance - station is inside)",
+      "currentSite": "Inside the Church of the Holy Sepulchre. The Chapel of the Franks marks where Jesus was stripped."
     },
     "scripture": {
       "reference": "John 19:23-24",
@@ -199,7 +208,8 @@
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77845,
       "lng": 35.22955,
-      "description": "The site of Golgotha where Jesus was crucified (Street view shows church entrance - station is inside)"
+      "description": "The site of Golgotha where Jesus was crucified (Street view shows church entrance - station is inside)",
+      "currentSite": "Inside the Church of the Holy Sepulchre on the second level. A Franciscan altar marks Golgotha, the place of crucifixion."
     },
     "scripture": {
       "reference": "Luke 23:33-34",
@@ -218,7 +228,8 @@
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77845,
       "lng": 35.22955,
-      "description": "Where Jesus gave up His spirit (Street view shows church entrance - station is inside)"
+      "description": "Where Jesus gave up His spirit (Street view shows church entrance - station is inside)",
+      "currentSite": "A Greek Orthodox altar marks this station. A visible cracked rock is believed caused by the earthquake at Christ's death."
     },
     "scripture": {
       "reference": "John 19:28-30",
@@ -237,7 +248,8 @@
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77845,
       "lng": 35.22955,
-      "description": "Where Mary received her Son's body (Street view shows church entrance - station is inside)"
+      "description": "Where Mary received her Son's body (Street view shows church entrance - station is inside)",
+      "currentSite": "The Stone of Unction on the ground level marks where Jesus' body was anointed with oil and spices for burial."
     },
     "scripture": {
       "reference": "Luke 23:53",
@@ -256,7 +268,8 @@
       "address": "Church of the Holy Sepulchre, Christian Quarter, Jerusalem",
       "lat": 31.77845,
       "lng": 35.22955,
-      "description": "The empty tomb where Jesus rose from the dead (Street view shows church entrance - station is inside)"
+      "description": "The empty tomb where Jesus rose from the dead (Street view shows church entrance - station is inside)",
+      "currentSite": "Located in the church's large rotunda, covered by an enclosed tomb structure."
     },
     "scripture": {
       "reference": "Matthew 27:59-60",
