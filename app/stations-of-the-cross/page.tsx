@@ -553,10 +553,7 @@ export default function StationsOfTheCross() {
 
               {!isPrayerMode && (
                 <div className="p-4 bg-gray-900 text-white">
-                  <p className="text-sm">
-                    📍 {currentStation.location.name}
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">
+                  <p className="text-xs text-gray-400">
                     {currentStation.location.description}
                   </p>
                   {currentStation.location.currentSite && (
@@ -693,6 +690,11 @@ export default function StationsOfTheCross() {
         <div className="max-w-4xl mx-auto px-5 text-center">
           <p className="text-gray-400 mb-4">
             "Were you there when they crucified my Lord?"
+          </p>
+          <p className="text-xs text-gray-500 mb-6">
+            Images of the Via Dolorosa locations sourced from Google Earth.
+            Map powered by Google Maps. Background music by Kevin MacLeod (incompetech.com)
+            licensed under Creative Commons: By Attribution 4.0 License.
           </p>
           <a
             href="/"
