@@ -1,0 +1,162 @@
+! 31 subinterfaces Fif1/0/11.1–11.31, VLANs 615–645, /31
+! CORE: 192.192.192.0, .2, .4, … .60 (Spirent: .1, .3, .5, … .61 in each /31)
+!
+interface Fif1/0/11
+ no shutdown
+!
+interface Fif1/0/11.1
+ encapsulation dot1Q 615
+ ip address 192.192.192.0 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.2
+ encapsulation dot1Q 616
+ ip address 192.192.192.2 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.3
+ encapsulation dot1Q 617
+ ip address 192.192.192.4 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.4
+ encapsulation dot1Q 618
+ ip address 192.192.192.6 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.5
+ encapsulation dot1Q 619
+ ip address 192.192.192.8 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.6
+ encapsulation dot1Q 620
+ ip address 192.192.192.10 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.7
+ encapsulation dot1Q 621
+ ip address 192.192.192.12 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.8
+ encapsulation dot1Q 622
+ ip address 192.192.192.14 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.9
+ encapsulation dot1Q 623
+ ip address 192.192.192.16 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.10
+ encapsulation dot1Q 624
+ ip address 192.192.192.18 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.11
+ encapsulation dot1Q 625
+ ip address 192.192.192.20 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.12
+ encapsulation dot1Q 626
+ ip address 192.192.192.22 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.13
+ encapsulation dot1Q 627
+ ip address 192.192.192.24 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.14
+ encapsulation dot1Q 628
+ ip address 192.192.192.26 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.15
+ encapsulation dot1Q 629
+ ip address 192.192.192.28 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.16
+ encapsulation dot1Q 630
+ ip address 192.192.192.30 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.17
+ encapsulation dot1Q 631
+ ip address 192.192.192.32 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.18
+ encapsulation dot1Q 632
+ ip address 192.192.192.34 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.19
+ encapsulation dot1Q 633
+ ip address 192.192.192.36 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.20
+ encapsulation dot1Q 634
+ ip address 192.192.192.38 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.21
+ encapsulation dot1Q 635
+ ip address 192.192.192.40 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.22
+ encapsulation dot1Q 636
+ ip address 192.192.192.42 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.23
+ encapsulation dot1Q 637
+ ip address 192.192.192.44 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.24
+ encapsulation dot1Q 638
+ ip address 192.192.192.46 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.25
+ encapsulation dot1Q 639
+ ip address 192.192.192.48 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.26
+ encapsulation dot1Q 640
+ ip address 192.192.192.50 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.27
+ encapsulation dot1Q 641
+ ip address 192.192.192.52 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.28
+ encapsulation dot1Q 642
+ ip address 192.192.192.54 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.29
+ encapsulation dot1Q 643
+ ip address 192.192.192.56 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.30
+ encapsulation dot1Q 644
+ ip address 192.192.192.58 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+interface Fif1/0/11.31
+ encapsulation dot1Q 645
+ ip address 192.192.192.60 255.255.255.254
+ ip flow monitor FlowMonitor-MS-INPUT sampler NETFLOW-SAMPLER-FOR-S1 input
+!
+! Spirent: VLAN 615->192.192.192.1, 616->.3, 617->.5, … 645->.61 (odd .x in each /31)

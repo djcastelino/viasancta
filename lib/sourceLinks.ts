@@ -83,8 +83,27 @@ export function getSourceLink(source: string): LinkedSource {
       }
     }
 
-    // Check for specific works
+    // Irenaeus - Against Heresies with book/chapter
     if (source.includes('Against Heresies')) {
+      // Match format like "Against Heresies III.22.4" or "3.22.4"
+      const bookMatch = source.match(/Against Heresies\s+([IVX]+|[0-9])\.(\d+)\.?(\d+)?/i);
+      if (bookMatch) {
+        let bookNum;
+        if (bookMatch[1].match(/[IVX]/i)) {
+          bookNum = romanToArabic(bookMatch[1]);
+        } else {
+          bookNum = parseInt(bookMatch[1]);
+        }
+
+        if (bookNum && bookNum >= 1 && bookNum <= 5) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/0103${bookNum}${bookMatch[2].padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      // Generic Against Heresies
       return {
         text,
         url: 'https://www.newadvent.org/fathers/0103.htm',
@@ -92,11 +111,10 @@ export function getSourceLink(source: string): LinkedSource {
       };
     }
     if (source.includes('Homilies')) {
-      const author = source.match(/^([^,]+),/)?.[1] || '';
-      const searchQuery = encodeURIComponent(author + ' homilies');
+      // Unknown homilies - don't link to generic page
       return {
-        text,
-        url: `https://www.newadvent.org/fathers/`,
+        text: text + ' (reference only)',
+        url: null,
         type: 'ChurchFather'
       };
     }
@@ -114,10 +132,10 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Generic Church Fathers link
+    // Generic Church Fathers - no specific link available
     return {
-      text,
-      url: 'https://www.newadvent.org/fathers/',
+      text: text + ' (reference only)',
+      url: null,
       type: 'ChurchFather'
     };
   }
@@ -141,10 +159,10 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Generic Aquinas link
+    // Generic Aquinas - don't link to Summa home page
     return {
-      text,
-      url: 'https://www.newadvent.org/summa/',
+      text: text + ' (reference only)',
+      url: null,
       type: 'ChurchFather'
     };
   }
@@ -295,10 +313,10 @@ export function getSourceLink(source: string): LinkedSource {
       };
     }
 
-    // Generic Augustine (defaults to Confessions)
+    // Generic Augustine - don't default to wrong work
     return {
-      text,
-      url: 'https://www.newadvent.org/fathers/110101.htm',
+      text: text + ' (reference only)',
+      url: null,
       type: 'ChurchFather'
     };
   }
@@ -385,10 +403,129 @@ export function getSourceLink(source: string): LinkedSource {
       };
     }
 
-    // Generic Chrysostom
+    // Homilies on 1 Corinthians
+    if (source.match(/Homilies on (1|First|I) Corinthians/i)) {
+      const homMatch = source.match(/Homilies on (?:1|First|I) Corinthians\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 44) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2201${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/220101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on 2 Corinthians
+    if (source.match(/Homilies on (2|Second|II) Corinthians/i)) {
+      const homMatch = source.match(/Homilies on (?:2|Second|II) Corinthians\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 30) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2301${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/230101.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on Galatians
+    if (source.match(/Homilies on Galatians/i)) {
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/230201.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on Ephesians
+    if (source.match(/Homilies on Ephesians/i)) {
+      const homMatch = source.match(/Homilies on Ephesians\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 24) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2303${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/230301.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Homilies on Hebrews
+    if (source.match(/Homilies on Hebrews/i)) {
+      const homMatch = source.match(/Homilies on Hebrews\s+(\d+)/i);
+      if (homMatch) {
+        const homNum = parseInt(homMatch[1]);
+        if (homNum >= 1 && homNum <= 34) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/2402${homNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/240201.htm',
+        type: 'ChurchFather'
+      };
+    }
+
+    // Unknown Chrysostom work - don't link to wrong page
     return {
-      text,
-      url: 'https://www.newadvent.org/fathers/2001.htm',
+      text: text + ' (reference only)',
+      url: null,
+      type: 'ChurchFather'
+    };
+  }
+
+  // Gregory of Nazianzus (MUST come before other Gregory checks)
+  if (source.match(/Gregory of Nazianzus|Gregory Nazianzen/i)) {
+    // Orations are available on New Advent
+    if (source.match(/Oration/i)) {
+      const orationMatch = source.match(/Oration(?:s)?\s+(\d+)/i);
+      if (orationMatch) {
+        const orationNum = parseInt(orationMatch[1]);
+        if (orationNum >= 1 && orationNum <= 45) {
+          return {
+            text,
+            url: `https://www.newadvent.org/fathers/3103${orationNum.toString().padStart(2, '0')}.htm`,
+            type: 'ChurchFather'
+          };
+        }
+      }
+      // Generic Orations link
+      return {
+        text,
+        url: 'https://www.newadvent.org/fathers/310301.htm',
+        type: 'ChurchFather'
+      };
+    }
+    // Other Gregory of Nazianzus works
+    return {
+      text: text + ' (reference only)',
+      url: null,
       type: 'ChurchFather'
     };
   }
@@ -512,10 +649,10 @@ export function getSourceLink(source: string): LinkedSource {
         type: 'ChurchFather'
       };
     }
-    // Generic Origen
+    // Generic Origen - don't link to unrelated work
     return {
-      text,
-      url: 'https://www.newadvent.org/fathers/0412.htm',
+      text: text + ' (reference only)',
+      url: null,
       type: 'ChurchFather'
     };
   }

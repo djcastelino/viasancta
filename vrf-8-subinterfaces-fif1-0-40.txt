@@ -1,0 +1,142 @@
+! 8 VRFs, 8 subinterfaces on Fif1/0/40 — 1 OSPF PID per VRF (add under each VRF: router ospf 1 / 2 / ... 8 + network)
+!
+vrf definition 1
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 2
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 3
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 4
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 5
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 6
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 7
+ !
+ address-family ipv4
+ exit-address-family
+!
+vrf definition 8
+ !
+ address-family ipv4
+ exit-address-family
+!
+interface Fif1/0/40
+ no shutdown
+!
+interface Fif1/0/40.1
+ encapsulation dot1Q 20
+ vrf forwarding 1
+ ip address 199.199.199.1 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.2
+ encapsulation dot1Q 21
+ vrf forwarding 2
+ ip address 199.199.199.3 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.3
+ encapsulation dot1Q 22
+ vrf forwarding 3
+ ip address 199.199.199.5 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.4
+ encapsulation dot1Q 23
+ vrf forwarding 4
+ ip address 199.199.199.7 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.5
+ encapsulation dot1Q 24
+ vrf forwarding 5
+ ip address 199.199.199.9 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.6
+ encapsulation dot1Q 25
+ vrf forwarding 6
+ ip address 199.199.199.11 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.7
+ encapsulation dot1Q 26
+ vrf forwarding 7
+ ip address 199.199.199.13 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+interface Fif1/0/40.8
+ encapsulation dot1Q 27
+ vrf forwarding 8
+ ip address 199.199.199.15 255.255.255.254
+ ip ospf network point-to-point
+ ip ospf message-digest-key 100 md5 CXlabs.123
+!
+router ospf 1 vrf 1
+ router-id 199.199.199.1
+ area 0 authentication message-digest
+ network 199.199.199.0 0.0.0.1 area 0
+!
+router ospf 2 vrf 2
+ router-id 199.199.199.3
+ area 0 authentication message-digest
+ network 199.199.199.2 0.0.0.1 area 0
+!
+router ospf 3 vrf 3
+ router-id 199.199.199.5
+ area 0 authentication message-digest
+ network 199.199.199.4 0.0.0.1 area 0
+!
+router ospf 4 vrf 4
+ router-id 199.199.199.7
+ area 0 authentication message-digest
+ network 199.199.199.6 0.0.0.1 area 0
+!
+router ospf 5 vrf 5
+ router-id 199.199.199.9
+ area 0 authentication message-digest
+ network 199.199.199.8 0.0.0.1 area 0
+!
+router ospf 6 vrf 6
+ router-id 199.199.199.11
+ area 0 authentication message-digest
+ network 199.199.199.10 0.0.0.1 area 0
+!
+router ospf 7 vrf 7
+ router-id 199.199.199.13
+ area 0 authentication message-digest
+ network 199.199.199.12 0.0.0.1 area 0
+!
+router ospf 8 vrf 8
+ router-id 199.199.199.15
+ area 0 authentication message-digest
+ network 199.199.199.14 0.0.0.1 area 0
+!
+! Spirent: VLAN 20->199.199.199.0, 21->.2, 22->.4, 23->.6, 24->.8, 25->.10, 26->.12, 27->.14 (other addr in each /31)

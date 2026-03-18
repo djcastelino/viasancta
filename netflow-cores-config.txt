@@ -1,0 +1,116 @@
+! =============================================================================
+! NetFlow STANDARD for ALL devices (Cores, Distribution, Access)
+! Based on customer MS-interface-full. Same records, exporter, monitors on every box.
+! Per device: only the interface list changes (apply to uplinks/downlinks on that box).
+! Replace: collector IP, source interface (Loopback0), and interface names per device.
+! =============================================================================
+
+! --- Flow records: Input (ingress) and Output (egress) ---
+flow record MS-interface-Input
+ description Morgan-Customized; ingress keyed by input interface
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ match interface input
+ collect routing next-hop address ipv4
+ collect interface output
+ collect counter bytes long
+ collect counter packets long
+!
+
+flow record MS-interface-Output
+ description Morgan-Customized; egress keyed by output interface
+ match ipv4 protocol
+ match ipv4 source address
+ match ipv4 destination address
+ match transport source-port
+ match transport destination-port
+ match interface output
+ collect interface input
+ collect routing next-hop address ipv4
+ collect counter bytes long
+ collect counter packets long
+!
+
+! --- Flow exporter (change destination to your collector, e.g. Ubuntu VM) ---
+flow exporter FlowExporter1
+ destination 10.81.124.97
+ source Loopback0
+ transport udp 9998
+!
+
+! --- Flow monitors: Input = ingress, Output = egress ---
+flow monitor FlowMonitor-MS-INPUT
+ record MS-interface-Input
+ exporter FlowExporter1
+!
+
+flow monitor FlowMonitor-MS-OUTPUT
+ record MS-interface-Output
+ exporter FlowExporter1
+!
+
+! =============================================================================
+! Apply to interfaces (per device - only this section changes)
+! CORE:    interfaces to DIST + WAN/upstream
+! DIST:    interfaces to CORE (uplinks) + interfaces to ACCESS (downlinks)
+! ACCESS:  interfaces to DIST (uplinks) only, if you enable NetFlow on access
+! =============================================================================
+! Example (replace with your interface names on each device):
+!
+! interface TwentyFiveGigE1/0/6
+!  ip flow monitor FlowMonitor-MS-INPUT input
+!  ip flow monitor FlowMonitor-MS-OUTPUT output
+! !
+! interface HundredGigE1/0/51
+!  ip flow monitor FlowMonitor-MS-INPUT input
+!  ip flow monitor FlowMonitor-MS-OUTPUT output
+! !
+! ... add every tier-facing interface on this device
+!
+! =============================================================================
+! FOR SILICON ONE (C9500X etc.): use these records instead - no next-hop, no
+! collect interface output/input (not supported on Silicon One ASIC).
+! Same exporter and monitor names; only the records differ.
+! =============================================================================
+!
+! flow record MS-interface-Input-S1
+!  description Silicon One compatible; ingress keyed by input interface
+!  match ipv4 protocol
+!  match ipv4 source address
+!  match ipv4 destination address
+!  match transport source-port
+!  match transport destination-port
+!  match interface input
+!  collect counter bytes long
+!  collect counter packets long
+! !
+! flow record MS-interface-Output-S1
+!  description Silicon One compatible; egress keyed by output interface
+!  match ipv4 protocol
+!  match ipv4 source address
+!  match ipv4 destination address
+!  match transport source-port
+!  match transport destination-port
+!  match interface output
+!  collect counter bytes long
+!  collect counter packets long
+! !
+! flow monitor FlowMonitor-MS-INPUT
+!  record MS-interface-Input-S1
+!  exporter FlowExporter1
+! !
+! flow monitor FlowMonitor-MS-OUTPUT
+!  record MS-interface-Output-S1
+!  exporter FlowExporter1
+! !
+
+! =============================================================================
+! Verification:
+!   show flow monitor
+!   show flow record
+!   show flow exporter
+!   show running-config | include ip flow monitor
+! =============================================================================

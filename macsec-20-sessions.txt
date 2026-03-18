@@ -1,0 +1,215 @@
+! =============================================================================
+! MACsec: 10 sessions gcm-aes-256 + 10 sessions gcm-aes-xpn-256
+! Apply on BOTH ends of each link (change interface names / IPs per device).
+! ONE key chain = same password/key for all 20 sessions (and same key on peer).
+! =============================================================================
+
+! --- Single key chain: same key for ALL 20 sessions (set key-string once) ---
+key chain MACSEC macsec
+ key ABCD1234
+  cryptographic-algorithm aes-256-cmac
+  key-string 7 0252570E53502C771D185B4E564537585D5778787778636572435746535106090803045E534846090807030205045B0B56570807544356540B5B565F711C1E5949
+  lifetime 00:00:00 Jan 1 2026 infinite
+
+! --- MKA policy: gcm-aes-256 (sessions 1–10), same as existing ---
+mka policy MKA_MACSEC
+ macsec-cipher-suite gcm-aes-256
+ sak-rekey on-live-peer-loss
+
+! --- MKA policy: gcm-aes-xpn-256 (sessions 11–20), name ≤16 chars ---
+mka policy MKA_MACSEC_XPN
+ macsec-cipher-suite gcm-aes-256-xpn
+ sak-rekey on-live-peer-loss
+
+! =============================================================================
+! Interfaces 1–10: gcm-aes-256 (replace FiftyGigE1/0/11–20 with your interfaces)
+! =============================================================================
+interface FiftyGigE1/0/11
+ description MACsec link 1 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.41 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/12
+ description MACsec link 2 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.43 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/13
+ description MACsec link 3 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.45 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/14
+ description MACsec link 4 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.47 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/15
+ description MACsec link 5 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.49 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/16
+ description MACsec link 6 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.51 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/17
+ description MACsec link 7 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.53 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/18
+ description MACsec link 8 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.55 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/19
+ description MACsec link 9 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.57 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/20
+ description MACsec link 10 - gcm-aes-256
+ no switchport
+ ip address 10.6.247.59 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+! =============================================================================
+! Interfaces 11–20: gcm-aes-xpn-256 (replace with your interfaces)
+! =============================================================================
+interface FiftyGigE1/0/21
+ description MACsec link 11 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.61 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/22
+ description MACsec link 12 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.63 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/23
+ description MACsec link 13 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.65 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/24
+ description MACsec link 14 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.67 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/25
+ description MACsec link 15 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.69 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/26
+ description MACsec link 16 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.71 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/27
+ description MACsec link 17 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.73 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/28
+ description MACsec link 18 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.75 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/29
+ description MACsec link 19 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.77 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+interface FiftyGigE1/0/30
+ description MACsec link 20 - gcm-aes-xpn-256
+ no switchport
+ ip address 10.6.247.79 255.255.255.254
+ macsec network-link
+ mka policy MKA_MACSEC_XPN
+ mka pre-shared-key key-chain MACSEC
+ exit
+
+! =============================================================================
+! Verification (run after applying on both ends):
+!   show mka summary
+!   show macsec summary
+!   show mka sessions
+! =============================================================================
