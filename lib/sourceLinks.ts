@@ -510,15 +510,15 @@ export function getSourceLink(source: string): LinkedSource {
         if (orationNum >= 1 && orationNum <= 45) {
           return {
             text,
-            url: `https://www.newadvent.org/fathers/3103${orationNum.toString().padStart(2, '0')}.htm`,
+            url: `https://www.newadvent.org/fathers/3102${orationNum.toString().padStart(2, '0')}.htm`,
             type: 'ChurchFather'
           };
         }
       }
-      // Generic Orations link
+      // Generic Orations link (Oration 1)
       return {
         text,
-        url: 'https://www.newadvent.org/fathers/310301.htm',
+        url: 'https://www.newadvent.org/fathers/310201.htm',
         type: 'ChurchFather'
       };
     }
