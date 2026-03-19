@@ -613,7 +613,10 @@ export default function StationsOfTheCross() {
                 )}
 
                 <img
-                  src={`/images/stations/station_${currentStation.number}.png`}
+                  src={isPrayerMode && currentStation.number === 1
+                    ? `/images/stations/prayer-mode/station_${currentStation.number}_blood.png`
+                    : `/images/stations/station_${currentStation.number}.png`
+                  }
                   alt={`${currentStation.location.name}`}
                   className={`w-full h-full object-cover ${isPrayerMode ? 'opacity-90' : ''}`}
                   onError={(e) => {
@@ -621,6 +624,17 @@ export default function StationsOfTheCross() {
                     setError('Station image unavailable');
                   }}
                 />
+
+                {/* Blood Dripping Animation - Station 1 */}
+                {isPrayerMode && currentStation.number === 1 && (
+                  <div className="absolute inset-0 pointer-events-none z-15">
+                    {/* Blood droplets from crown of thorns */}
+                    <div className="absolute blood-droplet" style={{ top: '28%', left: '48%' }}></div>
+                    <div className="absolute blood-droplet delay-1" style={{ top: '29%', left: '49%' }}></div>
+                    <div className="absolute blood-droplet delay-2" style={{ top: '28%', left: '50%' }}></div>
+                    <div className="absolute blood-droplet delay-3" style={{ top: '29%', left: '47%' }}></div>
+                  </div>
+                )}
 
                 {/* Prayer Mode Overlay */}
                 {isPrayerMode && (
@@ -921,6 +935,35 @@ export default function StationsOfTheCross() {
         .animate-glow-pulse {
           animation: glow-pulse 3s ease-in-out infinite;
         }
+
+        /* Blood Dripping Animation */
+        .blood-droplet {
+          width: 4px;
+          height: 8px;
+          background: linear-gradient(to bottom, #8b0000, #4a0000);
+          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+          animation: drip 4s ease-in infinite;
+          opacity: 0;
+          box-shadow: 0 0 3px rgba(139, 0, 0, 0.5);
+        }
+
+        @keyframes drip {
+          0% {
+            transform: translateY(0);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.7;
+          }
+          100% {
+            transform: translateY(200px);
+            opacity: 0;
+          }
+        }
+
+        .blood-droplet.delay-1 { animation-delay: 1.3s; }
+        .blood-droplet.delay-2 { animation-delay: 2.7s; }
+        .blood-droplet.delay-3 { animation-delay: 4.1s; }
 
         .bg-gradient-radial {
           background: radial-gradient(circle, var(--tw-gradient-stops));
