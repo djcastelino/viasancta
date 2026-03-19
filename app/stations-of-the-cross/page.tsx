@@ -613,13 +613,21 @@ export default function StationsOfTheCross() {
                 )}
 
                 <img
-                  src={isPrayerMode && currentStation.number === 1
+                  src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2)
                     ? `/images/stations/prayer-mode/station_${currentStation.number}.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
-                  className={`w-full h-full object-cover ${isPrayerMode && currentStation.number === 1 ? 'prayer-mode-zoom opacity-90' : isPrayerMode ? 'opacity-90' : ''}`}
-                  style={isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } : {}}
+                  className={`w-full h-full object-cover ${
+                    isPrayerMode && currentStation.number === 1 ? 'prayer-mode-zoom opacity-90' :
+                    isPrayerMode && currentStation.number === 2 ? 'prayer-mode-pan-up opacity-90' :
+                    isPrayerMode ? 'opacity-90' : ''
+                  }`}
+                  style={
+                    isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } :
+                    isPrayerMode && currentStation.number === 2 ? { objectPosition: 'center 60%' } :
+                    {}
+                  }
                   onError={(e) => {
                     console.error('Failed to load station image');
                     setError('Station image unavailable');
@@ -917,7 +925,7 @@ export default function StationsOfTheCross() {
           animation: glow-pulse 3s ease-in-out infinite;
         }
 
-        /* Prayer Mode - Slow Breathing Zoom Effect */
+        /* Prayer Mode - Slow Breathing Zoom Effect (Station 1) */
         .prayer-mode-zoom {
           animation: slow-zoom 20s ease-in-out infinite;
         }
@@ -931,6 +939,23 @@ export default function StationsOfTheCross() {
           }
           100% {
             transform: scale(1);
+          }
+        }
+
+        /* Prayer Mode - Slow Upward Pan (Station 2 - Journey to Calvary) */
+        .prayer-mode-pan-up {
+          animation: slow-pan-up 25s ease-in-out infinite;
+        }
+
+        @keyframes slow-pan-up {
+          0% {
+            transform: translateY(0) scale(1.1);
+          }
+          50% {
+            transform: translateY(-8%) scale(1.1);
+          }
+          100% {
+            transform: translateY(0) scale(1.1);
           }
         }
 
