@@ -786,12 +786,17 @@ export default function StationsOfTheCross() {
               </div>
 
               {/* Prayer Mode Button */}
-              <button
-                onClick={() => setIsPrayerMode(true)}
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 rounded-lg font-semibold transition-all mb-4 shadow-lg"
-              >
-                🙏 Enter Prayer Mode
-              </button>
+              <div className="mb-4">
+                <button
+                  onClick={() => setIsPrayerMode(true)}
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 rounded-lg font-semibold transition-all shadow-lg"
+                >
+                  🙏 Enter Prayer Mode
+                </button>
+                <p className="text-xs text-gray-500 text-center mt-2 italic">
+                  For an immersive experience
+                </p>
+              </div>
 
               {/* Error */}
               {error && (
