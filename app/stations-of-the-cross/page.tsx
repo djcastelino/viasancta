@@ -613,7 +613,7 @@ export default function StationsOfTheCross() {
                 )}
 
                 <img
-                  src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2)
+                  src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3)
                     ? `/images/stations/prayer-mode/station_${currentStation.number}.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
@@ -621,11 +621,13 @@ export default function StationsOfTheCross() {
                   className={`w-full h-full object-cover ${
                     isPrayerMode && currentStation.number === 1 ? 'prayer-mode-zoom opacity-90' :
                     isPrayerMode && currentStation.number === 2 ? 'prayer-mode-pan-up opacity-90' :
+                    isPrayerMode && currentStation.number === 3 ? 'prayer-mode-zoom-fast opacity-90' :
                     isPrayerMode ? 'opacity-90' : ''
                   }`}
                   style={
                     isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } :
                     isPrayerMode && currentStation.number === 2 ? { objectPosition: 'center 25%' } :
+                    isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 35%' } :
                     {}
                   }
                   onError={(e) => {
@@ -936,6 +938,23 @@ export default function StationsOfTheCross() {
         }
 
         @keyframes slow-zoom {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        /* Prayer Mode - Faster Breathing Zoom Effect (Station 3 - The Fall) */
+        .prayer-mode-zoom-fast {
+          animation: slow-zoom-fast 15s ease-in-out infinite;
+        }
+
+        @keyframes slow-zoom-fast {
           0% {
             transform: scale(1);
           }
