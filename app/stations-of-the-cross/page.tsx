@@ -644,36 +644,36 @@ export default function StationsOfTheCross() {
                       <div className="text-white/80 text-4xl animate-glow-pulse drop-shadow-lg">✝</div>
                     </div>
 
-                    {/* Text Content with Background Panel - MOVED TO BOTTOM */}
-                    <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-2 z-30">
-                      <div className="bg-white/95 backdrop-blur-sm rounded-t-2xl p-4 shadow-2xl max-w-4xl mx-auto">
-                        <div className="text-purple-900 text-xs font-semibold mb-2 tracking-wider uppercase animate-fade-in">
-                          Station {currentStation.number} of 14
-                        </div>
-                        <h2 className="text-gray-900 text-2xl md:text-3xl font-serif font-bold mb-4 animate-fade-in">
-                          {currentStation.title}
-                        </h2>
-
-                        {/* Scripture - appears immediately */}
-                        <div className="animate-fade-in">
-                          <div className="text-gray-800 text-base md:text-lg font-serif italic mb-1">
-                            "{currentStation.scripture.text}"
+                    {/* Text Content with Background Panel - Appears after 4 seconds */}
+                    {showMeditation && (
+                      <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-2 z-30 animate-fade-in-slow">
+                        <div className="bg-white/95 backdrop-blur-sm rounded-t-2xl p-4 shadow-2xl max-w-4xl mx-auto">
+                          <div className="text-purple-900 text-xs font-semibold mb-2 tracking-wider uppercase">
+                            Station {currentStation.number} of 14
                           </div>
-                          <p className="text-gray-600 text-xs font-semibold">
-                            {currentStation.scripture.reference}
-                          </p>
-                        </div>
+                          <h2 className="text-gray-900 text-2xl md:text-3xl font-serif font-bold mb-4">
+                            {currentStation.title}
+                          </h2>
 
-                        {/* Meditation - appears after 4 seconds */}
-                        {showMeditation && (
-                          <div className="mt-4 pt-4 border-t border-gray-300 animate-fade-in-slow">
+                          {/* Scripture */}
+                          <div>
+                            <div className="text-gray-800 text-base md:text-lg font-serif italic mb-1">
+                              "{currentStation.scripture.text}"
+                            </div>
+                            <p className="text-gray-600 text-xs font-semibold">
+                              {currentStation.scripture.reference}
+                            </p>
+                          </div>
+
+                          {/* Meditation */}
+                          <div className="mt-4 pt-4 border-t border-gray-300">
                             <p className="text-gray-700 text-sm leading-relaxed">
                               {currentStation.meditation.substring(0, 250)}...
                             </p>
                           </div>
-                        )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 )}
 
