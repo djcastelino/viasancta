@@ -36,7 +36,7 @@ export default function StationsOfTheCross() {
   const [isPrayerMode, setIsPrayerMode] = useState(false);
   const [showMusicPrompt, setShowMusicPrompt] = useState(false);
   const [showMeditation, setShowMeditation] = useState(false);
-  const [autoAdvance, setAutoAdvance] = useState(false);
+  const [autoAdvance, setAutoAdvance] = useState(true); // Default ON
   const [remainingTime, setRemainingTime] = useState(150); // 2.5 minutes in seconds
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -628,13 +628,10 @@ export default function StationsOfTheCross() {
                 {/* Blood Dripping Animation - Station 1 */}
                 {isPrayerMode && currentStation.number === 1 && (
                   <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 15 }}>
-                    {/* Blood droplets from crown of thorns - positioned at Jesus' head */}
-                    <div className="blood-droplet" style={{ position: 'absolute', top: '26%', left: '38%' }}></div>
-                    <div className="blood-droplet delay-1" style={{ position: 'absolute', top: '27%', left: '39%' }}></div>
-                    <div className="blood-droplet delay-2" style={{ position: 'absolute', top: '26%', left: '40%' }}></div>
-                    <div className="blood-droplet delay-3" style={{ position: 'absolute', top: '27%', left: '37%' }}></div>
-                    <div className="blood-droplet delay-1" style={{ position: 'absolute', top: '28%', left: '38.5%' }}></div>
-                    <div className="blood-droplet delay-2" style={{ position: 'absolute', top: '27%', left: '41%' }}></div>
+                    {/* Single blood droplet from crown of thorns - sequential drops */}
+                    <div className="blood-droplet" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
+                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
+                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
                   </div>
                 )}
 
@@ -647,8 +644,8 @@ export default function StationsOfTheCross() {
                     </div>
 
                     {/* Text Content with Background Panel - MOVED TO BOTTOM */}
-                    <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-20 z-30">
-                      <div className="bg-white/95 backdrop-blur-sm rounded-t-2xl p-6 shadow-2xl max-w-4xl mx-auto">
+                    <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-2 z-30">
+                      <div className="bg-white/95 backdrop-blur-sm rounded-t-2xl p-4 shadow-2xl max-w-4xl mx-auto">
                         <div className="text-purple-900 text-xs font-semibold mb-2 tracking-wider uppercase animate-fade-in">
                           Station {currentStation.number} of 14
                         </div>
@@ -938,37 +935,37 @@ export default function StationsOfTheCross() {
           animation: glow-pulse 3s ease-in-out infinite;
         }
 
-        /* Blood Dripping Animation */
+        /* Blood Dripping Animation - One drop at a time */
         .blood-droplet {
-          width: 8px;
-          height: 16px;
-          background: linear-gradient(to bottom, #c00000, #800000);
+          width: 10px;
+          height: 20px;
+          background: linear-gradient(to bottom, #d00000, #900000);
           border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-          animation: drip 6s ease-in infinite;
+          animation: drip-slow 8s ease-in infinite;
           opacity: 0;
-          box-shadow: 0 0 6px rgba(192, 0, 0, 0.9);
+          box-shadow: 0 0 8px rgba(208, 0, 0, 1);
         }
 
-        @keyframes drip {
+        @keyframes drip-slow {
           0% {
             transform: translateY(0);
             opacity: 0;
           }
-          5% {
-            opacity: 0.9;
+          3% {
+            opacity: 1;
           }
-          95% {
-            opacity: 0.7;
+          97% {
+            opacity: 0.8;
           }
           100% {
-            transform: translateY(300px);
+            transform: translateY(400px);
             opacity: 0;
           }
         }
 
-        .blood-droplet.delay-1 { animation-delay: 1.5s; }
-        .blood-droplet.delay-2 { animation-delay: 3s; }
-        .blood-droplet.delay-3 { animation-delay: 4.5s; }
+        /* Sequential delays - one drop finishes before next starts */
+        .blood-droplet.delay-single { animation-delay: 8s; }
+        .blood-droplet.delay-double { animation-delay: 16s; }
 
         .bg-gradient-radial {
           background: radial-gradient(circle, var(--tw-gradient-stops));
