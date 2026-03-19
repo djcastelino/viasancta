@@ -644,33 +644,24 @@ export default function StationsOfTheCross() {
                       <div className="text-white/80 text-4xl animate-glow-pulse drop-shadow-lg">✝</div>
                     </div>
 
-                    {/* Text Content with Background Panel - Appears after 4 seconds */}
+                    {/* Minimal Dark Overlay at Bottom - Appears after 4 seconds */}
                     {showMeditation && (
-                      <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-2 z-30 animate-fade-in-slow">
-                        <div className="bg-white/95 backdrop-blur-sm rounded-t-2xl p-4 shadow-2xl max-w-4xl mx-auto">
-                          <div className="text-purple-900 text-xs font-semibold mb-2 tracking-wider uppercase">
+                      <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-4 z-30 animate-fade-in-slow">
+                        <div className="bg-black/70 backdrop-blur-md p-4 max-w-3xl mx-auto">
+                          <div className="text-purple-300 text-xs font-semibold mb-2 tracking-wider uppercase">
                             Station {currentStation.number} of 14
                           </div>
-                          <h2 className="text-gray-900 text-2xl md:text-3xl font-serif font-bold mb-4">
+                          <h2 className="text-white text-xl md:text-2xl font-serif font-bold mb-3">
                             {currentStation.title}
                           </h2>
 
-                          {/* Scripture */}
-                          <div>
-                            <div className="text-gray-800 text-base md:text-lg font-serif italic mb-1">
-                              "{currentStation.scripture.text}"
-                            </div>
-                            <p className="text-gray-600 text-xs font-semibold">
-                              {currentStation.scripture.reference}
-                            </p>
+                          {/* Scripture - minimal */}
+                          <div className="text-gray-200 text-sm md:text-base font-serif italic">
+                            "{currentStation.scripture.text}"
                           </div>
-
-                          {/* Meditation */}
-                          <div className="mt-4 pt-4 border-t border-gray-300">
-                            <p className="text-gray-700 text-sm leading-relaxed">
-                              {currentStation.meditation.substring(0, 250)}...
-                            </p>
-                          </div>
+                          <p className="text-gray-400 text-xs mt-1">
+                            {currentStation.scripture.reference}
+                          </p>
                         </div>
                       </div>
                     )}
