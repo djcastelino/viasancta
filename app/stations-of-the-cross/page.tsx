@@ -36,7 +36,6 @@ export default function StationsOfTheCross() {
   const [isPrayerMode, setIsPrayerMode] = useState(false);
   const [showMusicPrompt, setShowMusicPrompt] = useState(false);
   const [showMeditation, setShowMeditation] = useState(false);
-  const [showBreathingGuide, setShowBreathingGuide] = useState(true);
   const [autoAdvance, setAutoAdvance] = useState(false);
   const [remainingTime, setRemainingTime] = useState(150); // 2.5 minutes in seconds
 
@@ -59,8 +58,8 @@ export default function StationsOfTheCross() {
     '/audio/background/contemplative-2.mp3',
   ];
 
-  // Prayer Mode background music
-  const prayerMusicUrl = '/audio/background/contemplative-3.mp3';
+  // Prayer Mode background music - Gregorian chant
+  const prayerMusicUrl = '/audio/background/gregorian-chant.mp3';
 
   // Play soft bell sound
   const playBellSound = () => {
@@ -115,6 +114,13 @@ export default function StationsOfTheCross() {
       music.loop = true;
       music.volume = 0;
       prayerMusicRef.current = music;
+
+      // Fallback to contemplative-3.mp3 if gregorian chant not found
+      music.addEventListener('error', () => {
+        console.log('Gregorian chant not found, using fallback music');
+        music.src = '/audio/background/contemplative-3.mp3';
+        music.load();
+      });
 
       music.play().then(() => {
         setShowMusicPrompt(false);
@@ -621,43 +627,38 @@ export default function StationsOfTheCross() {
                   <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
                     {/* Glowing Cross */}
                     <div className="absolute top-8 left-8 z-30 pointer-events-none">
-                      <div className="text-white/70 text-4xl animate-glow-pulse">✝</div>
+                      <div className="text-white/80 text-4xl animate-glow-pulse drop-shadow-lg">✝</div>
                     </div>
 
-                    {/* Breathing Guide Circle */}
-                    {showBreathingGuide && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="breathing-circle"></div>
-                      </div>
-                    )}
-
-                    {/* Text Content */}
-                    <div className="text-center px-8 max-w-3xl mx-auto relative z-30">
-                      <div className="text-white/90 text-sm font-semibold mb-3 tracking-wider uppercase animate-fade-in">
-                        Station {currentStation.number} of 14
-                      </div>
-                      <h2 className="text-white text-3xl md:text-5xl font-serif font-bold mb-6 drop-shadow-2xl animate-fade-in">
-                        {currentStation.title}
-                      </h2>
-
-                      {/* Scripture - appears immediately */}
-                      <div className="animate-fade-in">
-                        <div className="text-white/80 text-lg md:text-xl font-serif italic max-w-2xl mx-auto drop-shadow-lg mb-2">
-                          "{currentStation.scripture.text}"
+                    {/* Text Content with Background Panel */}
+                    <div className="text-center px-6 max-w-3xl mx-auto relative z-30">
+                      <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+                        <div className="text-purple-900 text-sm font-semibold mb-3 tracking-wider uppercase animate-fade-in">
+                          Station {currentStation.number} of 14
                         </div>
-                        <p className="text-white/70 text-sm">
-                          {currentStation.scripture.reference}
-                        </p>
-                      </div>
+                        <h2 className="text-gray-900 text-3xl md:text-5xl font-serif font-bold mb-6 animate-fade-in">
+                          {currentStation.title}
+                        </h2>
 
-                      {/* Meditation - appears after 4 seconds */}
-                      {showMeditation && (
-                        <div className="mt-8 animate-fade-in-slow">
-                          <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
-                            {currentStation.meditation.substring(0, 300)}...
+                        {/* Scripture - appears immediately */}
+                        <div className="animate-fade-in">
+                          <div className="text-gray-800 text-lg md:text-xl font-serif italic max-w-2xl mx-auto mb-2">
+                            "{currentStation.scripture.text}"
+                          </div>
+                          <p className="text-gray-600 text-sm font-semibold">
+                            {currentStation.scripture.reference}
                           </p>
                         </div>
-                      )}
+
+                        {/* Meditation - appears after 4 seconds */}
+                        {showMeditation && (
+                          <div className="mt-6 pt-6 border-t border-gray-300 animate-fade-in-slow">
+                            <p className="text-gray-700 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                              {currentStation.meditation.substring(0, 300)}...
+                            </p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -674,31 +675,18 @@ export default function StationsOfTheCross() {
                     </button>
 
                     {/* Control Panel - Bottom Left */}
-                    <div className="absolute bottom-6 left-6 z-30 flex flex-col gap-2 pointer-events-auto">
-                      {/* Breathing Guide Toggle */}
-                      <button
-                        onClick={() => setShowBreathingGuide(!showBreathingGuide)}
-                        className={`px-3 py-2 rounded-lg text-xs backdrop-blur-sm transition-all ${
-                          showBreathingGuide
-                            ? 'bg-purple-600/80 hover:bg-purple-700/80 text-white'
-                            : 'bg-black/40 hover:bg-black/60 text-white/70'
-                        }`}
-                        title="Toggle breathing guide"
-                      >
-                        {showBreathingGuide ? '🌬️ Breathing On' : '🌬️ Breathing Off'}
-                      </button>
-
+                    <div className="absolute bottom-6 left-6 z-30 pointer-events-auto">
                       {/* Auto-Advance Toggle */}
                       <button
                         onClick={() => setAutoAdvance(!autoAdvance)}
-                        className={`px-3 py-2 rounded-lg text-xs backdrop-blur-sm transition-all ${
+                        className={`px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all shadow-lg ${
                           autoAdvance
-                            ? 'bg-purple-600/80 hover:bg-purple-700/80 text-white'
-                            : 'bg-black/40 hover:bg-black/60 text-white/70'
+                            ? 'bg-purple-600/90 hover:bg-purple-700/90 text-white'
+                            : 'bg-white/90 hover:bg-white text-gray-700'
                         }`}
                         title="Auto-advance after 2.5 minutes"
                       >
-                        {autoAdvance ? `⏱️ ${Math.floor(remainingTime / 60)}:${String(remainingTime % 60).padStart(2, '0')}` : '⏱️ Auto Off'}
+                        {autoAdvance ? `⏱️ ${Math.floor(remainingTime / 60)}:${String(remainingTime % 60).padStart(2, '0')}` : '⏱️ Auto-Advance'}
                       </button>
                     </div>
 
@@ -922,42 +910,16 @@ export default function StationsOfTheCross() {
 
         @keyframes glow-pulse {
           0%, 100% {
-            opacity: 0.6;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            opacity: 0.7;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
           }
           50% {
             opacity: 1;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
           }
         }
         .animate-glow-pulse {
           animation: glow-pulse 3s ease-in-out infinite;
-        }
-
-        @keyframes breathing {
-          0% {
-            transform: scale(0.8);
-            opacity: 0.3;
-          }
-          40% {
-            transform: scale(1);
-            opacity: 0.5;
-          }
-          60% {
-            transform: scale(1);
-            opacity: 0.5;
-          }
-          100% {
-            transform: scale(0.8);
-            opacity: 0.3;
-          }
-        }
-        .breathing-circle {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          border: 2px solid rgba(255, 255, 255, 0.4);
-          animation: breathing 10s ease-in-out infinite;
         }
 
         .bg-gradient-radial {
