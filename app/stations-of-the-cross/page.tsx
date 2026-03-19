@@ -618,23 +618,13 @@ export default function StationsOfTheCross() {
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
-                  className={`w-full h-full object-cover ${isPrayerMode ? 'opacity-90' : ''}`}
+                  className={`w-full h-full object-cover ${isPrayerMode && currentStation.number === 1 ? 'prayer-mode-zoom opacity-90' : isPrayerMode ? 'opacity-90' : ''}`}
                   style={isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } : {}}
                   onError={(e) => {
                     console.error('Failed to load station image');
                     setError('Station image unavailable');
                   }}
                 />
-
-                {/* Blood Dripping Animation - Station 1 */}
-                {isPrayerMode && currentStation.number === 1 && (
-                  <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 15 }}>
-                    {/* Single blood droplet from crown of thorns - drips from head down to body */}
-                    <div className="blood-droplet" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
-                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
-                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
-                  </div>
-                )}
 
                 {/* Prayer Mode Overlay */}
                 {isPrayerMode && (
@@ -927,37 +917,22 @@ export default function StationsOfTheCross() {
           animation: glow-pulse 3s ease-in-out infinite;
         }
 
-        /* Blood Dripping Animation - One drop at a time */
-        .blood-droplet {
-          width: 10px;
-          height: 20px;
-          background: linear-gradient(to bottom, #d00000, #900000);
-          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-          animation: drip-slow 8s ease-in infinite;
-          opacity: 0;
-          box-shadow: 0 0 8px rgba(208, 0, 0, 1);
+        /* Prayer Mode - Slow Breathing Zoom Effect */
+        .prayer-mode-zoom {
+          animation: slow-zoom 20s ease-in-out infinite;
         }
 
-        @keyframes drip-slow {
+        @keyframes slow-zoom {
           0% {
-            transform: translateY(0);
-            opacity: 0;
+            transform: scale(1);
           }
-          3% {
-            opacity: 1;
-          }
-          97% {
-            opacity: 0.8;
+          50% {
+            transform: scale(1.05);
           }
           100% {
-            transform: translateY(500px);
-            opacity: 0;
+            transform: scale(1);
           }
         }
-
-        /* Sequential delays - one drop finishes before next starts */
-        .blood-droplet.delay-single { animation-delay: 8s; }
-        .blood-droplet.delay-double { animation-delay: 16s; }
 
         .bg-gradient-radial {
           background: radial-gradient(circle, var(--tw-gradient-stops));
