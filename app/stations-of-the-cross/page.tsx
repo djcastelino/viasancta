@@ -614,7 +614,7 @@ export default function StationsOfTheCross() {
 
                 <img
                   src={isPrayerMode && currentStation.number === 1
-                    ? `/images/stations/prayer-mode/station_${currentStation.number}_blood.png`
+                    ? `/images/stations/prayer-mode/station_${currentStation.number}.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
@@ -628,10 +628,10 @@ export default function StationsOfTheCross() {
                 {/* Blood Dripping Animation - Station 1 */}
                 {isPrayerMode && currentStation.number === 1 && (
                   <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 15 }}>
-                    {/* Single blood droplet from crown of thorns - sequential drops */}
-                    <div className="blood-droplet" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
-                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
-                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '22%', left: '39%' }}></div>
+                    {/* Single blood droplet from crown of thorns - drips from head down to body */}
+                    <div className="blood-droplet" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
+                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
+                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
                   </div>
                 )}
 
@@ -958,7 +958,7 @@ export default function StationsOfTheCross() {
             opacity: 0.8;
           }
           100% {
-            transform: translateY(400px);
+            transform: translateY(500px);
             opacity: 0;
           }
         }
