@@ -628,11 +628,13 @@ export default function StationsOfTheCross() {
                 {/* Blood Dripping Animation - Station 1 */}
                 {isPrayerMode && currentStation.number === 1 && (
                   <div className="absolute inset-0 pointer-events-none z-15">
-                    {/* Blood droplets from crown of thorns */}
-                    <div className="absolute blood-droplet" style={{ top: '28%', left: '48%' }}></div>
-                    <div className="absolute blood-droplet delay-1" style={{ top: '29%', left: '49%' }}></div>
-                    <div className="absolute blood-droplet delay-2" style={{ top: '28%', left: '50%' }}></div>
-                    <div className="absolute blood-droplet delay-3" style={{ top: '29%', left: '47%' }}></div>
+                    {/* Blood droplets from crown of thorns - positioned at Jesus' head */}
+                    <div className="absolute blood-droplet" style={{ top: '26%', left: '38%' }}></div>
+                    <div className="absolute blood-droplet delay-1" style={{ top: '27%', left: '39%' }}></div>
+                    <div className="absolute blood-droplet delay-2" style={{ top: '26%', left: '40%' }}></div>
+                    <div className="absolute blood-droplet delay-3" style={{ top: '27%', left: '37%' }}></div>
+                    <div className="absolute blood-droplet delay-1" style={{ top: '28%', left: '38.5%' }}></div>
+                    <div className="absolute blood-droplet delay-2" style={{ top: '27%', left: '41%' }}></div>
                   </div>
                 )}
 
@@ -938,13 +940,13 @@ export default function StationsOfTheCross() {
 
         /* Blood Dripping Animation */
         .blood-droplet {
-          width: 4px;
-          height: 8px;
-          background: linear-gradient(to bottom, #8b0000, #4a0000);
+          width: 6px;
+          height: 12px;
+          background: linear-gradient(to bottom, #a00000, #5a0000);
           border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-          animation: drip 4s ease-in infinite;
+          animation: drip 5s ease-in infinite;
           opacity: 0;
-          box-shadow: 0 0 3px rgba(139, 0, 0, 0.5);
+          box-shadow: 0 0 4px rgba(160, 0, 0, 0.7);
         }
 
         @keyframes drip {
