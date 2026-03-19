@@ -35,14 +35,21 @@ export default function StationsOfTheCross() {
   const [error, setError] = useState('');
   const [isPrayerMode, setIsPrayerMode] = useState(false);
   const [showMusicPrompt, setShowMusicPrompt] = useState(false);
+  const [showMeditation, setShowMeditation] = useState(false);
+  const [showBreathingGuide, setShowBreathingGuide] = useState(true);
+  const [autoAdvance, setAutoAdvance] = useState(false);
+  const [remainingTime, setRemainingTime] = useState(150); // 2.5 minutes in seconds
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
   const prayerMusicRef = useRef<HTMLAudioElement | null>(null);
+  const bellSoundRef = useRef<HTMLAudioElement | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
   const googleMapRef = useRef<any>(null);
   const markersRef = useRef<any[]>([]);
   const [mapsLoaded, setMapsLoaded] = useState(false);
+  const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const meditationTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Contemplative background music (royalty-free from Incompetech)
   // Music by Kevin MacLeod (incompetech.com)
@@ -55,13 +62,50 @@ export default function StationsOfTheCross() {
   // Prayer Mode background music
   const prayerMusicUrl = '/audio/background/contemplative-3.mp3';
 
+  // Play soft bell sound
+  const playBellSound = () => {
+    // Create simple bell sound using Web Audio API
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // C note
+    oscillator.type = 'sine';
+
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 2);
+  };
+
   const handleStationChange = (station: Station) => {
     setCurrentStation(station);
     setShowText(false);
+    setShowMeditation(false);
     setError('');
     if (isPlaying) {
       handleStop();
     }
+
+    // Reset meditation timer for new station
+    if (meditationTimerRef.current) {
+      clearTimeout(meditationTimerRef.current);
+    }
+
+    // In prayer mode, play bell and restart meditation reveal
+    if (isPrayerMode) {
+      playBellSound();
+      meditationTimerRef.current = setTimeout(() => {
+        setShowMeditation(true);
+      }, 4000); // Show meditation after 4 seconds
+    }
+
+    // Reset auto-advance timer
+    setRemainingTime(150);
   };
 
   // Handle Prayer Mode music
@@ -91,11 +135,33 @@ export default function StationsOfTheCross() {
 
   useEffect(() => {
     if (isPrayerMode) {
+      // Play bell sound when entering prayer mode
+      playBellSound();
+
+      // Start sequential text reveal
+      setShowMeditation(false);
+      meditationTimerRef.current = setTimeout(() => {
+        setShowMeditation(true);
+      }, 4000);
+
       // Try to start music automatically
       startPrayerMusic();
+
+      // Reset timer
+      setRemainingTime(150);
     } else {
       // Fade out and stop prayer music when exiting
       setShowMusicPrompt(false);
+      setShowMeditation(false);
+
+      // Clear timers
+      if (meditationTimerRef.current) {
+        clearTimeout(meditationTimerRef.current);
+      }
+      if (autoAdvanceTimerRef.current) {
+        clearInterval(autoAdvanceTimerRef.current);
+      }
+
       if (prayerMusicRef.current) {
         const music = prayerMusicRef.current;
         const fadeInterval = setInterval(() => {
@@ -111,6 +177,46 @@ export default function StationsOfTheCross() {
       }
     }
   }, [isPrayerMode]);
+
+  // Auto-advance timer
+  useEffect(() => {
+    if (isPrayerMode && autoAdvance) {
+      autoAdvanceTimerRef.current = setInterval(() => {
+        setRemainingTime((prev) => {
+          if (prev <= 1) {
+            // Auto-advance to next station
+            setCurrentStation((current) => {
+              const nextIndex = current.number % stations.length;
+              const nextStation = stations[nextIndex] as Station;
+
+              // Play bell and reset meditation for new station
+              playBellSound();
+              setShowMeditation(false);
+              if (meditationTimerRef.current) {
+                clearTimeout(meditationTimerRef.current);
+              }
+              meditationTimerRef.current = setTimeout(() => {
+                setShowMeditation(true);
+              }, 4000);
+
+              return nextStation;
+            });
+            return 150;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } else if (autoAdvanceTimerRef.current) {
+      clearInterval(autoAdvanceTimerRef.current);
+      autoAdvanceTimerRef.current = null;
+    }
+
+    return () => {
+      if (autoAdvanceTimerRef.current) {
+        clearInterval(autoAdvanceTimerRef.current);
+      }
+    };
+  }, [isPrayerMode, autoAdvance]);
 
   // Initialize interactive Google Map with all station markers
   useEffect(() => {
@@ -513,31 +619,107 @@ export default function StationsOfTheCross() {
                 {/* Prayer Mode Overlay */}
                 {isPrayerMode && (
                   <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-                    <div className="text-center px-8 animate-fade-in">
-                      <div className="text-white/90 text-sm font-semibold mb-3 tracking-wider uppercase">
+                    {/* Glowing Cross */}
+                    <div className="absolute top-8 left-8 z-30 pointer-events-none">
+                      <div className="text-white/70 text-4xl animate-glow-pulse">✝</div>
+                    </div>
+
+                    {/* Breathing Guide Circle */}
+                    {showBreathingGuide && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="breathing-circle"></div>
+                      </div>
+                    )}
+
+                    {/* Text Content */}
+                    <div className="text-center px-8 max-w-3xl mx-auto relative z-30">
+                      <div className="text-white/90 text-sm font-semibold mb-3 tracking-wider uppercase animate-fade-in">
                         Station {currentStation.number} of 14
                       </div>
-                      <h2 className="text-white text-3xl md:text-5xl font-serif font-bold mb-4 drop-shadow-2xl">
+                      <h2 className="text-white text-3xl md:text-5xl font-serif font-bold mb-6 drop-shadow-2xl animate-fade-in">
                         {currentStation.title}
                       </h2>
-                      <div className="text-white/80 text-lg md:text-xl font-serif italic max-w-2xl mx-auto drop-shadow-lg">
-                        "{currentStation.scripture.text}"
+
+                      {/* Scripture - appears immediately */}
+                      <div className="animate-fade-in">
+                        <div className="text-white/80 text-lg md:text-xl font-serif italic max-w-2xl mx-auto drop-shadow-lg mb-2">
+                          "{currentStation.scripture.text}"
+                        </div>
+                        <p className="text-white/70 text-sm">
+                          {currentStation.scripture.reference}
+                        </p>
                       </div>
-                      <p className="text-white/70 text-sm mt-3">
-                        {currentStation.scripture.reference}
-                      </p>
+
+                      {/* Meditation - appears after 4 seconds */}
+                      {showMeditation && (
+                        <div className="mt-8 animate-fade-in-slow">
+                          <p className="text-white/75 text-sm md:text-base leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
+                            {currentStation.meditation.substring(0, 300)}...
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
 
-                {/* Exit Prayer Mode Button */}
+                {/* Prayer Mode Controls */}
                 {isPrayerMode && (
-                  <button
-                    onClick={() => setIsPrayerMode(false)}
-                    className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all pointer-events-auto"
-                  >
-                    Exit Prayer Mode
-                  </button>
+                  <>
+                    {/* Exit Button */}
+                    <button
+                      onClick={() => setIsPrayerMode(false)}
+                      className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all pointer-events-auto"
+                    >
+                      ✕ Exit
+                    </button>
+
+                    {/* Control Panel - Bottom Left */}
+                    <div className="absolute bottom-6 left-6 z-30 flex flex-col gap-2 pointer-events-auto">
+                      {/* Breathing Guide Toggle */}
+                      <button
+                        onClick={() => setShowBreathingGuide(!showBreathingGuide)}
+                        className={`px-3 py-2 rounded-lg text-xs backdrop-blur-sm transition-all ${
+                          showBreathingGuide
+                            ? 'bg-purple-600/80 hover:bg-purple-700/80 text-white'
+                            : 'bg-black/40 hover:bg-black/60 text-white/70'
+                        }`}
+                        title="Toggle breathing guide"
+                      >
+                        {showBreathingGuide ? '🌬️ Breathing On' : '🌬️ Breathing Off'}
+                      </button>
+
+                      {/* Auto-Advance Toggle */}
+                      <button
+                        onClick={() => setAutoAdvance(!autoAdvance)}
+                        className={`px-3 py-2 rounded-lg text-xs backdrop-blur-sm transition-all ${
+                          autoAdvance
+                            ? 'bg-purple-600/80 hover:bg-purple-700/80 text-white'
+                            : 'bg-black/40 hover:bg-black/60 text-white/70'
+                        }`}
+                        title="Auto-advance after 2.5 minutes"
+                      >
+                        {autoAdvance ? `⏱️ ${Math.floor(remainingTime / 60)}:${String(remainingTime % 60).padStart(2, '0')}` : '⏱️ Auto Off'}
+                      </button>
+                    </div>
+
+                    {/* Navigation - Bottom Right */}
+                    <div className="absolute bottom-6 right-6 z-30 flex gap-2 pointer-events-auto">
+                      <button
+                        onClick={handlePrevious}
+                        className="bg-black/50 hover:bg-black/70 text-white p-3 rounded-full text-sm backdrop-blur-sm transition-all"
+                        title="Previous station"
+                      >
+                        ←
+                      </button>
+                      <button
+                        onClick={handleNext}
+                        className="bg-purple-600/80 hover:bg-purple-700/80 text-white p-3 rounded-full text-sm backdrop-blur-sm transition-all"
+                        title="Next station"
+                      >
+                        →
+                      </button>
+                    </div>
+                  </>
                 )}
 
                 {/* Music Prompt (if autoplay blocked) */}
@@ -723,6 +905,61 @@ export default function StationsOfTheCross() {
         .animate-fade-in {
           animation: fade-in 1.5s ease-out;
         }
+
+        @keyframes fade-in-slow {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-slow {
+          animation: fade-in-slow 2s ease-out;
+        }
+
+        @keyframes glow-pulse {
+          0%, 100% {
+            opacity: 0.6;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+          }
+          50% {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+          }
+        }
+        .animate-glow-pulse {
+          animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes breathing {
+          0% {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+          40% {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+          60% {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+          100% {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+        }
+        .breathing-circle {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          animation: breathing 10s ease-in-out infinite;
+        }
+
         .bg-gradient-radial {
           background: radial-gradient(circle, var(--tw-gradient-stops));
         }
