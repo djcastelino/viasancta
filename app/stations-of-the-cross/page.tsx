@@ -618,7 +618,7 @@ export default function StationsOfTheCross() {
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
-                  className={`w-full h-full object-cover ${isPrayerMode ? 'opacity-90' : ''}`}
+                  className={`w-full h-full ${isPrayerMode && currentStation.number === 1 ? 'object-contain' : 'object-cover'} ${isPrayerMode ? 'opacity-90' : ''}`}
                   onError={(e) => {
                     console.error('Failed to load station image');
                     setError('Station image unavailable');
@@ -629,9 +629,9 @@ export default function StationsOfTheCross() {
                 {isPrayerMode && currentStation.number === 1 && (
                   <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 15 }}>
                     {/* Single blood droplet from crown of thorns - drips from head down to body */}
-                    <div className="blood-droplet" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
-                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
-                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '28%', left: '50%' }}></div>
+                    <div className="blood-droplet" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
+                    <div className="blood-droplet delay-single" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
+                    <div className="blood-droplet delay-double" style={{ position: 'absolute', top: '28%', left: '60%' }}></div>
                   </div>
                 )}
 
