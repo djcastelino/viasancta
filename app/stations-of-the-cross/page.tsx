@@ -627,7 +627,7 @@ export default function StationsOfTheCross() {
                   style={
                     isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } :
                     isPrayerMode && currentStation.number === 2 ? { objectPosition: 'center 25%' } :
-                    isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 35%' } :
+                    isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 40%' } :
                     {}
                   }
                   onError={(e) => {
