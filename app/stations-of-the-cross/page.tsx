@@ -614,7 +614,7 @@ export default function StationsOfTheCross() {
                       src={`/images/stations/prayer-mode/station_${currentStation.number}.png`}
                       alt=""
                       className="w-full h-full object-cover blur-background"
-                      style={{ filter: 'blur(40px) brightness(0.7)', transform: 'scale(1.1)' }}
+                      style={{ filter: 'blur(50px) brightness(0.3) saturate(0.5)', transform: 'scale(1.1)' }}
                     />
                   </div>
                 )}
