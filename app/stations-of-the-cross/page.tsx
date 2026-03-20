@@ -618,18 +618,10 @@ export default function StationsOfTheCross() {
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
-                  className={`w-full h-full object-cover ${
-                    isPrayerMode && currentStation.number === 1 ? 'prayer-mode-zoom opacity-90' :
-                    isPrayerMode && currentStation.number === 2 ? 'prayer-mode-pan-up opacity-90' :
-                    isPrayerMode && currentStation.number === 3 ? 'prayer-mode-zoom-fast opacity-90' :
-                    isPrayerMode ? 'opacity-90' : ''
+                  className={`w-full h-full ${
+                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) ? 'object-contain opacity-90' :
+                    'object-cover opacity-90'
                   }`}
-                  style={
-                    isPrayerMode && currentStation.number === 1 ? { objectPosition: 'center 30%' } :
-                    isPrayerMode && currentStation.number === 2 ? { objectPosition: 'center 25%' } :
-                    isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 40%' } :
-                    {}
-                  }
                   onError={(e) => {
                     console.error('Failed to load station image');
                     setError('Station image unavailable');
