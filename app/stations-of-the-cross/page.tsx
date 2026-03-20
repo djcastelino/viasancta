@@ -606,8 +606,8 @@ export default function StationsOfTheCross() {
           <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
             <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
               <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700 overflow-hidden`}>
-                {/* Blurred Background Layer (only for prayer mode with special images) */}
-                {isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) && (
+                {/* Blurred Background Layer (only for prayer mode with portrait images) */}
+                {isPrayerMode && (currentStation.number === 1 || currentStation.number === 2) && (
                   <div className="absolute inset-0 z-0">
                     <img
                       src={`/images/stations/prayer-mode/station_${currentStation.number}.png`}
@@ -631,9 +631,11 @@ export default function StationsOfTheCross() {
                   }
                   alt={`${currentStation.location.name}`}
                   className={`w-full h-full relative z-5 ${
-                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) ? 'object-contain opacity-95' :
+                    isPrayerMode && currentStation.number === 3 ? 'object-cover opacity-95' :
+                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2) ? 'object-contain opacity-95' :
                     'object-cover opacity-90'
                   }`}
+                  style={isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 35%' } : {}}
                   onError={(e) => {
                     console.error('Failed to load station image');
                     setError('Station image unavailable');
