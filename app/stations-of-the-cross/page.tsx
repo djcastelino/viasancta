@@ -168,18 +168,17 @@ export default function StationsOfTheCross() {
         clearInterval(autoAdvanceTimerRef.current);
       }
 
+      // Stop prayer music immediately (mobile fix)
       if (prayerMusicRef.current) {
         const music = prayerMusicRef.current;
-        const fadeInterval = setInterval(() => {
-          if (music.volume > 0.01) {
-            music.volume = Math.max(music.volume - 0.01, 0);
-          } else {
-            music.pause();
-            music.currentTime = 0;
-            prayerMusicRef.current = null;
-            clearInterval(fadeInterval);
-          }
-        }, 100);
+        try {
+          music.pause();
+          music.currentTime = 0;
+          music.volume = 0;
+        } catch (e) {
+          console.log('Error stopping music:', e);
+        }
+        prayerMusicRef.current = null;
       }
     }
   }, [isPrayerMode]);
