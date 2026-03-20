@@ -606,20 +606,33 @@ export default function StationsOfTheCross() {
           {/* Street View - Large Area */}
           <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
             <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
-              <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700`}>
+              <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700 overflow-hidden`}>
+                {/* Blurred Background Layer (only for prayer mode with special images) */}
+                {isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) && (
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src={`/images/stations/prayer-mode/station_${currentStation.number}.png`}
+                      alt=""
+                      className="w-full h-full object-cover blur-background"
+                      style={{ filter: 'blur(40px) brightness(0.7)', transform: 'scale(1.1)' }}
+                    />
+                  </div>
+                )}
+
                 {/* Vignette overlay for prayer mode */}
                 {isPrayerMode && (
                   <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-60 pointer-events-none z-10"></div>
                 )}
 
+                {/* Main Sharp Image */}
                 <img
                   src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3)
                     ? `/images/stations/prayer-mode/station_${currentStation.number}.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
-                  className={`w-full h-full ${
-                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) ? 'object-contain opacity-90' :
+                  className={`w-full h-full relative z-5 ${
+                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3) ? 'object-contain opacity-95' :
                     'object-cover opacity-90'
                   }`}
                   onError={(e) => {
