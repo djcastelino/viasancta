@@ -942,7 +942,7 @@ export default function StationsOfTheCross() {
             transform: scale(1);
           }
           50% {
-            transform: scale(1.05);
+            transform: scale(1.03);
           }
           100% {
             transform: scale(1);
@@ -959,7 +959,7 @@ export default function StationsOfTheCross() {
             transform: scale(1);
           }
           50% {
-            transform: scale(1.05);
+            transform: scale(1.03);
           }
           100% {
             transform: scale(1);
@@ -973,13 +973,13 @@ export default function StationsOfTheCross() {
 
         @keyframes slow-pan-up {
           0% {
-            transform: translateY(0) scale(1.1);
+            transform: translateY(0) scale(1.03);
           }
           50% {
-            transform: translateY(-8%) scale(1.1);
+            transform: translateY(-8%) scale(1.03);
           }
           100% {
-            transform: translateY(0) scale(1.1);
+            transform: translateY(0) scale(1.03);
           }
         }
 
