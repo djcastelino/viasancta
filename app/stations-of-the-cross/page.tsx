@@ -607,7 +607,7 @@ export default function StationsOfTheCross() {
             <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
               <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700 overflow-hidden`}>
                 {/* Blurred Background Layer - Mobile only (for portrait images) */}
-                {isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3 || currentStation.number === 4) && (
+                {isPrayerMode && (currentStation.number >= 1 && currentStation.number <= 6) && (
                   <div className="absolute inset-0 z-0 block md:hidden">
                     <img
                       src={`/images/stations/prayer-mode/station_${currentStation.number}_portrait.png`}
@@ -623,15 +623,15 @@ export default function StationsOfTheCross() {
                   <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black opacity-60 pointer-events-none z-10"></div>
                 )}
 
-                {/* Main Sharp Image - Desktop (landscape for stations 1-4) */}
+                {/* Main Sharp Image - Desktop (landscape for stations 1-6) */}
                 <img
-                  src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3 || currentStation.number === 4)
+                  src={isPrayerMode && (currentStation.number >= 1 && currentStation.number <= 6)
                     ? `/images/stations/prayer-mode/station_${currentStation.number}.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
                   className={`w-full h-full relative z-5 hidden md:block ${
-                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3 || currentStation.number === 4) ? 'object-cover opacity-95' :
+                    isPrayerMode && (currentStation.number >= 1 && currentStation.number <= 6) ? 'object-cover opacity-95' :
                     'object-cover opacity-90'
                   }`}
                   style={isPrayerMode && currentStation.number === 3 ? { objectPosition: 'center 35%' } : {}}
@@ -641,15 +641,15 @@ export default function StationsOfTheCross() {
                   }}
                 />
 
-                {/* Main Sharp Image - Mobile (portrait for stations 1-4) */}
+                {/* Main Sharp Image - Mobile (portrait for stations 1-6) */}
                 <img
-                  src={isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3 || currentStation.number === 4)
+                  src={isPrayerMode && (currentStation.number >= 1 && currentStation.number <= 6)
                     ? `/images/stations/prayer-mode/station_${currentStation.number}_portrait.png`
                     : `/images/stations/station_${currentStation.number}.png`
                   }
                   alt={`${currentStation.location.name}`}
                   className={`w-full h-full relative z-5 block md:hidden ${
-                    isPrayerMode && (currentStation.number === 1 || currentStation.number === 2 || currentStation.number === 3 || currentStation.number === 4) ? 'object-contain opacity-95' :
+                    isPrayerMode && (currentStation.number >= 1 && currentStation.number <= 6) ? 'object-contain opacity-95' :
                     'object-cover opacity-90'
                   }`}
                   onError={(e) => {
