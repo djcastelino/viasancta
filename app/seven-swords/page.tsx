@@ -332,13 +332,41 @@ export default function SevenSwords() {
           <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
             <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
               <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700 overflow-hidden`}>
-                {/* Main Image */}
+                {/* Blurred Background Layer - Mobile only (for portrait images) */}
+                {isPrayerMode && (
+                  <div className="absolute inset-0 z-0 block md:hidden">
+                    <img
+                      src={`/images/swords/sword_${currentSword.number}_portrait.png`}
+                      alt=""
+                      className="w-full h-full object-cover blur-background"
+                      style={{ filter: 'blur(50px) brightness(0.3) saturate(0.5)', transform: 'scale(1.1)' }}
+                    />
+                  </div>
+                )}
+
+                {/* Main Image - Desktop (landscape) */}
                 <img
                   src={`/images/swords/sword_${currentSword.number}.png`}
                   alt={currentSword.name}
-                  className="w-full h-full object-cover opacity-90"
+                  className={`w-full h-full relative z-5 hidden md:block ${
+                    isPrayerMode ? 'object-cover opacity-95' : 'object-cover opacity-90'
+                  }`}
                   onError={(e) => {
-                    // Fallback to placeholder
+                    (e.target as HTMLImageElement).src = '/images/placeholder-sword.png';
+                  }}
+                />
+
+                {/* Main Image - Mobile (portrait) */}
+                <img
+                  src={isPrayerMode
+                    ? `/images/swords/sword_${currentSword.number}_portrait.png`
+                    : `/images/swords/sword_${currentSword.number}.png`
+                  }
+                  alt={currentSword.name}
+                  className={`w-full h-full relative z-5 block md:hidden ${
+                    isPrayerMode ? 'object-contain opacity-95' : 'object-cover opacity-90'
+                  }`}
+                  onError={(e) => {
                     (e.target as HTMLImageElement).src = '/images/placeholder-sword.png';
                   }}
                 />
