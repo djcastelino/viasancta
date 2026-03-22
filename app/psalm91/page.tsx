@@ -54,7 +54,7 @@ export default function Psalm91() {
   const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const textTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const psalmMusicUrl = '/audio/background/gregorian-chant.mp3';
+  const psalmMusicUrl = '/audio/background/psalm91.mp3';
 
   const playBellSound = () => {
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
