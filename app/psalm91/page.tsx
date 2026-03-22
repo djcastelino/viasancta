@@ -17,7 +17,7 @@ const psalmSections: PsalmSection[] = [
     number: 1,
     title: "The Dwelling Place",
     verseRange: "Verses 1-2",
-    verses: "You who dwell in the shelter of the Most High,\n    who abide in the shade of the Almighty,\nSay to the LORD, "My refuge and fortress,\n    my God in whom I trust.""
+    verses: "You who dwell in the shelter of the Most High,\n    who abide in the shade of the Almighty,\nSay to the LORD, \"My refuge and fortress,\n    my God in whom I trust.\""
   },
   {
     id: 2,
