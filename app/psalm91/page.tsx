@@ -81,9 +81,9 @@ export default function Psalm91() {
       </Link>
 
       {/* Scrolling Content */}
-      <div className="fixed inset-0 flex items-end justify-center overflow-hidden z-10">
-        <div className="scroll-content w-full max-w-4xl px-8 text-center">
-          <div className="mb-[100vh]">
+      <div className="fixed inset-0 flex items-end justify-center overflow-hidden z-20">
+        <div className="scroll-content w-full max-w-4xl px-8 text-center pb-8">
+          <div className="space-y-16">
             {/* Title */}
             <div className="mb-16">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 font-serif drop-shadow-lg">
@@ -192,14 +192,14 @@ export default function Psalm91() {
       {/* CSS for scrolling animation */}
       <style jsx>{`
         .scroll-content {
-          animation: scroll-up 180s linear forwards;
+          animation: scroll-up 180s linear infinite;
         }
 
         @keyframes scroll-up {
-          from {
-            transform: translateY(0);
+          0% {
+            transform: translateY(100vh);
           }
-          to {
+          100% {
             transform: translateY(-100%);
           }
         }
