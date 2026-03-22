@@ -269,18 +269,18 @@ export default function SevenSwords() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-gray-900">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
       {/* Header */}
       {!isPrayerMode && (
-        <div className="bg-gradient-to-r from-red-900 to-purple-900 text-white py-8">
+        <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-8">
           <div className="max-w-7xl mx-auto px-5">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2 text-center">
               ⚔️ Seven Striking Swords
             </h1>
-            <p className="text-xl text-center text-red-200">
+            <p className="text-xl text-center text-slate-300">
               Prayers of Transformation, Not Destruction
             </p>
-            <p className="text-sm text-center text-red-300 mt-2 italic">
+            <p className="text-sm text-center text-slate-400 mt-2 italic">
               Inspired by the teaching of Logos Ministries, Bangalore
             </p>
           </div>
@@ -299,7 +299,7 @@ export default function SevenSwords() {
                   onClick={() => handleSwordChange(sword)}
                   className={`p-4 rounded-lg text-left transition-all ${
                     currentSword.id === sword.id
-                      ? 'bg-red-600 text-white scale-105'
+                      ? 'bg-blue-600 text-white scale-105'
                       : 'bg-gray-700 text-gray-200 hover:bg-gray-600'
                   }`}
                 >
@@ -314,7 +314,7 @@ export default function SevenSwords() {
           <div className="text-center mb-6">
             <button
               onClick={() => setIsPrayerMode(true)}
-              className="bg-gradient-to-r from-red-600 to-purple-600 hover:from-red-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all"
             >
               🙏 Enter Prayer Mode - Pray All Seven
             </button>
@@ -330,8 +330,8 @@ export default function SevenSwords() {
         <div className={`${isPrayerMode ? 'h-screen' : 'grid lg:grid-cols-3 gap-6'}`}>
           {/* Image Display */}
           <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
-            <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl'}>
-              <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-96 lg:h-[600px]'} bg-gray-700 overflow-hidden`}>
+            <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl h-full'}>
+              <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-full'} bg-gray-700 overflow-hidden`}>
                 {/* Blurred Background Layer - Mobile only (for portrait images) */}
                 {isPrayerMode && (
                   <div className="absolute inset-0 z-0 block md:hidden">
@@ -388,7 +388,7 @@ export default function SevenSwords() {
                     {showPrayer && (
                       <div className="absolute bottom-0 left-0 right-0 text-center px-4 pb-4 z-30 animate-fade-in-slow">
                         <div className="bg-black/70 backdrop-blur-md p-4 max-w-3xl mx-auto">
-                          <div className="text-red-300 text-xs font-semibold mb-2 tracking-wider uppercase">
+                          <div className="text-blue-300 text-xs font-semibold mb-2 tracking-wider uppercase">
                             Sword {currentSword.number} of 7
                           </div>
                           <h2 className="text-white text-xl md:text-2xl font-serif font-bold mb-3">
@@ -422,7 +422,7 @@ export default function SevenSwords() {
                         onClick={() => setAutoAdvance(!autoAdvance)}
                         className={`px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all shadow-lg ${
                           autoAdvance
-                            ? 'bg-red-600/90 hover:bg-red-700/90 text-white'
+                            ? 'bg-blue-600/90 hover:bg-blue-700/90 text-white'
                             : 'bg-white/90 hover:bg-white text-gray-700'
                         }`}
                       >
@@ -439,7 +439,7 @@ export default function SevenSwords() {
                       </button>
                       <button
                         onClick={handleNext}
-                        className="bg-red-600/80 hover:bg-red-700/80 text-white p-3 rounded-full text-sm backdrop-blur-sm transition-all"
+                        className="bg-blue-600/80 hover:bg-blue-700/80 text-white p-3 rounded-full text-sm backdrop-blur-sm transition-all"
                       >
                         →
                       </button>
@@ -451,7 +451,7 @@ export default function SevenSwords() {
                 {isPrayerMode && showMusicPrompt && (
                   <button
                     onClick={startPrayerMusic}
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-red-600/90 hover:bg-red-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all pointer-events-auto shadow-lg animate-pulse"
+                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-blue-600/90 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all pointer-events-auto shadow-lg animate-pulse"
                   >
                     🎵 Enable Background Music
                   </button>
@@ -465,17 +465,17 @@ export default function SevenSwords() {
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl shadow-2xl p-6">
                 <div className="text-center mb-4">
-                  <div className="inline-block bg-red-900 text-white px-4 py-2 rounded-full font-bold mb-2">
+                  <div className="inline-block bg-slate-900 text-white px-4 py-2 rounded-full font-bold mb-2">
                     Sword {currentSword.number} of 7
                   </div>
-                  <h2 className="text-2xl font-serif font-bold text-red-900 mb-2">
+                  <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
                     {currentSword.name}
                   </h2>
                 </div>
 
                 {/* Scripture */}
-                <div className="mb-4 p-4 bg-red-50 rounded-lg border-l-4 border-red-900">
-                  <p className="text-sm font-semibold text-red-900 mb-2">
+                <div className="mb-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-900">
+                  <p className="text-sm font-semibold text-blue-900 mb-2">
                     {currentSword.scripture.reference}
                   </p>
                   <p className="text-sm text-gray-700 italic">
@@ -509,7 +509,7 @@ export default function SevenSwords() {
                     value={personName}
                     onChange={(e) => setPersonName(e.target.value)}
                     placeholder="Enter name or situation..."
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
 
@@ -531,7 +531,7 @@ export default function SevenSwords() {
                   </button>
                   <button
                     onClick={handleNext}
-                    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold transition-all"
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all"
                   >
                     Next →
                   </button>
@@ -557,7 +557,7 @@ export default function SevenSwords() {
             </p>
             <a
               href="/"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-all"
+              className="inline-block bg-slate-600 hover:bg-slate-700 text-white px-8 py-3 rounded-full font-semibold transition-all"
             >
               ← Back to Home
             </a>
