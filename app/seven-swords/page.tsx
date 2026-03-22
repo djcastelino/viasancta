@@ -300,10 +300,10 @@ export default function SevenSwords() {
               onClick={() => setIsPrayerMode(true)}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all"
             >
-              🙏 Enter Prayer Mode - Pray All Seven
+              🙏 Enter Prayer Mode
             </button>
             <p className="text-xs text-gray-400 mt-2 italic">
-              Immersive prayer experience with auto-advance
+              Pray as needed for your situation - one sword or all seven
             </p>
           </div>
         </div>
