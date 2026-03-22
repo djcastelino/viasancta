@@ -75,7 +75,8 @@ export default function Psalm91() {
       {/* Exit Button */}
       <Link
         href="/"
-        className="fixed top-4 right-4 z-50 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg text-base font-semibold shadow-2xl transition-all border-2 border-white"
+        className="fixed top-6 right-6 z-[9999] bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all"
+        style={{ position: 'fixed' }}
       >
         ✕ Exit
       </Link>
