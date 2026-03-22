@@ -374,7 +374,7 @@ export default function Home() {
         <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
           Spiritual Warfare
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* Seven Swords */}
           <Link href="/seven-swords" className="block group">
@@ -433,6 +433,37 @@ export default function Home() {
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Armor Up →
+                </span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Psalm 91 */}
+          <Link href="/psalm91" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src="/images/psalm91/psalm91.png"
+                  alt="Psalm 91"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🛡️</span>
+                    <span>Divine Protection</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Psalm 91
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Declare God's promises of protection over your life. Experience <span className="font-semibold text-[#2C5F87]">4 sections</span> of divine shelter, angelic protection, and His unfailing answer.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Declare Now →
                 </span>
               </div>
             </div>
