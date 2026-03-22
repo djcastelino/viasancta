@@ -107,7 +107,7 @@ export default function SevenSwords() {
   const [isPrayerMode, setIsPrayerMode] = useState(false);
   const [showPrayer, setShowPrayer] = useState(false);
   const [showMusicPrompt, setShowMusicPrompt] = useState(false);
-  const [autoAdvance, setAutoAdvance] = useState(false);
+  const [autoAdvance, setAutoAdvance] = useState(true); // Default ON
   const [remainingTime, setRemainingTime] = useState(180); // 3 minutes per sword
   const [personName, setPersonName] = useState('');
 
