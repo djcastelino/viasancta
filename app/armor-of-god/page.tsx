@@ -393,11 +393,11 @@ export default function ArmorOfGod() {
         <div className="fixed inset-0 z-50">
           <div className="h-screen relative">
             {/* Blurred Background Layer - Mobile only */}
-            <div className="absolute inset-0 z-0 block md:hidden">
+            <div className="absolute inset-0 z-0 block md:hidden pointer-events-none">
               <img
                 src={`/images/armor/${currentPiece.imageName}_portrait.png`}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover pointer-events-none"
                 style={{ filter: 'blur(50px) brightness(0.3) saturate(0.5)', transform: 'scale(1.1)' }}
               />
             </div>
@@ -406,14 +406,14 @@ export default function ArmorOfGod() {
             <img
               src={`/images/armor/${currentPiece.imageName}.png`}
               alt={currentPiece.name}
-              className="absolute inset-0 w-full h-full object-cover opacity-90 hidden md:block"
+              className="absolute inset-0 w-full h-full object-cover opacity-90 hidden md:block pointer-events-none"
             />
 
             {/* Main Image - Mobile */}
             <img
               src={`/images/armor/${currentPiece.imageName}_portrait.png`}
               alt={currentPiece.name}
-              className="absolute inset-0 w-full h-full object-contain opacity-95 block md:hidden z-5"
+              className="absolute inset-0 w-full h-full object-contain opacity-95 block md:hidden z-5 pointer-events-none"
             />
 
             {/* Dark overlay */}
