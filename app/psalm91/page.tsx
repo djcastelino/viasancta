@@ -75,7 +75,7 @@ export default function Psalm91() {
       {/* Exit Button */}
       <Link
         href="/"
-        className="fixed top-4 right-4 z-50 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg text-base font-semibold shadow-2xl transition-all"
+        className="fixed top-4 right-4 z-50 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg text-base font-semibold shadow-2xl transition-all border-2 border-white"
       >
         ✕ Exit
       </Link>
