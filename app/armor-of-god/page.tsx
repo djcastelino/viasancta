@@ -7,6 +7,7 @@ interface ArmorPiece {
   id: number;
   number: number;
   name: string;
+  imageName: string;
   scripture: {
     reference: string;
     text: string;
@@ -22,6 +23,7 @@ const armorPieces: ArmorPiece[] = [
     id: 1,
     number: 1,
     name: "Belt of Truth",
+    imageName: "belt",
     scripture: {
       reference: "Ephesians 6:14a",
       text: "Stand firm then, with the belt of truth buckled around your waist"
@@ -35,6 +37,7 @@ const armorPieces: ArmorPiece[] = [
     id: 2,
     number: 2,
     name: "Breastplate of Righteousness",
+    imageName: "breastplate",
     scripture: {
       reference: "Ephesians 6:14b",
       text: "with the breastplate of righteousness in place"
@@ -48,6 +51,7 @@ const armorPieces: ArmorPiece[] = [
     id: 3,
     number: 3,
     name: "Shoes of Peace",
+    imageName: "shoes",
     scripture: {
       reference: "Ephesians 6:15",
       text: "and with your feet fitted with the readiness that comes from the gospel of peace"
@@ -61,6 +65,7 @@ const armorPieces: ArmorPiece[] = [
     id: 4,
     number: 4,
     name: "Shield of Faith",
+    imageName: "shield",
     scripture: {
       reference: "Ephesians 6:16",
       text: "In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one"
@@ -74,6 +79,7 @@ const armorPieces: ArmorPiece[] = [
     id: 5,
     number: 5,
     name: "Helmet of Salvation",
+    imageName: "helmet",
     scripture: {
       reference: "Ephesians 6:17a",
       text: "Take the helmet of salvation"
@@ -87,6 +93,7 @@ const armorPieces: ArmorPiece[] = [
     id: 6,
     number: 6,
     name: "Sword of the Spirit",
+    imageName: "sword",
     scripture: {
       reference: "Ephesians 6:17b",
       text: "and the sword of the Spirit, which is the word of God"
@@ -384,46 +391,65 @@ export default function ArmorOfGod() {
       {/* Prayer Mode - Full Screen */}
       {isPrayerMode && (
         <div className="fixed inset-0 z-50">
-          <div className="h-screen relative bg-gradient-to-br from-slate-900 via-gray-900 to-slate-900">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-              <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="h-screen relative">
+            {/* Blurred Background Layer - Mobile only */}
+            <div className="absolute inset-0 z-0 block md:hidden">
+              <img
+                src={`/images/armor/${currentPiece.imageName}_portrait.png`}
+                alt=""
+                className="w-full h-full object-cover"
+                style={{ filter: 'blur(50px) brightness(0.3) saturate(0.5)', transform: 'scale(1.1)' }}
+              />
             </div>
+
+            {/* Main Image - Desktop */}
+            <img
+              src={`/images/armor/${currentPiece.imageName}.png`}
+              alt={currentPiece.name}
+              className="absolute inset-0 w-full h-full object-cover opacity-90 hidden md:block"
+            />
+
+            {/* Main Image - Mobile */}
+            <img
+              src={`/images/armor/${currentPiece.imageName}_portrait.png`}
+              alt={currentPiece.name}
+              className="absolute inset-0 w-full h-full object-contain opacity-95 block md:hidden z-5"
+            />
+
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-              {/* Armor Piece Icon */}
-              <div className="text-8xl mb-6 animate-glow-pulse">
-                {currentPiece.category === 'offensive' ? '⚔️' : '🛡️'}
-              </div>
 
               {showContent && (
                 <div className="max-w-3xl w-full animate-fade-in-slow">
                   {/* Title */}
                   <div className="text-center mb-6">
-                    <div className="text-blue-400 text-sm font-semibold mb-2 tracking-wider uppercase">
-                      Piece {currentPiece.number} of 6
-                    </div>
-                    <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-                      {currentPiece.name}
-                    </h2>
-                    <div className="text-gray-300 text-lg italic mb-2">
-                      "{currentPiece.scripture.text}"
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {currentPiece.scripture.reference}
+                    <div className="bg-black/70 backdrop-blur-md p-6 rounded-xl">
+                      <div className="text-blue-400 text-sm font-semibold mb-2 tracking-wider uppercase">
+                        Piece {currentPiece.number} of 6
+                      </div>
+                      <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
+                        {currentPiece.name}
+                      </h2>
+                      <div className="text-gray-200 text-lg italic mb-2">
+                        "{currentPiece.scripture.text}"
+                      </div>
+                      <div className="text-gray-400 text-sm">
+                        {currentPiece.scripture.reference}
+                      </div>
                     </div>
                   </div>
 
                   {/* Protects Against */}
-                  <div className="bg-red-900/20 border-2 border-red-500/50 rounded-lg p-4 mb-6">
-                    <div className="text-red-400 font-bold text-sm mb-2">PROTECTS AGAINST:</div>
-                    <div className="text-red-200 text-sm">{currentPiece.protectsAgainst}</div>
+                  <div className="bg-red-900/80 backdrop-blur-md border-2 border-red-500/50 rounded-lg p-4 mb-4">
+                    <div className="text-red-200 font-bold text-sm mb-2">PROTECTS AGAINST:</div>
+                    <div className="text-red-100 text-sm">{currentPiece.protectsAgainst}</div>
                   </div>
 
                   {/* Prayer */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 mb-6">
+                  <div className="bg-black/70 backdrop-blur-md rounded-lg p-6 mb-4">
                     <div className="text-blue-300 font-bold mb-3">Prayer:</div>
                     <div className="text-gray-200 leading-relaxed text-sm">
                       {currentPiece.prayer}
@@ -431,9 +457,9 @@ export default function ArmorOfGod() {
                   </div>
 
                   {/* Practical Application */}
-                  <div className="bg-green-900/20 border-2 border-green-500/50 rounded-lg p-4">
-                    <div className="text-green-400 font-bold text-sm mb-2">TODAY'S APPLICATION:</div>
-                    <div className="text-green-200 text-sm">{currentPiece.practicalApplication}</div>
+                  <div className="bg-green-900/80 backdrop-blur-md border-2 border-green-500/50 rounded-lg p-4">
+                    <div className="text-green-200 font-bold text-sm mb-2">TODAY'S APPLICATION:</div>
+                    <div className="text-green-100 text-sm">{currentPiece.practicalApplication}</div>
                   </div>
                 </div>
               )}
