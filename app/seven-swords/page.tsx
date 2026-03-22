@@ -139,18 +139,6 @@ export default function SevenSwords() {
   const handleSwordChange = (sword: Sword) => {
     setCurrentSword(sword);
     setShowPrayer(false);
-
-    if (prayerTimerRef.current) {
-      clearTimeout(prayerTimerRef.current);
-    }
-
-    if (isPrayerMode) {
-      playBellSound();
-      prayerTimerRef.current = setTimeout(() => {
-        setShowPrayer(true);
-      }, 3000);
-    }
-
     setRemainingTime(180);
   };
 
@@ -181,17 +169,10 @@ export default function SevenSwords() {
     }
   };
 
+  // Handle Prayer Mode entry/exit
   useEffect(() => {
     if (isPrayerMode) {
-      playBellSound();
-
-      setShowPrayer(false);
-      prayerTimerRef.current = setTimeout(() => {
-        setShowPrayer(true);
-      }, 3000);
-
       startPrayerMusic();
-
       setRemainingTime(180);
     } else {
       setShowMusicPrompt(false);
@@ -218,6 +199,22 @@ export default function SevenSwords() {
     }
   }, [isPrayerMode]);
 
+  // Handle sword changes in Prayer Mode
+  useEffect(() => {
+    if (isPrayerMode) {
+      playBellSound();
+      setShowPrayer(false);
+
+      if (prayerTimerRef.current) {
+        clearTimeout(prayerTimerRef.current);
+      }
+
+      prayerTimerRef.current = setTimeout(() => {
+        setShowPrayer(true);
+      }, 3000);
+    }
+  }, [currentSword, isPrayerMode]);
+
   // Auto-advance timer
   useEffect(() => {
     if (isPrayerMode && autoAdvance) {
@@ -226,18 +223,7 @@ export default function SevenSwords() {
           if (prev <= 1) {
             setCurrentSword((current) => {
               const nextIndex = current.number % swords.length;
-              const nextSword = swords[nextIndex];
-
-              playBellSound();
-              setShowPrayer(false);
-              if (prayerTimerRef.current) {
-                clearTimeout(prayerTimerRef.current);
-              }
-              prayerTimerRef.current = setTimeout(() => {
-                setShowPrayer(true);
-              }, 3000);
-
-              return nextSword;
+              return swords[nextIndex];
             });
             return 180;
           }
@@ -258,14 +244,12 @@ export default function SevenSwords() {
 
   const handleNext = () => {
     const nextIndex = currentSword.number % swords.length;
-    setCurrentSword(swords[nextIndex]);
-    setShowPrayer(false);
+    handleSwordChange(swords[nextIndex]);
   };
 
   const handlePrevious = () => {
     const prevIndex = currentSword.number === 1 ? swords.length - 1 : currentSword.number - 2;
-    setCurrentSword(swords[prevIndex]);
-    setShowPrayer(false);
+    handleSwordChange(swords[prevIndex]);
   };
 
   return (
