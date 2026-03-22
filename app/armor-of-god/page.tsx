@@ -417,13 +417,13 @@ export default function ArmorOfGod() {
             />
 
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/40 pointer-events-none z-10"></div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
+            <div className="relative z-20 h-full flex flex-col items-center justify-center px-6 pointer-events-none">
 
               {showContent && (
-                <div className="max-w-3xl w-full animate-fade-in-slow">
+                <div className="max-w-3xl w-full animate-fade-in-slow pointer-events-auto">
                   {/* Title */}
                   <div className="text-center mb-6">
                     <div className="bg-black/70 backdrop-blur-md p-6 rounded-xl">
@@ -468,12 +468,12 @@ export default function ArmorOfGod() {
             {/* Controls */}
             <button
               onClick={() => setIsPrayerMode(false)}
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all"
+              className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all pointer-events-auto"
             >
               ✕ Exit
             </button>
 
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute bottom-6 left-6 z-30 pointer-events-auto">
               <button
                 onClick={() => setAutoAdvance(!autoAdvance)}
                 className={`px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all shadow-lg ${
@@ -486,7 +486,7 @@ export default function ArmorOfGod() {
               </button>
             </div>
 
-            <div className="absolute bottom-6 right-6 flex gap-2">
+            <div className="absolute bottom-6 right-6 z-30 flex gap-2 pointer-events-auto">
               <button
                 onClick={handlePrevious}
                 className="bg-black/50 hover:bg-black/70 text-white p-3 rounded-full text-sm backdrop-blur-sm transition-all"
@@ -502,7 +502,7 @@ export default function ArmorOfGod() {
             </div>
 
             {/* Progress dots */}
-            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
               {armorPieces.map((piece) => (
                 <div
                   key={piece.id}
