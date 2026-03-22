@@ -86,93 +86,93 @@ export default function Psalm91() {
           <div className="space-y-16">
             {/* Title */}
             <div className="mb-16">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 font-serif drop-shadow-lg">
+              <h1 className="text-5xl md:text-6xl font-bold text-black mb-4 font-serif drop-shadow-lg">
                 Psalm 91
               </h1>
-              <p className="text-2xl text-blue-900 italic">
+              <p className="text-2xl text-gray-900 italic font-bold">
                 God's Protection and Help
               </p>
-              <p className="text-lg text-gray-800 mt-2">
+              <p className="text-lg text-black mt-2 font-semibold">
                 Good News Translation
               </p>
             </div>
 
             {/* Psalm Verses */}
-            <div className="text-gray-900 text-xl md:text-2xl leading-relaxed space-y-8 font-serif">
+            <div className="text-black text-xl md:text-2xl leading-relaxed space-y-8 font-serif font-semibold">
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">1</sup> Whoever goes to the LORD for safety,<br />
+                <sup className="text-blue-700 font-bold">1</sup> Whoever goes to the LORD for safety,<br />
                 whoever remains under the protection of the Almighty,
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">2</sup> can say to him,<br />
+                <sup className="text-blue-700 font-bold">2</sup> can say to him,<br />
                 "You are my defender and protector.<br />
                 You are my God; in you I trust."
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">3</sup> He will keep you safe from all hidden dangers<br />
+                <sup className="text-blue-700 font-bold">3</sup> He will keep you safe from all hidden dangers<br />
                 and from all deadly diseases.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">4</sup> He will cover you with his wings;<br />
+                <sup className="text-blue-700 font-bold">4</sup> He will cover you with his wings;<br />
                 you will be safe in his care;<br />
                 his faithfulness will protect and defend you.
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">5</sup> You need not fear any dangers at night<br />
+                <sup className="text-blue-700 font-bold">5</sup> You need not fear any dangers at night<br />
                 or sudden attacks during the day
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">6</sup> or the plagues that strike in the dark<br />
+                <sup className="text-blue-700 font-bold">6</sup> or the plagues that strike in the dark<br />
                 or the evils that kill in daylight.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">7</sup> A thousand may fall dead beside you,<br />
+                <sup className="text-blue-700 font-bold">7</sup> A thousand may fall dead beside you,<br />
                 ten thousand all around you,<br />
                 but you will not be harmed.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">8</sup> You will look and see<br />
+                <sup className="text-blue-700 font-bold">8</sup> You will look and see<br />
                 how the wicked are punished.
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">9</sup> You have made the LORD your defender,<br />
+                <sup className="text-blue-700 font-bold">9</sup> You have made the LORD your defender,<br />
                 the Most High your protector,
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">10</sup> and so no disaster will strike you,<br />
+                <sup className="text-blue-700 font-bold">10</sup> and so no disaster will strike you,<br />
                 no violence will come near your home.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">11</sup> God will put his angels in charge of you<br />
+                <sup className="text-blue-700 font-bold">11</sup> God will put his angels in charge of you<br />
                 to protect you wherever you go.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">12</sup> They will hold you up with their hands<br />
+                <sup className="text-blue-700 font-bold">12</sup> They will hold you up with their hands<br />
                 to keep you from hurting your feet on the stones.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">13</sup> You will trample down lions and snakes,<br />
+                <sup className="text-blue-700 font-bold">13</sup> You will trample down lions and snakes,<br />
                 fierce lions and poisonous snakes.
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">14</sup> God says, "I will save those who love me<br />
+                <sup className="text-blue-700 font-bold">14</sup> God says, "I will save those who love me<br />
                 and will protect those who acknowledge me as LORD.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">15</sup> When they call to me, I will answer them;<br />
+                <sup className="text-blue-700 font-bold">15</sup> When they call to me, I will answer them;<br />
                 when they are in trouble, I will be with them.<br />
                 I will rescue them and honor them.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-900">16</sup> I will reward them with long life;<br />
+                <sup className="text-blue-700 font-bold">16</sup> I will reward them with long life;<br />
                 I will save them."
               </p>
 
-              <div className="mt-24 text-3xl text-blue-900">
+              <div className="mt-24 text-3xl text-blue-700 font-bold">
                 ✝
               </div>
             </div>
@@ -193,15 +193,15 @@ export default function Psalm91() {
       {/* CSS for scrolling animation */}
       <style jsx>{`
         .scroll-content {
-          animation: scroll-up 180s linear infinite;
+          animation: scroll-up 200s linear infinite;
         }
 
         @keyframes scroll-up {
           0% {
-            transform: translateY(100vh);
+            transform: translateY(100%);
           }
           100% {
-            transform: translateY(-100%);
+            transform: translateY(-150%);
           }
         }
 
