@@ -52,7 +52,7 @@ export default function Psalm91() {
     <main className="fixed inset-0 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Main Image - Desktop */}
       <img
-        src="/images/psalm91/psalm91.png"
+        src="/images/psalm91/wings.png"
         alt="Psalm 91"
         className="absolute inset-0 w-full h-full object-cover hidden md:block opacity-60"
         onError={(e) => {
@@ -63,7 +63,7 @@ export default function Psalm91() {
 
       {/* Main Image - Mobile */}
       <img
-        src="/images/psalm91/psalm91_portrait.png"
+        src="/images/psalm91/wings_portrait.png"
         alt="Psalm 91"
         className="absolute inset-0 w-full h-full object-cover block md:hidden opacity-60"
         onError={(e) => {
