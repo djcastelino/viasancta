@@ -49,7 +49,7 @@ export default function Psalm91() {
   }, []);
 
   return (
-    <main className="fixed inset-0 overflow-hidden">
+    <main className="fixed inset-0 overflow-hidden bg-gray-900">
       {/* Blurred Background Layer - Mobile only */}
       <div className="absolute inset-0 z-0 block md:hidden">
         <img
@@ -57,6 +57,7 @@ export default function Psalm91() {
           alt=""
           className="w-full h-full object-cover"
           style={{ filter: 'blur(40px) brightness(0.4)', transform: 'scale(1.1)' }}
+          onError={(e) => console.log('Portrait image failed to load')}
         />
       </div>
 
@@ -64,30 +65,32 @@ export default function Psalm91() {
       <img
         src="/images/psalm91/psalm91.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block z-0"
+        onError={(e) => console.log('Desktop image failed to load')}
       />
 
       {/* Main Image - Mobile */}
       <img
         src="/images/psalm91/psalm91_portrait.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-contain block md:hidden z-5"
+        className="absolute inset-0 w-full h-full object-contain block md:hidden z-0"
+        onError={(e) => console.log('Mobile image failed to load')}
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-5"></div>
 
       {/* Exit Button */}
       <Link
         href="/"
-        className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all"
+        className="fixed top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all"
       >
         ✕ Exit
       </Link>
 
       {/* Scrolling Content */}
-      <div className="absolute inset-0 z-20 flex items-end justify-center overflow-hidden">
-        <div className="scroll-content w-full max-w-4xl px-8 text-center">
+      <div className="absolute inset-0 z-10 flex items-end justify-center overflow-hidden pointer-events-none">
+        <div className="scroll-content w-full max-w-4xl px-8 text-center pointer-events-auto">
           <div className="mb-[100vh]">
             {/* Title */}
             <div className="mb-16">
@@ -188,7 +191,7 @@ export default function Psalm91() {
       {showMusicPrompt && (
         <button
           onClick={startPsalmMusic}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-blue-600/90 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all shadow-lg animate-pulse"
+          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-blue-600/90 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all shadow-lg animate-pulse"
         >
           🎵 Enable Background Music
         </button>
