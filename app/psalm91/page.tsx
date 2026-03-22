@@ -54,7 +54,7 @@ export default function Psalm91() {
       <img
         src="/images/psalm91/wings.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-cover hidden md:block opacity-60"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block opacity-70"
         onError={(e) => {
           console.log('Desktop image failed to load');
           (e.target as HTMLImageElement).style.display = 'none';
@@ -65,7 +65,7 @@ export default function Psalm91() {
       <img
         src="/images/psalm91/wings_portrait.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-cover block md:hidden opacity-60"
+        className="absolute inset-0 w-full h-full object-cover block md:hidden opacity-70"
         onError={(e) => {
           console.log('Mobile image failed to load');
           (e.target as HTMLImageElement).style.display = 'none';
@@ -86,92 +86,93 @@ export default function Psalm91() {
           <div className="space-y-16">
             {/* Title */}
             <div className="mb-16">
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 font-serif drop-shadow-lg">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 font-serif drop-shadow-lg">
                 Psalm 91
               </h1>
-              <p className="text-2xl text-blue-300 italic">
-                Security Under God's Protection
+              <p className="text-2xl text-blue-900 italic">
+                God's Protection and Help
               </p>
-              <p className="text-lg text-gray-300 mt-2">
-                NABRE Translation
+              <p className="text-lg text-gray-800 mt-2">
+                Good News Translation
               </p>
             </div>
 
             {/* Psalm Verses */}
-            <div className="text-white text-xl md:text-2xl leading-relaxed space-y-8 font-serif">
+            <div className="text-gray-900 text-xl md:text-2xl leading-relaxed space-y-8 font-serif">
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">1</sup> You who dwell in the shelter of the Most High,<br />
-                who abide in the shade of the Almighty,
+                <sup className="text-blue-900">1</sup> Whoever goes to the LORD for safety,<br />
+                whoever remains under the protection of the Almighty,
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">2</sup> Say to the LORD, "My refuge and fortress,<br />
-                my God in whom I trust."
-              </p>
-
-              <p className="drop-shadow-lg">
-                <sup className="text-blue-300">3</sup> He will rescue you from the fowler's snare,<br />
-                from the destroying plague,
-              </p>
-              <p className="drop-shadow-lg">
-                <sup className="text-blue-300">4</sup> He will shelter you with his pinions,<br />
-                and under his wings you may take refuge;<br />
-                his faithfulness is a protecting shield.
+                <sup className="text-blue-900">2</sup> can say to him,<br />
+                "You are my defender and protector.<br />
+                You are my God; in you I trust."
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">5</sup> You shall not fear the terror of the night<br />
-                nor the arrow that flies by day,
+                <sup className="text-blue-900">3</sup> He will keep you safe from all hidden dangers<br />
+                and from all deadly diseases.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">6</sup> Nor the pestilence that roams in darkness,<br />
-                nor the plague that ravages at noon.
-              </p>
-              <p className="drop-shadow-lg">
-                <sup className="text-blue-300">7</sup> Though a thousand fall at your side,<br />
-                ten thousand at your right hand,<br />
-                near you it shall not come.
-              </p>
-              <p className="drop-shadow-lg">
-                <sup className="text-blue-300">8</sup> You need simply watch;<br />
-                the punishment of the wicked you will see.
+                <sup className="text-blue-900">4</sup> He will cover you with his wings;<br />
+                you will be safe in his care;<br />
+                his faithfulness will protect and defend you.
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">9</sup> Because you have the LORD for your refuge<br />
-                and have made the Most High your stronghold,
+                <sup className="text-blue-900">5</sup> You need not fear any dangers at night<br />
+                or sudden attacks during the day
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">10</sup> No evil shall befall you,<br />
-                no affliction come near your tent.
+                <sup className="text-blue-900">6</sup> or the plagues that strike in the dark<br />
+                or the evils that kill in daylight.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">11</sup> For he commands his angels with regard to you,<br />
-                to guard you wherever you go.
+                <sup className="text-blue-900">7</sup> A thousand may fall dead beside you,<br />
+                ten thousand all around you,<br />
+                but you will not be harmed.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">12</sup> With their hands they shall support you,<br />
-                lest you strike your foot against a stone.
-              </p>
-              <p className="drop-shadow-lg">
-                <sup className="text-blue-300">13</sup> You can tread upon the asp and the viper,<br />
-                trample the lion and the dragon.
+                <sup className="text-blue-900">8</sup> You will look and see<br />
+                how the wicked are punished.
               </p>
 
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">14</sup> Because he clings to me I will deliver him;<br />
-                because he knows my name I will set him on high.
+                <sup className="text-blue-900">9</sup> You have made the LORD your defender,<br />
+                the Most High your protector,
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">15</sup> He will call upon me and I will answer;<br />
-                I will be with him in distress;<br />
-                I will deliver him and give him honor.
+                <sup className="text-blue-900">10</sup> and so no disaster will strike you,<br />
+                no violence will come near your home.
               </p>
               <p className="drop-shadow-lg">
-                <sup className="text-blue-300">16</sup> With length of days I will satisfy him,<br />
-                and fill him with my saving power.
+                <sup className="text-blue-900">11</sup> God will put his angels in charge of you<br />
+                to protect you wherever you go.
+              </p>
+              <p className="drop-shadow-lg">
+                <sup className="text-blue-900">12</sup> They will hold you up with their hands<br />
+                to keep you from hurting your feet on the stones.
+              </p>
+              <p className="drop-shadow-lg">
+                <sup className="text-blue-900">13</sup> You will trample down lions and snakes,<br />
+                fierce lions and poisonous snakes.
               </p>
 
-              <div className="mt-24 text-3xl text-blue-200">
+              <p className="drop-shadow-lg">
+                <sup className="text-blue-900">14</sup> God says, "I will save those who love me<br />
+                and will protect those who acknowledge me as LORD.
+              </p>
+              <p className="drop-shadow-lg">
+                <sup className="text-blue-900">15</sup> When they call to me, I will answer them;<br />
+                when they are in trouble, I will be with them.<br />
+                I will rescue them and honor them.
+              </p>
+              <p className="drop-shadow-lg">
+                <sup className="text-blue-900">16</sup> I will reward them with long life;<br />
+                I will save them."
+              </p>
+
+              <div className="mt-24 text-3xl text-blue-900">
                 ✝
               </div>
             </div>
