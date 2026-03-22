@@ -289,37 +289,6 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Seven Swords */}
-          <Link href="/seven-swords" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
-              <div className="h-60 relative overflow-hidden">
-                <img
-                  src="/images/swords/sword_1.png"
-                  alt="Seven Striking Swords"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
-                    <span>⚔️</span>
-                    <span>Logos Ministries Inspired</span>
-                  </div>
-                  <h3 className="text-3xl font-bold drop-shadow-md">
-                    Seven Striking Swords
-                  </h3>
-                </div>
-              </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Biblical prayers of transformation based on moments when God struck to convert, not destroy. Experience <span className="font-semibold text-[#2C5F87]">immersive Prayer Mode</span> with all 7 swords.
-                </p>
-                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                  Pray Now →
-                </span>
-              </div>
-            </div>
-          </Link>
-
           {/* Sacred Mountains */}
           <Link href="/sacred-mountains" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
@@ -397,6 +366,76 @@ export default function Home() {
               </span>
             </div>
           </div> */}
+        </div>
+      </section>
+
+      {/* Spiritual Warfare Section */}
+      <section id="spiritual-warfare" className="max-w-7xl mx-auto px-5 py-8">
+        <h2 className="text-4xl font-serif text-[#2C5F87] mb-8 text-center">
+          Spiritual Warfare
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+
+          {/* Seven Swords */}
+          <Link href="/seven-swords" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src="/images/swords/sword_1.png"
+                  alt="Seven Striking Swords"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>⚔️</span>
+                    <span>Logos Ministries Inspired</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Seven Striking Swords
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Biblical prayers of transformation based on moments when God struck to convert, not destroy. Experience <span className="font-semibold text-[#2C5F87]">immersive Prayer Mode</span> with all 7 swords.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Pray Now →
+                </span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Armor of God - Coming Soon */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+            <div className="h-60 relative overflow-hidden">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Roman_legionaire_in_lorica_segmentata.jpg/800px-Roman_legionaire_in_lorica_segmentata.jpg"
+                alt="Armor of God"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                  <span>🛡️</span>
+                  <span>Ephesians 6:10-18</span>
+                </div>
+                <h3 className="text-3xl font-bold drop-shadow-md">
+                  Armor of God
+                </h3>
+              </div>
+            </div>
+            <div className="p-7">
+              <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                Put on the full armor of God daily. Interactive experience to equip yourself with Truth, Righteousness, Peace, Faith, Salvation, and the Word.
+              </p>
+              <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+
         </div>
       </section>
 
