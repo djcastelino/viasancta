@@ -116,6 +116,7 @@ export default function ArmorOfGod() {
   const [currentPiece, setCurrentPiece] = useState<ArmorPiece>(armorPieces[0]);
   const [isPrayerMode, setIsPrayerMode] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [showMusicPrompt, setShowMusicPrompt] = useState(false);
   const [autoAdvance, setAutoAdvance] = useState(false);
   const [remainingTime, setRemainingTime] = useState(120); // 2 minutes per piece
   const [armoredPieces, setArmoredPieces] = useState<number[]>([]);
@@ -124,6 +125,36 @@ export default function ArmorOfGod() {
 
   const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const contentTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const armorMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  const armorMusicUrl = '/audio/background/armor-of-god.mp3';
+
+  const startArmorMusic = () => {
+    if (!armorMusicRef.current) {
+      const music = new Audio(armorMusicUrl);
+      music.loop = true;
+      music.volume = 0;
+      armorMusicRef.current = music;
+
+      music.addEventListener('error', () => {
+        console.log('Armor music not found');
+      });
+
+      music.play().then(() => {
+        setShowMusicPrompt(false);
+        const fadeInterval = setInterval(() => {
+          if (music.volume < 0.15) {
+            music.volume = Math.min(music.volume + 0.01, 0.15);
+          } else {
+            clearInterval(fadeInterval);
+          }
+        }, 100);
+      }).catch(err => {
+        console.log('Armor music autoplay prevented');
+        setShowMusicPrompt(true);
+      });
+    }
+  };
 
   // Load streak from localStorage
   useEffect(() => {
@@ -206,6 +237,7 @@ export default function ArmorOfGod() {
     setAutoAdvance(true);
     setCurrentPiece(armorPieces[0]);
     setArmoredPieces([]);
+    startArmorMusic();
   };
 
   useEffect(() => {
@@ -219,6 +251,9 @@ export default function ArmorOfGod() {
 
       setRemainingTime(120);
 
+      // Start music
+      startArmorMusic();
+
       // Mark first piece as armed
       if (!armoredPieces.includes(currentPiece.number)) {
         setArmoredPieces([currentPiece.number]);
@@ -226,12 +261,26 @@ export default function ArmorOfGod() {
     } else {
       setShowContent(false);
       setAutoAdvance(false);
+      setShowMusicPrompt(false);
 
       if (contentTimerRef.current) {
         clearTimeout(contentTimerRef.current);
       }
       if (autoAdvanceTimerRef.current) {
         clearInterval(autoAdvanceTimerRef.current);
+      }
+
+      // Stop music
+      if (armorMusicRef.current) {
+        const music = armorMusicRef.current;
+        try {
+          music.pause();
+          music.currentTime = 0;
+          music.volume = 0;
+        } catch (e) {
+          console.log('Error stopping music:', e);
+        }
+        armorMusicRef.current = null;
       }
     }
   }, [isPrayerMode]);
@@ -523,6 +572,16 @@ export default function ArmorOfGod() {
                 ></div>
               ))}
             </div>
+
+            {/* Music Prompt */}
+            {showMusicPrompt && (
+              <button
+                onClick={startArmorMusic}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 bg-blue-600/90 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm font-semibold backdrop-blur-sm transition-all pointer-events-auto shadow-lg animate-pulse"
+              >
+                🎵 Enable Background Music
+              </button>
+            )}
           </div>
         </div>
       )}

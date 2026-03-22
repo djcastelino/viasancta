@@ -115,7 +115,7 @@ export default function SevenSwords() {
   const autoAdvanceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const prayerTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const prayerMusicUrl = '/audio/background/gregorian-chant.mp3';
+  const prayerMusicUrl = '/audio/background/seven-swords.mp3';
 
   // Play soft bell sound
   const playBellSound = () => {
