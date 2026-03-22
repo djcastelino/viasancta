@@ -49,36 +49,28 @@ export default function Psalm91() {
   }, []);
 
   return (
-    <main className="fixed inset-0 overflow-hidden bg-gray-900">
-      {/* Blurred Background Layer - Mobile only */}
-      <div className="absolute inset-0 z-0 block md:hidden">
-        <img
-          src="/images/psalm91/psalm91_portrait.png"
-          alt=""
-          className="w-full h-full object-cover"
-          style={{ filter: 'blur(40px) brightness(0.4)', transform: 'scale(1.1)' }}
-          onError={(e) => console.log('Portrait image failed to load')}
-        />
-      </div>
-
+    <main className="fixed inset-0 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Main Image - Desktop */}
       <img
         src="/images/psalm91/psalm91.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-cover hidden md:block z-0"
-        onError={(e) => console.log('Desktop image failed to load')}
+        className="absolute inset-0 w-full h-full object-cover hidden md:block opacity-60"
+        onError={(e) => {
+          console.log('Desktop image failed to load');
+          (e.target as HTMLImageElement).style.display = 'none';
+        }}
       />
 
       {/* Main Image - Mobile */}
       <img
         src="/images/psalm91/psalm91_portrait.png"
         alt="Psalm 91"
-        className="absolute inset-0 w-full h-full object-contain block md:hidden z-0"
-        onError={(e) => console.log('Mobile image failed to load')}
+        className="absolute inset-0 w-full h-full object-cover block md:hidden opacity-60"
+        onError={(e) => {
+          console.log('Mobile image failed to load');
+          (e.target as HTMLImageElement).style.display = 'none';
+        }}
       />
-
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 z-5"></div>
 
       {/* Exit Button */}
       <Link
@@ -89,8 +81,8 @@ export default function Psalm91() {
       </Link>
 
       {/* Scrolling Content */}
-      <div className="absolute inset-0 z-10 flex items-end justify-center overflow-hidden pointer-events-none">
-        <div className="scroll-content w-full max-w-4xl px-8 text-center pointer-events-auto">
+      <div className="fixed inset-0 flex items-end justify-center overflow-hidden z-10">
+        <div className="scroll-content w-full max-w-4xl px-8 text-center">
           <div className="mb-[100vh]">
             {/* Title */}
             <div className="mb-16">
