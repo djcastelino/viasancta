@@ -8,6 +8,7 @@ interface ArmorPiece {
   number: number;
   name: string;
   imageName: string;
+  icon: string;
   scripture: {
     reference: string;
     text: string;
@@ -24,6 +25,7 @@ const armorPieces: ArmorPiece[] = [
     number: 1,
     name: "Belt of Truth",
     imageName: "belt",
+    icon: "📿",
     scripture: {
       reference: "Ephesians 6:14a",
       text: "Stand firm then, with the belt of truth buckled around your waist"
@@ -38,6 +40,7 @@ const armorPieces: ArmorPiece[] = [
     number: 2,
     name: "Breastplate of Righteousness",
     imageName: "breastplate",
+    icon: "🦺",
     scripture: {
       reference: "Ephesians 6:14b",
       text: "with the breastplate of righteousness in place"
@@ -52,6 +55,7 @@ const armorPieces: ArmorPiece[] = [
     number: 3,
     name: "Shoes of Peace",
     imageName: "shoes",
+    icon: "👟",
     scripture: {
       reference: "Ephesians 6:15",
       text: "and with your feet fitted with the readiness that comes from the gospel of peace"
@@ -66,6 +70,7 @@ const armorPieces: ArmorPiece[] = [
     number: 4,
     name: "Shield of Faith",
     imageName: "shield",
+    icon: "🛡️",
     scripture: {
       reference: "Ephesians 6:16",
       text: "In addition to all this, take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one"
@@ -80,6 +85,7 @@ const armorPieces: ArmorPiece[] = [
     number: 5,
     name: "Helmet of Salvation",
     imageName: "helmet",
+    icon: "⛑️",
     scripture: {
       reference: "Ephesians 6:17a",
       text: "Take the helmet of salvation"
@@ -94,6 +100,7 @@ const armorPieces: ArmorPiece[] = [
     number: 6,
     name: "Sword of the Spirit",
     imageName: "sword",
+    icon: "⚔️",
     scripture: {
       reference: "Ephesians 6:17b",
       text: "and the sword of the Spirit, which is the word of God"
@@ -353,7 +360,7 @@ export default function ArmorOfGod() {
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="text-3xl">
-                      {piece.category === 'offensive' ? '⚔️' : '🛡️'}
+                      {piece.icon}
                     </div>
                     {armoredPieces.includes(piece.number) && (
                       <div className="text-xl">✓</div>
