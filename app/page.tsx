@@ -412,7 +412,7 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="h-60 relative overflow-hidden">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Roman_legionaire_in_lorica_segmentata.jpg/800px-Roman_legionaire_in_lorica_segmentata.jpg"
+                  src="/images/armor/shield.png"
                   alt="Armor of God"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
