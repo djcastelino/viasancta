@@ -443,7 +443,7 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="h-60 relative overflow-hidden">
                 <img
-                  src="/images/psalm91/psalm91.png"
+                  src="/images/psalm91/psalm91_cover.png"
                   alt="Psalm 91"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
