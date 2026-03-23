@@ -294,26 +294,107 @@ export default function SevenSwords() {
               ))}
             </div>
           </div>
-
-          <div className="text-center mb-6">
-            <button
-              onClick={() => setIsPrayerMode(true)}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transition-all"
-            >
-              🙏 Enter Prayer Mode
-            </button>
-            <p className="text-xs text-gray-400 mt-2 italic">
-              Pray as needed for your situation - one sword or all seven
-            </p>
-          </div>
         </div>
       )}
 
       {/* Main Content Area */}
-      <div className={`${isPrayerMode ? 'fixed inset-0 z-50' : 'max-w-7xl mx-auto px-5 py-8'}`}>
+      <div className={`${isPrayerMode ? 'fixed inset-0 z-50' : 'max-w-7xl mx-auto px-5 pb-8'}`}>
         <div className={`${isPrayerMode ? 'h-screen' : 'grid lg:grid-cols-3 gap-6'}`}>
+          {/* Content Panel - Shows first on mobile, right side on desktop */}
+          {!isPrayerMode && (
+            <div className="lg:col-span-1 lg:order-2 mb-6 lg:mb-0">
+              <div className="bg-white rounded-xl shadow-2xl p-6 sticky top-4">
+                <div className="text-center mb-4">
+                  <div className="inline-block bg-slate-900 text-white px-4 py-2 rounded-full font-bold mb-2">
+                    Sword {currentSword.number} of 7
+                  </div>
+                  <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
+                    {currentSword.name}
+                  </h2>
+                </div>
+
+                {/* Scripture */}
+                <div className="mb-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-900">
+                  <p className="text-sm font-semibold text-blue-900 mb-2">
+                    {currentSword.scripture.reference}
+                  </p>
+                  <p className="text-sm text-gray-700 italic">
+                    "{currentSword.scripture.text}"
+                  </p>
+                </div>
+
+                {/* Biblical Event */}
+                <div className="mb-4">
+                  <h3 className="font-bold text-gray-900 mb-2">Biblical Event:</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {currentSword.biblicalEvent}
+                  </p>
+                </div>
+
+                {/* Spiritual Principle */}
+                <div className="mb-4 p-3 bg-purple-50 rounded-lg">
+                  <h3 className="font-bold text-purple-900 mb-1 text-sm">Spiritual Principle:</h3>
+                  <p className="text-sm text-purple-800 italic">
+                    {currentSword.spiritualPrinciple}
+                  </p>
+                </div>
+
+                {/* Person Name Input */}
+                <div className="mb-4">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Praying for (optional):
+                  </label>
+                  <input
+                    type="text"
+                    value={personName}
+                    onChange={(e) => setPersonName(e.target.value)}
+                    placeholder="Enter name or situation..."
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                {/* Prayer Text */}
+                <div className="mb-4 p-4 bg-gray-50 rounded-lg max-h-64 overflow-y-auto">
+                  <h3 className="font-bold text-gray-900 mb-2">Prayer:</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                    {currentSword.prayer}
+                  </p>
+                </div>
+
+                {/* Prayer Mode Button */}
+                <div className="mb-4">
+                  <button
+                    onClick={() => setIsPrayerMode(true)}
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-lg font-bold shadow-lg transition-all"
+                  >
+                    🙏 Enter Prayer Mode
+                  </button>
+                  <p className="text-xs text-gray-400 mt-2 text-center italic">
+                    Fullscreen immersive prayer experience
+                  </p>
+                </div>
+
+                {/* Navigation */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={handlePrevious}
+                    className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 rounded-lg font-semibold transition-all"
+                  >
+                    ← Previous
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all"
+                  >
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Image Display */}
-          <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2'}>
+          <div className={isPrayerMode ? 'h-full relative' : 'lg:col-span-2 lg:order-1'}>
             <div className={isPrayerMode ? 'h-full relative' : 'bg-gray-800 rounded-xl overflow-hidden shadow-2xl h-full'}>
               <div className={`relative ${isPrayerMode ? 'h-full' : 'w-full h-full'} bg-gray-700 overflow-hidden`}>
                 {/* Blurred Background Layer - Mobile only (for portrait images) */}
@@ -443,86 +524,6 @@ export default function SevenSwords() {
               </div>
             </div>
           </div>
-
-          {/* Content Panel */}
-          {!isPrayerMode && (
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl shadow-2xl p-6">
-                <div className="text-center mb-4">
-                  <div className="inline-block bg-slate-900 text-white px-4 py-2 rounded-full font-bold mb-2">
-                    Sword {currentSword.number} of 7
-                  </div>
-                  <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">
-                    {currentSword.name}
-                  </h2>
-                </div>
-
-                {/* Scripture */}
-                <div className="mb-4 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-900">
-                  <p className="text-sm font-semibold text-blue-900 mb-2">
-                    {currentSword.scripture.reference}
-                  </p>
-                  <p className="text-sm text-gray-700 italic">
-                    "{currentSword.scripture.text}"
-                  </p>
-                </div>
-
-                {/* Biblical Event */}
-                <div className="mb-4">
-                  <h3 className="font-bold text-gray-900 mb-2">Biblical Event:</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    {currentSword.biblicalEvent}
-                  </p>
-                </div>
-
-                {/* Spiritual Principle */}
-                <div className="mb-4 p-3 bg-purple-50 rounded-lg">
-                  <h3 className="font-bold text-purple-900 mb-1 text-sm">Spiritual Principle:</h3>
-                  <p className="text-sm text-purple-800 italic">
-                    {currentSword.spiritualPrinciple}
-                  </p>
-                </div>
-
-                {/* Person Name Input */}
-                <div className="mb-4">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Praying for (optional):
-                  </label>
-                  <input
-                    type="text"
-                    value={personName}
-                    onChange={(e) => setPersonName(e.target.value)}
-                    placeholder="Enter name or situation..."
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-
-                {/* Prayer Text */}
-                <div className="mb-4 p-4 bg-gray-50 rounded-lg max-h-64 overflow-y-auto">
-                  <h3 className="font-bold text-gray-900 mb-2">Prayer:</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
-                    {currentSword.prayer}
-                  </p>
-                </div>
-
-                {/* Navigation */}
-                <div className="flex gap-2">
-                  <button
-                    onClick={handlePrevious}
-                    className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 rounded-lg font-semibold transition-all"
-                  >
-                    ← Previous
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all"
-                  >
-                    Next →
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 

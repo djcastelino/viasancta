@@ -42,7 +42,14 @@ export default function Psalm91() {
     return () => {
       // Cleanup music on unmount
       if (psalmMusicRef.current) {
-        psalmMusicRef.current.pause();
+        const music = psalmMusicRef.current;
+        try {
+          music.pause();
+          music.currentTime = 0;
+          music.volume = 0;
+        } catch (e) {
+          console.log('Error stopping music on unmount:', e);
+        }
         psalmMusicRef.current = null;
       }
     };
@@ -75,8 +82,7 @@ export default function Psalm91() {
       {/* Exit Button */}
       <Link
         href="/"
-        className="fixed top-6 right-6 z-[9999] bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all"
-        style={{ position: 'fixed' }}
+        className="absolute top-4 right-4 z-30 bg-black/50 hover:bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm transition-all"
       >
         ✕ Exit
       </Link>
@@ -92,9 +98,6 @@ export default function Psalm91() {
               </h1>
               <p className="text-2xl text-gray-900 italic font-bold">
                 God's Protection and Help
-              </p>
-              <p className="text-lg text-black mt-2 font-semibold">
-                Good News Translation
               </p>
             </div>
 

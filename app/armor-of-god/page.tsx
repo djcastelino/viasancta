@@ -328,6 +328,23 @@ export default function ArmorOfGod() {
     };
   }, [isPrayerMode, autoAdvance, armoredPieces]);
 
+  // Cleanup music on component unmount
+  useEffect(() => {
+    return () => {
+      if (armorMusicRef.current) {
+        const music = armorMusicRef.current;
+        try {
+          music.pause();
+          music.currentTime = 0;
+          music.volume = 0;
+        } catch (e) {
+          console.log('Error stopping music on unmount:', e);
+        }
+        armorMusicRef.current = null;
+      }
+    };
+  }, []);
+
   const handleNext = () => {
     const nextIndex = currentPiece.number % armorPieces.length;
     handlePieceChange(armorPieces[nextIndex]);
