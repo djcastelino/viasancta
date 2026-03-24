@@ -2,6 +2,7 @@ import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
 import TodaysPromise from './components/TodaysPromise';
 import JesusInOT from './components/JesusInOT';
+import GospelInOnePicture from './components/GospelInOnePicture';
 
 export const metadata = {
   title: 'Divine Pilgrim - AI-Guided Catholic Virtual Pilgrimages',
@@ -52,6 +53,9 @@ export default function Home() {
         </div>
         </div>
       </section>
+
+      {/* Gospel in One Picture */}
+      <GospelInOnePicture />
 
       {/* Today's Promise Section */}
       <div id="promise">
