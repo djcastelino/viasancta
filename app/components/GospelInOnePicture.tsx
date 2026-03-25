@@ -47,7 +47,7 @@ export default function GospelInOnePicture() {
         <div className="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gradient-to-br from-amber-900 to-slate-900">
           <img
             src={`/images/gospel/${gospel.image}`}
-            alt={gospel.reference}
+            alt={gospel.gospel}
             className="w-full h-full object-contain md:object-cover"
           />
           {/* Overlay gradient */}
