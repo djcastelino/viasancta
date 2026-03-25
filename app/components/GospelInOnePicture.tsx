@@ -1,19 +1,44 @@
 'use client';
 
-import gospelImages from '@/src/gospel-images.json';
+import sundayGospels from '@/src/sunday-gospels.json';
 
 export default function GospelInOnePicture() {
-  // Simple rotation: cycles through images based on day of year
-  const getDailyGospel = () => {
+  // Get current or upcoming Sunday's gospel
+  const getSundayGospel = () => {
     const today = new Date();
-    const startOfYear = new Date(today.getFullYear(), 0, 0);
-    const diff = today.getTime() - startOfYear.getTime();
-    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const index = dayOfYear % gospelImages.length;
-    return gospelImages[index];
+    const dayOfWeek = today.getDay(); // 0=Sunday, 1=Monday, etc.
+
+    // If today is Sunday (0), use today's date
+    // Otherwise, find the most recent Sunday
+    let targetDate = new Date(today);
+    if (dayOfWeek !== 0) {
+      // Go back to most recent Sunday
+      targetDate.setDate(today.getDate() - dayOfWeek);
+    }
+
+    // Format as YYYY-MM-DD
+    const dateStr = targetDate.toISOString().split('T')[0];
+
+    // Find matching Sunday in our data
+    const sundayData = sundayGospels.sundays.find(s => s.id === dateStr);
+
+    // Fallback to first entry if not found
+    return sundayData || sundayGospels.sundays[0];
   };
 
-  const gospel = getDailyGospel();
+  const getTitle = () => {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+
+    if (dayOfWeek === 0) {
+      return "Today's Sunday Gospel";
+    } else {
+      return "This Week's Sunday Gospel";
+    }
+  };
+
+  const gospel = getSundayGospel();
+  const title = getTitle();
 
   return (
     <section className="max-w-7xl mx-auto px-5 py-8">
@@ -35,7 +60,10 @@ export default function GospelInOnePicture() {
                 Gospel in One Picture
               </h2>
               <p className="text-[#D4AF37] text-sm md:text-base mt-1">
-                Today's Daily Gospel
+                {title}
+              </p>
+              <p className="text-white/80 text-xs mt-1">
+                {gospel.liturgicalName}
               </p>
             </div>
           </div>
@@ -44,7 +72,7 @@ export default function GospelInOnePicture() {
           <div className="absolute bottom-6 left-6 right-6">
             <div className="bg-black/70 backdrop-blur-md p-6 rounded-xl">
               <p className="text-[#D4AF37] text-sm font-semibold mb-2">
-                {gospel.reference}
+                {gospel.gospel}
               </p>
               <p className="text-white text-xl md:text-2xl font-serif italic leading-relaxed">
                 "{gospel.keyVerse}"

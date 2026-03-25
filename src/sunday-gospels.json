@@ -1,0 +1,30 @@
+{
+  "liturgicalYear": "C",
+  "note": "Year C runs from Dec 1, 2024 - Nov 30, 2025. Each entry represents a Sunday or major feast.",
+  "sundays": [
+    {
+      "id": "2025-03-23",
+      "liturgicalName": "5th Sunday of Lent",
+      "gospel": "John 8:1-11",
+      "keyVerse": "Neither do I condemn you. Go, and from now on do not sin anymore.",
+      "meditation": "Jesus shows perfect balance of mercy and truth. He doesn't condemn the woman caught in adultery, yet calls her to transformation. Today, receive God's mercy for your failures while embracing His call to holiness. Divine mercy always invites conversion, never complacency.",
+      "image": "todays_gospel.png"
+    },
+    {
+      "id": "2025-03-30",
+      "liturgicalName": "Palm Sunday",
+      "gospel": "Luke 22:14—23:56",
+      "keyVerse": "Father, forgive them, they know not what they do.",
+      "meditation": "As we enter Holy Week, we witness Christ's ultimate act of love. From the triumphal entry to the passion and death, Jesus surrenders completely to the Father's will. This week, walk with Him. Let His suffering reveal the depth of God's love and the cost of our redemption.",
+      "image": "todays_gospel.png"
+    },
+    {
+      "id": "2025-04-06",
+      "liturgicalName": "Easter Sunday",
+      "gospel": "John 20:1-9",
+      "keyVerse": "He saw and believed.",
+      "meditation": "The tomb is empty! Death could not hold Him. Christ's resurrection is the foundation of our faith and the promise of our own resurrection. Today, let Easter joy transform your life. What seemed impossible—victory over death—is now reality. All things are possible with God.",
+      "image": "todays_gospel.png"
+    }
+  ]
+}
