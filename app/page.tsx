@@ -54,8 +54,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gospel in One Picture */}
-      <GospelInOnePicture />
+      {/* Gospel in One Picture - HIDDEN FOR PHASE 2 */}
+      {/* <GospelInOnePicture /> */}
 
       {/* Today's Promise Section */}
       <div id="promise">
