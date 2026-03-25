@@ -352,11 +352,11 @@
   },
   {
     "id": 40,
-    "verse": "Trust in the Lord with all your heart. Never rely on what you think you know.",
-    "reference": "Proverbs 3:5",
+    "verse": "Trust in the Lord with all your heart. Never rely on what you think you know. Remember the Lord in everything you do, and he will show you the right way.",
+    "reference": "Proverbs 3:5-6",
     "testament": "OT",
     "category": "Trust",
-    "difficulty": "short",
+    "difficulty": "medium",
     "bibleTranslation": "Good News"
   },
   {
@@ -451,12 +451,12 @@
   },
   {
     "id": 51,
-    "verse": "",
-    "reference": "",
+    "verse": "But when the Holy Spirit comes upon you, you will be filled with power, and you will be witnesses for me.",
+    "reference": "Acts 1:8",
     "testament": "NT",
-    "category": "",
+    "category": "Mission",
     "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 52,
