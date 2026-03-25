@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "verse": "I have come in order that you might have life\u2014life in all its fullness.",
+    "verse": "I have come in order that you might have life—life in all its fullness.",
     "reference": "John 10:10",
     "testament": "NT",
     "category": "Abundant Life",
@@ -253,12 +253,12 @@
   },
   {
     "id": 29,
-    "verse": "This is the day which the Lord has made; let us rejoice and be glad in it.",
-    "reference": "Psalm 118:24",
-    "testament": "OT",
-    "category": "Joy",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 30,
@@ -316,210 +316,210 @@
   },
   {
     "id": 36,
-    "verse": "Be still, and know that I am God.",
-    "reference": "Psalm 46:10",
-    "testament": "OT",
-    "category": "Peace",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 37,
-    "verse": "The grass withers, the flowers fade, but the word of our God endures forever.",
-    "reference": "Isaiah 40:8",
+    "verse": "",
+    "reference": "",
     "testament": "OT",
-    "category": "Word of God",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 38,
-    "verse": "Be determined and confident. Do not be afraid of them. Your Lord your God will be with you. He will not fail you or abandon you.",
-    "reference": "Deuteronomy 31:6",
-    "testament": "OT",
-    "category": "Courage",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 39,
-    "verse": "The Lord is near to those who are discouraged; he saves those who have lost all hope.",
-    "reference": "Psalm 34:18",
-    "testament": "OT",
-    "category": "Comfort",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 40,
-    "verse": "We may make our plans, but God has the last word.",
-    "reference": "Proverbs 16:1",
+    "verse": "",
+    "reference": "",
     "testament": "OT",
-    "category": "Sovereignty",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 41,
-    "verse": "Come back to the Lord your God. He is kind and full of mercy; he is patient and keeps his promise.",
-    "reference": "Joel 2:13",
-    "testament": "OT",
-    "category": "Repentance",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 42,
-    "verse": "As for me, I will look to the Lord for help. I will wait for God to save me.",
-    "reference": "Micah 7:7",
-    "testament": "OT",
-    "category": "Hope",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 43,
-    "verse": "When I am afraid, O Lord Almighty, I put my trust in you.",
-    "reference": "Psalm 56:3",
+    "verse": "",
+    "reference": "",
     "testament": "OT",
-    "category": "Trust",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 44,
-    "verse": "A gentle answer quiets anger, but a harsh one stirs it up.",
-    "reference": "Proverbs 15:1",
-    "testament": "OT",
-    "category": "Wisdom",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 45,
-    "verse": "My help will come from the Lord, who made heaven and earth.",
-    "reference": "Psalm 121:2",
-    "testament": "OT",
-    "category": "Help",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 46,
-    "verse": "God is my savior; I will trust him and not be afraid. The Lord gives me power and strength; he is my savior.",
-    "reference": "Isaiah 12:2",
+    "verse": "",
+    "reference": "",
     "testament": "OT",
-    "category": "Salvation",
+    "category": "",
     "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 47,
-    "verse": "Tears may flow in the night, but joy comes in the morning.",
-    "reference": "Psalm 30:5",
-    "testament": "OT",
-    "category": "Hope",
+    "verse": "",
+    "reference": "",
+    "testament": "NT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 48,
-    "verse": "You are like light for the whole world.",
-    "reference": "Matthew 5:14",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Witness",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 49,
-    "verse": "I have told you this so that you will have peace by being united to me. The world will make you suffer. But be brave! I have defeated the world!",
-    "reference": "John 16:33",
-    "testament": "NT",
-    "category": "Peace",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 50,
-    "verse": "If God is for us, who can be against us?",
-    "reference": "Romans 8:31",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Assurance",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 51,
-    "verse": "God is love, and those who live in love live in union with God and God lives in union with them.",
-    "reference": "1 John 4:16",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Love",
+    "category": "",
     "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 52,
-    "verse": "Everything is possible for God.",
-    "reference": "Matthew 19:26",
-    "testament": "NT",
-    "category": "Faith",
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 53,
-    "verse": "For there is nothing that God cannot do.",
-    "reference": "Luke 1:37",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "God's Power",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 54,
-    "verse": "Meanwhile these three remain: faith, hope, and love; and the greatest of these is love.",
-    "reference": "1 Corinthians 13:13",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Love",
+    "category": "",
     "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 55,
-    "verse": "Every good gift and every perfect present comes from heaven; it comes down from God, the Creator of the heavenly lights.",
-    "reference": "James 1:17",
-    "testament": "NT",
-    "category": "Provision",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "long",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 56,
-    "verse": "My grace is all you need, for my power is greatest when you are weak.",
-    "reference": "2 Corinthians 12:9",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Grace",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 57,
-    "verse": "Be kind and tender-hearted to one another, and forgive one another, as God has forgiven you through Christ.",
-    "reference": "Ephesians 4:32",
+    "verse": "",
+    "reference": "",
     "testament": "NT",
-    "category": "Forgiveness",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
+    "category": "",
+    "difficulty": "short",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 58,
-    "verse": "Be alert, stand firm in the faith, be brave, be strong.",
-    "reference": "1 Corinthians 16:13",
-    "testament": "NT",
-    "category": "Courage",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
+    "verse": "",
+    "reference": "",
+    "testament": "OT",
+    "category": "",
+    "difficulty": "medium",
+    "bibleTranslation": "NABRE"
   },
   {
     "id": 59,
