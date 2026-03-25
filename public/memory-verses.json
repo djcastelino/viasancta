@@ -496,21 +496,21 @@
   },
   {
     "id": 56,
-    "verse": "",
-    "reference": "",
+    "verse": "He saved us, not because of any good deeds that we ourselves had done, but because of his own mercy.",
+    "reference": "Titus 3:5",
     "testament": "NT",
-    "category": "",
-    "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "category": "Salvation",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 57,
-    "verse": "",
-    "reference": "",
+    "verse": "Everything is possible for God.",
+    "reference": "Mark 10:27",
     "testament": "NT",
-    "category": "",
+    "category": "God's Power",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 58,
