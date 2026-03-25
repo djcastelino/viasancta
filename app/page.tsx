@@ -382,7 +382,7 @@ export default function Home() {
 
           {/* Seven Swords */}
           <Link href="/seven-swords" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="h-60 relative overflow-hidden">
                 <img
                   src="/images/armor/sword.png"
