@@ -361,7 +361,7 @@ export default function SacredMountainsClient() {
                 <h3 className="text-2xl font-bold text-slate-800 mb-4">📚 Sources & References</h3>
                 <SourceLinks sources={selectedMountain.sources} />
                 <p className="text-xs text-gray-500 mt-4 italic">
-                  References include Catechism of the Catholic Church (CCC), Sacred Scripture, Church Fathers, and Catholic Encyclopedia. Click links to read more.
+                  References include Catechism of the Catholic Church (CCC) and Sacred Scripture. Click links to read more.
                 </p>
               </div>
 
