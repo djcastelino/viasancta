@@ -397,48 +397,48 @@
   },
   {
     "id": 45,
-    "verse": "",
-    "reference": "",
+    "verse": "Come near to God, and he will come near to you.",
+    "reference": "James 4:8",
     "testament": "NT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "category": "Relationship with God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 46,
-    "verse": "",
-    "reference": "",
+    "verse": "Enter the Temple gates with thanksgiving; go into its courts with praise. Give thanks to him and praise him.",
+    "reference": "Psalm 100:4",
     "testament": "OT",
-    "category": "",
+    "category": "Worship",
     "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 47,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
+    "verse": "The Lord is my protector; he is my strong fortress.",
+    "reference": "Psalm 18:2",
+    "testament": "OT",
+    "category": "Protection",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 48,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
+    "verse": "Do not be afraid\u2014I am with you! I am your God\u2014let nothing terrify you! I will make you strong and help you; I will protect you and save you.",
+    "reference": "Isaiah 41:10",
+    "testament": "OT",
+    "category": "Fear Not",
     "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 49,
-    "verse": "",
-    "reference": "",
-    "testament": "OT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "verse": "Don't worry about anything, but in all your prayers ask God for what you need, always asking him with a thankful heart.",
+    "reference": "Philippians 4:6",
+    "testament": "NT",
+    "category": "Prayer",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 50,
