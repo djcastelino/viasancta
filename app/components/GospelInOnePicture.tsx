@@ -19,11 +19,11 @@ export default function GospelInOnePicture() {
     <section className="max-w-7xl mx-auto px-5 py-8">
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
         {/* Gospel Image */}
-        <div className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        <div className="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gradient-to-br from-amber-900 to-slate-900">
           <img
             src={`/images/gospel/${gospel.image}`}
             alt={gospel.reference}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain md:object-cover"
           />
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
