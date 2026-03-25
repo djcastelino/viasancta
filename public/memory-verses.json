@@ -235,12 +235,12 @@
   },
   {
     "id": 27,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "verse": "The LORD says, 'I will teach you the way you should go; I will instruct you and advise you'",
+    "reference": "Psalms 32:8",
+    "testament": "OT",
+    "category": "Guidance",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 28,
