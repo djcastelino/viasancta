@@ -325,21 +325,21 @@
   },
   {
     "id": 37,
-    "verse": "",
-    "reference": "",
-    "testament": "OT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "verse": "Come to me, all of you who are tired from carrying heavy loads, and I will give you rest.",
+    "reference": "Matthew 11:28",
+    "testament": "NT",
+    "category": "Rest",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 38,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "verse": "The Lord is my shepherd; I have everything I need.",
+    "reference": "Psalm 23:1",
+    "testament": "OT",
+    "category": "Provision",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 39,
