@@ -320,11 +320,10 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Sacred Architecture */}
-          <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+          {/* Sacred Architecture - HIDDEN */}
+          {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
             <div className="h-60 relative overflow-hidden">
-              {/* Sagrada Familia from Wikimedia Commons */}
-              <img 
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg/800px-Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg"
                 alt="Sagrada Familia Barcelona"
                 className="w-full h-full object-cover"
@@ -344,7 +343,7 @@ export default function Home() {
                 Coming Soon
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Biblical Sites - HIDDEN FOR PHASE 2 */}
           {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
@@ -381,8 +380,8 @@ export default function Home() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {/* Seven Swords */}
-          <Link href="/seven-swords" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <Link href="/seven-swords" className="block group h-full">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
               <div className="h-60 relative overflow-hidden">
                 <img
                   src="/images/armor/sword.png"
@@ -400,8 +399,8 @@ export default function Home() {
                   </h3>
                 </div>
               </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+              <div className="p-7 flex-1 flex flex-col">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed flex-1">
                   Biblical prayers of transformation based on moments when God struck to convert, not destroy. Experience <span className="font-semibold text-[#2C5F87]">immersive Prayer Mode</span> with all 7 swords.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
@@ -412,8 +411,8 @@ export default function Home() {
           </Link>
 
           {/* Armor of God */}
-          <Link href="/armor-of-god" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <Link href="/armor-of-god" className="block group h-full">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
               <div className="h-60 relative overflow-hidden">
                 <img
                   src="/images/armor/shield.png"
@@ -431,8 +430,8 @@ export default function Home() {
                   </h3>
                 </div>
               </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+              <div className="p-7 flex-1 flex flex-col">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed flex-1">
                   Put on the full armor of God daily. Interactive experience to equip yourself with Truth, Righteousness, Peace, Faith, Salvation, and the Word.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
@@ -443,8 +442,8 @@ export default function Home() {
           </Link>
 
           {/* Psalm 91 */}
-          <Link href="/psalm91" className="block group">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <Link href="/psalm91" className="block group h-full">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
               <div className="h-60 relative overflow-hidden">
                 <img
                   src="/images/psalm91/psalm91_cover.png"
@@ -462,9 +461,9 @@ export default function Home() {
                   </h3>
                 </div>
               </div>
-              <div className="p-7">
-                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Declare God's promises of protection over your life. Experience <span className="font-semibold text-[#2C5F87]">4 sections</span> of divine shelter, angelic protection, and His unfailing answer.
+              <div className="p-7 flex-1 flex flex-col">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed flex-1">
+                  Experience God's promises of protection through a continuous scrolling meditation with angelic wings, soothing music, and the timeless words of Psalm 91.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Declare Now →
