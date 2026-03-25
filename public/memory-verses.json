@@ -469,30 +469,30 @@
   },
   {
     "id": 53,
-    "verse": "",
-    "reference": "",
+    "verse": "All Scripture is inspired by God and is useful for teaching the truth, rebuking error, correcting faults, and giving instruction for right living.",
+    "reference": "2 Timothy 3:16",
     "testament": "NT",
-    "category": "",
+    "category": "Scripture",
     "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 54,
-    "verse": "",
-    "reference": "",
+    "verse": "Be joyful always, pray at all times, be thankful in all circumstances. This is what God wants from you in your life in union with Christ Jesus.",
+    "reference": "1 Thessalonians 5:16-18",
     "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "category": "Prayer Life",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 55,
-    "verse": "",
-    "reference": "",
-    "testament": "OT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "verse": "But the Spirit produces love, joy, peace, patience, kindness, goodness, faithfulness, humility, and self-control.",
+    "reference": "Galatians 5:22-23",
+    "testament": "NT",
+    "category": "Fruit of Spirit",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 56,
