@@ -253,12 +253,12 @@
   },
   {
     "id": 29,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
+    "verse": "Be still, and know that I am God.",
+    "reference": "Psalm 46:10",
+    "testament": "OT",
+    "category": "Peace",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 30,
@@ -316,12 +316,12 @@
   },
   {
     "id": 36,
-    "verse": "",
-    "reference": "",
+    "verse": "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life.",
+    "reference": "John 3:16",
     "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "category": "Salvation",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 37,
