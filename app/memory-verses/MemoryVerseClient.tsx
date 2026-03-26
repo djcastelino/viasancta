@@ -28,7 +28,7 @@ interface MemoryVerseClientProps {
   verses: MemoryVerse[];
 }
 
-type Phase = 'phase1_read' | 'phase2_type' | 'phase3_round1' | 'phase3_round2' | 'phase3_round3' | 'phase3_round4' | 'phase5_reference';
+type Phase = 'phase1_read' | 'phase2_type' | 'phase3_round1' | 'phase3_round2' | 'phase3_round3' | 'phase3_round4' | 'phase3_round5' | 'phase5_reference';
 
 export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [currentDay, setCurrentDay] = useState(1);
@@ -44,6 +44,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const [isReviewMode, setIsReviewMode] = useState(false);
   const [reviewVerseId, setReviewVerseId] = useState<number | null>(null);
   const [lastCompletionDate, setLastCompletionDate] = useState<string>('');
+  const [isPracticeMode, setIsPracticeMode] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const coachAudioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -91,6 +92,32 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     localStorage.setItem('memoryVerseProgress', JSON.stringify(newProgress));
   };
 
+  // Save partial progress (current phase) to prevent data loss
+  const savePartialProgress = (phase: Phase) => {
+    if (isPracticeMode) return; // Don't save progress in practice mode
+
+    const newProgress = [...progress];
+    const verseProgress = newProgress.find(p => p.verseId === currentDay);
+
+    if (verseProgress) {
+      verseProgress.currentPhase = phase;
+      verseProgress.attemptCount = (verseProgress.attemptCount || 0) + 1;
+    } else {
+      newProgress.push({
+        verseId: currentDay,
+        verseMemorized: false,
+        referenceMemorized: false,
+        lastReviewedDate: getTodayDate(),
+        nextReviewDate: getTomorrowDate(),
+        attemptCount: 1,
+        currentPhase: phase,
+        phaseRound: 1,
+      });
+    }
+
+    saveProgress(newProgress);
+  };
+
   const saveCurrentDay = (day: number) => {
     setCurrentDay(day);
     localStorage.setItem('memoryVerseCurrentDay', day.toString());
@@ -100,9 +127,63 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const displayVerseId = isReviewMode && reviewVerseId ? reviewVerseId : currentDay;
   const todaysVerse = verses.find(v => v.id === displayVerseId) || verses[0];
 
+  // Check if there's saved partial progress for today's verse
+  const getSavedProgress = () => {
+    return progress.find(p => p.verseId === currentDay);
+  };
+
+  const hasSavedProgress = () => {
+    const saved = getSavedProgress();
+    return saved && !saved.verseMemorized && saved.currentPhase && saved.currentPhase !== 'phase1_read';
+  };
+
+  // Resume from saved progress
+  const resumeProgress = () => {
+    const saved = getSavedProgress();
+    if (saved && saved.currentPhase) {
+      setCurrentPhase(saved.currentPhase as Phase);
+      const instruction = getPhaseInstruction(saved.currentPhase as Phase);
+      setCoachResponse(instruction);
+      playCoachAudio(instruction);
+    }
+  };
+
   // Calculate statistics
   const totalMemorized = progress.filter(p => p.verseMemorized).length;
   const totalReferencesMemorized = progress.filter(p => p.referenceMemorized).length;
+
+  // Calculate current streak (consecutive days)
+  const calculateStreak = (): number => {
+    const sortedProgress = [...progress]
+      .filter(p => p.verseMemorized)
+      .sort((a, b) => b.verseId - a.verseId); // Sort by verse ID descending
+
+    if (sortedProgress.length === 0) return 0;
+
+    let streak = 0;
+    let expectedId = currentDay - 1; // Start from yesterday
+
+    // Check if we completed today's verse
+    const completedToday = sortedProgress.find(p => p.verseId === currentDay);
+    if (completedToday) {
+      streak = 1;
+      expectedId = currentDay - 1;
+    }
+
+    // Count consecutive days backwards
+    for (const item of sortedProgress) {
+      if (item.verseId === expectedId) {
+        streak++;
+        expectedId--;
+      } else if (item.verseId < expectedId) {
+        break;
+      }
+    }
+
+    return streak;
+  };
+
+  const currentStreak = calculateStreak();
 
   // Get verses that need review
   const getVersesNeedingReview = () => {
@@ -333,17 +414,17 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   };
 
   // Initial coaching prompt
-  const startLearning = async (forceVerseId?: number) => {
+  const startLearning = async (forceVerseId?: number, skipYesterdayReview: boolean = false) => {
     // Use forced verse ID (for post-review) or current day
     const targetVerseId = forceVerseId || currentDay;
     const targetVerse = verses.find(v => v.id === targetVerseId) || verses[0];
 
-    // Check if we need to review yesterday's verse first (only if not forced)
-    if (!forceVerseId && currentDay > 1 && !isReviewMode) {
+    // Check if we need to review yesterday's verse first (only if not forced and not in practice mode and not skipped)
+    if (!forceVerseId && !isPracticeMode && !skipYesterdayReview && currentDay > 1 && !isReviewMode) {
       const yesterdayVerseId = currentDay - 1;
       const yesterdayProgress = progress.find(p => p.verseId === yesterdayVerseId);
 
-      // If yesterday's verse was memorized, make them review it first
+      // If yesterday's verse was memorized, suggest reviewing it first (but don't force)
       if (yesterdayProgress?.verseMemorized) {
         setIsReviewMode(true);
         setReviewVerseId(yesterdayVerseId);
@@ -352,7 +433,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
         const yesterdayVerse = verses.find(v => v.id === yesterdayVerseId);
         if (yesterdayVerse) {
-          const reviewMessage = `📖 REVIEW TIME!\n\nBefore learning today's verse, let's review yesterday's verse.\n\nType from memory: ${yesterdayVerse.reference}`;
+          const reviewMessage = `📖 QUICK REVIEW FIRST?\n\nBefore learning today's verse, let's review yesterday's verse to reinforce it.\n\nType from memory: ${yesterdayVerse.reference}\n\n💡 Or click "Skip Review" below to go straight to today's verse.`;
           setCoachResponse(reviewMessage);
           // Auto-play review audio
           playCoachAudio(reviewMessage);
@@ -382,42 +463,85 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
     playCoachAudio(phase1Message);
   };
 
-  // Generate blanked verse based on phase
+  // Generate blanked verse based on phase and difficulty
   const getBlankedVerse = (phase: Phase): string => {
     const words = todaysVerse.verse.split(' ');
+    const difficulty = todaysVerse.difficulty;
 
     switch (phase) {
-      case 'phase3_round1': // Hide every 3rd word
-        return words.map((word, i) => (i + 1) % 3 === 0 ? '___' : word).join(' ');
+      case 'phase3_round1':
+        // Short: every 4th word hidden, Medium/Long: every 5th word
+        const interval1 = difficulty === 'short' ? 4 : 5;
+        return words.map((word, i) => (i + 1) % interval1 === 0 ? '___' : word).join(' ');
 
-      case 'phase3_round2': // Hide every 2nd word
-        return words.map((word, i) => (i + 1) % 2 === 0 ? '___' : word).join(' ');
+      case 'phase3_round2':
+        // Short: every 3rd word, Medium/Long: every 4th word
+        const interval2 = difficulty === 'short' ? 3 : 4;
+        return words.map((word, i) => (i + 1) % interval2 === 0 ? '___' : word).join(' ');
 
-      case 'phase3_round3': // First letters only
+      case 'phase3_round3':
+        // Short: every 2nd word, Medium/Long: every 3rd word
+        const interval3 = difficulty === 'short' ? 2 : 3;
+        return words.map((word, i) => (i + 1) % interval3 === 0 ? '___' : word).join(' ');
+
+      case 'phase3_round4':
+        // In review mode, always use blank screen for pure memory test
+        // Otherwise: Short = first letters only, Medium/Long = every 2nd word hidden
+        if (isReviewMode) {
+          return '___________________________';
+        } else if (difficulty === 'short') {
+          return words.map(word => {
+            const firstLetter = word[0];
+            const underscores = '_'.repeat(Math.max(1, word.length - 1));
+            return firstLetter + underscores;
+          }).join(' ');
+        } else {
+          return words.map((word, i) => (i + 1) % 2 === 0 ? '___' : word).join(' ');
+        }
+
+      case 'phase3_round5':
+        // Only for medium/long verses: first letters only
         return words.map(word => {
           const firstLetter = word[0];
           const underscores = '_'.repeat(Math.max(1, word.length - 1));
           return firstLetter + underscores;
         }).join(' ');
 
-      case 'phase3_round4': // Completely blank - final memory test
-        return '___________________________';
-
       default:
         return todaysVerse.verse;
     }
   };
 
-  // Get next phase
+  // Get final memory test phase (blank screen) based on difficulty
+  const getFinalMemoryPhase = (): Phase => {
+    return todaysVerse.difficulty === 'short' ? 'phase3_round4' : 'phase3_round5';
+  };
+
+  // Check if current phase is the final memory test
+  const isFinalMemoryTest = (phase: Phase): boolean => {
+    if (todaysVerse.difficulty === 'short') {
+      return phase === 'phase3_round4';
+    } else {
+      return phase === 'phase3_round5';
+    }
+  };
+
+  // Get next phase based on difficulty
   const getNextPhase = (): Phase | null => {
+    const difficulty = todaysVerse.difficulty;
+
     switch (currentPhase) {
       case 'phase1_read': return 'phase2_type';
       case 'phase2_type': return 'phase3_round1';
       case 'phase3_round1': return 'phase3_round2';
       case 'phase3_round2': return 'phase3_round3';
       case 'phase3_round3': return 'phase3_round4';
-      case 'phase3_round4': return 'phase5_reference'; // Skip phase4, go straight to reference
-      case 'phase5_reference': return null; // Done, move to next verse
+      case 'phase3_round4':
+        // Short verses end here, medium/long continue
+        return difficulty === 'short' ? 'phase5_reference' : 'phase3_round5';
+      case 'phase3_round5':
+        return 'phase5_reference';
+      case 'phase5_reference': return null; // Done
       default: return null;
     }
   };
@@ -431,6 +555,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       case 'phase3_round2': return 'Phase 3 Round 2';
       case 'phase3_round3': return 'Phase 3 Round 3';
       case 'phase3_round4': return 'Phase 3 Round 4';
+      case 'phase3_round5': return 'Phase 3 Round 5';
       case 'phase5_reference': return 'Phase 4';
       default: return 'next phase';
     }
@@ -479,22 +604,73 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       .trim();
   };
 
+  // Normalize reference format to handle variations
+  const normalizeReference = (ref: string): string => {
+    return ref
+      .toLowerCase()
+      .replace(/\s+/g, '') // Remove all spaces
+      .replace(/[.,!?;:"']/g, ''); // Remove punctuation
+  };
+
   // Client-side validation (more reliable than AI)
   const validateUserInput = (userText: string): { isCorrect: boolean; feedback: string } => {
     const normalizedInput = normalizeText(userText);
 
     // For Phase 5, expect "reference - verse" format
     if (currentPhase === 'phase5_reference') {
-      const expectedFull = `${todaysVerse.reference} - ${todaysVerse.verse}`;
-      const normalizedExpected = normalizeText(expectedFull);
+      // Try to extract reference and verse from user input
+      // Support formats: "Reference - Verse", "Reference: Verse", "Reference Verse"
+      const userTextLower = userText.trim();
+      let userReference = '';
+      let userVerse = '';
 
-      // Calculate similarity (allow 95% match - lenient for typos)
-      const similarity = calculateSimilarity(normalizedInput, normalizedExpected);
+      // Try to split by common separators
+      if (userTextLower.includes(' - ')) {
+        [userReference, userVerse] = userTextLower.split(' - ', 2);
+      } else if (userTextLower.includes(': ')) {
+        [userReference, userVerse] = userTextLower.split(': ', 2);
+      } else if (userTextLower.includes(' – ')) {
+        [userReference, userVerse] = userTextLower.split(' – ', 2);
+      } else {
+        // Try to find where the verse starts (after the reference)
+        // Look for the first quoted text or after book chapter:verse pattern
+        const refMatch = userTextLower.match(/^([^\d]+ \d+:\d+(-\d+)?)/);
+        if (refMatch) {
+          userReference = refMatch[1];
+          userVerse = userTextLower.substring(refMatch[1].length).trim();
+        } else {
+          // Can't parse format - use full text for both
+          userReference = userTextLower;
+          userVerse = userTextLower;
+        }
+      }
 
-      if (similarity >= 0.95) {
+      // Normalize and compare reference
+      const normalizedUserRef = normalizeReference(userReference);
+      const normalizedExpectedRef = normalizeReference(todaysVerse.reference);
+      const refMatch = normalizedUserRef === normalizedExpectedRef ||
+                       normalizedUserRef.includes(normalizedExpectedRef) ||
+                       normalizedExpectedRef.includes(normalizedUserRef);
+
+      // Normalize and compare verse
+      const normalizedUserVerse = normalizeText(userVerse);
+      const normalizedExpectedVerse = normalizeText(todaysVerse.verse);
+      const verseSimilarity = calculateSimilarity(normalizedUserVerse, normalizedExpectedVerse);
+
+      if (refMatch && verseSimilarity >= 0.95) {
         return {
           isCorrect: true,
           feedback: `Perfect! You've mastered the complete verse with reference!`
+        };
+      } else if (!refMatch && verseSimilarity >= 0.95) {
+        return {
+          isCorrect: false,
+          feedback: `Great verse! But the reference doesn't match.\n\nExpected reference: "${todaysVerse.reference}"\n\nYou typed: "${userReference}"\n\nTry again with the correct reference!`
+        };
+      } else if (refMatch && verseSimilarity < 0.95) {
+        return {
+          isCorrect: false,
+          feedback: `Good reference! But the verse needs work.\n\nExpected: "${todaysVerse.verse}"\n\nYou typed: "${userVerse}"\n\nTry again!`
         };
       } else {
         return {
@@ -512,7 +688,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
     if (similarity >= 0.95) {
       // Special message for review mode completion
-      if (isReviewMode && currentPhase === 'phase3_round4') {
+      if (isReviewMode && isFinalMemoryTest(currentPhase)) {
         return {
           isCorrect: true,
           feedback: `Perfect! Review complete. Now let's learn today's verse.`
@@ -544,6 +720,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
   // Generate phase instruction message client-side
   const getPhaseInstruction = (phase: Phase): string => {
+    const difficulty = todaysVerse.difficulty;
+
     switch (phase) {
       case 'phase1_read':
         const context = generateVerseContext(todaysVerse.reference, todaysVerse.category, todaysVerse.testament);
@@ -557,7 +735,12 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       case 'phase3_round3':
         return 'Phase 3 Round 3. Type the FULL verse using the hints above.';
       case 'phase3_round4':
-        return 'Phase 3 Round 4. Type the verse from pure memory.';
+        // Short verses: pure memory. Medium/Long: still has hints
+        return difficulty === 'short'
+          ? 'Phase 3 Round 4 (Final). Type the verse from pure memory.'
+          : 'Phase 3 Round 4. Type the FULL verse using the hints above.';
+      case 'phase3_round5':
+        return 'Phase 3 Round 5 (Final). Type the verse from pure memory.';
       case 'phase5_reference':
         return `Phase 4. Type the reference AND verse together. Format: '${todaysVerse.reference} - ${todaysVerse.verse}'`;
       default:
@@ -569,6 +752,9 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const advancePhase = async (nextPhase: Phase) => {
     setUserInput('');
     setCurrentPhase(nextPhase);
+
+    // Save partial progress to prevent data loss
+    savePartialProgress(nextPhase);
 
     // Generate instruction client-side (no AI needed for simple instructions)
     const instruction = getPhaseInstruction(nextPhase);
@@ -598,7 +784,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       // Auto-advance to next phase after a brief delay
       setTimeout(() => {
         // Handle review mode completion
-        if (isReviewMode && currentPhase === 'phase3_round4') {
+        if (isReviewMode && isFinalMemoryTest(currentPhase)) {
           setIsReviewMode(false);
           setReviewVerseId(null);
           setCurrentPhase('phase1_read');
@@ -613,39 +799,44 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           // Immediately fetch next phase instructions (will set coachResponse immediately)
           advancePhase(next);
         } else if (currentPhase === 'phase5_reference') {
-          // Phase 5 complete - show celebration (user clicks button to see homework)
-          const celebrationMessage = `🎉 FANTASTIC! You've mastered this verse!\n\nThis is now permanently stored in your heart. Come back tomorrow to review it and learn the next treasure from God's Word!`;
+          // Phase 5 complete - show celebration
+          const celebrationMessage = isPracticeMode
+            ? `🎉 GREAT PRACTICE! You've reviewed this verse successfully!\n\nKeep practicing to strengthen your memory. You can practice any verse anytime!`
+            : `🎉 FANTASTIC! You've mastered this verse!\n\nThis is now permanently stored in your heart. Click below to see homework tips for reinforcing this verse!`;
 
           setCoachResponse(celebrationMessage);
           // Play celebration audio
           playCoachAudio(celebrationMessage);
 
-          // Mark verse as memorized and schedule next day
-          const newProgress = [...progress];
-          const verseProgress = newProgress.find(p => p.verseId === currentDay);
-          if (verseProgress) {
-            verseProgress.verseMemorized = true;
-            verseProgress.referenceMemorized = true;
-            verseProgress.lastReviewedDate = getTodayDate();
-            verseProgress.nextReviewDate = getTomorrowDate();
-          } else {
-            newProgress.push({
-              verseId: currentDay,
-              verseMemorized: true,
-              referenceMemorized: true,
-              lastReviewedDate: getTodayDate(),
-              nextReviewDate: getTomorrowDate(),
-              attemptCount: 1,
-              currentPhase: 'phase5_reference',
-              phaseRound: 1,
-            });
-          }
-          saveProgress(newProgress);
+          // Only save progress and completion date if NOT in practice mode
+          if (!isPracticeMode) {
+            // Mark verse as memorized and schedule next day
+            const newProgress = [...progress];
+            const verseProgress = newProgress.find(p => p.verseId === currentDay);
+            if (verseProgress) {
+              verseProgress.verseMemorized = true;
+              verseProgress.referenceMemorized = true;
+              verseProgress.lastReviewedDate = getTodayDate();
+              verseProgress.nextReviewDate = getTomorrowDate();
+            } else {
+              newProgress.push({
+                verseId: currentDay,
+                verseMemorized: true,
+                referenceMemorized: true,
+                lastReviewedDate: getTodayDate(),
+                nextReviewDate: getTomorrowDate(),
+                attemptCount: 1,
+                currentPhase: 'phase5_reference',
+                phaseRound: 1,
+              });
+            }
+            saveProgress(newProgress);
 
-          // Save completion date (one verse per day enforcement)
-          const today = getTodayDate();
-          setLastCompletionDate(today);
-          localStorage.setItem('memoryVerseLastCompletion', today);
+            // Save completion date (one verse per day enforcement)
+            const today = getTodayDate();
+            setLastCompletionDate(today);
+            localStorage.setItem('memoryVerseLastCompletion', today);
+          }
         }
       }, 1500); // 1.5 second delay to let user see validation
     }
@@ -668,11 +859,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   // Show homework tips (called after celebration)
   const showHomework = () => {
     stopCoachAudio(); // Stop celebration audio if still playing
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowFormatted = tomorrow.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
-    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ ONE VERSE PER DAY: This is your verse for today! Come back ${tomorrowFormatted} at midnight to review it and learn the next one. Slow, steady memorization leads to permanent retention.`;
+    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ WHAT'S NEXT?\n• Come back tomorrow to learn the next verse\n• Use Practice Mode anytime to review any verse\n• Check "Reviews Due" section for verses needing reinforcement\n\nSlow, steady memorization leads to permanent retention!`;
     setCoachResponse(homeworkMessage);
   };
 
@@ -699,27 +887,119 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           </button>
         </div>
 
-        {showStats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-            <div className="bg-white/10 rounded-lg p-3">
-              <div className="text-3xl font-bold">{totalMemorized}</div>
-              <div className="text-sm text-amber-100">Verses Memorized</div>
-            </div>
-            <div className="bg-white/10 rounded-lg p-3">
-              <div className="text-3xl font-bold">{totalReferencesMemorized}</div>
-              <div className="text-sm text-amber-100">References Mastered</div>
-            </div>
-            <div className="bg-white/10 rounded-lg p-3">
-              <div className="text-3xl font-bold">{Math.round((totalMemorized / 77) * 100)}%</div>
-              <div className="text-sm text-amber-100">Progress</div>
-            </div>
-            <div className="bg-white/10 rounded-lg p-3">
-              <div className="text-3xl font-bold">{getVersesNeedingReview().length}</div>
-              <div className="text-sm text-amber-100">Need Review</div>
-            </div>
+        {/* Progress Bar */}
+        <div className="mt-4">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-sm text-amber-100">Overall Progress</span>
+            <span className="text-sm text-amber-100 font-semibold">{totalMemorized} / 77</span>
           </div>
+          <div className="w-full bg-white/20 rounded-full h-3">
+            <div
+              className="bg-white rounded-full h-3 transition-all duration-500"
+              style={{ width: `${(totalMemorized / 77) * 100}%` }}
+            />
+          </div>
+        </div>
+
+        {showStats && (
+          <>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-3xl font-bold">{totalMemorized}</div>
+                <div className="text-sm text-amber-100">Verses Memorized</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-3xl font-bold">{currentStreak}</div>
+                <div className="text-sm text-amber-100">Day Streak 🔥</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-3xl font-bold">{Math.round((totalMemorized / 77) * 100)}%</div>
+                <div className="text-sm text-amber-100">Complete</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-3">
+                <div className="text-3xl font-bold">{getVersesNeedingReview().length}</div>
+                <div className="text-sm text-amber-100">Need Review</div>
+              </div>
+            </div>
+
+            {/* Visual Calendar */}
+            <div className="mt-6 bg-white/10 rounded-lg p-4">
+              <h4 className="text-sm font-semibold text-amber-100 mb-3">Progress Calendar</h4>
+              <div className="grid grid-cols-7 gap-2">
+                {Array.from({ length: 77 }, (_, i) => i + 1).map(verseId => {
+                  const isMemorized = progress.find(p => p.verseId === verseId)?.verseMemorized;
+                  const isCurrent = verseId === currentDay;
+                  return (
+                    <div
+                      key={verseId}
+                      className={`
+                        aspect-square rounded flex items-center justify-center text-xs font-semibold
+                        ${isMemorized ? 'bg-green-500 text-white' : 'bg-white/20 text-amber-100'}
+                        ${isCurrent ? 'ring-2 ring-white' : ''}
+                      `}
+                      title={`Day ${verseId}${isMemorized ? ' ✓' : ''}`}
+                    >
+                      {verseId}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="flex items-center gap-4 mt-3 text-xs text-amber-100">
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-green-500 rounded"></div>
+                  <span>Completed</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-white/20 rounded"></div>
+                  <span>Not Started</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-white/20 rounded ring-2 ring-white"></div>
+                  <span>Current</span>
+                </div>
+              </div>
+            </div>
+          </>
         )}
       </div>
+
+      {/* Reviews Needed Section */}
+      {getVersesNeedingReview().length > 0 && (
+        <div className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6">
+          <h3 className="text-lg font-bold text-orange-800 mb-3">📚 Reviews Due</h3>
+          <p className="text-orange-700 text-sm mb-4">
+            These verses are ready for review to reinforce your memory. Use Practice Mode to review them!
+          </p>
+          <div className="space-y-2">
+            {getVersesNeedingReview().slice(0, 5).map((review: any, idx: number) => (
+              <div key={idx} className="bg-white rounded-lg p-3 flex justify-between items-center">
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-800">{review.reference}</p>
+                  <p className="text-sm text-gray-600 truncate">{review.verse}</p>
+                </div>
+                <button
+                  onClick={() => {
+                    const verseToReview = verses.find(v => v.reference === review.reference);
+                    if (verseToReview) {
+                      saveCurrentDay(verseToReview.id);
+                      setIsPracticeMode(true);
+                      setCoachResponse('');
+                    }
+                  }}
+                  className="ml-4 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition"
+                >
+                  Review
+                </button>
+              </div>
+            ))}
+          </div>
+          {getVersesNeedingReview().length > 5 && (
+            <p className="text-sm text-orange-600 mt-3 text-center">
+              + {getVersesNeedingReview().length - 5} more verses need review
+            </p>
+          )}
+        </div>
+      )}
 
       {/* Today's Verse Card */}
       <div className="bg-white rounded-lg shadow-lg p-6">
@@ -734,7 +1014,8 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   {currentPhase === 'phase3_round1' && '🧠 Phase 3-1'}
                   {currentPhase === 'phase3_round2' && '🧠 Phase 3-2'}
                   {currentPhase === 'phase3_round3' && '🧠 Phase 3-3'}
-                  {currentPhase === 'phase3_round4' && '🧠 Phase 3-4 (Final)'}
+                  {currentPhase === 'phase3_round4' && (todaysVerse.difficulty === 'short' ? '🧠 Phase 3-4 (Final)' : '🧠 Phase 3-4')}
+                  {currentPhase === 'phase3_round5' && '🧠 Phase 3-5 (Final)'}
                   {currentPhase === 'phase5_reference' && '💎 Phase 4: Reference'}
                 </span>
               )}
@@ -749,7 +1030,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
           </div>
 
           {/* Hide verse during pure memory phase */}
-          {!coachResponse || currentPhase !== 'phase3_round4' ? (
+          {!coachResponse || !isFinalMemoryTest(currentPhase) ? (
             <>
               <p className="text-2xl text-gray-700 mb-2 leading-relaxed">
                 "{todaysVerse.verse}"
@@ -772,21 +1053,66 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
         {!coachResponse ? (
           <>
-            {hasCompletedToday && (
+            {hasSavedProgress() && !hasCompletedToday && (
+              <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
+                <p className="text-green-800 font-semibold">📝 Continue Where You Left Off</p>
+                <p className="text-green-700 text-sm mt-2">
+                  You have saved progress on this verse. Resume from {getPhaseDisplayName(getSavedProgress()?.currentPhase as Phase)} or start fresh.
+                </p>
+                <button
+                  onClick={resumeProgress}
+                  disabled={isLoading}
+                  className="mt-3 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition disabled:opacity-50"
+                >
+                  Resume Progress
+                </button>
+              </div>
+            )}
+
+            {hasCompletedToday && !isPracticeMode && (
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
                 <p className="text-blue-800 font-semibold">✅ You've already completed today's verse!</p>
                 <p className="text-blue-700 text-sm mt-2">
-                  Come back tomorrow at midnight to review it and learn the next verse. One verse per day ensures deep, lasting memorization.
+                  Great work! One verse per day ensures deep, lasting memorization.
+                </p>
+                <p className="text-blue-700 text-sm mt-2 font-semibold">
+                  💡 Want to keep learning? Use Practice Mode below to review any verse, or navigate to another verse to practice!
                 </p>
               </div>
             )}
-            <button
-              onClick={() => startLearning()}
-              disabled={isLoading || hasCompletedToday}
-              className="w-full bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
-            >
-              {hasCompletedToday ? '🔒 Come Back Tomorrow' : isLoading ? 'Loading Coach...' : '🎯 Start Learning'}
-            </button>
+
+            {isPracticeMode && (
+              <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded mb-4">
+                <p className="text-purple-800 font-semibold">🔄 Practice Mode Active</p>
+                <p className="text-purple-700 text-sm mt-2">
+                  You can practice any verse without affecting your daily progress or completion tracking.
+                </p>
+              </div>
+            )}
+
+            <div className="flex gap-3 mb-3">
+              <button
+                onClick={() => {
+                  setIsPracticeMode(false);
+                  startLearning();
+                }}
+                disabled={isLoading || (hasCompletedToday && !isPracticeMode)}
+                className="flex-1 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
+              >
+                {hasCompletedToday ? '🔒 Come Back Tomorrow' : isLoading ? 'Loading...' : '🎯 Start Learning'}
+              </button>
+
+              <button
+                onClick={() => {
+                  setIsPracticeMode(true);
+                  startLearning();
+                }}
+                disabled={isLoading}
+                className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50"
+              >
+                {isLoading ? 'Loading...' : '🔄 Practice Mode'}
+              </button>
+            </div>
           </>
         ) : (
           <div className="space-y-4">
@@ -838,15 +1164,22 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
             {/* Audio Player (Phase 1) */}
             {currentPhase === 'phase1_read' && (
-              <div className="flex gap-3">
-                <button
-                  onClick={isPlayingAudio ? stopAudio : playAudio}
-                  disabled={isPlayingAudio && audioRef.current !== null}
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 flex items-center justify-center gap-2"
-                >
-                  {isPlayingAudio ? '⏸️ Stop Audio' : '🔊 Play Audio'}
-                </button>
-              </div>
+              <>
+                <div className="flex gap-3">
+                  <button
+                    onClick={isPlayingAudio ? stopAudio : playAudio}
+                    disabled={isPlayingAudio && audioRef.current !== null}
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 flex items-center justify-center gap-2"
+                  >
+                    {isPlayingAudio ? '⏸️ Stop Audio' : '🔊 Play Audio'}
+                  </button>
+                </div>
+                <div className="bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                  <p className="text-sm text-blue-700 text-center">
+                    💡 Audio helps with memorization, but you can skip if needed
+                  </p>
+                </div>
+              </>
             )}
 
             {/* User Input (Phases 2-5) */}
@@ -870,14 +1203,31 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
                   />
                 </div>
 
-                {/* Action Button */}
-                <button
-                  onClick={handleSubmit}
-                  disabled={isLoading || !userInput.trim()}
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
-                >
-                  {isLoading ? 'Checking...' : '✓ Submit Answer'}
-                </button>
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleSubmit}
+                    disabled={isLoading || !userInput.trim()}
+                    className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                  >
+                    {isLoading ? 'Checking...' : '✓ Submit Answer'}
+                  </button>
+
+                  {/* Skip Review button (only show during review mode) */}
+                  {isReviewMode && coachResponse.includes('QUICK REVIEW FIRST') && (
+                    <button
+                      onClick={() => {
+                        setIsReviewMode(false);
+                        setReviewVerseId(null);
+                        startLearning(currentDay, true); // Skip review
+                      }}
+                      disabled={isLoading}
+                      className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition disabled:opacity-50"
+                    >
+                      Skip Review
+                    </button>
+                  )}
+                </div>
               </>
             )}
 
@@ -885,6 +1235,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
             {currentPhase === 'phase1_read' && (
               <button
                 onClick={() => {
+                  stopAudio(); // Stop any playing audio
                   const next = getNextPhase();
                   if (next) advancePhase(next);
                 }}
@@ -905,14 +1256,16 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
               </button>
             )}
 
-            {/* Continue button after homework completion - HIDDEN if already completed today */}
-            {coachResponse.includes('HOMEWORK TO REINFORCE LEARNING') && !hasCompletedToday && (
+            {/* Continue button after homework/practice completion */}
+            {(coachResponse.includes('HOMEWORK TO REINFORCE LEARNING') || coachResponse.includes('GREAT PRACTICE')) && (
               <button
-                onClick={nextVerse}
-                disabled={currentDay >= 77}
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition disabled:opacity-50 shadow-lg"
+                onClick={() => {
+                  setCoachResponse('');
+                  setIsPracticeMode(false);
+                }}
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg"
               >
-                {currentDay >= 77 ? '🎉 All Verses Completed!' : '📖 Back to Memory Verses'}
+                📖 Back to Memory Verses
               </button>
             )}
           </div>
@@ -920,16 +1273,48 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
       </div>
 
       {/* Navigation */}
-      {currentDay > 1 && (
-        <div className="flex justify-center">
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h3 className="text-lg font-bold text-gray-800 mb-4">Navigate to Any Verse</h3>
+        <div className="flex gap-3 items-center">
           <button
-            onClick={() => saveCurrentDay(currentDay - 1)}
-            className="bg-white hover:bg-gray-50 text-gray-700 font-semibold py-2 px-6 rounded-lg shadow transition"
+            onClick={() => saveCurrentDay(Math.max(1, currentDay - 1))}
+            disabled={currentDay <= 1}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition disabled:opacity-50"
           >
-            ← Previous Verse
+            ← Previous
+          </button>
+
+          <select
+            value={currentDay}
+            onChange={(e) => {
+              saveCurrentDay(parseInt(e.target.value));
+              setCoachResponse('');
+              setIsPracticeMode(false);
+            }}
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+          >
+            {verses.map(v => {
+              const isMemorized = progress.find(p => p.verseId === v.id)?.verseMemorized;
+              return (
+                <option key={v.id} value={v.id}>
+                  {isMemorized ? '✓ ' : ''}{v.reference} - {v.verse.substring(0, 50)}...
+                </option>
+              );
+            })}
+          </select>
+
+          <button
+            onClick={() => saveCurrentDay(Math.min(77, currentDay + 1))}
+            disabled={currentDay >= 77}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition disabled:opacity-50"
+          >
+            Next →
           </button>
         </div>
-      )}
+        <p className="text-sm text-gray-500 mt-3 text-center">
+          💡 Tip: Use Practice Mode to review any verse without affecting your daily progress
+        </p>
+      </div>
     </div>
   );
 }
