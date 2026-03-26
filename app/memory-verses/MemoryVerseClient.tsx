@@ -860,7 +860,7 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
   const showHomework = () => {
     stopCoachAudio(); // Stop celebration audio if still playing
 
-    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ WHAT'S NEXT?\n• Come back tomorrow to learn the next verse\n• Use Practice Mode anytime to review any verse\n• Check "Reviews Due" section for verses needing reinforcement\n\nSlow, steady memorization leads to permanent retention!`;
+    const homeworkMessage = `🎉 VERSE MASTERED!\n\n📚 HOMEWORK TO REINFORCE LEARNING:\n\n1. 🌙 BEFORE SLEEP: If you're lying in bed and can't fall asleep immediately, recite this verse in your mind. Fall asleep with God's Word on your heart.\n\n2. 🌅 UPON WAKING: First thing tomorrow morning, speak this verse aloud before checking your phone.\n\n3. 📝 WRITE IT: Write the verse by hand 3 times - this reinforces memory pathways.\n\n4. 🗣️ SHARE IT: Quote this verse to someone today.\n\n"Let the word of Christ dwell in you richly." - Colossians 3:16\n\n⏰ WHAT'S NEXT?\n• We recommend learning one verse per day for deep retention\n• But you're free to navigate to the next verse below if you'd like to continue\n• Use Practice Mode anytime to review any verse\n• Check "Reviews Due" section for verses needing reinforcement\n\nSlow, steady pacing leads to permanent retention!`;
     setCoachResponse(homeworkMessage);
   };
 
@@ -1071,12 +1071,12 @@ export default function MemoryVerseClient({ verses }: MemoryVerseClientProps) {
 
             {hasCompletedToday && !isPracticeMode && (
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
-                <p className="text-blue-800 font-semibold">✅ You've already completed today's verse!</p>
+                <p className="text-blue-800 font-semibold">✅ You've completed today's verse!</p>
                 <p className="text-blue-700 text-sm mt-2">
-                  Great work! One verse per day ensures deep, lasting memorization.
+                  Great work! We recommend one verse per day for deep retention, but you're free to continue.
                 </p>
                 <p className="text-blue-700 text-sm mt-2 font-semibold">
-                  💡 Want to keep learning? Use Practice Mode below to review any verse, or navigate to another verse to practice!
+                  💡 Navigate to the next verse below, or use Practice Mode to review any verse!
                 </p>
               </div>
             )}
