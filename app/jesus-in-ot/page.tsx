@@ -366,7 +366,7 @@ export default function JesusInOTPage() {
               </h1>
             </div>
             <p className="text-gray-600 text-lg">
-              Day {todaysEntry.dayOfYear} of 365 • {todaysEntry.category}
+              {todaysEntry.category}
             </p>
           </div>
 

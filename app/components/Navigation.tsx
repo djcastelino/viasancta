@@ -71,6 +71,12 @@ export default function Navigation() {
               Salvation History
             </Link>
             <Link
+              href="/#spiritual-warfare"
+              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+            >
+              Spiritual Warfare
+            </Link>
+            <Link
               href="/about"
               className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
             >
@@ -138,6 +144,13 @@ export default function Navigation() {
                 className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
               >
                 Salvation History
+              </Link>
+              <Link
+                href="/#spiritual-warfare"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors px-4 py-2"
+              >
+                Spiritual Warfare
               </Link>
               <Link
                 href="/about"

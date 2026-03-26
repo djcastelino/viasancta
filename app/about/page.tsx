@@ -168,6 +168,18 @@ export default function AboutPage() {
                   Creative Commons: By Attribution 4.0 License
                 </a>
               </p>
+              <p>
+                <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by{' '}
+                <a
+                  href="https://www.youtube.com/@LogosVoiceTV"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  Logos Ministries
+                </a>
+                . For powerful healing and deliverance prayers, visit their YouTube channel.
+              </p>
             </div>
           </section>
 
