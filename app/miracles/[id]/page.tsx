@@ -328,10 +328,10 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       {/* Header with Landscape */}
       <section className="max-w-4xl mx-auto px-5 pb-8">
         <div className="relative min-h-[300px] rounded-3xl overflow-hidden shadow-2xl">
-          {/* Background Landscape */}
+          {/* Background Image */}
           <img
-            src={headerLandscape}
-            alt={`Sunrise/sunset landscape for ${miracle.name}`}
+            src={miracle.images?.[0]?.url || headerLandscape}
+            alt={miracle.images?.[0]?.alt || `Background for ${miracle.name}`}
             className="absolute inset-0 w-full h-full object-cover"
           />
           {/* Gradient Overlay */}
