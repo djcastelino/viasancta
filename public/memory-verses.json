@@ -550,21 +550,21 @@
   },
   {
     "id": 62,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "verse": "For I, the Lord your God, hold your right hand; it is I who say to you, 'Fear not, I will help you.'",
+    "reference": "Isaiah 41:13",
+    "testament": "OT",
+    "category": "Fear Not",
+    "difficulty": "medium",
+    "bibleTranslation": "RSVCE"
   },
   {
     "id": 63,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "verse": "The name of the Lord is a strong tower, the righteous run into it and are safe.",
+    "reference": "Proverbs 18:10",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 64,
