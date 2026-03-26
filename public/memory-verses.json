@@ -514,21 +514,21 @@
   },
   {
     "id": 58,
-    "verse": "",
-    "reference": "",
+    "verse": "The Sovereign Lord gives me strength. He makes me sure-footed as a deer.",
+    "reference": "Habakkuk 3:19",
     "testament": "OT",
-    "category": "",
-    "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "category": "Strength",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 59,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "verse": "He has set the right time for everything.",
+    "reference": "Ecclesiastes 3:11",
+    "testament": "OT",
+    "category": "God's Timing",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 60,
