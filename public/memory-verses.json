@@ -604,30 +604,30 @@
   },
   {
     "id": 68,
-    "verse": "",
-    "reference": "",
+    "verse": "For I am certain that nothing can separate us from his love: neither death nor life, neither angels nor other heavenly rulers or powers, neither the present nor the future, neither the world above nor the world below\u2014there is nothing in all creation that will ever be able to separate us from the love of God which is ours through Christ Jesus our Lord.",
+    "reference": "Romans 8:38-39",
     "testament": "NT",
-    "category": "",
+    "category": "Love",
     "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 69,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "verse": "But those who trust in the Lord for help will find their strength renewed.",
+    "reference": "Isaiah 40:31",
+    "testament": "OT",
+    "category": "Strength",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 70,
-    "verse": "",
-    "reference": "",
+    "verse": "The Lord himself will lead you and be with you. He will not fail you or abandon you.",
+    "reference": "Deuteronomy 31:8",
     "testament": "OT",
-    "category": "",
+    "category": "Presence",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 71,
