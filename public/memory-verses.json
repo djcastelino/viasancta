@@ -532,12 +532,12 @@
   },
   {
     "id": 60,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
+    "verse": "God said, 'I am who I am. You must tell them: The one who is called I AM has sent me to you.'",
+    "reference": "Exodus 3:14",
+    "testament": "OT",
+    "category": "God's Name",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 61,
