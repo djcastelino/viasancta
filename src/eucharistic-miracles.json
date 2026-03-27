@@ -25,6 +25,10 @@
     "images": [
       {
         "url": "/images/eucharistic miralces/lanciano.png",
+        "alt": "The Eucharistic Miracle of Lanciano - Renaissance artistic depiction"
+      },
+      {
+        "url": "/images/miracles/lanciano.png",
         "alt": "The Eucharistic Miracle of Lanciano - sacred host that became flesh and blood in 750 AD"
       }
     ],
@@ -66,6 +70,10 @@
     "images": [
       {
         "url": "/images/eucharistic miralces/buenos_aires.png",
+        "alt": "Eucharistic Miracle of Buenos Aires - Renaissance artistic depiction"
+      },
+      {
+        "url": "/images/miracles/buenos-aires.png",
         "alt": "Eucharistic Miracle of Buenos Aires - Host transformed into living cardiac tissue"
       }
     ],
