@@ -640,21 +640,21 @@
   },
   {
     "id": 72,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
+    "verse": "The Lord is my light and my salvation; I will fear no one.",
+    "reference": "Psalm 27:1",
+    "testament": "OT",
+    "category": "Trust",
     "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "bibleTranslation": "Good News"
   },
   {
     "id": 73,
-    "verse": "",
-    "reference": "",
-    "testament": "OT",
-    "category": "",
-    "difficulty": "long",
-    "bibleTranslation": "NABRE"
+    "verse": "We know that in all things God works for good with those who love him.",
+    "reference": "Romans 8:28",
+    "testament": "NT",
+    "category": "Hope",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 74,
