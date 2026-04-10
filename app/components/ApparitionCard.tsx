@@ -49,14 +49,7 @@ export default function ApparitionCard({ apparition, onClick }: ApparitionCardPr
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-between p-6 text-white">
-          {/* Tag */}
-          <div className="flex justify-start">
-            <span className="bg-[#D4AF37] px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg">
-              Marian Apparition
-            </span>
-          </div>
-
+        <div className="relative h-full flex flex-col justify-end p-6 text-white">
           {/* Bottom Content */}
           <div>
             {/* Location */}
