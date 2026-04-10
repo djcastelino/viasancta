@@ -10,6 +10,9 @@ interface ApparitionCardProps {
 export default function ApparitionCard({ apparition, onClick }: ApparitionCardProps) {
   const [imageError, setImageError] = useState(false);
 
+  // Get AI cover image (first image) or fallback
+  const coverImage = apparition.images?.[0];
+
   // Fallback landscape images (free Unsplash images of churches/cathedrals/religious sites)
   const landscapes = [
     'https://images.unsplash.com/photo-1547586696-c1e8e8a34325?w=800&q=80', // Church
@@ -26,6 +29,9 @@ export default function ApparitionCard({ apparition, onClick }: ApparitionCardPr
   const landscapeIndex = apparition.id % landscapes.length;
   const fallbackLandscape = landscapes[landscapeIndex];
 
+  // Use AI cover if available, otherwise fallback
+  const displayImage = (coverImage && !imageError) ? coverImage : fallbackLandscape;
+
   return (
     <div
       onClick={onClick}
@@ -34,7 +40,7 @@ export default function ApparitionCard({ apparition, onClick }: ApparitionCardPr
       <div className="relative h-96 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
         {/* Background Image */}
         <img
-          src={fallbackLandscape}
+          src={displayImage}
           alt={`${apparition.name}`}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           onError={() => setImageError(true)}
