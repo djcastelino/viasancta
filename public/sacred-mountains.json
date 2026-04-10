@@ -127,10 +127,16 @@
     ],
     "images": [
       {
+        "url": "/images/mountains/Mount of Olives.jpg",
+        "caption": "Renaissance artistic depiction of the Mount of Olives",
+        "attribution": "AI-generated Renaissance art",
+        "isHero": true
+      },
+      {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/2013-Aerial-Mount_of_Olives.jpg/640px-2013-Aerial-Mount_of_Olives.jpg",
         "caption": "Aerial view of the Mount of Olives overlooking Jerusalem",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
-        "isHero": true
+        "isHero": false
       },
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Garden_of_Gethsemane_2010.jpg/1280px-Garden_of_Gethsemane_2010.jpg",
