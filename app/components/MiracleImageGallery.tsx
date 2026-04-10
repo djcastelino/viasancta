@@ -20,14 +20,8 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
     return null; // Don't show gallery if no images
   }
 
-  // Skip first image ONLY if it's an AI cover (from "eucharistic miralces" folder)
-  // Otherwise show all images (authentic PDF photos)
-  const hasAICover = images.length > 0 && images[0]?.url?.includes('eucharistic miralces');
-  const galleryImages = hasAICover ? images.slice(1) : images;
-
-  if (galleryImages.length === 0) {
-    return null; // Don't show gallery if no images
-  }
+  // Show all images (authentic PDF photos from miracolieucaristici.org)
+  const galleryImages = images;
 
   return (
     <>
