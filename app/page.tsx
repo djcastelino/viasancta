@@ -239,8 +239,8 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="h-60 relative overflow-hidden">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Creevaghbaun_Lourdes_Grotto.jpg/800px-Creevaghbaun_Lourdes_Grotto.jpg"
-                  alt="Lourdes Grotto"
+                  src="/images/tours/marian-apparitions.png"
+                  alt="Renaissance depiction of Marian apparition - Blessed Virgin Mary in divine light"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -265,10 +265,10 @@ export default function Home() {
           <Link href="/stations-of-the-cross" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               <div className="h-60 relative overflow-hidden">
-                {/* Calvary at Burzet from Wikimedia Commons */}
+                {/* AI-generated Renaissance art */}
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_calvaire_%C3%A0_Burzet.jpg/800px-Le_calvaire_%C3%A0_Burzet.jpg"
-                  alt="Calvary at Burzet"
+                  src="/images/tours/stations-of-cross.png"
+                  alt="Renaissance depiction of Jesus carrying the cross - Via Dolorosa"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
