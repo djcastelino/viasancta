@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "verse": "“I am the bread of life,” Jesus told them. “Those who come to me will never be hungry; those who believe in me will never be thirsty.",
+    "verse": "\u201cI am the bread of life,\u201d Jesus told them. \u201cThose who come to me will never be hungry; those who believe in me will never be thirsty.",
     "reference": "John 6:35",
     "testament": "New",
     "category": "Provision",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "verse": "Jesus spoke to them again, saying, “I am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.” f",
+    "verse": "Jesus spoke to them again, saying, \u201cI am the light of the world. Whoever follows me will not walk in darkness, but will have the light of life.\u201d f",
     "reference": "John 8:12",
     "testament": "New",
     "category": "Guidance",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "verse": "(A)“I am the good shepherd, who is willing to die for the sheep.",
+    "verse": "(A)\u201cI am the good shepherd, who is willing to die for the sheep.",
     "reference": "John 10:11",
     "testament": "New",
     "category": "Love",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "verse": "Jesus told her, “I am the resurrection and the life; whoever believes in me, even if he dies, will live, k",
+    "verse": "Jesus told her, \u201cI am the resurrection and the life; whoever believes in me, even if he dies, will live, k",
     "reference": "John 11:25",
     "testament": "New",
     "category": "Hope",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "verse": "Jesus said to him, “I am the way, and the truth, and the life; no one comes to the Father, but by me.",
+    "verse": "Jesus said to him, \u201cI am the way, and the truth, and the life; no one comes to the Father, but by me.",
     "reference": "John 14:6",
     "testament": "New",
     "category": "Truth",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "verse": "“I am the real vine, and my Father is the gardener.",
+    "verse": "\u201cI am the real vine, and my Father is the gardener.",
     "reference": "John 15:1,4",
     "testament": "New",
     "category": "Abiding",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "verse": "i teaching them to observe all that I have commanded you. And behold, I am with you always, until the end of the age.” Except for Mt",
+    "verse": "i teaching them to observe all that I have commanded you. And behold, I am with you always, until the end of the age.\u201d Except for Mt",
     "reference": "Matthew 28:20",
     "testament": "New",
     "category": "Presence",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "verse": "“Peace is what I leave with you; it is my own peace that I give you. I do not give it as the world does. Do not be worried and upset; do not be afraid.",
+    "verse": "\u201cPeace is what I leave with you; it is my own peace that I give you. I do not give it as the world does. Do not be worried and upset; do not be afraid.",
     "reference": "John 14:27",
     "testament": "New",
     "category": "Peace",
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "verse": "* “Come to me, all you who labor and are burdened, and I will give you rest.",
+    "verse": "* \u201cCome to me, all you who labor and are burdened, and I will give you rest.",
     "reference": "Matthew 11:28",
     "testament": "New",
     "category": "Rest",
@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "verse": "The Lord is my shepherd, I shall not want; he makes me lie down in green pastures.He leads me beside still waters; he restores my soul.He leads me in paths of righteousness for his name’s sake.",
+    "verse": "The Lord is my shepherd, I shall not want; he makes me lie down in green pastures.He leads me beside still waters; he restores my soul.He leads me in paths of righteousness for his name\u2019s sake.",
     "reference": "Psalm 23:1-3",
     "testament": "Old",
     "category": "Provision",
@@ -118,7 +118,7 @@
   },
   {
     "id": 14,
-    "verse": "It is the L ORD who goes before you; he will be with you and will never fail you or forsake you. So do not fear or be dismayed.” g The Reading of the Law.",
+    "verse": "It is the L ORD who goes before you; he will be with you and will never fail you or forsake you. So do not fear or be dismayed.\u201d g The Reading of the Law.",
     "reference": "Deuteronomy 31:8",
     "testament": "Old",
     "category": "Presence",
@@ -127,7 +127,7 @@
   },
   {
     "id": 15,
-    "verse": "“Ask, and it will be given you; seek, and you will find; knock, and it will be opened to you.",
+    "verse": "\u201cAsk, and it will be given you; seek, and you will find; knock, and it will be opened to you.",
     "reference": "Matthew 7:7",
     "testament": "New",
     "category": "Prayer",
@@ -163,7 +163,7 @@
   },
   {
     "id": 19,
-    "verse": "Do not be afraid—I am with you! I am your God—let nothing terrify you!I will make you strong and help you; I will protect you and save you.",
+    "verse": "Do not be afraid\u2014I am with you! I am your God\u2014let nothing terrify you!I will make you strong and help you; I will protect you and save you.",
     "reference": "Isaiah 41:10",
     "testament": "Old",
     "category": "Strength",
@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "verse": "If you remain in me and my words remain in you, ask for whatever you want and it will be done for you. d",
+    "verse": "If you remain in me and my words remain in you, ask for whatever you want and it will be done for you.",
     "reference": "John 15:7",
     "testament": "New",
     "category": "Prayer",
@@ -190,7 +190,7 @@
   },
   {
     "id": 22,
-    "verse": "and teach them to obey everything I have commanded you. And I will be with you always, to the end of the age.”",
+    "verse": "and teach them to obey everything I have commanded you. And I will be with you always, to the end of the age.\u201d",
     "reference": "Matthew 28:20",
     "testament": "New",
     "category": "Presence",
@@ -244,7 +244,7 @@
   },
   {
     "id": 28,
-    "verse": "Be determined and confident. Do not be afraid of them. Your God, the Lord himself, will be with you. He will not fail you or abandon you.”",
+    "verse": "Be determined and confident. Do not be afraid of them. Your God, the Lord himself, will be with you. He will not fail you or abandon you.\u201d",
     "reference": "Deuteronomy 31:6",
     "testament": "Old",
     "category": "Courage",
@@ -280,7 +280,7 @@
   },
   {
     "id": 32,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 28:7",
     "testament": "Old",
     "category": "Strength",
@@ -307,7 +307,7 @@
   },
   {
     "id": 35,
-    "verse": "Have no anxiety at all, but in everything, by prayer and petition, with thanksgiving, make your requests known to God. e",
+    "verse": "Have no anxiety at all, but in everything, by prayer and petition, with thanksgiving, make your requests known to God.",
     "reference": "Philippians 4:6-7",
     "testament": "New",
     "category": "Peace",
@@ -316,7 +316,7 @@
   },
   {
     "id": 36,
-    "verse": "The Lord will fight for you, and you have only to be still.”",
+    "verse": "The Lord will fight for you, and you have only to be still.\u201d",
     "reference": "Exodus 14:14",
     "testament": "Old",
     "category": "Victory",
@@ -343,7 +343,7 @@
   },
   {
     "id": 39,
-    "verse": "For where two or three are gathered in my name, there am I in the midst of them.”",
+    "verse": "For where two or three are gathered in my name, there am I in the midst of them.\u201d",
     "reference": "Matthew 18:20",
     "testament": "New",
     "category": "Presence",
@@ -361,7 +361,7 @@
   },
   {
     "id": 41,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "2 Corinthians 12:9",
     "testament": "New",
     "category": "Grace",
@@ -388,7 +388,7 @@
   },
   {
     "id": 44,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 103:8",
     "testament": "Old",
     "category": "Mercy",
@@ -397,7 +397,7 @@
   },
   {
     "id": 45,
-    "verse": "And whatever you ask in prayer, you will receive, if you have faith.”",
+    "verse": "And whatever you ask in prayer, you will receive, if you have faith.\u201d",
     "reference": "Matthew 21:22",
     "testament": "New",
     "category": "Prayer",
@@ -415,7 +415,7 @@
   },
   {
     "id": 47,
-    "verse": "Therefore I tell you, all that you ask for in prayer, believe that you will receive it and it shall be yours. j",
+    "verse": "Therefore I tell you, all that you ask for in prayer, believe that you will receive it and it shall be yours.",
     "reference": "Mark 11:24",
     "testament": "New",
     "category": "Faith",
@@ -469,7 +469,7 @@
   },
   {
     "id": 53,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "1 Corinthians 10:13",
     "testament": "New",
     "category": "Faithfulness",
@@ -487,7 +487,7 @@
   },
   {
     "id": 55,
-    "verse": "(A)The Son of Man came to seek and to save the lost.”",
+    "verse": "(A)The Son of Man came to seek and to save the lost.\u201d",
     "reference": "Luke 19:10",
     "testament": "New",
     "category": "Salvation",
@@ -523,7 +523,7 @@
   },
   {
     "id": 59,
-    "verse": "Whoever believes in me, as scripture says: ‘Rivers of living water will flow from within him.’” v",
+    "verse": "Whoever believes in me, as scripture says: \u2018Rivers of living water will flow from within him.\u2019\u201d v",
     "reference": "John 7:38",
     "testament": "New",
     "category": "Holy Spirit",
@@ -541,7 +541,7 @@
   },
   {
     "id": 61,
-    "verse": "(A)“Happy are those whose greatest desire is to do what God requires; God will satisfy them fully!",
+    "verse": "(A)\u201cHappy are those whose greatest desire is to do what God requires; God will satisfy them fully!",
     "reference": "Matthew 5:6",
     "testament": "New",
     "category": "Blessing",
@@ -550,7 +550,7 @@
   },
   {
     "id": 62,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 145:18",
     "testament": "Old",
     "category": "Presence",
@@ -577,7 +577,7 @@
   },
   {
     "id": 65,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 91:4",
     "testament": "Old",
     "category": "Refuge",
@@ -586,7 +586,7 @@
   },
   {
     "id": 66,
-    "verse": "but whoever drinks of the water that I shall give him will never thirst; the water that I shall give him will become in him a spring of water welling up to eternal life.”",
+    "verse": "but whoever drinks of the water that I shall give him will never thirst; the water that I shall give him will become in him a spring of water welling up to eternal life.\u201d",
     "reference": "John 4:14",
     "testament": "New",
     "category": "Eternal Life",
@@ -613,7 +613,7 @@
   },
   {
     "id": 69,
-    "verse": "“Blessed are the pure in heart, for they shall see God.",
+    "verse": "\u201cBlessed are the pure in heart, for they shall see God.",
     "reference": "Matthew 5:8",
     "testament": "New",
     "category": "Blessing",
@@ -631,7 +631,7 @@
   },
   {
     "id": 71,
-    "verse": "Blessed are the merciful, for they will be shown mercy. d",
+    "verse": "Blessed are the merciful, for they will be shown mercy.",
     "reference": "Matthew 5:7",
     "testament": "New",
     "category": "Mercy",
@@ -649,7 +649,7 @@
   },
   {
     "id": 73,
-    "verse": "“Happy are those who work for peace; God will call them his children!",
+    "verse": "\u201cHappy are those who work for peace; God will call them his children!",
     "reference": "Matthew 5:9",
     "testament": "New",
     "category": "Peace",
@@ -658,7 +658,7 @@
   },
   {
     "id": 74,
-    "verse": "The L ORD ’s acts of mercy are not exhausted, his compassion is not spent; k",
+    "verse": "The L ORD \u2019s acts of mercy are not exhausted, his compassion is not spent; k",
     "reference": "Lamentations 3:22-23",
     "testament": "Old",
     "category": "Faithfulness",
@@ -667,7 +667,7 @@
   },
   {
     "id": 75,
-    "verse": "“Blessed are those who are persecuted for righteousness’ sake, for theirs is the kingdom of heaven.",
+    "verse": "\u201cBlessed are those who are persecuted for righteousness\u2019 sake, for theirs is the kingdom of heaven.",
     "reference": "Matthew 5:10",
     "testament": "New",
     "category": "Blessing",
@@ -685,7 +685,7 @@
   },
   {
     "id": 77,
-    "verse": "He said to them, “Because of your little faith. Amen, I say to you, if you have faith the size of a mustard seed, you will say to this mountain, ‘Move from here to there,’ and it will move. Nothing will be impossible for you.” The Second Prediction of the Passion. *",
+    "verse": "He said to them, \u201cBecause of your little faith. Amen, I say to you, if you have faith the size of a mustard seed, you will say to this mountain, \u2018Move from here to there,\u2019 and it will move. Nothing will be impossible for you.\u201d The Second Prediction of the Passion. *",
     "reference": "Matthew 17:20",
     "testament": "New",
     "category": "Faith",
@@ -703,7 +703,7 @@
   },
   {
     "id": 79,
-    "verse": "(A)Jesus answered, “‘Love the Lord your God with all your heart, with all your soul, and with all your mind.’ This is the greatest and the most important commandment.",
+    "verse": "(A)Jesus answered, \u201c\u2018Love the Lord your God with all your heart, with all your soul, and with all your mind.\u2019 This is the greatest and the most important commandment.",
     "reference": "Matthew 22:37-38",
     "testament": "New",
     "category": "Love",
@@ -712,7 +712,7 @@
   },
   {
     "id": 80,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 145:17",
     "testament": "Old",
     "category": "Faithfulness",
@@ -721,7 +721,7 @@
   },
   {
     "id": 81,
-    "verse": "“Therefore do not be anxious about tomorrow, for tomorrow will be anxious for itself. Let the day’s own trouble be sufficient for the day.",
+    "verse": "\u201cTherefore do not be anxious about tomorrow, for tomorrow will be anxious for itself. Let the day\u2019s own trouble be sufficient for the day.",
     "reference": "Matthew 6:34",
     "testament": "New",
     "category": "Trust",
@@ -757,7 +757,7 @@
   },
   {
     "id": 85,
-    "verse": "For even the Son of Man did not come to be served; he came to serve and to give his life to redeem many people.”",
+    "verse": "For even the Son of Man did not come to be served; he came to serve and to give his life to redeem many people.\u201d",
     "reference": "Mark 10:45",
     "testament": "New",
     "category": "Salvation",
@@ -775,7 +775,7 @@
   },
   {
     "id": 87,
-    "verse": "Jesus answered him, “If a man loves me, he will keep my word, and my Father will love him, and we will come to him and make our home with him.",
+    "verse": "Jesus answered him, \u201cIf a man loves me, he will keep my word, and my Father will love him, and we will come to him and make our home with him.",
     "reference": "John 14:23",
     "testament": "New",
     "category": "Presence",
@@ -784,7 +784,7 @@
   },
   {
     "id": 88,
-    "verse": "“Stop fighting,” he says, “and know that I am God, supreme among the nations, supreme over the world.”",
+    "verse": "\u201cStop fighting,\u201d he says, \u201cand know that I am God, supreme among the nations, supreme over the world.\u201d",
     "reference": "Psalm 46:10",
     "testament": "Old",
     "category": "Peace",
@@ -793,7 +793,7 @@
   },
   {
     "id": 89,
-    "verse": "* “Do not let your hearts be troubled. You have faith in God; have faith also in me.",
+    "verse": "* \u201cDo not let your hearts be troubled. You have faith in God; have faith also in me.",
     "reference": "John 14:1",
     "testament": "New",
     "category": "Peace",
@@ -820,7 +820,7 @@
   },
   {
     "id": 92,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 118:6",
     "testament": "Old",
     "category": "Courage",
@@ -874,7 +874,7 @@
   },
   {
     "id": 98,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 9:9",
     "testament": "Old",
     "category": "Shelter",
@@ -901,7 +901,7 @@
   },
   {
     "id": 101,
-    "verse": "Rejoice in hope, endure in affliction, persevere in prayer. i",
+    "verse": "Rejoice in hope, endure in affliction, persevere in prayer.",
     "reference": "Romans 12:12",
     "testament": "New",
     "category": "Hope",
@@ -928,7 +928,7 @@
   },
   {
     "id": 104,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 121:7",
     "testament": "Old",
     "category": "Protection",
@@ -937,7 +937,7 @@
   },
   {
     "id": 105,
-    "verse": "I have said this to you, that in me you may have peace. In the world you have tribulation; but be of good cheer, I have overcome the world.”",
+    "verse": "I have said this to you, that in me you may have peace. In the world you have tribulation; but be of good cheer, I have overcome the world.\u201d",
     "reference": "John 16:33",
     "testament": "New",
     "category": "Victory",
@@ -1009,7 +1009,7 @@
   },
   {
     "id": 113,
-    "verse": "* No one has greater love than this, j to lay down one’s life for one’s friends.",
+    "verse": "* No one has greater love than this, j to lay down one\u2019s life for one\u2019s friends.",
     "reference": "John 15:13",
     "testament": "New",
     "category": "Love",
@@ -1018,7 +1018,7 @@
   },
   {
     "id": 114,
-    "verse": "Have I not commanded you? Be strong and of good courage; be not frightened, neither be dismayed; for the Lord your God is with you wherever you go.”",
+    "verse": "Have I not commanded you? Be strong and of good courage; be not frightened, neither be dismayed; for the Lord your God is with you wherever you go.\u201d",
     "reference": "Joshua 1:9",
     "testament": "Old",
     "category": "Presence",
@@ -1090,7 +1090,7 @@
   },
   {
     "id": 122,
-    "verse": "For God did not send his Son into the world to condemn the world, but that the world might be saved through him. l",
+    "verse": "For God did not send his Son into the world to condemn the world, but that the world might be saved through him.",
     "reference": "John 3:17",
     "testament": "New",
     "category": "Salvation",
@@ -1099,7 +1099,7 @@
   },
   {
     "id": 123,
-    "verse": "The Lord will fight for you, and you have only to be still.”",
+    "verse": "The Lord will fight for you, and you have only to be still.\u201d",
     "reference": "Exodus 14:14",
     "testament": "Old",
     "category": "Victory",
@@ -1144,7 +1144,7 @@
   },
   {
     "id": 128,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "1 John 5:14",
     "testament": "New",
     "category": "Prayer",
@@ -1153,7 +1153,7 @@
   },
   {
     "id": 129,
-    "verse": "For if you return to the Lord, your brethren and your children will find compassion with their captors, and return to this land. For the Lord your God is gracious and merciful, and will not turn away his face from you, if you return to him.”",
+    "verse": "For if you return to the Lord, your brethren and your children will find compassion with their captors, and return to this land. For the Lord your God is gracious and merciful, and will not turn away his face from you, if you return to him.\u201d",
     "reference": "2 Chronicles 30:9",
     "testament": "Old",
     "category": "Mercy",
@@ -1171,7 +1171,7 @@
   },
   {
     "id": 131,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 29:11",
     "testament": "Old",
     "category": "Peace",
@@ -1198,7 +1198,7 @@
   },
   {
     "id": 134,
-    "verse": "With firm purpose you maintain peace; in peace, because of our trust in you.” c",
+    "verse": "With firm purpose you maintain peace; in peace, because of our trust in you.\u201d c",
     "reference": "Isaiah 26:3",
     "testament": "Old",
     "category": "Peace",
@@ -1225,7 +1225,7 @@
   },
   {
     "id": 137,
-    "verse": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you of two minds. e",
+    "verse": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners, and purify your hearts, you of two minds.",
     "reference": "James 4:8",
     "testament": "New",
     "category": "Intimacy",
@@ -1306,7 +1306,7 @@
   },
   {
     "id": 146,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 55:22",
     "testament": "Old",
     "category": "Care",
@@ -1414,7 +1414,7 @@
   },
   {
     "id": 158,
-    "verse": "For God formed us to be imperishable; the image of his own nature he made us. p",
+    "verse": "For God formed us to be imperishable; the image of his own nature he made us.",
     "reference": "Wisdom 2:23",
     "testament": "Old",
     "category": "Identity",
@@ -1441,7 +1441,7 @@
   },
   {
     "id": 161,
-    "verse": "For she is the reflection of eternal light, the spotless mirror of the power of God, the image of his goodness. m",
+    "verse": "For she is the reflection of eternal light, the spotless mirror of the power of God, the image of his goodness.",
     "reference": "Wisdom 7:26",
     "testament": "Old",
     "category": "Wisdom",
@@ -1522,7 +1522,7 @@
   },
   {
     "id": 170,
-    "verse": "Those who fear the Lord do not disobey his words; those who love him keep his ways. d",
+    "verse": "Those who fear the Lord do not disobey his words; those who love him keep his ways.",
     "reference": "Sirach 2:15",
     "testament": "Old",
     "category": "Obedience",
@@ -1549,7 +1549,7 @@
   },
   {
     "id": 173,
-    "verse": "Although she is one, she can do all things, and she renews everything while herself perduring; Passing into holy souls from age to age, she produces friends of God and prophets. n",
+    "verse": "Although she is one, she can do all things, and she renews everything while herself perduring; Passing into holy souls from age to age, she produces friends of God and prophets.",
     "reference": "Wisdom 7:27",
     "testament": "Old",
     "category": "Renewal",
@@ -1711,7 +1711,7 @@
   },
   {
     "id": 191,
-    "verse": "Because he is found by those who do not test him, and manifests himself to those who do not disbelieve him. c",
+    "verse": "Because he is found by those who do not test him, and manifests himself to those who do not disbelieve him.",
     "reference": "Wisdom 1:2",
     "testament": "Old",
     "category": "Faith",
@@ -1765,7 +1765,7 @@
   },
   {
     "id": 197,
-    "verse": "Resplendent and unfading is Wisdom, and she is readily perceived by those who love her, and found by those who seek her. f",
+    "verse": "Resplendent and unfading is Wisdom, and she is readily perceived by those who love her, and found by those who seek her.",
     "reference": "Wisdom 6:12",
     "testament": "Old",
     "category": "Wisdom",
@@ -1819,7 +1819,7 @@
   },
   {
     "id": 203,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "2 Thessalonians 3:5",
     "testament": "New",
     "category": "Love",
@@ -1927,7 +1927,7 @@
   },
   {
     "id": 215,
-    "verse": "Therefore, do not throw away your confidence; it will have great recompense. b",
+    "verse": "Therefore, do not throw away your confidence; it will have great recompense.",
     "reference": "Hebrews 10:35",
     "testament": "New",
     "category": "Confidence",
@@ -1936,7 +1936,7 @@
   },
   {
     "id": 216,
-    "verse": "Anxiety in a man’s heart weighs him down, but a good word makes him glad.",
+    "verse": "Anxiety in a man\u2019s heart weighs him down, but a good word makes him glad.",
     "reference": "Proverbs 12:25",
     "testament": "Old",
     "category": "Encouragement",
@@ -1990,7 +1990,7 @@
   },
   {
     "id": 222,
-    "verse": "A man’s mind plans his way, but the Lord directs his steps.",
+    "verse": "A man\u2019s mind plans his way, but the Lord directs his steps.",
     "reference": "Proverbs 16:9",
     "testament": "Old",
     "category": "Providence",
@@ -2035,7 +2035,7 @@
   },
   {
     "id": 227,
-    "verse": "Let your life be free from love of money but be content with what you have, for he has said, “I will never forsake you or abandon you.” d",
+    "verse": "Let your life be free from love of money but be content with what you have, for he has said, \u201cI will never forsake you or abandon you.\u201d d",
     "reference": "Hebrews 13:5",
     "testament": "New",
     "category": "Contentment",
@@ -2089,7 +2089,7 @@
   },
   {
     "id": 233,
-    "verse": "Through him let us continually offer God a sacrifice of praise, that is, the fruit of lips that confess his name. k",
+    "verse": "Through him let us continually offer God a sacrifice of praise, that is, the fruit of lips that confess his name.",
     "reference": "Hebrews 13:15",
     "testament": "New",
     "category": "Praise",
@@ -2143,7 +2143,7 @@
   },
   {
     "id": 239,
-    "verse": "But if any of you lacks wisdom, he should ask God who gives to all generously and ungrudgingly, and he will be given it. c",
+    "verse": "But if any of you lacks wisdom, he should ask God who gives to all generously and ungrudgingly, and he will be given it.",
     "reference": "James 1:5",
     "testament": "New",
     "category": "Wisdom",
@@ -2287,7 +2287,7 @@
   },
   {
     "id": 255,
-    "verse": "“And if you obey the voice of the Lord your God, being careful to do all his commandments which I command you this day, the Lord your God will set you high above all the nations of the earth.",
+    "verse": "\u201cAnd if you obey the voice of the Lord your God, being careful to do all his commandments which I command you this day, the Lord your God will set you high above all the nations of the earth.",
     "reference": "Deuteronomy 28:1",
     "testament": "Old",
     "category": "Obedience",
@@ -2332,7 +2332,7 @@
   },
   {
     "id": 260,
-    "verse": "But the wisdom from above is first of all pure, then peaceable, gentle, compliant, full of mercy and good fruits, without inconstancy or insincerity. e",
+    "verse": "But the wisdom from above is first of all pure, then peaceable, gentle, compliant, full of mercy and good fruits, without inconstancy or insincerity.",
     "reference": "James 3:17",
     "testament": "New",
     "category": "Wisdom",
@@ -2386,7 +2386,7 @@
   },
   {
     "id": 266,
-    "verse": "Humble yourselves before the Lord and he will exalt you. f",
+    "verse": "Humble yourselves before the Lord and he will exalt you.",
     "reference": "James 4:10",
     "testament": "New",
     "category": "Humility",
@@ -2467,7 +2467,7 @@
   },
   {
     "id": 275,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "1 Peter 1:4",
     "testament": "New",
     "category": "Inheritance",
@@ -2494,7 +2494,7 @@
   },
   {
     "id": 278,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 100:3",
     "testament": "Old",
     "category": "Identity",
@@ -2521,7 +2521,7 @@
   },
   {
     "id": 281,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "1 Peter 1:8",
     "testament": "New",
     "category": "Joy",
@@ -2548,7 +2548,7 @@
   },
   {
     "id": 284,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 91:16",
     "testament": "Old",
     "category": "Life",
@@ -2557,7 +2557,7 @@
   },
   {
     "id": 285,
-    "verse": "But you are a chosen race, a royal priesthood, a holy nation, God’s own people, that you may declare the wonderful deeds of him who called you out of darkness into his marvelous light.",
+    "verse": "But you are a chosen race, a royal priesthood, a holy nation, God\u2019s own people, that you may declare the wonderful deeds of him who called you out of darkness into his marvelous light.",
     "reference": "1 Peter 2:9",
     "testament": "New",
     "category": "Identity",
@@ -2575,7 +2575,7 @@
   },
   {
     "id": 287,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "1 Peter 2:24",
     "testament": "New",
     "category": "Healing",
@@ -2584,7 +2584,7 @@
   },
   {
     "id": 288,
-    "verse": "will say to the Lord, “My refuge and my fortress; my God, in whom I trust.”",
+    "verse": "will say to the Lord, \u201cMy refuge and my fortress; my God, in whom I trust.\u201d",
     "reference": "Psalm 91:2",
     "testament": "Old",
     "category": "Trust",
@@ -2602,7 +2602,7 @@
   },
   {
     "id": 290,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 91:3",
     "testament": "Old",
     "category": "Protection",
@@ -2629,7 +2629,7 @@
   },
   {
     "id": 293,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "2 Peter 1:3",
     "testament": "New",
     "category": "Power",
@@ -2656,7 +2656,7 @@
   },
   {
     "id": 296,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 91:12",
     "testament": "Old",
     "category": "Protection",
@@ -2683,7 +2683,7 @@
   },
   {
     "id": 299,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "2 Peter 3:18",
     "testament": "New",
     "category": "Growth",
@@ -2728,7 +2728,7 @@
   },
   {
     "id": 304,
-    "verse": "I will make you well again; I will heal your wounds, though your enemies say,‘Zion is an outcast; no one cares about her.’I, the Lord, have spoken.”",
+    "verse": "I will make you well again; I will heal your wounds, though your enemies say,\u2018Zion is an outcast; no one cares about her.\u2019I, the Lord, have spoken.\u201d",
     "reference": "Jeremiah 30:17",
     "testament": "Old",
     "category": "Healing",
@@ -2764,7 +2764,7 @@
   },
   {
     "id": 308,
-    "verse": "I will give them a heart to know me, that I am the L ORD . They shall be my people and I will be their God, for they shall return to me with their whole heart. e",
+    "verse": "I will give them a heart to know me, that I am the L ORD . They shall be my people and I will be their God, for they shall return to me with their whole heart.",
     "reference": "Jeremiah 24:7",
     "testament": "Old",
     "category": "Knowing God",
@@ -2782,7 +2782,7 @@
   },
   {
     "id": 310,
-    "verse": "(A)The Lord says, “The time is coming when I will make a new covenant with the people of Israel and with the people of Judah.",
+    "verse": "(A)The Lord says, \u201cThe time is coming when I will make a new covenant with the people of Israel and with the people of Judah.",
     "reference": "Jeremiah 31:31",
     "testament": "Old",
     "category": "Covenant",
@@ -2818,7 +2818,7 @@
   },
   {
     "id": 314,
-    "verse": "They will no longer teach their friends and relatives, “Know the L ORD !” Everyone, from least to greatest, shall know me—oracle of the L ORD —for I will forgive their iniquity and no longer remember their sin. u Certainty of God’s Promise",
+    "verse": "They will no longer teach their friends and relatives, \u201cKnow the L ORD !\u201d Everyone, from least to greatest, shall know me\u2014oracle of the L ORD \u2014for I will forgive their iniquity and no longer remember their sin. u Certainty of God\u2019s Promise",
     "reference": "Jeremiah 31:34",
     "testament": "Old",
     "category": "Forgiveness",
@@ -2872,7 +2872,7 @@
   },
   {
     "id": 320,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 32:8",
     "testament": "Old",
     "category": "Guidance",
@@ -2881,7 +2881,7 @@
   },
   {
     "id": 321,
-    "verse": "For by grace you have been saved through faith; and this is not your own doing, it is the gift of God—",
+    "verse": "For by grace you have been saved through faith; and this is not your own doing, it is the gift of God\u2014",
     "reference": "Ephesians 2:8",
     "testament": "New",
     "category": "Grace",
@@ -2926,7 +2926,7 @@
   },
   {
     "id": 326,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 33:4",
     "testament": "Old",
     "category": "Faithfulness",
@@ -2953,7 +2953,7 @@
   },
   {
     "id": 329,
-    "verse": "No foul language should come out of your mouths, but only such as is good for needed edification, that it may impart grace to those who hear. x",
+    "verse": "No foul language should come out of your mouths, but only such as is good for needed edification, that it may impart grace to those who hear.",
     "reference": "Ephesians 4:29",
     "testament": "New",
     "category": "Words",
@@ -2980,7 +2980,7 @@
   },
   {
     "id": 332,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 33:18",
     "testament": "Old",
     "category": "Hope",
@@ -3007,7 +3007,7 @@
   },
   {
     "id": 335,
-    "verse": "I have the strength for everything through him who empowers me. k",
+    "verse": "I have the strength for everything through him who empowers me.",
     "reference": "Philippians 4:13",
     "testament": "New",
     "category": "Strength",
@@ -3034,7 +3034,7 @@
   },
   {
     "id": 338,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 33:22",
     "testament": "Old",
     "category": "Love",
@@ -3061,7 +3061,7 @@
   },
   {
     "id": 341,
-    "verse": "Have no anxiety at all, but in everything, by prayer and petition, with thanksgiving, make your requests known to God. e",
+    "verse": "Have no anxiety at all, but in everything, by prayer and petition, with thanksgiving, make your requests known to God.",
     "reference": "Philippians 4:6",
     "testament": "New",
     "category": "Peace",
@@ -3088,7 +3088,7 @@
   },
   {
     "id": 344,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 34:19",
     "testament": "Old",
     "category": "Deliverance",
@@ -3142,7 +3142,7 @@
   },
   {
     "id": 350,
-    "verse": "We couldn’t find this page.",
+    "verse": "We couldn\u2019t find this page.",
     "reference": "Psalm 37:5-6",
     "testament": "Old",
     "category": "Trust",
@@ -3151,7 +3151,7 @@
   },
   {
     "id": 351,
-    "verse": "He who has an ear, let him hear what the Spirit says to the churches. To him who conquers I will grant to eat of the tree of life, which is in the paradise of God.’",
+    "verse": "He who has an ear, let him hear what the Spirit says to the churches. To him who conquers I will grant to eat of the tree of life, which is in the paradise of God.\u2019",
     "reference": "Revelation 2:7",
     "testament": "New",
     "category": "Victory",
@@ -3169,7 +3169,7 @@
   },
   {
     "id": 353,
-    "verse": "“‘“Whoever has ears ought to hear what the Spirit says to the churches. To the victor I shall give some of the hidden manna; shall also give a white amulet upon which is inscribed a new name, which no one knows except the one who receives it.”’ e To Thyatira. *",
+    "verse": "\u201c\u2018\u201cWhoever has ears ought to hear what the Spirit says to the churches. To the victor I shall give some of the hidden manna; shall also give a white amulet upon which is inscribed a new name, which no one knows except the one who receives it.\u201d\u2019 e To Thyatira. *",
     "reference": "Revelation 2:17",
     "testament": "New",
     "category": "Identity",
@@ -3223,7 +3223,7 @@
   },
   {
     "id": 359,
-    "verse": "“‘“The victor I will make into a pillar in the temple of my God, and he will never leave it again. On him I will inscribe the name of my God and the name of the city of my God, the new Jerusalem, which comes down out of heaven from my God, as well as my new name. g",
+    "verse": "\u201c\u2018\u201cThe victor I will make into a pillar in the temple of my God, and he will never leave it again. On him I will inscribe the name of my God and the name of the city of my God, the new Jerusalem, which comes down out of heaven from my God, as well as my new name.",
     "reference": "Revelation 3:12",
     "testament": "New",
     "category": "Permanence",
@@ -3250,7 +3250,7 @@
   },
   {
     "id": 362,
-    "verse": "The Spirit and the bride say, “Come.” Let the hearer say, “Come.” Let the one who thirsts come forward, and the one who wants it receive the gift of life-giving water. k",
+    "verse": "The Spirit and the bride say, \u201cCome.\u201d Let the hearer say, \u201cCome.\u201d Let the one who thirsts come forward, and the one who wants it receive the gift of life-giving water.",
     "reference": "Revelation 22:17",
     "testament": "New",
     "category": "Invitation",
@@ -3259,7 +3259,7 @@
   },
   {
     "id": 363,
-    "verse": "He who testifies to these things says, “Surely I am coming soon.” Amen. Come, Lord Jesus!",
+    "verse": "He who testifies to these things says, \u201cSurely I am coming soon.\u201d Amen. Come, Lord Jesus!",
     "reference": "Revelation 22:20",
     "testament": "New",
     "category": "Return",
