@@ -1,6 +1,24 @@
 [
   {
     "id": 1,
+    "verse": "Everything is possible for God.",
+    "reference": "Mark 10:27",
+    "testament": "NT",
+    "category": "God's Power",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 2,
+    "verse": "I AM who I AM.",
+    "reference": "Exodus 3:14",
+    "testament": "OT",
+    "category": "God's Name",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 3,
     "verse": "For you can do nothing without me.",
     "reference": "John 15:5",
     "testament": "NT",
@@ -9,16 +27,7 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 2,
-    "verse": "For the joy of the Lord is your strength.",
-    "reference": "Nehemiah 8:10",
-    "testament": "OT",
-    "category": "Joy",
-    "difficulty": "short",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 3,
+    "id": 4,
     "verse": "My people are destroyed for lack of knowledge.",
     "reference": "Hosea 4:6",
     "testament": "OT",
@@ -27,25 +36,34 @@
     "bibleTranslation": "NRSVCE"
   },
   {
-    "id": 4,
-    "verse": "As for my family and me, we will serve the Lord.",
-    "reference": "Joshua 24:15",
+    "id": 5,
+    "verse": "Be still, and know that I am God.",
+    "reference": "Psalm 46:10",
     "testament": "OT",
-    "category": "Commitment",
+    "category": "Peace",
     "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 5,
-    "verse": "My presence will go with you, and I will give you rest.",
-    "reference": "Exodus 33:14",
+    "id": 6,
+    "verse": "He has set the right time for everything.",
+    "reference": "Ecclesiastes 3:11",
     "testament": "OT",
-    "category": "Rest",
+    "category": "God's Timing",
     "difficulty": "short",
-    "bibleTranslation": "RSV2CE"
+    "bibleTranslation": "Good News"
   },
   {
-    "id": 6,
+    "id": 7,
+    "verse": "For the joy of the Lord is your strength.",
+    "reference": "Nehemiah 8:10",
+    "testament": "OT",
+    "category": "Joy",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 8,
     "verse": "Jesus Christ is the same yesterday, today and forever.",
     "reference": "Hebrews 13:8",
     "testament": "NT",
@@ -54,31 +72,13 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 7,
-    "verse": "Your word is a lamp to guide me and a light for my path.",
-    "reference": "Psalms 119:105",
-    "testament": "OT",
-    "category": "Word of God",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 8,
-    "verse": "Leave all your worries with him, because he cares for you.",
-    "reference": "1 Peter 5:7",
-    "testament": "NT",
-    "category": "Trust",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
     "id": 9,
-    "verse": "May the Lord give you increase, both you and your children.",
-    "reference": "Psalms 115:14",
-    "testament": "OT",
-    "category": "Blessing",
+    "verse": "It is more blessed to give than to receive.",
+    "reference": "Acts 20:35",
+    "testament": "NT",
+    "category": "Generosity",
     "difficulty": "short",
-    "bibleTranslation": "NRSVCE"
+    "bibleTranslation": "RSV2CE"
   },
   {
     "id": 10,
@@ -91,249 +91,6 @@
   },
   {
     "id": 11,
-    "verse": "Take delight in the Lord, and he will give you the desires of your heart.",
-    "reference": "Psalms 37:4",
-    "testament": "OT",
-    "category": "Trust",
-    "difficulty": "short",
-    "bibleTranslation": "RSV2CE"
-  },
-  {
-    "id": 12,
-    "verse": "I have come in order that you might have life\u2014life in all its fullness.",
-    "reference": "John 10:10",
-    "testament": "NT",
-    "category": "Abundant Life",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 13,
-    "verse": "The people whom I formed for myself so that they might declare my praise.",
-    "reference": "Isaiah 43:21",
-    "testament": "OT",
-    "category": "Purpose",
-    "difficulty": "short",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 14,
-    "verse": "You will succeed not by military might or by your strength but by my spirit.",
-    "reference": "Zechariah 4:6",
-    "testament": "OT",
-    "category": "Holy Spirit",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 15,
-    "verse": "But you, O Lord, are a shield around me, my glory and the lifter of my head.",
-    "reference": "Psalms 3:3",
-    "testament": "OT",
-    "category": "Protection",
-    "difficulty": "medium",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 16,
-    "verse": "In your presence there is fullness of joy; in your right hand are pleasures forevermore.",
-    "reference": "Psalms 16:11",
-    "testament": "OT",
-    "category": "Joy",
-    "difficulty": "medium",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 17,
-    "verse": "I will ask the Father, and he will give you another Helper, who will stay with you forever.",
-    "reference": "John 14:16",
-    "testament": "NT",
-    "category": "Holy Spirit",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 18,
-    "verse": "The Lord is good, a stronghold in a day of trouble; he protects those who take refuge in him.",
-    "reference": "Nahum 1:7",
-    "testament": "OT",
-    "category": "Protection",
-    "difficulty": "medium",
-    "bibleTranslation": "RSV2CE"
-  },
-  {
-    "id": 19,
-    "verse": "Humble yourselves therefore under the mighty hand of God, so that he may exalt you in due time.",
-    "reference": "1 Peter 5:6",
-    "testament": "NT",
-    "category": "Humility",
-    "difficulty": "medium",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 20,
-    "verse": "It is more blessed to give than to receive.",
-    "reference": "Acts 20:35",
-    "testament": "NT",
-    "category": "Generosity",
-    "difficulty": "short",
-    "bibleTranslation": "RSV2CE"
-  },
-  {
-    "id": 21,
-    "verse": "I am the bread of life. Whoever comes to me will never be hungry, and whoever believes in me will never be thirsty.",
-    "reference": "John 6:35",
-    "testament": "NT",
-    "category": "Salvation",
-    "difficulty": "medium",
-    "bibleTranslation": "NRSVCE"
-  },
-  {
-    "id": 22,
-    "verse": "The Lord has promised that he himself will be a wall of fire around the city to protect it and that he will live there in all his glory.",
-    "reference": "Zechariah 2:5",
-    "testament": "OT",
-    "category": "Protection",
-    "difficulty": "long",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 23,
-    "verse": "And God is able to provide you with every blessing in abundance, so that you may always have enough of everything and may provide in abundance for every good work.",
-    "reference": "2 Corinthians 9:8",
-    "testament": "NT",
-    "category": "Provision",
-    "difficulty": "long",
-    "bibleTranslation": "RSV2CE"
-  },
-  {
-    "id": 24,
-    "verse": "But for you who obey me, my saving power will rise on you like the sun and bring healing like sun's rays. You will be as free and happy as calves let out of a stall.",
-    "reference": "Malachi 4:2",
-    "testament": "OT",
-    "category": "Healing",
-    "difficulty": "long",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 25,
-    "verse": "The Lord your God is with you; his power gives you victory. The Lord will take delight in you, and in his love he will give you new life. He will sing and be joyful over you.",
-    "reference": "Zephaniah 3:17",
-    "testament": "OT",
-    "category": "God's Love",
-    "difficulty": "long",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 26,
-    "verse": "The word of God is alive and active, sharper than any double-edged sword. It cuts all the way through, to where soul and spirit meet, to where joints and marrow come together. It judges the desires and thoughts of man's heart.",
-    "reference": "Hebrews 4:12",
-    "testament": "NT",
-    "category": "Word of God",
-    "difficulty": "long",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 27,
-    "verse": "The LORD says, 'I will teach you the way you should go; I will instruct you and advise you'",
-    "reference": "Psalms 32:8",
-    "testament": "OT",
-    "category": "Guidance",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 28,
-    "verse": "Call to me and I will answer you, I will tell you wonderful and marvelous things that you know nothing about",
-    "reference": "Jeremiah 33:3",
-    "testament": "OT",
-    "category": "Prayer",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 29,
-    "verse": "Be still, and know that I am God.",
-    "reference": "Psalm 46:10",
-    "testament": "OT",
-    "category": "Peace",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 30,
-    "verse": "I am the light of the world. Whoever follows me will have the light of life and will never walk in darkness.",
-    "reference": "John 8:12",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 31,
-    "verse": "I am the gate. Those who come in by me will be saved; they will come in and go out and find pasture.",
-    "reference": "John 10:9",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 32,
-    "verse": "I am the good shepherd. The good shepherd is willing to die for the sheep.",
-    "reference": "John 10:11",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 33,
-    "verse": "I am the resurrection and the life. Those who believe in me will live, even though they die.",
-    "reference": "John 11:25",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 34,
-    "verse": "I am the way, the truth, and the life; no one goes to the Father except by me.",
-    "reference": "John 14:6",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 35,
-    "verse": "I am the real vine, and my Father is the gardener.",
-    "reference": "John 15:1",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 36,
-    "verse": "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life.",
-    "reference": "John 3:16",
-    "testament": "NT",
-    "category": "Salvation",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 37,
-    "verse": "Come to me, all of you who are tired from carrying heavy loads, and I will give you rest.",
-    "reference": "Matthew 11:28",
-    "testament": "NT",
-    "category": "Rest",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 38,
     "verse": "The Lord is my shepherd; I have everything I need.",
     "reference": "Psalm 23:1",
     "testament": "OT",
@@ -342,25 +99,169 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 39,
-    "verse": "This is the day that the Lord has made, let us rejoice and be glad in it.",
-    "reference": "Psalm 118:24",
+    "id": 12,
+    "verse": "The Lord is my protector; he is my strong fortress.",
+    "reference": "Psalm 18:2",
     "testament": "OT",
-    "category": "Joy",
+    "category": "Protection",
     "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 40,
-    "verse": "Trust in the Lord with all your heart. Never rely on what you think you know. Remember the Lord in everything you do, and he will show you the right way.",
-    "reference": "Proverbs 3:5-6",
-    "testament": "OT",
-    "category": "Trust",
-    "difficulty": "medium",
+    "id": 13,
+    "verse": "If God is for us, who can be against us?",
+    "reference": "Romans 8:31",
+    "testament": "NT",
+    "category": "Assurance",
+    "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 41,
+    "id": 14,
+    "verse": "Seek the Lord and his strength, seek his presence continually.",
+    "reference": "1 Chronicles 16:11",
+    "testament": "OT",
+    "category": "Seeking God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 15,
+    "verse": "Let everything that breathes praise the Lord! Praise the Lord!",
+    "reference": "Psalm 150:6",
+    "testament": "OT",
+    "category": "Worship",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 16,
+    "verse": "As for my family and me, we will serve the Lord.",
+    "reference": "Joshua 24:15",
+    "testament": "OT",
+    "category": "Commitment",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 17,
+    "verse": "Leave all your worries with him, because he cares for you.",
+    "reference": "1 Peter 5:7",
+    "testament": "NT",
+    "category": "Trust",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 18,
+    "verse": "May the Lord give you increase, both you and your children.",
+    "reference": "Psalms 115:14",
+    "testament": "OT",
+    "category": "Blessing",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 19,
+    "verse": "I am the real vine, and my Father is the gardener.",
+    "reference": "John 15:1",
+    "testament": "NT",
+    "category": "I AM Statements",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 20,
+    "verse": "We may make our plans, but God has the last word.",
+    "reference": "Proverbs 16:1",
+    "testament": "OT",
+    "category": "Sovereignty",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 21,
+    "verse": "Come near to God, and he will come near to you.",
+    "reference": "James 4:8",
+    "testament": "NT",
+    "category": "Relationship with God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 22,
+    "verse": "My presence will go with you, and I will give you rest.",
+    "reference": "Exodus 33:14",
+    "testament": "OT",
+    "category": "Rest",
+    "difficulty": "short",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 23,
+    "verse": "I am the first and the last, the beginning and the end.",
+    "reference": "Revelation 22:13",
+    "testament": "NT",
+    "category": "I AM Statements",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 24,
+    "verse": "The Sovereign Lord gives me strength. He makes me sure-footed as a deer.",
+    "reference": "Habakkuk 3:19",
+    "testament": "OT",
+    "category": "Strength",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 25,
+    "verse": "Heaven and earth will pass away, but my words will never pass away.",
+    "reference": "Matthew 24:35",
+    "testament": "NT",
+    "category": "Word of God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 26,
+    "verse": "The Lord is my light and my salvation; I will fear no one.",
+    "reference": "Psalm 27:1",
+    "testament": "OT",
+    "category": "Trust",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 27,
+    "verse": "Your word is a lamp to guide me and a light for my path.",
+    "reference": "Psalms 119:105",
+    "testament": "OT",
+    "category": "Word of God",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 28,
+    "verse": "I have come in order that you might have life—life in all its fullness.",
+    "reference": "John 10:10",
+    "testament": "NT",
+    "category": "Abundant Life",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 29,
+    "verse": "The people whom I formed for myself so that they might declare my praise.",
+    "reference": "Isaiah 43:21",
+    "testament": "OT",
+    "category": "Purpose",
+    "difficulty": "short",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 30,
     "verse": "The grass withers, the flowers fade, but the word of our God endures forever.",
     "reference": "Isaiah 40:8",
     "testament": "OT",
@@ -369,12 +270,111 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 42,
-    "verse": "Be determined and confident. Do not be afraid of them. Your Lord your God will be with you. He will not fail you or abandon you.",
-    "reference": "Deuteronomy 31:6",
+    "id": 31,
+    "verse": "But those who trust in the Lord for help will find their strength renewed.",
+    "reference": "Isaiah 40:31",
     "testament": "OT",
-    "category": "Courage",
+    "category": "Strength",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 32,
+    "verse": "Believe in the Lord Jesus, and you will be saved, you and your family.",
+    "reference": "Acts 16:32",
+    "testament": "NT",
+    "category": "Salvation",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 33,
+    "verse": "Take delight in the Lord, and he will give you the desires of your heart.",
+    "reference": "Psalms 37:4",
+    "testament": "OT",
+    "category": "Trust",
+    "difficulty": "short",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 34,
+    "verse": "You will succeed not by military might or by your strength but by my spirit.",
+    "reference": "Zechariah 4:6",
+    "testament": "OT",
+    "category": "Holy Spirit",
     "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 35,
+    "verse": "In your presence there is fullness of joy; in your right hand are pleasures forevermore.",
+    "reference": "Psalms 16:11",
+    "testament": "OT",
+    "category": "Joy",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 36,
+    "verse": "I am the good shepherd. The good shepherd is willing to die for the sheep.",
+    "reference": "John 10:11",
+    "testament": "NT",
+    "category": "I AM Statements",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 37,
+    "verse": "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control.",
+    "reference": "Galatians 5:22-23",
+    "testament": "NT",
+    "category": "Fruit of Spirit",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 38,
+    "verse": "We know that in all things God works for good with those who love him.",
+    "reference": "Romans 8:28",
+    "testament": "NT",
+    "category": "Hope",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 39,
+    "verse": "My God will supply all your needs according to his glorious riches in Christ Jesus.",
+    "reference": "Philippians 4:19",
+    "testament": "NT",
+    "category": "Provision",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 40,
+    "verse": "I will give you a new heart, and a new spirit I will put within you.",
+    "reference": "Ezekiel 36:26",
+    "testament": "OT",
+    "category": "Transformation",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 41,
+    "verse": "But you, O Lord, are a shield around me, my glory and the lifter of my head.",
+    "reference": "Psalms 3:3",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 42,
+    "verse": "This is the day that the Lord has made, let us rejoice and be glad in it.",
+    "reference": "Psalm 118:24",
+    "testament": "OT",
+    "category": "Joy",
+    "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
@@ -388,177 +388,6 @@
   },
   {
     "id": 44,
-    "verse": "We may make our plans, but God has the last word.",
-    "reference": "Proverbs 16:1",
-    "testament": "OT",
-    "category": "Sovereignty",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 45,
-    "verse": "Come near to God, and he will come near to you.",
-    "reference": "James 4:8",
-    "testament": "NT",
-    "category": "Relationship with God",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 46,
-    "verse": "Enter the Temple gates with thanksgiving; go into its courts with praise. Give thanks to him and praise him.",
-    "reference": "Psalm 100:4",
-    "testament": "OT",
-    "category": "Worship",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 47,
-    "verse": "The Lord is my protector; he is my strong fortress.",
-    "reference": "Psalm 18:2",
-    "testament": "OT",
-    "category": "Protection",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 48,
-    "verse": "Do not be afraid\u2014I am with you! I am your God\u2014let nothing terrify you! I will make you strong and help you; I will protect you and save you.",
-    "reference": "Isaiah 41:10",
-    "testament": "OT",
-    "category": "Fear Not",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 49,
-    "verse": "Don't worry about anything, but in all your prayers ask God for what you need, always asking him with a thankful heart.",
-    "reference": "Philippians 4:6",
-    "testament": "NT",
-    "category": "Prayer",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 50,
-    "verse": "I am the first and the last, the beginning and the end.",
-    "reference": "Revelation 22:13",
-    "testament": "NT",
-    "category": "I AM Statements",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 51,
-    "verse": "But when the Holy Spirit comes upon you, you will be filled with power, and you will be witnesses for me.",
-    "reference": "Acts 1:8",
-    "testament": "NT",
-    "category": "Mission",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 52,
-    "verse": "If God is for us, who can be against us?",
-    "reference": "Romans 8:31",
-    "testament": "NT",
-    "category": "Assurance",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 53,
-    "verse": "All Scripture is inspired by God and is useful for teaching the truth, rebuking error, correcting faults, and giving instruction for right living.",
-    "reference": "2 Timothy 3:16",
-    "testament": "NT",
-    "category": "Scripture",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 54,
-    "verse": "Be joyful always, pray at all times, be thankful in all circumstances. This is what God wants from you in your life in union with Christ Jesus.",
-    "reference": "1 Thessalonians 5:16-18",
-    "testament": "NT",
-    "category": "Prayer Life",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 55,
-    "verse": "The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control.",
-    "reference": "Galatians 5:22-23",
-    "testament": "NT",
-    "category": "Fruit of Spirit",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 56,
-    "verse": "He saved us, not because of any good deeds that we ourselves had done, but because of his own mercy.",
-    "reference": "Titus 3:5",
-    "testament": "NT",
-    "category": "Salvation",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 57,
-    "verse": "Everything is possible for God.",
-    "reference": "Mark 10:27",
-    "testament": "NT",
-    "category": "God's Power",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 58,
-    "verse": "The Sovereign Lord gives me strength. He makes me sure-footed as a deer.",
-    "reference": "Habakkuk 3:19",
-    "testament": "OT",
-    "category": "Strength",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 59,
-    "verse": "He has set the right time for everything.",
-    "reference": "Ecclesiastes 3:11",
-    "testament": "OT",
-    "category": "God's Timing",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 60,
-    "verse": "I AM who I AM.",
-    "reference": "Exodus 3:14",
-    "testament": "OT",
-    "category": "God's Name",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 61,
-    "verse": "Heaven and earth will pass away, but my words will never pass away.",
-    "reference": "Matthew 24:35",
-    "testament": "NT",
-    "category": "Word of God",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 62,
-    "verse": "For I, the Lord your God, hold your right hand; it is I who say to you, 'Fear not, I will help you.'",
-    "reference": "Isaiah 41:13",
-    "testament": "OT",
-    "category": "Fear Not",
-    "difficulty": "medium",
-    "bibleTranslation": "RSVCE"
-  },
-  {
-    "id": 63,
     "verse": "The name of the Lord is a strong tower, the righteous run into it and are safe.",
     "reference": "Proverbs 18:10",
     "testament": "OT",
@@ -567,61 +396,43 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 64,
-    "verse": "Bless me, God, and give me much land. Be with me and keep me from anything evil that might cause me pain.",
-    "reference": "1 Chronicles 4:10",
-    "testament": "OT",
-    "category": "Prayer",
-    "difficulty": "medium",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 65,
-    "verse": "Listen! I am standing at the door, knocking; if you hear my voice and open the door, I will come in to you and eat with you, and you with me.",
-    "reference": "Revelation 3:20",
+    "id": 45,
+    "verse": "I will ask the Father, and he will give you another Helper, who will stay with you forever.",
+    "reference": "John 14:16",
     "testament": "NT",
-    "category": "Invitation",
+    "category": "Holy Spirit",
     "difficulty": "medium",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 66,
-    "verse": "Blessed is the one who reads aloud and blessed are those who listen to this prophetic message and heed what is written in it.",
-    "reference": "Revelation 1:3",
+    "id": 46,
+    "verse": "Humble yourselves therefore under the mighty hand of God, so that he may exalt you in due time.",
+    "reference": "1 Peter 5:6",
     "testament": "NT",
-    "category": "Blessing",
+    "category": "Humility",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 47,
+    "verse": "I am the resurrection and the life. Those who believe in me will live, even though they die.",
+    "reference": "John 11:25",
+    "testament": "NT",
+    "category": "I AM Statements",
     "difficulty": "medium",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 67,
-    "verse": "I will give you a new heart, and a new spirit I will put within you.",
-    "reference": "Ezekiel 36:26",
-    "testament": "OT",
-    "category": "Transformation",
+    "id": 48,
+    "verse": "I am the way, the truth, and the life; no one goes to the Father except by me.",
+    "reference": "John 14:6",
+    "testament": "NT",
+    "category": "I AM Statements",
     "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
-    "id": 68,
-    "verse": "For I am certain that nothing can separate us from his love: neither death nor life, neither angels nor other heavenly rulers or powers, neither the present nor the future, neither the world above nor the world below\u2014there is nothing in all creation that will ever be able to separate us from the love of God which is ours through Christ Jesus our Lord.",
-    "reference": "Romans 8:38-39",
-    "testament": "NT",
-    "category": "Love",
-    "difficulty": "long",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 69,
-    "verse": "But those who trust in the Lord for help will find their strength renewed.",
-    "reference": "Isaiah 40:31",
-    "testament": "OT",
-    "category": "Strength",
-    "difficulty": "short",
-    "bibleTranslation": "Good News"
-  },
-  {
-    "id": 70,
+    "id": 49,
     "verse": "The Lord himself will lead you and be with you. He will not fail you or abandon you.",
     "reference": "Deuteronomy 31:8",
     "testament": "OT",
@@ -630,66 +441,255 @@
     "bibleTranslation": "Good News"
   },
   {
-    "id": 71,
-    "verse": "Believe in the Lord Jesus, and you will be saved, you and your family.",
-    "reference": "Acts 16:32",
+    "id": 50,
+    "verse": "The Lord is good, a stronghold in a day of trouble; he protects those who take refuge in him.",
+    "reference": "Nahum 1:7",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "medium",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
+    "id": 51,
+    "verse": "The LORD says, 'I will teach you the way you should go; I will instruct you and advise you'",
+    "reference": "Psalms 32:8",
+    "testament": "OT",
+    "category": "Guidance",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 52,
+    "verse": "Come to me, all of you who are tired from carrying heavy loads, and I will give you rest.",
+    "reference": "Matthew 11:28",
+    "testament": "NT",
+    "category": "Rest",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 53,
+    "verse": "Enter the Temple gates with thanksgiving; go into its courts with praise. Give thanks to him and praise him.",
+    "reference": "Psalm 100:4",
+    "testament": "OT",
+    "category": "Worship",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 54,
+    "verse": "He saved us, not because of any good deeds that we ourselves had done, but because of his own mercy.",
+    "reference": "Titus 3:5",
     "testament": "NT",
     "category": "Salvation",
     "difficulty": "short",
     "bibleTranslation": "Good News"
   },
   {
+    "id": 55,
+    "verse": "For God did not give us a spirit of timidity, but a spirit of power, of love and of self-discipline.",
+    "reference": "2 Timothy 1:7",
+    "testament": "NT",
+    "category": "Courage",
+    "difficulty": "short",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 56,
+    "verse": "Call to me and I will answer you, I will tell you wonderful and marvelous things that you know nothing about",
+    "reference": "Jeremiah 33:3",
+    "testament": "OT",
+    "category": "Prayer",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 57,
+    "verse": "But when the Holy Spirit comes upon you, you will be filled with power, and you will be witnesses for me.",
+    "reference": "Acts 1:8",
+    "testament": "NT",
+    "category": "Mission",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 58,
+    "verse": "I am the light of the world. Whoever follows me will have the light of life and will never walk in darkness.",
+    "reference": "John 8:12",
+    "testament": "NT",
+    "category": "I AM Statements",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 59,
+    "verse": "Don't worry about anything, but in all your prayers ask God for what you need, always asking him with a thankful heart.",
+    "reference": "Philippians 4:6",
+    "testament": "NT",
+    "category": "Prayer",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 60,
+    "verse": "Bless me, God, and give me much land. Be with me and keep me from anything evil that might cause me pain.",
+    "reference": "1 Chronicles 4:10",
+    "testament": "OT",
+    "category": "Prayer",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 61,
+    "verse": "I am the bread of life. Whoever comes to me will never be hungry, and whoever believes in me will never be thirsty.",
+    "reference": "John 6:35",
+    "testament": "NT",
+    "category": "Salvation",
+    "difficulty": "medium",
+    "bibleTranslation": "NRSVCE"
+  },
+  {
+    "id": 62,
+    "verse": "I am the gate. Those who come in by me will be saved; they will come in and go out and find pasture.",
+    "reference": "John 10:9",
+    "testament": "NT",
+    "category": "I AM Statements",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 63,
+    "verse": "All Scripture is inspired by God and is useful for teaching the truth, rebuking error, correcting faults, and giving instruction for right living.",
+    "reference": "2 Timothy 3:16",
+    "testament": "NT",
+    "category": "Scripture",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 64,
+    "verse": "For I, the Lord your God, hold your right hand; it is I who say to you, 'Fear not, I will help you.'",
+    "reference": "Isaiah 41:13",
+    "testament": "OT",
+    "category": "Fear Not",
+    "difficulty": "medium",
+    "bibleTranslation": "RSVCE"
+  },
+  {
+    "id": 65,
+    "verse": "Blessed is the one who reads aloud and blessed are those who listen to this prophetic message and heed what is written in it.",
+    "reference": "Revelation 1:3",
+    "testament": "NT",
+    "category": "Blessing",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 66,
+    "verse": "Be determined and confident. Do not be afraid of them. Your Lord your God will be with you. He will not fail you or abandon you.",
+    "reference": "Deuteronomy 31:6",
+    "testament": "OT",
+    "category": "Courage",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 67,
+    "verse": "For God loved the world so much that he gave his only Son, so that everyone who believes in him may not die but have eternal life.",
+    "reference": "John 3:16",
+    "testament": "NT",
+    "category": "Salvation",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 68,
+    "verse": "Be joyful always, pray at all times, be thankful in all circumstances. This is what God wants from you in your life in union with Christ Jesus.",
+    "reference": "1 Thessalonians 5:16-18",
+    "testament": "NT",
+    "category": "Prayer Life",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 69,
+    "verse": "The Lord has promised that he himself will be a wall of fire around the city to protect it and that he will live there in all his glory.",
+    "reference": "Zechariah 2:5",
+    "testament": "OT",
+    "category": "Protection",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 70,
+    "verse": "Do not be afraid—I am with you! I am your God—let nothing terrify you! I will make you strong and help you; I will protect you and save you.",
+    "reference": "Isaiah 41:10",
+    "testament": "OT",
+    "category": "Fear Not",
+    "difficulty": "medium",
+    "bibleTranslation": "Good News"
+  },
+  {
+    "id": 71,
+    "verse": "And God is able to provide you with every blessing in abundance, so that you may always have enough of everything and may provide in abundance for every good work.",
+    "reference": "2 Corinthians 9:8",
+    "testament": "NT",
+    "category": "Provision",
+    "difficulty": "long",
+    "bibleTranslation": "RSV2CE"
+  },
+  {
     "id": 72,
-    "verse": "The Lord is my light and my salvation; I will fear no one.",
-    "reference": "Psalm 27:1",
+    "verse": "Trust in the Lord with all your heart. Never rely on what you think you know. Remember the Lord in everything you do, and he will show you the right way.",
+    "reference": "Proverbs 3:5-6",
     "testament": "OT",
     "category": "Trust",
-    "difficulty": "short",
+    "difficulty": "medium",
     "bibleTranslation": "Good News"
   },
   {
     "id": 73,
-    "verse": "We know that in all things God works for good with those who love him.",
-    "reference": "Romans 8:28",
+    "verse": "Listen! I am standing at the door, knocking; if you hear my voice and open the door, I will come in to you and eat with you, and you with me.",
+    "reference": "Revelation 3:20",
     "testament": "NT",
-    "category": "Hope",
-    "difficulty": "short",
+    "category": "Invitation",
+    "difficulty": "medium",
     "bibleTranslation": "Good News"
   },
   {
     "id": 74,
-    "verse": "My God will supply all your needs according to his glorious riches in Christ Jesus.",
-    "reference": "Philippians 4:19",
-    "testament": "NT",
-    "category": "Provision",
-    "difficulty": "short",
+    "verse": "But for you who obey me, my saving power will rise on you like the sun and bring healing like sun's rays. You will be as free and happy as calves let out of a stall.",
+    "reference": "Malachi 4:2",
+    "testament": "OT",
+    "category": "Healing",
+    "difficulty": "long",
     "bibleTranslation": "Good News"
   },
   {
     "id": 75,
-    "verse": "",
-    "reference": "",
-    "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "verse": "The Lord your God is with you; his power gives you victory. The Lord will take delight in you, and in his love he will give you new life. He will sing and be joyful over you.",
+    "reference": "Zephaniah 3:17",
+    "testament": "OT",
+    "category": "God's Love",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 76,
-    "verse": "",
-    "reference": "",
-    "testament": "OT",
-    "category": "",
-    "difficulty": "medium",
-    "bibleTranslation": "NABRE"
+    "verse": "The word of God is alive and active, sharper than any double-edged sword. It cuts all the way through, to where soul and spirit meet, to where joints and marrow come together. It judges the desires and thoughts of man's heart.",
+    "reference": "Hebrews 4:12",
+    "testament": "NT",
+    "category": "Word of God",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
   },
   {
     "id": 77,
-    "verse": "",
-    "reference": "",
+    "verse": "For I am certain that nothing can separate us from his love: neither death nor life, neither angels nor other heavenly rulers or powers, neither the present nor the future, neither the world above nor the world below—there is nothing in all creation that will ever be able to separate us from the love of God which is ours through Christ Jesus our Lord.",
+    "reference": "Romans 8:38-39",
     "testament": "NT",
-    "category": "",
-    "difficulty": "short",
-    "bibleTranslation": "NABRE"
+    "category": "Love",
+    "difficulty": "long",
+    "bibleTranslation": "Good News"
   }
 ]
