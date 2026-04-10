@@ -20,6 +20,13 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
     return null; // Don't show gallery if no images
   }
 
+  // Skip first image (AI cover used for card/header), show only authentic PDF photos
+  const galleryImages = images.slice(1);
+
+  if (galleryImages.length === 0) {
+    return null; // Don't show gallery if no authentic images
+  }
+
   return (
     <>
       {/* Gallery Section */}
@@ -31,11 +38,11 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
 
         {/* Image Grid */}
         <div className={`grid gap-4 ${
-          images.length === 1 ? 'grid-cols-1' :
-          images.length === 2 ? 'grid-cols-2' :
+          galleryImages.length === 1 ? 'grid-cols-1' :
+          galleryImages.length === 2 ? 'grid-cols-2' :
           'grid-cols-2 md:grid-cols-3'
         }`}>
-          {images.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
@@ -57,9 +64,9 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
         </div>
 
         {/* Caption for single image */}
-        {images.length === 1 && (
+        {galleryImages.length === 1 && (
           <p className="text-gray-600 text-sm text-center mt-4 italic">
-            {images[0].alt}
+            {galleryImages[0].alt}
           </p>
         )}
 
@@ -99,7 +106,7 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
           </button>
 
           {/* Navigation arrows */}
-          {images.length > 1 && (
+          {galleryImages.length > 1 && (
             <>
               <button
                 className="absolute left-4 text-white text-5xl hover:text-[#D4AF37] transition-colors disabled:opacity-30"
@@ -115,9 +122,9 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
                 className="absolute right-4 text-white text-5xl hover:text-[#D4AF37] transition-colors disabled:opacity-30"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage(prev => prev === null ? null : Math.min(images.length - 1, prev + 1));
+                  setSelectedImage(prev => prev === null ? null : Math.min(galleryImages.length - 1, prev + 1));
                 }}
-                disabled={selectedImage === images.length - 1}
+                disabled={selectedImage === galleryImages.length - 1}
               >
                 ›
               </button>
@@ -127,19 +134,19 @@ export default function MiracleImageGallery({ images, miracleName }: MiracleImag
           {/* Image */}
           <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
             <img
-              src={images[selectedImage].url}
-              alt={images[selectedImage].alt}
+              src={galleryImages[selectedImage].url}
+              alt={galleryImages[selectedImage].alt}
               className="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
             />
 
             {/* Caption */}
             <div className="bg-white/95 backdrop-blur-sm rounded-b-lg p-4 text-center">
               <p className="text-gray-800 font-medium">
-                {images[selectedImage].alt}
+                {galleryImages[selectedImage].alt}
               </p>
-              {images.length > 1 && (
+              {galleryImages.length > 1 && (
                 <p className="text-gray-500 text-sm mt-2">
-                  Image {selectedImage + 1} of {images.length}
+                  Image {selectedImage + 1} of {galleryImages.length}
                 </p>
               )}
             </div>
