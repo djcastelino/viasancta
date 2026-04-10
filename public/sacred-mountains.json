@@ -825,10 +825,16 @@
     ],
     "images": [
       {
+        "url": "/images/mountains/Mount Calvary.webp",
+        "caption": "Renaissance artistic depiction of Mount Calvary (Golgotha)",
+        "attribution": "AI-generated Renaissance art",
+        "isHero": true
+      },
+      {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Holy_Sepulchre_Golgotha.jpg/1024px-Holy_Sepulchre_Golgotha.jpg",
         "caption": "Golgotha (Calvary) inside the Church of the Holy Sepulchre",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
-        "isHero": true
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/Church+of+the+Holy+Sepulchre/@31.7784,35.2296,17z",
