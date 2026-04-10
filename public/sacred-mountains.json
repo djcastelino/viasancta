@@ -678,10 +678,16 @@
     ],
     "images": [
       {
+        "url": "/images/mountains/Mount Tabor.jpg",
+        "caption": "Renaissance artistic depiction of Mount Tabor",
+        "attribution": "AI-generated Renaissance art",
+        "isHero": true
+      },
+      {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Mount_Tabor4.jpg/640px-Mount_Tabor4.jpg",
         "caption": "Mount Tabor's distinctive dome shape rising from the valley",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
-        "isHero": true
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/Mount+Tabor/@32.6866,35.3897,14z",
@@ -959,10 +965,16 @@
     ],
     "images": [
       {
+        "url": "/images/mountains/Mount Zion.jpg",
+        "caption": "Renaissance artistic depiction of Mount Zion",
+        "attribution": "AI-generated Renaissance art",
+        "isHero": true
+      },
+      {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jerusalem_Zion_Gate_BW_1.JPG/1024px-Jerusalem_Zion_Gate_BW_1.JPG",
         "caption": "Zion Gate leading to Mount Zion, Jerusalem",
         "attribution": "Photo: Wikimedia Commons (CC BY-SA 3.0)",
-        "isHero": true
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/Mount+Zion/@31.7725,35.2285,17z",
@@ -1032,17 +1044,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/ararat-sunrise.jpg",
-        "caption": "Snow-capped Mount Ararat at sunrise, viewed from Armenia",
+        "url": "/images/mountains/Mount Ararat.jpg",
+        "caption": "Renaissance artistic depiction of Mount Ararat",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/ararat-sunrise.jpg",
+        "caption": "Snow-capped Mount Ararat at sunrise, viewed from Armenia",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/ararat-khor-virap.jpg",
-        "caption": "Khor Virap monastery at the base of Mount Ararat"
+        "caption": "Khor Virap monastery at the base of Mount Ararat",
+        "isHero": false
       },
       {
         "url": "/images/mountains/ararat-rainbow.jpg",
-        "caption": "Rainbow over Mount Ararat, recalling God's covenant with Noah"
+        "caption": "Rainbow over Mount Ararat, recalling God's covenant with Noah",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/39.7019,44.2983",
@@ -1101,17 +1121,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/nebo-view.jpg",
-        "caption": "View from Mount Nebo overlooking the Promised Land",
+        "url": "/images/mountains/Mount Nebo.jpg",
+        "caption": "Renaissance artistic depiction of Mount Nebo",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/nebo-view.jpg",
+        "caption": "View from Mount Nebo overlooking the Promised Land",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/nebo-memorial.jpg",
-        "caption": "Memorial of Moses on Mount Nebo with serpentine cross"
+        "caption": "Memorial of Moses on Mount Nebo with serpentine cross",
+        "isHero": false
       },
       {
         "url": "/images/mountains/nebo-mosaic.jpg",
-        "caption": "6th-century Byzantine mosaic at Mount Nebo basilica"
+        "caption": "6th-century Byzantine mosaic at Mount Nebo basilica",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/31.7685,35.7278",
@@ -1183,17 +1211,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/beatitudes-church.jpg",
-        "caption": "Church of the Beatitudes overlooking the Sea of Galilee",
+        "url": "/images/mountains/Mount of Beatitudes.jpg",
+        "caption": "Renaissance artistic depiction of Mount of Beatitudes",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/beatitudes-church.jpg",
+        "caption": "Church of the Beatitudes overlooking the Sea of Galilee",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/beatitudes-interior.jpg",
-        "caption": "Interior of Beatitudes church showing octagonal dome"
+        "caption": "Interior of Beatitudes church showing octagonal dome",
+        "isHero": false
       },
       {
         "url": "/images/mountains/beatitudes-view.jpg",
-        "caption": "Panoramic view from Mount of Beatitudes over the Sea of Galilee"
+        "caption": "Panoramic view from Mount of Beatitudes over the Sea of Galilee",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/32.8818,35.5544",
@@ -1262,17 +1298,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/hermon-snow.jpg",
-        "caption": "Snow-capped Mount Hermon, highest peak in the Levant",
+        "url": "/images/mountains/Mount Herman.jpg",
+        "caption": "Renaissance artistic depiction of Mount Hermon",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/hermon-snow.jpg",
+        "caption": "Snow-capped Mount Hermon, highest peak in the Levant",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/hermon-sunrise.jpg",
-        "caption": "Sunrise over Mount Hermon from the Golan Heights"
+        "caption": "Sunrise over Mount Hermon from the Golan Heights",
+        "isHero": false
       },
       {
         "url": "/images/mountains/hermon-jordan.jpg",
-        "caption": "Springs at the base of Hermon feeding the Jordan River"
+        "caption": "Springs at the base of Hermon feeding the Jordan River",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/33.4162,35.8572",
@@ -1339,17 +1383,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/gerizim-view.jpg",
-        "caption": "Mount Gerizim overlooking ancient Shechem (modern Nablus)",
+        "url": "/images/mountains/Mount Gerizim.jpg",
+        "caption": "Renaissance artistic depiction of Mount Gerizim",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/gerizim-view.jpg",
+        "caption": "Mount Gerizim overlooking ancient Shechem (modern Nablus)",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/gerizim-samaritan.jpg",
-        "caption": "Samaritan Passover celebration on Mount Gerizim"
+        "caption": "Samaritan Passover celebration on Mount Gerizim",
+        "isHero": false
       },
       {
         "url": "/images/mountains/gerizim-ruins.jpg",
-        "caption": "Ancient ruins on Mount Gerizim including Samaritan temple site"
+        "caption": "Ancient ruins on Mount Gerizim including Samaritan temple site",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/32.2042,35.2722",
@@ -1417,17 +1469,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/temptation-monastery.jpg",
-        "caption": "Greek Orthodox Monastery clinging to Mount of Temptation cliff face",
+        "url": "/images/mountains/Mount of Temptation.jpg",
+        "caption": "Renaissance artistic depiction of Mount of Temptation (Quarantania)",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/temptation-monastery.jpg",
+        "caption": "Greek Orthodox Monastery clinging to Mount of Temptation cliff face",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/temptation-view.jpg",
-        "caption": "View from Mount of Temptation over Jericho and Jordan Valley"
+        "caption": "View from Mount of Temptation over Jericho and Jordan Valley",
+        "isHero": false
       },
       {
         "url": "/images/mountains/temptation-wilderness.jpg",
-        "caption": "Barren wilderness of Mount of Temptation"
+        "caption": "Barren wilderness of Mount of Temptation",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/31.8714,35.4144",
@@ -1491,17 +1551,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/ebal-gerizim.jpg",
-        "caption": "Mount Ebal (left) and Mount Gerizim (right) with Shechem valley between",
+        "url": "/images/mountains/Mount Ebal.jpg",
+        "caption": "Renaissance artistic depiction of Mount Ebal",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/ebal-gerizim.jpg",
+        "caption": "Mount Ebal (left) and Mount Gerizim (right) with Shechem valley between",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/ebal-altar.jpg",
-        "caption": "Archaeological remains of ancient altar discovered on Mount Ebal"
+        "caption": "Archaeological remains of ancient altar discovered on Mount Ebal",
+        "isHero": false
       },
       {
         "url": "/images/mountains/ebal-view.jpg",
-        "caption": "View from Mount Ebal summit overlooking the valley"
+        "caption": "View from Mount Ebal summit overlooking the valley",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/32.2314,35.2742",
@@ -1568,17 +1636,25 @@
     "audioSections": [],
     "images": [
       {
-        "url": "/images/mountains/horeb-sinai.jpg",
-        "caption": "Mount Sinai/Horeb with St. Catherine's Monastery at its base",
+        "url": "/images/mountains/Mount Horeb.jpg",
+        "caption": "Renaissance artistic depiction of Mount Horeb",
+        "attribution": "AI-generated Renaissance art",
         "isHero": true
       },
       {
+        "url": "/images/mountains/horeb-sinai.jpg",
+        "caption": "Mount Sinai/Horeb with St. Catherine's Monastery at its base",
+        "isHero": false
+      },
+      {
         "url": "/images/mountains/horeb-cave.jpg",
-        "caption": "Cave on Mount Horeb traditionally identified as Elijah's refuge"
+        "caption": "Cave on Mount Horeb traditionally identified as Elijah's refuge",
+        "isHero": false
       },
       {
         "url": "/images/mountains/horeb-burning-bush.jpg",
-        "caption": "Chapel of the Burning Bush at St. Catherine's Monastery"
+        "caption": "Chapel of the Burning Bush at St. Catherine's Monastery",
+        "isHero": false
       }
     ],
     "mapUrl": "https://www.google.com/maps/place/28.5392,33.9750",
