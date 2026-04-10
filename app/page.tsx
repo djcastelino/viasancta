@@ -203,10 +203,10 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               {/* Hero Image Section */}
               <div className="h-60 relative overflow-hidden">
-                {/* Gemini-generated Sacred Heart image */}
-                <img 
-                  src="/images/tours/eucharistic-hero.png"
-                  alt="Sacred Heart with rays of light over landscape"
+                {/* AI-generated Renaissance Eucharistic art */}
+                <img
+                  src="/images/eucharistic miralces/buenos_aires.png"
+                  alt="Renaissance depiction of Eucharistic miracle - golden chalice with divine light"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 {/* Lighter gradient overlay for text */}
