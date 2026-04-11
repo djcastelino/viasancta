@@ -27,6 +27,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   }, [params]);
 
   const handlePlayNarration = async () => {
+    console.log('🎬 handlePlayNarration() called - button clicked!');
     // Prevent multiple concurrent audio generations
     if (isLoading) {
       console.log('⏳ Already loading, ignoring duplicate click');
