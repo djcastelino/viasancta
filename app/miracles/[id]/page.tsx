@@ -30,8 +30,17 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   useEffect(() => {
     eucharisticMusicManager.start();
 
-    // Stop music when leaving this page (going back to home or other sections)
+    // Cleanup when leaving this page
     return () => {
+      // Stop narration if it's still playing (user forgot to stop)
+      if (audioRef.current) {
+        console.log('🛑 Stopping narration - user left page');
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current = null;
+      }
+
+      // Stop background music
       eucharisticMusicManager.stop();
     };
   }, []);

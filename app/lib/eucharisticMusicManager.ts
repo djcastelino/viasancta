@@ -45,14 +45,14 @@ class EucharisticMusicManager {
   }
 
   duck() {
-    // Lower volume to 10% when narration is playing
+    // Lower volume to 15% when narration is playing
     if (this.audio) {
-      console.log('🎵 Ducking music to 10% for narration');
+      console.log('🎵 Ducking music to 15% for narration');
       let volume = this.audio.volume;
       const duckDown = setInterval(() => {
-        if (this.audio && volume > 0.10) {
+        if (this.audio && volume > 0.15) {
           volume -= 0.02;
-          this.audio.volume = Math.max(volume, 0.10);
+          this.audio.volume = Math.max(volume, 0.15);
         } else {
           clearInterval(duckDown);
         }
