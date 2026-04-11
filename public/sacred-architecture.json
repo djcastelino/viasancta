@@ -22,7 +22,7 @@
     ],
     "images": [
       {
-        "url": "/images/mountains/architectures/peters-basilica.png",
+        "url": "/images/architecture/peters-basilica.png",
         "caption": "St. Peter's Basilica, Vatican City",
         "credit": "AI Generated"
       }
@@ -58,9 +58,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg/1280px-Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg",
+        "url": "/images/architecture/sagrada-familia.png",
         "caption": "Sagrada Família from Plaça de Gaudí",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "The Sagrada Família was begun in 1882 by architect Francisco de Paula del Villar. In 1883, Antoni Gaudí took over the project, transforming it with his unique architectural vision. Gaudí devoted the last 15 years of his life entirely to this project, even living in the workshop. After his death in 1926, construction continued based on his plans and models, surviving the Spanish Civil War and continuing to this day.",
@@ -131,9 +131,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/K%C3%B6lner_Dom_vom_KH.jpg/1280px-K%C3%B6lner_Dom_vom_KH.jpg",
+        "url": "/images/architecture/cologne cathedral.png",
         "caption": "Cologne Cathedral towers over the city",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Construction began in 1248 to house the relics of the Three Wise Men, brought from Milan in 1164. Work halted around 1560 due to lack of funds and remained incomplete for nearly 300 years. Construction resumed in the 1840s, driven by German nationalism, and was finally completed in 1880. Miraculously, despite heavy Allied bombing during WWII that destroyed much of Cologne, the cathedral survived with relatively minor damage.",
@@ -168,9 +168,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2016_Mailand_-_Dom_-_0035.jpg/1280px-2016_Mailand_-_Dom_-_0035.jpg",
+        "url": "/images/architecture/duoma di milano.png",
         "caption": "Milan Cathedral facade",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Construction of Milan's Duomo began in 1386 under Archbishop Antonio da Saluzzo and Lord Gian Galeazzo Visconti. The project aimed to create a grand cathedral worthy of Milan's status. Numerous architects from Italy, France, and Germany contributed over the centuries. The last gate was completed in 1965, though finishing touches continue to this day. Napoleon was crowned King of Italy here in 1805.",
@@ -204,9 +204,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Basilica_di_San_Marco_%28Venice%29_-_Facade.jpg/1280px-Basilica_di_San_Marco_%28Venice%29_-_Facade.jpg",
+        "url": "/images/architecture/basilica di san marco.png",
         "caption": "Facade of St. Mark's Basilica",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "The current basilica is actually the third church built on this site. The first church (828) housed St. Mark's relics, smuggled from Alexandria, Egypt. After fires destroyed earlier structures, the present basilica was begun in 1063, modeled after Constantinople's Church of the Holy Apostles. It served as the private chapel of the Doge (ruler of Venice) until 1807 when it became Venice's cathedral. The basilica's treasures were enhanced by booty from the Fourth Crusade (1204).",
@@ -240,9 +240,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chartres_-_cath%C3%A9drale_-_fa%C3%A7ade_ouest_%281%29.jpg/1280px-Chartres_-_cath%C3%A9drale_-_fa%C3%A7ade_ouest_%281%29.jpg",
+        "url": "/images/architecture/chartres cathedral.png",
         "caption": "Western facade of Chartres Cathedral",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Chartres has been a Christian pilgrimage site since the 4th century. The current cathedral, begun after a devastating fire in 1194, was constructed with remarkable speed - just 26 years - giving it unusual architectural unity. The cathedral was built to house the Sancta Camisa, believed to be the tunic worn by Virgin Mary at Christ's birth. Miraculously, this relic survived the 1194 fire, which was seen as a sign from Mary to rebuild even grander.",
@@ -276,9 +276,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Basilica_de_Guadalupe_%28new%29.jpg/1280px-Basilica_de_Guadalupe_%28new%29.jpg",
+        "url": "/images/architecture/basilica of lady of guadalupe.png",
         "caption": "New Basilica of Our Lady of Guadalupe",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "On December 9-12, 1531, the Virgin Mary appeared four times to Juan Diego, an Aztec convert, on Tepeyac Hill. She asked for a church to be built on that site. As proof, she made roses bloom in winter and imprinted her image on Juan Diego's tilma (cloak). This image became a powerful symbol of Mexican Catholic identity. The old basilica (1695-1709) began sinking into the lakebed, so a modern basilica was built (1974-1976) to house the miraculous image and accommodate millions of pilgrims.",
@@ -348,9 +348,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fatima-Church.jpg/1280px-Fatima-Church.jpg",
+        "url": "/images/architecture/sanctuary of fatima.png",
         "caption": "Basilica of Our Lady of the Rosary, Fátima",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "From May to October 1917, the Virgin Mary appeared six times to three shepherd children—Lúcia dos Santos and her cousins Francisco and Jacinta Marto—near the village of Fátima. Mary entrusted the children with three secrets and requested devotion to her Immaculate Heart. The final apparition on October 13, 1917, was witnessed by 70,000 people who observed the 'Miracle of the Sun.' The Church approved the apparitions in 1930. The sanctuary has become a major pilgrimage site, especially after Pope John Paul II credited Our Lady of Fátima with saving his life.",
@@ -567,9 +567,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Firenze_-_Florence_-_Piazza_del_Duomo_-_View_ESE_on_Basilica_di_Santa_Maria_del_Fiore_%28UNESCO-WHL_No_174%29.jpg/1280px-Firenze_-_Florence_-_Piazza_del_Duomo_-_View_ESE_on_Basilica_di_Santa_Maria_del_Fiore_%28UNESCO-WHL_No_174%29.jpg",
+        "url": "/images/architecture/duoma florence cathedral.png",
         "caption": "Florence Cathedral with Brunelleschi's Dome",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "In 1296, Florence's Republic commissioned Arnolfo di Cambio to design a cathedral worthy of the city's growing importance. Work proceeded slowly over centuries. The greatest challenge was the dome—no one knew how to vault the 45-meter span without wooden scaffolding. In 1418, Filippo Brunelleschi won a competition with his revolutionary design using a double-shell dome and herringbone brick pattern. Completed in 1436, it was an engineering marvel that sparked the Renaissance. The facade, however, remained unfinished until the 19th century when a Neo-Gothic design was finally added.",
@@ -604,9 +604,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lightmatter_sisitine_chapel.jpg/1280px-Lightmatter_sisitine_chapel.jpg",
+        "url": "/images/architecture/sistine chapel.png",
         "caption": "Sistine Chapel Interior",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Pope Sixtus IV commissioned the chapel in 1473, naming it after himself. The building replaced an earlier medieval structure. Leading Renaissance artists including Botticelli, Perugino, and Ghirlandaio painted the side walls (1481-82). In 1508, Pope Julius II commissioned Michelangelo to paint the ceiling—originally planned as simple decoration but becoming one of humanity's greatest artistic achievements. Twenty-five years later, Michelangelo returned to paint The Last Judgment on the altar wall (1536-41). The chapel serves as the site of papal conclaves where cardinals elect new popes.",
@@ -640,9 +640,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/St_Patrick%27s_Cathedral_by_David_Shankbone.jpg/1280px-St_Patrick%27s_Cathedral_by_David_Shankbone.jpg",
+        "url": "/images/architecture/st patricks cathedral.png",
         "caption": "St. Patrick's Cathedral, Fifth Avenue",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Construction began in 1858 on land purchased by the Archdiocese, then far north of the developed city. The Civil War delayed construction, but the cathedral opened in 1879 (though not fully complete). Archbishop John Hughes envisioned a grand cathedral to serve New York's growing Catholic immigrant population and demonstrate the Church's permanence in America. The twin spires were added in 1888. A major restoration (2012-15) cleaned decades of grime, revealing the original white marble. The cathedral has hosted state funerals for prominent Americans and serves as a symbol of Catholic life in America.",
@@ -748,9 +748,9 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Church_of_the_Holy_Sepulchre_%28Entry%29.jpg/1280px-Church_of_the_Holy_Sepulchre_%28Entry%29.jpg",
+        "url": "/images/architecture/church of holy sepulchre.png",
         "caption": "Church of the Holy Sepulchre Entrance",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Roman Emperor Constantine's mother, St. Helena, identified the site of Christ's crucifixion and burial during her 326 AD pilgrimage to Jerusalem. Constantine built a church complex encompassing both Golgotha and the tomb. Persians destroyed it in 614; it was rebuilt, then destroyed again in 1009 by Caliph al-Hakim. Crusaders rebuilt it in 1048 in Romanesque style. After Saladin's conquest (1187), the church remained Christian. In 1852, the Status Quo agreement divided the church among Greek Orthodox, Roman Catholics, Armenian Apostolic, Coptic, Ethiopian, and Syriac Orthodox churches—an arrangement maintained to this day.",
