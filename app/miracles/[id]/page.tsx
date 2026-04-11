@@ -26,6 +26,20 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     });
   }, [params]);
 
+  // Start "I Am the Bread of Life" music when page loads (like Hail Mary for Marian Apparitions)
+  useEffect(() => {
+    startBackgroundMusic();
+
+    // Cleanup: stop music when leaving the page
+    return () => {
+      if (backgroundMusicRef.current) {
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.currentTime = 0;
+        backgroundMusicRef.current = null;
+      }
+    };
+  }, []);
+
   const handlePlayNarration = async () => {
     console.log('🎬 handlePlayNarration() called - button clicked!');
     // Prevent multiple concurrent audio generations
