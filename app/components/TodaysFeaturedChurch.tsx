@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface Church {
   id: number;
@@ -22,6 +23,8 @@ interface Church {
 export default function TodaysFeaturedChurch() {
   const [featuredChurch, setFeaturedChurch] = useState<Church | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+  const isOnArchitecturePage = pathname === '/sacred-architecture';
 
   useEffect(() => {
     const loadFeaturedChurch = async () => {
@@ -55,78 +58,95 @@ export default function TodaysFeaturedChurch() {
     return null;
   }
 
-  return (
-    <section id="featured-church" className="max-w-7xl mx-auto px-5 py-8">
-      <Link href="/sacred-architecture" className="block group">
-        <div className="bg-gradient-to-br from-amber-700 via-amber-600 to-yellow-600 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-0">
-            {/* Image Side */}
-            <div className="relative h-80 md:h-auto overflow-hidden">
-              <img
-                src={featuredChurch.images[0].url}
-                alt={featuredChurch.name}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/60 md:to-transparent" />
+  const handleScroll = () => {
+    const element = document.getElementById('churches-grid');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const CardContent = (
+    <div className="bg-gradient-to-br from-amber-700 via-amber-600 to-yellow-600 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+      <div className="grid md:grid-cols-2 gap-0">
+        {/* Image Side */}
+        <div className="relative h-80 md:h-auto overflow-hidden">
+          <img
+            src={featuredChurch.images[0].url}
+            alt={featuredChurch.name}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/60 md:to-transparent" />
+        </div>
+
+        {/* Content Side */}
+        <div className="p-8 md:p-12 text-white relative">
+          {/* Decorative background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
+            <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="flex items-center justify-start gap-2 mb-3">
+              <span className="bg-white/30 px-4 py-1 rounded-full text-sm font-bold">
+                TODAY'S FEATURED CHURCH
+              </span>
             </div>
 
-            {/* Content Side */}
-            <div className="p-8 md:p-12 text-white relative">
-              {/* Decorative background pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-2xl"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">
+              {featuredChurch.name}
+            </h2>
+            <p className="text-xl text-amber-100 mb-4">
+              {featuredChurch.location.city}, {featuredChurch.location.country}
+            </p>
+
+            {/* Quick Info */}
+            <div className="mb-6 space-y-2">
+              <div className="flex items-center gap-2 text-white/90">
+                <span className="font-semibold">Built:</span>
+                <span>{featuredChurch.built}</span>
               </div>
-
-              <div className="relative z-10">
-                <div className="flex items-center justify-start gap-2 mb-3">
-                  <span className="bg-white/30 px-4 py-1 rounded-full text-sm font-bold">
-                    TODAY'S FEATURED CHURCH
-                  </span>
-                </div>
-
-                <h2 className="text-3xl md:text-4xl font-bold mb-2 font-serif">
-                  {featuredChurch.name}
-                </h2>
-                <p className="text-xl text-amber-100 mb-4">
-                  {featuredChurch.location.city}, {featuredChurch.location.country}
-                </p>
-
-                {/* Quick Info */}
-                <div className="mb-6 space-y-2">
-                  <div className="flex items-center gap-2 text-white/90">
-                    <span className="font-semibold">Built:</span>
-                    <span>{featuredChurch.built}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-white/90">
-                    <span className="font-semibold">Style:</span>
-                    <span>{featuredChurch.architectureStyle}</span>
-                  </div>
-                </div>
-
-                {/* Did You Know? */}
-                <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-6">
-                  <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
-                    <span>💡</span>
-                    <span>Did You Know?</span>
-                  </h3>
-                  <p className="text-white/95 text-sm leading-relaxed">
-                    {featuredChurch.quickFacts[0]}
-                  </p>
-                </div>
-
-                <div className="inline-block bg-white text-amber-700 hover:bg-amber-50 px-8 py-4 rounded-full font-bold text-lg shadow-xl group-hover:scale-105 transition-transform">
-                  Explore This Church →
-                </div>
-
-                <p className="text-white/70 text-xs mt-6 italic">
-                  ✨ Come back tomorrow for another stunning sacred space
-                </p>
+              <div className="flex items-center gap-2 text-white/90">
+                <span className="font-semibold">Style:</span>
+                <span>{featuredChurch.architectureStyle}</span>
               </div>
             </div>
+
+            {/* Did You Know? */}
+            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-6">
+              <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+                <span>💡</span>
+                <span>Did You Know?</span>
+              </h3>
+              <p className="text-white/95 text-sm leading-relaxed">
+                {featuredChurch.quickFacts[0]}
+              </p>
+            </div>
+
+            <div className="inline-block bg-white text-amber-700 hover:bg-amber-50 px-8 py-4 rounded-full font-bold text-lg shadow-xl group-hover:scale-105 transition-transform">
+              {isOnArchitecturePage ? 'Explore Below ↓' : 'Explore This Church →'}
+            </div>
+
+            <p className="text-white/70 text-xs mt-6 italic">
+              ✨ Come back tomorrow for another stunning sacred space
+            </p>
           </div>
         </div>
-      </Link>
+      </div>
+    </div>
+  );
+
+  return (
+    <section id="featured-church" className="max-w-7xl mx-auto px-5 py-8">
+      {isOnArchitecturePage ? (
+        <div onClick={handleScroll} className="block group cursor-pointer">
+          {CardContent}
+        </div>
+      ) : (
+        <Link href="/sacred-architecture" className="block group">
+          {CardContent}
+        </Link>
+      )}
     </section>
   );
 }

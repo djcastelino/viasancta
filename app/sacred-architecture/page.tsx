@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import churches from '@/public/sacred-architecture.json';
 import SacredArchitectureClient from './SacredArchitectureClient';
+import TodaysFeaturedChurch from '../components/TodaysFeaturedChurch';
 
 export const metadata = {
   title: 'Sacred Architecture - Divine Pilgrim',
@@ -54,6 +55,9 @@ export default async function SacredArchitecturePage() {
           </Link>
         </div>
       </header>
+
+      {/* Today's Featured Church */}
+      <TodaysFeaturedChurch />
 
       {/* Search, Filter, and Churches Grid */}
       <SacredArchitectureClient churches={churches} countries={countries} styles={styles} />
