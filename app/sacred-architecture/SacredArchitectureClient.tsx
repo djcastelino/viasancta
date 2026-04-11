@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import ChurchCard from '@/app/components/ChurchCard';
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface SacredArchitectureClientProps {
   churches: any[];
@@ -14,6 +15,18 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('');
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState('');
+  const [error, setError] = useState('');
+  const [currentSection, setCurrentSection] = useState<'history' | 'architecture' | 'funFacts' | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  // Contemplative organ music for churches
+  const musicOptions = [
+    '/audio/background/gregorian-chant.mp3',
+  ];
 
   // Filter churches
   const filteredChurches = useMemo(() => {
@@ -46,7 +59,180 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   };
 
   const handleCloseModal = () => {
+    // Stop audio if playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+    if (backgroundMusicRef.current) {
+      fadeOutMusic();
+    }
+    setIsPlaying(false);
+    setCurrentSection(null);
+    setError('');
     setSelectedChurch(null);
+  };
+
+  const handleListen = async (section: 'history' | 'architecture' | 'funFacts') => {
+    if (!selectedChurch) return;
+
+    setError('');
+
+    // If already playing, stop
+    if (isPlaying) {
+      handleStop();
+      return;
+    }
+
+    // Force cleanup
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+
+    try {
+      setIsGenerating(true);
+      setCurrentSection(section);
+      setLoadingMessage('Generating audio...');
+
+      // Get the text content based on section
+      let textContent = '';
+      let sectionTitle = '';
+
+      if (section === 'history') {
+        textContent = selectedChurch.history;
+        sectionTitle = 'History';
+      } else if (section === 'architecture') {
+        textContent = selectedChurch.architecture;
+        sectionTitle = 'Architecture';
+      } else if (section === 'funFacts') {
+        textContent = "Did you know? " + selectedChurch.quickFacts.join('. ');
+        sectionTitle = 'Fun Facts';
+      }
+
+      // Azure TTS
+      const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const speechRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
+
+      if (!speechKey || !speechRegion) {
+        throw new Error('Azure Speech credentials not configured');
+      }
+
+      const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
+      speechConfig.speechSynthesisVoiceName = 'en-US-AndrewNeural'; // Professional male voice for architecture
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
+
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+        <voice name="en-US-AndrewNeural">
+          <prosody rate="0.92">
+            ${textContent}
+          </prosody>
+        </voice>
+      </speak>`;
+
+      synthesizer.speakSsmlAsync(
+        ssml,
+        result => {
+          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+
+            const audioElement = new Audio(audioUrl);
+            audioRef.current = audioElement;
+
+            startBackgroundMusic();
+
+            audioElement.play();
+            setIsPlaying(true);
+            setIsGenerating(false);
+            setLoadingMessage('');
+
+            audioElement.onended = () => {
+              setIsPlaying(false);
+              setCurrentSection(null);
+              fadeOutMusic();
+            };
+          } else {
+            throw new Error('Speech synthesis failed');
+          }
+
+          synthesizer.close();
+        },
+        error => {
+          console.error('Speech synthesis error:', error);
+          setError('Failed to generate audio');
+          setIsGenerating(false);
+          setLoadingMessage('');
+          setCurrentSection(null);
+          synthesizer.close();
+        }
+      );
+
+    } catch (error) {
+      setIsGenerating(false);
+      setLoadingMessage('');
+      setCurrentSection(null);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setError(`Failed to generate audio: ${errorMessage}`);
+    }
+  };
+
+  const handleStop = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+    }
+    if (backgroundMusicRef.current) {
+      fadeOutMusic();
+    }
+    setIsPlaying(false);
+    setCurrentSection(null);
+  };
+
+  const startBackgroundMusic = () => {
+    if (!backgroundMusicRef.current) {
+      const bgMusic = new Audio(musicOptions[0]);
+      bgMusic.loop = true;
+      bgMusic.volume = 0;
+      backgroundMusicRef.current = bgMusic;
+
+      bgMusic.play().catch(console.error);
+
+      // Fade in to 12% volume (subtle background)
+      let volume = 0;
+      const fadeIn = setInterval(() => {
+        if (volume < 0.12) {
+          volume += 0.01;
+          bgMusic.volume = Math.min(volume, 0.12);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 50);
+    }
+  };
+
+  const fadeOutMusic = () => {
+    if (backgroundMusicRef.current) {
+      const bgMusic = backgroundMusicRef.current;
+      let volume = bgMusic.volume;
+
+      const fadeOut = setInterval(() => {
+        if (volume > 0.01) {
+          volume -= 0.01;
+          bgMusic.volume = Math.max(volume, 0);
+        } else {
+          clearInterval(fadeOut);
+          bgMusic.pause();
+          bgMusic.currentTime = 0;
+          backgroundMusicRef.current = null;
+        }
+      }, 50);
+    }
   };
 
   return (
@@ -177,11 +363,67 @@ export default function SacredArchitectureClient({ churches, countries, styles }
 
             {/* Content */}
             <div className="p-8 space-y-6">
+              {/* Audio Tour Buttons */}
+              <div className="bg-gradient-to-br from-[#D4AF37]/10 to-amber-100/50 p-6 rounded-xl border-2 border-[#D4AF37]/30">
+                <h3 className="text-xl font-bold text-[#2C5F87] mb-4 flex items-center gap-2">
+                  <span>🎧</span>
+                  <span>Audio Tours</span>
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Listen to detailed narrations about this magnificent church
+                </p>
+                <div className="grid md:grid-cols-3 gap-3">
+                  <button
+                    onClick={() => handleListen('history')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'history' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#2C5F87] hover:bg-[#1e4a5f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'history' && isPlaying ? '⏹️ Stop' : '📜 History'}
+                  </button>
+                  <button
+                    onClick={() => handleListen('architecture')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'architecture' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#2C5F87] hover:bg-[#1e4a5f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'architecture' && isPlaying ? '⏹️ Stop' : '🏛️ Architecture'}
+                  </button>
+                  <button
+                    onClick={() => handleListen('funFacts')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'funFacts' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#D4AF37] hover:bg-[#c49d2f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'funFacts' && isPlaying ? '⏹️ Stop' : '💡 Fun Facts'}
+                  </button>
+                </div>
+                {isGenerating && (
+                  <p className="text-center text-sm text-gray-600 mt-3">
+                    {loadingMessage}
+                  </p>
+                )}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mt-3 text-sm">
+                    {error}
+                  </div>
+                )}
+              </div>
+
               {/* Quick Facts */}
               <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] p-6 rounded-xl">
                 <h3 className="text-xl font-bold text-[#2C5F87] mb-4 flex items-center gap-2">
                   <span>⚡</span>
-                  <span>Quick Facts</span>
+                  <span>Did You Know?</span>
                 </h3>
                 <ul className="space-y-2">
                   {selectedChurch.quickFacts.map((fact: string, i: number) => (
