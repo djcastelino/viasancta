@@ -325,8 +325,8 @@ export default function Home() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               <div className="h-60 relative overflow-hidden">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/1280px-St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg"
-                  alt="St. Peter's Basilica - Sacred Architecture"
+                  src="/images/architecture/cover-image.png"
+                  alt="Sacred Architecture - Daily Featured Church"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
