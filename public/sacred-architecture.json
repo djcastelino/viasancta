@@ -8,7 +8,12 @@
     },
     "built": "1506-1626",
     "architectureStyle": "Renaissance, Baroque",
-    "architects": ["Michelangelo", "Bernini", "Bramante", "Maderno"],
+    "architects": [
+      "Michelangelo",
+      "Bernini",
+      "Bramante",
+      "Maderno"
+    ],
     "quickFacts": [
       "Largest church in the world by interior area (15,160 m²)",
       "Took 120 years to complete with contributions from multiple architects",
@@ -42,7 +47,9 @@
     },
     "built": "1882-present (expected 2026)",
     "architectureStyle": "Art Nouveau, Gothic Revival",
-    "architects": ["Antoni Gaudí"],
+    "architects": [
+      "Antoni Gaudí"
+    ],
     "quickFacts": [
       "Still under construction after 140+ years",
       "Expected completion in 2026, the 100th anniversary of Gaudí's death",
@@ -76,7 +83,9 @@
     },
     "built": "1163-1345",
     "architectureStyle": "French Gothic",
-    "architects": ["Unknown master builders"],
+    "architects": [
+      "Unknown master builders"
+    ],
     "quickFacts": [
       "Construction took 182 years to complete",
       "Survived French Revolution and two World Wars",
@@ -110,7 +119,10 @@
     },
     "built": "1248-1880",
     "architectureStyle": "Gothic",
-    "architects": ["Gerhard of Reil", "Various masters"],
+    "architects": [
+      "Gerhard of Reil",
+      "Various masters"
+    ],
     "quickFacts": [
       "Construction took 632 years to complete",
       "Germany's most visited landmark with 6 million visitors annually",
@@ -144,7 +156,10 @@
     },
     "built": "1386-1965",
     "architectureStyle": "Gothic, Renaissance",
-    "architects": ["Simone da Orsenigo", "Various masters"],
+    "architects": [
+      "Simone da Orsenigo",
+      "Various masters"
+    ],
     "quickFacts": [
       "Took nearly 600 years to complete",
       "Features 3,400 statues, 135 spires, and 700 figures",
@@ -178,7 +193,9 @@
     },
     "built": "1063-1094",
     "architectureStyle": "Italo-Byzantine",
-    "architects": ["Unknown Byzantine masters"],
+    "architects": [
+      "Unknown Byzantine masters"
+    ],
     "quickFacts": [
       "Known as the 'Church of Gold' due to extensive gold mosaics",
       "Contains over 8,000 square meters of gold mosaics",
@@ -212,7 +229,9 @@
     },
     "built": "1194-1220",
     "architectureStyle": "Gothic",
-    "architects": ["Unknown master builders"],
+    "architects": [
+      "Unknown master builders"
+    ],
     "quickFacts": [
       "Best preserved medieval cathedral in France",
       "Contains the most extensive collection of medieval stained glass",
@@ -239,74 +258,6 @@
   },
   {
     "id": 8,
-    "name": "Hagia Sophia",
-    "location": {
-      "city": "Istanbul",
-      "country": "Turkey"
-    },
-    "built": "532-537 AD",
-    "architectureStyle": "Byzantine",
-    "architects": ["Isidore of Miletus", "Anthemius of Tralles"],
-    "quickFacts": [
-      "Built in just 5 years and 10 months",
-      "Was the world's largest cathedral for 1,000 years",
-      "Served as church (537-1453), mosque (1453-1931, 2020-present), and museum (1935-2020)",
-      "Dome appears to float, inspiring countless imitations"
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/1280px-Hagia_Sophia_Mars_2013.jpg",
-        "caption": "Hagia Sophia exterior view",
-        "credit": "Wikimedia Commons"
-      }
-    ],
-    "history": "Commissioned by Byzantine Emperor Justinian I in 532 AD after riots destroyed the previous church, Hagia Sophia ('Holy Wisdom') was completed in just under six years. It served as Constantinople's cathedral and the center of Orthodox Christianity for 916 years. When Ottoman Sultan Mehmed II conquered Constantinople in 1453, he converted it into a mosque, adding minarets and Islamic calligraphy. Atatürk secularized it as a museum in 1935; it was reconverted to a mosque in 2020.",
-    "architecture": "Hagia Sophia revolutionized architecture with its massive dome (31m diameter, 56m high) appearing to float on pendentives and 40 windows that flood the interior with light. Byzantine engineers Isidore and Anthemius created an earthquake-resistant structure using special lightweight bricks. The vast interior space (82m x 73m) creates an overwhelming sense of heaven. Islamic additions include four minarets, mihrab, and minbar, creating a unique Christian-Islamic architectural fusion.",
-    "notableArt": [
-      "Byzantine Mosaics - Stunning gold mosaics of Christ, Mary, and emperors (some covered, some visible)",
-      "Imperial Gate Mosaic - Christ Pantocrator above the main entrance",
-      "Deësis Mosaic - 13th century mosaic of Christ, Virgin Mary, and John the Baptist",
-      "Islamic Calligraphy - Massive medallions with names of Allah, Muhammad, and caliphs"
-    ],
-    "visitInfo": "Functions as a mosque; free entry outside prayer times. Modest dress required. Lower level accessible to tourists. Upper galleries currently closed.",
-    "googleMapsUrl": "https://www.google.com/maps/place/Hagia+Sophia/@41.0085627,28.9799987,17z"
-  },
-  {
-    "id": 9,
-    "name": "Westminster Abbey",
-    "location": {
-      "city": "London",
-      "country": "United Kingdom"
-    },
-    "built": "1245-1517",
-    "architectureStyle": "Gothic",
-    "architects": ["Henry of Reyns", "Henry Yevele"],
-    "quickFacts": [
-      "Coronation church for British monarchs since 1066",
-      "Over 3,300 people buried here, including 17 monarchs",
-      "Site of Prince William and Kate Middleton's 2011 wedding",
-      "Houses Poets' Corner with graves of literary giants"
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Westminster_Abbey_-_West_Door.jpg/1280px-Westminster_Abbey_-_West_Door.jpg",
-        "caption": "Western facade of Westminster Abbey",
-        "credit": "Wikimedia Commons"
-      }
-    ],
-    "history": "Founded by Benedictine monks in 960 AD, Westminster Abbey was rebuilt by Edward the Confessor (1042-1052) and again by Henry III (1245-1272) in French Gothic style. William the Conqueror was crowned here on Christmas Day 1066, establishing a tradition continuing to this day. Every English and British monarch since has been crowned at Westminster Abbey. It has also hosted 16 royal weddings, most recently Prince William and Catherine in 2011.",
-    "architecture": "Westminster Abbey exemplifies English Gothic architecture with French influences. The nave rises to 31 meters with spectacular fan vaulting. Twin towers of the west facade were completed by Nicholas Hawksmoor (1745). The octagonal Chapter House features one of Europe's best-preserved medieval tile floors. Henry VII's Chapel (1503-1519) showcases the finest Perpendicular Gothic fan vaulting in existence.",
-    "notableArt": [
-      "Coronation Chair - Wooden throne used for every coronation since 1308",
-      "Poets' Corner - Memorials to Chaucer, Dickens, Shakespeare, and more",
-      "Henry VII Chapel - Spectacular fan-vaulted ceiling and royal tombs",
-      "Cosmati Pavement - Intricate medieval floor mosaic before the High Altar"
-    ],
-    "visitInfo": "Entry fee required (pre-booking recommended). Audio guide included. Photography not permitted. Daily services open to all for free. Modest dress appreciated.",
-    "googleMapsUrl": "https://www.google.com/maps/place/Westminster+Abbey/@51.4993625,-0.1296726,17z"
-  },
-  {
-    "id": 10,
     "name": "Basilica of Our Lady of Guadalupe",
     "location": {
       "city": "Mexico City",
@@ -314,7 +265,9 @@
     },
     "built": "1974-1976 (new basilica)",
     "architectureStyle": "Modern",
-    "architects": ["Pedro Ramírez Vázquez"],
+    "architects": [
+      "Pedro Ramírez Vázquez"
+    ],
     "quickFacts": [
       "Most visited Catholic pilgrimage site in the world (20 million annually)",
       "Houses the miraculous tilma (cloak) of Juan Diego from 1531",
@@ -340,7 +293,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+Our+Lady+of+Guadalupe/@19.4847883,-99.1176501,17z"
   },
   {
-    "id": 11,
+    "id": 9,
     "name": "Sanctuary of Our Lady of Lourdes",
     "location": {
       "city": "Lourdes",
@@ -348,7 +301,9 @@
     },
     "built": "1871-1901",
     "architectureStyle": "Neo-Gothic",
-    "architects": ["Hippolyte Durand"],
+    "architects": [
+      "Hippolyte Durand"
+    ],
     "quickFacts": [
       "Over 6 million pilgrims visit annually",
       "Site of 18 Marian apparitions to St. Bernadette in 1858",
@@ -374,7 +329,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sanctuary+of+Our+Lady+of+Lourdes/@43.0963889,-0.0521389,17z"
   },
   {
-    "id": 12,
+    "id": 10,
     "name": "Sanctuary of Fátima",
     "location": {
       "city": "Fátima",
@@ -382,7 +337,9 @@
     },
     "built": "1928-1953",
     "architectureStyle": "Neo-Baroque",
-    "architects": ["Gerardus Samuel van Krieken"],
+    "architects": [
+      "Gerardus Samuel van Krieken"
+    ],
     "quickFacts": [
       "5 million pilgrims visit annually",
       "Site of Marian apparitions to three shepherd children in 1917",
@@ -408,7 +365,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sanctuary+of+F%C3%A1tima/@39.6313889,-8.6722222,17z"
   },
   {
-    "id": 13,
+    "id": 11,
     "name": "Cathedral of Santiago de Compostela",
     "location": {
       "city": "Santiago de Compostela",
@@ -416,7 +373,10 @@
     },
     "built": "1075-1211",
     "architectureStyle": "Romanesque, Baroque",
-    "architects": ["Master Mateo", "Fernando Casas Novoa"],
+    "architects": [
+      "Master Mateo",
+      "Fernando Casas Novoa"
+    ],
     "quickFacts": [
       "Final destination of the famous Camino de Santiago pilgrimage route",
       "Contains relics of St. James the Apostle",
@@ -442,7 +402,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Cathedral+of+Santiago+de+Compostela/@42.8804662,-8.5451381,17z"
   },
   {
-    "id": 14,
+    "id": 12,
     "name": "Basilica of St. Francis of Assisi",
     "location": {
       "city": "Assisi",
@@ -450,7 +410,9 @@
     },
     "built": "1228-1253",
     "architectureStyle": "Italian Gothic",
-    "architects": ["Brother Elias"],
+    "architects": [
+      "Brother Elias"
+    ],
     "quickFacts": [
       "Burial place of St. Francis, founder of the Franciscan Order",
       "Contains frescoes by Giotto and Cimabue",
@@ -476,7 +438,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+Saint+Francis+of+Assisi/@43.0736944,12.6058333,17z"
   },
   {
-    "id": 15,
+    "id": 13,
     "name": "Basilica of the National Shrine of the Immaculate Conception",
     "location": {
       "city": "Washington, D.C.",
@@ -484,7 +446,10 @@
     },
     "built": "1920-1959",
     "architectureStyle": "Byzantine-Romanesque",
-    "architects": ["Charles Donagh Maginnis", "Frederick V. Murphy"],
+    "architects": [
+      "Charles Donagh Maginnis",
+      "Frederick V. Murphy"
+    ],
     "quickFacts": [
       "Largest Catholic church in North America",
       "Largest church in the Western Hemisphere",
@@ -510,7 +475,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+the+National+Shrine+of+the+Immaculate+Conception/@38.9344444,-77.0005556,17z"
   },
   {
-    "id": 16,
+    "id": 14,
     "name": "Sacré-Cœur Basilica",
     "location": {
       "city": "Paris",
@@ -518,7 +483,9 @@
     },
     "built": "1875-1914",
     "architectureStyle": "Romano-Byzantine",
-    "architects": ["Paul Abadie"],
+    "architects": [
+      "Paul Abadie"
+    ],
     "quickFacts": [
       "Built as a penance for France's defeat in Franco-Prussian War",
       "Perpetual adoration has continued 24/7 since 1885",
@@ -544,7 +511,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sacr%C3%A9-C%C5%93ur/@48.8867,2.343,17z"
   },
   {
-    "id": 17,
+    "id": 15,
     "name": "Seville Cathedral",
     "location": {
       "city": "Seville",
@@ -552,7 +519,9 @@
     },
     "built": "1401-1528",
     "architectureStyle": "Gothic",
-    "architects": ["Multiple masters"],
+    "architects": [
+      "Multiple masters"
+    ],
     "quickFacts": [
       "Largest Gothic cathedral in the world",
       "Third-largest church in the world by volume",
@@ -578,7 +547,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Seville+Cathedral/@37.3857,-5.9933,17z"
   },
   {
-    "id": 18,
+    "id": 16,
     "name": "St. Basil's Cathedral",
     "location": {
       "city": "Moscow",
@@ -586,7 +555,10 @@
     },
     "built": "1555-1561",
     "architectureStyle": "Russian Orthodox",
-    "architects": ["Postnik Yakovlev", "Ivan Barma"],
+    "architects": [
+      "Postnik Yakovlev",
+      "Ivan Barma"
+    ],
     "quickFacts": [
       "Built to celebrate Ivan the Terrible's conquest of Kazan",
       "Originally white with gold domes—painted colorfully in 17th century",
@@ -612,7 +584,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/St.+Basil's+Cathedral/@55.7525,37.6231,17z"
   },
   {
-    "id": 19,
+    "id": 17,
     "name": "Canterbury Cathedral",
     "location": {
       "city": "Canterbury",
@@ -620,7 +592,11 @@
     },
     "built": "1070-1834",
     "architectureStyle": "Romanesque, Gothic",
-    "architects": ["Lanfranc", "William of Sens", "Multiple masters"],
+    "architects": [
+      "Lanfranc",
+      "William of Sens",
+      "Multiple masters"
+    ],
     "quickFacts": [
       "Mother church of Anglican Communion worldwide",
       "Site where Thomas Becket was murdered in 1170",
@@ -646,7 +622,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Canterbury+Cathedral/@51.2799,-1.0828,17z"
   },
   {
-    "id": 20,
+    "id": 18,
     "name": "Florence Cathedral (Duomo)",
     "location": {
       "city": "Florence",
@@ -654,7 +630,10 @@
     },
     "built": "1296-1436",
     "architectureStyle": "Gothic, Renaissance",
-    "architects": ["Arnolfo di Cambio", "Filippo Brunelleschi"],
+    "architects": [
+      "Arnolfo di Cambio",
+      "Filippo Brunelleschi"
+    ],
     "quickFacts": [
       "Dome remains world's largest masonry dome",
       "Took 140 years to complete",
@@ -680,7 +659,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Florence+Cathedral/@43.773,11.256,17z"
   },
   {
-    "id": 21,
+    "id": 19,
     "name": "Sistine Chapel",
     "location": {
       "city": "Vatican City",
@@ -688,7 +667,10 @@
     },
     "built": "1473-1481",
     "architectureStyle": "Renaissance",
-    "architects": ["Baccio Pontelli", "Giovannino de Dolci"],
+    "architects": [
+      "Baccio Pontelli",
+      "Giovannino de Dolci"
+    ],
     "quickFacts": [
       "Michelangelo painted the ceiling lying on his back for 4 years",
       "Site where Popes are elected (papal conclave)",
@@ -714,7 +696,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sistine+Chapel/@41.9029,12.4545,17z"
   },
   {
-    "id": 22,
+    "id": 20,
     "name": "St. Patrick's Cathedral",
     "location": {
       "city": "New York City",
@@ -722,7 +704,9 @@
     },
     "built": "1858-1878",
     "architectureStyle": "Neo-Gothic",
-    "architects": ["James Renwick Jr."],
+    "architects": [
+      "James Renwick Jr."
+    ],
     "quickFacts": [
       "Seat of Archbishop of New York",
       "Can hold 3,000 worshippers",
@@ -748,7 +732,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/St.+Patrick's+Cathedral/@40.7585,-73.976,17z"
   },
   {
-    "id": 23,
+    "id": 21,
     "name": "Sainte-Chapelle",
     "location": {
       "city": "Paris",
@@ -756,7 +740,9 @@
     },
     "built": "1242-1248",
     "architectureStyle": "Gothic",
-    "architects": ["Unknown"],
+    "architects": [
+      "Unknown"
+    ],
     "quickFacts": [
       "Built in just 7 years—remarkably fast for Gothic architecture",
       "Contains 1,113 stained glass panels depicting 1,130 biblical scenes",
@@ -782,7 +768,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sainte-Chapelle/@48.8555,2.345,17z"
   },
   {
-    "id": 24,
+    "id": 22,
     "name": "Jasna Góra Monastery",
     "location": {
       "city": "Częstochowa",
@@ -790,7 +776,9 @@
     },
     "built": "1382",
     "architectureStyle": "Gothic, Baroque",
-    "architects": ["Various"],
+    "architects": [
+      "Various"
+    ],
     "quickFacts": [
       "Home to the Black Madonna icon, Poland's most sacred image",
       "4-5 million pilgrims visit annually",
@@ -816,7 +804,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Jasna+G%C3%B3ra/@50.8122,19.0947,17z"
   },
   {
-    "id": 25,
+    "id": 23,
     "name": "Church of the Holy Sepulchre",
     "location": {
       "city": "Jerusalem",
@@ -824,7 +812,9 @@
     },
     "built": "326 AD (current: 1048)",
     "architectureStyle": "Romanesque, Byzantine",
-    "architects": ["Multiple over centuries"],
+    "architects": [
+      "Multiple over centuries"
+    ],
     "quickFacts": [
       "Built over the site where Jesus was crucified, buried, and resurrected",
       "Shared by six Christian denominations with complex ownership agreements",
