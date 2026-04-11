@@ -209,6 +209,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   };
 
   const startBackgroundMusic = () => {
+    console.log('🎵 startBackgroundMusic() called');
     if (!backgroundMusicRef.current) {
       // "I Am the Bread of Life" - Eucharistic hymn by SeraFire Christian Music
       // Perfect thematic fit for Eucharistic miracles
@@ -217,6 +218,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         '/audio/background/contemplative-1.mp3', // Fallback
       ];
 
+      console.log('🎵 Creating new Audio element with:', musicOptions[0]);
       // Eucharistic hymn background
       const bgMusic = new Audio(musicOptions[0]);
       bgMusic.loop = true;
@@ -225,12 +227,17 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
       // Add error handler with fallback
       bgMusic.onerror = (e) => {
-        console.log('Background music failed to load, trying fallback...');
+        console.error('❌ Background music failed to load:', musicOptions[0], e);
         // Try next music option if available
         if (musicOptions.length > 1) {
+          console.log('🔄 Trying fallback music:', musicOptions[1]);
           bgMusic.src = musicOptions[1];
           bgMusic.load();
         }
+      };
+
+      bgMusic.onloadeddata = () => {
+        console.log('✅ Background music loaded successfully:', musicOptions[0]);
       };
 
       backgroundMusicRef.current = bgMusic;
@@ -248,13 +255,15 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     // Try to play with user interaction context
     bgMusic.play()
       .then(() => {
-        console.log('🎵 Background music started successfully');
+        console.log('🎵 Background music started successfully:', bgMusic.src);
         // Fade in to 15% volume (soft, soothing)
         fadeInMusic(bgMusic, 0.15);
       })
       .catch(err => {
-        console.log('Background music autoplay blocked (normal browser behavior)');
-        // User needs to interact first - this is expected
+        console.error('❌ Background music play failed:', err.name, err.message);
+        console.log('Music src:', bgMusic.src);
+        console.log('This could be autoplay block or file not found');
+        // User needs to interact first - this is expected for autoplay block
       });
   };
 
