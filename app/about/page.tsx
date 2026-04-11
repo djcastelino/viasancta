@@ -181,6 +181,18 @@ export default function AboutPage() {
                 {' '}— beautiful instrumental music for Marian devotion
               </p>
               <p>
+                <strong>Sacred Architecture Music:</strong> "I Am the Bread of Life" by{' '}
+                <a
+                  href="https://sites.google.com/view/serafiremusic/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  SeraFire Christian Music
+                </a>
+                {' '}— Eucharistic hymn background for sacred architecture tours
+              </p>
+              <p>
                 <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by{' '}
                 <a
                   href="https://www.youtube.com/@LogosVoiceTV"

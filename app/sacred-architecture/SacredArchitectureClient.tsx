@@ -26,9 +26,9 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
-  // Contemplative organ music for churches
+  // "I Am the Bread of Life" by Serafire Christian Music
   const musicOptions = [
-    '/audio/background/gregorian-chant.mp3',
+    '/audio/background/I Am the Bread of Life.mp3',
   ];
 
   // Calculate today's featured church
