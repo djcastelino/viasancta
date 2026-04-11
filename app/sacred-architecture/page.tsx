@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import churches from '@/public/sacred-architecture.json';
 import SacredArchitectureClient from './SacredArchitectureClient';
 
@@ -56,7 +57,9 @@ export default async function SacredArchitecturePage() {
       </header>
 
       {/* Today's Featured Church - ONLY SHOW THIS ONE */}
-      <SacredArchitectureClient churches={churches} countries={countries} styles={styles} />
+      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+        <SacredArchitectureClient churches={churches} countries={countries} styles={styles} />
+      </Suspense>
     </main>
   );
 }
