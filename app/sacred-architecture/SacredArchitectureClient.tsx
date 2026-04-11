@@ -230,7 +230,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     return null;
   }
 
-  // PREVIEW MODE - Show all 23 churches (secret admin view)
+  // PREVIEW MODE - Show all 21 churches (secret admin view)
   if (isPreviewMode) {
     return (
       <>
@@ -240,7 +240,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
               🔒 PREVIEW MODE - Admin Only
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#2C5F87] mb-3 font-serif">
-              All 23 Churches Preview
+              All 21 Churches Preview
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-4">
               This view is only visible with the ?preview=true URL parameter
@@ -301,7 +301,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
             <strong>Come back tomorrow</strong> for another stunning sacred space
           </p>
           <p className="text-sm text-gray-600">
-            Each day features a different church from our collection of 23 magnificent Catholic sacred buildings
+            Each day features a different church from our collection of 21 magnificent Catholic sacred buildings
           </p>
         </div>
       </section>

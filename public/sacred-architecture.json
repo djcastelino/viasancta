@@ -548,81 +548,6 @@
   },
   {
     "id": 16,
-    "name": "St. Basil's Cathedral",
-    "location": {
-      "city": "Moscow",
-      "country": "Russia"
-    },
-    "built": "1555-1561",
-    "architectureStyle": "Russian Orthodox",
-    "architects": [
-      "Postnik Yakovlev",
-      "Ivan Barma"
-    ],
-    "quickFacts": [
-      "Built to celebrate Ivan the Terrible's conquest of Kazan",
-      "Originally white with gold domes—painted colorfully in 17th century",
-      "Legend says Ivan blinded the architects so they couldn't build anything as beautiful",
-      "Actually a complex of nine churches unified under one roof"
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/St_Basils_Cathedral-500px.jpg/1280px-St_Basils_Cathedral-500px.jpg",
-        "caption": "St. Basil's Cathedral, Red Square",
-        "credit": "Wikimedia Commons"
-      }
-    ],
-    "history": "Tsar Ivan IV (Ivan the Terrible) commissioned the cathedral to commemorate his capture of Kazan from Mongol forces in 1552. Originally named the Cathedral of the Intercession of the Virgin, it became known as St. Basil's after Basil the Blessed, a holy fool buried on the site in 1588. The cathedral narrowly escaped demolition under Stalin, who reportedly wanted to clear Red Square for military parades. It functioned as a museum during the Soviet era and remains primarily a museum today, with occasional Orthodox services.",
-    "architecture": "St. Basil's represents the pinnacle of medieval Russian Orthodox architecture with no parallel in Western tradition. Nine chapels sit on a single foundation, each topped with a distinctly patterned onion dome. The central tent-roofed church rises 65 meters. The seemingly chaotic exterior conceals a symmetrical floor plan arranged around the central tower. The vibrant colors—red, yellow, green, and blue—were added in the 1680s, replacing the original white-and-gold scheme. The interior features narrow corridors connecting the chapels, decorated with frescoes and oil paintings.",
-    "notableArt": [
-      "Onion Domes - Nine uniquely patterned colorful domes",
-      "Frescoes - 16th-19th century religious paintings throughout",
-      "Iconostasis - Traditional Orthodox icon screens in each chapel",
-      "Bell Tower - 16th century bell tower reconstructed in 1680s"
-    ],
-    "visitInfo": "Entrance fee required. Open daily except first Wednesday of month. Photography allowed (fee for video). Cold in winter. Limited English signage. Best viewed from Red Square. No active worship—functions as museum.",
-    "googleMapsUrl": "https://www.google.com/maps/place/St.+Basil's+Cathedral/@55.7525,37.6231,17z"
-  },
-  {
-    "id": 17,
-    "name": "Canterbury Cathedral",
-    "location": {
-      "city": "Canterbury",
-      "country": "United Kingdom"
-    },
-    "built": "1070-1834",
-    "architectureStyle": "Romanesque, Gothic",
-    "architects": [
-      "Lanfranc",
-      "William of Sens",
-      "Multiple masters"
-    ],
-    "quickFacts": [
-      "Mother church of Anglican Communion worldwide",
-      "Site where Thomas Becket was murdered in 1170",
-      "Archbishop of Canterbury is spiritual leader of 85 million Anglicans",
-      "One of England's three UNESCO World Heritage Sites with religious structures"
-    ],
-    "images": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Canterbury_Cathedral_-_Portal_Nave_Cross-spire.jpeg/1280px-Canterbury_Cathedral_-_Portal_Nave_Cross-spire.jpeg",
-        "caption": "Canterbury Cathedral",
-        "credit": "Wikimedia Commons"
-      }
-    ],
-    "history": "Christianity arrived in Canterbury in 597 AD when St. Augustine was sent by Pope Gregory the Great to convert England. The original cathedral was destroyed by fire in 1067. Archbishop Lanfranc began the current structure in 1070. The cathedral's history was forever changed on December 29, 1170, when four knights murdered Archbishop Thomas Becket in the northwest transept, supposedly acting on King Henry II's wishes. Becket was canonized in 1173, and his shrine became one of medieval Christianity's most important pilgrimage destinations, immortalized in Chaucer's Canterbury Tales.",
-    "architecture": "Canterbury displays English Gothic architecture at its finest, with elements from multiple building periods. The Norman nave from 1070-1180 shows Romanesque influence. The Gothic choir, rebuilt by William of Sens after an 1174 fire, introduced French Gothic style to England. The central Bell Harry Tower (1498) rises 72 meters, dominating the city. The crypt, England's largest, preserves remarkable Romanesque architecture. Perpendicular Gothic style appears in the 15th-century nave. The cathedral's stained glass includes some of Europe's finest medieval examples.",
-    "notableArt": [
-      "Medieval Stained Glass - 12th-13th century windows including Miracle Windows",
-      "Site of Becket's Martyrdom - Marked by Altar of the Sword's Point",
-      "Black Prince's Tomb - Effigy of Edward the Black Prince (1376)",
-      "Chair of St. Augustine - Ancient throne of Archbishops of Canterbury"
-    ],
-    "visitInfo": "Entrance fee required. Open daily except during special services. Photography allowed without flash. Evensong daily (free to attend). Audio guides available. Modest dress appreciated. Archbishop's throne visible during visits.",
-    "googleMapsUrl": "https://www.google.com/maps/place/Canterbury+Cathedral/@51.2799,-1.0828,17z"
-  },
-  {
-    "id": 18,
     "name": "Florence Cathedral (Duomo)",
     "location": {
       "city": "Florence",
@@ -659,7 +584,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Florence+Cathedral/@43.773,11.256,17z"
   },
   {
-    "id": 19,
+    "id": 17,
     "name": "Sistine Chapel",
     "location": {
       "city": "Vatican City",
@@ -696,7 +621,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sistine+Chapel/@41.9029,12.4545,17z"
   },
   {
-    "id": 20,
+    "id": 18,
     "name": "St. Patrick's Cathedral",
     "location": {
       "city": "New York City",
@@ -732,7 +657,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/St.+Patrick's+Cathedral/@40.7585,-73.976,17z"
   },
   {
-    "id": 21,
+    "id": 19,
     "name": "Sainte-Chapelle",
     "location": {
       "city": "Paris",
@@ -768,7 +693,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Sainte-Chapelle/@48.8555,2.345,17z"
   },
   {
-    "id": 22,
+    "id": 20,
     "name": "Jasna Góra Monastery",
     "location": {
       "city": "Częstochowa",
@@ -804,7 +729,7 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Jasna+G%C3%B3ra/@50.8122,19.0947,17z"
   },
   {
-    "id": 23,
+    "id": 21,
     "name": "Church of the Holy Sepulchre",
     "location": {
       "city": "Jerusalem",
