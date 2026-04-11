@@ -213,7 +213,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       // "I Am the Bread of Life" - Eucharistic hymn by SeraFire Christian Music
       // Perfect thematic fit for Eucharistic miracles
       const musicOptions = [
-        '/audio/background/I Am the Bread of Life.mp3',
+        '/audio/background/i-am-the-bread-of-life.mp3',
+        '/audio/background/contemplative-1.mp3', // Fallback
       ];
 
       // Eucharistic hymn background

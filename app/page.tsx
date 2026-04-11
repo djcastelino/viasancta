@@ -37,12 +37,12 @@ export default function Home() {
             Experience divine encounters through AI-guided audio tours of sacred sites, miracles, and holy places worldwide
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/tours/eucharistic-miracles"
+            <a
+              href="#tours"
               className="inline-block bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all"
             >
               Start Your Journey →
-            </Link>
+            </a>
             <Link
               href="/about"
               className="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-all"
