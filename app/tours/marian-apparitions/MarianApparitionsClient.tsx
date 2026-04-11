@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import ApparitionCard from '@/app/components/ApparitionCard';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import marianMusicManager from '@/app/lib/marianMusicManager';
 
 interface MarianApparitionsClientProps {
   apparitions: any[];
@@ -20,7 +21,6 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
   // Voice rotation - different voice for each apparition
   const voices = [
@@ -32,24 +32,14 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     { name: 'en-US-RogerNeural', displayName: 'Roger' },
   ];
 
-  // Hail Mary Gentle Woman background music
-  // Music by SeraFire Music (https://sites.google.com/view/serafiremusic/home)
-  // Plays when user clicks on any Marian apparition card
-  const musicOptions = [
-    '/audio/background/Hail Mary Gentle Woman.mp3',
-  ];
-
-  // Start Hail Mary music when page loads
+  // Start Hail Mary Gentle Woman music when page loads
+  // Uses global manager for continuous playback
   useEffect(() => {
-    startBackgroundMusic();
+    marianMusicManager.start();
 
-    // Cleanup: stop music when leaving the page
+    // Schedule stop when leaving - cancels if navigating within Marian section
     return () => {
-      if (backgroundMusicRef.current) {
-        backgroundMusicRef.current.pause();
-        backgroundMusicRef.current.currentTime = 0;
-        backgroundMusicRef.current = null;
-      }
+      marianMusicManager.stopDelayed();
     };
   }, []);
 
@@ -80,9 +70,6 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     setShowNarration(false);
     setNarrationText('');
     setError('');
-
-    // Start Hail Mary background music when card is clicked
-    startBackgroundMusic();
   };
 
   const handleCloseModal = () => {
@@ -93,6 +80,9 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
       audioRef.current = null;
     }
     setIsPlaying(false);
+
+    // Restore background music volume if it was ducked
+    marianMusicManager.unduck();
 
     // Modal closed - music continues playing in background
     setSelectedApparition(null);
@@ -182,7 +172,8 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
             const audioElement = new Audio(audioUrl);
             audioRef.current = audioElement;
 
-            // Don't start background music here - it's already playing from card click
+            // Duck background music to 15% for narration
+            marianMusicManager.duck();
 
             audioElement.play();
             setIsPlaying(true);
@@ -191,7 +182,8 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
             audioElement.onended = () => {
               setIsPlaying(false);
-              // Keep background music playing after narration ends
+              // Restore background music to 30%
+              marianMusicManager.unduck();
             };
           } else {
             throw new Error('Speech synthesis failed');
@@ -222,52 +214,13 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
       audioRef.current.currentTime = 0;
       audioRef.current = null;
     }
-    if (backgroundMusicRef.current) {
-      fadeOutMusic();
-    }
+    // Restore background music volume when stopping narration
+    marianMusicManager.unduck();
     setIsPlaying(false);
   };
 
-  const startBackgroundMusic = () => {
-    if (!backgroundMusicRef.current) {
-      const bgMusic = new Audio(musicOptions[0]);
-      bgMusic.loop = true;
-      bgMusic.volume = 0;
-      backgroundMusicRef.current = bgMusic;
-
-      bgMusic.play().catch(console.error);
-
-      // Fade in to 25% volume (higher since it's primary background music)
-      let volume = 0;
-      const fadeIn = setInterval(() => {
-        if (volume < 0.25) {
-          volume += 0.01;
-          bgMusic.volume = Math.min(volume, 0.25);
-        } else {
-          clearInterval(fadeIn);
-        }
-      }, 50);
-    }
-  };
-
-  const fadeOutMusic = () => {
-    if (backgroundMusicRef.current) {
-      const bgMusic = backgroundMusicRef.current;
-      let volume = bgMusic.volume;
-
-      const fadeOut = setInterval(() => {
-        if (volume > 0.01) {
-          volume -= 0.01;
-          bgMusic.volume = Math.max(volume, 0);
-        } else {
-          clearInterval(fadeOut);
-          bgMusic.pause();
-          bgMusic.currentTime = 0;
-          backgroundMusicRef.current = null;
-        }
-      }, 50);
-    }
-  };
+  // Background music now handled by global marianMusicManager
+  // Functions removed - using manager.duck() and manager.unduck() instead
 
   return (
     <>
