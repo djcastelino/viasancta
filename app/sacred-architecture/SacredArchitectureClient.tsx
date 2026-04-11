@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ChurchCard from '@/app/components/ChurchCard';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
@@ -11,10 +11,8 @@ interface SacredArchitectureClientProps {
 }
 
 export default function SacredArchitectureClient({ churches, countries, styles }: SacredArchitectureClientProps) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedStyle, setSelectedStyle] = useState('');
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
+  const [todaysFeaturedChurch, setTodaysFeaturedChurch] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
@@ -28,31 +26,20 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     '/audio/background/gregorian-chant.mp3',
   ];
 
-  // Filter churches
-  const filteredChurches = useMemo(() => {
-    return churches.filter((church) => {
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const matchesSearch =
-          church.name?.toLowerCase().includes(query) ||
-          church.location.city.toLowerCase().includes(query) ||
-          church.location.country.toLowerCase().includes(query) ||
-          church.architectureStyle.toLowerCase().includes(query);
+  // Calculate today's featured church
+  useEffect(() => {
+    const today = new Date();
+    const start = new Date(today.getFullYear(), 0, 0);
+    const diff = today.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
 
-        if (!matchesSearch) return false;
-      }
+    // Rotate through churches based on day of year
+    const churchIndex = (dayOfYear - 1) % churches.length;
+    const featuredChurch = churches[churchIndex];
 
-      if (selectedCountry && church.location.country !== selectedCountry) {
-        return false;
-      }
-
-      if (selectedStyle && !church.architectureStyle.includes(selectedStyle)) {
-        return false;
-      }
-
-      return true;
-    });
-  }, [churches, searchQuery, selectedCountry, selectedStyle]);
+    setTodaysFeaturedChurch(featuredChurch);
+  }, [churches]);
 
   const handleCardClick = (church: any) => {
     setSelectedChurch(church);
@@ -235,102 +222,44 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     }
   };
 
+  if (!todaysFeaturedChurch) {
+    return null;
+  }
+
   return (
     <>
-      {/* Search and Filter */}
+      {/* Today's Featured Church - ONLY THIS ONE */}
       <section className="max-w-7xl mx-auto px-5 pb-8">
-        <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4">
-          {/* Search */}
-          <div>
-            <input
-              type="text"
-              placeholder="Search by name, location, or style..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-            />
+        <div className="text-center mb-8">
+          <div className="inline-block bg-gradient-to-r from-amber-600 to-yellow-600 px-6 py-2 rounded-full text-white font-bold text-sm mb-4">
+            TODAY'S FEATURED CHURCH
           </div>
-
-          {/* Filters */}
-          <div className="grid md:grid-cols-3 gap-4">
-            <select
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-            >
-              <option value="">All Countries</option>
-              {countries.sort().map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={selectedStyle}
-              onChange={(e) => setSelectedStyle(e.target.value)}
-              className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
-            >
-              <option value="">All Styles</option>
-              {styles.sort().map((style) => (
-                <option key={style} value={style}>
-                  {style}
-                </option>
-              ))}
-            </select>
-
-            {(searchQuery || selectedCountry || selectedStyle) && (
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedCountry('');
-                  setSelectedStyle('');
-                }}
-                className="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg font-semibold transition-colors"
-              >
-                Clear Filters
-              </button>
-            )}
-          </div>
-
-          {/* Results Count */}
-          <p className="text-sm text-gray-600 text-center">
-            Showing {filteredChurches.length} {filteredChurches.length === 1 ? 'church' : 'churches'}
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2C5F87] mb-3 font-serif">
+            Discover One Sacred Space Daily
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Experience a new magnificent church each day. Explore its history, architecture, and fascinating facts with audio tours.
           </p>
         </div>
-      </section>
 
-      {/* Churches Grid */}
-      <section id="churches-grid" className="max-w-7xl mx-auto px-5 pb-16">
-        {filteredChurches.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredChurches.map((church: any) => (
-              <ChurchCard
-                key={church.id}
-                church={church}
-                onClick={() => handleCardClick(church)}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <div className="text-6xl mb-4">🏛️</div>
-            <h3 className="text-2xl font-bold text-gray-700 mb-2">No churches found</h3>
-            <p className="text-gray-600 mb-6">
-              Try adjusting your search or filters
-            </p>
-            <button
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedCountry('');
-                setSelectedStyle('');
-              }}
-              className="bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-8 py-3 rounded-full font-semibold transition-colors"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
+        {/* Featured Church Card */}
+        <div className="max-w-2xl mx-auto">
+          <ChurchCard
+            church={todaysFeaturedChurch}
+            onClick={() => handleCardClick(todaysFeaturedChurch)}
+          />
+        </div>
+
+        {/* Come Back Tomorrow Message */}
+        <div className="text-center mt-8 p-6 bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] rounded-2xl max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 mb-2">
+            <span className="text-2xl mr-2">✨</span>
+            <strong>Come back tomorrow</strong> for another stunning sacred space
+          </p>
+          <p className="text-sm text-gray-600">
+            Each day features a different church from our collection of 25 magnificent sacred buildings
+          </p>
+        </div>
       </section>
 
       {/* Modal */}

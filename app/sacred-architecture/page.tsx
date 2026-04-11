@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import churches from '@/public/sacred-architecture.json';
 import SacredArchitectureClient from './SacredArchitectureClient';
-import TodaysFeaturedChurch from '../components/TodaysFeaturedChurch';
 
 export const metadata = {
   title: 'Sacred Architecture - Divine Pilgrim',
@@ -28,20 +27,20 @@ export default async function SacredArchitecturePage() {
             Sacred Architecture
           </h1>
           <p className="text-2xl md:text-3xl italic mb-3 drop-shadow-lg text-[#D4AF37]">
-            100 Magnificent Churches & Cathedrals
+            One Magnificent Church Daily
           </p>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl text-center drop-shadow-md">
-            Journey through history's most stunning sacred spaces with audio tours of architecture, history, and divine artistry
+            Discover a new sacred space each day with audio tours of history, architecture, and fascinating facts
           </p>
-          <div className="mt-6 flex gap-4 text-sm">
+          <div className="mt-6 flex gap-4 text-sm flex-wrap justify-center">
+            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
+              <span className="font-semibold">Daily Featured Church</span>
+            </div>
             <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
               <span className="font-semibold">{churches.length} Churches</span>
             </div>
             <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
               <span className="font-semibold">{countries.length} Countries</span>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-semibold">10+ Centuries</span>
             </div>
           </div>
         </div>
@@ -56,10 +55,7 @@ export default async function SacredArchitecturePage() {
         </div>
       </header>
 
-      {/* Today's Featured Church */}
-      <TodaysFeaturedChurch />
-
-      {/* Search, Filter, and Churches Grid */}
+      {/* Today's Featured Church - ONLY SHOW THIS ONE */}
       <SacredArchitectureClient churches={churches} countries={countries} styles={styles} />
     </main>
   );
