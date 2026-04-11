@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import MiracleCard from '@/app/components/MiracleCard';
 import SearchFilter from '@/app/components/SearchFilter';
@@ -14,6 +14,43 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedCentury, setSelectedCentury] = useState('');
+  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+
+  // Start "I Am the Bread of Life" music when Eucharistic Miracles tour page loads
+  useEffect(() => {
+    startBackgroundMusic();
+
+    // Cleanup: stop music when leaving the page
+    return () => {
+      if (backgroundMusicRef.current) {
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.currentTime = 0;
+        backgroundMusicRef.current = null;
+      }
+    };
+  }, []);
+
+  const startBackgroundMusic = () => {
+    if (!backgroundMusicRef.current) {
+      const bgMusic = new Audio('/audio/background/i-am-the-bread-of-life.mp3');
+      bgMusic.loop = true;
+      bgMusic.volume = 0;
+      backgroundMusicRef.current = bgMusic;
+
+      bgMusic.play().catch(console.error);
+
+      // Fade in to 30% volume
+      let volume = 0;
+      const fadeIn = setInterval(() => {
+        if (volume < 0.30) {
+          volume += 0.01;
+          bgMusic.volume = Math.min(volume, 0.30);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 50);
+    }
+  };
 
   // Filter miracles based on search and filters
   const filteredMiracles = useMemo(() => {
