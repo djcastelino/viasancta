@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import ApparitionCard from '@/app/components/ApparitionCard';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
@@ -39,6 +39,20 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     '/audio/background/Hail Mary Gentle Woman.mp3',
   ];
 
+  // Start Hail Mary music when page loads
+  useEffect(() => {
+    startBackgroundMusic();
+
+    // Cleanup: stop music when leaving the page
+    return () => {
+      if (backgroundMusicRef.current) {
+        backgroundMusicRef.current.pause();
+        backgroundMusicRef.current.currentTime = 0;
+        backgroundMusicRef.current = null;
+      }
+    };
+  }, []);
+
   // Filter apparitions
   const filteredApparitions = useMemo(() => {
     return apparitions.filter((apparition) => {
@@ -72,9 +86,15 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   };
 
   const handleCloseModal = () => {
-    if (isPlaying) {
-      handleStop();
+    // Stop narration audio if playing
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
     }
+    setIsPlaying(false);
+
+    // Modal closed - music continues playing in background
     setSelectedApparition(null);
     setShowNarration(false);
     setNarrationText('');
