@@ -6,6 +6,7 @@ import miracles from '@/src/eucharistic-miracles.json';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 import MiracleImageGallery from '@/app/components/MiracleImageGallery';
 import SourceLinks from '@/app/components/SourceLinks';
+import eucharisticMusicManager from '@/app/lib/eucharisticMusicManager';
 
 export default function MiraclePage({ params }: { params: Promise<{ id: string }> }) {
   const [miracleId, setMiracleId] = useState<string>('');
@@ -26,18 +27,9 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     });
   }, [params]);
 
-  // Start "I Am the Bread of Life" music when page loads (like Hail Mary for Marian Apparitions)
+  // Start background music using global manager - it will continue if already playing
   useEffect(() => {
-    startBackgroundMusic();
-
-    // Cleanup: stop music when leaving the page
-    return () => {
-      if (backgroundMusicRef.current) {
-        backgroundMusicRef.current.pause();
-        backgroundMusicRef.current.currentTime = 0;
-        backgroundMusicRef.current = null;
-      }
-    };
+    eucharisticMusicManager.start();
   }, []);
 
   const handlePlayNarration = async () => {
