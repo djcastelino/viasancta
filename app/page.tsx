@@ -320,30 +320,36 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Sacred Architecture - HIDDEN */}
-          {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-            <div className="h-60 relative overflow-hidden">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg/800px-Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg"
-                alt="Sagrada Familia Barcelona"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-3xl font-bold drop-shadow-md">
-                  Sacred Architecture
-                </h3>
+          {/* Sacred Architecture */}
+          <Link href="/sacred-architecture" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              <div className="h-60 relative overflow-hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/1280px-St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg"
+                  alt="St. Peter's Basilica - Sacred Architecture"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🏛️</span>
+                    <span>100 Magnificent Churches</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Sacred Architecture
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Journey through history's most stunning churches and cathedrals. From St. Peter's to Sagrada Família, explore <span className="font-semibold text-[#2C5F87]">architecture, history, and divine artistry</span> with detailed audio tours.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Tour →
+                </span>
               </div>
             </div>
-            <div className="p-7">
-              <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                Tour the world's most magnificent churches and basilicas. From St. Peter's to Sagrada Família, experience the pinnacle of sacred architecture.
-              </p>
-              <span className="inline-block bg-gray-400 text-gray-100 px-8 py-3 rounded-full font-semibold">
-                Coming Soon
-              </span>
-            </div>
-          </div> */}
+          </Link>
 
           {/* Biblical Sites - HIDDEN FOR PHASE 2 */}
           {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">

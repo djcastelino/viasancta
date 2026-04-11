@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "name": "St. Peter's Basilica",
+    "location": {
+      "city": "Vatican City",
+      "country": "Vatican"
+    },
+    "built": "1506-1626",
+    "architectureStyle": "Renaissance, Baroque",
+    "architects": ["Michelangelo", "Bernini", "Bramante", "Maderno"],
+    "quickFacts": [
+      "Largest church in the world by interior area (15,160 m²)",
+      "Took 120 years to complete with contributions from multiple architects",
+      "The dome was designed by Michelangelo when he was 71 years old",
+      "Can hold 60,000 people at once"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/1280px-St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg",
+        "caption": "Facade of St. Peter's Basilica",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "St. Peter's Basilica stands on the site where St. Peter, the first Pope and apostle of Jesus Christ, was crucified and buried around 64 AD. The current basilica, begun in 1506 under Pope Julius II, replaced the original 4th-century church built by Emperor Constantine. The construction involved the greatest Renaissance artists including Bramante, Raphael, Michelangelo, and Bernini, each leaving their mark on this architectural masterpiece.",
+    "architecture": "The basilica exemplifies High Renaissance and Baroque architecture. Michelangelo's magnificent dome dominates the Roman skyline at 136 meters high. The interior features Bernini's bronze baldacchino over the papal altar, standing 29 meters tall. The facade by Carlo Maderno stretches 115 meters wide, welcoming pilgrims from St. Peter's Square.",
+    "notableArt": [
+      "Michelangelo's Pietà (1499) - Masterpiece sculpture of Mary holding Jesus",
+      "Bernini's Baldacchino (1624-1633) - Bronze canopy over the papal altar",
+      "Statue of St. Peter - Bronze statue with worn foot from centuries of pilgrims' kisses",
+      "Dome mosaics - Stunning mosaics decorating the interior of the dome"
+    ],
+    "visitInfo": "St. Peter's Basilica is free to enter. Dome climb available (fee applies). Modest dress required. Lines are longest in morning; late afternoon is best.",
+    "googleMapsUrl": "https://www.google.com/maps/place/St.+Peter's+Basilica/@41.9021906,12.4538852,17z"
+  },
+  {
+    "id": 2,
+    "name": "Sagrada Família",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain"
+    },
+    "built": "1882-present (expected 2026)",
+    "architectureStyle": "Art Nouveau, Gothic Revival",
+    "architects": ["Antoni Gaudí"],
+    "quickFacts": [
+      "Still under construction after 140+ years",
+      "Expected completion in 2026, the 100th anniversary of Gaudí's death",
+      "UNESCO World Heritage Site since 2005",
+      "Over 3 million visitors annually"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg/1280px-Basilica_de_la_Sagrada_Familia_%2850441441743%29.jpg",
+        "caption": "Sagrada Família from Plaça de Gaudí",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "The Sagrada Família was begun in 1882 by architect Francisco de Paula del Villar. In 1883, Antoni Gaudí took over the project, transforming it with his unique architectural vision. Gaudí devoted the last 15 years of his life entirely to this project, even living in the workshop. After his death in 1926, construction continued based on his plans and models, surviving the Spanish Civil War and continuing to this day.",
+    "architecture": "Gaudí's design combines Gothic and Art Nouveau forms with nature-inspired elements. The basilica features 18 towers representing the 12 apostles, 4 evangelists, Virgin Mary, and Jesus Christ (tallest at 172.5m). The interior resembles a forest with tree-like columns branching to support the roof. Natural light filters through stunning stained glass, creating a kaleidoscope of colors.",
+    "notableArt": [
+      "Nativity Facade - Gaudí's elaborate sculpture work depicting Jesus's birth",
+      "Passion Facade - Modern angular sculptures by Josep Maria Subirachs",
+      "Glory Facade - Main entrance (under construction) representing death, judgment, and glory",
+      "Stained Glass Windows - Creating spectacular light shows throughout the day"
+    ],
+    "visitInfo": "Tickets must be purchased in advance online. Audio guides available. Tower access available (additional fee). Photography allowed without flash.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Bas%C3%ADlica+de+la+Sagrada+Fam%C3%ADlia/@41.4036299,2.1743558,17z"
+  },
+  {
+    "id": 3,
+    "name": "Notre-Dame de Paris",
+    "location": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "built": "1163-1345",
+    "architectureStyle": "French Gothic",
+    "architects": ["Unknown master builders"],
+    "quickFacts": [
+      "Construction took 182 years to complete",
+      "Survived French Revolution and two World Wars",
+      "2019 fire destroyed the spire and roof; restoration underway",
+      "Setting of Victor Hugo's famous novel 'The Hunchback of Notre-Dame'"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Notre-Dame_de_Paris_2792x2911.jpg/1280px-Notre-Dame_de_Paris_2792x2911.jpg",
+        "caption": "Notre-Dame Cathedral before the 2019 fire",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Notre-Dame de Paris stands on the Île de la Cité, the historical heart of Paris. Construction began in 1163 under Bishop Maurice de Sully during the reign of King Louis VII. The cathedral witnessed coronations, royal weddings, and survived desecration during the French Revolution. In 1831, Victor Hugo's novel sparked renewed interest, leading to major restorations by architect Viollet-le-Duc. The devastating 2019 fire shocked the world; restoration aims for reopening in 2024.",
+    "architecture": "A masterpiece of French Gothic architecture, Notre-Dame pioneered the use of flying buttresses, allowing for higher ceilings and larger windows. The western facade features three magnificent portals crowned by the Gallery of Kings. Twin towers rise 69 meters, housing the famous Emmanuel bell. The interior spans 130 meters long with a 33-meter high nave, showcasing the revolutionary Gothic structural innovations.",
+    "notableArt": [
+      "Rose Windows - Three massive stained glass roses (north, south, and west)",
+      "Gallery of Kings - 28 statues of Judean kings on the western facade",
+      "Gargoyles and Chimeras - Famous grotesque sculptures serving as waterspouts",
+      "Great Organ - One of France's most famous organs with 8,000 pipes"
+    ],
+    "visitInfo": "Currently closed for restoration after 2019 fire. Reopening expected in late 2024. The esplanade remains open for exterior viewing.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Notre-Dame+de+Paris/@48.8529682,2.3499021,17z"
+  },
+  {
+    "id": 4,
+    "name": "Cologne Cathedral",
+    "location": {
+      "city": "Cologne",
+      "country": "Germany"
+    },
+    "built": "1248-1880",
+    "architectureStyle": "Gothic",
+    "architects": ["Gerhard of Reil", "Various masters"],
+    "quickFacts": [
+      "Construction took 632 years to complete",
+      "Germany's most visited landmark with 6 million visitors annually",
+      "Survived 14 direct bomb hits during World War II",
+      "Twin spires reach 157 meters, making it the tallest twin-spired church"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/K%C3%B6lner_Dom_vom_KH.jpg/1280px-K%C3%B6lner_Dom_vom_KH.jpg",
+        "caption": "Cologne Cathedral towers over the city",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Construction began in 1248 to house the relics of the Three Wise Men, brought from Milan in 1164. Work halted around 1560 due to lack of funds and remained incomplete for nearly 300 years. Construction resumed in the 1840s, driven by German nationalism, and was finally completed in 1880. Miraculously, despite heavy Allied bombing during WWII that destroyed much of Cologne, the cathedral survived with relatively minor damage.",
+    "architecture": "A pure expression of High Gothic architecture, Cologne Cathedral features the largest facade of any church in the world. The twin spires soar 157 meters high. The interior contains Germany's largest church window space - over 10,000 square meters of stained glass. The enormous nave reaches 43 meters high, creating a sense of heaven reaching toward earth.",
+    "notableArt": [
+      "Shrine of the Three Kings - Massive golden reliquary housing relics of the Magi",
+      "Gero Crucifix - Oldest large crucifix north of the Alps (10th century)",
+      "Bavarian Windows - Modern stained glass by Gerhard Richter (2007)",
+      "Medieval stained glass - Some of the finest Gothic glass in existence"
+    ],
+    "visitInfo": "Free entry to main cathedral. Tower climb available (533 steps, fee applies). Daily services held. Photography allowed without flash.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Cologne+Cathedral/@50.9413485,6.9582814,17z"
+  },
+  {
+    "id": 5,
+    "name": "Duomo di Milano",
+    "location": {
+      "city": "Milan",
+      "country": "Italy"
+    },
+    "built": "1386-1965",
+    "architectureStyle": "Gothic, Renaissance",
+    "architects": ["Simone da Orsenigo", "Various masters"],
+    "quickFacts": [
+      "Took nearly 600 years to complete",
+      "Features 3,400 statues, 135 spires, and 700 figures",
+      "Fifth largest church in the world",
+      "The only European Gothic cathedral made of white marble"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2016_Mailand_-_Dom_-_0035.jpg/1280px-2016_Mailand_-_Dom_-_0035.jpg",
+        "caption": "Milan Cathedral facade",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Construction of Milan's Duomo began in 1386 under Archbishop Antonio da Saluzzo and Lord Gian Galeazzo Visconti. The project aimed to create a grand cathedral worthy of Milan's status. Numerous architects from Italy, France, and Germany contributed over the centuries. The last gate was completed in 1965, though finishing touches continue to this day. Napoleon was crowned King of Italy here in 1805.",
+    "architecture": "Built from rare pink-tinged Candoglia marble, the Duomo showcases Italian Gothic architecture with Renaissance influences. The facade features 135 spires reaching skyward, crowned by the golden Madonnina statue (108.5m high). The interior can hold 40,000 people. The forest of 52 massive columns creates five aisles. The octagonal dome by Francesco Maria Richini adds Renaissance grandeur.",
+    "notableArt": [
+      "La Madonnina - Golden statue of Mary atop the main spire",
+      "Sundial - Bronze line crossing the floor, marking noon with sunlight",
+      "Treasury - Contains precious relics and liturgical objects",
+      "Rooftop Terraces - Offering unique walkways among the spires"
+    ],
+    "visitInfo": "Tickets required for entry (includes cathedral, museum, archaeological area). Rooftop terrace access by stairs or elevator (additional fee). Modest dress enforced.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Duomo+di+Milano/@45.464278,9.1916502,17z"
+  },
+  {
+    "id": 6,
+    "name": "Basilica di San Marco",
+    "location": {
+      "city": "Venice",
+      "country": "Italy"
+    },
+    "built": "1063-1094",
+    "architectureStyle": "Italo-Byzantine",
+    "architects": ["Unknown Byzantine masters"],
+    "quickFacts": [
+      "Known as the 'Church of Gold' due to extensive gold mosaics",
+      "Contains over 8,000 square meters of gold mosaics",
+      "Houses relics of St. Mark the Evangelist",
+      "Only cathedral in the world with five domes in a Greek cross plan"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Basilica_di_San_Marco_%28Venice%29_-_Facade.jpg/1280px-Basilica_di_San_Marco_%28Venice%29_-_Facade.jpg",
+        "caption": "Facade of St. Mark's Basilica",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "The current basilica is actually the third church built on this site. The first church (828) housed St. Mark's relics, smuggled from Alexandria, Egypt. After fires destroyed earlier structures, the present basilica was begun in 1063, modeled after Constantinople's Church of the Holy Apostles. It served as the private chapel of the Doge (ruler of Venice) until 1807 when it became Venice's cathedral. The basilica's treasures were enhanced by booty from the Fourth Crusade (1204).",
+    "architecture": "St. Mark's exemplifies Italo-Byzantine architecture, unique in Western Europe. Five bulbous domes crown the Greek cross floor plan. The facade features five arched portals adorned with marble columns, many looted from earlier buildings. The interior is covered with 8,000 square meters of golden mosaics, earning it the nickname 'Chiesa d'Oro' (Church of Gold). The mosaics depict biblical scenes and the life of St. Mark.",
+    "notableArt": [
+      "Pala d'Oro - Magnificent golden altarpiece with 1,300 pearls, 300 emeralds, and countless precious stones",
+      "The Horses of St. Mark - Four bronze horses (replicas on facade, originals inside)",
+      "Golden Mosaics - Over 8,000 m² covering domes, walls, and ceilings",
+      "Treasury - Byzantine and Islamic treasures from the Crusades"
+    ],
+    "visitInfo": "Free entry to basilica; museum and Pala d'Oro require tickets. Online reservation recommended to skip lines. Photography prohibited inside. Modest dress required.",
+    "googleMapsUrl": "https://www.google.com/maps/place/St+Mark's+Basilica/@45.4345366,12.3395716,17z"
+  },
+  {
+    "id": 7,
+    "name": "Chartres Cathedral",
+    "location": {
+      "city": "Chartres",
+      "country": "France"
+    },
+    "built": "1194-1220",
+    "architectureStyle": "Gothic",
+    "architects": ["Unknown master builders"],
+    "quickFacts": [
+      "Best preserved medieval cathedral in France",
+      "Contains the most extensive collection of medieval stained glass",
+      "Built in just 26 years (remarkably fast for a Gothic cathedral)",
+      "Famous labyrinth on the floor walked by pilgrims"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chartres_-_cath%C3%A9drale_-_fa%C3%A7ade_ouest_%281%29.jpg/1280px-Chartres_-_cath%C3%A9drale_-_fa%C3%A7ade_ouest_%281%29.jpg",
+        "caption": "Western facade of Chartres Cathedral",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Chartres has been a Christian pilgrimage site since the 4th century. The current cathedral, begun after a devastating fire in 1194, was constructed with remarkable speed - just 26 years - giving it unusual architectural unity. The cathedral was built to house the Sancta Camisa, believed to be the tunic worn by Virgin Mary at Christ's birth. Miraculously, this relic survived the 1194 fire, which was seen as a sign from Mary to rebuild even grander.",
+    "architecture": "Chartres represents the peak of High Gothic architecture. Two contrasting spires rise 105m and 113m - one plain Romanesque (survived the fire), one ornate Flamboyant Gothic. The cathedral boasts 176 stained glass windows covering 2,600 square meters, most original from the 13th century. The flying buttresses were revolutionary in their engineering. Inside, a 13-meter labyrinth on the floor served as a substitute pilgrimage to Jerusalem.",
+    "notableArt": [
+      "Blue Virgin Window - Most famous of 176 medieval stained glass windows",
+      "Rose Windows - Three massive rose windows, each a masterpiece",
+      "Royal Portal - Elaborate sculptural program on the western entrance",
+      "Floor Labyrinth - 42-foot diameter walking meditation path"
+    ],
+    "visitInfo": "Free entry to cathedral. Tower tours available (fee applies). Best light in afternoon for viewing stained glass. Photography allowed without flash.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Chartres+Cathedral/@48.4472249,1.4859447,17z"
+  },
+  {
+    "id": 8,
+    "name": "Hagia Sophia",
+    "location": {
+      "city": "Istanbul",
+      "country": "Turkey"
+    },
+    "built": "532-537 AD",
+    "architectureStyle": "Byzantine",
+    "architects": ["Isidore of Miletus", "Anthemius of Tralles"],
+    "quickFacts": [
+      "Built in just 5 years and 10 months",
+      "Was the world's largest cathedral for 1,000 years",
+      "Served as church (537-1453), mosque (1453-1931, 2020-present), and museum (1935-2020)",
+      "Dome appears to float, inspiring countless imitations"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Hagia_Sophia_Mars_2013.jpg/1280px-Hagia_Sophia_Mars_2013.jpg",
+        "caption": "Hagia Sophia exterior view",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Commissioned by Byzantine Emperor Justinian I in 532 AD after riots destroyed the previous church, Hagia Sophia ('Holy Wisdom') was completed in just under six years. It served as Constantinople's cathedral and the center of Orthodox Christianity for 916 years. When Ottoman Sultan Mehmed II conquered Constantinople in 1453, he converted it into a mosque, adding minarets and Islamic calligraphy. Atatürk secularized it as a museum in 1935; it was reconverted to a mosque in 2020.",
+    "architecture": "Hagia Sophia revolutionized architecture with its massive dome (31m diameter, 56m high) appearing to float on pendentives and 40 windows that flood the interior with light. Byzantine engineers Isidore and Anthemius created an earthquake-resistant structure using special lightweight bricks. The vast interior space (82m x 73m) creates an overwhelming sense of heaven. Islamic additions include four minarets, mihrab, and minbar, creating a unique Christian-Islamic architectural fusion.",
+    "notableArt": [
+      "Byzantine Mosaics - Stunning gold mosaics of Christ, Mary, and emperors (some covered, some visible)",
+      "Imperial Gate Mosaic - Christ Pantocrator above the main entrance",
+      "Deësis Mosaic - 13th century mosaic of Christ, Virgin Mary, and John the Baptist",
+      "Islamic Calligraphy - Massive medallions with names of Allah, Muhammad, and caliphs"
+    ],
+    "visitInfo": "Functions as a mosque; free entry outside prayer times. Modest dress required. Lower level accessible to tourists. Upper galleries currently closed.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Hagia+Sophia/@41.0085627,28.9799987,17z"
+  },
+  {
+    "id": 9,
+    "name": "Westminster Abbey",
+    "location": {
+      "city": "London",
+      "country": "United Kingdom"
+    },
+    "built": "1245-1517",
+    "architectureStyle": "Gothic",
+    "architects": ["Henry of Reyns", "Henry Yevele"],
+    "quickFacts": [
+      "Coronation church for British monarchs since 1066",
+      "Over 3,300 people buried here, including 17 monarchs",
+      "Site of Prince William and Kate Middleton's 2011 wedding",
+      "Houses Poets' Corner with graves of literary giants"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Westminster_Abbey_-_West_Door.jpg/1280px-Westminster_Abbey_-_West_Door.jpg",
+        "caption": "Western facade of Westminster Abbey",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Founded by Benedictine monks in 960 AD, Westminster Abbey was rebuilt by Edward the Confessor (1042-1052) and again by Henry III (1245-1272) in French Gothic style. William the Conqueror was crowned here on Christmas Day 1066, establishing a tradition continuing to this day. Every English and British monarch since has been crowned at Westminster Abbey. It has also hosted 16 royal weddings, most recently Prince William and Catherine in 2011.",
+    "architecture": "Westminster Abbey exemplifies English Gothic architecture with French influences. The nave rises to 31 meters with spectacular fan vaulting. Twin towers of the west facade were completed by Nicholas Hawksmoor (1745). The octagonal Chapter House features one of Europe's best-preserved medieval tile floors. Henry VII's Chapel (1503-1519) showcases the finest Perpendicular Gothic fan vaulting in existence.",
+    "notableArt": [
+      "Coronation Chair - Wooden throne used for every coronation since 1308",
+      "Poets' Corner - Memorials to Chaucer, Dickens, Shakespeare, and more",
+      "Henry VII Chapel - Spectacular fan-vaulted ceiling and royal tombs",
+      "Cosmati Pavement - Intricate medieval floor mosaic before the High Altar"
+    ],
+    "visitInfo": "Entry fee required (pre-booking recommended). Audio guide included. Photography not permitted. Daily services open to all for free. Modest dress appreciated.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Westminster+Abbey/@51.4993625,-0.1296726,17z"
+  },
+  {
+    "id": 10,
+    "name": "Basilica of Our Lady of Guadalupe",
+    "location": {
+      "city": "Mexico City",
+      "country": "Mexico"
+    },
+    "built": "1974-1976 (new basilica)",
+    "architectureStyle": "Modern",
+    "architects": ["Pedro Ramírez Vázquez"],
+    "quickFacts": [
+      "Most visited Catholic pilgrimage site in the world (20 million annually)",
+      "Houses the miraculous tilma (cloak) of Juan Diego from 1531",
+      "New basilica holds 10,000 worshippers",
+      "Moving walkways allow continuous viewing of the sacred image"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Basilica_de_Guadalupe_%28new%29.jpg/1280px-Basilica_de_Guadalupe_%28new%29.jpg",
+        "caption": "New Basilica of Our Lady of Guadalupe",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "On December 9-12, 1531, the Virgin Mary appeared four times to Juan Diego, an Aztec convert, on Tepeyac Hill. She asked for a church to be built on that site. As proof, she made roses bloom in winter and imprinted her image on Juan Diego's tilma (cloak). This image became a powerful symbol of Mexican Catholic identity. The old basilica (1695-1709) began sinking into the lakebed, so a modern basilica was built (1974-1976) to house the miraculous image and accommodate millions of pilgrims.",
+    "architecture": "The new basilica represents bold modern architecture by Pedro Ramírez Vázquez. The circular design with no pillars ensures every worshipper has an unobstructed view of the sacred image. The roof resembles the Virgin's mantle. Seating capacity is 10,000 inside with room for 30,000 in the atrium. Moving walkways pass behind the altar, allowing pilgrims to view the tilma without stopping the flow of millions. The old basilica still stands nearby, housing a museum.",
+    "notableArt": [
+      "The Sacred Tilma - Juan Diego's cloak bearing the miraculous image of Our Lady",
+      "Organ - Modern pipe organ with over 7,000 pipes",
+      "Old Basilica - Beautiful Baroque church now serving as a museum",
+      "Chapel of the Well - Marks the spot where the Virgin appeared"
+    ],
+    "visitInfo": "Free entry, open daily 6am-9pm. Expect large crowds, especially December 12 (feast day). Moving walkways for tilma viewing. Modest dress required. Old basilica museum has small entry fee.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+Our+Lady+of+Guadalupe/@19.4847883,-99.1176501,17z"
+  }
+]
