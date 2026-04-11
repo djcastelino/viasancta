@@ -167,6 +167,16 @@ export default function AboutPage() {
                 >
                   Creative Commons: By Attribution 4.0 License
                 </a>
+                . Marian Apparitions music by{' '}
+                <a
+                  href="https://sites.google.com/view/serafiremusic/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  SeraFire Music
+                </a>
+                .
               </p>
               <p>
                 <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by{' '}

@@ -32,13 +32,10 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     { name: 'en-US-RogerNeural', displayName: 'Roger' },
   ];
 
-  // Contemplative background music (royalty-free from Incompetech)
-  // Music by Kevin MacLeod (incompetech.com)
-  // Licensed under Creative Commons: By Attribution 4.0 License
+  // Hail Mary Gentle Woman background music
+  // Music by SeraFire Music (serafiremusic.com)
   const musicOptions = [
-    '/audio/background/contemplative-1.mp3',
-    '/audio/background/contemplative-2.mp3',
-    '/audio/background/contemplative-3.mp3',
+    '/audio/background/Hail Mary Gentle Woman.mp3',
   ];
 
   // Filter apparitions

@@ -66,9 +66,6 @@ export default function JesusInOT() {
               <span className="bg-[#D4AF37] px-4 py-1 rounded-full text-sm font-bold">
                 365 DAILY
               </span>
-              <span className="bg-white/20 px-4 py-1 rounded-full text-sm font-semibold">
-                DAY {todaysEntry.dayOfYear}
-              </span>
             </div>
 
             <h3 className="text-3xl font-bold mb-2 font-serif">
