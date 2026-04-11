@@ -15,7 +15,7 @@
       "Maderno"
     ],
     "quickFacts": [
-      "Largest church in the world by interior area (15,160 m²)",
+      "Largest church in the world by interior area (15,160 m\u00b2)",
       "Took 120 years to complete with contributions from multiple architects",
       "The dome was designed by Michelangelo when he was 71 years old",
       "Can hold 60,000 people at once"
@@ -30,7 +30,7 @@
     "history": "St. Peter's Basilica stands on the site where St. Peter, the first Pope and apostle of Jesus Christ, was crucified and buried around 64 AD. The current basilica, begun in 1506 under Pope Julius II, replaced the original 4th-century church built by Emperor Constantine. The construction involved the greatest Renaissance artists including Bramante, Raphael, Michelangelo, and Bernini, each leaving their mark on this architectural masterpiece.",
     "architecture": "The basilica exemplifies High Renaissance and Baroque architecture. Michelangelo's magnificent dome dominates the Roman skyline at 136 meters high. The interior features Bernini's bronze baldacchino over the papal altar, standing 29 meters tall. The facade by Carlo Maderno stretches 115 meters wide, welcoming pilgrims from St. Peter's Square.",
     "notableArt": [
-      "Michelangelo's Pietà (1499) - Masterpiece sculpture of Mary holding Jesus",
+      "Michelangelo's Piet\u00e0 (1499) - Masterpiece sculpture of Mary holding Jesus",
       "Bernini's Baldacchino (1624-1633) - Bronze canopy over the papal altar",
       "Statue of St. Peter - Bronze statue with worn foot from centuries of pilgrims' kisses",
       "Dome mosaics - Stunning mosaics decorating the interior of the dome"
@@ -40,7 +40,7 @@
   },
   {
     "id": 2,
-    "name": "Sagrada Família",
+    "name": "Sagrada Fam\u00edlia",
     "location": {
       "city": "Barcelona",
       "country": "Spain"
@@ -48,25 +48,25 @@
     "built": "1882-present (expected 2026)",
     "architectureStyle": "Art Nouveau, Gothic Revival",
     "architects": [
-      "Antoni Gaudí"
+      "Antoni Gaud\u00ed"
     ],
     "quickFacts": [
       "Still under construction after 140+ years",
-      "Expected completion in 2026, the 100th anniversary of Gaudí's death",
+      "Expected completion in 2026, the 100th anniversary of Gaud\u00ed's death",
       "UNESCO World Heritage Site since 2005",
       "Over 3 million visitors annually"
     ],
     "images": [
       {
         "url": "/images/architecture/sagrada-familia.png",
-        "caption": "Sagrada Família from Plaça de Gaudí",
+        "caption": "Sagrada Fam\u00edlia from Pla\u00e7a de Gaud\u00ed",
         "credit": "AI Generated"
       }
     ],
-    "history": "The Sagrada Família was begun in 1882 by architect Francisco de Paula del Villar. In 1883, Antoni Gaudí took over the project, transforming it with his unique architectural vision. Gaudí devoted the last 15 years of his life entirely to this project, even living in the workshop. After his death in 1926, construction continued based on his plans and models, surviving the Spanish Civil War and continuing to this day.",
-    "architecture": "Gaudí's design combines Gothic and Art Nouveau forms with nature-inspired elements. The basilica features 18 towers representing the 12 apostles, 4 evangelists, Virgin Mary, and Jesus Christ (tallest at 172.5m). The interior resembles a forest with tree-like columns branching to support the roof. Natural light filters through stunning stained glass, creating a kaleidoscope of colors.",
+    "history": "The Sagrada Fam\u00edlia was begun in 1882 by architect Francisco de Paula del Villar. In 1883, Antoni Gaud\u00ed took over the project, transforming it with his unique architectural vision. Gaud\u00ed devoted the last 15 years of his life entirely to this project, even living in the workshop. After his death in 1926, construction continued based on his plans and models, surviving the Spanish Civil War and continuing to this day.",
+    "architecture": "Gaud\u00ed's design combines Gothic and Art Nouveau forms with nature-inspired elements. The basilica features 18 towers representing the 12 apostles, 4 evangelists, Virgin Mary, and Jesus Christ (tallest at 172.5m). The interior resembles a forest with tree-like columns branching to support the roof. Natural light filters through stunning stained glass, creating a kaleidoscope of colors.",
     "notableArt": [
-      "Nativity Facade - Gaudí's elaborate sculpture work depicting Jesus's birth",
+      "Nativity Facade - Gaud\u00ed's elaborate sculpture work depicting Jesus's birth",
       "Passion Facade - Modern angular sculptures by Josep Maria Subirachs",
       "Glory Facade - Main entrance (under construction) representing death, judgment, and glory",
       "Stained Glass Windows - Creating spectacular light shows throughout the day"
@@ -99,7 +99,7 @@
         "credit": "AI Generated"
       }
     ],
-    "history": "Notre-Dame de Paris stands on the Île de la Cité, the historical heart of Paris. Construction began in 1163 under Bishop Maurice de Sully during the reign of King Louis VII. The cathedral witnessed coronations, royal weddings, and survived desecration during the French Revolution. In 1831, Victor Hugo's novel sparked renewed interest, leading to major restorations by architect Viollet-le-Duc. The devastating 2019 fire shocked the world; restoration aims for reopening in 2024.",
+    "history": "Notre-Dame de Paris stands on the \u00cele de la Cit\u00e9, the historical heart of Paris. Construction began in 1163 under Bishop Maurice de Sully during the reign of King Louis VII. The cathedral witnessed coronations, royal weddings, and survived desecration during the French Revolution. In 1831, Victor Hugo's novel sparked renewed interest, leading to major restorations by architect Viollet-le-Duc. The devastating 2019 fire shocked the world; restoration aims for reopening in 2024.",
     "architecture": "A masterpiece of French Gothic architecture, Notre-Dame pioneered the use of flying buttresses, allowing for higher ceilings and larger windows. The western facade features three magnificent portals crowned by the Gallery of Kings. Twin towers rise 69 meters, housing the famous Emmanuel bell. The interior spans 130 meters long with a 33-meter high nave, showcasing the revolutionary Gothic structural innovations.",
     "notableArt": [
       "Rose Windows - Three massive stained glass roses (north, south, and west)",
@@ -214,7 +214,7 @@
     "notableArt": [
       "Pala d'Oro - Magnificent golden altarpiece with 1,300 pearls, 300 emeralds, and countless precious stones",
       "The Horses of St. Mark - Four bronze horses (replicas on facade, originals inside)",
-      "Golden Mosaics - Over 8,000 m² covering domes, walls, and ceilings",
+      "Golden Mosaics - Over 8,000 m\u00b2 covering domes, walls, and ceilings",
       "Treasury - Byzantine and Islamic treasures from the Crusades"
     ],
     "visitInfo": "Free entry to basilica; museum and Pala d'Oro require tickets. Online reservation recommended to skip lines. Photography prohibited inside. Modest dress required.",
@@ -266,7 +266,7 @@
     "built": "1974-1976 (new basilica)",
     "architectureStyle": "Modern",
     "architects": [
-      "Pedro Ramírez Vázquez"
+      "Pedro Ram\u00edrez V\u00e1zquez"
     ],
     "quickFacts": [
       "Most visited Catholic pilgrimage site in the world (20 million annually)",
@@ -282,7 +282,7 @@
       }
     ],
     "history": "On December 9-12, 1531, the Virgin Mary appeared four times to Juan Diego, an Aztec convert, on Tepeyac Hill. She asked for a church to be built on that site. As proof, she made roses bloom in winter and imprinted her image on Juan Diego's tilma (cloak). This image became a powerful symbol of Mexican Catholic identity. The old basilica (1695-1709) began sinking into the lakebed, so a modern basilica was built (1974-1976) to house the miraculous image and accommodate millions of pilgrims.",
-    "architecture": "The new basilica represents bold modern architecture by Pedro Ramírez Vázquez. The circular design with no pillars ensures every worshipper has an unobstructed view of the sacred image. The roof resembles the Virgin's mantle. Seating capacity is 10,000 inside with room for 30,000 in the atrium. Moving walkways pass behind the altar, allowing pilgrims to view the tilma without stopping the flow of millions. The old basilica still stands nearby, housing a museum.",
+    "architecture": "The new basilica represents bold modern architecture by Pedro Ram\u00edrez V\u00e1zquez. The circular design with no pillars ensures every worshipper has an unobstructed view of the sacred image. The roof resembles the Virgin's mantle. Seating capacity is 10,000 inside with room for 30,000 in the atrium. Moving walkways pass behind the altar, allowing pilgrims to view the tilma without stopping the flow of millions. The old basilica still stands nearby, housing a museum.",
     "notableArt": [
       "The Sacred Tilma - Juan Diego's cloak bearing the miraculous image of Our Lady",
       "Organ - Modern pipe organ with over 7,000 pipes",
@@ -330,9 +330,9 @@
   },
   {
     "id": 10,
-    "name": "Sanctuary of Fátima",
+    "name": "Sanctuary of F\u00e1tima",
     "location": {
-      "city": "Fátima",
+      "city": "F\u00e1tima",
       "country": "Portugal"
     },
     "built": "1928-1953",
@@ -344,19 +344,19 @@
       "5 million pilgrims visit annually",
       "Site of Marian apparitions to three shepherd children in 1917",
       "Basilica esplanade is twice the size of St. Peter's Square",
-      "Pope John Paul II attributed his survival of 1981 assassination attempt to Our Lady of Fátima"
+      "Pope John Paul II attributed his survival of 1981 assassination attempt to Our Lady of F\u00e1tima"
     ],
     "images": [
       {
         "url": "/images/architecture/sanctuary of fatima.png",
-        "caption": "Basilica of Our Lady of the Rosary, Fátima",
+        "caption": "Basilica of Our Lady of the Rosary, F\u00e1tima",
         "credit": "AI Generated"
       }
     ],
-    "history": "From May to October 1917, the Virgin Mary appeared six times to three shepherd children—Lúcia dos Santos and her cousins Francisco and Jacinta Marto—near the village of Fátima. Mary entrusted the children with three secrets and requested devotion to her Immaculate Heart. The final apparition on October 13, 1917, was witnessed by 70,000 people who observed the 'Miracle of the Sun.' The Church approved the apparitions in 1930. The sanctuary has become a major pilgrimage site, especially after Pope John Paul II credited Our Lady of Fátima with saving his life.",
+    "history": "From May to October 1917, the Virgin Mary appeared six times to three shepherd children\u2014L\u00facia dos Santos and her cousins Francisco and Jacinta Marto\u2014near the village of F\u00e1tima. Mary entrusted the children with three secrets and requested devotion to her Immaculate Heart. The final apparition on October 13, 1917, was witnessed by 70,000 people who observed the 'Miracle of the Sun.' The Church approved the apparitions in 1930. The sanctuary has become a major pilgrimage site, especially after Pope John Paul II credited Our Lady of F\u00e1tima with saving his life.",
     "architecture": "The Basilica of Our Lady of the Rosary dominates the vast esplanade with its 65-meter tower topped by a bronze crown and crystal cross. The Neo-Baroque facade features a colonnade with statues. The modern Basilica of the Holy Trinity (2007), designed by Greek architect Alexandros Tombazis, holds 9,000 worshippers and represents contemporary sacred architecture. The Chapel of the Apparitions marks the exact spot where Mary appeared. The esplanade between the basilicas accommodates hundreds of thousands of pilgrims during major celebrations.",
     "notableArt": [
-      "Tombs of the Visionaries - Francisco, Jacinta, and Lúcia buried in the basilicas",
+      "Tombs of the Visionaries - Francisco, Jacinta, and L\u00facia buried in the basilicas",
       "Chapel of the Apparitions - Simple chapel at the apparition site",
       "Stations of the Cross - Hungarian sculptor's work along pilgrimage path",
       "Berlin Wall Fragment - Symbol of freedom through Mary's intercession"
@@ -385,15 +385,15 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Catedral_de_Santiago_de_Compostela_agosto_2018_%28cropped%29.jpg/1280px-Catedral_de_Santiago_de_Compostela_agosto_2018_%28cropped%29.jpg",
+        "url": "/images/architecture/Cathedral of Santiago de Compostela.png",
         "caption": "Cathedral of Santiago de Compostela",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
-    "history": "According to tradition, St. James the Apostle preached in Spain and his remains were brought here after his martyrdom in Jerusalem (44 AD). The relics were rediscovered in 813 AD, leading to the construction of a series of churches. The current Romanesque cathedral was begun in 1075 under Bishop Diego Peláez. It became the endpoint of the Camino de Santiago, one of Christianity's most important pilgrimage routes since the Middle Ages. The Baroque facade was added in the 18th century. UNESCO designated it a World Heritage Site in 1985.",
-    "architecture": "The cathedral exemplifies Spanish Romanesque architecture with later Baroque additions. The Romanesque interior features Master Mateo's Pórtico de la Gloria (1188), one of the finest achievements of Romanesque sculpture. The Baroque Obradoiro facade (1750) by Fernando Casas Novoa creates a dramatic entrance with twin towers flanking the central section. The cathedral's floor plan follows the Latin cross with three naves. The crypt beneath the main altar houses the relics of St. James in a silver casket.",
+    "history": "According to tradition, St. James the Apostle preached in Spain and his remains were brought here after his martyrdom in Jerusalem (44 AD). The relics were rediscovered in 813 AD, leading to the construction of a series of churches. The current Romanesque cathedral was begun in 1075 under Bishop Diego Pel\u00e1ez. It became the endpoint of the Camino de Santiago, one of Christianity's most important pilgrimage routes since the Middle Ages. The Baroque facade was added in the 18th century. UNESCO designated it a World Heritage Site in 1985.",
+    "architecture": "The cathedral exemplifies Spanish Romanesque architecture with later Baroque additions. The Romanesque interior features Master Mateo's P\u00f3rtico de la Gloria (1188), one of the finest achievements of Romanesque sculpture. The Baroque Obradoiro facade (1750) by Fernando Casas Novoa creates a dramatic entrance with twin towers flanking the central section. The cathedral's floor plan follows the Latin cross with three naves. The crypt beneath the main altar houses the relics of St. James in a silver casket.",
     "notableArt": [
-      "Pórtico de la Gloria - Master Mateo's Romanesque sculptural masterpiece",
+      "P\u00f3rtico de la Gloria - Master Mateo's Romanesque sculptural masterpiece",
       "Botafumeiro - Giant thurible requiring 8 men to swing",
       "Relics of St. James - Silver casket beneath the main altar",
       "Obradoiro Facade - Spectacular Baroque entrance"
@@ -426,8 +426,8 @@
         "credit": "Wikimedia Commons"
       }
     ],
-    "history": "Construction began in 1228, two years after St. Francis's death and one day after his canonization. Brother Elias, Francis's close companion, directed the work. The basilica is actually two churches—an upper and lower—built on multiple levels into the hillside. Francis was buried in the Lower Basilica in a simple tomb, though it was hidden for centuries to protect it from raids. The Upper Basilica became a showcase for early Renaissance art. The complex serves as the mother church of the Franciscan Order and has been a UNESCO World Heritage Site since 2000.",
-    "architecture": "The basilica demonstrates early Italian Gothic style with Romanesque influences. The Lower Basilica, dark and crypt-like, creates an atmosphere of contemplation with low vaulted ceilings and numerous side chapels. The Upper Basilica contrasts dramatically with its tall, bright nave flooded with light from large Gothic windows. The exterior features a simple facade with a rose window and a single bell tower. The architectural design reflects Franciscan values—grand enough to honor the saint, yet restrained in keeping with his ideals of poverty.",
+    "history": "Construction began in 1228, two years after St. Francis's death and one day after his canonization. Brother Elias, Francis's close companion, directed the work. The basilica is actually two churches\u2014an upper and lower\u2014built on multiple levels into the hillside. Francis was buried in the Lower Basilica in a simple tomb, though it was hidden for centuries to protect it from raids. The Upper Basilica became a showcase for early Renaissance art. The complex serves as the mother church of the Franciscan Order and has been a UNESCO World Heritage Site since 2000.",
+    "architecture": "The basilica demonstrates early Italian Gothic style with Romanesque influences. The Lower Basilica, dark and crypt-like, creates an atmosphere of contemplation with low vaulted ceilings and numerous side chapels. The Upper Basilica contrasts dramatically with its tall, bright nave flooded with light from large Gothic windows. The exterior features a simple facade with a rose window and a single bell tower. The architectural design reflects Franciscan values\u2014grand enough to honor the saint, yet restrained in keeping with his ideals of poverty.",
     "notableArt": [
       "Giotto's Frescoes - 28-scene cycle of St. Francis's life in Upper Basilica",
       "Cimabue's Crucifixion - Dramatic fresco in Upper Basilica transept",
@@ -454,13 +454,13 @@
       "Largest Catholic church in North America",
       "Largest church in the Western Hemisphere",
       "80 chapels and oratories representing different ethnic groups and devotions",
-      "No structural steel—built entirely with brick, stone, tile, and mortar"
+      "No structural steel\u2014built entirely with brick, stone, tile, and mortar"
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Basilica_of_the_National_Shrine_of_the_Immaculate_Conception_-_Washington%2C_D.C..jpg/1280px-Basilica_of_the_National_Shrine_of_the_Immaculate_Conception_-_Washington%2C_D.C..jpg",
+        "url": "/images/architecture/basilica of national shrine of immacualte conception.png",
         "caption": "Basilica of the National Shrine of the Immaculate Conception",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "Bishop Thomas Shahan first proposed a national shrine in 1913. Pope Pius X blessed the project in 1914. The foundation stone was laid in 1920, but the Great Depression and World War II delayed construction. The crypt church opened in 1926. Work resumed in 1954, and the Great Upper Church was dedicated in 1959. Pope John Paul II elevated it to a basilica in 1990. The shrine honors Mary under her title as Patroness of the United States, proclaimed by the U.S. bishops in 1847.",
@@ -476,7 +476,7 @@
   },
   {
     "id": 14,
-    "name": "Sacré-Cœur Basilica",
+    "name": "Sacr\u00e9-C\u0153ur Basilica",
     "location": {
       "city": "Paris",
       "country": "France"
@@ -489,18 +489,18 @@
     "quickFacts": [
       "Built as a penance for France's defeat in Franco-Prussian War",
       "Perpetual adoration has continued 24/7 since 1885",
-      "White Château-Landon stone keeps it brilliant white",
+      "White Ch\u00e2teau-Landon stone keeps it brilliant white",
       "Second-most visited monument in Paris after Notre-Dame"
     ],
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sacre_Coeur%2C_Montmartre%2C_Paris%2C_France_-_panoramio.jpg/1280px-Sacre_Coeur%2C_Montmartre%2C_Paris%2C_France_-_panoramio.jpg",
-        "caption": "Sacré-Cœur Basilica, Montmartre",
+        "caption": "Sacr\u00e9-C\u0153ur Basilica, Montmartre",
         "credit": "Wikimedia Commons"
       }
     ],
-    "history": "After France's humiliating defeat in the Franco-Prussian War (1870-71) and the trauma of the Paris Commune, Catholic groups proposed a church dedicated to the Sacred Heart as a symbol of penance and hope. The location atop Montmartre was chosen for its spiritual significance—site of early Christian martyrs including St. Denis. Construction began in 1875 but faced challenges including unstable ground requiring 83 deep wells for the foundation. The basilica was consecrated in 1919 after World War I, becoming a national monument to French faith and resilience.",
-    "architecture": "Paul Abadie designed the basilica in Romano-Byzantine style, inspired by St. Mark's in Venice and Hagia Sophia. The white travertine stone from Château-Landon has the unique property of whitening when it rains, keeping the basilica perpetually brilliant. The central dome reaches 83 meters high, with four smaller domes surrounding it. The interior features the world's largest mosaic, covering 475 square meters, depicting Christ with outstretched arms. The crypt extends beneath the entire church. A 19-ton bell named 'La Savoyarde' is one of the world's heaviest.",
+    "history": "After France's humiliating defeat in the Franco-Prussian War (1870-71) and the trauma of the Paris Commune, Catholic groups proposed a church dedicated to the Sacred Heart as a symbol of penance and hope. The location atop Montmartre was chosen for its spiritual significance\u2014site of early Christian martyrs including St. Denis. Construction began in 1875 but faced challenges including unstable ground requiring 83 deep wells for the foundation. The basilica was consecrated in 1919 after World War I, becoming a national monument to French faith and resilience.",
+    "architecture": "Paul Abadie designed the basilica in Romano-Byzantine style, inspired by St. Mark's in Venice and Hagia Sophia. The white travertine stone from Ch\u00e2teau-Landon has the unique property of whitening when it rains, keeping the basilica perpetually brilliant. The central dome reaches 83 meters high, with four smaller domes surrounding it. The interior features the world's largest mosaic, covering 475 square meters, depicting Christ with outstretched arms. The crypt extends beneath the entire church. A 19-ton bell named 'La Savoyarde' is one of the world's heaviest.",
     "notableArt": [
       "Christ in Majesty Mosaic - Massive mosaic by Luc-Olivier Merson",
       "La Savoyarde Bell - 19-ton bell, one of world's heaviest",
@@ -530,20 +530,20 @@
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Seville_Cathedral_-_Seville%2C_Spain_-_Jan_2007.jpg/1280px-Seville_Cathedral_-_Seville%2C_Spain_-_Jan_2007.jpg",
+        "url": "/images/architecture/seville cathedral.png",
         "caption": "Seville Cathedral with Giralda Tower",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
     "history": "After Seville was reconquered from the Moors in 1248, the city's Grand Mosque was converted into a cathedral. By 1401, the structure was deteriorating, and Church officials decided to build 'a church so beautiful and so magnificent that those who see it will think we are mad.' Construction took 127 years. The cathedral incorporated elements of the former mosque, including the Giralda minaret (converted to a bell tower) and the Court of Oranges. In 1987, UNESCO declared it a World Heritage Site.",
-    "architecture": "The cathedral exemplifies Spanish Gothic architecture at its most ambitious scale. The interior measures 126m x 83m with five naves. The central nave reaches 42 meters high. The Giralda tower, originally a minaret built in 1198, rises 104 meters and combines Moorish and Renaissance elements—ramps instead of stairs allow ascent. The Patio de los Naranjos preserves the mosque's courtyard with orange trees and a Moorish fountain. Golden Gothic altarpiece behind the main altar is the largest in the world.",
+    "architecture": "The cathedral exemplifies Spanish Gothic architecture at its most ambitious scale. The interior measures 126m x 83m with five naves. The central nave reaches 42 meters high. The Giralda tower, originally a minaret built in 1198, rises 104 meters and combines Moorish and Renaissance elements\u2014ramps instead of stairs allow ascent. The Patio de los Naranjos preserves the mosque's courtyard with orange trees and a Moorish fountain. Golden Gothic altarpiece behind the main altar is the largest in the world.",
     "notableArt": [
       "Tomb of Christopher Columbus - Elaborate tomb with four kings bearing his coffin",
       "Golden Altarpiece - Largest altarpiece in the world (20m high)",
       "Murillo's Paintings - Works by Seville's most famous artist",
       "Royal Chapel - Final resting place of Ferdinand III"
     ],
-    "visitInfo": "Entrance fee includes cathedral, Giralda tower, and Royal Alcázar. Pre-booking recommended to skip lines. Modest dress required. Giralda tower climb (34 ramps, no steps) offers stunning views. Audio guides available.",
+    "visitInfo": "Entrance fee includes cathedral, Giralda tower, and Royal Alc\u00e1zar. Pre-booking recommended to skip lines. Modest dress required. Giralda tower climb (34 ramps, no steps) offers stunning views. Audio guides available.",
     "googleMapsUrl": "https://www.google.com/maps/place/Seville+Cathedral/@37.3857,-5.9933,17z"
   },
   {
@@ -572,8 +572,8 @@
         "credit": "AI Generated"
       }
     ],
-    "history": "In 1296, Florence's Republic commissioned Arnolfo di Cambio to design a cathedral worthy of the city's growing importance. Work proceeded slowly over centuries. The greatest challenge was the dome—no one knew how to vault the 45-meter span without wooden scaffolding. In 1418, Filippo Brunelleschi won a competition with his revolutionary design using a double-shell dome and herringbone brick pattern. Completed in 1436, it was an engineering marvel that sparked the Renaissance. The facade, however, remained unfinished until the 19th century when a Neo-Gothic design was finally added.",
-    "architecture": "The cathedral showcases the transition from Gothic to Renaissance architecture. The Gothic nave with pointed arches contrasts with Brunelleschi's revolutionary Renaissance dome—a double-shelled structure rising 114 meters high using no temporary wooden supports. The exterior features geometric patterns in white, green, and pink marble. Giotto's Campanile (bell tower) stands separately at 84 meters with intricate Gothic decoration. The octagonal Baptistery dates to the 11th century with famous bronze doors by Lorenzo Ghiberti that Michelangelo called the 'Gates of Paradise.'",
+    "history": "In 1296, Florence's Republic commissioned Arnolfo di Cambio to design a cathedral worthy of the city's growing importance. Work proceeded slowly over centuries. The greatest challenge was the dome\u2014no one knew how to vault the 45-meter span without wooden scaffolding. In 1418, Filippo Brunelleschi won a competition with his revolutionary design using a double-shell dome and herringbone brick pattern. Completed in 1436, it was an engineering marvel that sparked the Renaissance. The facade, however, remained unfinished until the 19th century when a Neo-Gothic design was finally added.",
+    "architecture": "The cathedral showcases the transition from Gothic to Renaissance architecture. The Gothic nave with pointed arches contrasts with Brunelleschi's revolutionary Renaissance dome\u2014a double-shelled structure rising 114 meters high using no temporary wooden supports. The exterior features geometric patterns in white, green, and pink marble. Giotto's Campanile (bell tower) stands separately at 84 meters with intricate Gothic decoration. The octagonal Baptistery dates to the 11th century with famous bronze doors by Lorenzo Ghiberti that Michelangelo called the 'Gates of Paradise.'",
     "notableArt": [
       "Brunelleschi's Dome - Architectural marvel and Renaissance icon",
       "Last Judgment Fresco - Vasari's massive fresco inside the dome",
@@ -609,7 +609,7 @@
         "credit": "AI Generated"
       }
     ],
-    "history": "Pope Sixtus IV commissioned the chapel in 1473, naming it after himself. The building replaced an earlier medieval structure. Leading Renaissance artists including Botticelli, Perugino, and Ghirlandaio painted the side walls (1481-82). In 1508, Pope Julius II commissioned Michelangelo to paint the ceiling—originally planned as simple decoration but becoming one of humanity's greatest artistic achievements. Twenty-five years later, Michelangelo returned to paint The Last Judgment on the altar wall (1536-41). The chapel serves as the site of papal conclaves where cardinals elect new popes.",
+    "history": "Pope Sixtus IV commissioned the chapel in 1473, naming it after himself. The building replaced an earlier medieval structure. Leading Renaissance artists including Botticelli, Perugino, and Ghirlandaio painted the side walls (1481-82). In 1508, Pope Julius II commissioned Michelangelo to paint the ceiling\u2014originally planned as simple decoration but becoming one of humanity's greatest artistic achievements. Twenty-five years later, Michelangelo returned to paint The Last Judgment on the altar wall (1536-41). The chapel serves as the site of papal conclaves where cardinals elect new popes.",
     "architecture": "The chapel's dimensions follow the biblical proportions of Solomon's Temple. It measures 40.9m long, 13.4m wide, and 20.7m high. The simple brick exterior gives no hint of the artistic treasures within. A barrel-vaulted ceiling rises above the rectangular space. Six tall arched windows on each side wall provide natural light. A marble screen divides the chapel between clergy and laity. The floor features geometric Cosmati marble work. During conclaves, a special chimney is installed in the roof for white or black smoke signals.",
     "notableArt": [
       "Michelangelo's Ceiling - 9 scenes from Genesis including Creation of Adam",
@@ -669,20 +669,20 @@
       "Unknown"
     ],
     "quickFacts": [
-      "Built in just 7 years—remarkably fast for Gothic architecture",
+      "Built in just 7 years\u2014remarkably fast for Gothic architecture",
       "Contains 1,113 stained glass panels depicting 1,130 biblical scenes",
       "Built to house Christ's Crown of Thorns and other relics",
       "15 meters of walls are actually windows"
     ],
     "images": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Sainte_Chapelle_Interior_Stained_Glass.jpg/1280px-Sainte_Chapelle_Interior_Stained_Glass.jpg",
+        "url": "/images/architecture/sainte-chappelle.png",
         "caption": "Sainte-Chapelle Upper Chapel Stained Glass",
-        "credit": "Wikimedia Commons"
+        "credit": "AI Generated"
       }
     ],
-    "history": "King Louis IX (later St. Louis) commissioned Sainte-Chapelle as a royal chapel to house precious Christian relics he acquired from the Byzantine Emperor—most notably the Crown of Thorns, which cost three times more than building the chapel itself. Completed in 1248, it served as the palace chapel for French kings. During the French Revolution, the building was damaged and relics were dispersed (Crown of Thorns is now in Notre-Dame's treasury). Extensive 19th-century restoration by Viollet-le-Duc saved the chapel. It stands as the finest example of Rayonnant Gothic architecture.",
-    "architecture": "Sainte-Chapelle represents the apex of Gothic architecture's quest for light and height. The two-level structure features a lower chapel for palace staff and an upper chapel for royalty—a glowing jewel box 20 meters high where walls dissolve into 15 meters of stained glass. Slender columns and external buttresses allow unprecedented window space. The 15 lancet windows and rose window total 600 square meters of 13th-century stained glass, one of the world's most extensive collections. The glass reads like a medieval Bible, depicting scenes from Genesis through Christ's Passion.",
+    "history": "King Louis IX (later St. Louis) commissioned Sainte-Chapelle as a royal chapel to house precious Christian relics he acquired from the Byzantine Emperor\u2014most notably the Crown of Thorns, which cost three times more than building the chapel itself. Completed in 1248, it served as the palace chapel for French kings. During the French Revolution, the building was damaged and relics were dispersed (Crown of Thorns is now in Notre-Dame's treasury). Extensive 19th-century restoration by Viollet-le-Duc saved the chapel. It stands as the finest example of Rayonnant Gothic architecture.",
+    "architecture": "Sainte-Chapelle represents the apex of Gothic architecture's quest for light and height. The two-level structure features a lower chapel for palace staff and an upper chapel for royalty\u2014a glowing jewel box 20 meters high where walls dissolve into 15 meters of stained glass. Slender columns and external buttresses allow unprecedented window space. The 15 lancet windows and rose window total 600 square meters of 13th-century stained glass, one of the world's most extensive collections. The glass reads like a medieval Bible, depicting scenes from Genesis through Christ's Passion.",
     "notableArt": [
       "Stained Glass Windows - 1,113 panels creating walls of colored light",
       "Rose Window - 15th-century Apocalypse scenes",
@@ -694,9 +694,9 @@
   },
   {
     "id": 20,
-    "name": "Jasna Góra Monastery",
+    "name": "Jasna G\u00f3ra Monastery",
     "location": {
-      "city": "Częstochowa",
+      "city": "Cz\u0119stochowa",
       "country": "Poland"
     },
     "built": "1382",
@@ -713,11 +713,11 @@
     "images": [
       {
         "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Jasna_G%C3%B3ra.jpg/1280px-Jasna_G%C3%B3ra.jpg",
-        "caption": "Jasna Góra Monastery",
+        "caption": "Jasna G\u00f3ra Monastery",
         "credit": "Wikimedia Commons"
       }
     ],
-    "history": "Duke Władysław of Opole brought Pauline monks from Hungary to Jasna Góra (Bright Mountain) in 1382, along with an icon tradition attributes to St. Luke. The Black Madonna icon became central to Polish Catholic identity. In 1655, during the Swedish 'Deluge,' the small garrison's successful defense of the monastery against overwhelming Swedish forces became legendary, attributed to Mary's intercession. King John II Casimir named Mary 'Queen of Poland' in 1656. The monastery survived Nazi occupation and Communist suppression. Pope John Paul II's deep devotion to the Black Madonna brought worldwide attention.",
+    "history": "Duke W\u0142adys\u0142aw of Opole brought Pauline monks from Hungary to Jasna G\u00f3ra (Bright Mountain) in 1382, along with an icon tradition attributes to St. Luke. The Black Madonna icon became central to Polish Catholic identity. In 1655, during the Swedish 'Deluge,' the small garrison's successful defense of the monastery against overwhelming Swedish forces became legendary, attributed to Mary's intercession. King John II Casimir named Mary 'Queen of Poland' in 1656. The monastery survived Nazi occupation and Communist suppression. Pope John Paul II's deep devotion to the Black Madonna brought worldwide attention.",
     "architecture": "The monastery complex combines Gothic foundations with later Baroque additions. The Basilica, rebuilt in Baroque style after a fire, features an ornate interior with frescoes and gilt decoration. The Black Madonna chapel, covered in votive offerings, creates an intimate worship space. A 106-meter Baroque tower offers panoramic views. Defensive walls and bastions remain from the 1655 siege. The Treasury houses royal crowns and papal gifts. The monastery's 600-meter pilgrimage route from the entrance gate reflects spiritual journey symbolism.",
     "notableArt": [
       "Black Madonna Icon - 14th century Byzantine image venerated as miraculous",
@@ -753,7 +753,7 @@
         "credit": "AI Generated"
       }
     ],
-    "history": "Roman Emperor Constantine's mother, St. Helena, identified the site of Christ's crucifixion and burial during her 326 AD pilgrimage to Jerusalem. Constantine built a church complex encompassing both Golgotha and the tomb. Persians destroyed it in 614; it was rebuilt, then destroyed again in 1009 by Caliph al-Hakim. Crusaders rebuilt it in 1048 in Romanesque style. After Saladin's conquest (1187), the church remained Christian. In 1852, the Status Quo agreement divided the church among Greek Orthodox, Roman Catholics, Armenian Apostolic, Coptic, Ethiopian, and Syriac Orthodox churches—an arrangement maintained to this day.",
+    "history": "Roman Emperor Constantine's mother, St. Helena, identified the site of Christ's crucifixion and burial during her 326 AD pilgrimage to Jerusalem. Constantine built a church complex encompassing both Golgotha and the tomb. Persians destroyed it in 614; it was rebuilt, then destroyed again in 1009 by Caliph al-Hakim. Crusaders rebuilt it in 1048 in Romanesque style. After Saladin's conquest (1187), the church remained Christian. In 1852, the Status Quo agreement divided the church among Greek Orthodox, Roman Catholics, Armenian Apostolic, Coptic, Ethiopian, and Syriac Orthodox churches\u2014an arrangement maintained to this day.",
     "architecture": "The church is a complex architectural palimpsest reflecting 1,700 years of construction, destruction, and rebuilding. The Crusader Romanesque structure forms the core. The Rotunda houses the Edicule shrine over Christ's tomb. Golgotha (Calvary) sits on a rock outcrop accessible by steep stairs. Multiple chapels occupy every available space, each controlled by different denominations. The complex includes the Stone of Anointing where Christ's body was prepared for burial. Unadorned 12th-century Crusader columns support the structure. Recent restoration (2016-17) revealed the original limestone of Christ's burial cave.",
     "notableArt": [
       "Edicule - Shrine over the empty tomb of Christ",
