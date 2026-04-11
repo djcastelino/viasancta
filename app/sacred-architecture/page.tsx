@@ -4,7 +4,7 @@ import SacredArchitectureClient from './SacredArchitectureClient';
 
 export const metadata = {
   title: 'Sacred Architecture - Divine Pilgrim',
-  description: 'Journey through 100 magnificent churches and cathedrals from around the world with audio tours.',
+  description: 'Discover one magnificent church daily with audio tours of history, architecture, and fascinating facts.',
 }
 
 export default async function SacredArchitecturePage() {
@@ -17,8 +17,8 @@ export default async function SacredArchitecturePage() {
       {/* Hero Banner */}
       <section className="relative h-[450px] overflow-hidden">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg/1920px-St_Peter%27s_Basilica_facade%2C_Rome%2C_Italy.jpg"
-          alt="Sacred Architecture - World's Most Magnificent Churches"
+          src="/images/architecture/cover-image.png"
+          alt="Sacred Architecture - One Magnificent Church Daily"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/40" />

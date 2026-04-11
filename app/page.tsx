@@ -333,7 +333,7 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
                     <span>🏛️</span>
-                    <span>100 Magnificent Churches</span>
+                    <span>Daily Featured Church</span>
                   </div>
                   <h3 className="text-3xl font-bold drop-shadow-md">
                     Sacred Architecture
@@ -342,7 +342,7 @@ export default function Home() {
               </div>
               <div className="p-7">
                 <p className="text-gray-600 mb-5 text-sm leading-relaxed">
-                  Journey through history's most stunning churches and cathedrals. From St. Peter's to Sagrada Família, explore <span className="font-semibold text-[#2C5F87]">architecture, history, and divine artistry</span> with detailed audio tours.
+                  Discover one magnificent church each day. From St. Peter's to Sagrada Família, explore <span className="font-semibold text-[#2C5F87]">architecture, history, and divine artistry</span> with detailed audio tours.
                 </p>
                 <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
                   Start Tour →
