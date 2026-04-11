@@ -338,5 +338,515 @@
     ],
     "visitInfo": "Free entry, open daily 6am-9pm. Expect large crowds, especially December 12 (feast day). Moving walkways for tilma viewing. Modest dress required. Old basilica museum has small entry fee.",
     "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+Our+Lady+of+Guadalupe/@19.4847883,-99.1176501,17z"
+  },
+  {
+    "id": 11,
+    "name": "Sanctuary of Our Lady of Lourdes",
+    "location": {
+      "city": "Lourdes",
+      "country": "France"
+    },
+    "built": "1871-1901",
+    "architectureStyle": "Neo-Gothic",
+    "architects": ["Hippolyte Durand"],
+    "quickFacts": [
+      "Over 6 million pilgrims visit annually",
+      "Site of 18 Marian apparitions to St. Bernadette in 1858",
+      "69 officially recognized miracles attributed to Lourdes water",
+      "Complex includes 3 basilicas built one above the other"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Basilique_Notre-Dame_du_Rosaire_de_Lourdes.jpg/1280px-Basilique_Notre-Dame_du_Rosaire_de_Lourdes.jpg",
+        "caption": "Basilica of Our Lady of the Rosary, Lourdes",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Between February 11 and July 16, 1858, the Virgin Mary appeared 18 times to 14-year-old Bernadette Soubirous at the Massabielle grotto. The Lady identified herself as 'the Immaculate Conception' and instructed Bernadette to dig in the ground, revealing a spring whose waters would bring miraculous healings. Despite initial skepticism from Church and civil authorities, the apparitions were declared authentic in 1862. The site has become one of the world's most important Catholic pilgrimage destinations, with millions seeking healing and spiritual renewal.",
+    "architecture": "The sanctuary complex showcases Neo-Gothic architecture with three basilicas stacked vertically. The Basilica of the Immaculate Conception (upper church, 1871) features a striking spire rising 70 meters. Below it, the Basilica of the Rosary (1889) displays Byzantine-influenced mosaics depicting the mysteries of the Rosary. The underground Basilica of St. Pius X (1958) is a massive concrete structure holding 25,000 people. The Grotto of Massabielle, where the apparitions occurred, remains the spiritual heart of the sanctuary.",
+    "notableArt": [
+      "Grotto of Massabielle - Site of apparitions with statue of Our Lady",
+      "Rosary Basilica Mosaics - 15 chapels with stunning mosaic scenes",
+      "Candle Grotto - Thousands of pilgrims' candles burning continuously",
+      "Stations of the Cross - Life-size cast iron figures on hillside path"
+    ],
+    "visitInfo": "Free entry to all sites. Open daily. Torchlight Marian procession nightly at 9pm. Baths open for immersion (book ahead). Modest dress required. Wheelchair accessible.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Sanctuary+of+Our+Lady+of+Lourdes/@43.0963889,-0.0521389,17z"
+  },
+  {
+    "id": 12,
+    "name": "Sanctuary of Fátima",
+    "location": {
+      "city": "Fátima",
+      "country": "Portugal"
+    },
+    "built": "1928-1953",
+    "architectureStyle": "Neo-Baroque",
+    "architects": ["Gerardus Samuel van Krieken"],
+    "quickFacts": [
+      "5 million pilgrims visit annually",
+      "Site of Marian apparitions to three shepherd children in 1917",
+      "Basilica esplanade is twice the size of St. Peter's Square",
+      "Pope John Paul II attributed his survival of 1981 assassination attempt to Our Lady of Fátima"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fatima-Church.jpg/1280px-Fatima-Church.jpg",
+        "caption": "Basilica of Our Lady of the Rosary, Fátima",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "From May to October 1917, the Virgin Mary appeared six times to three shepherd children—Lúcia dos Santos and her cousins Francisco and Jacinta Marto—near the village of Fátima. Mary entrusted the children with three secrets and requested devotion to her Immaculate Heart. The final apparition on October 13, 1917, was witnessed by 70,000 people who observed the 'Miracle of the Sun.' The Church approved the apparitions in 1930. The sanctuary has become a major pilgrimage site, especially after Pope John Paul II credited Our Lady of Fátima with saving his life.",
+    "architecture": "The Basilica of Our Lady of the Rosary dominates the vast esplanade with its 65-meter tower topped by a bronze crown and crystal cross. The Neo-Baroque facade features a colonnade with statues. The modern Basilica of the Holy Trinity (2007), designed by Greek architect Alexandros Tombazis, holds 9,000 worshippers and represents contemporary sacred architecture. The Chapel of the Apparitions marks the exact spot where Mary appeared. The esplanade between the basilicas accommodates hundreds of thousands of pilgrims during major celebrations.",
+    "notableArt": [
+      "Tombs of the Visionaries - Francisco, Jacinta, and Lúcia buried in the basilicas",
+      "Chapel of the Apparitions - Simple chapel at the apparition site",
+      "Stations of the Cross - Hungarian sculptor's work along pilgrimage path",
+      "Berlin Wall Fragment - Symbol of freedom through Mary's intercession"
+    ],
+    "visitInfo": "Free entry. Open 24 hours. Candlelight procession nightly. Major celebrations on 13th of each month May-October. Modest dress required. Vast parking available.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Sanctuary+of+F%C3%A1tima/@39.6313889,-8.6722222,17z"
+  },
+  {
+    "id": 13,
+    "name": "Cathedral of Santiago de Compostela",
+    "location": {
+      "city": "Santiago de Compostela",
+      "country": "Spain"
+    },
+    "built": "1075-1211",
+    "architectureStyle": "Romanesque, Baroque",
+    "architects": ["Master Mateo", "Fernando Casas Novoa"],
+    "quickFacts": [
+      "Final destination of the famous Camino de Santiago pilgrimage route",
+      "Contains relics of St. James the Apostle",
+      "Over 300,000 pilgrims walk the Camino annually",
+      "Botafumeiro incense burner weighs 80kg and swings across the transept"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Catedral_de_Santiago_de_Compostela_agosto_2018_%28cropped%29.jpg/1280px-Catedral_de_Santiago_de_Compostela_agosto_2018_%28cropped%29.jpg",
+        "caption": "Cathedral of Santiago de Compostela",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "According to tradition, St. James the Apostle preached in Spain and his remains were brought here after his martyrdom in Jerusalem (44 AD). The relics were rediscovered in 813 AD, leading to the construction of a series of churches. The current Romanesque cathedral was begun in 1075 under Bishop Diego Peláez. It became the endpoint of the Camino de Santiago, one of Christianity's most important pilgrimage routes since the Middle Ages. The Baroque facade was added in the 18th century. UNESCO designated it a World Heritage Site in 1985.",
+    "architecture": "The cathedral exemplifies Spanish Romanesque architecture with later Baroque additions. The Romanesque interior features Master Mateo's Pórtico de la Gloria (1188), one of the finest achievements of Romanesque sculpture. The Baroque Obradoiro facade (1750) by Fernando Casas Novoa creates a dramatic entrance with twin towers flanking the central section. The cathedral's floor plan follows the Latin cross with three naves. The crypt beneath the main altar houses the relics of St. James in a silver casket.",
+    "notableArt": [
+      "Pórtico de la Gloria - Master Mateo's Romanesque sculptural masterpiece",
+      "Botafumeiro - Giant thurible requiring 8 men to swing",
+      "Relics of St. James - Silver casket beneath the main altar",
+      "Obradoiro Facade - Spectacular Baroque entrance"
+    ],
+    "visitInfo": "Free entry to cathedral. Museum and rooftop tours available (fee). Pilgrims with Compostela certificate have priority seating at Pilgrim's Mass (noon daily). Modest dress required.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Cathedral+of+Santiago+de+Compostela/@42.8804662,-8.5451381,17z"
+  },
+  {
+    "id": 14,
+    "name": "Basilica of St. Francis of Assisi",
+    "location": {
+      "city": "Assisi",
+      "country": "Italy"
+    },
+    "built": "1228-1253",
+    "architectureStyle": "Italian Gothic",
+    "architects": ["Brother Elias"],
+    "quickFacts": [
+      "Burial place of St. Francis, founder of the Franciscan Order",
+      "Contains frescoes by Giotto and Cimabue",
+      "Built on the hill called 'Hell's Hill' which Francis renamed 'Paradise Hill'",
+      "Damaged by 1997 earthquake but fully restored"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/AssisiBasilicaSanFrancescoEntrance.jpg/1280px-AssisiBasilicaSanFrancescoEntrance.jpg",
+        "caption": "Basilica of St. Francis of Assisi",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Construction began in 1228, two years after St. Francis's death and one day after his canonization. Brother Elias, Francis's close companion, directed the work. The basilica is actually two churches—an upper and lower—built on multiple levels into the hillside. Francis was buried in the Lower Basilica in a simple tomb, though it was hidden for centuries to protect it from raids. The Upper Basilica became a showcase for early Renaissance art. The complex serves as the mother church of the Franciscan Order and has been a UNESCO World Heritage Site since 2000.",
+    "architecture": "The basilica demonstrates early Italian Gothic style with Romanesque influences. The Lower Basilica, dark and crypt-like, creates an atmosphere of contemplation with low vaulted ceilings and numerous side chapels. The Upper Basilica contrasts dramatically with its tall, bright nave flooded with light from large Gothic windows. The exterior features a simple facade with a rose window and a single bell tower. The architectural design reflects Franciscan values—grand enough to honor the saint, yet restrained in keeping with his ideals of poverty.",
+    "notableArt": [
+      "Giotto's Frescoes - 28-scene cycle of St. Francis's life in Upper Basilica",
+      "Cimabue's Crucifixion - Dramatic fresco in Upper Basilica transept",
+      "Simone Martini's Frescoes - St. Martin chapel in Lower Basilica",
+      "Tomb of St. Francis - Simple stone sarcophagus in the crypt"
+    ],
+    "visitInfo": "Free entry. Modest dress strictly enforced (shoulders and knees covered). Photography prohibited. Silent contemplation requested. Lower Basilica may be crowded. Wheelchair accessible via elevator.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+Saint+Francis+of+Assisi/@43.0736944,12.6058333,17z"
+  },
+  {
+    "id": 15,
+    "name": "Basilica of the National Shrine of the Immaculate Conception",
+    "location": {
+      "city": "Washington, D.C.",
+      "country": "United States"
+    },
+    "built": "1920-1959",
+    "architectureStyle": "Byzantine-Romanesque",
+    "architects": ["Charles Donagh Maginnis", "Frederick V. Murphy"],
+    "quickFacts": [
+      "Largest Catholic church in North America",
+      "Largest church in the Western Hemisphere",
+      "80 chapels and oratories representing different ethnic groups and devotions",
+      "No structural steel—built entirely with brick, stone, tile, and mortar"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Basilica_of_the_National_Shrine_of_the_Immaculate_Conception_-_Washington%2C_D.C..jpg/1280px-Basilica_of_the_National_Shrine_of_the_Immaculate_Conception_-_Washington%2C_D.C..jpg",
+        "caption": "Basilica of the National Shrine of the Immaculate Conception",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Bishop Thomas Shahan first proposed a national shrine in 1913. Pope Pius X blessed the project in 1914. The foundation stone was laid in 1920, but the Great Depression and World War II delayed construction. The crypt church opened in 1926. Work resumed in 1954, and the Great Upper Church was dedicated in 1959. Pope John Paul II elevated it to a basilica in 1990. The shrine honors Mary under her title as Patroness of the United States, proclaimed by the U.S. bishops in 1847.",
+    "architecture": "The basilica combines Byzantine and Romanesque styles in a striking synthesis. The dome rises 329 feet, dominating the Washington skyline. The exterior features Indiana limestone and multicolored tiles. The interior showcases the largest collection of contemporary ecclesiastical art in the world, including mosaics covering over 77,000 square feet. The Great Upper Church seats 3,500, while the Crypt Church below holds 400. The Knights' Bell Tower contains a 56-bell carillon.",
+    "notableArt": [
+      "Trinity Dome Mosaic - Largest mosaic in the U.S., depicting the Holy Trinity",
+      "Our Lady of Guadalupe Mosaic - Replica of the miraculous tilma image",
+      "Incarnation Dome - Stunning mosaic of the Annunciation",
+      "80 Chapels - Each with unique art representing different traditions"
+    ],
+    "visitInfo": "Free entry and guided tours daily. Open 7am-7pm. Mass times vary. Cafeteria and gift shop on site. Ample parking. Metro accessible (Brookland-CUA station). Modest dress appreciated.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Basilica+of+the+National+Shrine+of+the+Immaculate+Conception/@38.9344444,-77.0005556,17z"
+  },
+  {
+    "id": 16,
+    "name": "Sacré-Cœur Basilica",
+    "location": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "built": "1875-1914",
+    "architectureStyle": "Romano-Byzantine",
+    "architects": ["Paul Abadie"],
+    "quickFacts": [
+      "Built as a penance for France's defeat in Franco-Prussian War",
+      "Perpetual adoration has continued 24/7 since 1885",
+      "White Château-Landon stone keeps it brilliant white",
+      "Second-most visited monument in Paris after Notre-Dame"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sacre_Coeur%2C_Montmartre%2C_Paris%2C_France_-_panoramio.jpg/1280px-Sacre_Coeur%2C_Montmartre%2C_Paris%2C_France_-_panoramio.jpg",
+        "caption": "Sacré-Cœur Basilica, Montmartre",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "After France's humiliating defeat in the Franco-Prussian War (1870-71) and the trauma of the Paris Commune, Catholic groups proposed a church dedicated to the Sacred Heart as a symbol of penance and hope. The location atop Montmartre was chosen for its spiritual significance—site of early Christian martyrs including St. Denis. Construction began in 1875 but faced challenges including unstable ground requiring 83 deep wells for the foundation. The basilica was consecrated in 1919 after World War I, becoming a national monument to French faith and resilience.",
+    "architecture": "Paul Abadie designed the basilica in Romano-Byzantine style, inspired by St. Mark's in Venice and Hagia Sophia. The white travertine stone from Château-Landon has the unique property of whitening when it rains, keeping the basilica perpetually brilliant. The central dome reaches 83 meters high, with four smaller domes surrounding it. The interior features the world's largest mosaic, covering 475 square meters, depicting Christ with outstretched arms. The crypt extends beneath the entire church. A 19-ton bell named 'La Savoyarde' is one of the world's heaviest.",
+    "notableArt": [
+      "Christ in Majesty Mosaic - Massive mosaic by Luc-Olivier Merson",
+      "La Savoyarde Bell - 19-ton bell, one of world's heaviest",
+      "Stained Glass Windows - Depicting scenes from Christ's life",
+      "Perpetual Adoration Chapel - Uninterrupted worship since 1885"
+    ],
+    "visitInfo": "Free entry to basilica. Dome and crypt require ticket. Open 6am-10:30pm daily. Modest dress required. Photography inside discouraged during services. Spectacular Paris views from dome (300 steps).",
+    "googleMapsUrl": "https://www.google.com/maps/place/Sacr%C3%A9-C%C5%93ur/@48.8867,2.343,17z"
+  },
+  {
+    "id": 17,
+    "name": "Seville Cathedral",
+    "location": {
+      "city": "Seville",
+      "country": "Spain"
+    },
+    "built": "1401-1528",
+    "architectureStyle": "Gothic",
+    "architects": ["Multiple masters"],
+    "quickFacts": [
+      "Largest Gothic cathedral in the world",
+      "Third-largest church in the world by volume",
+      "Built on site of former Grand Mosque",
+      "Christopher Columbus is buried here"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Seville_Cathedral_-_Seville%2C_Spain_-_Jan_2007.jpg/1280px-Seville_Cathedral_-_Seville%2C_Spain_-_Jan_2007.jpg",
+        "caption": "Seville Cathedral with Giralda Tower",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "After Seville was reconquered from the Moors in 1248, the city's Grand Mosque was converted into a cathedral. By 1401, the structure was deteriorating, and Church officials decided to build 'a church so beautiful and so magnificent that those who see it will think we are mad.' Construction took 127 years. The cathedral incorporated elements of the former mosque, including the Giralda minaret (converted to a bell tower) and the Court of Oranges. In 1987, UNESCO declared it a World Heritage Site.",
+    "architecture": "The cathedral exemplifies Spanish Gothic architecture at its most ambitious scale. The interior measures 126m x 83m with five naves. The central nave reaches 42 meters high. The Giralda tower, originally a minaret built in 1198, rises 104 meters and combines Moorish and Renaissance elements—ramps instead of stairs allow ascent. The Patio de los Naranjos preserves the mosque's courtyard with orange trees and a Moorish fountain. Golden Gothic altarpiece behind the main altar is the largest in the world.",
+    "notableArt": [
+      "Tomb of Christopher Columbus - Elaborate tomb with four kings bearing his coffin",
+      "Golden Altarpiece - Largest altarpiece in the world (20m high)",
+      "Murillo's Paintings - Works by Seville's most famous artist",
+      "Royal Chapel - Final resting place of Ferdinand III"
+    ],
+    "visitInfo": "Entrance fee includes cathedral, Giralda tower, and Royal Alcázar. Pre-booking recommended to skip lines. Modest dress required. Giralda tower climb (34 ramps, no steps) offers stunning views. Audio guides available.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Seville+Cathedral/@37.3857,-5.9933,17z"
+  },
+  {
+    "id": 18,
+    "name": "St. Basil's Cathedral",
+    "location": {
+      "city": "Moscow",
+      "country": "Russia"
+    },
+    "built": "1555-1561",
+    "architectureStyle": "Russian Orthodox",
+    "architects": ["Postnik Yakovlev", "Ivan Barma"],
+    "quickFacts": [
+      "Built to celebrate Ivan the Terrible's conquest of Kazan",
+      "Originally white with gold domes—painted colorfully in 17th century",
+      "Legend says Ivan blinded the architects so they couldn't build anything as beautiful",
+      "Actually a complex of nine churches unified under one roof"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/St_Basils_Cathedral-500px.jpg/1280px-St_Basils_Cathedral-500px.jpg",
+        "caption": "St. Basil's Cathedral, Red Square",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Tsar Ivan IV (Ivan the Terrible) commissioned the cathedral to commemorate his capture of Kazan from Mongol forces in 1552. Originally named the Cathedral of the Intercession of the Virgin, it became known as St. Basil's after Basil the Blessed, a holy fool buried on the site in 1588. The cathedral narrowly escaped demolition under Stalin, who reportedly wanted to clear Red Square for military parades. It functioned as a museum during the Soviet era and remains primarily a museum today, with occasional Orthodox services.",
+    "architecture": "St. Basil's represents the pinnacle of medieval Russian Orthodox architecture with no parallel in Western tradition. Nine chapels sit on a single foundation, each topped with a distinctly patterned onion dome. The central tent-roofed church rises 65 meters. The seemingly chaotic exterior conceals a symmetrical floor plan arranged around the central tower. The vibrant colors—red, yellow, green, and blue—were added in the 1680s, replacing the original white-and-gold scheme. The interior features narrow corridors connecting the chapels, decorated with frescoes and oil paintings.",
+    "notableArt": [
+      "Onion Domes - Nine uniquely patterned colorful domes",
+      "Frescoes - 16th-19th century religious paintings throughout",
+      "Iconostasis - Traditional Orthodox icon screens in each chapel",
+      "Bell Tower - 16th century bell tower reconstructed in 1680s"
+    ],
+    "visitInfo": "Entrance fee required. Open daily except first Wednesday of month. Photography allowed (fee for video). Cold in winter. Limited English signage. Best viewed from Red Square. No active worship—functions as museum.",
+    "googleMapsUrl": "https://www.google.com/maps/place/St.+Basil's+Cathedral/@55.7525,37.6231,17z"
+  },
+  {
+    "id": 19,
+    "name": "Canterbury Cathedral",
+    "location": {
+      "city": "Canterbury",
+      "country": "United Kingdom"
+    },
+    "built": "1070-1834",
+    "architectureStyle": "Romanesque, Gothic",
+    "architects": ["Lanfranc", "William of Sens", "Multiple masters"],
+    "quickFacts": [
+      "Mother church of Anglican Communion worldwide",
+      "Site where Thomas Becket was murdered in 1170",
+      "Archbishop of Canterbury is spiritual leader of 85 million Anglicans",
+      "One of England's three UNESCO World Heritage Sites with religious structures"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Canterbury_Cathedral_-_Portal_Nave_Cross-spire.jpeg/1280px-Canterbury_Cathedral_-_Portal_Nave_Cross-spire.jpeg",
+        "caption": "Canterbury Cathedral",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Christianity arrived in Canterbury in 597 AD when St. Augustine was sent by Pope Gregory the Great to convert England. The original cathedral was destroyed by fire in 1067. Archbishop Lanfranc began the current structure in 1070. The cathedral's history was forever changed on December 29, 1170, when four knights murdered Archbishop Thomas Becket in the northwest transept, supposedly acting on King Henry II's wishes. Becket was canonized in 1173, and his shrine became one of medieval Christianity's most important pilgrimage destinations, immortalized in Chaucer's Canterbury Tales.",
+    "architecture": "Canterbury displays English Gothic architecture at its finest, with elements from multiple building periods. The Norman nave from 1070-1180 shows Romanesque influence. The Gothic choir, rebuilt by William of Sens after an 1174 fire, introduced French Gothic style to England. The central Bell Harry Tower (1498) rises 72 meters, dominating the city. The crypt, England's largest, preserves remarkable Romanesque architecture. Perpendicular Gothic style appears in the 15th-century nave. The cathedral's stained glass includes some of Europe's finest medieval examples.",
+    "notableArt": [
+      "Medieval Stained Glass - 12th-13th century windows including Miracle Windows",
+      "Site of Becket's Martyrdom - Marked by Altar of the Sword's Point",
+      "Black Prince's Tomb - Effigy of Edward the Black Prince (1376)",
+      "Chair of St. Augustine - Ancient throne of Archbishops of Canterbury"
+    ],
+    "visitInfo": "Entrance fee required. Open daily except during special services. Photography allowed without flash. Evensong daily (free to attend). Audio guides available. Modest dress appreciated. Archbishop's throne visible during visits.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Canterbury+Cathedral/@51.2799,-1.0828,17z"
+  },
+  {
+    "id": 20,
+    "name": "Florence Cathedral (Duomo)",
+    "location": {
+      "city": "Florence",
+      "country": "Italy"
+    },
+    "built": "1296-1436",
+    "architectureStyle": "Gothic, Renaissance",
+    "architects": ["Arnolfo di Cambio", "Filippo Brunelleschi"],
+    "quickFacts": [
+      "Dome remains world's largest masonry dome",
+      "Took 140 years to complete",
+      "Facade wasn't finished until 1887 (600 years after start)",
+      "Can hold 30,000 people"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Firenze_-_Florence_-_Piazza_del_Duomo_-_View_ESE_on_Basilica_di_Santa_Maria_del_Fiore_%28UNESCO-WHL_No_174%29.jpg/1280px-Firenze_-_Florence_-_Piazza_del_Duomo_-_View_ESE_on_Basilica_di_Santa_Maria_del_Fiore_%28UNESCO-WHL_No_174%29.jpg",
+        "caption": "Florence Cathedral with Brunelleschi's Dome",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "In 1296, Florence's Republic commissioned Arnolfo di Cambio to design a cathedral worthy of the city's growing importance. Work proceeded slowly over centuries. The greatest challenge was the dome—no one knew how to vault the 45-meter span without wooden scaffolding. In 1418, Filippo Brunelleschi won a competition with his revolutionary design using a double-shell dome and herringbone brick pattern. Completed in 1436, it was an engineering marvel that sparked the Renaissance. The facade, however, remained unfinished until the 19th century when a Neo-Gothic design was finally added.",
+    "architecture": "The cathedral showcases the transition from Gothic to Renaissance architecture. The Gothic nave with pointed arches contrasts with Brunelleschi's revolutionary Renaissance dome—a double-shelled structure rising 114 meters high using no temporary wooden supports. The exterior features geometric patterns in white, green, and pink marble. Giotto's Campanile (bell tower) stands separately at 84 meters with intricate Gothic decoration. The octagonal Baptistery dates to the 11th century with famous bronze doors by Lorenzo Ghiberti that Michelangelo called the 'Gates of Paradise.'",
+    "notableArt": [
+      "Brunelleschi's Dome - Architectural marvel and Renaissance icon",
+      "Last Judgment Fresco - Vasari's massive fresco inside the dome",
+      "Gates of Paradise - Ghiberti's bronze Baptistery doors",
+      "Giotto's Campanile - Stunning Gothic bell tower with views"
+    ],
+    "visitInfo": "Separate tickets for Cathedral, Dome climb, Baptistery, Bell Tower, Museum. Pre-booking essential for dome (463 steps, no elevator). Modest dress strictly enforced. Free cathedral entry for prayer. Combination tickets available.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Florence+Cathedral/@43.773,11.256,17z"
+  },
+  {
+    "id": 21,
+    "name": "Sistine Chapel",
+    "location": {
+      "city": "Vatican City",
+      "country": "Vatican"
+    },
+    "built": "1473-1481",
+    "architectureStyle": "Renaissance",
+    "architects": ["Baccio Pontelli", "Giovannino de Dolci"],
+    "quickFacts": [
+      "Michelangelo painted the ceiling lying on his back for 4 years",
+      "Site where Popes are elected (papal conclave)",
+      "The Last Judgment took Michelangelo 7 years to complete",
+      "Over 5 million visitors annually"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Lightmatter_sisitine_chapel.jpg/1280px-Lightmatter_sisitine_chapel.jpg",
+        "caption": "Sistine Chapel Interior",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Pope Sixtus IV commissioned the chapel in 1473, naming it after himself. The building replaced an earlier medieval structure. Leading Renaissance artists including Botticelli, Perugino, and Ghirlandaio painted the side walls (1481-82). In 1508, Pope Julius II commissioned Michelangelo to paint the ceiling—originally planned as simple decoration but becoming one of humanity's greatest artistic achievements. Twenty-five years later, Michelangelo returned to paint The Last Judgment on the altar wall (1536-41). The chapel serves as the site of papal conclaves where cardinals elect new popes.",
+    "architecture": "The chapel's dimensions follow the biblical proportions of Solomon's Temple. It measures 40.9m long, 13.4m wide, and 20.7m high. The simple brick exterior gives no hint of the artistic treasures within. A barrel-vaulted ceiling rises above the rectangular space. Six tall arched windows on each side wall provide natural light. A marble screen divides the chapel between clergy and laity. The floor features geometric Cosmati marble work. During conclaves, a special chimney is installed in the roof for white or black smoke signals.",
+    "notableArt": [
+      "Michelangelo's Ceiling - 9 scenes from Genesis including Creation of Adam",
+      "The Last Judgment - Michelangelo's massive altar wall fresco",
+      "Side Wall Frescoes - Botticelli, Perugino depicting Moses and Christ's lives",
+      "Papal Coat of Arms - Sixtus IV's heraldry decorates the chapel"
+    ],
+    "visitInfo": "Entry through Vatican Museums only (separate ticket required). Pre-booking essential. Strict silence enforced. Photography prohibited. Modest dress mandatory. Can take hours to reach due to museum route. Best to visit at opening time.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Sistine+Chapel/@41.9029,12.4545,17z"
+  },
+  {
+    "id": 22,
+    "name": "St. Patrick's Cathedral",
+    "location": {
+      "city": "New York City",
+      "country": "United States"
+    },
+    "built": "1858-1878",
+    "architectureStyle": "Neo-Gothic",
+    "architects": ["James Renwick Jr."],
+    "quickFacts": [
+      "Seat of Archbishop of New York",
+      "Can hold 3,000 worshippers",
+      "Spires reach 329 feet, visible across Manhattan",
+      "Survived attempt to bomb it in 1972"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/St_Patrick%27s_Cathedral_by_David_Shankbone.jpg/1280px-St_Patrick%27s_Cathedral_by_David_Shankbone.jpg",
+        "caption": "St. Patrick's Cathedral, Fifth Avenue",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Construction began in 1858 on land purchased by the Archdiocese, then far north of the developed city. The Civil War delayed construction, but the cathedral opened in 1879 (though not fully complete). Archbishop John Hughes envisioned a grand cathedral to serve New York's growing Catholic immigrant population and demonstrate the Church's permanence in America. The twin spires were added in 1888. A major restoration (2012-15) cleaned decades of grime, revealing the original white marble. The cathedral has hosted state funerals for prominent Americans and serves as a symbol of Catholic life in America.",
+    "architecture": "James Renwick Jr. designed the cathedral in Decorated Gothic Revival style inspired by Cologne Cathedral. The cruciform floor plan features a 332-foot nave with 70-foot vaulted ceilings. Twin spires flank the Fifth Avenue entrance, rising 329 feet. The exterior uses white marble contrasting with the brownstone that dominates the street. Interior columns are Tuckahoe marble. The 26-foot rose window depicts the Assumption. The Lady Chapel behind the high altar displays delicate Gothic detailing. Bronze doors weigh 20,000 pounds each, depicting saints significant to American Catholic history.",
+    "notableArt": [
+      "High Altar - Designed by Tiffany & Co. with marble baldachin",
+      "Great Organ - 7,855-pipe instrument, one of largest in Americas",
+      "Pieta - Three times larger than Michelangelo's original",
+      "Stations of the Cross - Carved stone stations along the nave"
+    ],
+    "visitInfo": "Free entry. Open daily 6:30am-8:45pm. Guided tours available (fee). Mass times throughout the day. Photography allowed without flash. Accessible via 51st St entrance. Security screening at entrance. Modest dress appreciated.",
+    "googleMapsUrl": "https://www.google.com/maps/place/St.+Patrick's+Cathedral/@40.7585,-73.976,17z"
+  },
+  {
+    "id": 23,
+    "name": "Sainte-Chapelle",
+    "location": {
+      "city": "Paris",
+      "country": "France"
+    },
+    "built": "1242-1248",
+    "architectureStyle": "Gothic",
+    "architects": ["Unknown"],
+    "quickFacts": [
+      "Built in just 7 years—remarkably fast for Gothic architecture",
+      "Contains 1,113 stained glass panels depicting 1,130 biblical scenes",
+      "Built to house Christ's Crown of Thorns and other relics",
+      "15 meters of walls are actually windows"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Sainte_Chapelle_Interior_Stained_Glass.jpg/1280px-Sainte_Chapelle_Interior_Stained_Glass.jpg",
+        "caption": "Sainte-Chapelle Upper Chapel Stained Glass",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "King Louis IX (later St. Louis) commissioned Sainte-Chapelle as a royal chapel to house precious Christian relics he acquired from the Byzantine Emperor—most notably the Crown of Thorns, which cost three times more than building the chapel itself. Completed in 1248, it served as the palace chapel for French kings. During the French Revolution, the building was damaged and relics were dispersed (Crown of Thorns is now in Notre-Dame's treasury). Extensive 19th-century restoration by Viollet-le-Duc saved the chapel. It stands as the finest example of Rayonnant Gothic architecture.",
+    "architecture": "Sainte-Chapelle represents the apex of Gothic architecture's quest for light and height. The two-level structure features a lower chapel for palace staff and an upper chapel for royalty—a glowing jewel box 20 meters high where walls dissolve into 15 meters of stained glass. Slender columns and external buttresses allow unprecedented window space. The 15 lancet windows and rose window total 600 square meters of 13th-century stained glass, one of the world's most extensive collections. The glass reads like a medieval Bible, depicting scenes from Genesis through Christ's Passion.",
+    "notableArt": [
+      "Stained Glass Windows - 1,113 panels creating walls of colored light",
+      "Rose Window - 15th-century Apocalypse scenes",
+      "Star-Vaulted Ceiling - Painted blue with golden stars",
+      "Apostle Statues - 12 apostles holding consecration crosses"
+    ],
+    "visitInfo": "Entrance fee required. Pre-booking strongly recommended (long lines). Open daily. Classical concerts held regularly (separate tickets). Photography allowed. Best visited on sunny days when light illuminates the glass. Combination tickets with Conciergerie available.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Sainte-Chapelle/@48.8555,2.345,17z"
+  },
+  {
+    "id": 24,
+    "name": "Jasna Góra Monastery",
+    "location": {
+      "city": "Częstochowa",
+      "country": "Poland"
+    },
+    "built": "1382",
+    "architectureStyle": "Gothic, Baroque",
+    "architects": ["Various"],
+    "quickFacts": [
+      "Home to the Black Madonna icon, Poland's most sacred image",
+      "4-5 million pilgrims visit annually",
+      "Successfully defended against Swedish siege in 1655",
+      "Pope John Paul II visited 6 times"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Jasna_G%C3%B3ra.jpg/1280px-Jasna_G%C3%B3ra.jpg",
+        "caption": "Jasna Góra Monastery",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Duke Władysław of Opole brought Pauline monks from Hungary to Jasna Góra (Bright Mountain) in 1382, along with an icon tradition attributes to St. Luke. The Black Madonna icon became central to Polish Catholic identity. In 1655, during the Swedish 'Deluge,' the small garrison's successful defense of the monastery against overwhelming Swedish forces became legendary, attributed to Mary's intercession. King John II Casimir named Mary 'Queen of Poland' in 1656. The monastery survived Nazi occupation and Communist suppression. Pope John Paul II's deep devotion to the Black Madonna brought worldwide attention.",
+    "architecture": "The monastery complex combines Gothic foundations with later Baroque additions. The Basilica, rebuilt in Baroque style after a fire, features an ornate interior with frescoes and gilt decoration. The Black Madonna chapel, covered in votive offerings, creates an intimate worship space. A 106-meter Baroque tower offers panoramic views. Defensive walls and bastions remain from the 1655 siege. The Treasury houses royal crowns and papal gifts. The monastery's 600-meter pilgrimage route from the entrance gate reflects spiritual journey symbolism.",
+    "notableArt": [
+      "Black Madonna Icon - 14th century Byzantine image venerated as miraculous",
+      "Votive Chapel Walls - Covered in thanksgiving plaques and crutches",
+      "Knights' Hall - Baroque hall displaying monastery treasures",
+      "600th Anniversary Monument - John Paul II monument (1982)"
+    ],
+    "visitInfo": "Free entry to basilica. Museum and tower require tickets. Open daily. Major pilgrimage dates: August 15 (Assumption), August 26 (Black Madonna feast). Walking pilgrimage from Warsaw takes 9 days. Modest dress required. Photography restrictions in chapel.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Jasna+G%C3%B3ra/@50.8122,19.0947,17z"
+  },
+  {
+    "id": 25,
+    "name": "Church of the Holy Sepulchre",
+    "location": {
+      "city": "Jerusalem",
+      "country": "Israel"
+    },
+    "built": "326 AD (current: 1048)",
+    "architectureStyle": "Romanesque, Byzantine",
+    "architects": ["Multiple over centuries"],
+    "quickFacts": [
+      "Built over the site where Jesus was crucified, buried, and resurrected",
+      "Shared by six Christian denominations with complex ownership agreements",
+      "Contains last 5 Stations of the Cross",
+      "Keys held by two Muslim families for centuries to maintain neutrality"
+    ],
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Church_of_the_Holy_Sepulchre_%28Entry%29.jpg/1280px-Church_of_the_Holy_Sepulchre_%28Entry%29.jpg",
+        "caption": "Church of the Holy Sepulchre Entrance",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "history": "Roman Emperor Constantine's mother, St. Helena, identified the site of Christ's crucifixion and burial during her 326 AD pilgrimage to Jerusalem. Constantine built a church complex encompassing both Golgotha and the tomb. Persians destroyed it in 614; it was rebuilt, then destroyed again in 1009 by Caliph al-Hakim. Crusaders rebuilt it in 1048 in Romanesque style. After Saladin's conquest (1187), the church remained Christian. In 1852, the Status Quo agreement divided the church among Greek Orthodox, Roman Catholics, Armenian Apostolic, Coptic, Ethiopian, and Syriac Orthodox churches—an arrangement maintained to this day.",
+    "architecture": "The church is a complex architectural palimpsest reflecting 1,700 years of construction, destruction, and rebuilding. The Crusader Romanesque structure forms the core. The Rotunda houses the Edicule shrine over Christ's tomb. Golgotha (Calvary) sits on a rock outcrop accessible by steep stairs. Multiple chapels occupy every available space, each controlled by different denominations. The complex includes the Stone of Anointing where Christ's body was prepared for burial. Unadorned 12th-century Crusader columns support the structure. Recent restoration (2016-17) revealed the original limestone of Christ's burial cave.",
+    "notableArt": [
+      "Edicule - Shrine over the empty tomb of Christ",
+      "Golgotha/Calvary - Rock of the crucifixion with altars",
+      "Stone of Anointing - Where Christ's body was prepared",
+      "Status Quo Ladder - Wooden ladder unchanged since 1852"
+    ],
+    "visitInfo": "Free entry. Open daily 4am-7pm (hours vary by season). Expect large crowds and long waits to enter the Edicule. Modest dress required. Photography allowed. Multiple entrances for different denominations. Best visited early morning. Security screening at entrance.",
+    "googleMapsUrl": "https://www.google.com/maps/place/Church+of+the+Holy+Sepulchre/@31.7784,35.2295,17z"
   }
 ]
