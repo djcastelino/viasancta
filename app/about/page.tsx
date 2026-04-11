@@ -167,7 +167,9 @@ export default function AboutPage() {
                 >
                   Creative Commons: By Attribution 4.0 License
                 </a>
-                . Marian Apparitions music by{' '}
+              </p>
+              <p>
+                <strong>Marian Apparitions Music:</strong> "Hail Mary Gentle Woman" by{' '}
                 <a
                   href="https://sites.google.com/view/serafiremusic/home"
                   target="_blank"
@@ -176,7 +178,7 @@ export default function AboutPage() {
                 >
                   SeraFire Music
                 </a>
-                .
+                {' '}— beautiful instrumental music for Marian devotion
               </p>
               <p>
                 <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by{' '}

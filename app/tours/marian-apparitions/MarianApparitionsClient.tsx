@@ -33,7 +33,8 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   ];
 
   // Hail Mary Gentle Woman background music
-  // Music by SeraFire Music (serafiremusic.com)
+  // Music by SeraFire Music (https://sites.google.com/view/serafiremusic/home)
+  // Plays when user clicks on any Marian apparition card
   const musicOptions = [
     '/audio/background/Hail Mary Gentle Woman.mp3',
   ];
@@ -65,6 +66,9 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
     setShowNarration(false);
     setNarrationText('');
     setError('');
+
+    // Start Hail Mary background music when card is clicked
+    startBackgroundMusic();
   };
 
   const handleCloseModal = () => {
@@ -158,7 +162,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
             const audioElement = new Audio(audioUrl);
             audioRef.current = audioElement;
 
-            startBackgroundMusic();
+            // Don't start background music here - it's already playing from card click
 
             audioElement.play();
             setIsPlaying(true);
@@ -167,7 +171,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
             audioElement.onended = () => {
               setIsPlaying(false);
-              fadeOutMusic();
+              // Keep background music playing after narration ends
             };
           } else {
             throw new Error('Speech synthesis failed');
@@ -213,11 +217,12 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
       bgMusic.play().catch(console.error);
 
+      // Fade in to 25% volume (higher since it's primary background music)
       let volume = 0;
       const fadeIn = setInterval(() => {
-        if (volume < 0.15) {
+        if (volume < 0.25) {
           volume += 0.01;
-          bgMusic.volume = Math.min(volume, 0.15);
+          bgMusic.volume = Math.min(volume, 0.25);
         } else {
           clearInterval(fadeIn);
         }
