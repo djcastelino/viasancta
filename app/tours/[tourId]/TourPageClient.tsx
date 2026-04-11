@@ -21,8 +21,7 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
   useEffect(() => {
     eucharisticMusicManager.start();
 
-    // NOTE: We DON'T stop music on cleanup - it continues playing across navigation
-    // Music only stops when user leaves the Eucharistic Miracles section entirely
+    // Don't stop on cleanup - let miracle pages handle stopping when user leaves entirely
   }, []);
 
   // Filter miracles based on search and filters

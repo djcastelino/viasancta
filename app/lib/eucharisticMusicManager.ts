@@ -44,6 +44,38 @@ class EucharisticMusicManager {
     }, 50);
   }
 
+  duck() {
+    // Lower volume to 10% when narration is playing
+    if (this.audio) {
+      console.log('🎵 Ducking music to 10% for narration');
+      let volume = this.audio.volume;
+      const duckDown = setInterval(() => {
+        if (this.audio && volume > 0.10) {
+          volume -= 0.02;
+          this.audio.volume = Math.max(volume, 0.10);
+        } else {
+          clearInterval(duckDown);
+        }
+      }, 50);
+    }
+  }
+
+  unduck() {
+    // Restore volume to 30% when narration ends
+    if (this.audio) {
+      console.log('🎵 Restoring music to 30%');
+      let volume = this.audio.volume;
+      const duckUp = setInterval(() => {
+        if (this.audio && volume < 0.30) {
+          volume += 0.02;
+          this.audio.volume = Math.min(volume, 0.30);
+        } else {
+          clearInterval(duckUp);
+        }
+      }, 50);
+    }
+  }
+
   stop() {
     if (this.audio) {
       console.log('🎵 Stopping Eucharistic music');

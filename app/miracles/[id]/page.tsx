@@ -16,7 +16,6 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Unwrap params promise
@@ -30,6 +29,11 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   // Start background music using global manager - it will continue if already playing
   useEffect(() => {
     eucharisticMusicManager.start();
+
+    // Stop music when leaving this page (going back to home or other sections)
+    return () => {
+      eucharisticMusicManager.stop();
+    };
   }, []);
 
   const handlePlayNarration = async () => {
@@ -50,12 +54,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       audioRef.current.currentTime = 0; // Reset to beginning
       audioRef.current = null;
 
-      // Stop background music immediately
-      if (backgroundMusicRef.current) {
-        backgroundMusicRef.current.pause();
-        backgroundMusicRef.current.currentTime = 0;
-        backgroundMusicRef.current.volume = 0;
-      }
+      // Restore background music volume when manually stopping narration
+      eucharisticMusicManager.unduck();
 
       setIsPlaying(false);
       setLoadingMessage('');
@@ -175,10 +175,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
 
-        // Fade out background music
-        if (backgroundMusicRef.current) {
-          fadeOutMusic(backgroundMusicRef.current);
-        }
+        // Restore background music volume when narration ends
+        eucharisticMusicManager.unduck();
       };
       audioElement.onerror = () => {
         setError('Failed to play audio');
@@ -186,10 +184,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         audioRef.current = null;
         URL.revokeObjectURL(audioUrl);
 
-        // Stop background music on error
-        if (backgroundMusicRef.current) {
-          fadeOutMusic(backgroundMusicRef.current);
-        }
+        // Restore background music volume on error
+        eucharisticMusicManager.unduck();
       };
 
       // IMPORTANT: Clear loading state BEFORE playing audio
@@ -197,13 +193,13 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       setIsLoading(false);
       setLoadingMessage('');
 
-      // Start background music first
-      startBackgroundMusic();
+      // Duck (lower) background music volume for narration
+      eucharisticMusicManager.duck();
 
-      // Small delay to let background music start smoothly
+      // Small delay for smooth transition
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Now play narration with music already playing
+      // Now play narration with music ducked to 10%
       await audioElement.play();
       audioRef.current = audioElement;
       setIsPlaying(true);
@@ -215,89 +211,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     }
   };
 
-  const startBackgroundMusic = () => {
-    console.log('🎵 startBackgroundMusic() called');
-    if (!backgroundMusicRef.current) {
-      // "I Am the Bread of Life" - Eucharistic hymn by SeraFire Christian Music
-      // Perfect thematic fit for Eucharistic miracles
-      const musicOptions = [
-        '/audio/background/i-am-the-bread-of-life.mp3',
-        '/audio/background/contemplative-1.mp3', // Fallback
-      ];
-
-      console.log('🎵 Creating new Audio element with:', musicOptions[0]);
-      // Eucharistic hymn background
-      const bgMusic = new Audio(musicOptions[0]);
-      bgMusic.loop = true;
-      bgMusic.volume = 0; // Start at 0 for fade-in
-      bgMusic.preload = 'auto'; // Preload for smoother playback
-
-      // Add error handler with fallback
-      bgMusic.onerror = (e) => {
-        console.error('❌ Background music failed to load:', musicOptions[0], e);
-        // Try next music option if available
-        if (musicOptions.length > 1) {
-          console.log('🔄 Trying fallback music:', musicOptions[1]);
-          bgMusic.src = musicOptions[1];
-          bgMusic.load();
-        }
-      };
-
-      bgMusic.onloadeddata = () => {
-        console.log('✅ Background music loaded successfully:', musicOptions[0]);
-      };
-
-      backgroundMusicRef.current = bgMusic;
-    }
-
-    const bgMusic = backgroundMusicRef.current;
-
-    // Reset to start if already playing
-    if (!bgMusic.paused) {
-      bgMusic.pause();
-    }
-    bgMusic.currentTime = 0;
-    bgMusic.volume = 0;
-
-    // Try to play with user interaction context
-    bgMusic.play()
-      .then(() => {
-        console.log('🎵 Background music started successfully:', bgMusic.src);
-        // Fade in to 30% volume (audible but not overpowering)
-        fadeInMusic(bgMusic, 0.30);
-      })
-      .catch(err => {
-        console.error('❌ Background music play failed:', err.name, err.message);
-        console.log('Music src:', bgMusic.src);
-        console.log('This could be autoplay block or file not found');
-        // User needs to interact first - this is expected for autoplay block
-      });
-  };
-
-  const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
-    const fadeInterval = setInterval(() => {
-      if (audio.volume < targetVolume - 0.01) {
-        audio.volume = Math.min(audio.volume + 0.01, targetVolume);
-      } else {
-        audio.volume = targetVolume;
-        clearInterval(fadeInterval);
-        console.log(`🎵 Background music faded in to ${Math.round(targetVolume * 100)}% volume`);
-      }
-    }, 100);
-  };
-
-  const fadeOutMusic = (audio: HTMLAudioElement) => {
-    const fadeInterval = setInterval(() => {
-      if (audio.volume > 0.01) {
-        audio.volume = Math.max(audio.volume - 0.01, 0);
-      } else {
-        audio.pause();
-        audio.volume = 0;
-        clearInterval(fadeInterval);
-        console.log('🎵 Background music faded out');
-      }
-    }, 100);
-  };
+  // Background music now handled by global eucharisticMusicManager
+  // Functions removed - using manager.duck() and manager.unduck() instead
 
   if (!miracle) {
     return (
