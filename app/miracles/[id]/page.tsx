@@ -257,8 +257,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     bgMusic.play()
       .then(() => {
         console.log('🎵 Background music started successfully:', bgMusic.src);
-        // Fade in to 15% volume (soft, soothing)
-        fadeInMusic(bgMusic, 0.15);
+        // Fade in to 30% volume (audible but not overpowering)
+        fadeInMusic(bgMusic, 0.30);
       })
       .catch(err => {
         console.error('❌ Background music play failed:', err.name, err.message);
