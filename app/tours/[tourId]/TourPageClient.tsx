@@ -21,7 +21,10 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
   useEffect(() => {
     eucharisticMusicManager.start();
 
-    // Don't stop on cleanup - let miracle pages handle stopping when user leaves entirely
+    // Schedule stop when leaving - cancels if navigating to miracle page
+    return () => {
+      eucharisticMusicManager.stopDelayed();
+    };
   }, []);
 
   // Filter miracles based on search and filters

@@ -5,6 +5,7 @@ class EucharisticMusicManager {
   private static instance: EucharisticMusicManager;
   private audio: HTMLAudioElement | null = null;
   private isInitialized = false;
+  private stopTimeout: NodeJS.Timeout | null = null;
 
   private constructor() {}
 
@@ -16,6 +17,13 @@ class EucharisticMusicManager {
   }
 
   start() {
+    // Cancel any pending stop - we're staying in Eucharistic section
+    if (this.stopTimeout) {
+      console.log('🎵 Canceling stop - staying in Eucharistic section');
+      clearTimeout(this.stopTimeout);
+      this.stopTimeout = null;
+    }
+
     if (this.isInitialized && this.audio && !this.audio.paused) {
       console.log('🎵 Music already playing, continuing...');
       return; // Already playing
@@ -76,7 +84,22 @@ class EucharisticMusicManager {
     }
   }
 
+  stopDelayed() {
+    // Delay stop by 300ms - if start() is called during this time, stop is cancelled
+    // This prevents music hiccup when navigating between Eucharistic pages
+    console.log('🎵 Scheduling stop in 300ms...');
+    this.stopTimeout = setTimeout(() => {
+      this.stop();
+    }, 300);
+  }
+
   stop() {
+    // Clear any pending delayed stop
+    if (this.stopTimeout) {
+      clearTimeout(this.stopTimeout);
+      this.stopTimeout = null;
+    }
+
     if (this.audio) {
       console.log('🎵 Stopping Eucharistic music');
       this.audio.pause();

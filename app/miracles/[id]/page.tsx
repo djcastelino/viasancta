@@ -40,8 +40,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
         audioRef.current = null;
       }
 
-      // Stop background music
-      eucharisticMusicManager.stop();
+      // Schedule stop - cancels if navigating to another Eucharistic page
+      eucharisticMusicManager.stopDelayed();
     };
   }, []);
 
