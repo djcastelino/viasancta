@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ChurchCard from '@/app/components/ChurchCard';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
@@ -11,6 +12,9 @@ interface SacredArchitectureClientProps {
 }
 
 export default function SacredArchitectureClient({ churches, countries, styles }: SacredArchitectureClientProps) {
+  const searchParams = useSearchParams();
+  const isPreviewMode = searchParams.get('preview') === 'true';
+
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
   const [todaysFeaturedChurch, setTodaysFeaturedChurch] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -222,10 +226,50 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     }
   };
 
-  if (!todaysFeaturedChurch) {
+  if (!todaysFeaturedChurch && !isPreviewMode) {
     return null;
   }
 
+  // PREVIEW MODE - Show all 25 churches (secret admin view)
+  if (isPreviewMode) {
+    return (
+      <>
+        <section className="max-w-7xl mx-auto px-5 pb-8">
+          <div className="text-center mb-8">
+            <div className="inline-block bg-red-600 px-6 py-2 rounded-full text-white font-bold text-sm mb-4">
+              🔒 PREVIEW MODE - Admin Only
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2C5F87] mb-3 font-serif">
+              All 25 Churches Preview
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-4">
+              This view is only visible with the ?preview=true URL parameter
+            </p>
+            <p className="text-sm text-gray-500">
+              Regular users will only see one church per day
+            </p>
+          </div>
+
+          {/* All Churches Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {churches.map((church: any) => (
+              <div key={church.id}>
+                <div className="text-xs text-gray-500 mb-2 text-center">
+                  Church #{church.id} - Day {church.id}
+                </div>
+                <ChurchCard
+                  church={church}
+                  onClick={() => handleCardClick(church)}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+    );
+  }
+
+  // NORMAL MODE - Show only today's featured church
   return (
     <>
       {/* Today's Featured Church - ONLY THIS ONE */}
