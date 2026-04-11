@@ -26,9 +26,9 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
-  // "I Am the Bread of Life" by Serafire Christian Music
+  // Gregorian chant for sacred architecture
   const musicOptions = [
-    '/audio/background/I Am the Bread of Life.mp3',
+    '/audio/background/gregorian-chant.mp3',
   ];
 
   // Calculate today's featured church

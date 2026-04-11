@@ -210,16 +210,13 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
   const startBackgroundMusic = () => {
     if (!backgroundMusicRef.current) {
-      // Contemplative background music (royalty-free from Incompetech)
-      // Music by Kevin MacLeod (incompetech.com)
-      // Licensed under Creative Commons: By Attribution 4.0 License
+      // "I Am the Bread of Life" - Eucharistic hymn by SeraFire Christian Music
+      // Perfect thematic fit for Eucharistic miracles
       const musicOptions = [
-        '/audio/background/contemplative-1.mp3',
-        '/audio/background/contemplative-2.mp3',
-        '/audio/background/contemplative-3.mp3',
+        '/audio/background/I Am the Bread of Life.mp3',
       ];
 
-      // Use first option (you can randomize or let user choose)
+      // Eucharistic hymn background
       const bgMusic = new Audio(musicOptions[0]);
       bgMusic.loop = true;
       bgMusic.volume = 0; // Start at 0 for fade-in
