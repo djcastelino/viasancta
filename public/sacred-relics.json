@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "The Shroud of Turin",
+    "location": {
+      "church": "Cathedral of Saint John the Baptist",
+      "city": "Turin",
+      "country": "Italy"
+    },
+    "type": "First-Class Relic",
+    "relatedTo": "Jesus Christ",
+    "dateOrigin": "1st Century (disputed)",
+    "dateDiscovered": "First documented 1354",
+    "quickFacts": [
+      "14-foot linen cloth bearing the image of a crucified man",
+      "Most studied artifact in human history",
+      "Image shows details not visible to naked eye until photography invented",
+      "Pollen samples match Jerusalem flora from 1st century",
+      "Carbon dating in 1988 dated it to medieval period, but methods disputed",
+      "Over 170 peer-reviewed scientific papers published about it"
+    ],
+    "history": "The Shroud of Turin is a linen cloth bearing the image of a man who appears to have suffered physical trauma consistent with crucifixion. First definitively documented in 1354 in Lirey, France, it passed through the House of Savoy and has been kept in Turin since 1578. The image shows extraordinary anatomical precision and details that medieval forgers could not have known. The cloth also contains bloodstains that form a pattern consistent with crucifixion wounds. Despite 1988 carbon dating suggesting medieval origin, many scientists question those results due to contamination and patch repair theories. The image formation process remains unexplained by modern science.",
+    "description": "The Shroud measures 14 feet 3 inches by 3 feet 7 inches. It shows a faint sepia-toned image of the front and back of a naked man with his hands folded across his groin. The image appears to be a photographic negative, only revealed when first photographed in 1898. Medical examiners note over 100 whip marks, puncture wounds consistent with a crown of thorns, and wounds in the hands, feet, and side matching Gospel accounts. The image penetrates only the top fibers and contains no paint, dye, or pigment. The cloth shows evidence of being woven in a 3-to-1 herringbone twill, consistent with 1st-century Syrian textiles.",
+    "scientificStudies": [
+      "STURP (Shroud of Turin Research Project) 1978 - concluded image not made by paint or dye",
+      "1988 Carbon-14 dating - suggested 1260-1390 (disputed due to contamination)",
+      "2013 Padua University study - suggested 1st century origin using different methods",
+      "Pollen analysis by Max Frei - identified species unique to Jerusalem",
+      "Blood analysis - found real human blood type AB",
+      "3D information encoded in image intensity - unexplainable by medieval technology"
+    ],
+    "veneration": "The Shroud is displayed publicly only on rare occasions. The last public exhibition was in 2015, attracting over 2 million pilgrims. It is kept in a climate-controlled case in the Cathedral of Saint John the Baptist. The Catholic Church has never formally declared it authentic but permits its veneration as an icon of Christ's Passion. Pope John Paul II called it a 'mirror of the Gospel.' Visitors can view a full-size photograph in the cathedral daily.",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Shroudofturin.jpg/1280px-Shroudofturin.jpg",
+        "caption": "The Shroud of Turin showing the full-length image",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "googleMapsUrl": "https://www.google.com/maps/place/Cathedral+of+Saint+John+the+Baptist,+Turin/@45.0706,7.6851,17z"
+  },
+  {
+    "id": 2,
+    "name": "The Sudarium of Oviedo",
+    "location": {
+      "church": "Cathedral of San Salvador",
+      "city": "Oviedo",
+      "country": "Spain"
+    },
+    "type": "First-Class Relic",
+    "relatedTo": "Jesus Christ",
+    "dateOrigin": "1st Century",
+    "dateDiscovered": "Documented since 7th century",
+    "quickFacts": [
+      "Bloodstained cloth believed to have covered Jesus's face after crucifixion",
+      "Blood type AB matches the Shroud of Turin",
+      "Contains pollen from Palestine and North Africa, matching its documented journey",
+      "Blood pattern suggests asphyxiation death, consistent with crucifixion",
+      "Publicly displayed three times per year",
+      "Has been in Oviedo since 8th century"
+    ],
+    "history": "The Sudarium (Latin for 'sweat cloth' or 'handkerchief') is referenced in John 20:7 as the cloth that covered Jesus's face in the tomb. According to tradition, it was taken from Jerusalem to Alexandria, then across North Africa to Spain to escape Persian invasion in 614 AD. It arrived in Oviedo in 840 AD and has remained there ever since. The cloth's journey is well-documented through historical records. Unlike the Shroud of Turin, the Sudarium shows no image, only bloodstains.",
+    "description": "The Sudarium measures approximately 33 by 21 inches and is made of linen. It contains numerous bloodstains forming specific patterns. The blood is type AB positive. Scientific studies show the cloth was placed over the head of a dead man with a beard, mustache, and long hair who had suffered trauma to the head and face. The bloodstain patterns suggest the cloth was in place for about 45 minutes to an hour. The stains match specific points on the Shroud of Turin with astonishing precision, suggesting they covered the same body.",
+    "scientificStudies": [
+      "Blood analysis confirmed type AB, matching Shroud of Turin",
+      "Pollen studies by Dr. Max Frei identified Palestinian and North African species",
+      "Forensic analysis by Spanish research team EDICES since 1989",
+      "DNA testing confirmed human blood",
+      "Pattern analysis shows correlation with Shroud of Turin facial wounds",
+      "Textile analysis confirms 1st-century Middle Eastern weaving technique"
+    ],
+    "veneration": "The Sudarium is displayed publicly on Good Friday, September 14 (Feast of the Cross), and September 21 (Feast of St. Matthew, Oviedo's patron). It is kept in the Holy Chamber (Cámara Santa) of Oviedo Cathedral, a special chapel built specifically to house sacred relics. Pilgrims on the Camino de Santiago often make a detour to Oviedo to venerate the Sudarium. The Spanish saying goes: 'Quien va a Santiago y no va al Salvador, visita al criado y deja al Señor' (He who goes to Santiago and not to the Savior visits the servant and leaves the Lord).",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Sudarium.jpg/1280px-Sudarium.jpg",
+        "caption": "The Sudarium of Oviedo",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "googleMapsUrl": "https://www.google.com/maps/place/Cathedral+of+San+Salvador,+Oviedo/@43.3625,-5.8442,17z"
+  },
+  {
+    "id": 3,
+    "name": "The Crown of Thorns",
+    "location": {
+      "church": "Notre-Dame Cathedral (Treasury)",
+      "city": "Paris",
+      "country": "France"
+    },
+    "type": "First-Class Relic",
+    "relatedTo": "Jesus Christ",
+    "dateOrigin": "33 AD",
+    "dateDiscovered": "Documented since 4th century",
+    "quickFacts": [
+      "The actual crown worn by Jesus during His Passion",
+      "Purchased by King Louis IX (St. Louis) in 1239 for enormous sum",
+      "Cost more than building Sainte-Chapelle to house it",
+      "Survived the 2019 Notre-Dame fire, rescued by firefighters",
+      "Thorns were removed over centuries and distributed to churches worldwide",
+      "Displayed publicly on first Friday of each month and during Lent"
+    ],
+    "history": "The Crown of Thorns was preserved in Jerusalem until 1063, when it was transferred to Constantinople. The Byzantine Emperor Baldwin II, facing financial difficulties, pawned it to Venetian merchants. In 1238, King Louis IX of France purchased it for 135,000 livres (nearly half France's annual budget). He built Sainte-Chapelle specifically to house this and other Passion relics. During the French Revolution, it was moved to the Bibliothèque Nationale, then to Notre-Dame in 1806. On April 15, 2019, firefighter Jean-Marc Fournier heroically rescued it from the burning cathedral. It now resides temporarily in the Louvre pending Notre-Dame's restoration.",
+    "description": "The relic appears as a circular crown of rushes held together by gold thread, approximately 8 inches in diameter. The original thorns have been removed over centuries—about 70 are documented in various churches worldwide, including one in Westminster Abbey given to Henry III. The botanical identification suggests the thorns came from Ziziphus spina-christi (Christ's Thorn Jujube), native to the Middle East and North Africa. This plant has long, sharp thorns and was commonly used in Palestine. The crown is displayed in a modern gold and crystal reliquary designed after the 2019 fire.",
+    "scientificStudies": [
+      "Botanical analysis of remaining thorns identifies Ziziphus spina-christi",
+      "Historical documentation traces provenance to 4th century",
+      "Individual thorns distributed worldwide have consistent botanical identification",
+      "Textile analysis of binding material consistent with ancient Middle Eastern materials",
+      "No carbon dating performed due to relic's sacred status"
+    ],
+    "veneration": "Veneration occurs on the first Friday of each month at 3 PM and every Friday during Lent. Worshippers may approach and pray before the relic but not touch it. The crown was traditionally processed through Paris on Good Friday until the French Revolution. Pope Pius IX granted a plenary indulgence to those who venerate it. Many churches worldwide possess individual thorns, including Rome's Santa Croce in Gerusalemme, which houses three thorns. The Crown is considered one of Christianity's most important relics, second only to the True Cross.",
+    "images": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Sainte_couronne.jpg/1280px-Sainte_couronne.jpg",
+        "caption": "The Crown of Thorns in its reliquary",
+        "credit": "Wikimedia Commons"
+      }
+    ],
+    "googleMapsUrl": "https://www.google.com/maps/place/Notre-Dame+de+Paris/@48.8529682,2.3499021,17z"
+  }
+]
