@@ -306,7 +306,194 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
         </div>
       </section>
 
-      {/* Modal - will add in next step */}
+      {/* Modal */}
+      {selectedRelic && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Header with Image */}
+            <div className="relative h-80 rounded-t-3xl overflow-hidden">
+              <img
+                src={selectedRelic.images[0].url}
+                alt={selectedRelic.name}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="bg-[#D4AF37] px-3 py-1 rounded-full text-xs font-bold">
+                    {selectedRelic.type}
+                  </span>
+                  <span className="bg-white/20 px-3 py-1 rounded-full text-xs">
+                    {selectedRelic.relatedTo}
+                  </span>
+                </div>
+                <h2 className="text-4xl font-bold mb-2">{selectedRelic.name}</h2>
+                <p className="text-white/90 text-lg">
+                  {selectedRelic.location.church}
+                </p>
+                <p className="text-white/90">
+                  {selectedRelic.location.city}, {selectedRelic.location.country}
+                </p>
+              </div>
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-8 space-y-6">
+              {/* Audio Tour Buttons */}
+              <div className="bg-gradient-to-br from-[#D4AF37]/10 to-amber-100/50 p-6 rounded-xl border-2 border-[#D4AF37]/30">
+                <h3 className="text-xl font-bold text-[#2C5F87] mb-4 flex items-center gap-2">
+                  <span>🎧</span>
+                  <span>Audio Tours</span>
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Listen to detailed narrations with soothing Gregorian chant background
+                </p>
+                <div className="grid md:grid-cols-3 gap-3">
+                  <button
+                    onClick={() => handleListen('history')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'history' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#2C5F87] hover:bg-[#1e4a5f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'history' && isPlaying ? '⏹️ Stop' : '📜 History'}
+                  </button>
+                  <button
+                    onClick={() => handleListen('description')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'description' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#2C5F87] hover:bg-[#1e4a5f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'description' && isPlaying ? '⏹️ Stop' : '📖 Description'}
+                  </button>
+                  <button
+                    onClick={() => handleListen('studies')}
+                    disabled={isGenerating}
+                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
+                      currentSection === 'studies' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#D4AF37] hover:bg-[#c49d2f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'studies' && isPlaying ? '⏹️ Stop' : '🔬 Studies'}
+                  </button>
+                </div>
+                {isGenerating && (
+                  <p className="text-center text-sm text-gray-600 mt-3">
+                    {loadingMessage}
+                  </p>
+                )}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mt-3 text-sm">
+                    {error}
+                  </div>
+                )}
+              </div>
+
+              {/* Quick Facts */}
+              <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-[#2C5F87] mb-4 flex items-center gap-2">
+                  <span>💡</span>
+                  <span>Quick Facts</span>
+                </h3>
+                <ul className="space-y-2">
+                  {selectedRelic.quickFacts.map((fact: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-[#D4AF37] font-bold mt-1">•</span>
+                      <span>{fact}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Origin & Discovery */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white border-2 border-gray-200 p-4 rounded-xl">
+                  <h4 className="font-bold text-[#2C5F87] mb-2">Date of Origin</h4>
+                  <p className="text-gray-700">{selectedRelic.dateOrigin}</p>
+                </div>
+                <div className="bg-white border-2 border-gray-200 p-4 rounded-xl">
+                  <h4 className="font-bold text-[#2C5F87] mb-2">Date Discovered</h4>
+                  <p className="text-gray-700">{selectedRelic.dateDiscovered}</p>
+                </div>
+              </div>
+
+              {/* History */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#2C5F87] mb-3 flex items-center gap-2">
+                  <span>📜</span>
+                  <span>History</span>
+                </h3>
+                <p className="text-gray-700 leading-relaxed">{selectedRelic.history}</p>
+              </div>
+
+              {/* Description */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#2C5F87] mb-3 flex items-center gap-2">
+                  <span>📖</span>
+                  <span>Description</span>
+                </h3>
+                <p className="text-gray-700 leading-relaxed">{selectedRelic.description}</p>
+              </div>
+
+              {/* Scientific Studies */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#2C5F87] mb-3 flex items-center gap-2">
+                  <span>🔬</span>
+                  <span>Scientific Studies</span>
+                </h3>
+                <ul className="space-y-2">
+                  {selectedRelic.scientificStudies.map((study: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-[#D4AF37] font-bold mt-1">•</span>
+                      <span>{study}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Veneration */}
+              <div className="bg-[#D4AF37]/10 border-2 border-[#D4AF37]/30 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-[#2C5F87] mb-3 flex items-center gap-2">
+                  <span>🙏</span>
+                  <span>Veneration</span>
+                </h3>
+                <p className="text-gray-700 leading-relaxed">{selectedRelic.veneration}</p>
+              </div>
+
+              {/* Google Maps Link */}
+              <div className="text-center">
+                <a
+                  href={selectedRelic.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-8 py-3 rounded-full font-semibold transition-colors"
+                >
+                  📍 View on Google Maps
+                </a>
+              </div>
+
+              {/* Image Credit */}
+              <p className="text-xs text-gray-400 text-center">
+                Image: {selectedRelic.images[0].credit}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
