@@ -99,7 +99,19 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
         textContent = selectedRelic.description;
         sectionTitle = 'Description';
       } else if (section === 'studies') {
-        textContent = "Scientific Studies: " + selectedRelic.scientificStudies.join('. ');
+        // Format scientific studies as conversational narrative
+        const studiesText = selectedRelic.scientificStudies
+          .map((study: string, index: number) => {
+            if (index === 0) {
+              return `The scientific research on this relic includes ${study}.`;
+            } else if (index === selectedRelic.scientificStudies.length - 1) {
+              return ` Finally, ${study}.`;
+            } else {
+              return ` Additionally, ${study}.`;
+            }
+          })
+          .join('');
+        textContent = studiesText;
         sectionTitle = 'Scientific Studies';
       }
 
