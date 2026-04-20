@@ -351,8 +351,8 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Sacred Relics */}
-          <Link href="/sacred-relics" className="block group">
+          {/* Sacred Relics - HIDDEN FOR PHASE 2 */}
+          {/* <Link href="/sacred-relics" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               <div className="h-60 relative overflow-hidden">
                 <img
@@ -380,7 +380,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Biblical Sites - HIDDEN FOR PHASE 2 */}
           {/* <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
