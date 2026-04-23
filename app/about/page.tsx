@@ -207,6 +207,31 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Contact Us */}
+          <section className="border-t pt-8">
+            <h2 className="text-2xl md:text-3xl font-serif text-[#2C5F87] mb-4">
+              Contact Us
+            </h2>
+            <div className="text-gray-700 space-y-4">
+              <p className="text-lg">
+                We welcome your feedback, suggestions, questions, and prayer requests.
+              </p>
+              <div className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6 text-center">
+                <p className="text-2xl mb-2">📧</p>
+                <a
+                  href="mailto:feedback@divinepilgrim.com"
+                  className="text-[#D4AF37] hover:text-[#c49d2f] font-bold text-xl hover:underline"
+                >
+                  feedback@divinepilgrim.com
+                </a>
+              </div>
+              <p className="text-sm">
+                Whether you've found an error, have ideas for new features, or simply want to share
+                how these virtual pilgrimages have touched your faith journey—we'd love to hear from you.
+              </p>
+            </div>
+          </section>
+
           {/* SUPPORT SECTION - Change false to true after 1-3 months when you have user traction
               Good triggers: 1000+ users, approaching Azure free tier, proven engagement
           */}
