@@ -16,6 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Divine Pilgrim - Virtual Sacred Pilgrimages",
   description: "Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.",
+  manifest: "/manifest.json",
+  themeColor: "#6e3a6c",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Divine Pilgrim",
+  },
 };
 
 export default function RootLayout({
