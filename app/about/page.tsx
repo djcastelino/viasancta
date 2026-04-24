@@ -214,7 +214,7 @@ export default function AboutPage() {
             </h2>
             <div className="text-gray-700 space-y-4">
               <p className="text-lg">
-                We welcome your feedback, suggestions, questions, and prayer requests.
+                We welcome your feedback, suggestions, and questions.
               </p>
               <div className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6 text-center">
                 <p className="text-2xl mb-2">📧</p>
