@@ -3,6 +3,7 @@ import miracles from '@/src/eucharistic-miracles.json';
 import TodaysPromise from './components/TodaysPromise';
 import JesusInOT from './components/JesusInOT';
 import GospelInOnePicture from './components/GospelInOnePicture';
+import Onboarding from './components/Onboarding';
 
 export const metadata = {
   title: 'Divine Pilgrim - AI-Guided Catholic Virtual Pilgrimages',
@@ -12,6 +13,9 @@ export const metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
+      {/* Onboarding Walkthrough */}
+      <Onboarding />
+      
       {/* Enhanced Hero Section */}
       <section className="max-w-7xl mx-auto px-5 py-16">
         <div className="relative min-h-[40vh] flex items-center justify-center overflow-hidden rounded-3xl shadow-2xl">
