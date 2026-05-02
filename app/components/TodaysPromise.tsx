@@ -311,18 +311,18 @@ export default function TodaysPromise() {
 
   return (
     <section id="promise" className="max-w-7xl mx-auto px-5 py-16 relative z-20">
-      <div className="bg-gradient-to-br from-[#6e3a6c]/10 via-[#2C5F87]/10 to-[#325847]/10 rounded-3xl shadow-xl p-8 md:p-12 border border-[#D4AF37]/20">
+      <div className="bg-gradient-to-br from-[#6e3a6c]/10 via-[#2C5F87]/10 to-[#325847]/10 dark:from-[#6e3a6c]/20 dark:via-[#2C5F87]/20 dark:to-[#325847]/20 rounded-3xl shadow-xl p-8 md:p-12 border border-[#D4AF37]/20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Header */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <h2 className="text-3xl font-serif font-bold text-[#2C5F87]">
+            <h2 className="text-3xl font-serif font-bold text-[#2C5F87] dark:text-[#9BA9D8]">
               Today&apos;s Promise
             </h2>
           </div>
 
           {/* Promise Text */}
           <blockquote className="mb-6">
-            <p className="text-2xl md:text-3xl text-gray-800 font-serif leading-relaxed italic">
+            <p className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-serif leading-relaxed italic">
               &quot;{promise.verse}&quot;
             </p>
           </blockquote>
@@ -351,7 +351,7 @@ export default function TodaysPromise() {
               )}
 
               {loadingAudio && (
-                <div className="text-gray-500 text-center">
+                <div className="text-gray-500 dark:text-gray-300 text-center">
                   <div className="flex items-center justify-center gap-2">
                     <span className="animate-bounce">⏳</span>
                     <span>{loadingMessage}</span>
