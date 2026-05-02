@@ -8,7 +8,10 @@ export default function SettingsMenu() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   const handleRateApp = () => {
+    // Open Play Store app page
     const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.divinepilgrim.www.twa';
+    // For now during testing, this will show an error until app is published
+    // You can also use the internal testing link instead
     window.open(playStoreUrl, '_blank');
   };
 
@@ -25,9 +28,8 @@ export default function SettingsMenu() {
         aria-label="Settings"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-700 dark:text-gray-300">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
-          <path d="m4.93 4.93 4.24 4.24m5.66 0 4.24-4.24m-14.14 0 4.24 4.24m5.66 5.66 4.24 4.24"></path>
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
         </svg>
       </button>
 
@@ -43,8 +45,18 @@ export default function SettingsMenu() {
           {/* Menu */}
           <div className="absolute right-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
             {/* Header */}
-            <div className="bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] text-white px-6 py-4">
+            <div className="bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] text-white px-6 py-4 relative">
               <h3 className="text-lg font-bold">Settings</h3>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors"
+                aria-label="Close settings"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
 
             <div className="p-4 space-y-3">
