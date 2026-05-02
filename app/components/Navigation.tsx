@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import SettingsMenu from './SettingsMenu';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,7 +18,7 @@ export default function Navigation() {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+      isScrolled ? 'bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-lg' : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-5 py-4">
         <div className="flex items-center justify-between">
@@ -36,67 +37,72 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors"
             >
               Home
             </Link>
             <Link
               href="/#promise"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Today's Promise
             </Link>
             <Link
               href="/#challenge"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Daily Challenge
             </Link>
             <Link
               href="/#memory-verses"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Memory Verses
             </Link>
             <Link
               href="/#tours"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Sacred Pilgrimages
             </Link>
             <Link
               href="/#salvation-history"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Salvation History
             </Link>
             <Link
               href="/#spiritual-warfare"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors whitespace-nowrap"
             >
               Spiritual Warfare
             </Link>
             <Link
               href="/about"
-              className="text-gray-700 hover:text-[#D4AF37] font-semibold transition-colors"
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37] font-semibold transition-colors"
             >
               About
             </Link>
+            <SettingsMenu />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-gray-700 hover:text-[#D4AF37]"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex lg:hidden items-center gap-2">
+            <SettingsMenu />
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 dark:text-gray-300 hover:text-[#D4AF37]"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
