@@ -145,101 +145,63 @@ export default function HolyFootprintsGame() {
             </ul>
           </div>
 
-          {/* Map Container - Stylized Parchment Game Board */}
-          <div className="relative h-[600px] overflow-hidden rounded-lg">
-            {/* Parchment background with vintage texture */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#f0e4d0] via-[#e8dcc8] to-[#d4c4a8]">
-              {/* Paper texture overlay */}
-              <div className="absolute inset-0 opacity-20" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b7355' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }} />
-              
-              {/* Decorative sea/water blobs */}
-              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          {/* Map Container - Vintage World Map */}
+          <div className="relative h-[600px] overflow-hidden rounded-lg border-4 border-[#8b7355] shadow-2xl">
+            {/* World Map Background Image */}
+            <img 
+              src="/images/holy-footprints/world-map.png" 
+              alt="Vintage World Map"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+
+            {/* Progressive Trail Line */}
+            {visibleStops.length > 1 && (
+              <svg className="absolute inset-0 h-full w-full pointer-events-none" style={{ zIndex: 1 }}>
                 <defs>
-                  {/* Water gradient */}
-                  <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: '#7eb3d5', stopOpacity: 0.6 }} />
-                    <stop offset="50%" style={{ stopColor: '#6ba3c5', stopOpacity: 0.7 }} />
-                    <stop offset="100%" style={{ stopColor: '#5a96ba', stopOpacity: 0.6 }} />
-                  </linearGradient>
-                  
-                  {/* Subtle texture pattern */}
-                  <pattern id="waterTexture" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <path d="M 0 10 Q 5 8 10 10 T 20 10" stroke="#ffffff" strokeWidth="0.3" fill="none" opacity="0.3"/>
-                  </pattern>
+                  <filter id="trailShadow">
+                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.5"/>
+                  </filter>
                 </defs>
-                
-                {/* Decorative water bodies - organic flowing shapes */}
-                <path d="M 0,45 Q 15,42 30,45 T 60,48 Q 80,50 100,48 L 100,60 Q 85,58 70,60 T 40,62 Q 20,63 0,60 Z" 
-                      fill="url(#waterGrad)" opacity="0.8" />
-                
-                <path d="M 5,50 Q 20,48 35,51 T 65,53 Q 82,54 98,52 L 98,68 Q 80,66 60,69 T 30,70 Q 12,71 5,68 Z" 
-                      fill="url(#waterGrad)" opacity="0.6" />
-                
-                {/* Decorative water texture */}
-                <rect x="0" y="45" width="100" height="30" fill="url(#waterTexture)" opacity="0.3" />
-                
-                {/* Decorative compass rose in corner */}
-                <g transform="translate(8, 8)" opacity="0.3">
-                  <circle cx="0" cy="0" r="3" fill="none" stroke="#8b7355" strokeWidth="0.2"/>
-                  <path d="M 0,-3 L 0,3 M -3,0 L 3,0" stroke="#8b7355" strokeWidth="0.2"/>
-                  <path d="M -2,-2 L 2,2 M 2,-2 L -2,2" stroke="#8b7355" strokeWidth="0.15"/>
-                </g>
-                
-                {/* Decorative border frame */}
-                <rect x="1" y="1" width="98" height="98" fill="none" stroke="#8b7355" strokeWidth="0.5" opacity="0.2" strokeDasharray="2,1"/>
+                <polyline
+                  points={visibleStops.map((stop) => `${stop.x}%,${stop.y}%`).join(" ")}
+                  fill="none"
+                  stroke="#b4463a"
+                  strokeWidth="4"
+                  strokeDasharray="12 6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  filter="url(#trailShadow)"
+                />
               </svg>
+            )}
 
-              {/* Progressive Trail Line */}
-              {visibleStops.length > 1 && (
-                <svg className="absolute inset-0 h-full w-full pointer-events-none" style={{ zIndex: 1 }}>
-                  <defs>
-                    <filter id="trailShadow">
-                      <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.4"/>
-                    </filter>
-                  </defs>
-                  <polyline
-                    points={visibleStops.map((stop) => `${stop.x}%,${stop.y}%`).join(" ")}
-                    fill="none"
-                    stroke="#b4463a"
-                    strokeWidth="4"
-                    strokeDasharray="12 6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    filter="url(#trailShadow)"
-                  />
-                </svg>
-              )}
-
-              {/* Progressive Markers and Labels */}
-              {visibleStops.map((stop, index) => (
-                <div
-                  key={`${challenge.id}-${stop.name}`}
-                  className="absolute -translate-x-1/2 -translate-y-full pointer-events-none"
-                  style={{ left: `${stop.x}%`, top: `${stop.y}%`, zIndex: 10 }}
-                >
-                  <div className="flex flex-col items-center gap-1">
-                    {/* Landmark Icon */}
-                    <div className="text-5xl drop-shadow-2xl" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}>
-                      {stop.name.includes("Rome") ? "🏛️" : 
-                       stop.name.includes("Athens") ? "🏛️" :
-                       stop.name.includes("Damascus") || stop.name.includes("Tarsus") ? "🕌" : 
-                       stop.name.includes("Kolkata") || stop.name.includes("Darjeeling") ? "🛕" :
-                       "⛪"}
-                    </div>
-                    {/* Number Badge */}
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border-3 border-white bg-[#b4463a] shadow-2xl">
-                      <span className="text-xl font-bold text-white">{index + 1}</span>
-                    </div>
-                    {/* Location Label */}
-                    <div className="rounded-lg bg-[#0c2847] px-3 py-1.5 shadow-2xl border-2 border-[#c9a55a]">
-                      <span className="text-sm font-bold text-white whitespace-nowrap">{stop.name}</span>
-                    </div>
+            {/* Progressive Markers and Labels */}
+            {visibleStops.map((stop, index) => (
+              <div
+                key={`${challenge.id}-${stop.name}`}
+                className="absolute -translate-x-1/2 -translate-y-full pointer-events-none"
+                style={{ left: `${stop.x}%`, top: `${stop.y}%`, zIndex: 10 }}
+              >
+                <div className="flex flex-col items-center gap-1">
+                  {/* Landmark Icon */}
+                  <div className="text-5xl drop-shadow-2xl" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}>
+                    {stop.name.includes("Rome") ? "🏛️" : 
+                     stop.name.includes("Athens") ? "🏛️" :
+                     stop.name.includes("Damascus") || stop.name.includes("Tarsus") ? "🕌" : 
+                     stop.name.includes("Kolkata") || stop.name.includes("Darjeeling") ? "🛕" :
+                     "⛪"}
+                  </div>
+                  {/* Number Badge */}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-3 border-white bg-[#b4463a] shadow-2xl">
+                    <span className="text-xl font-bold text-white">{index + 1}</span>
+                  </div>
+                  {/* Location Label */}
+                  <div className="rounded-lg bg-[#0c2847] px-3 py-1.5 shadow-2xl border-2 border-[#c9a55a]">
+                    <span className="text-sm font-bold text-white whitespace-nowrap">{stop.name}</span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           {/* Game Guide - Top Right Overlay */}
