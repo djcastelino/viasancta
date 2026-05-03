@@ -40,15 +40,15 @@ export default function HolyFootprintsGame() {
   const activeStop = challenge.stops[currentStop - 1];
   const score = getScore(currentStop);
 
-  // Select regional map based on challenge
+  // Select progressive map image based on challenge and current stop
   const mapImage = useMemo(() => {
-    // For now, use St. Paul regional map for St. Paul challenge
+    // St. Paul uses progressive images from ChatGPT
     if (challenge.id === "holy-footprints-001") {
-      return "/images/holy-footprints/st_paul_route.png";
+      return `/images/holy-footprints/st_paul_progressive_maps_no_icons/st_paul_stop${currentStop}_no_icons.png`;
     }
     // Default to world map for other challenges
     return "/images/holy-footprints/world-map.png";
-  }, [challenge]);
+  }, [challenge, currentStop]);
 
   function resetGame(index) {
     setSelectedIndex(Number(index));
@@ -155,60 +155,14 @@ export default function HolyFootprintsGame() {
             </ul>
           </div>
 
-          {/* Map Container - Regional Map */}
+          {/* Map Container - Progressive Map Image */}
           <div className="relative w-full overflow-hidden rounded-2xl border-4 border-[#8b7355] shadow-2xl">
-            {/* Static Map Image */}
+            {/* Progressive Map Image - Pre-rendered by ChatGPT */}
             <img
               src={mapImage}
-              alt="Mediterranean map"
+              alt="Holy Footprints Map"
               className="w-full h-auto block"
             />
-
-            {/* SVG Trail Layer - Progressive Red Dotted Line */}
-            <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-              {visibleStops.length > 1 && (
-                <polyline
-                  points={visibleStops.map((stop) => `${stop.x},${stop.y}`).join(" ")}
-                  fill="none"
-                  stroke="#9d2f24"
-                  strokeWidth="1.2"
-                  strokeDasharray="3 2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              )}
-            </svg>
-
-            {/* Progressive Markers */}
-            {visibleStops.map((stop, index) => (
-              <div
-                key={`${challenge.id}-${stop.name}`}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  left: `${stop.x}%`,
-                  top: `${stop.y}%`
-                }}
-              >
-                <div className="flex flex-col items-center gap-1">
-                  {/* Landmark Icon */}
-                  <div className="text-5xl drop-shadow-2xl" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}>
-                    {stop.name.includes("Rome") ? "🏛️" : 
-                     stop.name.includes("Athens") ? "🏛️" :
-                     stop.name.includes("Damascus") || stop.name.includes("Tarsus") || stop.name.includes("Antioch") ? "🕌" : 
-                     stop.name.includes("Kolkata") || stop.name.includes("Darjeeling") ? "🛕" :
-                     "⛪"}
-                  </div>
-                  {/* Number Badge */}
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-red-800 text-white font-bold border-2 border-white shadow-lg">
-                    {index + 1}
-                  </div>
-                  {/* Location Label */}
-                  <div className="rounded-md bg-white/90 px-2 py-1 text-sm font-bold shadow">
-                    {stop.name}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
 
           {/* Game Guide - Bottom Right Overlay */}
