@@ -189,8 +189,13 @@ export default function HolyFootprintsGame() {
             {visibleStops.map((stop, index) => (
               <div
                 key={`${challenge.id}-${stop.name}`}
-                className="absolute -translate-x-1/2 -translate-y-full pointer-events-none"
-                style={{ left: `${stop.x}%`, top: `${stop.y}%`, zIndex: 10 }}
+                className="absolute pointer-events-none"
+                style={{ 
+                  left: `${stop.x}%`, 
+                  top: `${stop.y}%`, 
+                  transform: 'translate(-50%, -50%)',
+                  zIndex: 20 
+                }}
               >
                 <div className="flex flex-col items-center gap-1">
                   {/* Landmark Icon */}
