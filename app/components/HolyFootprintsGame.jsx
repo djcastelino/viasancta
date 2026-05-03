@@ -164,9 +164,9 @@ export default function HolyFootprintsGame() {
               className="absolute inset-0 h-full w-full object-cover"
             />
 
-            {/* Progressive Trail Line */}
+            {/* Progressive Trail Line - RED DOTTED */}
             {visibleStops.length > 1 && (
-              <svg className="absolute inset-0 h-full w-full pointer-events-none" style={{ zIndex: 1 }}>
+              <svg className="absolute inset-0 h-full w-full pointer-events-none z-10">
                 <defs>
                   <filter id="trailShadow">
                     <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.5"/>
@@ -175,9 +175,9 @@ export default function HolyFootprintsGame() {
                 <polyline
                   points={visibleStops.map((stop) => `${stop.x}%,${stop.y}%`).join(" ")}
                   fill="none"
-                  stroke="#b4463a"
-                  strokeWidth="4"
-                  strokeDasharray="12 6"
+                  stroke="#c93f35"
+                  strokeWidth="5"
+                  strokeDasharray="10 8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   filter="url(#trailShadow)"
@@ -214,8 +214,8 @@ export default function HolyFootprintsGame() {
             ))}
           </div>
 
-          {/* Game Guide - Top Right Overlay */}
-          <div className="absolute right-4 top-4 z-10 w-64 rounded-xl bg-[#f4ead8] p-4 shadow-2xl">
+          {/* Game Guide - Bottom Right Overlay */}
+          <div className="absolute right-4 bottom-4 z-10 w-64 rounded-xl bg-[#f4ead8] p-4 shadow-2xl">
             <div className="mb-3 flex items-center gap-2 border-b-2 border-[#8b7355] pb-2">
               <span className="text-[#c9a55a]">ℹ️</span>
               <h2 className="font-bold uppercase text-[#0c2847]">Game Guide</h2>
