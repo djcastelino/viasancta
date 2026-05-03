@@ -156,45 +156,37 @@ export default function HolyFootprintsGame() {
           </div>
 
           {/* Map Container - Regional Map */}
-          <div className="relative h-[600px] overflow-hidden rounded-lg border-4 border-[#8b7355] shadow-2xl">
-            {/* Regional Map Background Image */}
-            <img 
+          <div className="relative w-full overflow-hidden rounded-2xl border-4 border-[#8b7355] shadow-2xl">
+            {/* Static Map Image */}
+            <img
               src={mapImage}
-              alt="Vintage Map"
-              className="absolute inset-0 h-full w-full object-cover"
+              alt="Mediterranean map"
+              className="w-full h-auto block"
             />
 
-            {/* Progressive Trail Line - RED DOTTED */}
-            {visibleStops.length > 1 && (
-              <svg className="absolute inset-0 h-full w-full pointer-events-none z-10">
-                <defs>
-                  <filter id="trailShadow">
-                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.5"/>
-                  </filter>
-                </defs>
+            {/* SVG Trail Layer - Progressive Red Dotted Line */}
+            <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {visibleStops.length > 1 && (
                 <polyline
-                  points={visibleStops.map((stop) => `${stop.x}%,${stop.y}%`).join(" ")}
+                  points={visibleStops.map((stop) => `${stop.x},${stop.y}`).join(" ")}
                   fill="none"
-                  stroke="#c93f35"
-                  strokeWidth="5"
-                  strokeDasharray="10 8"
+                  stroke="#9d2f24"
+                  strokeWidth="1.2"
+                  strokeDasharray="3 2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  filter="url(#trailShadow)"
                 />
-              </svg>
-            )}
+              )}
+            </svg>
 
-            {/* Progressive Markers and Labels */}
+            {/* Progressive Markers */}
             {visibleStops.map((stop, index) => (
               <div
                 key={`${challenge.id}-${stop.name}`}
-                className="absolute pointer-events-none"
-                style={{ 
-                  left: `${stop.x}%`, 
-                  top: `${stop.y}%`, 
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 20 
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${stop.x}%`,
+                  top: `${stop.y}%`
                 }}
               >
                 <div className="flex flex-col items-center gap-1">
@@ -202,17 +194,17 @@ export default function HolyFootprintsGame() {
                   <div className="text-5xl drop-shadow-2xl" style={{ filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.5))" }}>
                     {stop.name.includes("Rome") ? "🏛️" : 
                      stop.name.includes("Athens") ? "🏛️" :
-                     stop.name.includes("Damascus") || stop.name.includes("Tarsus") ? "🕌" : 
+                     stop.name.includes("Damascus") || stop.name.includes("Tarsus") || stop.name.includes("Antioch") ? "🕌" : 
                      stop.name.includes("Kolkata") || stop.name.includes("Darjeeling") ? "🛕" :
                      "⛪"}
                   </div>
                   {/* Number Badge */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-3 border-white bg-[#b4463a] shadow-2xl">
-                    <span className="text-xl font-bold text-white">{index + 1}</span>
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-red-800 text-white font-bold border-2 border-white shadow-lg">
+                    {index + 1}
                   </div>
                   {/* Location Label */}
-                  <div className="rounded-lg bg-[#0c2847] px-3 py-1.5 shadow-2xl border-2 border-[#c9a55a]">
-                    <span className="text-sm font-bold text-white whitespace-nowrap">{stop.name}</span>
+                  <div className="rounded-md bg-white/90 px-2 py-1 text-sm font-bold shadow">
+                    {stop.name}
                   </div>
                 </div>
               </div>
