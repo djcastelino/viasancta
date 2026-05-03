@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { MapPin, Cross, Lightbulb, Star, Volume2, Sparkles } from "lucide-react";
+import { MapPin, Cross, Lightbulb, Volume2, Sparkles } from "lucide-react";
 import { holyFootprintsChallenges } from "../data/holyFootprintsChallenges";
 
 function normalizeGuess(value) {
@@ -93,105 +93,140 @@ export default function HolyFootprintsGame() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f6ecd6] p-4 text-slate-950 md:p-8">
-      <section className="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-[#d6b56d] bg-[#fff8e8] shadow-2xl">
-        <header className="grid gap-4 border-b border-[#d6b56d] bg-[#082c4c] p-5 text-white md:grid-cols-[260px_1fr_220px] md:items-center">
+    <main className="min-h-screen bg-[#1a2332] p-2 text-slate-950 md:p-4">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] bg-[#e8dcc8] shadow-2xl">
+        {/* Header */}
+        <header className="flex items-center justify-between border-b-4 border-[#d4c4a8] bg-[#0c2847] p-4 md:px-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[#e5b94f] text-[#e5b94f]">
-              <Cross size={30} />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-[#d4a574] bg-[#0c2847]">
+              <Cross size={24} className="text-[#d4a574]" />
             </div>
-
             <div>
-              <p className="text-2xl font-bold tracking-wide text-[#e5b94f]">HOLY</p>
-              <p className="text-2xl font-bold tracking-wide text-[#e5b94f]">FOOTPRINTS</p>
+              <p className="text-xl font-bold tracking-wide text-[#d4a574]">HOLY</p>
+              <p className="text-xl font-bold tracking-wide text-[#d4a574]">FOOTPRINTS</p>
             </div>
           </div>
 
           <div className="text-center">
-            <p className="text-3xl font-bold md:text-4xl">{challenge.title}</p>
-            <p className="mt-1 text-sm text-slate-200 md:text-base">
-              {challenge.subtitle}: Follow the journey. Guess the holy figure.
-            </p>
-            <p className="mt-2 inline-flex rounded-full bg-[#e5b94f]/15 px-4 py-1 text-sm font-semibold text-[#f5d879]">
-              Category: {challenge.category}
-            </p>
+            <h1 className="text-2xl font-bold text-white md:text-3xl">Trail of {challenge.displayAnswer}</h1>
+            <p className="text-sm text-slate-300">Follow the journey. Guess the holy figure.</p>
           </div>
 
-          <div className="space-y-2">
-            <div className="rounded-2xl bg-[#021d35] px-5 py-3 text-center font-bold uppercase tracking-wide text-white shadow-lg">
-              {isSolved ? "Solved" : `Stop ${currentStop} of ${challenge.stops.length}`}
-            </div>
-
-            <select
-              value={selectedIndex}
-              onChange={(event) => resetGame(event.target.value)}
-              className="w-full rounded-xl border border-[#e5b94f] bg-[#fff8e8] px-3 py-2 text-sm font-semibold text-[#082c4c]"
-            >
-              {holyFootprintsChallenges.map((item, index) => (
-                <option key={item.id} value={index}>
-                  Test: {item.displayAnswer}
-                </option>
-              ))}
-            </select>
+          <div className="rounded-xl bg-[#0c2847] border-2 border-[#d4a574] px-4 py-2 text-center">
+            <p className="text-sm font-bold text-white">STOP {currentStop} OF {challenge.stops.length}</p>
           </div>
         </header>
 
-        <div className="grid gap-5 p-5 lg:grid-cols-[1.4fr_0.9fr]">
-          <section className="rounded-3xl border border-[#d6b56d] bg-[#ead7aa] p-4 shadow-inner">
-            <div className="relative min-h-[430px] overflow-hidden rounded-2xl border border-[#b8944c] bg-gradient-to-br from-[#cfecff] via-[#f4ddb6] to-[#d4b27a]">
-              <div className="absolute inset-0 opacity-70">
-                <div className="absolute left-[3%] top-[18%] h-56 w-64 rounded-[45%] bg-[#d3b073] blur-sm" />
-                <div className="absolute left-[32%] top-[9%] h-32 w-80 rounded-[50%] bg-[#d0b271] blur-sm" />
-                <div className="absolute left-[58%] top-[8%] h-52 w-96 rounded-[45%] bg-[#d2b075] blur-sm" />
-                <div className="absolute left-[2%] top-[58%] h-36 w-96 rounded-[45%] bg-[#cda86b] blur-sm" />
-                <div className="absolute left-[42%] top-[64%] h-32 w-96 rounded-[45%] bg-[#d1ad70] blur-sm" />
+        {/* Main Content */}
+        <div className="grid gap-4 p-4 lg:grid-cols-[240px_1fr_280px]">
+          {/* Left Sidebar - Journey List */}
+          <aside className="rounded-2xl bg-[#f4ead8] p-4 shadow-lg border-2 border-[#d4c4a8]">
+            <div className="mb-3 flex items-center gap-2 border-b-2 border-[#d4c4a8] pb-2">
+              <span className="text-lg">🗺️</span>
+              <h2 className="font-bold uppercase text-[#0c2847]">The Journey</h2>
+            </div>
+            <ul className="space-y-2">
+              {challenge.stops.map((stop, index) => (
+                <li
+                  key={stop.name}
+                  className={`flex items-center gap-2 rounded-lg p-2 text-sm ${
+                    index < currentStop
+                      ? "bg-[#a83227] text-white font-semibold"
+                      : "bg-white/50 text-gray-600"
+                  }`}
+                >
+                  <span
+                    className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
+                      index < currentStop
+                        ? "bg-white text-[#a83227]"
+                        : "bg-gray-300 text-gray-600"
+                    }`}
+                  >
+                    {index + 1}
+                  </span>
+                  <span>{stop.name}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-4 border-t-2 border-[#d4c4a8] pt-4">
+              <label className="mb-2 block text-xs font-bold uppercase text-[#0c2847]">
+                Test Challenge
+              </label>
+              <select
+                value={selectedIndex}
+                onChange={(event) => resetGame(event.target.value)}
+                className="w-full rounded-lg border-2 border-[#d4c4a8] bg-white px-2 py-2 text-sm font-semibold text-[#0c2847]"
+              >
+                {holyFootprintsChallenges.map((item, index) => (
+                  <option key={item.id} value={index}>
+                    {item.displayAnswer}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </aside>
+
+          {/* Center - Map */}
+          <section className="relative min-h-[500px] overflow-hidden rounded-2xl border-4 border-[#8b7355] shadow-2xl">
+            {/* Realistic World Map Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#b8d4e8] via-[#9ec7dd] to-[#7fb3d1]">
+              {/* Land masses with texture */}
+              <div className="absolute inset-0 opacity-90">
+                {/* Mediterranean region landmasses */}
+                <div className="absolute left-[8%] top-[15%] h-[70%] w-[25%] rounded-[60%] bg-gradient-to-br from-[#d4b896] to-[#b89968] shadow-lg" 
+                     style={{ clipPath: "polygon(20% 0%, 100% 0%, 90% 100%, 0% 95%)" }} />
+                <div className="absolute left-[28%] top-[8%] h-[75%] w-[35%] rounded-[50%] bg-gradient-to-br from-[#c9b389] to-[#a89461] shadow-lg"
+                     style={{ clipPath: "polygon(10% 15%, 95% 5%, 100% 85%, 5% 90%)" }} />
+                <div className="absolute left-[58%] top-[5%] h-[80%] w-[38%] rounded-[55%] bg-gradient-to-br from-[#d1b58a] to-[#b39866] shadow-lg"
+                     style={{ clipPath: "polygon(5% 10%, 98% 0%, 100% 95%, 0% 85%)" }} />
+                
+                {/* Terrain texture overlay */}
+                <div className="absolute inset-0 opacity-30 mix-blend-overlay"
+                     style={{ 
+                       backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,.05) 2px, rgba(0,0,0,.05) 4px)` 
+                     }} />
               </div>
 
-              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path
-                  d="M0,48 C16,52 24,34 39,46 C52,56 60,34 75,45 C86,53 91,41 100,45"
-                  fill="none"
-                  stroke="#1f83a7"
-                  strokeWidth="15"
-                  opacity="0.55"
-                />
+              {/* Water texture */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="h-full w-full bg-gradient-to-br from-transparent via-[#6ba3c5]/30 to-transparent" />
+              </div>
 
-                <path
-                  d="M8,84 C23,78 28,88 41,81 C55,74 64,89 80,77 C89,70 93,79 100,74"
-                  fill="none"
-                  stroke="#1f83a7"
-                  strokeWidth="18"
-                  opacity="0.42"
-                />
-
-                {visibleStops.length > 1 && (
+              {/* Dotted trail connecting stops */}
+              {visibleStops.length > 1 && (
+                <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
                   <polyline
-                    points={visibleStops.map((stop) => `${stop.x},${stop.y}`).join(" ")}
+                    points={visibleStops.map((stop) => `${stop.x}%,${stop.y}%`).join(" ")}
                     fill="none"
-                    stroke="#9d2f24"
-                    strokeWidth="1.4"
-                    strokeDasharray="3 2"
+                    stroke="#a83227"
+                    strokeWidth="3"
+                    strokeDasharray="8 6"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}
                   />
-                )}
-              </svg>
+                </svg>
+              )}
 
-              <p className="absolute left-[37%] top-[48%] -rotate-6 font-serif text-xl italic text-[#0c4661]/75">
-                Pilgrimage Trail
-              </p>
-
+              {/* Location markers with landmark icons */}
               {visibleStops.map((stop, index) => (
                 <div
                   key={`${challenge.id}-${stop.name}`}
-                  className="absolute -translate-x-1/2 -translate-y-1/2"
+                  className="absolute -translate-x-1/2 -translate-y-full"
                   style={{ left: `${stop.x}%`, top: `${stop.y}%` }}
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-[#a83227] text-lg font-bold text-white shadow-xl">
+                  <div className="flex flex-col items-center gap-1">
+                    {/* Landmark building icon */}
+                    <div className="text-4xl drop-shadow-lg">
+                      {index === currentStop - 1 ? "🏛️" : "⛪"}
+                    </div>
+                    {/* Number badge */}
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#a83227] text-base font-bold text-white shadow-xl">
                       {index + 1}
                     </div>
-                    <span className="rounded-lg bg-[#fff8e8]/90 px-2 py-1 text-sm font-bold shadow">
+                    {/* Location label */}
+                    <span className="rounded-lg bg-[#0c2847] px-2 py-1 text-xs font-bold text-white shadow-lg">
                       {stop.name}
                     </span>
                   </div>
@@ -200,140 +235,143 @@ export default function HolyFootprintsGame() {
             </div>
           </section>
 
+          {/* Right Sidebar - Game Guide */}
           <aside className="space-y-4">
-            {!isSolved ? (
-              <>
-                <div className="rounded-3xl border border-[#d6b56d] bg-white/70 p-5 shadow-lg">
-                  <div className="mb-4 flex items-center justify-between">
-                    <h2 className="text-2xl font-bold">
-                      Clue {currentStop} of {challenge.stops.length}
-                    </h2>
-                    <span className="rounded-full bg-[#082c4c] px-4 py-2 text-sm font-bold text-white">
-                      {activeStop.name}
-                    </span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="rounded-2xl border border-[#e2c887] bg-[#fff8e8] p-4">
-                      <div className="mb-2 flex items-center gap-2 font-bold uppercase text-[#082c4c]">
-                        <MapPin size={20} /> Location Clue
-                      </div>
-                      <p className="leading-relaxed">{activeStop.locationClue}</p>
-                    </div>
-
-                    <div className="rounded-2xl border border-[#e2c887] bg-[#fff8e8] p-4">
-                      <div className="mb-2 flex items-center gap-2 font-bold uppercase text-[#7e231c]">
-                        <Cross size={20} /> Faith Clue
-                      </div>
-                      <p className="leading-relaxed">{activeStop.faithClue}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-[#d6b56d] bg-white/70 p-5 shadow-lg">
-                  <label className="mb-2 block font-bold">Who is the holy figure?</label>
-
-                  <input
-                    value={guess}
-                    onChange={(event) => setGuess(event.target.value)}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") handleSubmitGuess();
-                    }}
-                    placeholder="Type your guess..."
-                    className="w-full rounded-2xl border border-[#cdb279] bg-[#fff8e8] px-4 py-3 text-lg outline-none focus:ring-2 focus:ring-[#082c4c]"
-                  />
-
-                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    <button
-                      onClick={handleSubmitGuess}
-                      className="rounded-2xl bg-[#082c4c] px-5 py-3 font-bold uppercase tracking-wide text-white shadow-lg transition hover:scale-[1.02]"
-                    >
-                      Submit Guess
-                    </button>
-
-                    <button
-                      onClick={handleRevealNextStop}
-                      disabled={currentStop >= challenge.stops.length}
-                      className="rounded-2xl border border-[#b8944c] bg-[#e5b94f] px-5 py-3 font-bold uppercase tracking-wide text-[#3d2b05] shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-50"
-                    >
-                      Reveal Next Stop
-                    </button>
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-[#d6b56d] bg-[#fff8e8] p-5 shadow-lg">
-                  <div className="mb-3 flex items-center gap-2 font-bold text-[#8b681c]">
-                    <Lightbulb size={20} /> Game Guide
-                  </div>
-
-                  <ul className="space-y-2 text-sm">
-                    {[100, 80, 60, 40, 20].map((points, index) => (
-                      <li key={points} className="flex items-center gap-2">
-                        <Star size={16} className="text-[#b98917]" />
-                        Guess at Stop {index + 1} = {points} points
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            ) : (
-              <div className="rounded-3xl border border-[#d6b56d] bg-white/80 p-6 shadow-xl">
-                <div className="mb-4 rounded-2xl bg-[#1d6b41] px-4 py-3 text-center font-bold uppercase tracking-wide text-white">
-                  Correct!
-                </div>
-
-                <h2 className="text-center text-3xl font-bold">
-                  This was {challenge.displayAnswer}.
-                </h2>
-
-                <p className="mt-4 rounded-2xl bg-[#fff8e8] p-4 leading-relaxed">
-                  {challenge.finalExplanation}
-                </p>
-
-                <div className="mt-4 rounded-2xl border border-[#e2c887] bg-[#fff8e8] p-4">
-                  <p className="font-bold">Full Trail:</p>
-                  <p className="mt-2 text-lg">
-                    {challenge.stops.map((stop) => stop.name).join(" → ")}
-                  </p>
-                </div>
-
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  <button
-                    onClick={handleListenToStory}
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-[#082c4c] px-5 py-3 font-bold uppercase tracking-wide text-white shadow-lg"
-                  >
-                    <Volume2 size={18} /> Listen to Story
-                  </button>
-
-                  <button
-                    onClick={() => setShowFacts((prev) => !prev)}
-                    className="flex items-center justify-center gap-2 rounded-2xl border border-[#b8944c] bg-[#e5b94f] px-5 py-3 font-bold uppercase tracking-wide text-[#3d2b05] shadow-lg"
-                  >
-                    <Sparkles size={18} /> Fun Facts
-                  </button>
-                </div>
-
-                {showFacts && (
-                  <ul className="mt-4 space-y-2 rounded-2xl bg-[#fff8e8] p-4 text-sm leading-relaxed">
-                    {challenge.funFacts.map((fact) => (
-                      <li key={fact} className="flex gap-2">
-                        <span className="text-[#b98917]">★</span>
-                        <span>{fact}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+            <div className="rounded-2xl bg-[#f4ead8] p-4 shadow-lg border-2 border-[#d4c4a8]">
+              <div className="mb-3 flex items-center gap-2 border-b-2 border-[#d4c4a8] pb-2">
+                <Lightbulb size={18} className="text-[#d4a574]" />
+                <h2 className="font-bold uppercase text-[#0c2847]">Game Guide</h2>
               </div>
-            )}
-
-            {status && (
-              <p className="rounded-2xl border border-[#d6b56d] bg-[#fff8e8] p-4 text-center font-semibold text-[#082c4c] shadow">
-                {status}
+              <p className="mb-3 text-xs leading-relaxed text-gray-700">
+                You earn more points the earlier you guess the correct answer!
               </p>
+              <ul className="space-y-2 text-sm">
+                {[100, 80, 60, 40, 20].map((points, index) => (
+                  <li key={points} className="flex items-center gap-2">
+                    <span className="text-lg">⭐</span>
+                    <span className="text-xs">
+                      Guess at Stop {index + 1} = <strong>{points} points</strong>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {!isSolved && (
+              <div className="rounded-2xl bg-white p-4 shadow-lg border-2 border-[#d4c4a8]">
+                <button
+                  onClick={handleRevealNextStop}
+                  disabled={currentStop >= challenge.stops.length}
+                  className="w-full rounded-xl bg-[#d4a574] px-4 py-3 font-bold uppercase tracking-wide text-[#0c2847] shadow-lg transition hover:bg-[#c49564] disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  <Lightbulb size={18} />
+                  Reveal Next Stop ({currentStop + 1} of {challenge.stops.length})
+                </button>
+              </div>
             )}
           </aside>
         </div>
-      </section>
+
+        {/* Bottom Section - Clues and Input */}
+        <div className="grid gap-4 border-t-4 border-[#d4c4a8] bg-[#0c2847] p-4 lg:grid-cols-[1fr_1fr_400px]">
+          {!isSolved ? (
+            <>
+              {/* Location Clue */}
+              <div className="rounded-xl bg-[#f4ead8] p-4 shadow-lg border-2 border-[#d4c4a8]">
+                <div className="mb-2 flex items-center gap-2 font-bold uppercase text-[#0c2847]">
+                  <MapPin size={18} className="text-[#4a7c9e]" />
+                  <span className="text-sm">Location Clue</span>
+                </div>
+                <p className="text-sm leading-relaxed text-gray-800">{activeStop.locationClue}</p>
+              </div>
+
+              {/* Faith Clue */}
+              <div className="rounded-xl bg-[#f4ead8] p-4 shadow-lg border-2 border-[#d4c4a8]">
+                <div className="mb-2 flex items-center gap-2 font-bold uppercase text-[#0c2847]">
+                  <Cross size={18} className="text-[#a83227]" />
+                  <span className="text-sm">Faith Clue</span>
+                </div>
+                <p className="text-sm leading-relaxed text-gray-800">{activeStop.faithClue}</p>
+              </div>
+
+              {/* Answer Input */}
+              <div className="rounded-xl bg-[#f4ead8] p-4 shadow-lg border-2 border-[#d4c4a8]">
+                <label className="mb-2 block text-sm font-bold text-[#0c2847]">
+                  Who is the holy figure whose journey is shown here?
+                </label>
+                <input
+                  value={guess}
+                  onChange={(event) => setGuess(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") handleSubmitGuess();
+                  }}
+                  placeholder="Type your answer..."
+                  className="mb-3 w-full rounded-lg border-2 border-[#d4c4a8] bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[#4a7c9e]"
+                />
+                <button
+                  onClick={handleSubmitGuess}
+                  className="w-full rounded-lg bg-[#0c2847] px-4 py-3 font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-[#1a3a5f]"
+                >
+                  Submit Answer
+                </button>
+                {status && (
+                  <p className="mt-3 rounded-lg bg-white p-2 text-center text-xs font-semibold text-[#0c2847]">
+                    {status}
+                  </p>
+                )}
+              </div>
+            </>
+          ) : (
+            <div className="col-span-3 rounded-xl bg-[#f4ead8] p-6 shadow-lg border-2 border-[#d4c4a8]">
+              <div className="mb-4 rounded-xl bg-[#1d6b41] px-4 py-3 text-center font-bold uppercase tracking-wide text-white">
+                ✓ Correct!
+              </div>
+
+              <h2 className="text-center text-2xl font-bold text-[#0c2847] mb-4">
+                This was {challenge.displayAnswer}.
+              </h2>
+
+              <p className="mb-4 rounded-lg bg-white p-4 text-sm leading-relaxed text-gray-800">
+                {challenge.finalExplanation}
+              </p>
+
+              <div className="mb-4 rounded-lg bg-white p-4 border-2 border-[#d4c4a8]">
+                <p className="font-bold text-sm text-[#0c2847] mb-2">Full Trail:</p>
+                <p className="text-sm text-gray-800">
+                  {challenge.stops.map((stop) => stop.name).join(" → ")}
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <button
+                  onClick={handleListenToStory}
+                  className="flex items-center justify-center gap-2 rounded-lg bg-[#0c2847] px-4 py-3 font-bold uppercase tracking-wide text-white shadow-lg"
+                >
+                  <Volume2 size={16} /> Listen to Story
+                </button>
+
+                <button
+                  onClick={() => setShowFacts((prev) => !prev)}
+                  className="flex items-center justify-center gap-2 rounded-lg border-2 border-[#d4c4a8] bg-[#d4a574] px-4 py-3 font-bold uppercase tracking-wide text-[#0c2847] shadow-lg"
+                >
+                  <Sparkles size={16} /> Fun Facts
+                </button>
+              </div>
+
+              {showFacts && (
+                <ul className="mt-4 space-y-2 rounded-lg bg-white p-4 text-sm leading-relaxed">
+                  {challenge.funFacts.map((fact) => (
+                    <li key={fact} className="flex gap-2">
+                      <span className="text-[#d4a574]">★</span>
+                      <span className="text-gray-800">{fact}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
     </main>
   );
 }
