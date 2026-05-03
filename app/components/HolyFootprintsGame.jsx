@@ -40,39 +40,14 @@ export default function HolyFootprintsGame() {
   const activeStop = challenge.stops[currentStop - 1];
   const score = getScore(currentStop);
 
-  // Calculate dynamic zoom and pan based on route bounding box
-  const mapTransform = useMemo(() => {
-    const allStops = challenge.stops;
-    
-    // Find bounding box
-    const xValues = allStops.map(s => s.x);
-    const yValues = allStops.map(s => s.y);
-    const minX = Math.min(...xValues);
-    const maxX = Math.max(...xValues);
-    const minY = Math.min(...yValues);
-    const maxY = Math.max(...yValues);
-    
-    // Calculate center point
-    const centerX = (minX + maxX) / 2;
-    const centerY = (minY + maxY) / 2;
-    
-    // Calculate span to determine zoom level
-    const spanX = maxX - minX;
-    const spanY = maxY - minY;
-    const maxSpan = Math.max(spanX, spanY, 15); // Min span of 15 to avoid over-zoom
-    
-    // Zoom level: smaller span = more zoom
-    const zoomLevel = Math.min(3, 50 / maxSpan); // Max 3x zoom
-    
-    // Calculate pan offsets to center the region
-    const panX = 50 - centerX;
-    const panY = 50 - centerY;
-    
-    return {
-      scale: zoomLevel,
-      translateX: panX,
-      translateY: panY
-    };
+  // Select regional map based on challenge
+  const mapImage = useMemo(() => {
+    // For now, use St. Paul regional map for St. Paul challenge
+    if (challenge.id === "holy-footprints-001") {
+      return "/images/holy-footprints/st_paul_route.png";
+    }
+    // Default to world map for other challenges
+    return "/images/holy-footprints/world-map.png";
   }, [challenge]);
 
   function resetGame(index) {
@@ -180,22 +155,14 @@ export default function HolyFootprintsGame() {
             </ul>
           </div>
 
-          {/* Map Container - Vintage World Map */}
+          {/* Map Container - Regional Map */}
           <div className="relative h-[600px] overflow-hidden rounded-lg border-4 border-[#8b7355] shadow-2xl">
-            {/* World Map Background Image with Dynamic Zoom */}
-            <div 
-              className="absolute inset-0 transition-transform duration-700 ease-out"
-              style={{
-                transform: `translate(${mapTransform.translateX}%, ${mapTransform.translateY}%) scale(${mapTransform.scale})`,
-                transformOrigin: 'center center'
-              }}
-            >
-              <img 
-                src="/images/holy-footprints/world-map.png" 
-                alt="Vintage World Map"
-                className="h-full w-full object-cover"
-              />
-            </div>
+            {/* Regional Map Background Image */}
+            <img 
+              src={mapImage}
+              alt="Vintage Map"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
 
             {/* Progressive Trail Line */}
             {visibleStops.length > 1 && (

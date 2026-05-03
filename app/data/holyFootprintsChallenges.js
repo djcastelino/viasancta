@@ -18,36 +18,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Tarsus",
-        x: 58,
-        y: 42,
+        x: 85,
+        y: 65,
         locationClue: "A city in Cilicia, in modern-day Turkey.",
         faithClue: "This person was born here and originally known as Saul."
       },
       {
         name: "Damascus",
-        x: 59,
-        y: 44,
+        x: 88,
+        y: 55,
         locationClue: "One of the world's oldest continuously inhabited cities.",
         faithClue: "On the road to this city, this person had a life-changing encounter with Christ."
       },
       {
         name: "Antioch",
-        x: 59,
-        y: 41,
+        x: 82,
+        y: 45,
         locationClue: "A major city of the Roman Empire near the eastern Mediterranean.",
         faithClue: "This city became a major center of early Christian missionary activity."
       },
       {
         name: "Athens",
-        x: 54,
-        y: 46,
+        x: 48,
+        y: 58,
         locationClue: "A Greek city famous for philosophy and public debate.",
         faithClue: "This person preached here about the unknown God."
       },
       {
         name: "Rome",
-        x: 52,
-        y: 44,
+        x: 18,
+        y: 48,
         locationClue: "The capital of the Roman Empire.",
         faithClue: "Tradition says this person was martyred here."
       }
