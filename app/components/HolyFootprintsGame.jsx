@@ -165,36 +165,6 @@ export default function HolyFootprintsGame() {
             />
           </div>
 
-          {/* Game Guide - Bottom Right Overlay */}
-          <div className="absolute right-4 bottom-4 z-10 w-64 rounded-xl bg-[#f4ead8] p-4 shadow-2xl">
-            <div className="mb-3 flex items-center gap-2 border-b-2 border-[#8b7355] pb-2">
-              <span className="text-[#c9a55a]">ℹ️</span>
-              <h2 className="font-bold uppercase text-[#0c2847]">Game Guide</h2>
-            </div>
-            <p className="mb-3 text-xs text-gray-700">
-              You earn more points the earlier you guess the correct answer!
-            </p>
-            <ul className="space-y-1.5 text-xs">
-              {[100, 80, 60, 40, 20].map((points, index) => (
-                <li key={points} className="flex items-center gap-2">
-                  <span className="text-[#c9a55a]">⭐</span>
-                  <span>Guess at Stop {index + 1} = <strong>{points} points</strong></span>
-                </li>
-              ))}
-            </ul>
-            
-            {!isSolved && (
-              <button
-                onClick={handleRevealNextStop}
-                disabled={currentStop >= challenge.stops.length}
-                className="mt-4 w-full rounded-lg bg-[#c9a55a] px-4 py-2.5 text-sm font-bold uppercase text-[#0c2847] shadow-lg transition hover:bg-[#b8944c] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                <Lightbulb size={16} />
-                Reveal Next Stop ({Math.min(currentStop + 1, challenge.stops.length)} of {challenge.stops.length})
-              </button>
-            )}
-          </div>
-
           {/* Test Challenge Selector - Bottom Right */}
           <div className="absolute bottom-4 right-4 z-10">
             <select
