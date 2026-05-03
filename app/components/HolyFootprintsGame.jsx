@@ -88,17 +88,37 @@ export default function HolyFootprintsGame() {
     setStatus("Not quite. Reveal the next stop for another clue.");
   }
 
-  function handleListenToStory() {
+  async function handleListenToStory() {
     const text = `Correct. This was ${challenge.displayAnswer}. ${challenge.finalExplanation}`;
 
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.9;
-      window.speechSynthesis.speak(utterance);
+    try {
+      setStatus("Generating audio...");
+
+      // Azure TTS using Andrew voice
+      const response = await fetch('/api/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate audio');
+      }
+
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl);
+        setStatus("");
+      };
+
+      audio.play();
       setStatus("Playing story audio...");
-    } else {
-      setStatus("Text-to-speech is not available in this browser.");
+    } catch (error) {
+      console.error('TTS Error:', error);
+      setStatus("Audio generation failed. Please try again.");
     }
   }
 
