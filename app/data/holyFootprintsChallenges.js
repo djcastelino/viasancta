@@ -18,36 +18,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Tarsus",
-        x: 74,
-        y: 68,
+        x: 58,
+        y: 42,
         locationClue: "A city in Cilicia, in modern-day Turkey.",
         faithClue: "This person was born here and originally known as Saul."
       },
       {
         name: "Damascus",
-        x: 82,
-        y: 79,
+        x: 59,
+        y: 44,
         locationClue: "One of the world's oldest continuously inhabited cities.",
         faithClue: "On the road to this city, this person had a life-changing encounter with Christ."
       },
       {
         name: "Antioch",
-        x: 72,
-        y: 50,
+        x: 59,
+        y: 41,
         locationClue: "A major city of the Roman Empire near the eastern Mediterranean.",
         faithClue: "This city became a major center of early Christian missionary activity."
       },
       {
         name: "Athens",
-        x: 48,
-        y: 61,
+        x: 54,
+        y: 46,
         locationClue: "A Greek city famous for philosophy and public debate.",
         faithClue: "This person preached here about the unknown God."
       },
       {
         name: "Rome",
-        x: 22,
-        y: 45,
+        x: 52,
+        y: 44,
         locationClue: "The capital of the Roman Empire.",
         faithClue: "Tradition says this person was martyred here."
       }
@@ -72,36 +72,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Bethsaida",
-        x: 78,
-        y: 70,
+        x: 59,
+        y: 45,
         locationClue: "A fishing village near the Sea of Galilee.",
         faithClue: "This person was born near here and began life as a fisherman."
       },
       {
         name: "Capernaum",
-        x: 77,
-        y: 73,
+        x: 59,
+        y: 45,
         locationClue: "A town on the northern shore of the Sea of Galilee.",
         faithClue: "This person followed Jesus closely during his Galilean ministry."
       },
       {
         name: "Jerusalem",
-        x: 76,
-        y: 82,
+        x: 59,
+        y: 46,
         locationClue: "The holy city where the early Church began preaching after Pentecost.",
         faithClue: "This apostle became a leading voice here."
       },
       {
         name: "Antioch",
-        x: 72,
-        y: 50,
+        x: 59,
+        y: 41,
         locationClue: "A major early Christian city near the eastern Mediterranean.",
         faithClue: "Tradition connects this person with leadership in this city before Rome."
       },
       {
         name: "Rome",
-        x: 22,
-        y: 45,
+        x: 52,
+        y: 44,
         locationClue: "The capital of the Roman Empire.",
         faithClue: "Tradition says this apostle gave his final witness here."
       }
@@ -133,36 +133,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Assisi",
-        x: 31,
-        y: 48,
+        x: 52,
+        y: 43,
         locationClue: "A hill town in Umbria, Italy.",
         faithClue: "This saint was born here and became known for poverty, peace, and joy."
       },
       {
         name: "San Damiano",
-        x: 32,
-        y: 50,
+        x: 52,
+        y: 43,
         locationClue: "A small church near Assisi.",
         faithClue: "Here, this saint heard Christ call him to rebuild the Church."
       },
       {
         name: "Rome",
-        x: 29,
-        y: 58,
+        x: 52,
+        y: 44,
         locationClue: "The center of the Catholic Church.",
         faithClue: "This saint sought approval for his new way of Gospel life here."
       },
       {
         name: "La Verna",
-        x: 34,
-        y: 44,
+        x: 53,
+        y: 43,
         locationClue: "A mountain sanctuary in Tuscany.",
         faithClue: "This place is associated with this saint receiving the stigmata."
       },
       {
         name: "Greccio",
-        x: 30,
-        y: 55,
+        x: 52,
+        y: 44,
         locationClue: "A small Italian town in the Rieti valley.",
         faithClue: "This saint helped create a living Christmas scene here."
       }
@@ -194,36 +194,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Loyola",
-        x: 18,
-        y: 47,
+        x: 49,
+        y: 43,
         locationClue: "A place in the Basque region of Spain.",
         faithClue: "This saint's conversion began after a serious injury here."
       },
       {
         name: "Montserrat",
-        x: 23,
-        y: 60,
+        x: 50,
+        y: 44,
         locationClue: "A mountain monastery near Barcelona.",
         faithClue: "This saint made a decisive act of devotion here."
       },
       {
         name: "Manresa",
-        x: 24,
-        y: 61,
+        x: 50,
+        y: 44,
         locationClue: "A town in Catalonia, Spain.",
         faithClue: "This place deeply shaped this saint's spiritual exercises."
       },
       {
         name: "Paris",
-        x: 25,
-        y: 33,
+        x: 50,
+        y: 37,
         locationClue: "A major European center of learning.",
         faithClue: "This saint studied here and gathered companions."
       },
       {
         name: "Rome",
-        x: 36,
-        y: 59,
+        x: 52,
+        y: 44,
         locationClue: "The city at the heart of Catholic leadership.",
         faithClue: "This saint founded a religious order that would serve the Church worldwide."
       }
@@ -255,36 +255,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Thagaste",
-        x: 42,
-        y: 72,
+        x: 51,
+        y: 47,
         locationClue: "A town in Roman North Africa.",
         faithClue: "This saint was born here to a mother remembered for persistent prayer."
       },
       {
         name: "Carthage",
-        x: 40,
-        y: 67,
+        x: 51,
+        y: 46,
         locationClue: "A major ancient city in North Africa.",
         faithClue: "This person studied and struggled with ambition and desire here."
       },
       {
         name: "Rome",
-        x: 36,
-        y: 55,
+        x: 52,
+        y: 44,
         locationClue: "The capital of the Roman Empire.",
         faithClue: "This person spent time here before moving toward a decisive conversion."
       },
       {
         name: "Milan",
-        x: 34,
-        y: 45,
+        x: 51,
+        y: 42,
         locationClue: "A northern Italian city associated with St. Ambrose.",
         faithClue: "This person was baptized here after a long search for truth."
       },
       {
         name: "Hippo",
-        x: 43,
-        y: 70,
+        x: 51,
+        y: 47,
         locationClue: "A North African city where this saint became bishop.",
         faithClue: "This saint served the Church here as a bishop and theologian."
       }
@@ -317,35 +317,35 @@ export const holyFootprintsChallenges = [
       {
         name: "Skopje",
         x: 54,
-        y: 55,
+        y: 43,
         locationClue: "A city in the Balkans.",
         faithClue: "This modern saint was born here before becoming known across the world."
       },
       {
         name: "Dublin",
-        x: 22,
-        y: 35,
+        x: 48,
+        y: 32,
         locationClue: "The capital of Ireland.",
         faithClue: "This person came here while joining a religious community connected to missionary work."
       },
       {
         name: "Darjeeling",
-        x: 84,
-        y: 63,
+        x: 76,
+        y: 48,
         locationClue: "A hill town in India near the Himalayas.",
         faithClue: "This person began religious formation in India near this region."
       },
       {
         name: "Kolkata",
-        x: 86,
-        y: 70,
+        x: 77,
+        y: 50,
         locationClue: "A major city in eastern India.",
         faithClue: "This saint became famous for serving the poorest of the poor here."
       },
       {
         name: "Rome",
-        x: 45,
-        y: 51,
+        x: 52,
+        y: 44,
         locationClue: "The city where many saints are formally canonized.",
         faithClue: "This person was declared a saint by the Church here."
       }
@@ -376,36 +376,36 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Roccasecca",
-        x: 35,
-        y: 61,
+        x: 53,
+        y: 45,
         locationClue: "A town in central Italy.",
         faithClue: "This great theologian was born near here."
       },
       {
         name: "Monte Cassino",
-        x: 36,
-        y: 62,
+        x: 53,
+        y: 45,
         locationClue: "A famous Benedictine monastery in Italy.",
         faithClue: "This person received early education connected with this monastery."
       },
       {
         name: "Naples",
-        x: 38,
-        y: 66,
+        x: 53,
+        y: 46,
         locationClue: "A major city in southern Italy.",
         faithClue: "This person studied here and encountered the Dominican order."
       },
       {
         name: "Paris",
-        x: 25,
-        y: 34,
+        x: 50,
+        y: 37,
         locationClue: "A great medieval university city.",
         faithClue: "This person studied and taught theology here."
       },
       {
         name: "Fossanova",
-        x: 35,
-        y: 63,
+        x: 53,
+        y: 45,
         locationClue: "An abbey in Italy.",
         faithClue: "This saint died here while traveling to a Church council."
       }
@@ -437,22 +437,22 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Lourdes",
-        x: 23,
-        y: 55,
+        x: 49,
+        y: 43,
         locationClue: "A town in southwestern France near the Pyrenees.",
         faithClue: "This young saint lived here when Marian apparitions occurred."
       },
       {
         name: "Massabielle",
-        x: 23,
-        y: 56,
+        x: 49,
+        y: 43,
         locationClue: "A grotto near Lourdes.",
         faithClue: "This place became central to the apparitions this saint witnessed."
       },
       {
         name: "Nevers",
-        x: 27,
-        y: 43,
+        x: 50,
+        y: 40,
         locationClue: "A city in central France.",
         faithClue: "This saint later lived religious life here."
       }
@@ -483,22 +483,22 @@ export const holyFootprintsChallenges = [
     stops: [
       {
         name: "Cuautitlán",
-        x: 18,
-        y: 67,
+        x: 20,
+        y: 50,
         locationClue: "A place in central Mexico.",
         faithClue: "This saint is traditionally associated with this region."
       },
       {
         name: "Tepeyac Hill",
-        x: 19,
-        y: 69,
+        x: 20,
+        y: 50,
         locationClue: "A hill near Mexico City.",
         faithClue: "This person encountered Our Lady here."
       },
       {
         name: "Mexico City",
         x: 20,
-        y: 70,
+        y: 50,
         locationClue: "The capital of Mexico.",
         faithClue: "The miraculous image connected to this saint became venerated here."
       }
@@ -531,35 +531,35 @@ export const holyFootprintsChallenges = [
       {
         name: "Wadowice",
         x: 53,
-        y: 37,
+        y: 38,
         locationClue: "A town in southern Poland.",
         faithClue: "This modern saint and future pope was born here."
       },
       {
         name: "Kraków",
         x: 54,
-        y: 40,
+        y: 38,
         locationClue: "A historic Polish city.",
         faithClue: "This person served the Church here before becoming pope."
       },
       {
         name: "Rome",
-        x: 43,
-        y: 59,
+        x: 52,
+        y: 44,
         locationClue: "The city associated with the papacy.",
         faithClue: "This person was elected pope here."
       },
       {
         name: "Fatima",
-        x: 20,
-        y: 62,
+        x: 47,
+        y: 45,
         locationClue: "A Marian pilgrimage site in Portugal.",
         faithClue: "This pope had a deep connection to this apparition site."
       },
       {
         name: "Vatican City",
-        x: 43,
-        y: 58,
+        x: 52,
+        y: 44,
         locationClue: "The small sovereign city-state at the heart of the Catholic Church.",
         faithClue: "This saint led the universal Church from here."
       }
