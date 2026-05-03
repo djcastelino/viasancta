@@ -355,6 +355,44 @@ export default function Home() {
             </div>
           </Link>
 
+          {/* Holy Footprints */}
+          <Link href="/sacred-pilgrimages/holy-footprints" className="block group">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
+              <div className="h-60 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#f6ecd6] via-[#fff8e8] to-[#ead7aa]" />
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute left-[10%] top-[20%] h-32 w-40 rounded-[45%] bg-[#d3b073] blur-sm" />
+                  <div className="absolute left-[50%] top-[30%] h-40 w-48 rounded-[50%] bg-[#d0b271] blur-sm" />
+                  <div className="absolute left-[70%] top-[40%] h-36 w-44 rounded-[45%] bg-[#d2b075] blur-sm" />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-8xl mb-2">🗺️</div>
+                    <div className="text-6xl">✝️</div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-sm text-[#D4AF37] font-semibold mb-1 flex items-center gap-2">
+                    <span>🎮</span>
+                    <span>Mystery Trail Game</span>
+                  </div>
+                  <h3 className="text-3xl font-bold drop-shadow-md">
+                    Holy Footprints
+                  </h3>
+                </div>
+              </div>
+              <div className="p-7">
+                <p className="text-gray-600 mb-5 text-sm leading-relaxed">
+                  Follow the sacred trail. Guess the <span className="font-semibold text-[#2C5F87]">holy figure</span> through progressive location and faith clues. Play daily or test yourself with 10 mystery trails.
+                </p>
+                <span className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
+                  Start Mystery Trail →
+                </span>
+              </div>
+            </div>
+          </Link>
+
           {/* Sacred Relics - HIDDEN FOR PHASE 2 */}
           {/* <Link href="/sacred-relics" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
