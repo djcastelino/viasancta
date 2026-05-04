@@ -44,7 +44,7 @@ export default function HolyFootprintsGame() {
   const trailCard = useMemo(() => {
     // St. Paul uses trail cards
     if (challenge.id === "holy-footprints-001") {
-      return `/images/holy-footprints/st paul/trail${currentStop}.png`;
+      return `/images/holy-footprints/st_paul/trail${currentStop}.png`;
     }
     // Default to world map for other challenges
     return "/images/holy-footprints/world-map.png";
