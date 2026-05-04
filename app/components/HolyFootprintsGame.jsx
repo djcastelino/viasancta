@@ -151,46 +151,48 @@ export default function HolyFootprintsGame() {
         </header>
 
         {/* Trail Card Display */}
-        <div className="flex justify-center p-6">
-          <div className="relative max-w-2xl">
-            {/* Trail Card Image */}
+        <div className="flex flex-col items-center p-6 gap-4">
+          {/* Trail Card Image - Clean Display */}
+          <div className="max-w-2xl w-full">
             <img
               src={trailCard}
               alt={`Stop ${currentStop} Trail Card`}
               className="w-full h-auto block rounded-2xl shadow-2xl"
             />
-            
-            {/* Invisible Interactive Overlay - positioned over card's input/buttons for functionality */}
-            <div className="absolute inset-0 z-10">
-              {/* Input area - positioned over card's input field */}
+          </div>
+
+          {/* Interactive Controls Below Card */}
+          {!isSolved && (
+            <div className="max-w-2xl w-full space-y-3">
+              {/* Input Field */}
               <input
                 type="text"
                 value={guess}
                 onChange={(e) => setGuess(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmitGuess()}
-                placeholder=""
-                disabled={isSolved}
-                className="absolute bottom-[14.5%] left-[5%] right-[5%] h-[7%] bg-transparent border-none outline-none text-transparent placeholder-transparent cursor-text"
-                style={{ caretColor: 'white' }}
+                placeholder="Type your answer here..."
+                className="w-full bg-[#1a1a1a] text-white placeholder-gray-400 px-6 py-4 rounded-lg text-lg border-2 border-[#8b7355] focus:border-[#c9a55a] focus:outline-none shadow-lg"
               />
               
-              {/* Submit button area */}
-              <button
-                onClick={handleSubmitGuess}
-                disabled={isSolved || !guess.trim()}
-                className="absolute bottom-[3.5%] left-[5%] w-[43%] h-[9%] bg-transparent border-none cursor-pointer disabled:cursor-not-allowed opacity-0 hover:opacity-10 hover:bg-white/10 transition-opacity"
-                aria-label="Submit Answer"
-              />
-              
-              {/* Reveal button area */}
-              <button
-                onClick={handleRevealNextStop}
-                disabled={isSolved || currentStop >= challenge.stops.length}
-                className="absolute bottom-[3.5%] right-[5%] w-[43%] h-[9%] bg-transparent border-none cursor-pointer disabled:cursor-not-allowed opacity-0 hover:opacity-10 hover:bg-white/10 transition-opacity"
-                aria-label="Reveal Next Stop"
-              />
+              {/* Action Buttons */}
+              <div className="flex gap-3">
+                <button
+                  onClick={handleSubmitGuess}
+                  disabled={!guess.trim()}
+                  className="flex-1 bg-gradient-to-b from-[#8B6914] to-[#6B5010] text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:from-[#9B7914] hover:to-[#7B6010] disabled:opacity-50 disabled:cursor-not-allowed transition-all uppercase tracking-wide"
+                >
+                  Submit Answer
+                </button>
+                <button
+                  onClick={handleRevealNextStop}
+                  disabled={currentStop >= challenge.stops.length}
+                  className="flex-1 bg-gradient-to-b from-[#2B5F6F] to-[#1B4F5F] text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:from-[#3B6F7F] hover:to-[#2B5F6F] disabled:opacity-50 disabled:cursor-not-allowed transition-all uppercase tracking-wide"
+                >
+                  Reveal Next Stop
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Status Message */}
