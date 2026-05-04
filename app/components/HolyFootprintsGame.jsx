@@ -95,10 +95,13 @@ export default function HolyFootprintsGame() {
       setStatus("Generating audio...");
 
       // Azure TTS using Andrew voice
-      const response = await fetch('/api/tts', {
+      const response = await fetch('/api/generate-audio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text })
+        body: JSON.stringify({ 
+          text,
+          voice: 'en-US-AndrewMultilingualNeural'
+        })
       });
 
       if (!response.ok) {
@@ -157,35 +160,35 @@ export default function HolyFootprintsGame() {
               className="w-full h-auto block rounded-2xl shadow-2xl"
             />
             
-            {/* Functional Input Overlay - positioned over card's input area */}
-            <div className="absolute bottom-[15%] left-[5%] right-[5%] z-10">
+            {/* Invisible Interactive Overlay - positioned over card's input/buttons for functionality */}
+            <div className="absolute inset-0 z-10">
+              {/* Input area - positioned over card's input field */}
               <input
                 type="text"
                 value={guess}
                 onChange={(e) => setGuess(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSubmitGuess()}
-                placeholder="Type your guess..."
+                placeholder=""
                 disabled={isSolved}
-                className="w-full bg-black/80 text-white placeholder-gray-400 px-4 py-3 rounded-lg text-lg border-2 border-gray-700 focus:border-[#c9a55a] focus:outline-none"
+                className="absolute bottom-[14.5%] left-[5%] right-[5%] h-[7%] bg-transparent border-none outline-none text-transparent placeholder-transparent cursor-text"
+                style={{ caretColor: 'white' }}
               />
-            </div>
-
-            {/* Functional Buttons Overlay - positioned over card's buttons */}
-            <div className="absolute bottom-[4%] left-[5%] right-[5%] z-10 flex gap-3">
+              
+              {/* Submit button area */}
               <button
                 onClick={handleSubmitGuess}
                 disabled={isSolved || !guess.trim()}
-                className="flex-1 bg-gradient-to-b from-[#8B6914] to-[#6B5010] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-[#9B7914] hover:to-[#7B6010] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                SUBMIT ANSWER
-              </button>
+                className="absolute bottom-[3.5%] left-[5%] w-[43%] h-[9%] bg-transparent border-none cursor-pointer disabled:cursor-not-allowed opacity-0 hover:opacity-10 hover:bg-white/10 transition-opacity"
+                aria-label="Submit Answer"
+              />
+              
+              {/* Reveal button area */}
               <button
                 onClick={handleRevealNextStop}
                 disabled={isSolved || currentStop >= challenge.stops.length}
-                className="flex-1 bg-gradient-to-b from-[#2B5F6F] to-[#1B4F5F] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-[#3B6F7F] hover:to-[#2B5F6F] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                REVEAL NEXT STOP
-              </button>
+                className="absolute bottom-[3.5%] right-[5%] w-[43%] h-[9%] bg-transparent border-none cursor-pointer disabled:cursor-not-allowed opacity-0 hover:opacity-10 hover:bg-white/10 transition-opacity"
+                aria-label="Reveal Next Stop"
+              />
             </div>
           </div>
         </div>
