@@ -40,11 +40,11 @@ export default function HolyFootprintsGame() {
   const activeStop = challenge.stops[currentStop - 1];
   const score = getScore(currentStop);
 
-  // Select progressive map image based on challenge and current stop
-  const mapImage = useMemo(() => {
-    // St. Paul uses progressive images from ChatGPT
+  // Select trail card based on challenge and current stop
+  const trailCard = useMemo(() => {
+    // St. Paul uses trail cards
     if (challenge.id === "holy-footprints-001") {
-      return `/images/holy-footprints/st_paul_progressive_maps_no_icons/st_paul_stop${currentStop}_no_icons.png`;
+      return `/images/holy-footprints/st paul/trail${currentStop}.png`;
     }
     // Default to world map for other challenges
     return "/images/holy-footprints/world-map.png";
@@ -147,50 +147,64 @@ export default function HolyFootprintsGame() {
           </div>
         </header>
 
-        {/* Main Content - Map and Sidebars */}
-        <div className="relative">
-          {/* Journey List - Top Left Overlay */}
-          <div className="absolute left-4 top-4 z-10 w-48 rounded-xl bg-[#f4ead8] p-4 shadow-2xl">
-            <div className="mb-3 border-b-2 border-[#8b7355] pb-2">
-              <h2 className="font-bold uppercase text-[#0c2847]">The Journey</h2>
-            </div>
-            <ul className="space-y-1">
-              {challenge.stops.map((stop, index) => (
-                <li
-                  key={stop.name}
-                  className="flex items-center gap-2 text-sm"
-                >
-                  <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
-                    index < currentStop
-                      ? "bg-[#b4463a] text-white"
-                      : "bg-white text-gray-500 border border-gray-300"
-                  }`}>
-                    {index + 1}
-                  </span>
-                  <span className={index < currentStop ? "font-semibold text-[#0c2847]" : "text-gray-600"}>
-                    {stop.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Map Container - Progressive Map Image */}
-          <div className="relative w-full overflow-hidden rounded-2xl border-4 border-[#8b7355] shadow-2xl">
-            {/* Progressive Map Image - Pre-rendered by ChatGPT */}
+        {/* Trail Card Display */}
+        <div className="flex justify-center p-6">
+          <div className="relative max-w-2xl">
+            {/* Trail Card Image */}
             <img
-              src={mapImage}
-              alt="Holy Footprints Map"
-              className="w-full h-auto block"
+              src={trailCard}
+              alt={`Stop ${currentStop} Trail Card`}
+              className="w-full h-auto block rounded-2xl shadow-2xl"
             />
-          </div>
+            
+            {/* Functional Input Overlay - positioned over card's input area */}
+            <div className="absolute bottom-[15%] left-[5%] right-[5%] z-10">
+              <input
+                type="text"
+                value={guess}
+                onChange={(e) => setGuess(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleSubmitGuess()}
+                placeholder="Type your guess..."
+                disabled={isSolved}
+                className="w-full bg-black/80 text-white placeholder-gray-400 px-4 py-3 rounded-lg text-lg border-2 border-gray-700 focus:border-[#c9a55a] focus:outline-none"
+              />
+            </div>
 
-          {/* Test Challenge Selector - Bottom Right */}
-          <div className="absolute bottom-4 right-4 z-10">
+            {/* Functional Buttons Overlay - positioned over card's buttons */}
+            <div className="absolute bottom-[4%] left-[5%] right-[5%] z-10 flex gap-3">
+              <button
+                onClick={handleSubmitGuess}
+                disabled={isSolved || !guess.trim()}
+                className="flex-1 bg-gradient-to-b from-[#8B6914] to-[#6B5010] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-[#9B7914] hover:to-[#7B6010] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                SUBMIT ANSWER
+              </button>
+              <button
+                onClick={handleRevealNextStop}
+                disabled={isSolved || currentStop >= challenge.stops.length}
+                className="flex-1 bg-gradient-to-b from-[#2B5F6F] to-[#1B4F5F] text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-[#3B6F7F] hover:to-[#2B5F6F] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                REVEAL NEXT STOP
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Status Message */}
+        {status && (
+          <div className="text-center pb-4">
+            <p className="text-lg font-semibold text-[#c9a55a]">{status}</p>
+          </div>
+        )}
+
+        {/* Bottom Section - Answer Reveal */}
+        <div className="bg-[#0c2847] p-6">
+          {/* Test Challenge Selector */}
+          <div className="text-center mb-4">
             <select
               value={selectedIndex}
               onChange={(event) => resetGame(event.target.value)}
-              className="rounded-lg border-2 border-[#8b7355] bg-[#f4ead8] px-3 py-2 text-xs font-semibold text-[#0c2847] shadow-xl"
+              className="rounded-lg border-2 border-[#8b7355] bg-[#f4ead8] px-4 py-2 text-sm font-semibold text-[#0c2847] shadow-xl"
             >
               <option value="">Daily Challenge</option>
               {holyFootprintsChallenges.map((item, index) => (
@@ -200,76 +214,8 @@ export default function HolyFootprintsGame() {
               ))}
             </select>
           </div>
-        </div>
-
-        {/* Bottom Section - Clue Card and Answer */}
-        <div className="bg-[#0c2847] p-6">
           <div className="mx-auto max-w-5xl">
-            {!isSolved ? (
-              <div className="grid gap-6 lg:grid-cols-2">
-                {/* Left: Clue Card */}
-                <div className="rounded-xl bg-[#f4ead8] p-6 shadow-2xl">
-                  <div className="mb-4 flex items-center justify-between border-b-2 border-[#8b7355] pb-3">
-                    <h2 className="text-lg font-bold text-[#0c2847]">CLUE {currentStop} OF {challenge.stops.length}</h2>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="rounded-lg border-2 border-[#8b7355] bg-white p-4">
-                      <div className="mb-2 flex items-center gap-2">
-                        <MapPin size={20} className="text-[#5a96ba]" />
-                        <span className="font-bold text-sm uppercase text-[#0c2847]">Location Clue</span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-gray-800">{activeStop.locationClue}</p>
-                    </div>
-
-                    <div className="rounded-lg border-2 border-[#8b7355] bg-white p-4">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Cross size={20} className="text-[#b4463a]" />
-                        <span className="font-bold text-sm uppercase text-[#0c2847]">Faith Clue</span>
-                      </div>
-                      <p className="text-sm leading-relaxed text-gray-800">{activeStop.faithClue}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right: Answer Section */}
-                <div className="flex flex-col">
-                  <div className="flex-1 rounded-xl bg-[#f4ead8] p-6 shadow-2xl">
-                    <h3 className="mb-4 text-center text-lg font-semibold text-[#0c2847]">
-                      Who is the holy figure<br />whose journey is shown here?
-                    </h3>
-                    
-                    <input
-                      value={guess}
-                      onChange={(event) => setGuess(event.target.value)}
-                      onKeyDown={(event) => {
-                        if (event.key === "Enter") handleSubmitGuess();
-                      }}
-                      placeholder="Type your answer..."
-                      className="mb-4 w-full rounded-lg border-2 border-[#8b7355] bg-white px-4 py-3 text-center text-base outline-none focus:ring-2 focus:ring-[#c9a55a]"
-                    />
-                    
-                    <button
-                      onClick={handleSubmitGuess}
-                      className="mb-3 w-full rounded-lg bg-[#0c2847] px-6 py-3 font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-[#1a3a5f]"
-                    >
-                      Submit Answer
-                    </button>
-
-                    {status && (
-                      <div className="rounded-lg bg-white border-2 border-[#8b7355] p-3 text-center">
-                        <p className="text-sm font-semibold text-[#0c2847]">{status}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-center gap-2 text-[#d4c4a8]">
-                    <Lightbulb size={18} className="text-[#c9a55a]" />
-                    <span className="text-sm">Reveal next stop for another clue</span>
-                  </div>
-                </div>
-              </div>
-            ) : (
+            {isSolved && (
               <div className="rounded-xl bg-[#f4ead8] p-8 shadow-2xl">
                 <div className="mb-6 rounded-xl bg-gradient-to-r from-[#1d6b41] to-[#2a8556] px-6 py-4 text-center">
                   <p className="text-2xl font-bold text-white">✓ CORRECT!</p>
