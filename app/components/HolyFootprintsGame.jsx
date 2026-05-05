@@ -46,10 +46,11 @@ export default function HolyFootprintsGame() {
   async function handlePlayAudioTour() {
     const text = `Correct! This was Saint Francis Xavier. Born in 1506 in Navarre, Spain, Francis Xavier was one of the founding members of the Society of Jesus, known as the Jesuits. He traveled extensively through Asia, bringing Christianity to India, Japan, and other parts of the Far East. His missionary journeys took him from Goa to Malacca, to the Moluccas, and finally to Japan. He died in 1552 on the island of Shangchuan, off the coast of China, while attempting to enter the Chinese mainland. Francis Xavier is considered one of the greatest missionaries in history and is the patron saint of missionaries and foreign missions. His body remains incorrupt and is venerated at the Basilica of Bom Jesus in Goa, India.`;
 
-    try {
-      setIsPlayingAudio(true);
-      setStatus("Generating audio tour...");
+    setIsPlayingAudio(true);
+    setStatus("Generating audio tour...");
 
+    try {
+      // Try Azure TTS first
       const response = await fetch('/api/generate-audio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -59,26 +60,44 @@ export default function HolyFootprintsGame() {
         })
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to generate audio');
+      if (response.ok) {
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const audio = new Audio(audioUrl);
+        
+        audio.onended = () => {
+          URL.revokeObjectURL(audioUrl);
+          setIsPlayingAudio(false);
+          setStatus("Audio tour complete!");
+        };
+
+        audio.play();
+        setStatus("🔊 Playing audio tour...");
+        return;
       }
-
-      const audioBlob = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlob);
-      const audio = new Audio(audioUrl);
-      
-      audio.onended = () => {
-        URL.revokeObjectURL(audioUrl);
-        setIsPlayingAudio(false);
-        setStatus("Audio tour complete!");
-      };
-
-      audio.play();
-      setStatus("🔊 Playing audio tour...");
     } catch (error) {
-      console.error('Audio error:', error);
+      console.error('Azure TTS error:', error);
+    }
+
+    // Fallback to browser TTS
+    try {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = 0.9;
+        utterance.onend = () => {
+          setIsPlayingAudio(false);
+          setStatus("Audio tour complete!");
+        };
+        window.speechSynthesis.speak(utterance);
+        setStatus("🔊 Playing audio tour...");
+      } else {
+        throw new Error('No TTS available');
+      }
+    } catch (error) {
+      console.error('Browser TTS error:', error);
       setIsPlayingAudio(false);
-      setStatus("Audio generation failed. Please try again.");
+      setStatus("Audio not available in this browser.");
     }
   }
 
@@ -103,11 +122,11 @@ export default function HolyFootprintsGame() {
         {/* Trail Card Display */}
         <div className="flex flex-col items-center gap-6">
           {/* Trail Card Image */}
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-2xl bg-[#1a1a1a] rounded-3xl p-2 shadow-2xl">
             <img
               src={`/images/holy-footprints/st_francis_xavier/stop${currentStop}.png`}
               alt={`Stop ${currentStop} Trail Card`}
-              className="w-full h-auto rounded-2xl shadow-2xl"
+              className="w-full h-auto rounded-2xl"
             />
           </div>
 
