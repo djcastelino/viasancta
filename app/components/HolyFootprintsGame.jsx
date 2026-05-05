@@ -47,10 +47,9 @@ export default function HolyFootprintsGame() {
     const text = `Correct! This was Saint Francis Xavier. Born in 1506 in Navarre, Spain, Francis Xavier was one of the founding members of the Society of Jesus, known as the Jesuits. He traveled extensively through Asia, bringing Christianity to India, Japan, and other parts of the Far East. His missionary journeys took him from Goa to Malacca, to the Moluccas, and finally to Japan. He died in 1552 on the island of Shangchuan, off the coast of China, while attempting to enter the Chinese mainland. Francis Xavier is considered one of the greatest missionaries in history and is the patron saint of missionaries and foreign missions. His body remains incorrupt and is venerated at the Basilica of Bom Jesus in Goa, India.`;
 
     setIsPlayingAudio(true);
-    setStatus("Generating audio tour...");
+    setStatus("Generating audio with Andrew's voice...");
 
     try {
-      // Try Azure TTS first
       const response = await fetch('/api/generate-audio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -60,44 +59,36 @@ export default function HolyFootprintsGame() {
         })
       });
 
-      if (response.ok) {
-        const audioBlob = await response.blob();
-        const audioUrl = URL.createObjectURL(audioBlob);
-        const audio = new Audio(audioUrl);
-        
-        audio.onended = () => {
-          URL.revokeObjectURL(audioUrl);
-          setIsPlayingAudio(false);
-          setStatus("Audio tour complete!");
-        };
-
-        audio.play();
-        setStatus("🔊 Playing audio tour...");
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Azure TTS failed:', response.status, errorText);
+        setIsPlayingAudio(false);
+        setStatus(`Audio generation failed (${response.status}). Check server logs.`);
         return;
       }
-    } catch (error) {
-      console.error('Azure TTS error:', error);
-    }
 
-    // Fallback to browser TTS
-    try {
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = 0.9;
-        utterance.onend = () => {
-          setIsPlayingAudio(false);
-          setStatus("Audio tour complete!");
-        };
-        window.speechSynthesis.speak(utterance);
-        setStatus("🔊 Playing audio tour...");
-      } else {
-        throw new Error('No TTS available');
-      }
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl);
+        setIsPlayingAudio(false);
+        setStatus("✓ Audio tour complete!");
+      };
+
+      audio.onerror = () => {
+        URL.revokeObjectURL(audioUrl);
+        setIsPlayingAudio(false);
+        setStatus("Error playing audio. Please try again.");
+      };
+
+      await audio.play();
+      setStatus("🔊 Playing Andrew's narration...");
     } catch (error) {
-      console.error('Browser TTS error:', error);
+      console.error('Audio error:', error);
       setIsPlayingAudio(false);
-      setStatus("Audio not available in this browser.");
+      setStatus("Failed to generate audio. Please check your connection.");
     }
   }
 
@@ -122,11 +113,11 @@ export default function HolyFootprintsGame() {
         {/* Trail Card Display */}
         <div className="flex flex-col items-center gap-6">
           {/* Trail Card Image */}
-          <div className="w-full max-w-2xl bg-[#1a1a1a] rounded-3xl p-2 shadow-2xl">
+          <div className="w-full max-w-2xl bg-[#0c2847] rounded-3xl overflow-hidden shadow-2xl">
             <img
               src={`/images/holy-footprints/st_francis_xavier/stop${currentStop}.png`}
               alt={`Stop ${currentStop} Trail Card`}
-              className="w-full h-auto rounded-2xl"
+              className="w-full h-auto block"
             />
           </div>
 
