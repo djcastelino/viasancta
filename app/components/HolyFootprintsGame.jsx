@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
+import { Volume2 } from "lucide-react";
 
 export default function HolyFootprintsGame() {
   const [currentStop, setCurrentStop] = useState(1);
   const [guess, setGuess] = useState("");
   const [status, setStatus] = useState("");
   const [isSolved, setIsSolved] = useState(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
 
-  const correctAnswer = "st paul";
+  const correctAnswer = "st francis xavier";
   const totalStops = 5;
 
   function handleSubmitGuess() {
@@ -19,9 +21,13 @@ export default function HolyFootprintsGame() {
       return;
     }
 
-    if (cleanGuess === correctAnswer || cleanGuess === "saint paul" || cleanGuess === "paul" || cleanGuess === "st paul") {
+    if (cleanGuess === correctAnswer || 
+        cleanGuess === "saint francis xavier" || 
+        cleanGuess === "francis xavier" ||
+        cleanGuess === "st francis xavier" ||
+        cleanGuess === "xavier") {
       setIsSolved(true);
-      setStatus("✓ CORRECT! This was St. Paul, the Apostle to the Gentiles!");
+      setStatus("✓ CORRECT! This was St. Francis Xavier, co-founder of the Jesuits and missionary to Asia!");
       return;
     }
 
@@ -37,11 +43,51 @@ export default function HolyFootprintsGame() {
     }
   }
 
+  async function handlePlayAudioTour() {
+    const text = `Correct! This was Saint Francis Xavier. Born in 1506 in Navarre, Spain, Francis Xavier was one of the founding members of the Society of Jesus, known as the Jesuits. He traveled extensively through Asia, bringing Christianity to India, Japan, and other parts of the Far East. His missionary journeys took him from Goa to Malacca, to the Moluccas, and finally to Japan. He died in 1552 on the island of Shangchuan, off the coast of China, while attempting to enter the Chinese mainland. Francis Xavier is considered one of the greatest missionaries in history and is the patron saint of missionaries and foreign missions. His body remains incorrupt and is venerated at the Basilica of Bom Jesus in Goa, India.`;
+
+    try {
+      setIsPlayingAudio(true);
+      setStatus("Generating audio tour...");
+
+      const response = await fetch('/api/generate-audio', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          text,
+          voice: 'en-US-AndrewMultilingualNeural'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate audio');
+      }
+
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audio = new Audio(audioUrl);
+      
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl);
+        setIsPlayingAudio(false);
+        setStatus("Audio tour complete!");
+      };
+
+      audio.play();
+      setStatus("🔊 Playing audio tour...");
+    } catch (error) {
+      console.error('Audio error:', error);
+      setIsPlayingAudio(false);
+      setStatus("Audio generation failed. Please try again.");
+    }
+  }
+
   function handleReset() {
     setCurrentStop(1);
     setGuess("");
     setStatus("");
     setIsSolved(false);
+    setIsPlayingAudio(false);
   }
 
   return (
@@ -50,7 +96,7 @@ export default function HolyFootprintsGame() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#c9a55a] mb-2">HOLY FOOTPRINTS</h1>
-          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "St. Paul" : "???"}</p>
+          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "St. Francis Xavier" : "???"}</p>
           <p className="text-sm text-[#d4c4a8] mt-2">Stop {currentStop} of {totalStops}</p>
         </div>
 
@@ -59,8 +105,8 @@ export default function HolyFootprintsGame() {
           {/* Trail Card Image */}
           <div className="w-full max-w-2xl">
             <img
-              src={`/images/holy-footprints/st_paul/trail${currentStop}.png`}
-              alt={`Trail Card ${currentStop}`}
+              src={`/images/holy-footprints/st_francis_xavier/stop${currentStop}.png`}
+              alt={`Stop ${currentStop} Trail Card`}
               className="w-full h-auto rounded-2xl shadow-2xl"
             />
           </div>
@@ -105,7 +151,16 @@ export default function HolyFootprintsGame() {
 
           {/* Success Screen */}
           {isSolved && (
-            <div className="w-full max-w-2xl">
+            <div className="w-full max-w-2xl space-y-4">
+              <button
+                onClick={handlePlayAudioTour}
+                disabled={isPlayingAudio}
+                className="w-full bg-gradient-to-b from-[#1d6b41] to-[#2a8556] text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:from-[#2a8556] hover:to-[#1d6b41] disabled:opacity-50 disabled:cursor-not-allowed transition-all uppercase flex items-center justify-center gap-3"
+              >
+                <Volume2 size={24} />
+                {isPlayingAudio ? "Playing Audio Tour..." : "Play Audio Tour"}
+              </button>
+              
               <button
                 onClick={handleReset}
                 className="w-full bg-[#c9a55a] text-[#0c2847] font-bold py-4 px-6 rounded-lg shadow-lg hover:bg-[#b8944c] transition-all uppercase"
