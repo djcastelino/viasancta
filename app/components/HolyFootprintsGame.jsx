@@ -31,8 +31,10 @@ export default function HolyFootprintsGame() {
       return;
     }
 
+    // If at final stop and answer is wrong, reveal the answer
     if (currentStop >= totalStops) {
-      setStatus("❌ Not quite. This is the final stop - try one more guess!");
+      setIsSolved(true);
+      setStatus("The answer was St. Francis Xavier! Click below to hear the full story.");
     } else {
       setStatus("❌ Not quite. Try revealing the next stop for another clue.");
     }
