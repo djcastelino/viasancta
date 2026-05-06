@@ -31,7 +31,11 @@ export default function HolyFootprintsGame() {
       return;
     }
 
-    setStatus("❌ Not quite. Try revealing the next stop for another clue.");
+    if (currentStop >= totalStops) {
+      setStatus("❌ Not quite. This is the final stop - try one more guess!");
+    } else {
+      setStatus("❌ Not quite. Try revealing the next stop for another clue.");
+    }
   }
 
   function handleRevealNextStop() {
