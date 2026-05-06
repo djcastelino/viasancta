@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Volume2 } from "lucide-react";
+import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 export default function HolyFootprintsGame() {
   const [currentStop, setCurrentStop] = useState(1);
@@ -9,6 +10,7 @@ export default function HolyFootprintsGame() {
   const [status, setStatus] = useState("");
   const [isSolved, setIsSolved] = useState(false);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const audioRef = useRef(null);
 
   const correctAnswer = "st francis xavier";
   const totalStops = 5;
@@ -50,51 +52,88 @@ export default function HolyFootprintsGame() {
   }
 
   async function handlePlayAudioTour() {
+    if (isPlayingAudio && audioRef.current) {
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = null;
+      setIsPlayingAudio(false);
+      setStatus('');
+      return;
+    }
+
     const text = `Correct! This was Saint Francis Xavier. Born in 1506 in Navarre, Spain, Francis Xavier was one of the founding members of the Society of Jesus, known as the Jesuits. He traveled extensively through Asia, bringing Christianity to India, Japan, and other parts of the Far East. His missionary journeys took him from Goa to Malacca, to the Moluccas, and finally to Japan. He died in 1552 on the island of Shangchuan, off the coast of China, while attempting to enter the Chinese mainland. Francis Xavier is considered one of the greatest missionaries in history and is the patron saint of missionaries and foreign missions. His body remains incorrupt and is venerated at the Basilica of Bom Jesus in Goa, India.`;
 
     setIsPlayingAudio(true);
-    setStatus("Generating audio with Andrew's voice...");
+    setStatus("Creating audio...");
 
     try {
-      const response = await fetch('/api/generate-audio', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          text,
-          voice: 'en-US-AndrewMultilingualNeural'
-        })
-      });
+      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
+      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Azure TTS failed:', response.status, errorText);
-        setIsPlayingAudio(false);
-        setStatus(`Audio generation failed (${response.status}). Check server logs.`);
-        return;
+      if (!azureKey || !azureRegion) {
+        throw new Error('Azure Speech API credentials not configured.');
       }
 
-      const audioBlob = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlob);
-      const audio = new Audio(audioUrl);
-      
-      audio.onended = () => {
-        URL.revokeObjectURL(audioUrl);
-        setIsPlayingAudio(false);
-        setStatus("✓ Audio tour complete!");
-      };
+      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
+      speechConfig.speechSynthesisVoiceName = 'en-US-AndrewMultilingualNeural';
+      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
 
-      audio.onerror = () => {
-        URL.revokeObjectURL(audioUrl);
-        setIsPlayingAudio(false);
-        setStatus("Error playing audio. Please try again.");
-      };
+      const ssml = `
+        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
+          <voice name="en-US-AndrewMultilingualNeural">
+            <prosody rate="0.95">
+              ${text}
+            </prosody>
+          </voice>
+        </speak>
+      `;
 
-      await audio.play();
-      setStatus("🔊 Playing Andrew's narration...");
+      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
+
+      synthesizer.speakSsmlAsync(
+        ssml,
+        (result) => {
+          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            const audio = new Audio(audioUrl);
+            audioRef.current = audio;
+
+            audio.onended = () => {
+              URL.revokeObjectURL(audioUrl);
+              setIsPlayingAudio(false);
+              setStatus("✓ Audio tour complete!");
+              audioRef.current = null;
+            };
+
+            audio.onerror = () => {
+              URL.revokeObjectURL(audioUrl);
+              setIsPlayingAudio(false);
+              setStatus("Error playing audio.");
+              audioRef.current = null;
+            };
+
+            audio.play();
+            setStatus("🔊 Playing Andrew's narration...");
+          } else {
+            setIsPlayingAudio(false);
+            setStatus("Failed to generate audio.");
+          }
+          synthesizer.close();
+        },
+        (error) => {
+          console.error('Azure TTS error:', error);
+          setIsPlayingAudio(false);
+          setStatus("Audio generation failed.");
+          synthesizer.close();
+        }
+      );
     } catch (error) {
       console.error('Audio error:', error);
       setIsPlayingAudio(false);
-      setStatus("Failed to generate audio. Please check your connection.");
+      setStatus("Audio not available.");
     }
   }
 
