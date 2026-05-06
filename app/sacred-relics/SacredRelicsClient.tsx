@@ -21,7 +21,8 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
   const [isGenerating, setIsGenerating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
   const [error, setError] = useState('');
-  const [currentSection, setCurrentSection] = useState<'history' | 'description' | 'studies' | null>(null);
+  const [currentSection, setCurrentSection] = useState<'history' | 'description' | 'funFacts' | null>(null);
+  const [expandedFunFact, setExpandedFunFact] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
 
@@ -65,7 +66,7 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
     setSelectedRelic(null);
   };
 
-  const handleListen = async (section: 'history' | 'description' | 'studies') => {
+  const handleListen = async (section: 'history' | 'description' | 'funFacts') => {
     if (!selectedRelic) return;
 
     setError('');
@@ -98,21 +99,9 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
       } else if (section === 'description') {
         textContent = selectedRelic.description;
         sectionTitle = 'Description';
-      } else if (section === 'studies') {
-        // Format scientific studies as conversational narrative
-        const studiesText = selectedRelic.scientificStudies
-          .map((study: string, index: number) => {
-            if (index === 0) {
-              return `The scientific research on this relic includes ${study}.`;
-            } else if (index === selectedRelic.scientificStudies.length - 1) {
-              return ` Finally, ${study}.`;
-            } else {
-              return ` Additionally, ${study}.`;
-            }
-          })
-          .join('');
-        textContent = studiesText;
-        sectionTitle = 'Scientific Studies';
+      } else if (section === 'funFacts') {
+        textContent = "Did you know? " + selectedRelic.quickFacts.join('. ');
+        sectionTitle = 'Fun Facts';
       }
 
       // Azure TTS
@@ -368,7 +357,7 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
                 <p className="text-gray-600 text-sm mb-4">
                   Listen to detailed narrations with soothing Gregorian chant background
                 </p>
-                <div className="grid md:grid-cols-3 gap-3">
+                <div className="grid md:grid-cols-2 gap-3">
                   <button
                     onClick={() => handleListen('history')}
                     disabled={isGenerating}
@@ -391,17 +380,6 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
                   >
                     {currentSection === 'description' && isPlaying ? '⏹️ Stop' : '📖 Description'}
                   </button>
-                  <button
-                    onClick={() => handleListen('studies')}
-                    disabled={isGenerating}
-                    className={`px-4 py-3 rounded-lg font-semibold transition-all ${
-                      currentSection === 'studies' && isPlaying
-                        ? 'bg-red-500 hover:bg-red-600 text-white'
-                        : 'bg-[#D4AF37] hover:bg-[#c49d2f] text-white'
-                    } disabled:opacity-50`}
-                  >
-                    {currentSection === 'studies' && isPlaying ? '⏹️ Stop' : '🔬 Studies'}
-                  </button>
                 </div>
                 {isGenerating && (
                   <p className="text-center text-sm text-gray-600 mt-3">
@@ -415,20 +393,53 @@ export default function SacredRelicsClient({ relics, countries, types }: SacredR
                 )}
               </div>
 
-              {/* Quick Facts */}
-              <div className="bg-gradient-to-br from-[#f5f5f0] to-[#e8e8f5] p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-[#2C5F87] mb-4 flex items-center gap-2">
-                  <span>💡</span>
-                  <span>Quick Facts</span>
-                </h3>
-                <ul className="space-y-2">
+              {/* Fun Facts - Audio First */}
+              <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-xl border-2 border-[#D4AF37]/20">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-[#2C5F87] flex items-center gap-2">
+                    <span>💡</span>
+                    <span>Fun Facts</span>
+                  </h3>
+                  <button
+                    onClick={() => handleListen('funFacts')}
+                    disabled={isGenerating}
+                    className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                      currentSection === 'funFacts' && isPlaying
+                        ? 'bg-red-500 hover:bg-red-600 text-white'
+                        : 'bg-[#D4AF37] hover:bg-[#c49d2f] text-white'
+                    } disabled:opacity-50`}
+                  >
+                    {currentSection === 'funFacts' && isPlaying ? '⏹️ Stop All' : '🎧 Listen to All'}
+                  </button>
+                </div>
+                <p className="text-gray-600 text-sm mb-4">
+                  🎧 Click "Listen to All" for audio tour, or click each card to reveal the text
+                </p>
+                <div className="space-y-3">
                   {selectedRelic.quickFacts.map((fact: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2 text-gray-700">
-                      <span className="text-[#D4AF37] font-bold mt-1">•</span>
-                      <span>{fact}</span>
-                    </li>
+                    <div key={i} className="bg-white border-2 border-[#D4AF37]/30 rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => setExpandedFunFact(expandedFunFact === i ? null : i)}
+                        className="w-full px-4 py-3 flex items-center justify-between hover:bg-[#D4AF37]/5 transition-colors"
+                      >
+                        <span className="font-semibold text-[#2C5F87] flex items-center gap-2">
+                          <span className="bg-[#D4AF37] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">
+                            {i + 1}
+                          </span>
+                          <span>Fun Fact #{i + 1}</span>
+                        </span>
+                        <span className="text-[#D4AF37]">
+                          {expandedFunFact === i ? '▼' : '▶'}
+                        </span>
+                      </button>
+                      {expandedFunFact === i && (
+                        <div className="px-4 py-3 bg-[#D4AF37]/5 border-t border-[#D4AF37]/20">
+                          <p className="text-gray-700">{fact}</p>
+                        </div>
+                      )}
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               {/* Origin & Discovery */}

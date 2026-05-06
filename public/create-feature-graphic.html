@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Divine Pilgrim Feature Graphic Generator</title>
+</head>
+<body>
+  <h1>Divine Pilgrim Feature Graphic (1024x500)</h1>
+  <canvas id="canvas" width="1024" height="500"></canvas>
+  <br>
+  <button onclick="downloadGraphic()">Download Feature Graphic</button>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Purple gradient background
+    const gradient = ctx.createLinearGradient(0, 0, 1024, 500);
+    gradient.addColorStop(0, '#6e3a6c');
+    gradient.addColorStop(0.5, '#8b4789');
+    gradient.addColorStop(1, '#9b59b6');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 1024, 500);
+    
+    // Add subtle overlay pattern
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+    for (let i = 0; i < 1024; i += 100) {
+      ctx.fillRect(i, 0, 50, 500);
+    }
+    
+    // Main title text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 72px Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Divine Pilgrim', 512, 180);
+    
+    // Subtitle
+    ctx.font = '32px Arial, sans-serif';
+    ctx.fillStyle = '#f4e4c1';
+    ctx.fillText('Virtual Sacred Journeys', 512, 260);
+    
+    // Tagline
+    ctx.font = '24px Arial, sans-serif';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.fillText('Experience Eucharistic Miracles & Sacred Sites Worldwide', 512, 340);
+    
+    // Decorative cross elements on sides
+    ctx.strokeStyle = 'rgba(244, 228, 193, 0.4)';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    
+    // Left cross
+    ctx.beginPath();
+    ctx.moveTo(120, 200);
+    ctx.lineTo(120, 300);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(80, 250);
+    ctx.lineTo(160, 250);
+    ctx.stroke();
+    
+    // Right cross
+    ctx.beginPath();
+    ctx.moveTo(904, 200);
+    ctx.lineTo(904, 300);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(864, 250);
+    ctx.lineTo(944, 250);
+    ctx.stroke();
+
+    function downloadGraphic() {
+      const link = document.createElement('a');
+      link.download = 'divine-pilgrim-feature-graphic.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  </script>
+</body>
+</html>

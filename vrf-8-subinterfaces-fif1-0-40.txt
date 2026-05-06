@@ -130,7 +130,9 @@ router ospf 6 vrf 6
  network 199.199.199.10 0.0.0.1 area 0
 !
 router ospf 7 vrf 7
- router-id 199.199.199.13
+ router-id 199.199.
+ 
+ 199.13
  area 0 authentication message-digest
  network 199.199.199.12 0.0.0.1 area 0
 !

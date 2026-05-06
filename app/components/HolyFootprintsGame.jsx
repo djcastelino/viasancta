@@ -12,7 +12,7 @@ export default function HolyFootprintsGame() {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioRef = useRef(null);
 
-  const correctAnswer = "st francis xavier";
+  const correctAnswer = "padre pio";
   const totalStops = 5;
 
   function handleSubmitGuess() {
@@ -24,19 +24,20 @@ export default function HolyFootprintsGame() {
     }
 
     if (cleanGuess === correctAnswer || 
-        cleanGuess === "saint francis xavier" || 
-        cleanGuess === "francis xavier" ||
-        cleanGuess === "st francis xavier" ||
-        cleanGuess === "xavier") {
+        cleanGuess === "saint padre pio" || 
+        cleanGuess === "st padre pio" ||
+        cleanGuess === "padre pio" ||
+        cleanGuess === "pio" ||
+        cleanGuess === "saint pio") {
       setIsSolved(true);
-      setStatus("✓ CORRECT! This was St. Francis Xavier, co-founder of the Jesuits and missionary to Asia!");
+      setStatus("✓ CORRECT! This was Padre Pio, the beloved Capuchin friar with the stigmata!");
       return;
     }
 
     // If at final stop and answer is wrong, reveal the answer
     if (currentStop >= totalStops) {
       setIsSolved(true);
-      setStatus("The answer was St. Francis Xavier! Click below to hear the full story.");
+      setStatus("The answer was Padre Pio! Click below to hear the full story.");
     } else {
       setStatus("❌ Not quite. Try revealing the next stop for another clue.");
     }
@@ -63,7 +64,7 @@ export default function HolyFootprintsGame() {
       return;
     }
 
-    const text = `Correct! This was Saint Francis Xavier. Born in 1506 in Navarre, Spain, Francis Xavier was one of the founding members of the Society of Jesus, known as the Jesuits. He traveled extensively through Asia, bringing Christianity to India, Japan, and other parts of the Far East. His missionary journeys took him from Goa to Malacca, to the Moluccas, and finally to Japan. He died in 1552 on the island of Shangchuan, off the coast of China, while attempting to enter the Chinese mainland. Francis Xavier is considered one of the greatest missionaries in history and is the patron saint of missionaries and foreign missions. His body remains incorrupt and is venerated at the Basilica of Bom Jesus in Goa, India.`;
+    const text = `Correct! This was Padre Pio. Born Francesco Forgione in 1887 in Pietrelcina, Italy, he became one of the most beloved saints of the twentieth century. As a Capuchin friar, he bore the stigmata, the wounds of Christ, for fifty years. He was known for his deep prayer life, his ability to read hearts in confession, and numerous miraculous healings. He founded the Casa Sollievo della Sofferenza, a hospital in San Giovanni Rotondo, to care for the sick and suffering. Padre Pio died in 1968 and was canonized by Pope John Paul the Second in 2002. His tomb in San Giovanni Rotondo remains one of the most visited pilgrimage sites in the world.`;
 
     setIsPlayingAudio(true);
     setStatus("Creating audio...");
@@ -151,7 +152,7 @@ export default function HolyFootprintsGame() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#c9a55a] mb-2">HOLY FOOTPRINTS</h1>
-          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "St. Francis Xavier" : "???"}</p>
+          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "Padre Pio" : "???"}</p>
           <p className="text-sm text-[#d4c4a8] mt-2">Stop {currentStop} of {totalStops}</p>
         </div>
 
@@ -160,7 +161,7 @@ export default function HolyFootprintsGame() {
           {/* Trail Card Image */}
           <div className="w-full max-w-2xl bg-[#0c2847] rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src={`/images/holy-footprints/st_francis_xavier/stop${currentStop}.png`}
+              src={`/images/holy-footprints/st_padre_pio/stop${currentStop}.png`}
               alt={`Stop ${currentStop} Trail Card`}
               className="w-full h-auto block"
             />
