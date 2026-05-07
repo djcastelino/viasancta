@@ -12,7 +12,7 @@ export default function HolyFootprintsGame() {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const audioRef = useRef(null);
 
-  const correctAnswer = "padre pio";
+  const correctAnswer = "st augustine";
   const totalStops = 5;
 
   function handleSubmitGuess() {
@@ -24,20 +24,20 @@ export default function HolyFootprintsGame() {
     }
 
     if (cleanGuess === correctAnswer || 
-        cleanGuess === "saint padre pio" || 
-        cleanGuess === "st padre pio" ||
-        cleanGuess === "padre pio" ||
-        cleanGuess === "pio" ||
-        cleanGuess === "saint pio") {
+        cleanGuess === "saint augustine" || 
+        cleanGuess === "st augustine" ||
+        cleanGuess === "augustine" ||
+        cleanGuess === "augustine of hippo" ||
+        cleanGuess === "st augustine of hippo") {
       setIsSolved(true);
-      setStatus("✓ CORRECT! This was Padre Pio, the beloved Capuchin friar with the stigmata!");
+      setStatus("✓ CORRECT! This was St. Augustine, the great Doctor of the Church!");
       return;
     }
 
     // If at final stop and answer is wrong, reveal the answer
     if (currentStop >= totalStops) {
       setIsSolved(true);
-      setStatus("The answer was Padre Pio! Click below to hear the full story.");
+      setStatus("The answer was St. Augustine! Click below to hear the full story.");
     } else {
       setStatus("❌ Not quite. Try revealing the next stop for another clue.");
     }
@@ -64,7 +64,7 @@ export default function HolyFootprintsGame() {
       return;
     }
 
-    const text = `Correct! This was Padre Pio. Born Francesco Forgione in 1887 in Pietrelcina, Italy, he became one of the most beloved saints of the twentieth century. As a Capuchin friar, he bore the stigmata, the wounds of Christ, for fifty years. He was known for his deep prayer life, his ability to read hearts in confession, and numerous miraculous healings. He founded the Casa Sollievo della Sofferenza, a hospital in San Giovanni Rotondo, to care for the sick and suffering. Padre Pio died in 1968 and was canonized by Pope John Paul the Second in 2002. His tomb in San Giovanni Rotondo remains one of the most visited pilgrimage sites in the world.`;
+    const text = `Correct! This was Saint Augustine of Hippo. Born in 354 in Thagaste, North Africa, Augustine lived a life of searching and transformation. In his youth, he pursued worldly pleasures and intellectual pursuits, exploring various philosophies. His devoted mother, Saint Monica, prayed for his conversion for years. In Milan, he encountered Saint Ambrose and was deeply moved by his preaching. After a profound spiritual crisis in a garden, where he heard a child's voice saying "Take and read," Augustine opened the Scriptures and his heart was changed forever. He was baptized in 387, became a priest, and later the Bishop of Hippo. His writings, including the Confessions and The City of God, profoundly shaped Christian theology. Augustine died in 430 as the Vandals besieged Hippo, leaving behind a legacy as one of the greatest Doctors of the Church.`;
 
     setIsPlayingAudio(true);
     setStatus("Creating audio...");
@@ -152,7 +152,7 @@ export default function HolyFootprintsGame() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-[#c9a55a] mb-2">HOLY FOOTPRINTS</h1>
-          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "Padre Pio" : "???"}</p>
+          <p className="text-xl text-[#f4ead8]">Trail of {isSolved ? "St. Augustine" : "???"}</p>
           <p className="text-sm text-[#d4c4a8] mt-2">Stop {currentStop} of {totalStops}</p>
         </div>
 
@@ -161,7 +161,7 @@ export default function HolyFootprintsGame() {
           {/* Trail Card Image */}
           <div className="w-full max-w-2xl bg-[#0c2847] rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src={`/images/holy-footprints/st_padre_pio/stop${currentStop}.png`}
+              src={`/images/holy-footprints/st_augustine/stop${currentStop}.png`}
               alt={`Stop ${currentStop} Trail Card`}
               className="w-full h-auto block"
             />
