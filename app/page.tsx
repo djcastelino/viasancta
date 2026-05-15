@@ -355,8 +355,8 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* Holy Footprints */}
-          <Link href="/sacred-pilgrimages/holy-footprints" className="block group">
+          {/* Holy Footprints - HIDDEN FOR PHASE 2 */}
+          {/* <Link href="/sacred-pilgrimages/holy-footprints" className="block group">
             <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
               <div className="h-60 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f6ecd6] via-[#fff8e8] to-[#ead7aa]" />
@@ -391,7 +391,7 @@ export default function Home() {
                 </span>
               </div>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Sacred Relics - HIDDEN FOR PHASE 2 */}
           {/* <Link href="/sacred-relics" className="block group">
