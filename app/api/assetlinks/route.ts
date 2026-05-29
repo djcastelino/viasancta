@@ -1,0 +1,23 @@
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const assetlinks = [
+    {
+      relation: ['delegate_permission/common.handle_all_urls'],
+      target: {
+        namespace: 'android_app',
+        package_name: 'com.divinepilgrim.www.twa',
+        sha256_cert_fingerprints: [
+          '28:45:9A:AA:47:C4:53:C2:91:DF:24:AA:CC:47:40:55:8D:38:4C:C6:CA:D4:CD:C9:CC:F5:24:07:82:E0:52:DB',
+        ],
+      },
+    },
+  ];
+
+  return NextResponse.json(assetlinks, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'public, max-age=0, must-revalidate',
+    },
+  });
+}

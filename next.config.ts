@@ -4,8 +4,15 @@ import type { NextConfig } from "next";
 import withPWA from 'next-pwa';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: false, // Temporarily disable to prevent double-mounting in dev
+  async rewrites() {
+    return [
+      {
+        source: '/.well-known/assetlinks.json',
+        destination: '/api/assetlinks',
+      },
+    ];
+  },
 };
 
 export default withPWA({
