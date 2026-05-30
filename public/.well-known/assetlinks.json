@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "com.divinepilgrim.www.twa",
-    "sha256_cert_fingerprints": ["28:45:9A:AA:47:C4:53:C2:91:DF:24:AA:CC:47:40:55:8D:38:4C:C6:CA:D4:CD:C9:CC:F5:24:07:82:E0:52:DB"]
+    "sha256_cert_fingerprints": ["BB:C1:7A:DC:A1:9F:15:07:B7:DE:BC:33:36:4D:68:6D:3A:8D:F3:E4:4B:09:0A:44:77:12:09:C5:BA:CF:86:2C"]
   }
 }]
