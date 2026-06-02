@@ -193,16 +193,24 @@ export default function AboutPage() {
                 {' '}— beautiful instrumental music for Marian devotion
               </p>
               <p>
-                <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by{' '}
+                <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by the teaching of{' '}
                 <a
                   href="https://www.youtube.com/@LogosVoiceTV"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#D4AF37] hover:underline font-semibold"
                 >
-                  Logos Ministries
+                  Fr. Jose Vettiyankal
                 </a>
-                . For powerful healing and deliverance prayers, visit their YouTube channel.
+                , Logos Ministries, Bangalore. For healing, deliverance and anointing, visit{' '}
+                <a
+                  href="https://www.youtube.com/@LogosVoiceTV"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D4AF37] hover:underline font-semibold"
+                >
+                  logosvoice.tv
+                </a>.
               </p>
             </div>
           </section>

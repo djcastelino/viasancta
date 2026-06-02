@@ -265,7 +265,7 @@ export default function SevenSwords() {
               Prayers of Transformation, Not Destruction
             </p>
             <p className="text-sm text-center text-slate-400 mt-2 italic">
-              Inspired by the teaching of Logos Ministries, Bangalore
+              Inspired by the teaching of Fr. Jose Vettiyankal, Logos Ministries, Bangalore
             </p>
           </div>
         </div>
@@ -535,7 +535,9 @@ export default function SevenSwords() {
               "Not by might nor by power, but by My Spirit," says the Lord of hosts.
             </p>
             <p className="text-xs text-gray-500 mb-2">
-              Prayers inspired by the Seven Striking Swords teaching from Logos Ministries, Bangalore.
+              Prayers inspired by the Seven Striking Swords teaching of Fr. Jose Vettiyankal, Logos Ministries, Bangalore.
+              For healing, deliverance and anointing, visit{' '}
+              <a href="https://www.youtube.com/@LogosVoiceTV" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">logosvoice.tv</a>.
             </p>
             <p className="text-xs text-gray-500 mb-6">
               These prayers seek transformation and conversion, not destruction. We pray for our enemies as Jesus commanded.
