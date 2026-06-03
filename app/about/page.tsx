@@ -200,7 +200,7 @@ export default function AboutPage() {
                   rel="noopener noreferrer"
                   className="text-[#D4AF37] hover:underline font-semibold"
                 >
-                  Fr. Jose Vettiyankal
+                  Rev. Dr. John Jose Vettiyankal V.C.
                 </a>
                 , Logos Ministries, Bangalore. For healing, deliverance and anointing, visit{' '}
                 <a
