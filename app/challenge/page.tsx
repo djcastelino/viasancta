@@ -223,6 +223,41 @@ export default function ChallengePage() {
     setGuess(suggestion);
     setSuggestions([]);
     setShowSuggestions(false);
+    setTimeout(() => {
+      const normalizedGuess = suggestion.trim().toLowerCase();
+      const normalizedAnswer = gameState?.targetChallenge?.name.toLowerCase() || '';
+      const isCorrect = normalizedGuess === normalizedAnswer;
+      const isGameComplete = isCorrect || revealedClues >= 6;
+      const today = new Date().toISOString().split('T')[0];
+      const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      let newStreak = 0;
+      if (isCorrect && gameState) {
+        const playedYesterday = gameState.lastPlayedDate === yesterday;
+        newStreak = playedYesterday ? gameState.currentStreak + 1 : 1;
+      }
+      if (!gameState || gameState.isComplete) return;
+      const updatedState: ChallengeGameState = {
+        ...gameState,
+        guesses: [...gameState.guesses, suggestion],
+        isComplete: isGameComplete,
+        isWon: isCorrect,
+        gamesPlayed: isGameComplete ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
+        gamesWon: isCorrect ? gameState.gamesWon + 1 : gameState.gamesWon,
+        currentStreak: newStreak,
+        maxStreak: isCorrect ? Math.max(gameState.maxStreak, newStreak) : gameState.maxStreak,
+        cluesRevealed: revealedClues,
+        lastPlayedDate: isGameComplete ? today : gameState.lastPlayedDate
+      };
+      setGameState(updatedState);
+      localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+      if (isGameComplete) {
+        setShowAnswer(true);
+        saveToHistory(gameState.targetChallenge!, isCorrect, gameState.guesses.length + 1, revealedClues);
+      } else if (!isCorrect && revealedClues < 6) {
+        setRevealedClues(prev => prev + 1);
+      }
+      setGuess('');
+    }, 0);
   };
 
   const saveToHistory = (challenge: ScriptureChallenge, won: boolean, guessCount: number, cluesUsed: number) => {
@@ -784,7 +819,7 @@ export default function ChallengePage() {
                   onKeyPress={(e) => e.key === 'Enter' && handleGuess()}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                   placeholder="Type your guess..."
-                  className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl text-lg focus:outline-none focus:border-[#D4AF37]"
+                  className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl text-lg text-gray-900 bg-white focus:outline-none focus:border-[#D4AF37]"
                   disabled={gameState.isComplete}
                 />
 
