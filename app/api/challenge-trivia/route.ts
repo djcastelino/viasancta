@@ -1,44 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { apiError, generateText, object, readInput, required } from '@/app/lib/ai';
+import prompts from '@/app/lib/prompts.json';
+
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
-    const { challenge } = await request.json();
-
-    // Call n8n workflow webhook with challenge data (same pattern as narration workflow)
-    const response = await fetch('https://workflowly.online/webhook/scripture-trivia', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: challenge.name,
-        testament: challenge.testament,
-        role: challenge.role,
-        famousFor: challenge.famousFor,
-        books: challenge.books,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`n8n webhook failed: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    const trivia = data.trivia || data.output || data.result ||
-      `${challenge.name} is mentioned in ${challenge.books.join(', ')}. ${challenge.famousFor}`;
-
-    return NextResponse.json({ trivia });
-  } catch (error) {
-    console.error('Error calling n8n webhook:', error);
-    try {
-      const { challenge } = await request.json();
-      // Return fallback message on error
-      const trivia = `${challenge.name} is mentioned in ${challenge.books.join(', ')}. ${challenge.famousFor}`;
-      return NextResponse.json({ trivia });
-    } catch {
-      return NextResponse.json({ trivia: 'Fun fact coming soon!' });
-    }
-  }
+    const body = await readInput(request);
+    const data = object(body.challenge);
+    required(data, 'name');
+    const prompt = prompts.trivia;
+    const text = await generateText(prompt.system,
+      prompt.prompt + '\n\nSUPPLIED DATA:\n' + JSON.stringify(body), 250);
+    return NextResponse.json({ trivia: text });
+  } catch (error) { return apiError(error); }
 }
-
-

@@ -1,72 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { apiError, readInput, required, ServiceError } from '@/app/lib/ai';
+import { synthesize } from '@/app/lib/speech';
+
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
-    const { text, voice } = await request.json();
-
-    if (!text || !voice) {
-      return NextResponse.json(
-        { error: 'Missing required parameters: text and voice' },
-        { status: 400 }
-      );
-    }
-
-    const azureKey = process.env.AZURE_SPEECH_KEY;
-    const azureRegion = process.env.AZURE_SPEECH_REGION || 'eastus';
-
-    if (!azureKey) {
-      console.error('AZURE_SPEECH_KEY not configured');
-      return NextResponse.json(
-        { error: 'Azure Speech service not configured' },
-        { status: 500 }
-      );
-    }
-
-    // Call Azure TTS REST API
-    const ssml = `
-      <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-        <voice name="${voice}">
-          ${text}
-        </voice>
-      </speak>
-    `;
-
-    const response = await fetch(
-      `https://${azureRegion}.tts.speech.microsoft.com/cognitiveservices/v1`,
-      {
-        method: 'POST',
-        headers: {
-          'Ocp-Apim-Subscription-Key': azureKey,
-          'Content-Type': 'application/ssml+xml',
-          'X-Microsoft-OutputFormat': 'audio-16khz-128kbitrate-mono-mp3',
-        },
-        body: ssml,
-      }
-    );
-
-    if (!response.ok) {
-      console.error('Azure TTS failed:', response.status, response.statusText);
-      return NextResponse.json(
-        { error: 'Failed to generate audio' },
-        { status: response.status }
-      );
-    }
-
-    // Return the audio blob
-    const audioBuffer = await response.arrayBuffer();
-
-    return new NextResponse(audioBuffer, {
-      headers: {
-        'Content-Type': 'audio/mpeg',
-        'Content-Length': audioBuffer.byteLength.toString(),
-      },
-    });
-
-  } catch (error) {
-    console.error('Error generating audio:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
-  }
+    const body = await readInput(request);
+    const text = required(body, 'text', 20000);
+    const voice = required(body, 'voice', 100);
+    const rate = body.rate === undefined ? 1 : body.rate;
+    if (typeof rate !== 'number' || rate < 0.5 || rate > 2) throw new ServiceError('Invalid speaking rate.', 400);
+    const audio = await synthesize(text, voice, rate);
+    return new NextResponse(audio, { headers: { 'Content-Type': 'audio/mpeg', 'Cache-Control': 'no-store' } });
+  } catch (error) { return apiError(error); }
 }

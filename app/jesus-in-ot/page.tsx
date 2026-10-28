@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import SourceLinks from '@/app/components/SourceLinks';
-import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import { createSpeechBlob } from '@/app/lib/clientSpeech';
 
 interface JesusInOTEntry {
   id: number;
@@ -147,7 +147,8 @@ export default function JesusInOTPage() {
       });
 
       if (!response.ok) {
-        throw new Error(`API request failed: ${response.statusText}`);
+        const problem = await response.json().catch(() => ({}));
+        throw new Error(problem.error || `Request failed (${response.status}).`);
       }
 
       const data = await response.json();
@@ -156,17 +157,6 @@ export default function JesusInOTPage() {
       console.log('✅ Received reflection script from API');
 
       setLoadingMessage('Creating audio...');
-
-      // Get Azure credentials
-      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
-      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
-
-      if (!azureKey || !azureRegion) {
-        throw new Error('Azure Speech API credentials not configured');
-      }
-
-      // Configure Azure Speech SDK
-      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
 
       // Rotate through 6 voices using entry ID
       const voices = [
@@ -182,48 +172,7 @@ export default function JesusInOTPage() {
       const selectedVoice = voices[voiceIndex];
       console.log(`🎙️ Selected voice: ${selectedVoice.displayName} for entry ${todaysEntry.id}`);
 
-      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
-      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
-
-      // Set speaking rate (0.95 = slightly slower for meditation)
-      const ssml = `
-        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-          <voice name="${selectedVoice.name}">
-            <prosody rate="0.95">
-              ${script}
-            </prosody>
-          </voice>
-        </speak>
-      `;
-
-      // Synthesize speech
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
-
-      const audioBlob: Blob = await new Promise((resolve, reject) => {
-        synthesizer.speakSsmlAsync(
-          ssml,
-          (result) => {
-            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-              console.log('✅ Azure TTS synthesis completed');
-              const audioData = result.audioData;
-              const blob = new Blob([audioData], { type: 'audio/mp3' });
-              synthesizer.close();
-              resolve(blob);
-            } else {
-              console.error('❌ Speech synthesis failed:', result.errorDetails);
-              synthesizer.close();
-              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
-            }
-          },
-          (error) => {
-            console.error('❌ Azure TTS error:', error);
-            synthesizer.close();
-            reject(new Error(`Azure TTS error: ${error}`));
-          }
-        );
-      });
-
-      console.log('🎵 Audio blob created, size:', audioBlob.size, 'bytes');
+      const audioBlob = await createSpeechBlob(script, selectedVoice.name, 0.95);
 
       const audioUrl = URL.createObjectURL(audioBlob);
       const audioElement = new Audio(audioUrl);
