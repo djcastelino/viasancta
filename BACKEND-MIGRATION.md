@@ -6,7 +6,7 @@ The application no longer calls workflowly.online. Promise reflections, scriptur
 
 The existing `viasancta` Vercel project serves divinepilgrim.com. No hosting or domain move is required.
 
-Set `GROQ_API_KEY` privately in each environment that will be tested or deployed. Optional `GROQ_MODEL` defaults to `llama-3.3-70b-versatile`.
+Set `GROQ_API_KEY` privately in each environment that will be tested or deployed. Optional `GROQ_MODEL` defaults to `openai/gpt-oss-120b`.
 
 Speech uses `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION`. During migration, the server also accepts the existing `NEXT_PUBLIC_AZURE_SPEECH_KEY` and `NEXT_PUBLIC_AZURE_SPEECH_REGION`. The four migrated narration screens use `/api/generate-audio`, so their speech calls do not require a key in the browser. Other existing speech screens still use the legacy public settings; do not remove those settings until those screens have also been migrated. Never use a public prefix for the Groq key.
 
