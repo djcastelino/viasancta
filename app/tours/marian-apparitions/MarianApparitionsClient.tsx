@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import ApparitionCard from '@/app/components/ApparitionCard';
-import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import { createSpeechBlob } from '@/app/lib/clientSpeech';
 import marianMusicManager from '@/app/lib/marianMusicManager';
 
 interface MarianApparitionsClientProps {
@@ -127,7 +127,8 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
       });
 
       if (!response.ok) {
-        throw new Error(`API request failed: ${response.statusText}`);
+        const problem = await response.json().catch(() => ({}));
+        throw new Error(problem.error || `Request failed (${response.status}).`);
       }
 
       const data = await response.json();
@@ -135,70 +136,31 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
       setLoadingMessage('Generating audio...');
 
-      // Azure TTS
-      const speechKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
-      const speechRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
-
-      if (!speechKey || !speechRegion) {
-        throw new Error('Azure Speech credentials not configured');
-      }
-
       // Select voice based on apparition ID
       const voiceIndex = selectedApparition.id % 6;
       const selectedVoice = voices[voiceIndex];
       console.log(`🎙️ Selected voice: ${selectedVoice.displayName} for apparition ${selectedApparition.id}`);
 
-      const speechConfig = sdk.SpeechConfig.fromSubscription(speechKey, speechRegion);
-      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
-      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
-
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
-
-      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-        <voice name="${selectedVoice.name}">
-          <prosody rate="0.95">
-            ${data.narrationText}
-          </prosody>
-        </voice>
-      </speak>`;
-
-      synthesizer.speakSsmlAsync(
-        ssml,
-        result => {
-          if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-            const audioBlob = new Blob([result.audioData], { type: 'audio/mp3' });
-            const audioUrl = URL.createObjectURL(audioBlob);
-
-            const audioElement = new Audio(audioUrl);
-            audioRef.current = audioElement;
-
-            // Duck background music to 15% for narration
-            marianMusicManager.duck();
-
-            audioElement.play();
-            setIsPlaying(true);
-            setIsGenerating(false);
-            setLoadingMessage('');
-
-            audioElement.onended = () => {
-              setIsPlaying(false);
-              // Restore background music to 30%
-              marianMusicManager.unduck();
-            };
-          } else {
-            throw new Error('Speech synthesis failed');
-          }
-
-          synthesizer.close();
-        },
-        error => {
-          console.error('Speech synthesis error:', error);
-          setError('Failed to generate audio');
-          setIsGenerating(false);
-          setLoadingMessage('');
-          synthesizer.close();
-        }
-      );
+      const audioBlob = await createSpeechBlob(data.narrationText, selectedVoice.name, 0.95);
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const audioElement = new Audio(audioUrl);
+      audioRef.current = audioElement;
+      audioElement.onended = () => {
+        setIsPlaying(false);
+        marianMusicManager.unduck();
+        URL.revokeObjectURL(audioUrl);
+      };
+      audioElement.onerror = () => {
+        setIsPlaying(false);
+        setError('Unable to play the narration. Please try again.');
+        marianMusicManager.unduck();
+        URL.revokeObjectURL(audioUrl);
+      };
+      marianMusicManager.duck();
+      await audioElement.play();
+      setIsPlaying(true);
+      setIsGenerating(false);
+      setLoadingMessage('');
 
     } catch (error) {
       setIsGenerating(false);

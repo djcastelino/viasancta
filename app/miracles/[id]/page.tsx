@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import miracles from '@/src/eucharistic-miracles.json';
-import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import { createSpeechBlob } from '@/app/lib/clientSpeech';
 import MiracleImageGallery from '@/app/components/MiracleImageGallery';
 import SourceLinks from '@/app/components/SourceLinks';
 import eucharisticMusicManager from '@/app/lib/eucharisticMusicManager';
@@ -77,8 +77,8 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
     setError('');
 
     try {
-      // Call n8n to get narration text
-      const response = await fetch('https://workflowly.online/webhook/via-sancta-narration', {
+      // Call the backend to get narration text
+      const response = await fetch('/api/narration', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -97,30 +97,19 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       });
 
       if (!response.ok) {
-        throw new Error('Failed to get narration from n8n');
+        throw new Error('Failed to get narration from the server');
       }
 
       const data = await response.json();
       
       if (!data.narration) {
-        throw new Error('No narration received from n8n');
+        throw new Error('No narration received from the server');
       }
 
       // Clean the narration: remove stage directions like [Soothing music fades out...]
       const cleanNarration = data.narration.replace(/\[.*?\]/g, '').trim();
 
       setLoadingMessage('Creating audio...');
-
-      // Now call Microsoft Azure Speech Services to convert text to speech
-      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
-      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
-
-      if (!azureKey || !azureRegion) {
-        throw new Error('Azure Speech API credentials not configured. Please check your environment variables.');
-      }
-
-      // Configure Azure Speech SDK
-      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
 
       // Multiple natural voices for variety
       const voices = [
@@ -134,47 +123,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       const selectedVoice = voices[Math.floor(Math.random() * voices.length)];
       console.log(`🎙️ Selected voice: ${selectedVoice.displayName} (${selectedVoice.gender})`);
 
-      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
-
-      // Set audio format to MP3
-      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
-
-      // Set speaking rate (0.95 = slightly slower)
-      const ssml = `
-        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-          <voice name="${selectedVoice.name}">
-            <prosody rate="0.95">
-              ${cleanNarration}
-            </prosody>
-          </voice>
-        </speak>
-      `;
-
-      // Create synthesizer with null audio output (we'll handle audio manually)
-      // Passing null prevents SDK from auto-playing - we want to control playback ourselves
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
-
-      // Synthesize speech
-      const audioBlob = await new Promise<Blob>((resolve, reject) => {
-        synthesizer.speakSsmlAsync(
-          ssml,
-          (result) => {
-            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-              const audioData = result.audioData;
-              const blob = new Blob([audioData], { type: 'audio/mp3' });
-              synthesizer.close();
-              resolve(blob);
-            } else {
-              synthesizer.close();
-              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
-            }
-          },
-          (error) => {
-            synthesizer.close();
-            reject(new Error(`Azure TTS error: ${error}`));
-          }
-        );
-      });
+      const audioBlob = await createSpeechBlob(cleanNarration, selectedVoice.name, 0.95);
 
       const audioUrl = URL.createObjectURL(audioBlob);
 
