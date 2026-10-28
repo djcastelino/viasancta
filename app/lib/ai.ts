@@ -38,7 +38,7 @@ export function apiError(error: unknown) {
 
 export async function generateText(system: string, prompt: string, maxTokens = 1400) {
   const key = process.env.GROQ_API_KEY;
-  const model = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
+  const model = process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
   const reasoningModel = model.startsWith('openai/gpt-oss-');
   if (!key) throw new ServiceError('AI reflections are not configured. Set GROQ_API_KEY on the server.', 503);
   let response: Response;
@@ -52,6 +52,7 @@ export async function generateText(system: string, prompt: string, maxTokens = 1
           { role: 'user', content: prompt }],
         temperature: 0.7, max_completion_tokens: maxTokens + (reasoningModel ? 1024 : 0),
         ...(reasoningModel ? { reasoning_effort: 'low', include_reasoning: false } : {}),
+        ...(model === 'qwen/qwen3.8-27b' ? { reasoning_effort: 'none', reasoning_format: 'hidden' } : {}),
       }),
       signal: AbortSignal.timeout(45000), cache: 'no-store',
     });

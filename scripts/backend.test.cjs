@@ -52,6 +52,10 @@ test('all six migrated endpoints preserve their response fields and supplied con
     global.fetch = async (url, options) => {
       assert.equal(url, 'https://api.groq.com/openai/v1/chat/completions');
       assert.equal(options.headers.Authorization, 'Bearer test-key');
+      const payload = JSON.parse(options.body);
+      assert.equal(payload.model, 'qwen/qwen3.8-27b');
+      assert.equal(payload.reasoning_effort, 'none');
+      assert.equal(payload.reasoning_format, 'hidden');
       assert.match(JSON.parse(options.body).messages[1].content, new RegExp(Object.values(body)[0]?.reference || Object.values(body)[0]?.name || Object.values(body)[0]?.title || 'SUPPLIED DATA'));
       return completion('A complete narration.');
     };
