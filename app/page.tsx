@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import {
-  ArrowDown,
   ArrowUpRight,
   BookOpen,
   Cross,
@@ -12,6 +11,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import TodaysPromise from "./components/TodaysPromise";
+import HomeDailyHero from "./components/HomeDailyHero";
+import churches from "@/public/sacred-architecture.json";
 
 export const metadata = {
   title: "Divine Pilgrim — Sacred journeys. A deeper faith.",
@@ -81,47 +82,7 @@ const prayers = [
 export default function Home() {
   return (
     <main className="pilgrim-home">
-      <section className="pilgrim-hero" aria-labelledby="pilgrim-title">
-        {/* Existing DivinePilgrim artwork, optimized for this opening. */}
-        <img
-          className="pilgrim-hero-image"
-          src="/images/home/basilica.webp"
-          alt="St. Peter’s Basilica illuminated in the warm light of evening"
-          fetchPriority="high"
-        />
-        <div className="pilgrim-hero-shade" />
-        <div className="pilgrim-hero-content">
-          <p className="pilgrim-eyebrow">
-            <span /> A PILGRIMAGE OF THE HEART
-          </p>
-          <h1 id="pilgrim-title">
-            Sacred journeys.
-            <br />
-            <em>A deeper faith.</em>
-          </h1>
-          <p>
-            Some journeys bring you to a place.
-            <br />
-            Others bring you closer to Him.
-          </p>
-          <div className="pilgrim-hero-actions">
-            <a className="pilgrim-button pilgrim-button-gold" href="#tours">
-              Begin your pilgrimage <ArrowUpRight size={18} />
-            </a>
-            <a className="pilgrim-quiet-link" href="#promise">
-              A moment with His Word <ArrowDown size={16} />
-            </a>
-          </div>
-        </div>
-        <div className="pilgrim-hero-bottom">
-          <span>EXPLORE. REFLECT. PRAY.</span>
-          <div>
-            <span>IN THE LIGHT OF FAITH</span>
-            <strong>St. Peter’s Basilica</strong>
-            <span>VATICAN CITY</span>
-          </div>
-        </div>
-      </section>
+      <HomeDailyHero churches={churches.map(({ name, location, images }) => ({ name, location, images: images.slice(0, 1) }))} />
       <div className="pilgrim-welcome">
         <Cross size={20} strokeWidth={1} />
         <p>
