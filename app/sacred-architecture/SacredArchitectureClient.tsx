@@ -4,6 +4,8 @@ import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ChurchCard from '@/app/components/ChurchCard';
+import JourneyFrame from '@/app/components/JourneyFrame';
+import { dailyChallengeIndex, watchLocalDay } from '@/app/lib/localCalendar';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface SacredArchitectureClientProps {
@@ -17,7 +19,10 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const isPreviewMode = searchParams.get('preview') === 'true';
 
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
-  const [todaysFeaturedChurch, setTodaysFeaturedChurch] = useState<any>(null);
+  const [featureDate, setFeatureDate] = useState("");
+  const todaysFeaturedChurch = featureDate && churches.length
+    ? churches[(dailyChallengeIndex(churches.length, new Date(`${featureDate}T12:00:00`)) + churches.length - 1) % churches.length]
+    : null;
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
@@ -32,20 +37,8 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     '/audio/background/gregorian-chant.mp3',
   ];
 
-  // Calculate today's featured church
-  useEffect(() => {
-    const today = new Date();
-    const start = new Date(today.getFullYear(), 0, 0);
-    const diff = today.getTime() - start.getTime();
-    const oneDay = 1000 * 60 * 60 * 24;
-    const dayOfYear = Math.floor(diff / oneDay);
-
-    // Rotate through churches based on day of year
-    const churchIndex = (dayOfYear - 1) % churches.length;
-    const featuredChurch = churches[churchIndex];
-
-    setTodaysFeaturedChurch(featuredChurch);
-  }, [churches]);
+  // One local-calendar selection drives both the hero and the featured card.
+  useEffect(() => watchLocalDay(setFeatureDate), []);
 
   const handleCardClick = (church: any) => {
     setSelectedChurch(church);
@@ -232,14 +225,20 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   useJourneyDialog(Boolean(selectedChurch), () => handleCloseModal());
 
   if (!todaysFeaturedChurch && !isPreviewMode) {
-    return null;
+    return <main className="journey-shell journey-architecture"><p className="journey-loading" role="status">Opening today’s sacred space…</p></main>;
   }
+
+  const featured = todaysFeaturedChurch ? {
+    name: todaysFeaturedChurch.name,
+    location: `${todaysFeaturedChurch.location.city}, ${todaysFeaturedChurch.location.country}`,
+    image: todaysFeaturedChurch.images?.[0]?.url || "/images/home/architecture.webp",
+  } : undefined;
 
   // PREVIEW MODE - Show all 21 churches (secret admin view)
 
   if (isPreviewMode) {
     return (
-      <>
+      <JourneyFrame kind="architecture" featured={featured}>
         <section className="max-w-7xl mx-auto px-5 pb-8">
           <div className="text-center mb-8">
             <div className="inline-block bg-red-600 px-6 py-2 rounded-full text-white font-bold text-sm mb-4">
@@ -271,13 +270,13 @@ export default function SacredArchitectureClient({ churches, countries, styles }
             ))}
           </div>
         </section>
-      </>
+      </JourneyFrame>
     );
   }
 
   // NORMAL MODE - Show only today's featured church
   return (
-    <>
+    <JourneyFrame kind="architecture" featured={featured}>
       {/* Today's Featured Church - ONLY THIS ONE */}
       <section className="max-w-7xl mx-auto px-5 pb-8">
         <div className="text-center mb-8">
@@ -511,6 +510,6 @@ export default function SacredArchitectureClient({ churches, countries, styles }
           </div>
         </div>
       )}
-    </>
+    </JourneyFrame>
   );
 }

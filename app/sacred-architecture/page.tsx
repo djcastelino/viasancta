@@ -1,4 +1,3 @@
-import JourneyFrame from '@/app/components/JourneyFrame';
 import { Suspense } from 'react';
 import churches from '@/public/sacred-architecture.json';
 import SacredArchitectureClient from './SacredArchitectureClient';
@@ -13,5 +12,5 @@ export default async function SacredArchitecturePage() {
   const countries = [...new Set(churches.map((c: any) => c.location.country))];
   const styles = [...new Set(churches.flatMap((c: any) => c.architectureStyle.split(', ')))];
 
-  return <JourneyFrame kind="architecture"><Suspense fallback={<p className="journey-loading" role="status">Opening today’s sacred space…</p>}><SacredArchitectureClient churches={churches} countries={countries} styles={styles} /></Suspense></JourneyFrame>;
+  return <Suspense fallback={<main className="journey-shell journey-architecture"><p className="journey-loading" role="status">Opening today’s sacred space…</p></main>}><SacredArchitectureClient churches={churches} countries={countries} styles={styles} /></Suspense>;
 }
