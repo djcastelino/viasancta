@@ -1,10 +1,26 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { SCRIPTURE_CHALLENGES } from '@/src/scripture-challenges';
-import type { ScriptureChallenge, ChallengeGameState } from '@/src/types/scripture';
-import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { SCRIPTURE_CHALLENGES } from "@/src/scripture-challenges";
+import type {
+  ScriptureChallenge,
+  ChallengeGameState,
+} from "@/src/types/scripture";
+import { applyScriptureGuess } from "@/app/lib/challengeProgress";
+import { useSacredAudio } from "@/app/lib/useSacredAudio";
+import {
+  ScriptureHeader,
+  ScriptureFooter,
+} from "@/app/components/ScriptureShell";
+import {
+  ArrowUpRight,
+  LockKeyhole,
+  Headphones,
+  BarChart3,
+  Archive,
+  Check,
+} from "lucide-react";
 
 interface TriviaResponse {
   trivia: string;
@@ -12,30 +28,36 @@ interface TriviaResponse {
 
 export default function ChallengePage() {
   const [gameState, setGameState] = useState<ChallengeGameState | null>(null);
-  const [guess, setGuess] = useState('');
+  const [guess, setGuess] = useState("");
   const [revealedClues, setRevealedClues] = useState(1);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [trivia, setTrivia] = useState<string>('');
+  const [trivia, setTrivia] = useState<string>("");
   const [loadingTrivia, setLoadingTrivia] = useState(false);
-  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
-  const [loadingAudio, setLoadingAudio] = useState(false);
-  const [loadingMessage, setLoadingMessage] = useState('');
+  const audio = useSacredAudio();
+  const { isPlaying: isPlayingAudio, isLoading: loadingAudio } = audio;
+  const [withMusic, setWithMusic] = useState(false);
+  const [triviaError, setTriviaError] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const backgroundMusicRef = useRef<HTMLAudioElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // Get today's challenge based on date
   const getTodaysChallenge = (): ScriptureChallenge => {
     const today = new Date();
-    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 1000 / 60 / 60 / 24);
+    const dayOfYear = Math.floor(
+      (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) /
+        1000 /
+        60 /
+        60 /
+        24,
+    );
     const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
     const challenge = SCRIPTURE_CHALLENGES[index];
-    console.log('🎯 Challenge Selection:', {
+    console.log("🎯 Challenge Selection:", {
       dayOfYear,
       totalChallenges: SCRIPTURE_CHALLENGES.length,
       index,
-      challengeName: challenge.name
+      challengeName: challenge.name,
     });
     return challenge;
   };
@@ -44,43 +66,53 @@ export default function ChallengePage() {
   const getYesterdaysChallenge = (): ScriptureChallenge => {
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
-    const dayOfYear = Math.floor((yesterday.getTime() - new Date(yesterday.getFullYear(), 0, 0).getTime()) / 1000 / 60 / 60 / 24);
+    const dayOfYear = Math.floor(
+      (yesterday.getTime() -
+        new Date(yesterday.getFullYear(), 0, 0).getTime()) /
+        1000 /
+        60 /
+        60 /
+        24,
+    );
     const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
     const challenge = SCRIPTURE_CHALLENGES[index];
-    console.log('📅 Yesterday\'s Challenge Selection:', {
+    console.log("📅 Yesterday's Challenge Selection:", {
       dayOfYear,
       totalChallenges: SCRIPTURE_CHALLENGES.length,
       index,
-      challengeName: challenge.name
+      challengeName: challenge.name,
     });
     return challenge;
   };
 
   // Initialize game state
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    const saved = localStorage.getItem('scriptureChallenge');
+    const today = new Date().toISOString().split("T")[0];
+    const saved = localStorage.getItem("scriptureChallenge");
 
     if (saved) {
       const savedState: ChallengeGameState = JSON.parse(saved);
 
       // Migrate old state: if challengeDate doesn't exist, use lastPlayedDate
-      const savedChallengeDate = savedState.challengeDate || savedState.lastPlayedDate;
+      const savedChallengeDate =
+        savedState.challengeDate || savedState.lastPlayedDate;
 
-      console.log('🗓️ Date Check:', {
+      console.log("🗓️ Date Check:", {
         today,
         challengeDate: savedChallengeDate,
-        isDifferent: savedChallengeDate !== today
+        isDifferent: savedChallengeDate !== today,
       });
 
       // Check if it's a new day (compare challengeDate, not lastPlayedDate)
       if (savedChallengeDate !== today) {
-        console.log('✨ New day detected - resetting challenge');
+        console.log("✨ New day detected - resetting challenge");
         // New day - reset game
         const todaysChallenge = getTodaysChallenge();
 
         // Calculate yesterday's date to check streak continuity
-        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
         const playedYesterday = savedState.lastPlayedDate === yesterday;
 
         // Keep streak if played yesterday, otherwise reset to 0
@@ -97,16 +129,19 @@ export default function ChallengePage() {
           gamesWon: savedState.gamesWon,
           lastPlayedDate: savedState.lastPlayedDate || today,
           challengeDate: today, // Set to today's date
-          cluesRevealed: 1
+          cluesRevealed: 1,
         };
         setGameState(newState);
-        localStorage.setItem('scriptureChallenge', JSON.stringify(newState));
+        localStorage.setItem("scriptureChallenge", JSON.stringify(newState));
       } else {
         // Same day - load saved state (with migration)
-        console.log('📅 Same day - loading saved state:', savedState.targetChallenge?.name);
+        console.log(
+          "📅 Same day - loading saved state:",
+          savedState.targetChallenge?.name,
+        );
         const migratedState: ChallengeGameState = {
           ...savedState,
-          challengeDate: savedState.challengeDate || savedState.lastPlayedDate
+          challengeDate: savedState.challengeDate || savedState.lastPlayedDate,
         };
         setGameState(migratedState);
         setRevealedClues(migratedState.cluesRevealed);
@@ -128,59 +163,33 @@ export default function ChallengePage() {
         gamesWon: 0,
         lastPlayedDate: today,
         challengeDate: today, // Set to today's date
-        cluesRevealed: 1
+        cluesRevealed: 1,
       };
       setGameState(newState);
-      localStorage.setItem('scriptureChallenge', JSON.stringify(newState));
+      localStorage.setItem("scriptureChallenge", JSON.stringify(newState));
     }
   }, []);
 
-  const handleGuess = () => {
-    if (!gameState || !guess.trim() || gameState.isComplete) return;
-
-    const normalizedGuess = guess.trim().toLowerCase();
-    const normalizedAnswer = gameState.targetChallenge!.name.toLowerCase();
-
-    const isCorrect = normalizedGuess === normalizedAnswer;
-    const isGameComplete = isCorrect || revealedClues >= 6;
-    const today = new Date().toISOString().split('T')[0];
-    const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-
-    // Calculate streak properly - only increment if played yesterday AND won today
-    let newStreak = 0;
-    if (isCorrect) {
-      const playedYesterday = gameState.lastPlayedDate === yesterday;
-      newStreak = playedYesterday ? gameState.currentStreak + 1 : 1; // Reset to 1 if gap in days
-    }
-
-    const updatedState: ChallengeGameState = {
-      ...gameState,
-      guesses: [...gameState.guesses, guess],
-      isComplete: isGameComplete,
-      isWon: isCorrect,
-      gamesPlayed: isGameComplete ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
-      gamesWon: isCorrect ? gameState.gamesWon + 1 : gameState.gamesWon,
-      currentStreak: newStreak,
-      maxStreak: isCorrect ? Math.max(gameState.maxStreak, newStreak) : gameState.maxStreak,
-      cluesRevealed: revealedClues,
-      lastPlayedDate: isGameComplete ? today : gameState.lastPlayedDate // Update lastPlayedDate when completing
-    };
-
-    setGameState(updatedState);
-    localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
-
-    if (isGameComplete) {
+  const submitGuess = (answer: string) => {
+    if (!gameState || !answer.trim() || gameState.isComplete) return;
+    const next = applyScriptureGuess(gameState, answer, revealedClues);
+    setGameState(next);
+    setRevealedClues(next.cluesRevealed);
+    localStorage.setItem("scriptureChallenge", JSON.stringify(next));
+    if (next.isComplete) {
       setShowAnswer(true);
-      // Save to history
-      saveToHistory(gameState.targetChallenge!, isCorrect, gameState.guesses.length + 1, revealedClues);
-    } else if (!isCorrect && revealedClues < 6) {
-      setRevealedClues(prev => prev + 1);
-      updatedState.cluesRevealed = revealedClues + 1;
-      localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+      saveToHistory(
+        next.targetChallenge!,
+        next.isWon,
+        next.guesses.length,
+        revealedClues,
+      );
     }
-
-    setGuess('');
+    setGuess("");
+    setSuggestions([]);
+    setShowSuggestions(false);
   };
+  const handleGuess = () => submitGuess(guess);
 
   const handleSkip = () => {
     if (!gameState || revealedClues >= 6 || gameState.isComplete) return;
@@ -190,10 +199,10 @@ export default function ChallengePage() {
 
     const updatedState = {
       ...gameState,
-      cluesRevealed: newRevealed
+      cluesRevealed: newRevealed,
     };
     setGameState(updatedState);
-    localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+    localStorage.setItem("scriptureChallenge", JSON.stringify(updatedState));
   };
 
   // Get autocomplete suggestions based on input
@@ -207,76 +216,49 @@ export default function ChallengePage() {
     }
 
     // Get all unique challenge names
-    const allNames = Array.from(new Set(SCRIPTURE_CHALLENGES.map(c => c.name)));
+    const allNames = Array.from(
+      new Set(SCRIPTURE_CHALLENGES.map((c) => c.name)),
+    );
 
     // Filter names that contain the input (case-insensitive)
     const input = value.toLowerCase();
     const matches = allNames
-      .filter(name => name.toLowerCase().includes(input))
+      .filter((name) => name.toLowerCase().includes(input))
       .slice(0, 5); // Limit to 5 suggestions
 
     setSuggestions(matches);
     setShowSuggestions(matches.length > 0);
   };
 
-  const selectSuggestion = (suggestion: string) => {
-    setGuess(suggestion);
-    setSuggestions([]);
-    setShowSuggestions(false);
-    setTimeout(() => {
-      const normalizedGuess = suggestion.trim().toLowerCase();
-      const normalizedAnswer = gameState?.targetChallenge?.name.toLowerCase() || '';
-      const isCorrect = normalizedGuess === normalizedAnswer;
-      const isGameComplete = isCorrect || revealedClues >= 6;
-      const today = new Date().toISOString().split('T')[0];
-      const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-      let newStreak = 0;
-      if (isCorrect && gameState) {
-        const playedYesterday = gameState.lastPlayedDate === yesterday;
-        newStreak = playedYesterday ? gameState.currentStreak + 1 : 1;
-      }
-      if (!gameState || gameState.isComplete) return;
-      const updatedState: ChallengeGameState = {
-        ...gameState,
-        guesses: [...gameState.guesses, suggestion],
-        isComplete: isGameComplete,
-        isWon: isCorrect,
-        gamesPlayed: isGameComplete ? gameState.gamesPlayed + 1 : gameState.gamesPlayed,
-        gamesWon: isCorrect ? gameState.gamesWon + 1 : gameState.gamesWon,
-        currentStreak: newStreak,
-        maxStreak: isCorrect ? Math.max(gameState.maxStreak, newStreak) : gameState.maxStreak,
-        cluesRevealed: revealedClues,
-        lastPlayedDate: isGameComplete ? today : gameState.lastPlayedDate
-      };
-      setGameState(updatedState);
-      localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
-      if (isGameComplete) {
-        setShowAnswer(true);
-        saveToHistory(gameState.targetChallenge!, isCorrect, gameState.guesses.length + 1, revealedClues);
-      } else if (!isCorrect && revealedClues < 6) {
-        setRevealedClues(prev => prev + 1);
-      }
-      setGuess('');
-    }, 0);
-  };
+  const selectSuggestion = (suggestion: string) => submitGuess(suggestion);
 
-  const saveToHistory = (challenge: ScriptureChallenge, won: boolean, guessCount: number, cluesUsed: number) => {
+  const saveToHistory = (
+    challenge: ScriptureChallenge,
+    won: boolean,
+    guessCount: number,
+    cluesUsed: number,
+  ) => {
     // Use the challenge's date, not today's date
     // This ensures if user completes yesterday's challenge today, it saves with yesterday's date
-    const challengeDate = gameState?.challengeDate || new Date().toISOString().split('T')[0];
-    const history = JSON.parse(localStorage.getItem('challengeHistory') || '[]');
+    const challengeDate =
+      gameState?.challengeDate || new Date().toISOString().split("T")[0];
+    const history = JSON.parse(
+      localStorage.getItem("challengeHistory") || "[]",
+    );
 
-    console.log('💾 Saving to history:', {
+    console.log("💾 Saving to history:", {
       challengeDate,
       challengeName: challenge.name,
       won,
       guessCount,
-      cluesUsed
+      cluesUsed,
     });
 
     // Don't add duplicate for same challenge date
-    if (history.some((h: any) => h.date === challengeDate)) {
-      console.log('⚠️ History entry already exists for this challenge date, skipping');
+    if (history.some((h: { date: string }) => h.date === challengeDate)) {
+      console.log(
+        "⚠️ History entry already exists for this challenge date, skipping",
+      );
       return;
     }
 
@@ -285,11 +267,11 @@ export default function ChallengePage() {
       challenge,
       won,
       guessCount,
-      cluesUsed
+      cluesUsed,
     });
 
-    localStorage.setItem('challengeHistory', JSON.stringify(history));
-    console.log('✅ Saved to history successfully');
+    localStorage.setItem("challengeHistory", JSON.stringify(history));
+    console.log("✅ Saved to history successfully");
   };
 
   const fetchTriviaAndPlay = async () => {
@@ -301,292 +283,78 @@ export default function ChallengePage() {
       return;
     }
 
+    setTriviaError("");
     setLoadingTrivia(true);
     try {
-      const response = await fetch('/api/challenge-trivia', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ challenge: gameState.targetChallenge })
+      const response = await fetch("/api/challenge-trivia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ challenge: gameState.targetChallenge }),
       });
 
+      if (!response.ok) {
+        const problem = await response.json().catch(() => ({}));
+        throw new Error(
+          problem.error || "This reflection could not load. Please try again.",
+        );
+      }
       const data: TriviaResponse = await response.json();
       const fetchedTrivia = data.trivia;
-      console.log('✅ Trivia fetched:', fetchedTrivia);
+      console.log("✅ Trivia fetched:", fetchedTrivia);
       setTrivia(fetchedTrivia);
       setLoadingTrivia(false);
 
       // Auto-play the audio immediately with the fetched trivia
       setTimeout(() => playTrivia(fetchedTrivia), 100);
     } catch (error) {
-      console.error('Failed to fetch trivia:', error);
-      setTrivia('Fun fact coming soon!');
+      console.error("Failed to fetch trivia:", error);
+      setTriviaError(
+        error instanceof Error ? error.message : "Please try again.",
+      );
       setLoadingTrivia(false);
     }
   };
 
-  const startBackgroundMusic = () => {
-    if (!backgroundMusicRef.current) {
-      // Contemplative background music (royalty-free from Incompetech)
-      // Music by Kevin MacLeod (incompetech.com)
-      // Licensed under Creative Commons: By Attribution 4.0 License
-      const musicOptions = [
-        '/audio/background/contemplative-1.mp3',
-        '/audio/background/contemplative-2.mp3',
-        '/audio/background/contemplative-3.mp3',
-      ];
-
-      const bgMusic = new Audio(musicOptions[0]);
-      bgMusic.loop = true;
-      bgMusic.volume = 0;
-
-      // Add error handler with fallback
-      bgMusic.onerror = (e) => {
-        console.log('Background music failed to load, trying fallback...');
-        if (musicOptions.length > 1) {
-          bgMusic.src = musicOptions[1];
-          bgMusic.load();
-        }
-      };
-
-      backgroundMusicRef.current = bgMusic;
-    }
-
-    const bgMusic = backgroundMusicRef.current;
-
-    // Reset to start if already playing
-    if (!bgMusic.paused) {
-      bgMusic.pause();
-    }
-    bgMusic.currentTime = 0;
-    bgMusic.volume = 0;
-
-    // Try to play with user interaction context
-    bgMusic.play()
-      .then(() => {
-        console.log('🎵 Background music started successfully');
-        // Fade in to 15% volume (soft, soothing)
-        fadeInMusic(bgMusic, 0.15);
-      })
-      .catch(err => {
-        console.log('Background music autoplay blocked (normal browser behavior)');
-      });
-  };
-
-  const fadeInMusic = (audio: HTMLAudioElement, targetVolume: number) => {
-    const fadeInterval = setInterval(() => {
-      if (audio.volume < targetVolume - 0.01) {
-        audio.volume = Math.min(audio.volume + 0.01, targetVolume);
-      } else {
-        audio.volume = targetVolume;
-        clearInterval(fadeInterval);
-        console.log(`🎵 Background music faded in to ${Math.round(targetVolume * 100)}% volume`);
-      }
-    }, 100);
-  };
-
-  const fadeOutMusic = (audio: HTMLAudioElement) => {
-    const fadeInterval = setInterval(() => {
-      if (audio.volume > 0.01) {
-        audio.volume = Math.max(audio.volume - 0.01, 0);
-      } else {
-        audio.pause();
-        audio.volume = 0;
-        clearInterval(fadeInterval);
-        console.log('🎵 Background music faded out');
-      }
-    }, 100);
-  };
-
-  const playTrivia = async (triviaText?: string) => {
-    // Prevent multiple concurrent audio generations
-    if (loadingAudio) {
-      console.log('⏳ Already loading, ignoring duplicate click');
+  const playTrivia = (text?: string) => {
+    if (isPlayingAudio || loadingAudio) {
+      audio.stop();
       return;
     }
-
-    if (isPlayingAudio && audioRef.current) {
-      // Stop current playback
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = null;
-
-      // Stop background music
-      if (backgroundMusicRef.current) {
-        fadeOutMusic(backgroundMusicRef.current);
-      }
-
-      setIsPlayingAudio(false);
-      setLoadingMessage('');
-      return;
-    }
-
-    // Use passed trivia text or fall back to state
-    const textToSpeak = triviaText || trivia;
-    if (!textToSpeak) {
-      console.error('❌ No trivia text available');
-      return;
-    }
-
-    console.log('🎤 Playing trivia:', textToSpeak.substring(0, 50) + '...');
-
-    setLoadingAudio(true);
-    setLoadingMessage('Creating audio...');
-
-    try {
-      // Get Azure credentials
-      const azureKey = process.env.NEXT_PUBLIC_AZURE_SPEECH_KEY;
-      const azureRegion = process.env.NEXT_PUBLIC_AZURE_SPEECH_REGION;
-
-      console.log('🔑 Azure Key:', azureKey ? `${azureKey.substring(0, 10)}...` : 'NOT FOUND');
-      console.log('🌍 Azure Region:', azureRegion || 'NOT FOUND');
-
-      if (!azureKey || !azureRegion) {
-        throw new Error('Azure Speech API credentials not configured');
-      }
-
-      // Configure Azure Speech SDK
-      const speechConfig = sdk.SpeechConfig.fromSubscription(azureKey, azureRegion);
-
-      // Multiple natural voices for variety (same as narration)
-      const voices = [
-        { name: 'en-US-AndrewMultilingualNeural', displayName: 'Andrew', gender: 'Male' },
-        { name: 'en-US-AvaMultilingualNeural', displayName: 'Ava', gender: 'Female' },
-        { name: 'en-US-EricNeural', displayName: 'Eric', gender: 'Male' },
-        { name: 'en-US-JennyMultilingualNeural', displayName: 'Jenny', gender: 'Female' },
-      ];
-
-      // Randomly select a voice for variety
-      const selectedVoice = voices[Math.floor(Math.random() * voices.length)];
-      console.log(`🎙️ Selected voice: ${selectedVoice.displayName} (${selectedVoice.gender})`);
-
-      speechConfig.speechSynthesisVoiceName = selectedVoice.name;
-      console.log('✅ Voice configured in speechConfig:', speechConfig.speechSynthesisVoiceName);
-
-      // Set audio format to MP3
-      speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3;
-
-      // Set speaking rate (0.95 = slightly slower for clarity)
-      const ssml = `
-        <speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">
-          <voice name="${selectedVoice.name}">
-            <prosody rate="0.95">
-              ${textToSpeak}
-            </prosody>
-          </voice>
-        </speak>
-      `;
-
-      // Create synthesizer
-      const synthesizer = new sdk.SpeechSynthesizer(speechConfig, null);
-
-      // Synthesize speech
-      const audioBlob = await new Promise<Blob>((resolve, reject) => {
-        synthesizer.speakSsmlAsync(
-          ssml,
-          (result) => {
-            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-              console.log('✅ Audio synthesis completed!');
-              console.log('📊 Audio data size:', result.audioData.byteLength, 'bytes');
-              const audioData = result.audioData;
-              const blob = new Blob([audioData], { type: 'audio/mp3' });
-              synthesizer.close();
-              resolve(blob);
-            } else {
-              console.error('❌ Speech synthesis failed:', result.errorDetails);
-              synthesizer.close();
-              reject(new Error(`Speech synthesis failed: ${result.errorDetails}`));
-            }
-          },
-          (error) => {
-            console.error('❌ Azure TTS error:', error);
-            synthesizer.close();
-            reject(new Error(`Azure TTS error: ${error}`));
-          }
-        );
-      });
-
-      console.log('🎵 Audio blob created, size:', audioBlob.size, 'bytes');
-
-      const audioUrl = URL.createObjectURL(audioBlob);
-      const audioElement = new Audio(audioUrl);
-
-      audioElement.onended = () => {
-        setIsPlayingAudio(false);
-        audioRef.current = null;
-        URL.revokeObjectURL(audioUrl);
-
-        // Fade out background music
-        if (backgroundMusicRef.current) {
-          fadeOutMusic(backgroundMusicRef.current);
-        }
-      };
-
-      audioElement.onerror = () => {
-        console.error('Failed to play audio');
-        setIsPlayingAudio(false);
-        audioRef.current = null;
-        URL.revokeObjectURL(audioUrl);
-
-        // Stop background music on error
-        if (backgroundMusicRef.current) {
-          fadeOutMusic(backgroundMusicRef.current);
-        }
-      };
-
-      // Clear loading state BEFORE playing
-      setLoadingAudio(false);
-      setLoadingMessage('');
-
-      // Start background music first
-      startBackgroundMusic();
-
-      // Small delay to let background music start smoothly
-      await new Promise(resolve => setTimeout(resolve, 300));
-
-      // Start playback
-      audioRef.current = audioElement;
-      setIsPlayingAudio(true);
-      console.log('▶️ Starting playback with Azure TTS audio...');
-      await audioElement.play();
-      console.log('🎶 Audio is now playing');
-
-    } catch (error) {
-      console.error('❌ Error generating audio:', error);
-      setLoadingAudio(false);
-      setLoadingMessage('');
-
-      // If Azure fails, show a more helpful error
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      console.error('💥 Full error details:', errorMessage);
-      alert(`Failed to generate audio: ${errorMessage}`);
-    }
+    const script = text || trivia;
+    if (script)
+      void audio.play(
+        script,
+        "en-US-AndrewMultilingualNeural",
+        0.95,
+        withMusic,
+      );
   };
 
   const handleShare = async () => {
     const result = gameState?.isWon
-      ? `✅ ${gameState.guesses.length} ${gameState.guesses.length === 1 ? 'guess' : 'guesses'}`
-      : '❌';
+      ? `✅ ${gameState.guesses.length} ${gameState.guesses.length === 1 ? "guess" : "guesses"}`
+      : "❌";
 
-    const text = `Daily Scripture Challenge\n${result}\n🔴${'🟠🟡🔵🟢🟣'.slice(0, Math.min(revealedClues - 1, 5) * 2)}\n\ndivinepilgrim.com/challenge`;
+    const text = `Daily Scripture Challenge\n${result}\n🔴${"🟠🟡🔵🟢🟣".slice(0, Math.min(revealedClues - 1, 5) * 2)}\n\ndivinepilgrim.com/challenge`;
 
     if (navigator.share) {
       try {
         await navigator.share({ text });
-      } catch (err) {
+      } catch {
         // User cancelled or error - copy to clipboard instead
         navigator.clipboard.writeText(text);
-        alert('Copied to clipboard!');
+        alert("Copied to clipboard!");
       }
     } else {
       navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      alert("Copied to clipboard!");
     }
   };
 
   const handleGiveUp = () => {
     if (!gameState || gameState.isComplete) return;
 
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date().toISOString().split("T")[0];
 
     const updatedState: ChallengeGameState = {
       ...gameState,
@@ -594,21 +362,27 @@ export default function ChallengePage() {
       isWon: false,
       gamesPlayed: gameState.gamesPlayed + 1,
       currentStreak: 0,
-      lastPlayedDate: today // Update lastPlayedDate when completing
+      lastPlayedDate: today, // Update lastPlayedDate when completing
     };
 
     setGameState(updatedState);
     setShowAnswer(true);
-    localStorage.setItem('scriptureChallenge', JSON.stringify(updatedState));
+    localStorage.setItem("scriptureChallenge", JSON.stringify(updatedState));
 
     // Save to history
-    saveToHistory(gameState.targetChallenge!, false, gameState.guesses.length, revealedClues);
+    saveToHistory(
+      gameState.targetChallenge!,
+      false,
+      gameState.guesses.length,
+      revealedClues,
+    );
   };
 
   const loadYesterdaysChallenge = () => {
+    audio.stop();
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayDate = yesterday.toISOString().split('T')[0];
+    const yesterdayDate = yesterday.toISOString().split("T")[0];
 
     const yesterdaysChallenge = getYesterdaysChallenge();
 
@@ -624,265 +398,321 @@ export default function ChallengePage() {
       gamesWon: gameState?.gamesWon || 0,
       lastPlayedDate: gameState?.lastPlayedDate || yesterdayDate,
       challengeDate: yesterdayDate, // Set to yesterday's date
-      cluesRevealed: 1
+      cluesRevealed: 1,
     };
 
     setGameState(newState);
     setRevealedClues(1);
     setShowAnswer(false);
-    setGuess('');
-    setTrivia('');
+    setGuess("");
+    setTrivia("");
 
-    console.log('📅 Loaded yesterday\'s challenge:', yesterdaysChallenge.name);
+    console.log("📅 Loaded yesterday's challenge:", yesterdaysChallenge.name);
   };
 
-  if (!gameState) {
-    return <div className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5] flex items-center justify-center">
-      <div className="animate-spin text-4xl">⏳</div>
-    </div>;
-  }
-
+  if (!gameState)
+    return (
+      <main className="scripture-shell">
+        <div className="scripture-container scripture-loading" role="status">
+          Opening today’s Scripture…
+        </div>
+      </main>
+    );
   const challenge = gameState.targetChallenge!;
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
-      {/* Header */}
-      <div className="max-w-4xl mx-auto px-5 pt-8 pb-4">
-        <Link href="/" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
-          ← Back to Home
-        </Link>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-5 pb-16">
-        {/* Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-            Daily Scripture Challenge
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Test your biblical knowledge! Can you guess who or what this is?
+    <main className="scripture-shell">
+      <div className="scripture-container">
+        <ScriptureHeader
+          active="challenge"
+          eyebrow="A DAILY DISCOVERY IN SACRED SCRIPTURE"
+          title="Let the Word"
+          emphasis="surprise you."
+          description="Six clues. A person, event, or miracle. Follow each hint and discover a little more of Scripture."
+        />
+        <div className="scripture-challenge-toolbar">
+          <p className="pilgrim-eyebrow">
+            {gameState.challengeDate === new Date().toISOString().split("T")[0]
+              ? "TODAY’S EDITION"
+              : "YESTERDAY’S EDITION"}{" "}
+            /{" "}
+            {showAnswer
+              ? "CHAPTER COMPLETE"
+              : `${revealedClues} OF 6 CLUES OPEN`}
           </p>
-        </div>
-
-        {/* Stats Bar */}
-        <div className="bg-white rounded-2xl shadow-lg p-4 mb-6 flex justify-around text-center">
           <div>
-            <div className="text-2xl font-bold text-[#D4AF37]">{gameState.currentStreak}</div>
-            <div className="text-xs text-gray-500">Current Streak</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-[#D4AF37]">{gameState.maxStreak}</div>
-            <div className="text-xs text-gray-500">Best Streak</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-[#D4AF37]">{gameState.gamesPlayed}</div>
-            <div className="text-xs text-gray-500">Games Played</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-[#D4AF37]">{gameState.gamesWon}</div>
-            <div className="text-xs text-gray-500">Games Won</div>
+            <Link href="/challenge/stats">
+              <BarChart3 size={15} /> Your record
+            </Link>
+            <Link href="/challenge/archive">
+              <Archive size={15} /> Past discoveries
+            </Link>
           </div>
         </div>
-
-        {/* Clues Card */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6">
-          <h2 className="text-2xl font-bold text-[#2C5F87] mb-6 text-center">
-            Clues {revealedClues}/6
-          </h2>
-
-          <div className="space-y-4">
-            {challenge.clues.slice(0, revealedClues).map((clue, index) => (
-              <div
-                key={index}
-                className={`p-4 rounded-xl border-2 ${
-                  index === 0 ? 'border-red-300 bg-red-50' :
-                  index === 1 ? 'border-orange-300 bg-orange-50' :
-                  index === 2 ? 'border-yellow-300 bg-yellow-50' :
-                  index === 3 ? 'border-blue-300 bg-blue-50' :
-                  index === 4 ? 'border-green-300 bg-green-50' :
-                  'border-purple-300 bg-purple-50'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <span className="text-lg font-bold">
-                    {index === 0 ? '🔴' : index === 1 ? '🟠' : index === 2 ? '🟡' : index === 3 ? '🔵' : index === 4 ? '🟢' : '🟣'}
-                  </span>
-                  <p className="text-gray-800 flex-1">{clue}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Show Answer */}
-          {showAnswer && (
-            <div className="mt-8 p-6 bg-gradient-to-r from-[#6e3a6c]/10 to-[#8B4789]/10 rounded-2xl border-2 border-[#D4AF37]">
-              <div className="text-center">
-                <div className="text-3xl mb-2">
-                  {gameState.isWon ? '🎉' : '🎯'}
-                </div>
-                <h3 className="text-2xl font-bold text-[#2C5F87] mb-2">
-                  {gameState.isWon ? 'Correct!' : 'The Answer Was:'}
-                </h3>
-                <div className="text-4xl font-bold text-[#6e3a6c] mb-4">
-                  {challenge.name}
-                </div>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p><strong>Testament:</strong> {challenge.testament}</p>
-                  <p><strong>Role:</strong> {challenge.role}</p>
-                  <p><strong>Famous For:</strong> {challenge.famousFor}</p>
-                  <p><strong>Books:</strong> {challenge.books.join(', ')}</p>
-                </div>
-                {gameState.isWon && (
-                  <div className="mt-4 text-lg font-semibold text-[#D4AF37]">
-                    Solved in {gameState.guesses.length} {gameState.guesses.length === 1 ? 'guess' : 'guesses'}!
-                  </div>
-                )}
-
-                {/* Trivia Section */}
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  {!trivia && !loadingTrivia && !isPlayingAudio && (
-                    <button
-                      onClick={fetchTriviaAndPlay}
-                      className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-                    >
-                      🔊 Hear a fun fact about {gameState?.targetChallenge?.name}
-                    </button>
-                  )}
-
-                  {(loadingTrivia || loadingAudio) && (
-                    <div className="text-gray-500 animate-pulse text-center">
-                      {loadingTrivia ? '🎙️ Generating trivia...' : '🎵 Creating audio...'}
-                    </div>
-                  )}
-
-                  {isPlayingAudio && (
-                    <button
-                      onClick={() => playTrivia()}
-                      className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center gap-2 mx-auto"
-                    >
-                      ⏸️ Stop Playing
-                    </button>
-                  )}
-                </div>
-
-                {/* Action Buttons */}
-                <div className="mt-6 pt-4 border-t border-gray-200 flex gap-3 justify-center flex-wrap">
-                  <button
-                    onClick={handleShare}
-                    className="bg-[#D4AF37] hover:bg-[#c49d2f] text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                  >
-                    📤 Share
-                  </button>
-                  {gameState.challengeDate === new Date().toISOString().split('T')[0] ? (
-                    <button
-                      onClick={loadYesterdaysChallenge}
-                      className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                    >
-                      📜 Archive
-                    </button>
-                  ) : (
-                    <Link
-                      href="/challenge/archive"
-                      className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                    >
-                      📜 Archive
-                    </Link>
-                  )}
-                  <Link
-                    href="/challenge/stats"
-                    className="bg-[#2C5F87] hover:bg-[#1e4460] text-white px-6 py-2.5 rounded-lg font-semibold transition-colors flex items-center gap-2"
-                  >
-                    📊 Stats
-                  </Link>
-                </div>
-
-                <div className="mt-6">
-                  <p className="text-xs text-gray-500 italic">
-                    Come back tomorrow for a new challenge! 🙏
+        <div className="scripture-stats-strip">
+          {[
+            [gameState.currentStreak, "CURRENT STREAK"],
+            [gameState.maxStreak, "BEST STREAK"],
+            [gameState.gamesPlayed, "PLAYED"],
+            [gameState.gamesWon, "DISCOVERED"],
+          ].map(([value, label]) => (
+            <div key={label}>
+              <strong>{value}</strong>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="scripture-challenge-grid">
+          <section
+            className="scripture-clue-board"
+            aria-labelledby="clue-title"
+          >
+            <p className="pilgrim-eyebrow">READ BETWEEN THE LINES</p>
+            <h2 id="clue-title">
+              Every clue,
+              <br />
+              <em>a little closer.</em>
+            </h2>
+            <ol>
+              {challenge.clues.map((clue, index) => (
+                <li
+                  key={index}
+                  className={
+                    index < revealedClues || showAnswer
+                      ? "is-revealed"
+                      : "is-locked"
+                  }
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>
+                    {index < revealedClues || showAnswer ? (
+                      clue
+                    ) : (
+                      <>
+                        <LockKeyhole size={13} /> A new clue awaits your next
+                        step.
+                      </>
+                    )}
                   </p>
-                </div>
-              </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+          <aside className="scripture-answer-panel">
+            <p className="pilgrim-eyebrow">A MOMENT OF DISCOVERY</p>
+            <h2>
+              {showAnswer ? (
+                <>
+                  {gameState.isWon ? "You found" : "A story"}
+                  <br />
+                  <em>{gameState.isWon ? "the story." : "to remember."}</em>
+                </>
+              ) : (
+                <>
+                  Who or what
+                  <br />
+                  <em>could it be?</em>
+                </>
+              )}
+            </h2>
+            <div
+              className="scripture-clue-dots"
+              aria-label={`${revealedClues} clues revealed`}
+            >
+              {Array.from({ length: 6 }, (_, i) => (
+                <span key={i} className={i < revealedClues ? "is-open" : ""} />
+              ))}
             </div>
-          )}
-        </div>
-
-        {/* Guess Input (only if game not complete) */}
-        {!showAnswer && (
-          <div className="bg-white rounded-3xl shadow-xl p-8">
-            <div className="space-y-4">
-              {/* Input with Autocomplete */}
-              <div className="relative">
-                <input
-                  type="text"
-                  value={guess}
-                  onChange={(e) => handleInputChange(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleGuess()}
-                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-                  placeholder="Type your guess..."
-                  className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl text-lg text-gray-900 bg-white focus:outline-none focus:border-[#D4AF37]"
-                  disabled={gameState.isComplete}
-                />
-
-                {/* Autocomplete Dropdown */}
-                {showSuggestions && suggestions.length > 0 && (
-                  <div className="absolute z-10 w-full mt-2 bg-white border-2 border-[#D4AF37] rounded-xl shadow-lg max-h-60 overflow-y-auto">
-                    {suggestions.map((suggestion, index) => (
-                      <button
-                        key={index}
-                        onClick={() => selectSuggestion(suggestion)}
-                        className="w-full text-left px-6 py-3 hover:bg-[#D4AF37]/10 transition-colors border-b border-gray-100 last:border-b-0"
-                      >
-                        <span className="text-gray-800 font-medium">{suggestion}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="flex gap-4">
-                <button
-                  onClick={handleGuess}
-                  disabled={!guess.trim()}
-                  className="flex-1 bg-[#D4AF37] hover:bg-[#c49d2f] disabled:bg-gray-300 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors"
+            {!showAnswer ? (
+              <>
+                <p className="scripture-current-clue">
+                  <span>LATEST CLUE</span>
+                  {challenge.clues[revealedClues - 1]}
+                </p>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleGuess();
+                  }}
                 >
-                  Submit Guess
-                </button>
-
-                {revealedClues < 6 && (
+                  <label htmlFor="scripture-guess">Your answer</label>
+                  <div className="scripture-suggestion-wrap">
+                    <input
+                      ref={inputRef}
+                      id="scripture-guess"
+                      role="combobox"
+                      value={guess}
+                      onChange={(e) => handleInputChange(e.target.value)}
+                      onBlur={() =>
+                        setTimeout(() => setShowSuggestions(false), 200)
+                      }
+                      placeholder="A person, event, or miracle…"
+                      autoComplete="off"
+                      aria-autocomplete="list"
+                      aria-expanded={showSuggestions && suggestions.length > 0}
+                      aria-controls={
+                        showSuggestions ? "scripture-suggestions" : undefined
+                      }
+                    />
+                    {showSuggestions && suggestions.length > 0 && (
+                      <div
+                        id="scripture-suggestions"
+                        className="scripture-suggestions"
+                        aria-label="Suggested answers"
+                      >
+                        {suggestions.map((suggestion) => (
+                          <button
+                            type="button"
+                            key={suggestion}
+                            onClick={() => selectSuggestion(suggestion)}
+                          >
+                            {suggestion}
+                            <ArrowUpRight size={14} />
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <button
-                    onClick={handleSkip}
-                    className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors"
+                    className="scripture-button scripture-button-gold"
+                    type="submit"
+                    disabled={!guess.trim()}
                   >
-                    Skip → Next Clue
+                    Make a discovery <ArrowUpRight size={17} />
+                  </button>
+                </form>
+                {revealedClues < 6 && (
+                  <button className="scripture-skip" onClick={handleSkip}>
+                    Not quite sure? Reveal the next clue →
                   </button>
                 )}
-              </div>
-
-              {revealedClues >= 3 && !gameState.isComplete && (
+                {revealedClues >= 3 && !gameState.isComplete && (
+                  <button className="scripture-skip" onClick={handleGiveUp}>
+                    Reveal the answer
+                  </button>
+                )}
+              </>
+            ) : (
+              <div className="scripture-found">
+                <p className="pilgrim-eyebrow">
+                  {gameState.isWon ? "YOUR DISCOVERY" : "THE ANSWER"}
+                </p>
+                <h3>{challenge.name}</h3>
+                <p>{challenge.role}</p>
+                {gameState.isWon && (
+                  <p>
+                    <Check size={15} /> Found in {gameState.guesses.length}{" "}
+                    {gameState.guesses.length === 1 ? "guess" : "guesses"}.
+                  </p>
+                )}
                 <button
-                  onClick={handleGiveUp}
-                  className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+                  className="scripture-button scripture-button-gold"
+                  onClick={handleShare}
                 >
-                  Give Up & Show Answer
+                  Share your discovery <ArrowUpRight size={17} />
                 </button>
-              )}
-            </div>
-
-            {/* Previous Guesses */}
-            {gameState.guesses.length > 0 && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <h3 className="text-sm font-semibold text-gray-600 mb-3">Your Guesses:</h3>
-                <div className="space-y-2">
-                  {gameState.guesses.map((g, i) => (
-                    <div key={i} className="px-4 py-2 bg-gray-100 rounded-lg text-gray-700">
-                      {i + 1}. {g} ❌
-                    </div>
-                  ))}
-                </div>
               </div>
             )}
-          </div>
+            {gameState.guesses.length > 0 && (
+              <div className="scripture-guess-history">
+                <p className="pilgrim-eyebrow">YOUR STEPS ALONG THE WAY</p>
+                {gameState.guesses.map((g, i) => (
+                  <div key={i}>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    <p>{g}</p>
+                    <span>
+                      {g.trim().toLowerCase() === challenge.name.toLowerCase()
+                        ? "FOUND"
+                        : "NOT YET"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </aside>
+        </div>
+        {showAnswer && (
+          <section className="scripture-reflection">
+            <div>
+              <p className="pilgrim-eyebrow">BEYOND THE ANSWER</p>
+              <h2>
+                There is always
+                <br />
+                <em>more to discover.</em>
+              </h2>
+              <p>{challenge.famousFor}</p>
+              <dl>
+                <div>
+                  <dt>TESTAMENT</dt>
+                  <dd>{challenge.testament}</dd>
+                </div>
+                <div>
+                  <dt>FIND THE STORY</dt>
+                  <dd>{challenge.books.join(", ")}</dd>
+                </div>
+              </dl>
+            </div>
+            <div className="scripture-reflection-audio">
+              <Headphones size={30} strokeWidth={1} />
+              <h3>
+                A little more
+                <br />
+                <em>understanding.</em>
+              </h3>
+              <p>Listen to a short reflection on {challenge.name}.</p>
+              {trivia && (
+                <details>
+                  <summary>Read the reflection</summary>
+                  <p>{trivia}</p>
+                </details>
+              )}
+              <button
+                className="scripture-button scripture-button-plum"
+                disabled={loadingTrivia}
+                onClick={
+                  isPlayingAudio || loadingAudio
+                    ? audio.stop
+                    : () => fetchTriviaAndPlay()
+                }
+              >
+                {loadingTrivia
+                  ? "Finding the story…"
+                  : loadingAudio
+                    ? "Cancel audio"
+                    : isPlayingAudio
+                      ? "Stop reflection"
+                      : "Listen to the reflection"}
+                <ArrowUpRight size={17} />
+              </button>
+              <label className="scripture-music">
+                <input
+                  type="checkbox"
+                  checked={withMusic}
+                  disabled={isPlayingAudio || loadingAudio}
+                  onChange={(e) => setWithMusic(e.target.checked)}
+                />{" "}
+                Quiet background music <span>OPTIONAL</span>
+              </label>
+              {(triviaError || audio.error) && (
+                <p className="scripture-error" role="alert">
+                  {triviaError || audio.error}
+                </p>
+              )}
+            </div>
+          </section>
         )}
+        <div className="scripture-next-note">
+          <p>
+            Faith grows one discovery at a time.{" "}
+            <em>Return tomorrow for another.</em>
+          </p>
+          {gameState.challengeDate ===
+            new Date().toISOString().split("T")[0] && (
+            <button onClick={loadYesterdaysChallenge}>
+              Explore yesterday’s challenge <ArrowUpRight size={15} />
+            </button>
+          )}
+        </div>
+        <ScriptureFooter />
       </div>
     </main>
   );

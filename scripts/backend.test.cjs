@@ -118,3 +118,66 @@ test('speech validates voice/rate and rejects empty audio and missing credential
   global.fetch = async () => new Response(new Uint8Array());
   await assert.rejects(speech.synthesize('Hi', 'en-US-AndrewNeural'), /empty audio/);
 });
+
+test('scripture guesses preserve the next clue on reload and count completion once', () => {
+  const { applyScriptureGuess } = load('app/lib/challengeProgress.ts');
+  const initial = { targetChallenge: { name: 'Balaam' }, guesses: [], isComplete: false, isWon: false, cluesRevealed: 1,
+    currentStreak: 3, maxStreak: 4, gamesPlayed: 5, gamesWon: 4, lastPlayedDate: '2026-10-27', challengeDate: '2026-10-28' };
+  const now = new Date('2026-10-28T15:00:00Z');
+  const wrong = JSON.parse(JSON.stringify(applyScriptureGuess(initial, 'Moses', 1, now)));
+  assert.equal(wrong.cluesRevealed, 2); assert.equal(wrong.currentStreak, 3); assert.equal(initial.guesses.length, 0);
+  const won = applyScriptureGuess(wrong, ' balaam ', wrong.cluesRevealed, now);
+  assert.equal(won.gamesPlayed, 6); assert.equal(won.gamesWon, 5); assert.equal(won.currentStreak, 4);
+  assert.equal(applyScriptureGuess(won, 'Balaam', 2, now), won);
+  const lost = applyScriptureGuess(wrong, 'Moses', 6, now);
+  assert.equal(lost.isComplete, true); assert.equal(lost.currentStreak, 0);
+});
+
+// Exercise playback lifecycle without speakers or a live provider.
+function audioHookHarness(createSpeechBlob) {
+  const cleanups = [];
+  const react = { useRef: value => ({ current: value }), useState: value => [value, () => {}],
+    useEffect: effect => { cleanups.push(effect()); } };
+  const source = fs.readFileSync(path.join(root, 'app/lib/useSacredAudio.ts'), 'utf8');
+  const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', compiled)(name => name === 'react' ? react : { createSpeechBlob }, module, module.exports);
+  return { hook: module.exports.useSacredAudio(), unmount: () => cleanups.forEach(cleanup => cleanup()) };
+}
+
+test('Scripture audio cancels pending generation when stopped or unmounted', async () => {
+  const originalAudio = global.Audio;
+  let created = 0;
+  global.Audio = class { constructor() { created++; } };
+  try {
+    for (const unmount of [false, true]) {
+      let finish;
+      const h = audioHookHarness(() => new Promise(resolve => { finish = resolve; }));
+      const pending = h.hook.play('A reflection', 'en-US-GuyNeural');
+      unmount ? h.unmount() : h.hook.stop();
+      finish(new Blob(['audio'])); await pending;
+    }
+    assert.equal(created, 0);
+  } finally { global.Audio = originalAudio; }
+});
+
+test('Scripture background music waits for speech playback and stops with it', async () => {
+  const originalAudio = global.Audio;
+  const tracks = [];
+  let startSpeech;
+  global.Audio = class {
+    constructor(src) { this.src = src; this.paused = true; tracks.push(this); }
+    play() { this.paused = false; return tracks.length === 1 ? new Promise(resolve => { startSpeech = resolve; }) : Promise.resolve(); }
+    pause() { this.paused = true; }
+  };
+  try {
+    const h = audioHookHarness(async () => new Blob(['audio']));
+    const pending = h.hook.play('Reflection', 'en-US-GuyNeural', 1, true);
+    await Promise.resolve();
+    assert.equal(tracks.length, 1);
+    startSpeech(); await pending;
+    assert.equal(tracks.length, 2); assert.equal(tracks[1].volume, .12);
+    h.hook.stop(); assert.ok(tracks.every(track => track.paused));
+    h.unmount();
+  } finally { global.Audio = originalAudio; }
+});

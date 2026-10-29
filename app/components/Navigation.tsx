@@ -36,7 +36,7 @@ export default function Navigation() {
               key={href}
               href={href}
               aria-current={
-                href === "/" && pathname === "/" ? "page" : undefined
+                (href === "/" && pathname === "/") || (href === "/#challenge" && (pathname.startsWith("/challenge") || pathname.startsWith("/memory-verses"))) ? "page" : undefined
               }
             >
               {label}

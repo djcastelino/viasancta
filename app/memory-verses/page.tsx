@@ -1,60 +1,51 @@
-import MemoryVerseClient from './MemoryVerseClient';
-import memoryVersesData from '@/public/memory-verses.json';
-
+import MemoryVerseClient from "./MemoryVerseClient";
+import memoryVersesData from "@/public/memory-verses.json";
+import {
+  ScriptureHeader,
+  ScriptureFooter,
+} from "@/app/components/ScriptureShell";
 export const metadata = {
-  title: 'Memory Verses - Divine Pilgrim',
-  description: 'Master 77 essential treasures from Sacred Scripture through proven memorization techniques and spaced repetition. Hide God\'s Word in your heart forever.',
+  title: "Scripture Memory Coach — Divine Pilgrim",
+  description:
+    "Read, practise and recall Sacred Scripture with a gentle daily memory companion.",
 };
-
 export default function MemoryVersesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-amber-600 to-yellow-600 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Scripture Memory Coach
-          </h1>
-          <p className="text-xl md:text-2xl mb-3 text-amber-100">
-            The Catholic Bible holds over 35,000 verses. Master these 77 essential treasures through proven techniques and hide God's Word in your heart.
-          </p>
-          <p className="text-lg text-amber-50 italic">
-            "Heaven and earth will pass away, but my words will never pass away."
-          </p>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            How It Works
-          </h2>
-          <div className="space-y-3 text-gray-700">
+    <main className="scripture-shell">
+      <div className="scripture-container">
+        <ScriptureHeader
+          active="memory"
+          eyebrow="WORDS TO KEEP CLOSE"
+          title="Let His Word"
+          emphasis="take root."
+          description="One verse at a time. Read it slowly, practise with care, and carry it into your day."
+        />
+        <MemoryVerseClient verses={memoryVersesData} />
+        <details className="scripture-how">
+          <summary>
+            A gentle rhythm for lasting memory <span>+</span>
+          </summary>
+          <div>
             <p>
-              📖 <strong>One verse per day</strong> - Master Scripture systematically
+              <strong>Read & listen.</strong> Make room for the verse and its
+              meaning.
             </p>
             <p>
-              🧠 <strong>Proven techniques</strong> - Chunking, repetition, spaced review
+              <strong>Write & practise.</strong> Type the words, then recall
+              them with fewer hints.
             </p>
             <p>
-              ✍️ <strong>Write to remember</strong> - Typing reinforces memory
+              <strong>Return & remember.</strong> Revisit verses as reviews
+              become due.
             </p>
             <p>
-              🎯 <strong>Reference mastery</strong> - Memorize book:chapter:verse (bonus!)
-            </p>
-            <p>
-              🔄 <strong>Never forget</strong> - Reviews at 1 day, 7 days, 30 days
-            </p>
-            <p className="text-amber-700 font-semibold pt-2">
-              Out of 35,000+ verses, these 77 are handpicked treasures. Even mastering just 7 gives you 7 eternal weapons for spiritual warfare! 🗡️
+              Your progress is saved in this browser. Practice Mode lets you
+              review without changing your daily completion.
             </p>
           </div>
-        </div>
-
-        {/* Client Component */}
-        <MemoryVerseClient verses={memoryVersesData} />
+        </details>
+        <ScriptureFooter />
       </div>
-    </div>
+    </main>
   );
 }

@@ -91,7 +91,7 @@ export default function StatsPage() {
   const maxGuessCount = Math.max(...Object.values(stats.guessDistribution), 1);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
+    <main className="scripture-shell scripture-records">
       {/* Header */}
       <div className="max-w-4xl mx-auto px-5 pt-8 pb-4">
         <Link href="/challenge" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
@@ -103,10 +103,10 @@ export default function StatsPage() {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-            📊 Your Statistics
+            Your Scripture record
           </h1>
           <p className="text-gray-600 text-lg">
-            Track your scripture knowledge progress
+            Every return to the Word is a step forward.
           </p>
         </div>
 
