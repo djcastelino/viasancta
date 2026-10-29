@@ -26,7 +26,7 @@ function getTodaysPromise(): DailyPromise | null {
   return todaysPromise || null;
 }
 
-export default function TodaysPromise() {
+export default function TodaysPromise({ editorial = false }: { editorial?: boolean }) {
   const promise = getTodaysPromise();
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [loadingAudio, setLoadingAudio] = useState(false);
@@ -257,6 +257,13 @@ export default function TodaysPromise() {
       console.error('💥 Full error details:', errorMessage);
     }
   };
+
+  if (editorial) return (
+    <section id="promise" className="pilgrim-promise" aria-labelledby="promise-title">
+      <div className="pilgrim-promise-intro"><p className="pilgrim-eyebrow">01 / A WORD FOR YOUR DAY</p><h2 id="promise-title">Today’s<br /><em>Promise.</em></h2><p>A moment to pause.<br />A promise to hold close.</p><span className="pilgrim-promise-cross" aria-hidden="true">✝</span></div>
+      <div className="pilgrim-promise-word"><span className="pilgrim-quote-mark" aria-hidden="true">“</span><blockquote>{promise.verse}</blockquote><p className="pilgrim-verse-reference">{promise.reference}</p><div className="pilgrim-promise-listen">{error && <p className="pilgrim-audio-error" role="alert">{error}</p>}<button className="pilgrim-button pilgrim-button-plum" onClick={isPlayingAudio ? handleStop : handlePlayNarration} disabled={loadingAudio}>{loadingAudio ? loadingMessage : isPlayingAudio ? 'Stop reflection' : 'Listen to reflection'}<span aria-hidden="true">{isPlayingAudio ? '■' : '↗'}</span></button><span>A GUIDED MOMENT OF REFLECTION</span></div></div>
+    </section>
+  );
 
   return (
     <section id="promise" className="max-w-7xl mx-auto px-5 py-16 relative z-20">

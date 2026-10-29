@@ -1,0 +1,1230 @@
+:root {
+  --p-paper: #f7f4ec;
+  --p-ink: #342d35;
+  --p-plum: #422d40;
+  --p-gold: #d8bf86;
+  --p-muted: #746b70;
+  --p-line: #dcd5c9;
+}
+.pilgrim-home {
+  background: var(--p-paper);
+  color: var(--p-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: clip;
+}
+.pilgrim-home :is(h1, h2, h3, p) {
+  margin: 0;
+}
+.pilgrim-home :is(h1, h2, h3) {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+.pilgrim-home em {
+  font-weight: 400;
+}
+.pilgrim-home a {
+  text-decoration: none;
+}
+.pilgrim-home [id] {
+  scroll-margin-top: 105px;
+}
+.pilgrim-home a:focus-visible,
+.pilgrim-home button:focus-visible,
+.pilgrim-nav a:focus-visible,
+.pilgrim-nav button:focus-visible {
+  outline: 2px solid #b69b64;
+  outline-offset: 6px;
+}
+.pilgrim-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #f7f4ecf5;
+  color: var(--p-ink);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--p-line);
+}
+.pilgrim-nav-inner {
+  max-width: 1600px;
+  margin: auto;
+  padding: 22px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.pilgrim-brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.pilgrim-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 49px;
+  border: 1px solid #a58b60;
+  border-radius: 22px 22px 0 0;
+  color: #866c42;
+}
+.pilgrim-brand > span:last-child {
+  font:
+    25px Georgia,
+    serif;
+  letter-spacing: -0.6px;
+}
+.pilgrim-brand small {
+  font:
+    7px Arial,
+    sans-serif;
+  display: block;
+  letter-spacing: 1.8px;
+  margin-top: 8px;
+  color: #827467;
+}
+.pilgrim-desktop-nav {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+}
+.pilgrim-desktop-nav a {
+  font-size: 12px;
+  text-decoration: none;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+.pilgrim-desktop-nav a:hover {
+  color: #9d7d43;
+}
+.pilgrim-desktop-nav a[aria-current] {
+  border-bottom: 1px solid #9d7d43;
+}
+.pilgrim-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.pilgrim-about-link {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 11px;
+}
+.pilgrim-menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.pilgrim-mobile-nav {
+  padding: 12px 6% 25px;
+  border-top: 1px solid var(--p-line);
+  max-height: 75svh;
+  overflow: auto;
+}
+.pilgrim-mobile-nav a {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--p-line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.pilgrim-hero {
+  position: relative;
+  min-height: 720px;
+  height: calc(100svh - 96px);
+  max-height: 1100px;
+  color: #fff9ef;
+  background: #392d37;
+  isolation: isolate;
+}
+.pilgrim-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 43%;
+  z-index: -3;
+}
+.pilgrim-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(
+      90deg,
+      #211c27e8 0%,
+      #29202bc9 27%,
+      #32253051 65%,
+      #2e243118 100%
+    ),
+    linear-gradient(0deg, #201b24ba, transparent 40%);
+}
+.pilgrim-hero-content {
+  padding: 110px 7% 120px;
+  max-width: 1600px;
+  margin: auto;
+}
+.pilgrim-eyebrow {
+  font:
+    9px/1.6 "Courier New",
+    monospace !important;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.pilgrim-hero .pilgrim-eyebrow {
+  color: #ead9b5;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.pilgrim-eyebrow > span {
+  height: 5px;
+  width: 5px;
+  background: #d8bf86;
+  display: inline-block;
+  border-radius: 50%;
+}
+.pilgrim-hero h1 {
+  font-size: clamp(70px, 7.4vw, 118px);
+  line-height: 1.04;
+  letter-spacing: -4.5px;
+  margin: 40px 0 28px;
+  max-width: 1000px;
+}
+.pilgrim-hero h1 em {
+  color: #e4cda0;
+}
+.pilgrim-hero-content > p:not(.pilgrim-eyebrow) {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #efe9e1;
+}
+.pilgrim-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 36px;
+}
+.pilgrim-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 19px 25px;
+  border: 1px solid transparent;
+  min-height: 56px;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pilgrim-button:hover {
+  transform: translateY(-2px);
+}
+.pilgrim-button-gold {
+  background: #dfc99e;
+  color: #302331;
+}
+.pilgrim-button-gold:hover {
+  background: #f0dfbd;
+}
+.pilgrim-button-plum {
+  background: var(--p-plum);
+  color: #fff6e8;
+}
+.pilgrim-button-plum:hover {
+  background: #5d4259;
+}
+.pilgrim-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+.pilgrim-quiet-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  border-bottom: 1px solid #ffffff5e;
+  padding: 12px 0;
+}
+.pilgrim-hero-bottom {
+  position: absolute;
+  bottom: 35px;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  font:
+    8px "Courier New",
+    monospace;
+  letter-spacing: 2px;
+}
+.pilgrim-hero-bottom > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  text-align: right;
+}
+.pilgrim-hero-bottom strong {
+  font:
+    19px Georgia,
+    serif;
+  letter-spacing: 0;
+}
+.pilgrim-hero-bottom > div > span {
+  font-size: 7px;
+}
+.pilgrim-welcome {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 27px 7%;
+  border-bottom: 1px solid var(--p-line);
+  color: #685744;
+}
+.pilgrim-welcome p {
+  font-size: 13px;
+}
+.pilgrim-welcome p em {
+  font:
+    19px Georgia,
+    serif;
+  margin-left: 8px;
+}
+.pilgrim-welcome > span {
+  margin-left: auto;
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1.8px;
+}
+.pilgrim-promise {
+  padding: 85px 7% 95px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  border-bottom: 1px solid var(--p-line);
+  position: relative;
+}
+.pilgrim-promise-intro h2 {
+  font-size: 59px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin: 24px 0;
+}
+.pilgrim-promise-intro > p:not(.pilgrim-eyebrow) {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--p-muted);
+}
+.pilgrim-promise-cross {
+  display: block;
+  font:
+    43px Georgia,
+    serif;
+  color: #b69c71;
+  margin-top: 30px;
+}
+.pilgrim-promise-word {
+  position: relative;
+  padding-top: 35px;
+}
+.pilgrim-quote-mark {
+  position: absolute;
+  font:
+    120px Georgia,
+    serif;
+  line-height: 1;
+  color: #d7c8ad;
+  top: -20px;
+  left: -9px;
+}
+.pilgrim-promise-word blockquote {
+  font:
+    italic 36px/1.5 Georgia,
+    serif;
+  margin: 0;
+  letter-spacing: -0.4px;
+  position: relative;
+}
+.pilgrim-promise .pilgrim-verse-reference {
+  font:
+    10px "Courier New",
+    monospace;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  color: #8b7145;
+}
+.pilgrim-promise-listen {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.pilgrim-promise-listen > span {
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1.3px;
+  color: var(--p-muted);
+}
+.pilgrim-audio-error {
+  font-size: 13px !important;
+  color: #9b332d;
+  flex-basis: 100%;
+}
+.pilgrim-section {
+  padding: 85px 7% 100px;
+  max-width: 1700px;
+  margin: auto;
+}
+.pilgrim-section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 35px;
+}
+.pilgrim-section-top > span {
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1.5px;
+  color: var(--p-muted);
+}
+.pilgrim-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 70px;
+  margin-bottom: 50px;
+}
+.pilgrim-home h2 {
+  font-size: 62px;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+.pilgrim-section-heading > p {
+  max-width: 350px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--p-muted);
+  padding-bottom: 5px;
+}
+.pilgrim-journeys {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 27px;
+  row-gap: 45px;
+}
+.pilgrim-journey {
+  grid-column: span 2;
+  display: block;
+  min-width: 0;
+}
+.pilgrim-journey-wide {
+  grid-column: span 3;
+}
+.pilgrim-journey-image {
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  background: #d4c8b5;
+}
+.pilgrim-journey-wide .pilgrim-journey-image {
+  height: 330px;
+}
+.pilgrim-journey-image:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 60%, #251b287d);
+}
+.pilgrim-journey-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.pilgrim-journey:hover img {
+  transform: scale(1.035);
+}
+.pilgrim-image-label {
+  position: absolute;
+  bottom: 23px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1.5px;
+  color: #fff7e8;
+  z-index: 1;
+}
+.pilgrim-round-arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+  background: #f7f4ec;
+  color: var(--p-plum);
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.pilgrim-journey-copy {
+  padding-top: 23px;
+}
+.pilgrim-journey-copy .pilgrim-eyebrow {
+  font-size: 7px !important;
+  letter-spacing: 1.1px;
+  color: #8e754c;
+}
+.pilgrim-journey h3 {
+  font-size: 29px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  margin: 12px 0;
+}
+.pilgrim-journey-copy > p:last-child {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--p-muted);
+  max-width: 450px;
+}
+.pilgrim-word {
+  background: var(--p-plum);
+  color: #f5eede;
+  padding: 80px 7%;
+  display: grid;
+  grid-template-columns: 1.05fr 1.65fr;
+  gap: 70px;
+}
+.pilgrim-word-intro > svg {
+  color: #cbb27d;
+  margin-bottom: 28px;
+}
+.pilgrim-word .pilgrim-eyebrow {
+  color: #d5bb86;
+}
+.pilgrim-word h2 {
+  font-size: 50px;
+  margin: 25px 0;
+}
+.pilgrim-word-intro > p:last-child {
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 330px;
+  color: #c9bec7;
+}
+.pilgrim-word-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: stretch;
+}
+.pilgrim-word-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #b39c725c;
+  padding: 32px 27px;
+  background: #ffffff04;
+  transition: background 0.2s;
+}
+.pilgrim-word-card:hover {
+  background: #ffffff0a;
+}
+.pilgrim-word-card .pilgrim-eyebrow {
+  font-size: 7px !important;
+  letter-spacing: 1px;
+}
+.pilgrim-word-card h3 {
+  font-size: 33px;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+  margin: 35px 0 20px;
+}
+.pilgrim-word-card > p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #c9bec7;
+  margin-bottom: 40px;
+}
+.pilgrim-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 11px;
+  border-top: 1px solid #c4ac7552;
+  padding-top: 18px;
+  margin-top: auto;
+}
+.pilgrim-word-card .pilgrim-card-link {
+  color: #e4cda0;
+}
+.pilgrim-prayer {
+  padding-top: 95px;
+}
+.pilgrim-prayer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.pilgrim-prayer-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.pilgrim-prayer-card > div {
+  height: 270px;
+  overflow: hidden;
+  margin-bottom: 26px;
+  background: #d1c2a6;
+}
+.pilgrim-prayer-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.pilgrim-prayer-card:hover img {
+  transform: scale(1.035);
+}
+.pilgrim-prayer-card .pilgrim-eyebrow {
+  color: #8b7145;
+  font-size: 7px !important;
+  letter-spacing: 1.3px;
+}
+.pilgrim-prayer-card h3 {
+  font-size: 30px;
+  margin: 13px 0 15px;
+  letter-spacing: -0.7px;
+}
+.pilgrim-prayer-card > p:not(.pilgrim-eyebrow) {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--p-muted);
+  margin-bottom: 24px;
+}
+.pilgrim-prayer-card .pilgrim-card-link {
+  border-color: var(--p-line);
+  color: #62435b;
+}
+.pilgrim-history {
+  background: #eee8dd;
+  padding: 75px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.pilgrim-history h2 {
+  font-size: 51px;
+  margin: 25px 0;
+}
+.pilgrim-history > div > p:last-child {
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 350px;
+  color: var(--p-muted);
+}
+.pilgrim-history-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 20px;
+  border-bottom: 1px solid #c9beaa;
+}
+.pilgrim-history-links a:first-child {
+  border-top: 1px solid #c9beaa;
+}
+.pilgrim-history-links a > span {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.pilgrim-history-links small {
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1px;
+  display: block;
+  color: #8b7145;
+}
+.pilgrim-history-links strong {
+  font:
+    27px Georgia,
+    serif;
+  display: block;
+  margin-top: 12px;
+  letter-spacing: -0.5px;
+}
+.pilgrim-footer {
+  background: #302430;
+  color: #eee5d5;
+  padding: 65px 7% 25px;
+}
+.pilgrim-footer-main {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 0.5fr;
+  gap: 50px;
+  align-items: center;
+  padding-bottom: 55px;
+}
+.pilgrim-footer-main h2 {
+  font-size: 37px;
+  letter-spacing: -1px;
+  margin: 15px 0 10px;
+}
+.pilgrim-footer-main > div > p {
+  font-size: 11px;
+  color: #beafb9;
+}
+.pilgrim-footer-main > p {
+  font:
+    italic 22px/1.6 Georgia,
+    serif;
+  color: #cfc1c8;
+}
+.pilgrim-footer-main > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  font-size: 12px;
+}
+.pilgrim-footer-main a {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.pilgrim-footer-bottom {
+  border-top: 1px solid #ffffff25;
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  font:
+    7px "Courier New",
+    monospace;
+  letter-spacing: 1.3px;
+  color: #b8a5af;
+}
+.dark .pilgrim-home {
+  --p-paper: #231f25;
+  --p-ink: #eee6da;
+  --p-muted: #bbafb8;
+  --p-line: #49404a;
+}
+.dark .pilgrim-nav {
+  background: #231f25f5;
+  color: #eee6da;
+  border-color: #49404a;
+}
+.dark .pilgrim-brand small {
+  color: #c3b194;
+}
+.dark .pilgrim-history {
+  background: #2c2630;
+}
+.dark .pilgrim-welcome {
+  color: #d2c2a9;
+}
+.dark .pilgrim-promise .pilgrim-verse-reference,
+.dark .pilgrim-journey-copy .pilgrim-eyebrow,
+.dark .pilgrim-prayer-card .pilgrim-eyebrow {
+  color: #d3b984;
+}
+.dark .pilgrim-round-arrow {
+  color: #eee6da;
+}
+.dark .pilgrim-quote-mark {
+  color: #665440;
+}
+.dark .pilgrim-mobile-nav,
+.dark .pilgrim-mobile-nav a {
+  border-color: #49404a;
+}
+@media (min-width: 1800px) {
+  .pilgrim-hero-content {
+    padding-top: 150px;
+  }
+}
+@media (max-width: 1150px) {
+  .pilgrim-desktop-nav {
+    gap: 18px;
+  }
+  .pilgrim-about-link {
+    display: none;
+  }
+  .pilgrim-nav-inner {
+    gap: 20px;
+    padding: 20px 5%;
+  }
+  .pilgrim-brand > span:last-child {
+    font-size: 23px;
+  }
+  .pilgrim-word {
+    gap: 40px;
+    grid-template-columns: 1fr 1.6fr;
+  }
+  .pilgrim-word-tools {
+    gap: 16px;
+  }
+  .pilgrim-word-card {
+    padding: 28px 20px;
+  }
+  .pilgrim-word-card h3 {
+    font-size: 29px;
+  }
+  .pilgrim-hero {
+    min-height: 700px;
+  }
+  .pilgrim-section-heading {
+    gap: 40px;
+  }
+  .pilgrim-home h2 {
+    font-size: 55px;
+  }
+  .pilgrim-journey-image {
+    height: 300px;
+  }
+  .pilgrim-promise {
+    gap: 50px;
+  }
+  .pilgrim-promise-word blockquote {
+    font-size: 32px;
+  }
+}
+@media (max-width: 900px) {
+  .pilgrim-desktop-nav {
+    display: none;
+  }
+  .pilgrim-menu-toggle {
+    display: block;
+  }
+  .pilgrim-nav-inner {
+    padding: 15px 6%;
+  }
+  .pilgrim-brand > span:last-child {
+    font-size: 24px;
+  }
+  .pilgrim-hero-content {
+    padding-top: 100px;
+  }
+  .pilgrim-word {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pilgrim-word-intro {
+    max-width: 550px;
+  }
+  .pilgrim-word-intro > p:last-child {
+    max-width: 480px;
+  }
+  .pilgrim-word-tools {
+    gap: 25px;
+  }
+  .pilgrim-word-card h3 {
+    font-size: 36px;
+    margin-top: 25px;
+  }
+  .pilgrim-hero h1 {
+    font-size: 80px;
+  }
+  .pilgrim-promise {
+    grid-template-columns: 1fr 1.7fr;
+    gap: 35px;
+  }
+  .pilgrim-promise-intro h2 {
+    font-size: 49px;
+  }
+  .pilgrim-section-top > span {
+    max-width: 200px;
+    text-align: right;
+    line-height: 1.8;
+  }
+  .pilgrim-journeys {
+    gap: 35px 20px;
+  }
+  .pilgrim-journey-image {
+    height: 260px;
+  }
+  .pilgrim-journey h3 {
+    font-size: 26px;
+  }
+  .pilgrim-image-label {
+    font-size: 6px;
+    left: 12px;
+    letter-spacing: 0.7px;
+  }
+  .pilgrim-round-arrow {
+    width: 30px;
+    height: 30px;
+    right: 12px;
+    bottom: 17px;
+  }
+  .pilgrim-prayer-grid {
+    gap: 20px;
+  }
+  .pilgrim-prayer-card > div {
+    height: 220px;
+  }
+  .pilgrim-prayer-card h3 {
+    font-size: 26px;
+  }
+  .pilgrim-history {
+    gap: 35px;
+  }
+  .pilgrim-history h2 {
+    font-size: 43px;
+  }
+  .pilgrim-history-links strong {
+    font-size: 24px;
+  }
+  .pilgrim-footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pilgrim-footer-main > div:last-child {
+    flex-direction: row;
+    grid-column: span 2;
+  }
+  .pilgrim-footer-bottom > span:nth-child(2) {
+    display: none;
+  }
+  .pilgrim-welcome > span {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .pilgrim-brand-mark {
+    width: 32px;
+    height: 40px;
+  }
+  .pilgrim-brand {
+    gap: 10px;
+  }
+  .pilgrim-brand > span:last-child {
+    font-size: 22px;
+  }
+  .pilgrim-brand small {
+    font-size: 5px;
+    letter-spacing: 1.3px;
+    margin-top: 6px;
+  }
+  .pilgrim-nav-actions {
+    gap: 8px;
+  }
+  .pilgrim-nav-actions > div > button {
+    padding: 7px;
+  }
+  .pilgrim-nav-inner {
+    gap: 10px;
+  }
+  .pilgrim-nav {
+    backdrop-filter: none;
+  }
+  .pilgrim-hero {
+    height: calc(100svh - 76px);
+    min-height: 660px;
+    max-height: 900px;
+  }
+  .pilgrim-hero-image {
+    object-position: 64% center;
+  }
+  .pilgrim-hero-shade {
+    background:
+      linear-gradient(90deg, #211c27d9, #29202b80 75%),
+      linear-gradient(0deg, #201b24c9, transparent 55%);
+  }
+  .pilgrim-hero-content {
+    padding: 90px 7% 110px;
+  }
+  .pilgrim-hero .pilgrim-eyebrow {
+    font-size: 7px !important;
+    letter-spacing: 1.6px;
+  }
+  .pilgrim-hero h1 {
+    font-size: 57px;
+    line-height: 1.07;
+    letter-spacing: -2.5px;
+    margin: 32px 0 25px;
+  }
+  .pilgrim-hero-content > p:not(.pilgrim-eyebrow) {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  .pilgrim-hero-actions {
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  .pilgrim-button {
+    padding: 17px 21px;
+    font-size: 11px;
+    min-height: 52px;
+  }
+  .pilgrim-quiet-link {
+    font-size: 10px;
+  }
+  .pilgrim-hero-bottom {
+    bottom: 26px;
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .pilgrim-hero-bottom strong {
+    font-size: 16px;
+  }
+  .pilgrim-hero-bottom > div > span {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .pilgrim-welcome {
+    padding: 24px 7%;
+    gap: 14px;
+  }
+  .pilgrim-welcome p {
+    font-size: 10px;
+  }
+  .pilgrim-welcome p em {
+    font-size: 15px;
+    display: block;
+    margin: 5px 0 0;
+  }
+  .pilgrim-promise {
+    padding: 50px 7% 55px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .pilgrim-promise-intro {
+    position: relative;
+  }
+  .pilgrim-home h2 {
+    font-size: 45px;
+    letter-spacing: -1.5px;
+  }
+  .pilgrim-promise-intro h2 {
+    font-size: 45px;
+    margin: 20px 0 15px;
+  }
+  .pilgrim-promise-intro h2 br {
+    display: none;
+  }
+  .pilgrim-promise-intro h2 em:before {
+    content: " ";
+  }
+  .pilgrim-promise-intro > p:not(.pilgrim-eyebrow) {
+    font-size: 12px;
+  }
+  .pilgrim-promise-cross {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    margin: 0;
+    font-size: 50px;
+  }
+  .pilgrim-promise-word {
+    padding-top: 18px;
+  }
+  .pilgrim-quote-mark {
+    font-size: 85px;
+    top: -25px;
+  }
+  .pilgrim-promise-word blockquote {
+    font-size: 28px;
+    line-height: 1.45;
+  }
+  .pilgrim-promise .pilgrim-verse-reference {
+    font-size: 9px;
+    margin-top: 22px;
+  }
+  .pilgrim-promise-listen {
+    gap: 18px;
+    margin-top: 25px;
+  }
+  .pilgrim-promise-listen > span {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+  .pilgrim-section {
+    padding: 55px 7% 60px;
+  }
+  .pilgrim-section-top {
+    margin-bottom: 25px;
+  }
+  .pilgrim-eyebrow {
+    font-size: 7px !important;
+    letter-spacing: 1.5px;
+  }
+  .pilgrim-section-top > span {
+    display: none;
+  }
+  .pilgrim-section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .pilgrim-section-heading > p {
+    font-size: 12px;
+    margin-top: 24px;
+    max-width: 340px;
+    line-height: 1.8;
+  }
+  .pilgrim-journeys {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .pilgrim-journey,
+  .pilgrim-journey-wide {
+    grid-column: auto;
+  }
+  .pilgrim-journey-image,
+  .pilgrim-journey-wide .pilgrim-journey-image {
+    height: 310px;
+  }
+  .pilgrim-journey-copy {
+    padding-top: 18px;
+  }
+  .pilgrim-journey h3 {
+    font-size: 31px;
+  }
+  .pilgrim-journey-copy > p:last-child {
+    font-size: 12px;
+  }
+  .pilgrim-round-arrow {
+    width: 36px;
+    height: 36px;
+    right: 18px;
+    bottom: 18px;
+  }
+  .pilgrim-image-label {
+    left: 20px;
+    bottom: 26px;
+    font-size: 7px;
+  }
+  .pilgrim-word {
+    padding: 55px 7%;
+    gap: 30px;
+  }
+  .pilgrim-word h2 {
+    font-size: 43px;
+  }
+  .pilgrim-word-intro > p:last-child {
+    font-size: 12px;
+  }
+  .pilgrim-word-tools {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pilgrim-word-card {
+    padding: 28px;
+  }
+  .pilgrim-word-card h3 {
+    font-size: 36px;
+    margin: 26px 0 20px;
+  }
+  .pilgrim-word-card > p {
+    margin-bottom: 28px;
+  }
+  .pilgrim-prayer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .pilgrim-prayer-card > div {
+    height: 270px;
+    margin-bottom: 22px;
+  }
+  .pilgrim-prayer-card h3 {
+    font-size: 31px;
+  }
+  .pilgrim-history {
+    padding: 55px 7%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .pilgrim-history h2 {
+    font-size: 43px;
+  }
+  .pilgrim-history-links a {
+    padding: 24px 0;
+  }
+  .pilgrim-history-links a > span {
+    gap: 15px;
+  }
+  .pilgrim-history-links strong {
+    font-size: 23px;
+  }
+  .pilgrim-history-links small {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+  }
+  .pilgrim-footer {
+    padding: 45px 7% 25px;
+  }
+  .pilgrim-footer-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 35px;
+  }
+  .pilgrim-footer-main h2 {
+    font-size: 35px;
+  }
+  .pilgrim-footer-main > p {
+    font-size: 21px;
+  }
+  .pilgrim-footer-main > div:last-child {
+    grid-column: auto;
+    flex-wrap: wrap;
+    font-size: 11px;
+    gap: 25px;
+  }
+  .pilgrim-footer-bottom {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+    gap: 15px;
+  }
+  .pilgrim-home [id] {
+    scroll-margin-top: 90px;
+  }
+}
+@media (max-width: 360px) {
+  .pilgrim-hero h1 {
+    font-size: 49px;
+  }
+  .pilgrim-brand small {
+    letter-spacing: 0.8px;
+  }
+  .pilgrim-brand > span:last-child {
+    font-size: 20px;
+  }
+  .pilgrim-promise-listen > span {
+    display: none;
+  }
+  .pilgrim-history-links strong {
+    font-size: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pilgrim-home * {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
