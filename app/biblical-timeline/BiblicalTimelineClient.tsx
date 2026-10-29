@@ -258,7 +258,7 @@ export default function BiblicalTimelineClient() {
                   </div>
 
                   <button className="mt-4 w-full bg-purple-600 text-white py-2 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
-                    Explore This Period →
+                    🎧 Open story & audio →
                   </button>
                 </div>
               </div>

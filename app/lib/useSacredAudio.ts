@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createSpeechBlob } from "./clientSpeech";
 
 export function useSacredAudio() {
@@ -11,7 +11,7 @@ export function useSacredAudio() {
   const url = useRef<string | null>(null);
   const request = useRef(0);
   const active = useRef(true);
-  const stop = () => {
+  const stop = useCallback(() => {
     request.current++;
     audio.current?.pause();
     music.current?.pause();
@@ -21,7 +21,7 @@ export function useSacredAudio() {
     url.current = null;
     setPlaying(false);
     setLoading(false);
-  };
+  }, []);
   useEffect(() => {
     active.current = true;
     return () => {

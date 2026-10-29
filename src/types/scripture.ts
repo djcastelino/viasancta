@@ -11,6 +11,7 @@ export interface ScriptureChallenge {
 }
 
 export interface ChallengeGameState {
+  calendarVersion?: 2;
   targetChallenge: ScriptureChallenge | null;
   guesses: string[];
   isComplete: boolean;

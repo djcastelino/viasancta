@@ -7,7 +7,8 @@ import type {
   ScriptureChallenge,
   ChallengeGameState,
 } from "@/src/types/scripture";
-import { applyScriptureGuess } from "@/app/lib/challengeProgress";
+import { dailyChallengeIndex, localDateKey, previousLocalDate, watchLocalDay } from "@/app/lib/localCalendar";
+import { applyScriptureGuess, restoreScriptureDay } from "@/app/lib/challengeProgress";
 import { useSacredAudio } from "@/app/lib/useSacredAudio";
 import {
   ScriptureHeader,
@@ -41,134 +42,35 @@ export default function ChallengePage() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // Get today's challenge based on date
-  const getTodaysChallenge = (): ScriptureChallenge => {
-    const today = new Date();
-    const dayOfYear = Math.floor(
-      (today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) /
-        1000 /
-        60 /
-        60 /
-        24,
-    );
-    const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
-    const challenge = SCRIPTURE_CHALLENGES[index];
-    console.log("🎯 Challenge Selection:", {
-      dayOfYear,
-      totalChallenges: SCRIPTURE_CHALLENGES.length,
-      index,
-      challengeName: challenge.name,
-    });
-    return challenge;
-  };
+  const [localToday, setLocalToday] = useState("");
+  const reflectionRequest = useRef(0);
+  const { stop: stopAudio } = audio;
 
-  // Get yesterday's challenge
-  const getYesterdaysChallenge = (): ScriptureChallenge => {
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const dayOfYear = Math.floor(
-      (yesterday.getTime() -
-        new Date(yesterday.getFullYear(), 0, 0).getTime()) /
-        1000 /
-        60 /
-        60 /
-        24,
-    );
-    const index = dayOfYear % SCRIPTURE_CHALLENGES.length;
-    const challenge = SCRIPTURE_CHALLENGES[index];
-    console.log("📅 Yesterday's Challenge Selection:", {
-      dayOfYear,
-      totalChallenges: SCRIPTURE_CHALLENGES.length,
-      index,
-      challengeName: challenge.name,
-    });
-    return challenge;
-  };
+  useEffect(() => watchLocalDay(setLocalToday), []);
 
-  // Initialize game state
   useEffect(() => {
-    const today = new Date().toISOString().split("T")[0];
-    const saved = localStorage.getItem("scriptureChallenge");
-
-    if (saved) {
-      const savedState: ChallengeGameState = JSON.parse(saved);
-
-      // Migrate old state: if challengeDate doesn't exist, use lastPlayedDate
-      const savedChallengeDate =
-        savedState.challengeDate || savedState.lastPlayedDate;
-
-      console.log("🗓️ Date Check:", {
-        today,
-        challengeDate: savedChallengeDate,
-        isDifferent: savedChallengeDate !== today,
-      });
-
-      // Check if it's a new day (compare challengeDate, not lastPlayedDate)
-      if (savedChallengeDate !== today) {
-        console.log("✨ New day detected - resetting challenge");
-        // New day - reset game
-        const todaysChallenge = getTodaysChallenge();
-
-        // Calculate yesterday's date to check streak continuity
-        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000)
-          .toISOString()
-          .split("T")[0];
-        const playedYesterday = savedState.lastPlayedDate === yesterday;
-
-        // Keep streak if played yesterday, otherwise reset to 0
-        const newCurrentStreak = playedYesterday ? savedState.currentStreak : 0;
-
-        const newState: ChallengeGameState = {
-          targetChallenge: todaysChallenge,
-          guesses: [],
-          isComplete: false,
-          isWon: false,
-          currentStreak: newCurrentStreak, // Preserve streak if played yesterday
-          maxStreak: savedState.maxStreak,
-          gamesPlayed: savedState.gamesPlayed,
-          gamesWon: savedState.gamesWon,
-          lastPlayedDate: savedState.lastPlayedDate || today,
-          challengeDate: today, // Set to today's date
-          cluesRevealed: 1,
-        };
-        setGameState(newState);
-        localStorage.setItem("scriptureChallenge", JSON.stringify(newState));
-      } else {
-        // Same day - load saved state (with migration)
-        console.log(
-          "📅 Same day - loading saved state:",
-          savedState.targetChallenge?.name,
-        );
-        const migratedState: ChallengeGameState = {
-          ...savedState,
-          challengeDate: savedState.challengeDate || savedState.lastPlayedDate,
-        };
-        setGameState(migratedState);
-        setRevealedClues(migratedState.cluesRevealed);
-        if (migratedState.isComplete) {
-          setShowAnswer(true);
-        }
-      }
-    } else {
-      // First time playing
-      const todaysChallenge = getTodaysChallenge();
-      const newState: ChallengeGameState = {
-        targetChallenge: todaysChallenge,
-        guesses: [],
-        isComplete: false,
-        isWon: false,
-        currentStreak: 0,
-        maxStreak: 0,
-        gamesPlayed: 0,
-        gamesWon: 0,
-        lastPlayedDate: today,
-        challengeDate: today, // Set to today's date
-        cluesRevealed: 1,
-      };
-      setGameState(newState);
-      localStorage.setItem("scriptureChallenge", JSON.stringify(newState));
-    }
-  }, []);
+    if (!localToday) return;
+    let saved: ChallengeGameState | null = null;
+    try {
+      const raw = localStorage.getItem("scriptureChallenge");
+      if (raw) saved = JSON.parse(raw);
+    } catch { /* An unreadable save starts a fresh challenge. */ }
+    const now = new Date();
+    const target = SCRIPTURE_CHALLENGES[dailyChallengeIndex(SCRIPTURE_CHALLENGES.length, now)];
+    const next = restoreScriptureDay(saved, target, now);
+    reflectionRequest.current++;
+    stopAudio();
+    setGameState(next);
+    setRevealedClues(next.cluesRevealed);
+    setShowAnswer(next.isComplete);
+    setGuess("");
+    setSuggestions([]);
+    setShowSuggestions(false);
+    setTrivia("");
+    setTriviaError("");
+    setLoadingTrivia(false);
+    localStorage.setItem("scriptureChallenge", JSON.stringify(next));
+  }, [localToday, stopAudio]);
 
   const submitGuess = (answer: string) => {
     if (!gameState || !answer.trim() || gameState.isComplete) return;
@@ -241,7 +143,7 @@ export default function ChallengePage() {
     // Use the challenge's date, not today's date
     // This ensures if user completes yesterday's challenge today, it saves with yesterday's date
     const challengeDate =
-      gameState?.challengeDate || new Date().toISOString().split("T")[0];
+      gameState?.challengeDate || localDateKey();
     const history = JSON.parse(
       localStorage.getItem("challengeHistory") || "[]",
     );
@@ -285,6 +187,7 @@ export default function ChallengePage() {
 
     setTriviaError("");
     setLoadingTrivia(true);
+    const requestId = ++reflectionRequest.current;
     try {
       const response = await fetch("/api/challenge-trivia", {
         method: "POST",
@@ -299,14 +202,16 @@ export default function ChallengePage() {
         );
       }
       const data: TriviaResponse = await response.json();
+      if (requestId !== reflectionRequest.current) return;
       const fetchedTrivia = data.trivia;
       console.log("✅ Trivia fetched:", fetchedTrivia);
       setTrivia(fetchedTrivia);
       setLoadingTrivia(false);
 
       // Auto-play the audio immediately with the fetched trivia
-      setTimeout(() => playTrivia(fetchedTrivia), 100);
+      if (requestId === reflectionRequest.current) playTrivia(fetchedTrivia);
     } catch (error) {
+      if (requestId !== reflectionRequest.current) return;
       console.error("Failed to fetch trivia:", error);
       setTriviaError(
         error instanceof Error ? error.message : "Please try again.",
@@ -354,7 +259,7 @@ export default function ChallengePage() {
   const handleGiveUp = () => {
     if (!gameState || gameState.isComplete) return;
 
-    const today = new Date().toISOString().split("T")[0];
+    const today = gameState.challengeDate || localDateKey();
 
     const updatedState: ChallengeGameState = {
       ...gameState,
@@ -380,11 +285,10 @@ export default function ChallengePage() {
 
   const loadYesterdaysChallenge = () => {
     audio.stop();
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayDate = yesterday.toISOString().split("T")[0];
-
-    const yesterdaysChallenge = getYesterdaysChallenge();
+    const yesterday = previousLocalDate();
+    const yesterdayDate = localDateKey(yesterday);
+    reflectionRequest.current++;
+    const yesterdaysChallenge = SCRIPTURE_CHALLENGES[dailyChallengeIndex(SCRIPTURE_CHALLENGES.length, yesterday)];
 
     // Reset game state with yesterday's challenge
     const newState: ChallengeGameState = {
@@ -429,9 +333,10 @@ export default function ChallengePage() {
           emphasis="surprise you."
           description="Six clues. A person, event, or miracle. Follow each hint and discover a little more of Scripture."
         />
+        <p className="scripture-reset-note">A new challenge every day at midnight in your device’s local time.</p>
         <div className="scripture-challenge-toolbar">
           <p className="pilgrim-eyebrow">
-            {gameState.challengeDate === new Date().toISOString().split("T")[0]
+            {gameState.challengeDate === localDateKey()
               ? "TODAY’S EDITION"
               : "YESTERDAY’S EDITION"}{" "}
             /{" "}
@@ -706,7 +611,7 @@ export default function ChallengePage() {
             <em>Return tomorrow for another.</em>
           </p>
           {gameState.challengeDate ===
-            new Date().toISOString().split("T")[0] && (
+            localDateKey() && (
             <button onClick={loadYesterdaysChallenge}>
               Explore yesterday’s challenge <ArrowUpRight size={15} />
             </button>

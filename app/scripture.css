@@ -1362,3 +1362,11 @@
     padding: 23px;
   }
 }
+
+.scripture-reset-note {
+  margin: 0;
+  padding: 20px 7% 0;
+  color: var(--s-muted, #655b65);
+  font-size: 14px;
+  line-height: 1.6;
+}
