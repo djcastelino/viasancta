@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useRef } from 'react';
+import JourneyFrame from '@/app/components/JourneyFrame';
 import SourceLinks from '@/app/components/SourceLinks';
 import { createSpeechBlob } from '@/app/lib/clientSpeech';
 
@@ -304,21 +305,8 @@ export default function JesusInOTPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#6e3a6c]/5 via-[#2C5F87]/5 to-[#325847]/5">
-        <div className="max-w-5xl mx-auto px-5 py-12">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="text-4xl">📖</span>
-              <h1 className="text-4xl md:text-5xl font-serif font-bold bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent">
-                Jesus in the Old Testament
-              </h1>
-            </div>
-            <p className="text-gray-600 text-lg">
-              {todaysEntry.category}
-            </p>
-          </div>
-
+    <JourneyFrame kind="jesus">
+        <div className="journey-daily-entry max-w-5xl mx-auto px-5 py-12">
           {/* Main Card */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#D4AF37]/20">
             {/* Title Section */}
@@ -500,6 +488,6 @@ export default function JesusInOTPage() {
             </div>
           </div>
         </div>
-      </main>
+      </JourneyFrame>
   );
 }

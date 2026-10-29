@@ -1,4 +1,6 @@
 'use client';
+import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
+import JourneyMusic from '@/app/components/JourneyMusic';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import ApparitionCard from '@/app/components/ApparitionCard';
@@ -35,7 +37,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   // Start Hail Mary Gentle Woman music when page loads
   // Uses global manager for continuous playback
   useEffect(() => {
-    marianMusicManager.start();
+    // Background music starts only from the optional control.
 
     // Schedule stop when leaving - cancels if navigating within Marian section
     return () => {
@@ -184,14 +186,18 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
   // Background music now handled by global marianMusicManager
   // Functions removed - using manager.duck() and manager.unduck() instead
 
+  useJourneyDialog(Boolean(selectedApparition), () => handleCloseModal());
+
   return (
     <>
+      <JourneyMusic kind="marian" />
       {/* Search and Filter */}
       <section className="max-w-7xl mx-auto px-5 pb-8">
         <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4">
           {/* Search */}
           <div>
             <input
+              aria-label="Search Marian apparitions"
               type="text"
               placeholder="Search by name, location, or year..."
               value={searchQuery}
@@ -203,6 +209,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
           {/* Country Filter */}
           <div className="grid md:grid-cols-2 gap-4">
             <select
+              aria-label="Filter apparitions by country"
               value={selectedCountry}
               onChange={(e) => setSelectedCountry(e.target.value)}
               className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
@@ -264,7 +271,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
       {/* Modal */}
       {selectedApparition && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+        <div role="dialog" aria-modal="true" aria-label={selectedApparition.name} className="journey-dialog fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
             {/* Header */}
             <div className="sticky top-0 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] text-white p-6 rounded-t-3xl">
@@ -276,7 +283,7 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
                   </p>
                 </div>
                 <button
-                  onClick={handleCloseModal}
+                  aria-label="Close details" onClick={handleCloseModal}
                   className="text-white hover:bg-white/20 rounded-full p-2 transition-colors"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

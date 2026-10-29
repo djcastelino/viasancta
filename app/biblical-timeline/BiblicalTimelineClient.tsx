@@ -1,7 +1,9 @@
 'use client';
+import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import JourneyFrame from '@/app/components/JourneyFrame';
 import SourceLinks from '@/app/components/SourceLinks';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
@@ -187,6 +189,8 @@ export default function BiblicalTimelineClient() {
     setSelectedPeriod(null);
   };
 
+  useJourneyDialog(Boolean(selectedPeriod), () => closeModal());
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white flex items-center justify-center">
@@ -199,23 +203,7 @@ export default function BiblicalTimelineClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-purple-900 via-purple-800 to-indigo-900 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold mb-4">Biblical Timeline</h1>
-            <p className="text-2xl text-purple-200 italic">From Adam to King of Kings</p>
-          </div>
-          <p className="text-lg text-center max-w-3xl mx-auto leading-relaxed">
-            Journey through salvation history as God's redemptive plan unfolds across 12 key periods.
-            From Creation's beauty to the Fall's tragedy, from patriarchs' faith to prophets' promises,
-            from Christ's victory to the Church's mission—discover how every chapter points to Jesus,
-            the King of Kings.
-          </p>
-        </div>
-      </div>
-
+    <JourneyFrame kind="timeline">
       {/* Timeline */}
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="relative">
@@ -292,7 +280,7 @@ export default function BiblicalTimelineClient() {
       {/* Modal */}
       {selectedPeriod && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          role="dialog" aria-modal="true" aria-label={selectedPeriod.name} className="journey-dialog fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
           onClick={() => closeModal()}
         >
           <div
@@ -311,7 +299,7 @@ export default function BiblicalTimelineClient() {
                 </div>
                 <button
                   onClick={() => closeModal()}
-                  className="text-white hover:text-gray-200 text-3xl font-bold leading-none ml-4"
+                  aria-label="Close details" className="text-white hover:text-gray-200 text-3xl font-bold leading-none ml-4"
                 >
                   ×
                 </button>
@@ -513,6 +501,6 @@ export default function BiblicalTimelineClient() {
           </div>
         </div>
       )}
-    </div>
+    </JourneyFrame>
   );
 }
