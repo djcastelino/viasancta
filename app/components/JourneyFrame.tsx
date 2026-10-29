@@ -3,6 +3,12 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowUpRight, Cross, Headphones } from "lucide-react";
+import JourneyHeroImage from "./JourneyHeroImage";
+export interface FeaturedJourney {
+  name: string;
+  location: string;
+  image: string;
+}
 export const journeys = {
   miracles: {
     href: "/tours/eucharistic-miracles",
@@ -76,7 +82,7 @@ export const journeys = {
   },
 };
 export type JourneyKind = keyof typeof journeys;
-export function JourneyHero({ kind }: { kind: JourneyKind }) {
+export function JourneyHero({ kind, featured }: { kind: JourneyKind; featured?: FeaturedJourney }) {
   const item = journeys[kind];
   return (
     <>
@@ -91,11 +97,12 @@ export function JourneyHero({ kind }: { kind: JourneyKind }) {
         className="journey-hero"
         aria-labelledby={`journey-${kind}-title`}
       >
-        <img
-          src={`/images/home/${item.image}.webp`}
-          alt={item.label}
-          fetchPriority="high"
-        />
+        {featured ? <JourneyHeroImage
+          key={featured.image}
+          src={featured.image}
+          alt={`${featured.name} — ${featured.location}`}
+          fallback={`/images/home/${item.image}.webp`}
+        /> : <img src={`/images/home/${item.image}.webp`} alt={item.label} fetchPriority="high" />}
         <div className="journey-hero-shade" />
         <div className="journey-hero-copy">
           <p className="pilgrim-eyebrow">{item.eyebrow}</p>
@@ -105,6 +112,11 @@ export function JourneyHero({ kind }: { kind: JourneyKind }) {
             <em>{item.emphasis}</em>
           </h1>
           <p>{item.description}</p>
+          {featured && <div className="journey-featured-place">
+            <span>TODAY’S SACRED SPACE</span>
+            <strong>{featured.name}</strong>
+            <span>{featured.location}</span>
+          </div>}
           <a href="#journey-content" className="journey-hero-link">
             <Headphones size={15} /> Begin exploring <ArrowUpRight size={17} />
           </a>
@@ -151,13 +163,15 @@ export function JourneyFooter() {
 export default function JourneyFrame({
   kind,
   children,
+  featured,
 }: {
   kind: JourneyKind;
   children: ReactNode;
+  featured?: FeaturedJourney;
 }) {
   return (
     <main className={`journey-shell journey-${kind}`}>
-      <JourneyHero kind={kind} />
+      <JourneyHero kind={kind} featured={featured} />
       <div className="journey-content" id="journey-content">
         {children}
       </div>
