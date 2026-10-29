@@ -1351,3 +1351,14 @@
     scroll-behavior: auto !important;
   }
 }
+.scripture-reflection > div {
+  min-width: 0;
+}
+@media (max-width: 360px) {
+  .scripture-reflection-audio h3 {
+    font-size: 30px;
+  }
+  .scripture-reflection-audio {
+    padding: 23px;
+  }
+}
