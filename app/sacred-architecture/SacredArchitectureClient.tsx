@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ChurchCard from '@/app/components/ChurchCard';
 import JourneyFrame from '@/app/components/JourneyFrame';
-import { dailyChallengeIndex, watchLocalDay } from '@/app/lib/localCalendar';
+import { useDailyArchitecture, architectureHeroImage } from '@/app/lib/useDailyArchitecture';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 
 interface SacredArchitectureClientProps {
@@ -19,10 +19,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const isPreviewMode = searchParams.get('preview') === 'true';
 
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
-  const [featureDate, setFeatureDate] = useState("");
-  const todaysFeaturedChurch = featureDate && churches.length
-    ? churches[(dailyChallengeIndex(churches.length, new Date(`${featureDate}T12:00:00`)) + churches.length - 1) % churches.length]
-    : null;
+  const todaysFeaturedChurch = useDailyArchitecture(churches);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
@@ -36,9 +33,6 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const musicOptions = [
     '/audio/background/gregorian-chant.mp3',
   ];
-
-  // One local-calendar selection drives both the hero and the featured card.
-  useEffect(() => watchLocalDay(setFeatureDate), []);
 
   const handleCardClick = (church: any) => {
     setSelectedChurch(church);
@@ -231,7 +225,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const featured = todaysFeaturedChurch ? {
     name: todaysFeaturedChurch.name,
     location: `${todaysFeaturedChurch.location.city}, ${todaysFeaturedChurch.location.country}`,
-    image: todaysFeaturedChurch.images?.[0]?.url || "/images/home/architecture.webp",
+    image: architectureHeroImage(todaysFeaturedChurch),
   } : undefined;
 
   // PREVIEW MODE - Show all 21 churches (secret admin view)
