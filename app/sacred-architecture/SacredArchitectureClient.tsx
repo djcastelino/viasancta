@@ -1,4 +1,5 @@
 'use client';
+import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
 
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -228,11 +229,14 @@ export default function SacredArchitectureClient({ churches, countries, styles }
     }
   };
 
+  useJourneyDialog(Boolean(selectedChurch), () => handleCloseModal());
+
   if (!todaysFeaturedChurch && !isPreviewMode) {
     return null;
   }
 
   // PREVIEW MODE - Show all 21 churches (secret admin view)
+
   if (isPreviewMode) {
     return (
       <>
@@ -310,7 +314,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
 
       {/* Modal */}
       {selectedChurch && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+        <div role="dialog" aria-modal="true" aria-label={selectedChurch.name} className="journey-dialog fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             {/* Header with Image */}
             <div className="relative h-80 rounded-t-3xl overflow-hidden">
@@ -327,7 +331,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
                 </p>
               </div>
               <button
-                onClick={handleCloseModal}
+                aria-label="Close details" onClick={handleCloseModal}
                 className="absolute top-4 right-4 text-white hover:bg-white/20 rounded-full p-2 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

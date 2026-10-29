@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import JourneyFrame from '@/app/components/JourneyFrame';
 import { Suspense } from 'react';
 import churches from '@/public/sacred-architecture.json';
 import SacredArchitectureClient from './SacredArchitectureClient';
@@ -13,53 +13,5 @@ export default async function SacredArchitecturePage() {
   const countries = [...new Set(churches.map((c: any) => c.location.country))];
   const styles = [...new Set(churches.flatMap((c: any) => c.architectureStyle.split(', ')))];
 
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
-      {/* Hero Banner */}
-      <section className="relative h-[450px] overflow-hidden">
-        <img
-          src="/images/architecture/cover-image.png"
-          alt="Sacred Architecture - One Magnificent Church Daily"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/60 to-black/40" />
-        <div className="relative h-full flex flex-col items-center justify-center text-white px-5">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 font-serif drop-shadow-2xl text-center">
-            Sacred Architecture
-          </h1>
-          <p className="text-2xl md:text-3xl italic mb-3 drop-shadow-lg text-[#D4AF37]">
-            One Magnificent Church Daily
-          </p>
-          <p className="text-lg md:text-xl text-gray-200 max-w-3xl text-center drop-shadow-md">
-            Discover a new sacred space each day with audio tours of history, architecture, and fascinating facts
-          </p>
-          <div className="mt-6 flex gap-4 text-sm flex-wrap justify-center">
-            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-semibold">Daily Featured Church</span>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-semibold">{churches.length} Churches</span>
-            </div>
-            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-              <span className="font-semibold">{countries.length} Countries</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Header Navigation */}
-      <header className="text-center pt-8 pb-6 px-5">
-        <div className="mb-4">
-          <Link href="/" className="text-gray-600 hover:text-[#2C5F87] text-sm font-semibold hover:underline">
-            ← Back to All Tours
-          </Link>
-        </div>
-      </header>
-
-      {/* Today's Featured Church - ONLY SHOW THIS ONE */}
-      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
-        <SacredArchitectureClient churches={churches} countries={countries} styles={styles} />
-      </Suspense>
-    </main>
-  );
+  return <JourneyFrame kind="architecture"><Suspense fallback={<p className="journey-loading" role="status">Opening today’s sacred space…</p>}><SacredArchitectureClient churches={churches} countries={countries} styles={styles} /></Suspense></JourneyFrame>;
 }

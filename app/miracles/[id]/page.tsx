@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import JourneyMusic from '@/app/components/JourneyMusic';
 import miracles from '@/src/eucharistic-miracles.json';
 import { createSpeechBlob } from '@/app/lib/clientSpeech';
 import MiracleImageGallery from '@/app/components/MiracleImageGallery';
@@ -28,7 +29,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
 
   // Start background music using global manager - it will continue if already playing
   useEffect(() => {
-    eucharisticMusicManager.start();
+    // Background music starts only from the optional control.
 
     // Cleanup when leaving this page
     return () => {
@@ -204,7 +205,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
   const headerLandscape = landscapes[landscapeIndex];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
+    <main className="journey-shell journey-detail"><div className="journey-content">
       {/* Back Link */}
       <div className="max-w-4xl mx-auto px-5 pt-8 pb-4">
         <Link href="/tours/eucharistic-miracles" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
@@ -237,6 +238,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
       </section>
 
       <div className="max-w-4xl mx-auto px-5 py-12">
+        <JourneyMusic kind="eucharistic" />
         {/* Audio Player */}
         <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 text-center">
           <h2 className="text-2xl font-bold text-[#2C5F87] mb-6">🎧 Listen to the Story</h2>
@@ -358,7 +360,7 @@ export default function MiraclePage({ params }: { params: Promise<{ id: string }
           </Link>
         </div>
       </div>
-    </main>
+    </div></main>
   );
 }
 

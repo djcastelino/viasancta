@@ -1,4 +1,6 @@
 'use client';
+import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
+import PilgrimageTile from '@/app/components/PilgrimageTile';
 
 import { useState, useRef } from 'react';
 import mountainsData from '@/public/sacred-mountains.json';
@@ -166,6 +168,8 @@ export default function SacredMountainsClient() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  useJourneyDialog(Boolean(selectedMountain), () => handleCloseModal());
+
   return (
     <>
       {/* Mountain Cards Grid */}
@@ -175,51 +179,7 @@ export default function SacredMountainsClient() {
             const heroImage = mountain.images.find(img => img.isHero) || mountain.images[0];
 
             return (
-              <button
-                key={mountain.id}
-                onClick={() => handleCardClick(mountain as Mountain)}
-                className="block group text-left w-full"
-              >
-                <div className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                  <div className="h-60 relative overflow-hidden">
-                    <img
-                      src={heroImage.url}
-                      alt={mountain.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="text-sm text-[#D4AF37] font-semibold mb-1">
-                        {mountain.testament}
-                      </div>
-                      <h3 className="text-2xl font-bold drop-shadow-md">
-                        {mountain.name}
-                      </h3>
-                      <p className="text-sm text-slate-200 mt-1">
-                        {mountain.elevation}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-700 font-semibold mb-3">
-                      {mountain.significance}
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
-                      <span>📍 {mountain.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-slate-500">
-                      <span>💡 {mountain.funFacts.length} Fun Facts</span>
-                      <span>•</span>
-                      <span>📖 {mountain.biblicalReferences.length} References</span>
-                    </div>
-                    <div className="mt-4">
-                      <span className="inline-block bg-[#D4AF37] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors">
-                        Explore →
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </button>
+              <PilgrimageTile key={mountain.id} onClick={() => handleCardClick(mountain as Mountain)} title={mountain.name} eyebrow={mountain.testament} meta={`${mountain.location} · ${mountain.elevation}`} description={mountain.significance} image={heroImage.url} fallback="/images/home/beatitudes.webp" />
             );
           })}
         </div>
@@ -227,7 +187,7 @@ export default function SacredMountainsClient() {
 
       {/* Modal */}
       {selectedMountain && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
+        <div role="dialog" aria-modal="true" aria-label={selectedMountain.name} className="journey-dialog fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto">
           <div className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
             {/* Header */}
             <div className="sticky top-0 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] text-white p-6 rounded-t-3xl z-10">
@@ -242,7 +202,7 @@ export default function SacredMountainsClient() {
                   </p>
                 </div>
                 <button
-                  onClick={handleCloseModal}
+                  aria-label="Close details" onClick={handleCloseModal}
                   className="text-white hover:bg-white/20 rounded-full p-2 transition-colors"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

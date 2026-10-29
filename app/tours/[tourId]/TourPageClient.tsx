@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import JourneyMusic from '@/app/components/JourneyMusic';
 import MiracleCard from '@/app/components/MiracleCard';
 import SearchFilter from '@/app/components/SearchFilter';
 import eucharisticMusicManager from '@/app/lib/eucharisticMusicManager';
@@ -19,7 +20,7 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
   // Start "I Am the Bread of Life" music when Eucharistic Miracles tour page loads
   // Uses global manager so music continues when navigating to miracle detail pages
   useEffect(() => {
-    eucharisticMusicManager.start();
+    // Background music starts only from the optional control.
 
     // Schedule stop when leaving - cancels if navigating to miracle page
     return () => {
@@ -61,6 +62,7 @@ export default function TourPageClient({ miracles, countries }: TourPageClientPr
 
   return (
     <>
+      <JourneyMusic kind="eucharistic" />
       {/* Search and Filter */}
       <SearchFilter
         onSearch={setSearchQuery}

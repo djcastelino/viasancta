@@ -1,4 +1,5 @@
 'use client';
+import { JourneyHero, JourneyFooter } from '@/app/components/JourneyFrame';
 
 import { useState, useRef, useEffect } from 'react';
 import Script from 'next/script';
@@ -536,21 +537,9 @@ export default function StationsOfTheCross() {
         }}
       />
 
-      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-      {/* Header */}
-      {!isPrayerMode && (
-        <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8">
-          <div className="max-w-7xl mx-auto px-5">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2 text-center">
-              ✝️ Stations of the Cross
-            </h1>
-            <p className="text-xl text-center text-purple-200">
-              Walk the Via Dolorosa - The Way of Suffering
-            </p>
-          </div>
-        </div>
-      )}
-
+      <main className={`journey-shell journey-stations ${isPrayerMode ? 'journey-prayer-mode' : ''}`}>
+      {!isPrayerMode && <JourneyHero kind="stations" />}
+      <div className="journey-content" id="journey-content">
       {/* Overview Map */}
       <div className={`bg-gray-800 py-4 transition-opacity duration-300 ${isPrayerMode ? 'hidden' : ''}`}>
         <div className="max-w-7xl mx-auto px-5">
@@ -908,6 +897,7 @@ export default function StationsOfTheCross() {
       </div>
       )}
 
+      </div>{!isPrayerMode && <JourneyFooter />}
       </main>
 
       {/* CSS for animations */}

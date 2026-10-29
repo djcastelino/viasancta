@@ -58,7 +58,7 @@ export default function ArchivePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#f5f5f0] via-white to-[#e8e8f5]">
+    <main className="scripture-shell scripture-records">
       {/* Header */}
       <div className="max-w-4xl mx-auto px-5 pt-8 pb-4 flex justify-between items-center">
         <Link href="/challenge" className="text-gray-600 hover:text-[#D4AF37] text-sm font-semibold">
@@ -78,17 +78,17 @@ export default function ArchivePage() {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#6e3a6c] to-[#8B4789] bg-clip-text text-transparent font-serif">
-            📜 Challenge Archive
+            Your past discoveries
           </h1>
           <p className="text-gray-600 text-lg">
-            Review your past daily challenges
+            Look back on the stories you have explored.
           </p>
         </div>
 
         {/* History List */}
         {history.length === 0 ? (
           <div className="bg-white rounded-3xl shadow-xl p-12 text-center">
-            <div className="text-6xl mb-4">🎯</div>
+            <div className="text-6xl mb-4">✝</div>
             <h2 className="text-2xl font-bold text-gray-800 mb-2">No History Yet</h2>
             <p className="text-gray-600 mb-6">
               Complete your first daily challenge to see it here!

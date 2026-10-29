@@ -43,6 +43,7 @@ export default function SearchFilter({ onSearch, onFilterCountry, onFilterCentur
           <div className="flex-1">
             <div className="relative">
               <input
+            aria-label="Search Eucharistic miracles"
                 type="text"
                 value={searchQuery}
                 onChange={handleSearchChange}
@@ -67,6 +68,7 @@ export default function SearchFilter({ onSearch, onFilterCountry, onFilterCentur
 
           {/* Country Filter */}
           <select
+            aria-label="Filter miracles by country"
             onChange={(e) => onFilterCountry(e.target.value)}
             className="px-6 py-4 border-2 border-gray-200 rounded-full focus:border-[#D4AF37] focus:outline-none bg-white cursor-pointer transition-all hover:border-[#D4AF37]"
           >
