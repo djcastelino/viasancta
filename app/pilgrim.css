@@ -1228,3 +1228,14 @@
     transition: none !important;
   }
 }
+
+/* Keep audio discovery legible on photography at every breakpoint. */
+.pilgrim-image-label {
+  padding: 10px 14px;
+  border: 1px solid #e4c77e;
+  border-radius: 999px;
+  background: #422d40;
+  color: #fff8e9;
+  font: 600 12px/1.3 Arial, sans-serif;
+  letter-spacing: 0.4px;
+}

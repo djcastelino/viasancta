@@ -164,7 +164,7 @@ export default function Home() {
                   loading="lazy"
                 />
                 <span className="pilgrim-image-label">
-                  <Headphones size={13} /> GUIDED REFLECTION
+                  <Headphones size={20} /> AUDIO JOURNEY
                 </span>
                 <span className="pilgrim-round-arrow">
                   <ArrowUpRight size={22} />

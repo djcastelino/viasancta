@@ -136,7 +136,7 @@ test('scripture guesses preserve the next clue on reload and count completion on
 // Exercise playback lifecycle without speakers or a live provider.
 function audioHookHarness(createSpeechBlob) {
   const cleanups = [];
-  const react = { useRef: value => ({ current: value }), useState: value => [value, () => {}],
+  const react = { useCallback: fn => fn, useRef: value => ({ current: value }), useState: value => [value, () => {}],
     useEffect: effect => { cleanups.push(effect()); } };
   const source = fs.readFileSync(path.join(root, 'app/lib/useSacredAudio.ts'), 'utf8');
   const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
@@ -180,4 +180,63 @@ test('Scripture background music waits for speech playback and stops with it', a
     h.hook.stop(); assert.ok(tracks.every(track => track.paused));
     h.unmount();
   } finally { global.Audio = originalAudio; }
+});
+
+test('daily challenge follows local midnight across timezones and DST', () => {
+  const {localDateKey, dailyChallengeIndex, previousLocalDate, millisecondsUntilLocalMidnight} = load('app/lib/localCalendar.ts');
+  const previousTZ = process.env.TZ;
+  try {
+    for (const tz of ['America/New_York', 'America/Los_Angeles', 'Asia/Kolkata', 'Pacific/Auckland']) {
+      process.env.TZ = tz;
+      const before = new Date(2026, 9, 28, 23, 59, 59);
+      const after = new Date(2026, 9, 29, 0, 0, 0);
+      assert.equal(localDateKey(before), '2026-10-28', tz);
+      assert.equal(localDateKey(after), '2026-10-29', tz);
+      assert.equal(dailyChallengeIndex(1000, after), dailyChallengeIndex(1000, before) + 1, tz);
+      assert.equal(millisecondsUntilLocalMidnight(before), 1000, tz);
+      assert.equal(localDateKey(previousLocalDate(after)), '2026-10-28', tz);
+      for (const [month, day] of [[2,8], [10,1]]) {
+        assert.equal(dailyChallengeIndex(1000,new Date(2026,month,day,0)),dailyChallengeIndex(1000,new Date(2026,month,day,23)),tz);
+      }
+      assert.equal(dailyChallengeIndex(1000,new Date(2027,0,1)),1,tz);
+    }
+    process.env.TZ='America/New_York';
+    assert.equal(millisecondsUntilLocalMidnight(new Date(2026,2,8)),23*3600000);
+    assert.equal(millisecondsUntilLocalMidnight(new Date(2026,10,1)),25*3600000);
+  } finally { if(previousTZ===undefined) delete process.env.TZ; else process.env.TZ=previousTZ; }
+});
+
+test('local-day restore keeps progress, migrates UTC labels and resets stale puzzles without erasing totals', () => {
+  const {restoreScriptureDay} = load('app/lib/challengeProgress.ts');
+  const target={id:2,name:'David'};
+  const now=new Date(2026,9,29,0,10);
+  const saved={targetChallenge:target,guesses:['Moses'],cluesRevealed:2,isComplete:false,isWon:false,currentStreak:3,maxStreak:5,gamesPlayed:8,gamesWon:7,lastPlayedDate:'2026-10-28',challengeDate:'2026-10-29'};
+  const restored=restoreScriptureDay(saved,target,now);
+  assert.equal(restored.cluesRevealed,2);assert.deepEqual(restored.guesses,['Moses']);assert.equal(restored.calendarVersion,2);
+  assert.equal(restoreScriptureDay({...saved,challengeDate:'2026-10-30'},target,now).challengeDate,'2026-10-29');
+  const reset=restoreScriptureDay({...saved,targetChallenge:{id:1,name:'Moses'}},target,now);
+  assert.deepEqual(reset.guesses,[]);assert.equal(reset.cluesRevealed,1);assert.equal(reset.gamesPlayed,8);assert.equal(reset.currentStreak,3);
+  const old=restoreScriptureDay({...saved,challengeDate:'2026-08-01'},target,now);
+  assert.deepEqual(old.guesses,[]);
+});
+
+test('day watcher refreshes an open or resumed page and removes timers/listeners', () => {
+  const {watchLocalDay,localDateKey}=load('app/lib/localCalendar.ts');
+  const originals={Date:global.Date,setTimeout:global.setTimeout,clearTimeout:global.clearTimeout,setInterval:global.setInterval,clearInterval:global.clearInterval,window:global.window,document:global.document};
+  const RealDate=global.Date; let now=new RealDate(2026,9,28,23,59,59).getTime(); let id=0;
+  const timeouts=new Map(),intervals=new Map(),listeners=new Map(),seen=[];
+  try {
+    global.Date=class extends RealDate {constructor(...args){super(...(args.length?args:[now]));}};
+    global.setTimeout=(fn,ms)=>{const key=++id;timeouts.set(key,{fn,ms});return key;};global.clearTimeout=key=>timeouts.delete(key);
+    global.setInterval=fn=>{const key=++id;intervals.set(key,fn);return key;};global.clearInterval=key=>intervals.delete(key);
+    const events={addEventListener:(name,fn)=>listeners.set(name,fn),removeEventListener:name=>listeners.delete(name)};
+    global.window=events;global.document={...events,visibilityState:'visible'};
+    const cleanup=watchLocalDay(key=>seen.push(key));
+    assert.equal(seen.at(-1),'2026-10-28');
+    const timer=[...timeouts.values()][0];assert.equal(timer.ms,1050);
+    now=new RealDate(2026,9,29,0,0,0,50).getTime();timer.fn();assert.equal(seen.at(-1),'2026-10-29');
+    now=new RealDate(2026,9,30,8).getTime();listeners.get('focus')();assert.equal(seen.at(-1),'2026-10-30');
+    cleanup();assert.equal(timeouts.size,0);assert.equal(intervals.size,0);assert.equal(listeners.size,0);
+    assert.equal(localDateKey(new RealDate(now)),'2026-10-30');
+  } finally {Object.assign(global,originals);}
 });

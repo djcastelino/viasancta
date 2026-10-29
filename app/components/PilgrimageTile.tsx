@@ -33,7 +33,7 @@ export default function PilgrimageTile({
           onError={() => setFailed(true)}
         />
         <span className="journey-tile-audio">
-          <Headphones size={13} /> GUIDED JOURNEY
+          <Headphones size={21} aria-hidden="true" /> Audio guide
         </span>
         <span className="journey-tile-arrow">
           <ArrowUpRight size={21} />
@@ -44,6 +44,10 @@ export default function PilgrimageTile({
         <h3>{title}</h3>
         <p className="journey-tile-meta">{meta}</p>
         {description && <p>{description}</p>}
+        <span className="journey-tile-cta">
+          <Headphones size={19} aria-hidden="true" /> Open audio journey
+          <ArrowUpRight size={18} aria-hidden="true" />
+        </span>
       </div>
     </>
   );
