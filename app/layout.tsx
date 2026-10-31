@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Divine Pilgrim - Virtual Sacred Pilgrimages",
-  description: "Experience AI-guided virtual pilgrimage tours through Eucharistic miracles, Marian apparitions, and sacred sites worldwide.",
+  description: "Explore sacred architecture, biblical mountains, and daily six-clue Scripture challenges.",
 };
 
 export default function RootLayout({

@@ -6,7 +6,6 @@ import { Cross, Menu, X, ArrowUpRight } from "lucide-react";
 import SettingsMenu from "./SettingsMenu";
 const links = [
   ["/", "Home"],
-  ["/#promise", "Today’s Promise"],
   ["/#tours", "Pilgrimages"],
   ["/#challenge", "Scripture"],
   ["/#spiritual-warfare", "Prayer"],
@@ -82,8 +81,6 @@ export default function Navigation() {
         >
           {[
             ...links,
-            ["/#memory-verses", "Memory Verses"],
-            ["/#salvation-history", "Salvation History"],
             ["/about", "Our story"],
           ].map(([href, label]) => (
             <Link key={href} href={href} onClick={() => setOpen(false)}>

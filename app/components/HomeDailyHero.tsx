@@ -34,8 +34,8 @@ export default function HomeDailyHero({ churches }: { churches: DailyArchitectur
             <a className="pilgrim-button pilgrim-button-gold" href="#tours">
               Begin your pilgrimage <ArrowUpRight size={18} />
             </a>
-            <a className="pilgrim-quiet-link" href="#promise">
-              A moment with His Word <ArrowDown size={16} />
+            <a className="pilgrim-quiet-link" href="#challenge">
+              Discover today’s Scripture challenge <ArrowDown size={16} />
             </a>
           </div>
         </div>

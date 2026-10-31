@@ -270,3 +270,15 @@ test('Today’s Promise reads only canonical Scripture without calling an AI pro
   }
   assert.equal((await post(request({ promise: { id: -1, verse: 'Unlisted verse', reference: 'Unknown' } }))).status, 404);
 });
+
+test('paused sections stay out of public navigation while core collections remain visible', () => {
+  const visibility = load('app/lib/sectionVisibility.ts');
+  assert.equal(visibility.showTodaysPromise, false);
+  for (const path of ['/tours/eucharistic-miracles', '/tours/marian-apparitions', '/stations-of-the-cross', '/biblical-timeline', '/jesus-in-ot', '/memory-verses']) {
+    assert.equal(visibility.isSectionVisible(path), false);
+    assert.equal(visibility.isSectionVisible(path + '/archive'), false);
+  }
+  for (const path of ['/sacred-architecture', '/sacred-mountains', '/challenge', '/challenge/archive', '/challenge/stats']) {
+    assert.equal(visibility.isSectionVisible(path), true);
+  }
+});

@@ -52,26 +52,15 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Saint Carlo Acutis's research</li>
-                  <li><strong>Marian Apparitions:</strong> Explore Marian pilgrimage sites and reported apparitions, with their individual histories and Church status</li>
-                  <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
                   <li><strong>Sacred Mountains:</strong> Journey to 15 biblical peaks where God met humanity - from Sinai to Calvary - with multi-voice audio tours and rich theological depth</li>
-                  <li><strong>Coming Soon:</strong> Sacred Architecture, Shrines of Saints</li>
+                  <li><strong>Sacred Architecture:</strong> Discover churches and basilicas, their history, design, and craftsmanship</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="font-bold text-[#6e3a6c] mb-2">Salvation History</h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Biblical Timeline:</strong> Journey through 12 key periods from Adam to the Church Age with audio narration, figure descriptions, and rich theological insights (based on Jeff Cavins' Bible Timeline framework)</li>
-                  <li><strong>Jesus in the Old Testament:</strong> 365 daily entries revealing how Christ appears throughout the Hebrew Scriptures - from Genesis to Malachi</li>
-                </ul>
-              </div>
+
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Daily Spiritual Tools</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Today's Promise:</strong> Daily Bible promises with audio readings of the Scripture verse</li>
                   <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
-                  <li><strong>Scripture Memory Coach:</strong> Master 77 essential Bible verses through proven memorization techniques and spaced repetition</li>
                 </ul>
               </div>
             </div>
@@ -88,8 +77,8 @@ export default function AboutPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>AI Narration:</strong> Natural, reverent voices bring stories to life (powered by Azure TTS)</li>
-                <li><strong>Google Street View:</strong> Stand on the actual Via Dolorosa where Jesus walked</li>
-                <li><strong>Prayer Mode:</strong> Full-screen immersive meditation with contemplative music</li>
+                
+                
                 <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
                 <li><strong>Catholic Learning:</strong> Explore Catholic Scripture, history, and devotional traditions. Divine Pilgrim and its AI-generated reflections do not have ecclesiastical approval; inclusion of a site does not imply Church recognition of an apparition.</li>
@@ -104,7 +93,7 @@ export default function AboutPage() {
             </h3>
             <div className="text-gray-700 space-y-3">
               <p>
-                Our Eucharistic Miracles pilgrimage is directly inspired by <strong>Saint Carlo Acutis</strong>,
+                Divine Pilgrim takes inspiration from <strong>Saint Carlo Acutis</strong>,
                 who before his death at age 15 in 2006, created a comprehensive exhibition documenting
                 Church-approved Eucharistic miracles worldwide. Carlo showed that technology and deep faith
                 can work together beautifully.
@@ -134,7 +123,6 @@ export default function AboutPage() {
                 {' '}— a groundbreaking system for understanding salvation history through 12 key periods
               </p>
               <p>
-                <strong>Eucharistic Miracles:</strong> Images courtesy of{' '}
                 <a
                   href="https://www.miracolieucaristici.org"
                   target="_blank"

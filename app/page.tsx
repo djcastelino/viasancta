@@ -10,6 +10,7 @@ import {
   MoveUpRight,
   Sparkles,
 } from "lucide-react";
+import { isSectionVisible, showTodaysPromise } from "./lib/sectionVisibility";
 import TodaysPromise from "./components/TodaysPromise";
 import HomeDailyHero from "./components/HomeDailyHero";
 import churches from "@/public/sacred-architecture.json";
@@ -90,14 +91,14 @@ export default function Home() {
         </p>
         <span>YOUR DAILY COMPANION IN FAITH</span>
       </div>
-      <TodaysPromise editorial />
+      {showTodaysPromise && <TodaysPromise editorial />}
       <section
         className="pilgrim-section"
         id="tours"
         aria-labelledby="journeys-title"
       >
         <div className="pilgrim-section-top">
-          <p className="pilgrim-eyebrow">02 / PLACES OF GRACE</p>
+          <p className="pilgrim-eyebrow">01 / PLACES OF GRACE</p>
           <span>VIRTUAL PILGRIMAGES · REAL MOMENTS OF REFLECTION</span>
         </div>
         <div className="pilgrim-section-heading">
@@ -112,9 +113,9 @@ export default function Home() {
           </p>
         </div>
         <div className="pilgrim-journeys">
-          {pilgrimages.map((item, i) => (
+          {pilgrimages.filter(item => isSectionVisible(item.href)).map((item) => (
             <Link
-              className={`pilgrim-journey ${i > 2 ? "pilgrim-journey-wide" : ""}`}
+              className="pilgrim-journey pilgrim-journey-wide"
               href={item.href}
               key={item.href}
             >
@@ -147,7 +148,7 @@ export default function Home() {
       >
         <div className="pilgrim-word-intro">
           <BookOpen size={45} strokeWidth={0.8} />
-          <p className="pilgrim-eyebrow">03 / GROW IN THE WORD</p>
+          <p className="pilgrim-eyebrow">02 / GROW IN THE WORD</p>
           <h2 id="word-title">
             A little each day.
             <br />
@@ -155,10 +156,10 @@ export default function Home() {
           </h2>
           <p>
             Make Scripture part of your everyday life. A question to ponder. A
-            verse to carry with you.
+            discovery to make through six clues.
           </p>
         </div>
-        <div className="pilgrim-word-tools">
+        <div className="pilgrim-word-tools pilgrim-word-tools-single">
           <Link href="/challenge" className="pilgrim-word-card">
             <span className="pilgrim-eyebrow">
               A FRESH CHALLENGE, EVERY DAY
@@ -176,6 +177,7 @@ export default function Home() {
               Explore today’s challenge <ArrowUpRight size={19} />
             </span>
           </Link>
+          {isSectionVisible("/memory-verses") && (
           <Link
             id="memory-verses"
             href="/memory-verses"
@@ -195,6 +197,7 @@ export default function Home() {
               Begin with a verse <ArrowUpRight size={19} />
             </span>
           </Link>
+          )}
         </div>
       </section>
       <section
@@ -203,7 +206,7 @@ export default function Home() {
         aria-labelledby="prayer-title"
       >
         <div className="pilgrim-section-top">
-          <p className="pilgrim-eyebrow">04 / STRENGTH FOR THE SOUL</p>
+          <p className="pilgrim-eyebrow">03 / STRENGTH FOR THE SOUL</p>
           <Heart size={22} strokeWidth={1} />
         </div>
         <div className="pilgrim-section-heading">
@@ -241,6 +244,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {isSectionVisible("/biblical-timeline") && isSectionVisible("/jesus-in-ot") && (
       <section
         className="pilgrim-history"
         id="salvation-history"
@@ -281,6 +285,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      )}
       <footer className="pilgrim-footer">
         <div className="pilgrim-footer-main">
           <div>
@@ -298,7 +303,7 @@ export default function Home() {
               Our story <ArrowUpRight size={14} />
             </Link>
             <Link href="/privacy">Privacy</Link>
-            <a href="#promise">Today’s Promise</a>
+            <Link href="/challenge">Daily Scripture Challenge</Link>
           </div>
         </div>
         <div className="pilgrim-footer-bottom">
