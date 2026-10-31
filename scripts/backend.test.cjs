@@ -282,3 +282,29 @@ test('paused sections stay out of public navigation while core collections remai
     assert.equal(visibility.isSectionVisible(path), true);
   }
 });
+
+test('discovery JSON has valid coordinates, canonical links and public-domain photo records', () => {
+ const places = require('../public/sacred-atlas.json');
+ const photos = require('../public/discovery-photos.json');
+ const guides = require('../public/architecture-guides.json');
+ const churches = require('../public/sacred-architecture.json');
+ const mountains = require('../public/sacred-mountains.json');
+ const ids = new Set(places.map(p => p.id));
+ assert.equal(ids.size, places.length);
+ for (const p of places) {
+   assert.ok(p.lat >= -90 && p.lat <= 90 && p.lng >= -180 && p.lng <= 180);
+   assert.ok((p.kind === 'architecture' ? churches : mountains).some(record => record.id === p.recordId));
+   if (p.image.startsWith('/')) assert.ok(fs.existsSync(path.join(root, 'public', p.image)));
+ }
+ for (const photo of photos) {
+   assert.ok(ids.has(photo.placeId));
+   assert.ok(['CC0', 'Public domain'].includes(photo.rights));
+   assert.ok(photo.author && photo.sourceUrl.startsWith('https://commons.wikimedia.org/wiki/File:'));
+   assert.ok(fs.existsSync(path.join(root, 'public', photo.src)));
+ }
+ for (const guide of guides) {
+   assert.ok(ids.has(guide.placeId));
+   assert.ok(photos.some(photo => photo.id === guide.photoId));
+   assert.ok(guide.source.url.startsWith('https://'));
+ }
+});

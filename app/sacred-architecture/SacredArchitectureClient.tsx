@@ -19,6 +19,10 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   const isPreviewMode = searchParams.get('preview') === 'true';
 
   const [selectedChurch, setSelectedChurch] = useState<any>(null);
+  useEffect(() => {
+    const id = searchParams.get('place');
+    if (id) setSelectedChurch(churches.find(church => String(church.id) === id) || null);
+  }, [searchParams, churches]);
   const todaysFeaturedChurch = useDailyArchitecture(churches);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);

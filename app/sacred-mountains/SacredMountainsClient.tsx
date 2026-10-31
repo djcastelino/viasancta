@@ -2,7 +2,7 @@
 import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
 import PilgrimageTile from '@/app/components/PilgrimageTile';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import mountainsData from '@/public/sacred-mountains.json';
 import * as sdk from 'microsoft-cognitiveservices-speech-sdk';
 import SourceLinks from '@/app/components/SourceLinks';
@@ -29,6 +29,10 @@ interface Mountain {
 
 export default function SacredMountainsClient() {
   const [selectedMountain, setSelectedMountain] = useState<Mountain | null>(null);
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get('place');
+    if (id) setSelectedMountain(mountainsData.find(mountain => String(mountain.id) === id) as Mountain || null);
+  }, []);
   const [isPlayingSection, setIsPlayingSection] = useState<string | null>(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);

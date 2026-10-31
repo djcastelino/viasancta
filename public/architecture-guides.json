@@ -1,0 +1,38 @@
+[
+  {
+    "id": "domes",
+    "title": "Domes",
+    "eyebrow": "Look upward",
+    "photoId": "st-peters",
+    "intro": "A dome creates a curved covering above an interior space. Look for its ribs, windows and the lantern at its summit.",
+    "example": "At St. Peter\u2019s, Michelangelo designed the dome; Giacomo della Porta and Domenico Fontana brought it to completion. Its two shells enclose a cavity.",
+    "notice": [
+      "Trace the curve upward.",
+      "Find the windows around the base.",
+      "Notice where the dome meets its supports."
+    ],
+    "placeId": "architecture-1",
+    "source": {
+      "title": "Saint Peter\u2019s Basilica \u2014 The Dome",
+      "url": "https://www.basilicasanpietro.va/en/san-pietro/the-dome"
+    }
+  },
+  {
+    "id": "arches",
+    "title": "Arches",
+    "eyebrow": "Follow the shape",
+    "photoId": "cologne",
+    "intro": "Look for curved and pointed openings around doors and windows. Pointed arches are a characteristic feature of Gothic architecture.",
+    "example": "In Gothic buildings, arches work alongside vaults and buttresses. Notice how the repeated shapes draw your eye through a building.",
+    "notice": [
+      "Find a pointed opening.",
+      "Compare the outlines of doors and windows.",
+      "Look for repeating patterns."
+    ],
+    "placeId": "architecture-4",
+    "source": {
+      "title": "Victoria and Albert Museum \u2014 The Gothic style",
+      "url": "https://www.vam.ac.uk/articles/the-gothic-style-an-introduction"
+    }
+  }
+]
