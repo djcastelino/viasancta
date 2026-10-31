@@ -1,6 +1,9 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import churches from '@/public/sacred-architecture.json';
+import { useDailyArchitecture, architectureHeroImage } from '@/app/lib/useDailyArchitecture';
+import JourneyHeroImage from '@/app/components/JourneyHeroImage';
 import { useEffect, useState } from 'react';
 import places from '@/public/sacred-atlas.json';
 import photos from '@/public/discovery-photos.json';
@@ -9,6 +12,7 @@ import { dailyChallengeIndex, watchLocalDay } from '@/app/lib/localCalendar';
 import './discovery.css';
 const views = { World: [0, 0, 1000, 500], Europe: [460, 55, 170, 115], 'Holy Land': [570, 145, 52, 42] };
 export default function Discovery({ isPreview = true }: { isPreview?: boolean }) {
+ const church = useDailyArchitecture(churches);
  const [selected, setSelected] = useState(places[0]);
  const [category, setCategory] = useState('all');
  const [query, setQuery] = useState('');
@@ -33,7 +37,12 @@ export default function Discovery({ isPreview = true }: { isPreview?: boolean })
  const [vx,vy,vw,vh] = views[view];
  return <div className="discovery">
   {isPreview && <div className="discovery-note">WORKING PREVIEW · Your live site is unchanged</div>}
-  <header className="discovery-hero" style={{backgroundImage:"linear-gradient(90deg,#161b20d9,#161b2030),url('/images/home/basilica.webp')"}}><p className="pilgrim-eyebrow">A PILGRIMAGE BEGINS WITH WONDER</p><h1>Sacred places.<br/><em>Timeless stories.</em></h1><p>Discover sacred architecture, the landscapes of Scripture, and a little wonder each day.</p><a href="#atlas" className="pilgrim-button pilgrim-button-gold">Explore the sacred world ↗</a><span className="discovery-image-note">Existing illustrative artwork</span></header>
+  <header className="discovery-hero">
+   {church && <JourneyHeroImage key={church.name} className="discovery-hero-art" src={architectureHeroImage(church)} alt={`${church.name} — ${church.location.city}, ${church.location.country}`} fallback="/images/home/architecture.webp"/>}
+   <div className="discovery-hero-shade"/>
+   <div className="discovery-hero-copy"><p className="pilgrim-eyebrow">A PILGRIMAGE BEGINS WITH WONDER</p><h1>Sacred places.<br/><em>Timeless stories.</em></h1><p>Discover sacred architecture, the landscapes of Scripture, and a little wonder each day.</p><a href="#atlas" className="pilgrim-button pilgrim-button-gold">Explore the sacred world ↗</a>
+   <div className="discovery-daily-place"><span>ARCHITECTURE OF THE DAY</span><Link href={church ? `/sacred-architecture?place=${church.id}` : '/sacred-architecture'}>{church?.name || 'Opening today’s sacred space…'}</Link>{church && <span>{church.location.city}, {church.location.country}</span>}<small>Existing collection illustration</small></div></div>
+  </header>
   <section className="discovery-section"><p className="pilgrim-eyebrow">01 / FOLLOW YOUR CURIOSITY</p><h2>Where will your<br/><em>pilgrimage take you?</em></h2><div className="discovery-categories"><Link href="/sacred-architecture" style={{backgroundImage:"linear-gradient(0deg,#171919e0,transparent),url('/images/home/architecture.webp')"}}><small>FAITH, BUILT IN STONE</small><h3>Sacred architecture ↗</h3><p>Explore your existing church and basilica journeys.</p></Link><Link href="/sacred-mountains" style={{backgroundImage:"linear-gradient(0deg,#171919e0,transparent),url('/images/home/beatitudes.webp')"}}><small>LANDSCAPES OF SCRIPTURE</small><h3>Sacred mountains ↗</h3><p>Discover the mountains woven through biblical accounts.</p></Link></div></section>
   <section className="discovery-section discovery-atlas" id="atlas"><p className="pilgrim-eyebrow">02 / A WORLD OF SACRED PLACES</p><h2>Near or far,<br/><em>there is wonder.</em></h2><div className="discovery-filters"><label>Collection<select value={category} onChange={e=>setCategory(e.target.value)}><option value="all">All sacred places</option><option value="architecture">Architecture</option><option value="mountain">Mountains</option></select></label><label>Find a place<input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Name or location"/></label><label>Map view<select value={view} onChange={e=>setView(e.target.value as keyof typeof views)}>{Object.keys(views).map(v=><option key={v}>{v}</option>)}</select></label></div>
   <div className="discovery-atlas-layout"><div><svg viewBox={`${vx} ${vy} ${vw} ${vh}`} role="img" aria-label="Sacred places world map. Select a marker or choose a place below."><image href="/world-land.svg" width="1000" height="500"/>{filtered.map(p=><a key={p.id} href="#atlas-detail" aria-label={`Select ${p.name}`} onClick={e=>{e.preventDefault();setSelected(p);}}><circle cx={(p.lng+180)/360*1000} cy={(90-p.lat)/180*500} r={(p.id===selected.id?6:4)*vw/1000} className={p.id===selected.id?'selected':''}><title>{p.name}</title></circle></a>)}</svg><label className="discovery-place-picker">Choose a place ({filtered.length})<select value={filtered.some(p=>p.id===selected.id)?selected.id:''} onChange={e=>{const p=places.find(p=>p.id===e.target.value);if(p)setSelected(p);}}><option value="" disabled>Select a place</option>{filtered.map(p=><option key={p.id} value={p.id}>{p.name} — {p.location}</option>)}</select></label>{!filtered.length&&<p role="status">No places match. Try a different name or collection.</p>}<p className="discovery-small">Locations come from the existing collection. Biblical-site identifications may be traditional. Map: Natural Earth / world-atlas.</p></div>
