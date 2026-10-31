@@ -1,3 +1,4 @@
+import { isSectionVisible } from "@/app/lib/sectionVisibility";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, BookOpen } from "lucide-react";
 export function ScriptureHeader({
@@ -42,12 +43,14 @@ export function ScriptureHeader({
         >
           <span>01</span> Daily Scripture Challenge <ArrowUpRight size={15} />
         </Link>
+        {isSectionVisible("/memory-verses") && (
         <Link
           href="/memory-verses"
           aria-current={active === "memory" ? "page" : undefined}
         >
           <span>02</span> Scripture Memory Coach <ArrowUpRight size={15} />
         </Link>
+        )}
       </nav>
     </>
   );

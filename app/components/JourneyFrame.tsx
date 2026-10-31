@@ -1,5 +1,6 @@
 /* Existing local artwork is pre-optimized for the collection openings. */
 /* eslint-disable @next/next/no-img-element */
+import { isSectionVisible } from "@/app/lib/sectionVisibility";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowUpRight, Cross, Headphones } from "lucide-react";
@@ -132,7 +133,7 @@ export function JourneyHero({ kind, featured }: { kind: JourneyKind; featured?: 
         className="journey-collections"
         aria-label="Sacred journey collections"
       >
-        {Object.entries(journeys).map(([key, value]) => (
+        {Object.entries(journeys).filter(([, value]) => isSectionVisible(value.href)).map(([key, value]) => (
           <Link
             key={key}
             href={value.href}

@@ -1239,3 +1239,6 @@
   font: 600 12px/1.3 Arial, sans-serif;
   letter-spacing: 0.4px;
 }
+
+/* The focused homepage keeps one Scripture tool without an empty grid cell. */
+.pilgrim-word-tools-single { grid-template-columns: 1fr; }
