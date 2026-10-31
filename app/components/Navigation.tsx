@@ -6,7 +6,7 @@ import { Cross, Menu, X, ArrowUpRight } from "lucide-react";
 import SettingsMenu from "./SettingsMenu";
 const links = [
   ["/", "Home"],
-  ["/discover", "Discovery preview"],
+  ["/discover", "Discover"],
   ["/#tours", "Pilgrimages"],
   ["/#challenge", "Scripture"],
   ["/#spiritual-warfare", "Prayer"],
