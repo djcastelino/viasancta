@@ -295,6 +295,15 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
 
             {/* Content */}
             <div className="p-6 space-y-6">
+              <div className="rounded-xl border border-[#D4AF37]/40 bg-[#faf7ed] p-4">
+                <h3 className="font-bold text-[#2C5F87] mb-2">Church Status</h3>
+                <p className="text-gray-700">{selectedApparition.churchApproval}</p>
+                {selectedApparition.statusSource && (
+                  <a className="inline-block mt-2 text-[#2C5F87] underline" href={selectedApparition.statusSource.url} target="_blank" rel="noopener noreferrer">
+                    {selectedApparition.statusSource.title}
+                  </a>
+                )}
+              </div>
               {/* Buttons */}
               <div className="flex gap-4">
                 <button
@@ -346,17 +355,12 @@ export default function MarianApparitionsClient({ apparitions, countries }: Mari
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-[#2C5F87] mb-2">Miracles & Signs</h3>
+                  <h3 className="text-xl font-bold text-[#2C5F87] mb-2">Reported Signs & Spiritual Fruits</h3>
                   <ul className="list-disc pl-6 text-gray-700 space-y-1">
                     {selectedApparition.miracles.map((miracle: string, i: number) => (
                       <li key={i}>{miracle}</li>
                     ))}
                   </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-[#2C5F87] mb-2">Church Approval</h3>
-                  <p className="text-gray-700">{selectedApparition.churchApproval}</p>
                 </div>
 
                 <div>
