@@ -1,18 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { apiError, generateText, object, readInput, required } from '@/app/lib/ai';
-import prompts from '@/app/lib/prompts.json';
+import { apiError, object, readInput, ServiceError } from '@/app/lib/ai';
+import promises from '@/src/daily-promises.json';
 
-export const maxDuration = 60;
-
+// Compatibility for older clients: Scripture only, with no AI generation.
 export async function POST(request: NextRequest) {
   try {
     const body = await readInput(request);
     const data = object(body.promise);
-    required(data, 'verse');
-    required(data, 'reference');
-    const prompt = prompts.promise;
-    const text = await generateText(prompt.system,
-      prompt.prompt + '\n\nSUPPLIED DATA:\n' + JSON.stringify(body), 500);
-    return NextResponse.json({ script: text });
+    const promise = promises.find(entry => data.id !== undefined
+      ? entry.id === data.id
+      : entry.reference === data.reference && entry.verse === data.verse);
+    if (!promise) throw new ServiceError('This Scripture entry is unavailable. Please refresh the page.', 404);
+    return NextResponse.json({ script: `${promise.verse} ${promise.reference}.` });
   } catch (error) { return apiError(error); }
 }

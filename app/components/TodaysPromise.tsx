@@ -163,28 +163,9 @@ export default function TodaysPromise({ editorial = false }: { editorial?: boole
 
     try {
       setLoadingAudio(true);
-      setLoadingMessage('Generating narration...');
-      console.log('🎙️ Generating promise narration script...');
-
-      // Call the promise narration API to get the script text
-      const response = await fetch('/api/promise-narration', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ promise }),
-      });
-
-      if (!response.ok) {
-        const problem = await response.json().catch(() => ({}));
-        throw new Error(problem.error || `Request failed (${response.status}).`);
-      }
-
-      const data = await response.json();
-      const script = data.script;
-      console.log('✅ Received narration script from API');
-
-      setLoadingMessage('Creating audio...');
+      setLoadingMessage('Creating Scripture audio...');
+      // Read the displayed Scripture directly; no generated reflection.
+      const script = `${promise.verse} ${promise.reference}.`;
 
       // Select voice based on promise ID (rotate through 4 voices)
       const voices = [
@@ -261,7 +242,7 @@ export default function TodaysPromise({ editorial = false }: { editorial?: boole
   if (editorial) return (
     <section id="promise" className="pilgrim-promise" aria-labelledby="promise-title">
       <div className="pilgrim-promise-intro"><p className="pilgrim-eyebrow">01 / A WORD FOR YOUR DAY</p><h2 id="promise-title">Today’s<br /><em>Promise.</em></h2><p>A moment to pause.<br />A promise to hold close.</p><span className="pilgrim-promise-cross" aria-hidden="true">✝</span></div>
-      <div className="pilgrim-promise-word"><span className="pilgrim-quote-mark" aria-hidden="true">“</span><blockquote>{promise.verse}</blockquote><p className="pilgrim-verse-reference">{promise.reference}</p><div className="pilgrim-promise-listen">{error && <p className="pilgrim-audio-error" role="alert">{error}</p>}<button className="pilgrim-button pilgrim-button-plum" onClick={isPlayingAudio ? handleStop : handlePlayNarration} disabled={loadingAudio}>{loadingAudio ? loadingMessage : isPlayingAudio ? 'Stop reflection' : 'Listen to reflection'}<span aria-hidden="true">{isPlayingAudio ? '■' : '↗'}</span></button><span>A GUIDED MOMENT OF REFLECTION</span></div></div>
+      <div className="pilgrim-promise-word"><span className="pilgrim-quote-mark" aria-hidden="true">“</span><blockquote>{promise.verse}</blockquote><p className="pilgrim-verse-reference">{promise.reference}</p><div className="pilgrim-promise-listen">{error && <p className="pilgrim-audio-error" role="alert">{error}</p>}<button className="pilgrim-button pilgrim-button-plum" onClick={isPlayingAudio ? handleStop : handlePlayNarration} disabled={loadingAudio}>{loadingAudio ? loadingMessage : isPlayingAudio ? 'Stop Scripture audio' : 'Listen to Scripture'}<span aria-hidden="true">{isPlayingAudio ? '■' : '↗'}</span></button><span>THE SCRIPTURE VERSE, READ ALOUD</span></div></div>
     </section>
   );
 
@@ -302,7 +283,7 @@ export default function TodaysPromise({ editorial = false }: { editorial?: boole
                   onClick={handlePlayNarration}
                   className="bg-[#6e3a6c] hover:bg-[#8B4789] text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all duration-300 transform hover:scale-105"
                 >
-                  Listen to Reflection
+                  Listen to Scripture
                 </button>
               )}
 

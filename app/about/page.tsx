@@ -69,7 +69,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Daily Spiritual Tools</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Today's Promise:</strong> Daily Bible promises with AI-generated reflections and audio narration</li>
+                  <li><strong>Today's Promise:</strong> Daily Bible promises with audio readings of the Scripture verse</li>
                   <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
                   <li><strong>Scripture Memory Coach:</strong> Master 77 essential Bible verses through proven memorization techniques and spaced repetition</li>
                 </ul>
