@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'About Divine Pilgrim',
-  description: 'Learn about Divine Pilgrim - AI-guided Catholic virtual pilgrimages, daily spiritual tools, and immersive sacred experiences.',
+  description: 'Discover Divine Pilgrim: sacred architecture, biblical mountains, and the daily six-clue Scripture challenge.',
 }
 
 export default function AboutPage() {
@@ -29,16 +29,14 @@ export default function AboutPage() {
             </h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Divine Pilgrim is an <strong>AI-guided Catholic pilgrimage platform</strong> that brings
-                sacred sites and spiritual practices into your daily life. Whether you're seeking a
-                contemplative walk through Jerusalem, daily encouragement from Scripture, or to witness
-                miraculous evidence of Christ's presence, Divine Pilgrim offers immersive experiences
-                that deepen faith and inspire wonder.
+                Divine Pilgrim is a <strong>Catholic discovery and learning project</strong>.
+                Explore sacred architecture, discover the mountains woven through Scripture,
+                and grow your biblical knowledge with a daily six-clue challenge.
               </p>
               <p>
-                We believe technology can be a powerful tool for evangelization and spiritual growth.
-                By combining AI narration, Google Street View, contemplative music, and carefully curated
-                Catholic content, we create virtual pilgrimages that feel real, reverent, and transformative.
+                Created as a personal project and shared with the public, Divine Pilgrim combines
+                images, audio journeys, and interactive learning to encourage curiosity about
+                sacred places and Scripture.
               </p>
             </div>
           </section>
@@ -52,7 +50,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Sacred Mountains:</strong> Journey to 15 biblical peaks where God met humanity - from Sinai to Calvary - with multi-voice audio tours and rich theological depth</li>
+                  <li><strong>Sacred Mountains:</strong> Explore biblical mountains, their landscapes, and the Scripture accounts associated with them, with audio journeys</li>
                   <li><strong>Sacred Architecture:</strong> Discover churches and basilicas, their history, design, and craftsmanship</li>
                 </ul>
               </div>
@@ -60,7 +58,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Daily Spiritual Tools</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Daily Scripture Challenge:</strong> Test your biblical knowledge with daily 6-clue guessing games</li>
+                  <li><strong>Daily Scripture Challenge:</strong> Discover one biblical figure each day through six clues, with 365 challenges, an archive, and “Did you know?” fun facts after the answer</li>
                 </ul>
               </div>
             </div>
@@ -73,34 +71,14 @@ export default function AboutPage() {
             </h2>
             <div className="text-gray-700 space-y-4">
               <p>
-                Divine Pilgrim uses cutting-edge technology to create deeply spiritual experiences:
+                Technology supports exploration and learning through these features:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>AI Narration:</strong> Natural, reverent voices bring stories to life (powered by Azure TTS)</li>
-                
-                
+                <li><strong>Audio:</strong> Synthetic voices read journey narrations and Scripture quiz fun facts (powered by Azure Speech)</li>
                 <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
-                <li><strong>Catholic Learning:</strong> Explore Catholic Scripture, history, and devotional traditions. Divine Pilgrim and its AI-generated reflections do not have ecclesiastical approval; inclusion of a site does not imply Church recognition of an apparition.</li>
+                <li><strong>AI Assistance:</strong> AI assists with some journey explanations and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
               </ul>
-            </div>
-          </section>
-
-          {/* Inspired by Blessed Carlo */}
-          <section className="bg-gradient-to-r from-[#f5f5f0] to-[#e8e8f5] rounded-2xl p-6">
-            <h3 className="text-xl font-serif text-[#2C5F87] mb-3">
-              Inspired by Saint Carlo Acutis
-            </h3>
-            <div className="text-gray-700 space-y-3">
-              <p>
-                Divine Pilgrim takes inspiration from <strong>Saint Carlo Acutis</strong>,
-                who before his death at age 15 in 2006, created a comprehensive exhibition documenting
-                Church-approved Eucharistic miracles worldwide. Carlo showed that technology and deep faith
-                can work together beautifully.
-              </p>
-              <p className="italic">
-                "The Eucharist is my highway to Heaven." — Saint Carlo Acutis
-              </p>
             </div>
           </section>
 
@@ -110,32 +88,9 @@ export default function AboutPage() {
               Credits & Attribution
             </h2>
             <div className="text-gray-700 space-y-3 text-sm">
-              <p>
-                <strong>Biblical Timeline:</strong> Structure and framework inspired by{' '}
-                <a
-                  href="https://biblestudyforcatholics.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline font-semibold"
-                >
-                  Jeff Cavins' The Great Adventure Bible Timeline
-                </a>
-                {' '}— a groundbreaking system for understanding salvation history through 12 key periods
-              </p>
-              <p>
-                <a
-                  href="https://www.miracolieucaristici.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline font-semibold"
-                >
-                  miracolieucaristici.org
-                </a>
-                {' '}free downloadable web panels. Exhibition created by Saint Carlo Acutis.
-              </p>
-              <p>
-                <strong>Street View:</strong> Via Dolorosa imagery powered by Google Maps Street View
-              </p>
+
+
+
               <p>
                 <strong>Background Music:</strong> Contemplative music by{' '}
                 <a
@@ -156,30 +111,8 @@ export default function AboutPage() {
                   Creative Commons: By Attribution 4.0 License
                 </a>
               </p>
-              <p>
-                <strong>Eucharistic Miracles Music:</strong> "I Am the Bread of Life" by{' '}
-                <a
-                  href="https://sites.google.com/view/serafiremusic/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline font-semibold"
-                >
-                  SeraFire Christian Music
-                </a>
-                {' '}— Eucharistic hymn background for miracle narrations
-              </p>
-              <p>
-                <strong>Marian Apparitions Music:</strong> "Hail Mary Gentle Woman" by{' '}
-                <a
-                  href="https://sites.google.com/view/serafiremusic/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#D4AF37] hover:underline font-semibold"
-                >
-                  SeraFire Music
-                </a>
-                {' '}— beautiful instrumental music for Marian devotion
-              </p>
+
+
               <p>
                 <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by the teaching of{' '}
                 <a
@@ -328,7 +261,7 @@ export default function AboutPage() {
               href="/"
               className="inline-block bg-[#D4AF37] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#c49d2f] transition-colors"
             >
-              ← Back to Tours
+              ← Back to Divine Pilgrim
             </Link>
           </div>
         </div>
