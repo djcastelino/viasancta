@@ -650,45 +650,6 @@
     ]
   },
   {
-    "id": 18,
-    "name": "Our Lady of All Nations",
-    "location": {
-      "city": "Amsterdam",
-      "country": "Netherlands",
-      "shrine": "Chapel of Our Lady of All Nations"
-    },
-    "year": "1945-1959",
-    "visionaries": [
-      "Ida Peerdeman"
-    ],
-    "apparitionCount": 56,
-    "keyMessages": [
-      "I am the Lady of All Nations",
-      "Who once was Mary",
-      "Pray for true unity of Church",
-      "New dogma: Mary as Co-Redemptrix, Mediatrix, Advocate"
-    ],
-    "miracles": [
-      "56 apparitions over 14 years",
-      "Prophesied Second Vatican Council before announcement",
-      "Accurate prophecies about Church and world events",
-      "Healing spring water produces documented cures",
-      "Millions pray approved prayer worldwide"
-    ],
-    "churchApproval": "Bishop Jozef Marianus Punt approved May 31, 2002 (after 43-year investigation)",
-    "historicalContext": "Netherlands 1945-1959 - Post-WWII, Cold War, pre-Vatican II Church",
-    "shrine": "Chapel in Amsterdam, prayer spread to 90+ countries",
-    "story": "From March 25, 1945 to May 31, 1959, Mary appeared 56 times to Ida Peerdeman in Amsterdam. She called herself 'Lady of All Nations, who once was Mary' and requested a new dogma proclaiming her as Co-Redemptrix, Mediatrix, and Advocate. Mary prophesied the Second Vatican Council years before it was announced and gave detailed messages about Church unity. After a thorough 43-year investigation, Bishop Punt approved the apparitions in 2002. The prayer Mary taught is now prayed in over 90 countries.",
-    "coordinates": {
-      "lat": 52.3676,
-      "lng": 4.9041
-    },
-    "images": [
-      "/images/marian apparitions/nations.png",
-      "/images/apparitions/amsterdam.jpg"
-    ]
-  },
-  {
     "id": 19,
     "name": "Our Lady of Zeitoun",
     "location": {
@@ -738,27 +699,21 @@
     },
     "year": "1981-present",
     "visionaries": [
-      "Six visionaries - still receiving messages"
+      "Six people who reported apparitions beginning in 1981"
     ],
-    "apparitionCount": "Daily since 1981 (ongoing)",
+    "apparitionCount": "Reports beginning in 1981; supernatural origin not established",
     "keyMessages": [
-      "I am the Queen of Peace",
-      "Pray for peace, fast, convert",
-      "Pray the Rosary daily",
-      "Monthly confession, Eucharist, Bible reading"
+      "Prayer, conversion, and peace are themes associated with the reported messages",
+      "The Vatican distinguishes spiritual fruits from the authenticity of alleged apparitions"
     ],
     "miracles": [
-      "Daily apparitions for 43+ years and ongoing",
-      "10 secrets about future events given to visionaries",
-      "Sun miracles witnessed by millions",
-      "Countless conversions and healings documented",
-      "40+ million pilgrims since 1981",
-      "Visionaries show no signs of deception in medical tests"
+      "The Vatican recognizes positive spiritual fruits associated with Medjugorje",
+      "These fruits do not establish the supernatural origin of the alleged apparitions"
     ],
-    "churchApproval": "Vatican permits pilgrimages (2019), final verdict pending. Local bishop skeptical, but Pope Francis allowed pastoral care",
+    "churchApproval": "In September 2024, the Dicastery for the Doctrine of the Faith granted a nihil obstat for the spiritual experience connected with Medjugorje. This permits public devotion but does not declare the alleged apparitions supernatural.",
     "historicalContext": "Bosnia 1981-present - Communist Yugoslavia, then Bosnian War (1992-95), now post-war healing",
     "shrine": "St. James Church in Medjugorje, one of most visited pilgrimage sites in world",
-    "story": "On June 24, 1981, six teenagers saw a luminous woman holding a baby on Apparition Hill near Medjugorje. She identified herself as 'Queen of Peace' and has appeared daily since then - over 43 years and counting. Each visionary has been given 10 secrets about future Church and world events. Despite initial communist persecution and later war, Medjugorje has become one of Christianity's most visited sites with 40+ million pilgrims. The Vatican permits organized pilgrimages while investigation continues. Dramatic conversions and documented healings number in the thousands.",
+    "story": "In 1981, six people reported Marian apparitions near Medjugorje in Bosnia and Herzegovina. The town became a place of pilgrimage, prayer, and sacramental life. In its September 2024 note, The Queen of Peace, the Dicastery for the Doctrine of the Faith recognized positive spiritual fruits and granted a nihil obstat for the associated spiritual experience. This permission for devotion does not establish the supernatural origin of the alleged apparitions. Pilgrims are encouraged to seek an encounter with Christ through prayer and the sacraments.",
     "coordinates": {
       "lat": 43.1942,
       "lng": 17.6769
@@ -766,7 +721,11 @@
     "images": [
       "/images/marian apparitions/medjugorje.png",
       "/images/apparitions/medjugorje.jpg"
-    ]
+    ],
+    "statusSource": {
+      "title": "Vatican note: The Queen of Peace (19 September 2024)",
+      "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/09/19/240919d.html"
+    }
   },
   {
     "id": 21,

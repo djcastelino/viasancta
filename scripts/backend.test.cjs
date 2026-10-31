@@ -70,6 +70,23 @@ test('all narration endpoints reject missing input rather than return fake succe
     assert.equal(result.status, 400, endpoint);
   }
 });
+test('Marian narration rejects the removed Amsterdam entry and ignores stale client claims', async () => {
+  process.env.GROQ_API_KEY = 'test-key';
+  const post = load('app/api/marian-apparition-narration/route.ts').POST;
+  let calls = 0;
+  global.fetch = async (url, options) => {
+    calls++;
+    const prompt = JSON.parse(options.body).messages[1].content;
+    assert.match(prompt, /does not declare the alleged apparitions supernatural/);
+    assert.doesNotMatch(prompt, /final verdict pending|client fabricated approval/);
+    return completion('A complete narration.');
+  };
+  assert.equal((await post(request({ apparition: { id: 18, name: 'Our Lady of All Nations' } }))).status, 404);
+  assert.equal((await post(request({ apparition: { name: 'Our Lady of All Nations' } }))).status, 404);
+  assert.equal(calls, 0);
+  assert.equal((await post(request({ apparition: { id: 20, name: 'Our Lady of Medjugorje', churchApproval: 'client fabricated approval', story: 'final verdict pending' } }))).status, 200);
+  assert.equal(calls, 1);
+});
 test('JSON parsing and payload size failures are 400 and 413', async () => {
   await assert.rejects(ai.readInput(new NextRequest('http://localhost', { method: 'POST', body: '{' })), error => error.status === 400);
   await assert.rejects(ai.readInput(request({ text: 'x'.repeat(65000) })), error => error.status === 413);

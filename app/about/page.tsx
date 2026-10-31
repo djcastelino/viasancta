@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <h3 className="font-bold text-[#6e3a6c] mb-2">Sacred Pilgrimages</h3>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Eucharistic Miracles:</strong> Journey through 136 documented miracles worldwide, based on Saint Carlo Acutis's research</li>
-                  <li><strong>Marian Apparitions:</strong> Visit 20 Church-approved apparition sites worldwide with AI-guided narrations and immersive experiences</li>
+                  <li><strong>Marian Apparitions:</strong> Explore Marian pilgrimage sites and reported apparitions, with their individual histories and Church status</li>
                   <li><strong>Stations of the Cross:</strong> Walk the actual Via Dolorosa in Jerusalem with Google Street View, immersive Prayer Mode, and audio meditations</li>
                   <li><strong>Sacred Mountains:</strong> Journey to 15 biblical peaks where God met humanity - from Sinai to Calvary - with multi-voice audio tours and rich theological depth</li>
                   <li><strong>Coming Soon:</strong> Sacred Architecture, Shrines of Saints</li>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <li><strong>Prayer Mode:</strong> Full-screen immersive meditation with contemplative music</li>
                 <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
-                <li><strong>Church-Approved Content:</strong> All spiritual content is based on Catholic teaching and approved sources</li>
+                <li><strong>Catholic Learning:</strong> Explore Catholic Scripture, history, and devotional traditions. Divine Pilgrim and its AI-generated reflections do not have ecclesiastical approval; inclusion of a site does not imply Church recognition of an apparition.</li>
               </ul>
             </div>
           </section>
