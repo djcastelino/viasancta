@@ -38,10 +38,9 @@ afterEach(() => {
 const completion = content => Response.json({ choices: [{ finish_reason: 'stop', message: { content } }] });
 const request = body => new NextRequest('http://localhost/api/test', { method: 'POST', body: JSON.stringify(body), headers: { 'Content-Type': 'application/json' } });
 
-test('all six migrated endpoints preserve their response fields and supplied context', async () => {
+test('generated narration endpoints preserve their response fields and supplied context', async () => {
   process.env.GROQ_API_KEY = 'test-key';
   const examples = [
-    ['promise-narration', { promise: { verse: 'Seek me with all your heart.', reference: 'Jeremiah 29:13' } }, 'script'],
     ['challenge-trivia', { challenge: { name: 'Moses', books: ['Exodus'] } }, 'trivia'],
     ['jesus-ot-reflection', { entry: { title: 'The first promise', otReference: 'Genesis 3:15' } }, 'reflectionText'],
     ['marian-apparition-narration', { apparition: { name: 'Our Lady of Lourdes' } }, 'narrationText'],
@@ -65,7 +64,7 @@ test('all six migrated endpoints preserve their response fields and supplied con
   }
 });
 test('all narration endpoints reject missing input rather than return fake success', async () => {
-  for (const endpoint of ['promise-narration', 'challenge-trivia', 'jesus-ot-reflection', 'marian-apparition-narration', 'memory-verse-coach', 'narration']) {
+  for (const endpoint of ['challenge-trivia', 'jesus-ot-reflection', 'marian-apparition-narration', 'memory-verse-coach', 'narration']) {
     const result = await load(`app/api/${endpoint}/route.ts`).POST(request({}));
     assert.equal(result.status, 400, endpoint);
   }
@@ -93,8 +92,8 @@ test('JSON parsing and payload size failures are 400 and 413', async () => {
 });
 test('configuration errors are actionable and upstream secrets are not reflected', async () => {
   delete process.env.GROQ_API_KEY;
-  const post = load('app/api/promise-narration/route.ts').POST;
-  const body = { promise: { verse: 'Jesus wept.', reference: 'John 11:35' } };
+  const post = load('app/api/challenge-trivia/route.ts').POST;
+  const body = { challenge: { name: 'Moses' } };
   assert.equal((await post(request(body))).status, 503);
   process.env.GROQ_API_KEY = 'test-key';
   global.fetch = async () => new Response('upstream private details', { status: 401 });
@@ -256,4 +255,18 @@ test('day watcher refreshes an open or resumed page and removes timers/listeners
     cleanup();assert.equal(timeouts.size,0);assert.equal(intervals.size,0);assert.equal(listeners.size,0);
     assert.equal(localDateKey(new RealDate(now)),'2026-10-30');
   } finally {Object.assign(global,originals);}
+});
+
+// Keep the legacy endpoint safe for visitors with an older page open.
+test('Today’s Promise reads only canonical Scripture without calling an AI provider', async () => {
+  delete process.env.GROQ_API_KEY;
+  global.fetch = async () => { throw new Error('No provider call expected'); };
+  const promise = require('../src/daily-promises.json')[0];
+  const post = load('app/api/promise-narration/route.ts').POST;
+  for (const input of [{ id: promise.id, verse: 'Injected reflection', reference: 'Wrong reference' }, { verse: promise.verse, reference: promise.reference }]) {
+    const response = await post(request({ promise: input }));
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), { script: `${promise.verse} ${promise.reference}.` });
+  }
+  assert.equal((await post(request({ promise: { id: -1, verse: 'Unlisted verse', reference: 'Unknown' } }))).status, 404);
 });
