@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cologne",
+    "src": "/images/discovery/cologne.webp",
+    "placeId": "architecture-4",
+    "caption": "Cologne Cathedral as viewed from the Northeast, 2025",
+    "author": "Julian Lupyan",
+    "rights": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cologne_Cathedral_from_the_Northeast.jpg",
+    "rightsUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "checkedOn": "2026-10-31",
+    "modifications": "Resized and converted to WebP"
+  },
+  {
+    "id": "st-peters",
+    "src": "/images/discovery/st-peters.webp",
+    "placeId": "architecture-1",
+    "caption": "Dome of St. Peter\u2019s Basilica",
+    "author": "RoyFocker",
+    "rights": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ST_Peter_Cupula.jpg",
+    "rightsUrl": "https://commons.wikimedia.org/wiki/File:ST_Peter_Cupula.jpg",
+    "checkedOn": "2026-10-31",
+    "modifications": "Resized and converted to WebP"
+  }
+]

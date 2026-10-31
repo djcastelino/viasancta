@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import discoveryPhotos from '@/public/discovery-photos.json';
 
 export const metadata = {
   title: 'About Divine Pilgrim',
@@ -80,6 +81,19 @@ export default function AboutPage() {
                 <li><strong>AI Assistance:</strong> AI assists with some journey explanations and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
               </ul>
             </div>
+          </section>
+
+          <section id="photo-credits" className="border-t pt-8 scroll-mt-24">
+            <h2 className="text-2xl font-serif text-[#2C5F87] mb-4">Photo Credits &amp; Sources</h2>
+            <p className="text-gray-700 mb-4">Real photographs used in the Discovery preview. Existing collection illustrations are identified separately.</p>
+            <ul className="space-y-4 text-sm text-gray-700">
+              {discoveryPhotos.map(photo => <li key={photo.id}>
+                <strong>{photo.caption}</strong> — {photo.author} · {photo.rights}.{' '}
+                <a className="underline" href={photo.sourceUrl} target="_blank" rel="noopener noreferrer">Source and public-domain record</a>.{' '}
+                {photo.modifications}. Record checked {photo.checkedOn}.
+              </li>)}
+              <li>Map outline: Natural Earth, public-domain map data, distributed through world-atlas.</li>
+            </ul>
           </section>
 
           {/* Credits */}
