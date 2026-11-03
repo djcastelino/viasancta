@@ -338,15 +338,15 @@ test('Scripture rotation follows local dates continuously through midnight, DST,
       process.env.TZ=zone;
       const ids=[];
       for(let day=0;day<365;day++) {
-        const am=new Date(2026,10,2+day,0,0,1),pm=new Date(2026,10,2+day,23,59,59);
+        const am=new Date(2026,10,3+day,0,0,1),pm=new Date(2026,10,3+day,23,59,59);
         assert.equal(daily(am).id,daily(pm).id,zone);ids.push(daily(am).id);
       }
       assert.equal(new Set(ids).size,365);
-      assert.equal(daily(new Date(2027,10,2)).id,rotation[0].id);
+      assert.equal(daily(new Date(2027,10,3)).id,rotation[0].id);
       for(const [year,month,day] of [[2026,11,31],[2027,2,14],[2028,1,28],[2028,1,29]]) {
         assert.notEqual(daily(new Date(year,month,day,23,59)).id,daily(new Date(year,month,day+1,0,1)).id);
       }
-      const yesterday=new Date(2026,10,1);
+      const yesterday=new Date(2026,10,2);
       assert.equal(daily(yesterday).id,bank[dailyChallengeIndex(bank.length,yesterday)].id);
     }
   } finally {if(prior===undefined)delete process.env.TZ;else process.env.TZ=prior;}
@@ -355,11 +355,11 @@ test('Scripture rotation follows local dates continuously through midnight, DST,
 test('rotation migration preserves an active or completed puzzle without changing totals', () => {
   const {scriptureChallengeForDate: daily}=load('app/lib/scriptureRotation.ts');
   const {SCRIPTURE_CHALLENGES: bank}=load('src/scripture-challenges.ts');
-  const saved={challengeDate:'2026-11-02',targetChallenge:bank[307],guesses:['Moses'],cluesRevealed:2,isComplete:false,gamesPlayed:10};
-  const now=new Date(2026,10,2,18);
+  const saved={challengeDate:'2026-11-03',targetChallenge:bank[307],guesses:['Moses'],cluesRevealed:2,isComplete:false,gamesPlayed:10};
+  const now=new Date(2026,10,3,18);
   assert.equal(daily(now,saved).id,bank[307].id);
   assert.equal(daily(now,{...saved,guesses:[],isComplete:true}).id,bank[307].id);
   assert.equal(daily(now,{...saved,guesses:[],cluesRevealed:1}).difficulty,'easy');
-  assert.notEqual(daily(new Date(2026,10,3),saved).id,bank[307].id);
+  assert.notEqual(daily(new Date(2026,10,4),saved).id,bank[307].id);
   assert.equal(saved.gamesPlayed,10);assert.deepEqual(saved.guesses,['Moses']);
 });

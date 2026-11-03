@@ -4,7 +4,7 @@ import { dailyChallengeIndex, localDateKey } from '@/app/lib/localCalendar';
 
 const DAY = 86400000;
 // A continuous cycle avoids repeating/skipping a puzzle at New Year or DST.
-const START = Date.UTC(2026, 10, 2);
+const START = Date.UTC(2026, 10, 3);
 const LEVELS = ['easy', 'medium', 'hard'] as const;
 
 function tieBreak(challenge: ScriptureChallenge) {
