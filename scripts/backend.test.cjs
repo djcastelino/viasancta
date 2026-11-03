@@ -308,3 +308,58 @@ test('discovery JSON has valid coordinates, canonical links and public-domain ph
    assert.ok(guide.source.url.startsWith('https://'));
  }
 });
+
+test('Scripture rotation uses all 365 questions and interleaves levels and books across its boundary', () => {
+  const {SCRIPTURE_ROTATION: rotation, buildScriptureRotation} = load('app/lib/scriptureRotation.ts');
+  const {SCRIPTURE_CHALLENGES: bank} = load('src/scripture-challenges.ts');
+  assert.equal(rotation.length,365);
+  assert.equal(new Set(rotation.map(c=>c.id)).size,365);
+  assert.deepEqual(rotation.map(c=>c.id).sort((a,b)=>a-b),bank.map(c=>c.id).sort((a,b)=>a-b));
+  assert.deepEqual(buildScriptureRotation([...bank].reverse()).map(c=>c.id),rotation.map(c=>c.id));
+  assert.equal(rotation[0].difficulty,'easy');
+  for(let i=0;i<rotation.length;i++) {
+    const previous=rotation[(i+364)%365], earlier=rotation[(i+363)%365];
+    assert.notEqual(rotation[i].difficulty,previous.difficulty,`difficulty streak at ${i}`);
+    assert.ok(!rotation[i].books.some(book=>previous.books.includes(book)&&earlier.books.includes(book)),`book streak at ${i}`);
+    if(rotation[i].books.includes('Judges')) {
+      for(let gap=1;gap<=3;gap++) assert.ok(!rotation[(i+365-gap)%365].books.includes('Judges'),`Judges too close at ${i}`);
+    }
+  }
+  for(let i=0;i<365;i++) assert.ok(Array.from({length:7},(_,j)=>rotation[(i+j)%365]).some(c=>c.difficulty==='easy'));
+});
+
+test('Scripture rotation follows local dates continuously through midnight, DST, New Year and leap day', () => {
+  const {scriptureChallengeForDate: daily,SCRIPTURE_ROTATION: rotation} = load('app/lib/scriptureRotation.ts');
+  const {SCRIPTURE_CHALLENGES: bank}=load('src/scripture-challenges.ts');
+  const {dailyChallengeIndex}=load('app/lib/localCalendar.ts');
+  const prior=process.env.TZ;
+  try {
+    for(const zone of ['America/New_York','Asia/Kolkata','Pacific/Auckland']) {
+      process.env.TZ=zone;
+      const ids=[];
+      for(let day=0;day<365;day++) {
+        const am=new Date(2026,10,2+day,0,0,1),pm=new Date(2026,10,2+day,23,59,59);
+        assert.equal(daily(am).id,daily(pm).id,zone);ids.push(daily(am).id);
+      }
+      assert.equal(new Set(ids).size,365);
+      assert.equal(daily(new Date(2027,10,2)).id,rotation[0].id);
+      for(const [year,month,day] of [[2026,11,31],[2027,2,14],[2028,1,28],[2028,1,29]]) {
+        assert.notEqual(daily(new Date(year,month,day,23,59)).id,daily(new Date(year,month,day+1,0,1)).id);
+      }
+      const yesterday=new Date(2026,10,1);
+      assert.equal(daily(yesterday).id,bank[dailyChallengeIndex(bank.length,yesterday)].id);
+    }
+  } finally {if(prior===undefined)delete process.env.TZ;else process.env.TZ=prior;}
+});
+
+test('rotation migration preserves an active or completed puzzle without changing totals', () => {
+  const {scriptureChallengeForDate: daily}=load('app/lib/scriptureRotation.ts');
+  const {SCRIPTURE_CHALLENGES: bank}=load('src/scripture-challenges.ts');
+  const saved={challengeDate:'2026-11-02',targetChallenge:bank[307],guesses:['Moses'],cluesRevealed:2,isComplete:false,gamesPlayed:10};
+  const now=new Date(2026,10,2,18);
+  assert.equal(daily(now,saved).id,bank[307].id);
+  assert.equal(daily(now,{...saved,guesses:[],isComplete:true}).id,bank[307].id);
+  assert.equal(daily(now,{...saved,guesses:[],cluesRevealed:1}).difficulty,'easy');
+  assert.notEqual(daily(new Date(2026,10,3),saved).id,bank[307].id);
+  assert.equal(saved.gamesPlayed,10);assert.deepEqual(saved.guesses,['Moses']);
+});
