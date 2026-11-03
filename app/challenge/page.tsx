@@ -7,7 +7,8 @@ import type {
   ScriptureChallenge,
   ChallengeGameState,
 } from "@/src/types/scripture";
-import { dailyChallengeIndex, localDateKey, previousLocalDate, watchLocalDay } from "@/app/lib/localCalendar";
+import { localDateKey, previousLocalDate, watchLocalDay } from "@/app/lib/localCalendar";
+import { scriptureChallengeForDate } from "@/app/lib/scriptureRotation";
 import { applyScriptureGuess, restoreScriptureDay } from "@/app/lib/challengeProgress";
 import { useSacredAudio } from "@/app/lib/useSacredAudio";
 import {
@@ -56,7 +57,7 @@ export default function ChallengePage() {
       if (raw) saved = JSON.parse(raw);
     } catch { /* An unreadable save starts a fresh challenge. */ }
     const now = new Date();
-    const target = SCRIPTURE_CHALLENGES[dailyChallengeIndex(SCRIPTURE_CHALLENGES.length, now)];
+    const target = scriptureChallengeForDate(now, saved);
     const next = restoreScriptureDay(saved, target, now);
     reflectionRequest.current++;
     stopAudio();
@@ -288,7 +289,15 @@ export default function ChallengePage() {
     const yesterday = previousLocalDate();
     const yesterdayDate = localDateKey(yesterday);
     reflectionRequest.current++;
-    const yesterdaysChallenge = SCRIPTURE_CHALLENGES[dailyChallengeIndex(SCRIPTURE_CHALLENGES.length, yesterday)];
+    let yesterdaysChallenge = scriptureChallengeForDate(yesterday);
+    try {
+      const history = JSON.parse(localStorage.getItem("challengeHistory") || "[]");
+      if (Array.isArray(history)) {
+        const played = history.find((entry: { date: string }) => entry.date === yesterdayDate);
+        const original = SCRIPTURE_CHALLENGES.find(c => c.id === played?.challenge?.id);
+        if (original) yesterdaysChallenge = original;
+      }
+    } catch { /* An unreadable archive falls back to the scheduled puzzle. */ }
 
     // Reset game state with yesterday's challenge
     const newState: ChallengeGameState = {
