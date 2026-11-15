@@ -8,8 +8,6 @@ import {
   Volume2,
   VolumeX,
   Music,
-  Globe,
-  Flame,
   Award,
   ChevronDown,
   Check,
@@ -25,15 +23,9 @@ import {
   SOUNDTRACK_OPTIONS,
   SacredAmbientPreset,
 } from "./utils/soundEngine";
-import { Version1LanternTrail } from "./components/Version1LanternTrail";
 import { Version2GlobeDetective } from "./components/Version2GlobeDetective";
 
-type GameVariation = "v2_globe_detective" | "v1_lantern_hunt";
-
 export default function SacredTrailsClient() {
-  const [activeVariation, setActiveVariation] = useState<GameVariation>("v2_globe_detective");
-  const [v1GracePoints, setV1GracePoints] = useState<number>(0);
-  const [v1StampedStopNumbers, setV1StampedStopNumbers] = useState<number[]>([]);
   const [v2SolvedCount, setV2SolvedCount] = useState<number>(0);
 
   // Audio state & 5-Preset Soundtrack Dropdown (Gregorian Chant set as default)
@@ -94,8 +86,6 @@ export default function SacredTrailsClient() {
   };
 
   const activeOptionObj = SOUNDTRACK_OPTIONS.find((o) => o.id === selectedSoundtrack);
-  const currentSolvedCount =
-    activeVariation === "v2_globe_detective" ? v2SolvedCount : v1StampedStopNumbers.length;
 
   return (
     <div className="min-h-screen bg-[#0c0a08] text-[#f4efe6] selection:bg-[#d4af37]/30 selection:text-[#fef08a]">
@@ -143,7 +133,7 @@ export default function SacredTrailsClient() {
         </div>
       </div>
 
-      {/* Saint Trail Control Bar: St. Augustine, Mode Switcher & 5-Style Sacred Audio */}
+      {/* Saint Trail Control Bar: St. Augustine & 5-Style Sacred Audio */}
       <div className="sticky top-0 z-40 border-b border-[#262018] bg-[#0e0c09]/95 px-3 py-2.5 backdrop-blur-md sm:px-8 sm:py-3">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-2.5 sm:gap-3">
           {/* Brand & Saint Title */}
@@ -163,46 +153,13 @@ export default function SacredTrailsClient() {
             </div>
           </div>
 
-          {/* Interactive Mode Switcher */}
-          <div className="order-3 flex w-full items-center gap-1 overflow-x-auto rounded-xl border border-[#332a1e] bg-[#15120d] p-1 lg:order-2 lg:w-auto">
-            <button
-              onClick={() => {
-                soundEngine.playEffect("compass_click");
-                setActiveVariation("v2_globe_detective");
-              }}
-              className={`inline-flex flex-1 shrink-0 items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-bold transition-all sm:flex-initial sm:px-3.5 sm:py-2 sm:text-xs ${
-                activeVariation === "v2_globe_detective"
-                  ? "bg-gradient-to-r from-[#d4af37] to-[#b58922] text-[#120f0b] shadow-md"
-                  : "text-[#cfc3ae] hover:text-[#f4efe6]"
-              }`}
-            >
-              <Globe className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              <span>3D Globe Detective</span>
-            </button>
-
-            <button
-              onClick={() => {
-                soundEngine.playEffect("vellum_page");
-                setActiveVariation("v1_lantern_hunt");
-              }}
-              className={`inline-flex flex-1 shrink-0 items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-bold transition-all sm:flex-initial sm:px-3.5 sm:py-2 sm:text-xs ${
-                activeVariation === "v1_lantern_hunt"
-                  ? "bg-gradient-to-r from-[#d4af37] to-[#b58922] text-[#120f0b] shadow-md"
-                  : "text-[#cfc3ae] hover:text-[#f4efe6]"
-              }`}
-            >
-              <Flame className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              <span>Lantern Photo Hunt</span>
-            </button>
-          </div>
-
           {/* Progress Counter & 5-Preset Sacred Soundtrack Dropdown */}
-          <div className="order-2 flex items-center gap-2 lg:order-3">
-            <div className="hidden items-center gap-1.5 rounded-xl border border-[#2a231a] bg-[#16120d] px-3 py-1.5 text-xs md:flex">
+          <div className="flex items-center gap-2">
+            <div className="hidden items-center gap-1.5 rounded-xl border border-[#2a231a] bg-[#16120d] px-3 py-1.5 text-xs sm:flex">
               <Award className="h-4 w-4 text-[#d4af37]" />
               <span className="text-[#a39783]">Seals:</span>
               <strong className="text-[#f4efe6]">
-                {currentSolvedCount} / {ST_AUGUSTINE_TRAIL_STOPS.length}
+                {v2SolvedCount} / {ST_AUGUSTINE_TRAIL_STOPS.length}
               </strong>
             </div>
 
@@ -217,7 +174,7 @@ export default function SacredTrailsClient() {
                 title="Choose Sacred Soundtrack or Cinematic Score"
               >
                 <Music className="h-3.5 w-3.5 shrink-0 text-[#d4af37]" />
-                <span className="max-w-[130px] truncate sm:max-w-none">
+                <span className="max-w-[140px] truncate sm:max-w-none">
                   {activeOptionObj ? activeOptionObj.label : "Sacred Audio (5 Styles)"}
                 </span>
                 <ChevronDown
@@ -328,18 +285,9 @@ export default function SacredTrailsClient() {
         </div>
       </div>
 
-      {/* Main Sacred Trails Experience */}
+      {/* Main Sacred Trails 3D Globe Experience */}
       <div>
-        {activeVariation === "v2_globe_detective" ? (
-          <Version2GlobeDetective onSolvedCountChange={setV2SolvedCount} />
-        ) : (
-          <Version1LanternTrail
-            gracePoints={v1GracePoints}
-            setGracePoints={setV1GracePoints}
-            stampedStopNumbers={v1StampedStopNumbers}
-            setStampedStopNumbers={setV1StampedStopNumbers}
-          />
-        )}
+        <Version2GlobeDetective onSolvedCountChange={setV2SolvedCount} />
       </div>
 
       {/* Footer back to Divine Pilgrim */}

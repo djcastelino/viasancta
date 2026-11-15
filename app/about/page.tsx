@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Sacred Mountains:</strong> Explore biblical mountains, their landscapes, and the Scripture accounts associated with them, with audio journeys</li>
                   <li><strong>Sacred Architecture:</strong> Discover churches and basilicas, their history, design, and craftsmanship</li>
-                  <li><strong>Sacred Trails:</strong> Walk in the footsteps of the saints (beginning with St. Augustine of Hippo) from birthplace to final resting place across an interactive 3D Earth, solving modern-day city detective clues, exploring historical fun facts, and uncovering hidden relics by lantern light</li>
+                  <li><strong>Sacred Trails:</strong> Walk in the footsteps of the saints (beginning with St. Augustine of Hippo) from birthplace to final resting place across an interactive 3D Earth, solving modern-day city detective clues, exploring historical fun facts, and inspecting historical sanctuary scenes</li>
                 </ul>
               </div>
 
