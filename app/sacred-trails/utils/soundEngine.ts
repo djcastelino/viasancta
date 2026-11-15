@@ -87,6 +87,7 @@ class SoundEngine {
   private pinkNoiseBuffer: AudioBuffer | null = null;
 
   private htmlAudioElement: HTMLAudioElement | null = null;
+  private narrationAudioElement: HTMLAudioElement | null = null;
   private unlockListenerAttached: boolean = false;
   private isMuted: boolean = false;
   private volume: number = 0.8;
@@ -209,7 +210,12 @@ class SoundEngine {
       this.masterVolumeNode.gain.setTargetAtTime(this.volume * 1.25, ctx.currentTime, 0.03);
     }
     if (this.htmlAudioElement) {
-      this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+      this.htmlAudioElement.volume = this.narrationAudioElement
+        ? Math.min(1.0, this.volume * 0.22)
+        : Math.min(1.0, this.volume);
+    }
+    if (this.narrationAudioElement) {
+      this.narrationAudioElement.volume = Math.min(1.0, this.volume);
     }
   }
 
@@ -221,6 +227,9 @@ class SoundEngine {
     this.isMuted = muted;
     if (this.htmlAudioElement) {
       this.htmlAudioElement.muted = muted;
+    }
+    if (this.narrationAudioElement) {
+      this.narrationAudioElement.muted = muted;
     }
     if (muted) {
       this.stopAmbient();
@@ -707,46 +716,110 @@ class SoundEngine {
     this.currentAmbient = 'none';
   }
 
-  public speakNarration(text: string, onEnd?: () => void) {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-      if (onEnd) onEnd();
-      return;
-    }
+  /**
+   * Plays Azure Andrew Neural (en-US-AndrewMultilingualNeural) exclusive narration:
+   * - kind === 'clue': Unprinted 2-3 sentence Spoken Insider Clue for the active case
+   * - kind === 'city': Unprinted 2-3 sentence Modern-Day City Fun Fact Gem
+   * Automatically ducks the background Gregorian Chant / Sacred Audio while Andrew speaks!
+   */
+  public playAndrewNarration(
+    stopNumber: number,
+    kind: 'clue' | 'city',
+    onEnd?: () => void
+  ) {
     this.stopSpeaking();
-    if (this.isMuted) {
+    if (typeof window === 'undefined' || this.isMuted) {
       if (onEnd) onEnd();
       return;
     }
 
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voices = window.speechSynthesis.getVoices();
-    const preferredVoice =
-      voices.find(
-        (v) =>
-          v.lang.startsWith('en') &&
-          (v.name.includes('Natural') ||
-            v.name.includes('Google UK English Male') ||
-            v.name.includes('Daniel') ||
-            v.name.includes('Arthur') ||
-            v.name.includes('Google US English'))
-      ) || voices.find((v) => v.lang.startsWith('en'));
-
-    if (preferredVoice) {
-      utterance.voice = preferredVoice;
-    }
-    utterance.rate = 0.96;
-    utterance.pitch = 0.95;
-    utterance.volume = Math.min(1.0, this.volume * 1.15);
-
-    if (onEnd) {
-      utterance.onend = () => onEnd();
-      utterance.onerror = () => onEnd();
+    // Gently duck background ambient music so Andrew's voice is warm and clear
+    if (this.htmlAudioElement) {
+      this.htmlAudioElement.volume = Math.min(1.0, this.volume * 0.22);
     }
 
-    window.speechSynthesis.speak(utterance);
+    const mp3Url = `/audio/narration/stop_${stopNumber}_${kind}.mp3`;
+    const audio = new Audio(mp3Url);
+    audio.volume = Math.min(1.0, this.volume);
+    audio.muted = this.isMuted;
+    this.narrationAudioElement = audio;
+
+    const handleFinish = () => {
+      if (this.narrationAudioElement === audio) {
+        this.narrationAudioElement = null;
+      }
+      if (this.htmlAudioElement) {
+        this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+      }
+      if (onEnd) onEnd();
+    };
+
+    audio.onended = handleFinish;
+    audio.onerror = handleFinish;
+    audio.play().catch(handleFinish);
+  }
+
+  public speakNarration(text: string, onEnd?: () => void) {
+    this.stopSpeaking();
+    if (typeof window === 'undefined' || this.isMuted) {
+      if (onEnd) onEnd();
+      return;
+    }
+
+    if (this.htmlAudioElement) {
+      this.htmlAudioElement.volume = Math.min(1.0, this.volume * 0.22);
+    }
+
+    // Attempt Azure Andrew Neural (/api/generate-audio) first
+    fetch('/api/generate-audio', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text,
+        voice: 'en-US-AndrewMultilingualNeural',
+        rate: 0.96,
+      }),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Fallback');
+        return res.blob();
+      })
+      .then((blob) => {
+        const blobUrl = URL.createObjectURL(blob);
+        const audio = new Audio(blobUrl);
+        audio.volume = Math.min(1.0, this.volume);
+        this.narrationAudioElement = audio;
+        const finish = () => {
+          URL.revokeObjectURL(blobUrl);
+          if (this.narrationAudioElement === audio) this.narrationAudioElement = null;
+          if (this.htmlAudioElement) this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+          if (onEnd) onEnd();
+        };
+        audio.onended = finish;
+        audio.onerror = finish;
+        audio.play().catch(finish);
+      })
+      .catch(() => {
+        if (this.htmlAudioElement) {
+          this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+        }
+        if (onEnd) onEnd();
+      });
   }
 
   public stopSpeaking() {
+    if (this.narrationAudioElement) {
+      try {
+        this.narrationAudioElement.pause();
+        this.narrationAudioElement.src = '';
+      } catch {
+        // Ignore
+      }
+      this.narrationAudioElement = null;
+    }
+    if (this.htmlAudioElement) {
+      this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+    }
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       window.speechSynthesis.cancel();
     }

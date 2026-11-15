@@ -1124,6 +1124,8 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               <button
                 key={stop.stopNumber}
                 onClick={() => {
+                  soundEngine.stopSpeaking();
+                  setIsNarrating(false);
                   soundEngine.playEffect('vellum_page');
                   setActiveCaseIndex(idx);
                   setFeedbackBanner({
@@ -1418,18 +1420,17 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       setIsNarrating(false);
                     } else {
                       setIsNarrating(true);
-                      const fullCluesText = `${currentCaseStop.detectiveCaseTitle}. ${currentCaseStop.detectiveClues
-                        .map((c) => `Clue ${c.clueNumber}: ${c.headline}. ${c.clueText}`)
-                        .join(' ')}`;
-                      soundEngine.speakNarration(fullCluesText, () => setIsNarrating(false));
+                      soundEngine.playAndrewNarration(currentCaseStop.stopNumber, 'clue', () =>
+                        setIsNarrating(false)
+                      );
                     }
                   }}
                   className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[11px] font-bold transition ${
                     isNarrating
                       ? 'border-[#facc15] bg-[#2b2212] text-[#fef08a]'
-                      : 'border-[#3a3023] bg-[#1e1812] text-[#e6dccb] hover:border-[#d4af37]'
+                      : 'border-[#d4af37]/60 bg-[#221a11] text-[#f3d27a] hover:border-[#d4af37]'
                   }`}
-                  title="Listen to Documentary Voiceover of the Clues"
+                  title="Hear Andrew share an exclusive spoken Modern-Day City clue not written on the card"
                 >
                   {isNarrating ? (
                     <>
@@ -1439,7 +1440,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   ) : (
                     <>
                       <Volume2 className="h-3.5 w-3.5 text-[#d4af37]" />
-                      <span>Narrate Clues</span>
+                      <span>Audio City Clue</span>
                     </>
                   )}
                 </button>
@@ -1640,8 +1641,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       setIsNarrating(false);
                     } else {
                       setIsNarrating(true);
-                      const storyScript = `${inspectedStop.title}. Ancient ${inspectedStop.ancientPlaceName}, today ${inspectedStop.modernPlaceName}, ${inspectedStop.modernCountry}. ${inspectedStop.whatYouCanSeeToday} Did you know? ${inspectedStop.didYouKnowHighlight}`;
-                      soundEngine.speakNarration(storyScript, () => setIsNarrating(false));
+                      soundEngine.playAndrewNarration(inspectedStop.stopNumber, 'city', () =>
+                        setIsNarrating(false)
+                      );
                     }
                   }}
                   className={`inline-flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-bold transition sm:px-3.5 ${
@@ -1649,16 +1651,17 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       ? 'border-[#facc15] bg-[#2b2212] text-[#fef08a]'
                       : 'border-[#d4af37]/50 bg-[#241d14] text-[#f3d27a] hover:border-[#d4af37]'
                   }`}
+                  title="Hear Andrew share a bonus 3-line fun fact about this modern-day city today (not written below!)"
                 >
                   {isNarrating ? (
                     <>
                       <Square className="h-3.5 w-3.5 fill-current" />
-                      <span>Stop Narration</span>
+                      <span>Stop Voice</span>
                     </>
                   ) : (
                     <>
                       <Volume2 className="h-4 w-4" />
-                      <span>Narrate Story</span>
+                      <span>Modern City Audio Fact</span>
                     </>
                   )}
                 </button>
