@@ -22,6 +22,7 @@ import {
   Map as MapIcon,
   Volume2,
   Square,
+  Lock,
 } from 'lucide-react';
 import { SAINT_TRAILS, SaintTrailProfile, TrailStop } from '../data/saintsTrails';
 import { soundEngine } from '../utils/soundEngine';
@@ -94,19 +95,35 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
   // Inspection Modal when a stop is solved or inspected
   const [inspectedStop, setInspectedStop] = useState<TrailStop | null>(null);
+  const [cinematicFlightStop, setCinematicFlightStop] = useState<TrailStop | null>(null);
+  const flightTimerRef = useRef<number | null>(null);
   const [activePhotoHotspotId, setActivePhotoHotspotId] = useState<string | null>(null);
   const [showCompletionModal, setShowCompletionModal] = useState<boolean>(false);
   const [isNarrating, setIsNarrating] = useState<boolean>(false);
 
   const currentCaseStop = trailStops[activeCaseIndex] || trailStops[0];
 
+  // Clear any active cinematic flight timer on unmount
+  useEffect(() => {
+    return () => {
+      if (flightTimerRef.current !== null) {
+        window.clearTimeout(flightTimerRef.current);
+      }
+    };
+  }, []);
+
   // Reset state cleanly when switching between Saint Trails
   useEffect(() => {
+    if (flightTimerRef.current !== null) {
+      window.clearTimeout(flightTimerRef.current);
+      flightTimerRef.current = null;
+    }
     soundEngine.stopSpeaking();
     setIsNarrating(false);
     setActiveCaseIndex(0);
     setSolvedStopNumbers([]);
     setZoomedStopNumber(null);
+    setCinematicFlightStop(null);
     setInspectedStop(null);
     setShowCompletionModal(false);
     setRevealedClueIds([saintTrail.stops[0].detectiveClues[0].id]);
@@ -1086,6 +1103,50 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     }
   };
 
+  /**
+   * Reusable Globe-to-Scene Cinematic Flight:
+   * Swoops the 3D camera down into the solved Sanctuary Beacon (respecting prefers-reduced-motion),
+   * then automatically opens the existing historical "Stop Photo & Story" scene.
+   */
+  const flyAndEnterHistoricalScene = useCallback((targetStop: TrailStop) => {
+    if (flightTimerRef.current !== null) {
+      window.clearTimeout(flightTimerRef.current);
+      flightTimerRef.current = null;
+    }
+
+    const lat = targetStop.globePlacement.latDeg;
+    const lng = targetStop.globePlacement.lngDeg;
+    const beaconFocusPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.08);
+    // Low-altitude cinematic sanctuary dive angle right above the golden beacon
+    const diveCamPos = latLngToVector3(lat - 0.78, lng - 0.16, GLOBE_RADIUS + 1.52);
+
+    cameraTargetDataRef.current = {
+      autoMove: true,
+      desiredCameraPos: diveCamPos,
+      desiredLookAt: beaconFocusPos,
+    };
+    setZoomedStopNumber(targetStop.stopNumber);
+    setActivePhotoHotspotId(targetStop.hiddenArtifacts[0].id);
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setCinematicFlightStop(null);
+      setInspectedStop(targetStop);
+      return;
+    }
+
+    setCinematicFlightStop(targetStop);
+    flightTimerRef.current = window.setTimeout(() => {
+      flightTimerRef.current = null;
+      setCinematicFlightStop(null);
+      soundEngine.playEffect('sanctuary_bell');
+      setInspectedStop(targetStop);
+    }, 1250);
+  }, []);
+
   const handleConfirmCityForCase = (stopToVerify: TrailStop) => {
     if (stopToVerify.stopNumber === currentCaseStop.stopNumber) {
       soundEngine.playEffect('wax_seal_stamp');
@@ -1096,11 +1157,10 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
       setFeedbackBanner({
         type: 'success',
-        text: `Case #${currentCaseStop.stopNumber} Solved! ${stopToVerify.modernPlaceName}, ${stopToVerify.modernCountry} (Ancient ${stopToVerify.ancientPlaceName}) is now unlocked on the 3D Globe!`,
+        text: `Case #${currentCaseStop.stopNumber} Solved! Flying into ${stopToVerify.modernPlaceName}, ${stopToVerify.modernCountry} (Ancient ${stopToVerify.ancientPlaceName}) to enter the historical scene…`,
       });
 
-      setInspectedStop(stopToVerify);
-      setActivePhotoHotspotId(stopToVerify.hiddenArtifacts[0].id);
+      flyAndEnterHistoricalScene(stopToVerify);
 
       if (nextSolved.length === trailStops.length) {
         setTimeout(() => {
@@ -1151,10 +1211,18 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   setIsNarrating(false);
                   soundEngine.playEffect('vellum_page');
                   setActiveCaseIndex(idx);
-                  setFeedbackBanner({
-                    type: 'info',
-                    text: `Investigating Case #${stop.stopNumber}: Read the clues and locate the matching modern-day city on the 3D Earth!`,
-                  });
+                  if (isSolved) {
+                    zoomToStopOnGlobe(stop.stopNumber);
+                    setFeedbackBanner({
+                      type: 'success',
+                      text: `Case #${stop.stopNumber} (${stop.modernPlaceName}, ${stop.modernCountry}) is unlocked! Click "View Stop Photo & Story" to revisit its historical scene.`,
+                    });
+                  } else {
+                    setFeedbackBanner({
+                      type: 'info',
+                      text: `Investigating Case #${stop.stopNumber}: Read the clues and locate the matching modern-day city on the 3D Earth!`,
+                    });
+                  }
                 }}
                 className={`group flex min-h-[60px] flex-col justify-between rounded-xl border p-2.5 text-left transition-all ${
                   isCurrentCase
@@ -1345,6 +1413,40 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               })}
             </div>
 
+            {/* Cinematic Flight Overlay when swooping into a newly solved destination */}
+            {cinematicFlightStop && (
+              <div className="pointer-events-auto absolute inset-x-4 bottom-24 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-[#facc15]/70 bg-[#14100b]/95 px-4 py-3 shadow-[0_0_30px_rgba(212,175,55,0.35)] backdrop-blur-md">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#facc15] bg-[#261e12] text-[#fef08a]">
+                    <Sparkles className="h-4 w-4 animate-pulse" />
+                  </span>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#facc15]">
+                      Case #{cinematicFlightStop.stopNumber} Verified · Entering Sanctuary
+                    </p>
+                    <p className="font-serif text-sm font-bold text-[#f4efe6]">
+                      Flying into {cinematicFlightStop.modernPlaceName},{' '}
+                      {cinematicFlightStop.modernCountry}…
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    if (flightTimerRef.current !== null) {
+                      window.clearTimeout(flightTimerRef.current);
+                      flightTimerRef.current = null;
+                    }
+                    const target = cinematicFlightStop;
+                    setCinematicFlightStop(null);
+                    setInspectedStop(target);
+                  }}
+                  className="shrink-0 rounded-lg border border-[#d4af37]/50 bg-[#241d13] px-2.5 py-1.5 text-[11px] font-bold text-[#fef08a] hover:border-[#facc15]"
+                >
+                  Enter Now
+                </button>
+              </div>
+            )}
+
             {/* Zoomed-In City Action Bar at Bottom of 3D Globe */}
             {zoomedStopObj ? (
               <div className="border-t border-[#332a1e] bg-[#14110d] p-4">
@@ -1368,25 +1470,37 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2">
-                    <button
-                      onClick={() => handleConfirmCityForCase(zoomedStopObj)}
-                      className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
-                    >
-                      <Search className="h-4 w-4" />
-                      Confirm for Case #{currentCaseStop.stopNumber}
-                    </button>
+                    {!solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
+                      <button
+                        onClick={() => handleConfirmCityForCase(zoomedStopObj)}
+                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
+                      >
+                        <Search className="h-4 w-4" />
+                        Confirm for Case #{currentCaseStop.stopNumber}
+                      </button>
+                    )}
 
-                    <button
-                      onClick={() => {
-                        soundEngine.playEffect('sanctuary_bell');
-                        setInspectedStop(zoomedStopObj);
-                        setActivePhotoHotspotId(zoomedStopObj.hiddenArtifacts[0].id);
-                      }}
-                      className="inline-flex items-center gap-1.5 rounded-xl border border-[#3d3224] bg-[#1e1913] px-3.5 py-2.5 text-xs font-semibold text-[#e6dccb] transition hover:border-[#d4af37]"
-                    >
-                      <Eye className="h-4 w-4 text-[#d4af37]" />
-                      View Stop Photo & Story
-                    </button>
+                    {solvedStopNumbers.includes(zoomedStopObj.stopNumber) ? (
+                      <button
+                        onClick={() => {
+                          soundEngine.playEffect('sanctuary_bell');
+                          setInspectedStop(zoomedStopObj);
+                          setActivePhotoHotspotId(zoomedStopObj.hiddenArtifacts[0].id);
+                        }}
+                        className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/60 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 transition hover:border-emerald-400 hover:bg-emerald-900/40"
+                      >
+                        <Eye className="h-4 w-4 text-emerald-300" />
+                        View Stop Photo & Story
+                      </button>
+                    ) : (
+                      <span
+                        className="inline-flex items-center gap-1.5 rounded-xl border border-[#2c241b] bg-[#18140f] px-3 py-2.5 text-[11px] font-medium text-[#8c7f6b]"
+                        title="Confirm the matching city for the active case to unlock its historical photo and story"
+                      >
+                        <Lock className="h-3.5 w-3.5 text-[#a39783]" />
+                        <span>Scene Unlocks on Confirm</span>
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1606,9 +1720,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               })}
             </div>
 
-            {/* Confirm or Next Case Buttons */}
+            {/* Confirm or Revisit Solved Stop Photo & Story Buttons */}
             <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-              {zoomedStopObj && (
+              {zoomedStopObj && !solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
                 <button
                   onClick={() => handleConfirmCityForCase(zoomedStopObj)}
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
@@ -1625,10 +1739,10 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                     setInspectedStop(currentCaseStop);
                     setActivePhotoHotspotId(currentCaseStop.hiddenArtifacts[0].id);
                   }}
-                  className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 hover:bg-emerald-900/40"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 hover:bg-emerald-900/40"
                 >
                   <Eye className="h-4 w-4" />
-                  Open Unlocked Photo Card
+                  View Stop Photo & Story ({currentCaseStop.modernPlaceName})
                 </button>
               )}
             </div>
@@ -1813,7 +1927,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                 {/* Modal Footer Actions */}
                 <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
                   <button
-                    onClick={() => setInspectedStop(null)}
+                    onClick={() => {
+                      soundEngine.stopSpeaking();
+                      setIsNarrating(false);
+                      setInspectedStop(null);
+                    }}
                     className="rounded-xl border border-[#3a3023] bg-[#1f1913] px-4 py-2.5 text-xs font-semibold text-[#e6dccb] hover:border-[#d4af37]"
                   >
                     Back to 3D Globe
