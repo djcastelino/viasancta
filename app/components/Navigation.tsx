@@ -43,6 +43,7 @@ export default function Navigation() {
                     "/miracles/",
                     "/sacred-mountains",
                     "/sacred-architecture",
+                    "/sacred-trails",
                     "/stations-of-the-cross",
                     "/biblical-timeline",
                     "/jesus-in-ot",

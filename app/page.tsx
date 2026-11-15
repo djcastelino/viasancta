@@ -56,6 +56,13 @@ const pilgrimages = [
     title: "Sacred architecture",
     text: "Enter magnificent churches and basilicas, shaped by centuries of faith and craftsmanship.",
   },
+  {
+    href: "/sacred-trails",
+    image: "sacred-trails",
+    label: "FOOTSTEPS OF THE SAINTS",
+    title: "Sacred trails",
+    text: "From birthplace to final resting place, trace the real-world journeys of the saints through 3D globe trails and detective clues.",
+  },
 ];
 const prayers = [
   {
@@ -115,7 +122,7 @@ export default function Home() {
         <div className="pilgrim-journeys">
           {pilgrimages.filter(item => isSectionVisible(item.href)).map((item) => (
             <Link
-              className="pilgrim-journey pilgrim-journey-wide"
+              className="pilgrim-journey"
               href={item.href}
               key={item.href}
             >

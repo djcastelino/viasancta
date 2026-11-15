@@ -51,6 +51,16 @@ export const journeys = {
     description:
       "Step inside the churches and basilicas shaped by centuries of belief. Discover one remarkable sacred space each day.",
   },
+  trails: {
+    href: "/sacred-trails",
+    label: "Sacred trails",
+    title: "Follow the footsteps",
+    emphasis: "of the saints.",
+    image: "sacred-trails",
+    eyebrow: "SACRED TRAILS OF THE SAINTS",
+    description:
+      "From birthplace to final resting place, trace the real-world journeys of the saints across a 3D Mediterranean Earth with detective clues and sacred chant.",
+  },
   stations: {
     href: "/stations-of-the-cross",
     label: "Stations of the Cross",

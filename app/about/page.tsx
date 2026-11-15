@@ -3,7 +3,7 @@ import discoveryPhotos from '@/public/discovery-photos.json';
 
 export const metadata = {
   title: 'About Divine Pilgrim',
-  description: 'Discover Divine Pilgrim: sacred architecture, biblical mountains, and the daily six-clue Scripture challenge.',
+  description: 'Discover Divine Pilgrim: sacred architecture, biblical mountains, 3D sacred trails of the saints, and the daily six-clue Scripture challenge.',
 }
 
 export default function AboutPage() {
@@ -31,7 +31,7 @@ export default function AboutPage() {
             <div className="text-gray-700 space-y-4">
               <p>
                 Divine Pilgrim is a <strong>Catholic discovery and learning project</strong>.
-                Explore sacred architecture, discover the mountains woven through Scripture,
+                Explore sacred architecture, discover the mountains woven through Scripture, trace the real-world footsteps of the saints on 3D Sacred Trails,
                 and grow your biblical knowledge with a daily six-clue challenge.
               </p>
               <p>
@@ -53,6 +53,7 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Sacred Mountains:</strong> Explore biblical mountains, their landscapes, and the Scripture accounts associated with them, with audio journeys</li>
                   <li><strong>Sacred Architecture:</strong> Discover churches and basilicas, their history, design, and craftsmanship</li>
+                  <li><strong>Sacred Trails:</strong> Walk in the footsteps of the saints (beginning with St. Augustine of Hippo) from birthplace to final resting place across an interactive 3D Earth, solving modern-day city detective clues, exploring historical fun facts, and uncovering hidden relics by lantern light</li>
                 </ul>
               </div>
 
@@ -78,7 +79,8 @@ export default function AboutPage() {
                 <li><strong>Audio:</strong> Synthetic voices read journey narrations and Scripture quiz fun facts (powered by Azure Speech)</li>
                 <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
-                <li><strong>AI Assistance:</strong> AI assists with some journey explanations and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
+                <li><strong>AI-Created Sacred Trails &amp; 3D Cartography:</strong> Sacred Trails uses AI-created historical trail storytelling, detective clues, and scene illustrations paired with an interactive 3D WebGL Earth and voice narration</li>
+                <li><strong>AI Assistance:</strong> AI assists with some journey explanations, trail narratives, and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
               </ul>
             </div>
           </section>
@@ -102,6 +104,9 @@ export default function AboutPage() {
               Credits & Attribution
             </h2>
             <div className="text-gray-700 space-y-3 text-sm">
+              <p>
+                <strong>Sacred Trails (AI-Created Trails, Free-Licensed Images &amp; Sacred Audio):</strong> The Sacred Trails experience combines AI-created trail narratives, detective clues, and scene artwork with public-domain and freely licensed 3D Earth satellite/relief cartography (NASA Blue Marble, Natural Earth, and Wikimedia Commons) and public-domain / Creative Commons sacred audio recordings from Wikimedia Commons (including monastic Gregorian chant, European church bell peals, J.S. Bach orchestral strings, and Johann Pachelbel cathedral pipe organ recordings), alongside procedural Web Audio spatial soundscapes.
+              </p>
 
 
 
