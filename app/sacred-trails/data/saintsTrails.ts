@@ -1632,6 +1632,6 @@ export const SAINT_TRAILS: SaintTrailProfile[] = [
  */
 export function getDailySaintTrail(): SaintTrailProfile {
   const utcDayIndex = Math.floor(Date.now() / 86_400_000);
-  return SAINT_TRAILS[utcDayIndex % SAINT_TRAILS.length];
+  return SAINT_TRAILS[(utcDayIndex + 1) % SAINT_TRAILS.length];
 }
 
