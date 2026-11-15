@@ -1,5 +1,3 @@
-"use client";
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -25,40 +23,18 @@ import {
   Volume2,
   Square,
 } from 'lucide-react';
-import { ST_AUGUSTINE_TRAIL_STOPS, TrailStop } from '../data/saintsTrails';
+import { SAINT_TRAILS, SaintTrailProfile, TrailStop } from '../data/saintsTrails';
 import { soundEngine } from '../utils/soundEngine';
 import { ResilientImage } from './ResilientImage';
 
 interface Version2GlobeDetectiveProps {
+  saintTrail?: SaintTrailProfile;
   onSolvedCountChange?: (solvedCount: number) => void;
 }
 
 export type GlobeMapStyle = 'satellite_hd' | 'natgeo_atlas' | 'golden_twilight';
 
 const GLOBE_RADIUS = 10;
-
-/**
- * True real-world geographic locations across Algeria, Tunisia, and Italy
- * (with a slight ~0.45° visual breathing room between adjacent twin cities
- * Milan/Pavia and Annaba/Souk Ahras so both pins are distinct on the coastline).
- */
-const AUTHENTIC_GLOBE_COORDS: Record<
-  number,
-  { lat: number; lng: number; labelOffsetPx: [number, number] }
-> = {
-  // Stop 1: Souk Ahras, Algeria (Inland Atlas mountains of NE Algeria)
-  1: { lat: 36.15, lng: 7.95, labelOffsetPx: [-64, 28] },
-  // Stop 2: Tunis / Carthage, Tunisia (Gulf of Tunis Mediterranean Coast)
-  2: { lat: 36.85, lng: 10.32, labelOffsetPx: [66, 8] },
-  // Stop 3: Milan, Italy (Lombardy, Northern Italy)
-  3: { lat: 45.55, lng: 9.19, labelOffsetPx: [-60, -24] },
-  // Stop 4: Ostia Antica & Rome, Italy (Central Italian Tyrrhenian Coast)
-  4: { lat: 41.78, lng: 12.35, labelOffsetPx: [70, -6] },
-  // Stop 5: Annaba / Hippo Regius, Algeria (Mediterranean Coast of NE Algeria)
-  5: { lat: 36.92, lng: 7.72, labelOffsetPx: [-68, -18] },
-  // Stop 6: Pavia, Italy (Ticino River just south of Milan)
-  6: { lat: 45.05, lng: 9.15, labelOffsetPx: [66, 18] },
-};
 
 /**
  * Converts geographic (latDeg, lngDeg) to 3D Cartesian coordinates aligned
@@ -90,8 +66,10 @@ interface GeoJsonFeature {
 }
 
 export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
+  saintTrail = SAINT_TRAILS[0],
   onSolvedCountChange,
 }) => {
+  const trailStops = saintTrail.stops;
   const mountRef = useRef<HTMLDivElement | null>(null);
   const labelRefs = useRef<Record<number, HTMLButtonElement | null>>({});
   const leaderLineRefs = useRef<Record<number, SVGLineElement | null>>({});
@@ -104,14 +82,14 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   const [showGlobeLabels, setShowGlobeLabels] = useState<boolean>(false);
   const [mapStyle, setMapStyle] = useState<GlobeMapStyle>('satellite_hd');
   const [revealedClueIds, setRevealedClueIds] = useState<string[]>([
-    ST_AUGUSTINE_TRAIL_STOPS[0].detectiveClues[0].id,
+    trailStops[0].detectiveClues[0].id,
   ]);
   const [feedbackBanner, setFeedbackBanner] = useState<{
     type: 'info' | 'success' | 'mismatch';
     text: string;
   }>({
     type: 'info',
-    text: 'Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to zoom in and investigate!',
+    text: `Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
   });
 
   // Inspection Modal when a stop is solved or inspected
@@ -120,7 +98,29 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   const [showCompletionModal, setShowCompletionModal] = useState<boolean>(false);
   const [isNarrating, setIsNarrating] = useState<boolean>(false);
 
-  const currentCaseStop = ST_AUGUSTINE_TRAIL_STOPS[activeCaseIndex];
+  const currentCaseStop = trailStops[activeCaseIndex] || trailStops[0];
+
+  // Reset state cleanly when switching between Saint Trails
+  useEffect(() => {
+    soundEngine.stopSpeaking();
+    setIsNarrating(false);
+    setActiveCaseIndex(0);
+    setSolvedStopNumbers([]);
+    setZoomedStopNumber(null);
+    setInspectedStop(null);
+    setShowCompletionModal(false);
+    setRevealedClueIds([saintTrail.stops[0].detectiveClues[0].id]);
+    setFeedbackBanner({
+      type: 'info',
+      text: `Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
+    });
+    const ov = saintTrail.overviewCamera;
+    cameraTargetDataRef.current = {
+      autoMove: true,
+      desiredCameraPos: latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
+      desiredLookAt: latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
+    };
+  }, [saintTrail]);
 
   useEffect(() => {
     onSolvedCountChange?.(solvedStopNumbers.length);
@@ -138,9 +138,16 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     desiredLookAt: THREE.Vector3;
   }>({
     autoMove: true,
-    // Start framed over the Western Mediterranean (Italy, Sicily, Sardinia, Tunisia, Algeria)
-    desiredCameraPos: latLngToVector3(38.0, 9.5, GLOBE_RADIUS + 5.6),
-    desiredLookAt: latLngToVector3(40.5, 9.5, GLOBE_RADIUS * 0.88),
+    desiredCameraPos: latLngToVector3(
+      saintTrail.overviewCamera.camLat,
+      saintTrail.overviewCamera.camLng,
+      GLOBE_RADIUS + saintTrail.overviewCamera.camAltitude
+    ),
+    desiredLookAt: latLngToVector3(
+      saintTrail.overviewCamera.lookLat,
+      saintTrail.overviewCamera.lookLng,
+      GLOBE_RADIUS * saintTrail.overviewCamera.lookRadiusScale
+    ),
   });
 
   const solvedStopNumbersRef = useRef<number[]>(solvedStopNumbers);
@@ -174,41 +181,48 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     }
   }, [mapStyle]);
 
-  const zoomToStopOnGlobe = useCallback((stopNumber: number) => {
-    soundEngine.playEffect('compass_click');
-    soundEngine.playCityBiomeAudio(stopNumber);
-    const coords = AUTHENTIC_GLOBE_COORDS[stopNumber] || { lat: 40.5, lng: 9.5 };
-    const surfacePos = latLngToVector3(coords.lat, coords.lng, GLOBE_RADIUS);
-    // Position camera slightly south and above the city for a dramatic 3D oblique satellite angle
-    const camPos = latLngToVector3(coords.lat - 1.9, coords.lng - 0.4, GLOBE_RADIUS + 2.45);
+  const zoomToStopOnGlobe = useCallback(
+    (stopNumber: number) => {
+      soundEngine.playEffect('compass_click');
+      soundEngine.playCityBiomeAudio(stopNumber);
+      const stopObj = trailStops.find((s) => s.stopNumber === stopNumber);
+      const lat = stopObj ? stopObj.globePlacement.latDeg : 40.5;
+      const lng = stopObj ? stopObj.globePlacement.lngDeg : 9.5;
+      const surfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
+      // Position camera slightly south and above the city for a dramatic 3D oblique satellite angle
+      const camPos = latLngToVector3(lat - 1.9, lng - 0.4, GLOBE_RADIUS + 2.45);
 
-    cameraTargetDataRef.current = {
-      autoMove: true,
-      desiredCameraPos: camPos,
-      desiredLookAt: surfacePos,
-    };
-    setZoomedStopNumber(stopNumber);
-  }, []);
+      cameraTargetDataRef.current = {
+        autoMove: true,
+        desiredCameraPos: camPos,
+        desiredLookAt: surfacePos,
+      };
+      setZoomedStopNumber(stopNumber);
+    },
+    [trailStops]
+  );
 
-  const resetMediterraneanOverview = useCallback(() => {
+  const resetRegionalOverview = useCallback(() => {
     soundEngine.playEffect('vellum_page');
+    const ov = saintTrail.overviewCamera;
     cameraTargetDataRef.current = {
       autoMove: true,
-      desiredCameraPos: latLngToVector3(38.0, 9.5, GLOBE_RADIUS + 5.6),
-      desiredLookAt: latLngToVector3(40.5, 9.5, GLOBE_RADIUS * 0.88),
+      desiredCameraPos: latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
+      desiredLookAt: latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
     };
     setZoomedStopNumber(null);
-  }, []);
+  }, [saintTrail]);
 
   const resetFullPlanetOverview = useCallback(() => {
     soundEngine.playEffect('vellum_page');
+    const ov = saintTrail.overviewCamera;
     cameraTargetDataRef.current = {
       autoMove: true,
-      desiredCameraPos: latLngToVector3(28.0, 10.0, GLOBE_RADIUS + 14.5),
+      desiredCameraPos: latLngToVector3(24.0, ov.camLng, GLOBE_RADIUS + 14.5),
       desiredLookAt: new THREE.Vector3(0, 0, 0),
     };
     setZoomedStopNumber(null);
-  }, []);
+  }, [saintTrail]);
 
   // Initialize Ultra-HD Multi-Resolution Three.js Earth Scene
   useEffect(() => {
@@ -568,7 +582,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
         const pA = new THREE.Vector3();
         const pB = new THREE.Vector3();
 
-        const pilgrimageIso = new Set(['ITA', 'DZA', 'TUN']);
+        const pilgrimageIso = new Set(saintTrail.highlightedIsoCountries);
 
         const addRingSegments = (ring: number[][], targetArray: number[], radius: number) => {
           for (let i = 0; i < ring.length - 1; i++) {
@@ -628,9 +642,12 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     const upVec = new THREE.Vector3(0, 1, 0);
     const normalVec = new THREE.Vector3();
 
-    ST_AUGUSTINE_TRAIL_STOPS.forEach((stop) => {
-      const coords = AUTHENTIC_GLOBE_COORDS[stop.stopNumber];
-      const pos = latLngToVector3(coords.lat, coords.lng, GLOBE_RADIUS);
+    trailStops.forEach((stop) => {
+      const pos = latLngToVector3(
+        stop.globePlacement.latDeg,
+        stop.globePlacement.lngDeg,
+        GLOBE_RADIUS
+      );
       normalVec.copy(pos).normalize();
 
       const group = new THREE.Group();
@@ -706,22 +723,28 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     const trailMeshes: Map<number, THREE.Mesh> = new Map();
     const allTrailCurves: THREE.CatmullRomCurve3[] = [];
 
-    for (let i = 0; i < ST_AUGUSTINE_TRAIL_STOPS.length - 1; i++) {
-      const fromStop = ST_AUGUSTINE_TRAIL_STOPS[i];
-      const toStop = ST_AUGUSTINE_TRAIL_STOPS[i + 1];
-      const c1 = AUTHENTIC_GLOBE_COORDS[fromStop.stopNumber];
-      const c2 = AUTHENTIC_GLOBE_COORDS[toStop.stopNumber];
+    for (let i = 0; i < trailStops.length - 1; i++) {
+      const fromStop = trailStops[i];
+      const toStop = trailStops[i + 1];
 
-      const p1 = latLngToVector3(c1.lat, c1.lng, GLOBE_RADIUS + 0.012);
-      const p2 = latLngToVector3(c2.lat, c2.lng, GLOBE_RADIUS + 0.012);
+      const p1 = latLngToVector3(
+        fromStop.globePlacement.latDeg,
+        fromStop.globePlacement.lngDeg,
+        GLOBE_RADIUS + 0.012
+      );
+      const p2 = latLngToVector3(
+        toStop.globePlacement.latDeg,
+        toStop.globePlacement.lngDeg,
+        GLOBE_RADIUS + 0.012
+      );
       const chordDist = p1.distanceTo(p2);
 
       const arcPoints: THREE.Vector3[] = [];
-      const segments = 36;
+      const segments = 48;
       for (let s = 0; s <= segments; s++) {
         const t = s / segments;
         const interp = new THREE.Vector3().lerpVectors(p1, p2, t).normalize();
-        const maxArcHeight = THREE.MathUtils.clamp(chordDist * 0.22, 0.08, 0.58);
+        const maxArcHeight = THREE.MathUtils.clamp(chordDist * 0.22, 0.08, 1.35);
         const elevation = Math.sin(t * Math.PI) * maxArcHeight;
         interp.multiplyScalar(GLOBE_RADIUS + 0.012 + elevation);
         arcPoints.push(interp);
@@ -914,7 +937,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       const canvasW = renderer.domElement.clientWidth;
       const canvasH = renderer.domElement.clientHeight;
 
-      ST_AUGUSTINE_TRAIL_STOPS.forEach((stop) => {
+      trailStops.forEach((stop) => {
         const sNum = stop.stopNumber;
         const ring = beaconRings.get(sNum);
         const jewel = beaconJewels.get(sNum);
@@ -956,7 +979,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
           if (labelsVisible && dot > 0.15 && projVec.z < 1) {
             const anchorX = (projVec.x * 0.5 + 0.5) * canvasW;
             const anchorY = (-(projVec.y * 0.5) + 0.5) * canvasH;
-            const [offX, offY] = AUTHENTIC_GLOBE_COORDS[sNum]?.labelOffsetPx || [0, -24];
+            const [offX, offY] = stop.globePlacement.labelOffsetPx || [0, -24];
             const labelX = anchorX + offX;
             const labelY = anchorY + offY;
 
@@ -1051,7 +1074,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       envMap.dispose();
       renderer.dispose();
     };
-  }, [zoomToStopOnGlobe]);
+  }, [zoomToStopOnGlobe, saintTrail, trailStops]);
 
   const handleRevealClue = (
     clueId: string,
@@ -1079,7 +1102,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       setInspectedStop(stopToVerify);
       setActivePhotoHotspotId(stopToVerify.hiddenArtifacts[0].id);
 
-      if (nextSolved.length === ST_AUGUSTINE_TRAIL_STOPS.length) {
+      if (nextSolved.length === trailStops.length) {
         setTimeout(() => {
           soundEngine.playEffect('pilgrimage_complete');
         }, 450);
@@ -1094,7 +1117,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   };
 
   const zoomedStopObj = zoomedStopNumber
-    ? ST_AUGUSTINE_TRAIL_STOPS.find((s) => s.stopNumber === zoomedStopNumber) || null
+    ? trailStops.find((s) => s.stopNumber === zoomedStopNumber) || null
     : null;
 
   return (
@@ -1105,19 +1128,19 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
           <div className="flex items-center gap-2">
             <Globe className="h-4 w-4 shrink-0 text-[#d4af37]" />
             <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#d4af37]">
-              Sacred Trails · Footsteps of St. Augustine (6 Trail Stops)
+              Sacred Trails · Footsteps of {saintTrail.saintName} ({trailStops.length} Trail Stops)
             </span>
           </div>
           <span className="text-xs text-[#a39783]">
             Solved Trail Cases:{' '}
             <strong className="text-[#f4efe6]">
-              {solvedStopNumbers.length} / {ST_AUGUSTINE_TRAIL_STOPS.length}
+              {solvedStopNumbers.length} / {trailStops.length}
             </strong>
           </span>
         </div>
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
-          {ST_AUGUSTINE_TRAIL_STOPS.map((stop, idx) => {
+          {trailStops.map((stop, idx) => {
             const isCurrentCase = idx === activeCaseIndex;
             const isSolved = solvedStopNumbers.includes(stop.stopNumber);
             return (
@@ -1178,12 +1201,12 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="min-w-0">
                   <p className="truncate text-[9px] font-bold uppercase tracking-[0.18em] text-[#d4af37] sm:text-[10px]">
-                    3D Mediterranean Earth · Drag to Rotate · Pinch or Click City to Zoom
+                    3D Sacred Earth · Drag to Rotate · Pinch or Click City to Zoom
                   </p>
                   <h2 className="truncate font-serif text-sm font-bold text-[#f4efe6] sm:text-lg">
                     {zoomedStopObj
                       ? `${zoomedStopObj.modernPlaceName}, ${zoomedStopObj.modernCountry} (${zoomedStopObj.ancientPlaceName})`
-                      : 'Sacred Trails of St. Augustine (Birthplace to Tomb)'}
+                      : saintTrail.globeHeaderSubtitle}
                   </h2>
                 </div>
 
@@ -1199,11 +1222,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   </button>
 
                   <button
-                    onClick={resetMediterraneanOverview}
+                    onClick={resetRegionalOverview}
                     className="inline-flex items-center gap-1 rounded-lg border border-[#d4af37]/50 bg-[#17130e]/90 px-2 py-1 text-[10px] font-semibold text-[#f3d27a] transition hover:bg-[#261f16] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
                   >
                     <Compass className="h-3.5 w-3.5" />
-                    <span>Mediterranean</span>
+                    <span>{saintTrail.overviewButtonLabel}</span>
                   </button>
 
                   <button
@@ -1255,7 +1278,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
             {/* SVG Leader Lines connecting exact surface pins to floating city callouts */}
             <svg className="pointer-events-none absolute inset-0 z-10 h-full w-full overflow-visible">
-              {ST_AUGUSTINE_TRAIL_STOPS.map((stop) => (
+              {trailStops.map((stop) => (
                 <g key={stop.stopNumber}>
                   <line
                     ref={(el) => {
@@ -1282,7 +1305,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
             {/* Projected 2D Interactive City Callouts on the 3D Globe */}
             <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
-              {ST_AUGUSTINE_TRAIL_STOPS.map((stop) => {
+              {trailStops.map((stop) => {
                 const isSelected = zoomedStopNumber === stop.stopNumber;
                 const isSolved = solvedStopNumbers.includes(stop.stopNumber);
                 return (
@@ -1374,7 +1397,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   Fly 3D Camera Directly to Any of the 6 Trail Cities:
                 </p>
                 <div className="flex flex-wrap gap-1.5">
-                  {ST_AUGUSTINE_TRAIL_STOPS.map((stop) => {
+                  {trailStops.map((stop) => {
                     const isSolved = solvedStopNumbers.includes(stop.stopNumber);
                     return (
                       <button
@@ -1420,8 +1443,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       setIsNarrating(false);
                     } else {
                       setIsNarrating(true);
-                      soundEngine.playAndrewNarration(currentCaseStop.stopNumber, 'clue', () =>
-                        setIsNarrating(false)
+                      soundEngine.playAndrewNarration(
+                        currentCaseStop.stopNumber,
+                        'clue',
+                        () => setIsNarrating(false),
+                        saintTrail.id
                       );
                     }
                   }}
@@ -1554,7 +1580,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               Select & Zoom Suspect City on the 3D Globe:
             </p>
             <div className="grid grid-cols-2 gap-2">
-              {ST_AUGUSTINE_TRAIL_STOPS.map((stop) => {
+              {trailStops.map((stop) => {
                 const isZoomed = zoomedStopNumber === stop.stopNumber;
                 const isSolved = solvedStopNumbers.includes(stop.stopNumber);
                 return (
@@ -1619,7 +1645,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#d4af37]">
-                    Trail Stop {inspectedStop.stopNumber} of 6 · {inspectedStop.eraLabel}
+                    Trail Stop {inspectedStop.stopNumber} of {trailStops.length} · {inspectedStop.eraLabel}
                   </span>
                   {solvedStopNumbers.includes(inspectedStop.stopNumber) && (
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400">
@@ -1641,8 +1667,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       setIsNarrating(false);
                     } else {
                       setIsNarrating(true);
-                      soundEngine.playAndrewNarration(inspectedStop.stopNumber, 'city', () =>
-                        setIsNarrating(false)
+                      soundEngine.playAndrewNarration(
+                        inspectedStop.stopNumber,
+                        'city',
+                        () => setIsNarrating(false),
+                        saintTrail.id
                       );
                     }
                   }}
@@ -1775,7 +1804,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                     </p>
                   </div>
 
-                  {/* Saint Augustine Quote */}
+                  {/* Saint Quote */}
                   <blockquote className="rounded-xl border border-[#2f271d] bg-[#1a1510] p-3.5 italic text-xs text-[#cfc3ae]">
                     {inspectedStop.saintQuote}
                   </blockquote>
@@ -1790,14 +1819,14 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                     Back to 3D Globe
                   </button>
 
-                  {activeCaseIndex < ST_AUGUSTINE_TRAIL_STOPS.length - 1 ? (
+                  {activeCaseIndex < trailStops.length - 1 ? (
                     <button
                       onClick={() => {
                         soundEngine.playEffect('vellum_page');
                         const nextIdx = activeCaseIndex + 1;
                         setActiveCaseIndex(nextIdx);
                         setInspectedStop(null);
-                        resetMediterraneanOverview();
+                        resetRegionalOverview();
                       }}
                       className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg hover:brightness-110"
                     >
@@ -1832,22 +1861,19 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               <Award className="h-7 w-7" />
             </div>
             <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d4af37]">
-              St. Augustine 3D Globe Trail Complete
+              {saintTrail.saintName} · 3D Globe Trail Complete
             </p>
             <h3 className="mt-1 font-serif text-2xl font-bold text-[#f4efe6]">
               All 6 Sanctuary Beacons Unlocked!
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-[#cfc3ae]">
-              You traced St. Augustine’s footsteps across North Africa and Italy—from{' '}
-              <strong>Souk Ahras, Algeria</strong> and <strong>Tunis, Tunisia</strong> to{' '}
-              <strong>Milan</strong>, <strong>Ostia & Rome</strong>, <strong>Annaba</strong>, and
-              his final resting place in <strong>Pavia, Italy</strong>.
+              {saintTrail.completionSummary}
             </p>
             <div className="mt-5 flex justify-center gap-3">
               <button
                 onClick={() => {
                   setShowCompletionModal(false);
-                  resetMediterraneanOverview();
+                  resetRegionalOverview();
                 }}
                 className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b]"
               >
@@ -1859,7 +1885,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                   setSolvedStopNumbers([]);
                   setActiveCaseIndex(0);
                   setShowCompletionModal(false);
-                  resetMediterraneanOverview();
+                  resetRegionalOverview();
                 }}
                 className="inline-flex items-center gap-1.5 rounded-xl border border-[#3a3023] bg-[#211b14] px-4 py-2.5 text-xs font-semibold text-[#e6dccb]"
               >

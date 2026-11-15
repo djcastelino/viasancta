@@ -36,6 +36,31 @@ export interface GlobePlacement {
   lngDeg: number;
   regionLabel: string;
   beaconColorHex: string;
+  labelOffsetPx?: [number, number];
+}
+
+export type SaintId = 'augustine' | 'thomas';
+
+export interface SaintTrailProfile {
+  id: SaintId;
+  saintName: string;
+  shortTitle: string;
+  feastDay: string;
+  eraSpan: string;
+  trailSubtitle: string;
+  overviewButtonLabel: string;
+  globeHeaderSubtitle: string;
+  overviewCamera: {
+    camLat: number;
+    camLng: number;
+    camAltitude: number;
+    lookLat: number;
+    lookLng: number;
+    lookRadiusScale: number;
+  };
+  highlightedIsoCountries: string[];
+  completionSummary: string;
+  stops: TrailStop[];
 }
 
 export interface TrailStop {
@@ -78,10 +103,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“You have made us for Yourself, O Lord, and our heart is restless until it rests in You.”',
     globePlacement: {
-      latDeg: 33.4,
-      lngDeg: 4.4,
+      latDeg: 36.15,
+      lngDeg: 7.95,
       regionLabel: 'Atlas Highlands, Northeastern Algeria',
       beaconColorHex: '#D4AF37',
+      labelOffsetPx: [-64, 28],
     },
     detectiveCaseTitle: 'Case #1 · The Mountain Town of the Thousand-Year Olive Tree',
     detectiveLeadPrompt:
@@ -201,10 +227,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“Suddenly every vain hope became worthless to me, and I yearned with an incredible warmth of heart for the immortality of wisdom.”',
     globePlacement: {
-      latDeg: 36.8,
-      lngDeg: 11.8,
+      latDeg: 36.85,
+      lngDeg: 10.32,
       regionLabel: 'Gulf of Tunis Coast, Tunisia',
       beaconColorHex: '#E09F3E',
+      labelOffsetPx: [66, 8],
     },
     detectiveCaseTitle: 'Case #2 · The Harbor of the Midnight Escape',
     detectiveLeadPrompt:
@@ -324,10 +351,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“Late have I loved You, O Beauty ever ancient, ever new, late have I loved You!”',
     globePlacement: {
-      latDeg: 46.4,
-      lngDeg: 8.2,
+      latDeg: 45.55,
+      lngDeg: 9.19,
       regionLabel: 'Lombardy Plains, Northern Italy',
       beaconColorHex: '#52B788',
+      labelOffsetPx: [-60, -24],
     },
     detectiveCaseTitle: 'Case #3 · The Garden Voice & The Hidden Pool Under the Cathedral',
     detectiveLeadPrompt:
@@ -447,10 +475,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“Lay this body anywhere; only remember me at the altar of the Lord, wherever you are.” — St. Monica',
     globePlacement: {
-      latDeg: 41.3,
-      lngDeg: 13.6,
+      latDeg: 41.78,
+      lngDeg: 12.35,
       regionLabel: 'Tiber River Port & Rome, Central Italy',
       beaconColorHex: '#6495ED',
+      labelOffsetPx: [70, -6],
     },
     detectiveCaseTitle: 'Case #4 · The 1945 Soccer Goalpost Miracle Near Rome',
     detectiveLeadPrompt:
@@ -570,10 +599,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“Sing as wayfarers sing! Sing to comfort your toil, not loving indolence: sing, and keep on walking!”',
     globePlacement: {
-      latDeg: 37.1,
-      lngDeg: 7.4,
+      latDeg: 36.92,
+      lngDeg: 7.72,
       regionLabel: 'Mediterranean Coast, Northeastern Algeria',
       beaconColorHex: '#E07A5F',
+      labelOffsetPx: [-68, -18],
     },
     detectiveCaseTitle: 'Case #5 · The Besieged City Where Only His Library Survived the Fire',
     detectiveLeadPrompt:
@@ -693,10 +723,11 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     saintQuote:
       '“In my Father’s house there are many resting places… our peace is our rest, and our rest is in the fullness of love.”',
     globePlacement: {
-      latDeg: 44.3,
-      lngDeg: 10.4,
+      latDeg: 45.05,
+      lngDeg: 9.15,
       regionLabel: 'Ticino Valley (South of Milan), Italy',
       beaconColorHex: '#C77DFF',
+      labelOffsetPx: [66, 18],
     },
     detectiveCaseTitle: 'Case #6 · The Final Resting Place Under the “Golden Sky”',
     detectiveLeadPrompt:
@@ -800,3 +831,807 @@ export const ST_AUGUSTINE_TRAIL_STOPS: TrailStop[] = [
     sealName: 'Seal of Pavia',
   },
 ];
+
+export const ST_THOMAS_TRAIL_STOPS: TrailStop[] = [
+  {
+    stopNumber: 1,
+    title: 'The Upper Room & The Wounds of Christ',
+    subtitle: 'Explore the stone Cenacle of Mount Zion where St. Thomas proclaimed “My Lord and my God!”',
+    eraLabel: '33 AD · The Upper Room',
+    ancientPlaceName: 'Cenacle of Mount Zion',
+    modernPlaceName: 'Jerusalem',
+    modernCountry: 'Israel',
+    image: '/images/trails/thomas_step1_jerusalem.jpg',
+    imageCaption: 'Vaulted limestone arches of the Cenacle (Upper Room) on Mount Zion in Jerusalem.',
+    whatYouCanSeeToday:
+      'Just outside Zion Gate on the southern crest of Jerusalem’s Old City, pilgrims can climb the stone steps into the medieval vaulted Cenacle (Upper Room), venerated since the early Church as the site of the Last Supper, Pentecost, and Christ’s appearance to St. Thomas.',
+    didYouKnowHighlight:
+      'Though remembered as “Doubting Thomas,” his exclamation upon seeing the Risen Christ—“My Lord and my God!” (John 20:28)—is actually the single boldest, clearest confession of Jesus’s divinity spoken by anyone in all four Gospels!',
+    saintQuote:
+      '“Thomas answered and said to Him: ‘My Lord and my God!’” — John 20:28',
+    globePlacement: {
+      latDeg: 31.77,
+      lngDeg: 35.23,
+      regionLabel: 'Mount Zion, Judean Hills, Levant',
+      beaconColorHex: '#D4AF37',
+      labelOffsetPx: [68, -18],
+    },
+    detectiveCaseTitle: 'Case #1 · The Stone Upper Room Where Doubt Turned to Boldest Faith',
+    detectiveLeadPrompt:
+      'Read the 3 detective clues below, then rotate and zoom into the ancient hilltop city on the 3D Globe where St. Thomas touched the Risen Christ’s wounds before setting out for the East.',
+    detectiveClues: [
+      {
+        id: 't1-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A Golden-Stone Hilltop Sanctuary Outside Zion Gate',
+        clueText:
+          'Perched between the Mediterranean Sea and the Dead Sea, this walled holy city requires golden limestone on every building facade. On Mount Zion just south of its Old City walls stands the medieval vaulted Cenacle (Upper Room).',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 'c1-thomas-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: 'Why “Doubting Thomas” Spoke the Highest Confession in the Gospels!',
+        clueText:
+          'While people call him "Doubting Thomas," his four-word cry in this room—"My Lord and my God!" (John 20:28)—is the only time in all four Gospels that an Apostle directly addresses Jesus as both Lord and God!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't1-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'Eight Days After Easter in the Upper Room (33 AD)',
+        clueText:
+          'Eight days after the Resurrection, Jesus appeared through locked doors here and invited Thomas to place his finger into the nail marks. When the Apostles cast lots for their mission fields, Thomas received the distant lands of Parthia and India.',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't1-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'Center of the vaulted limestone hall bathed in warm shafts of sunlight.',
+        hintDirection: 'Click marker #1 in the sunlit center of the stone Upper Room.',
+        foundTitle: 'Eight Days After Easter: “My Lord and My God!” (John 20:28)',
+        xPercent: 48,
+        yPercent: 52,
+        hitRadius: 14,
+        storyUnlocked:
+          'Absent on Easter Sunday evening, Thomas declared he would not believe unless he saw the nail marks. Eight days later in this Upper Room, Christ stood before him—and Thomas uttered the supreme confession of faith: "My Lord and my God!"',
+        stoneKeyWord: 'MY LORD AND MY GOD',
+        stoneKeyMeaning: 'Thomas’s supreme confession of Christ’s divinity in the Upper Room',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't1-art-2',
+        orderNumber: 2,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The ancient stone columns and ribbed Crusader arches supporting the upper floor.',
+        hintDirection: 'Click marker #2 on the stone pillar and gothic vaulting.',
+        foundTitle: 'Where Is It Modern Day Now? Mount Zion, Jerusalem',
+        xPercent: 26,
+        yPercent: 42,
+        hitRadius: 14,
+        storyUnlocked:
+          'Today the Cenacle stands on Mount Zion just outside the Zion Gate of Jerusalem’s Old City. Rebuilt with gothic ribbed vaults by Franciscan friars in the 14th century over early Judeo-Christian synagogue foundations, it remains open to pilgrims daily.',
+        stoneKeyWord: 'MOUNT ZION, JERUSALEM',
+        stoneKeyMeaning: 'The hilltop sanctuary where the Cenacle stands today',
+        soundCue: 'sanctuary_bell',
+      },
+      {
+        id: 't1-art-3',
+        orderNumber: 3,
+        category: 'Did You Know?',
+        riddleToFind: 'The arched stone window looking out toward the eastern horizon.',
+        hintDirection: 'Click marker #3 near the sunlit stone window on the right.',
+        foundTitle: 'Did You Know? The Apostle Who Traveled Farther Than Any Other!',
+        xPercent: 76,
+        yPercent: 36,
+        hitRadius: 14,
+        storyUnlocked:
+          'Known in Aramaic as Toma ("The Twin") and in Greek as Didymus, St. Thomas traveled farther outside the Roman Empire than any other of the Twelve Apostles—journeying across Mesopotamia and the Arabian Sea all the way to southern India!',
+        stoneKeyWord: 'DIDYMUS (THE TWIN)',
+        stoneKeyMeaning: 'The Greek name of the Apostle who carried the Gospel beyond the Roman Empire to India',
+        soundCue: 'gregorian_chime',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · His Confession of Faith',
+        questionPrompt: 'What four words did St. Thomas proclaim in the Upper Room?',
+        correctStoneId: 't1-art-1',
+      },
+      {
+        slotLabel: 'Lock II · His Aramaic & Greek Name',
+        questionPrompt: 'What title meaning "The Twin" was given to St. Thomas?',
+        correctStoneId: 't1-art-3',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'Where does the vaulted Cenacle stand today?',
+        correctStoneId: 't1-art-2',
+      },
+    ],
+    sealName: 'Seal of Jerusalem',
+  },
+  {
+    stopNumber: 2,
+    title: 'Landing on the Spice Coast of Muziris',
+    subtitle: 'Trace the monsoon trade winds to the Malabar harbor where St. Thomas landed in 52 AD',
+    eraLabel: '52 AD · Arrival on the Malabar Coast',
+    ancientPlaceName: 'Muziris (Cranganore)',
+    modernPlaceName: 'Kodungallur, Kerala',
+    modernCountry: 'India',
+    image: '/images/trails/thomas_step2_kodungallur.jpg',
+    imageCaption: 'Palm-lined Malabar backwaters of Kodungallur, Kerala (ancient Muziris), where St. Thomas landed in 52 AD.',
+    whatYouCanSeeToday:
+      'Today, ancient Muziris is the serene Malabar coast town of Kodungallur in Kerala’s Thrissur district, India. On the banks of the Periyar estuary at Azhikode stands the Mar Thoma Pontifical Shrine, marking the harbor where St. Thomas stepped ashore in 52 AD and preserving the relic of his right arm bone.',
+    didYouKnowHighlight:
+      'For centuries, skeptics wondered if 1st-century ships could sail directly from the Roman Middle East to Kerala—until recent excavations at Pattanam (ancient Muziris) unearthed thousands of 1st-century Roman wine amphorae and Augustus Caesar gold coins!',
+    saintQuote:
+      '“Go into the whole world and proclaim the Gospel to every creature.” — Mark 16:15',
+    globePlacement: {
+      latDeg: 10.05,
+      lngDeg: 76.25,
+      regionLabel: 'Malabar Coast, Southwestern India',
+      beaconColorHex: '#E09F3E',
+      labelOffsetPx: [-72, 26],
+    },
+    detectiveCaseTitle: 'Case #2 · The Lost Roman Spice Port of the Malabar Backwaters',
+    detectiveLeadPrompt:
+      'Sailing with the summer monsoon winds across the Arabian Sea in 52 AD, which legendary black-pepper harbor on India’s southwestern Malabar Coast welcomed St. Thomas ashore?',
+    detectiveClues: [
+      {
+        id: 't2-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A River-Estuary Town in Thrissur District, Kerala, India',
+        clueText:
+          'Called Muziris by the Romans and Shingly by medieval travelers, today this lush backwater town in Kerala, southwestern India, hosts the Mar Thoma Pontifical Shrine where the Periyar River meets the Arabian Sea.',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 't2-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: '1st-Century Roman Gold Coins & Amphorae Proved His Sea Route!',
+        clueText:
+          'Roman historian Pliny the Elder called this port "the first emporium of India"—just a 40-day monsoon sail from the Red Sea. Modern digs here unearthed thousands of 1st-century Roman amphorae and imperial coins from the exact era Thomas landed!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't2-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'Landing at Maliankara in 52 AD & Founding the Seven Churches',
+        clueText:
+          'Arriving on a merchant vessel in 52 AD, St. Thomas was welcomed by the local Chera king and Jewish spice traders, establishing the first of Kerala’s historic "Ezharappallikal" (Seven and a Half Churches).',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't2-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'The traditional wooden spice boat moored along the golden river estuary.',
+        hintDirection: 'Click marker #1 on the wooden vessel in the harbor.',
+        foundTitle: 'Sailing the Hippalus Monsoon Winds to India (52 AD)',
+        xPercent: 34,
+        yPercent: 64,
+        hitRadius: 14,
+        storyUnlocked:
+          'In the 1st century AD, Greek and Roman navigators harnessed the seasonal southwest monsoon winds (Hippalus) to sail straight across the Arabian Sea in 40 days. St. Thomas boarded a spice ship with the merchant Habban and landed here at Muziris in 52 AD.',
+        stoneKeyWord: 'MUZIRIS HARBOR (52 AD)',
+        stoneKeyMeaning: 'The ancient spice port where St. Thomas first landed in India',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't2-art-2',
+        orderNumber: 2,
+        category: 'Did You Know?',
+        riddleToFind: 'The carved granite cross and traditional oil lamp on the stone wharf.',
+        hintDirection: 'Click marker #2 on the stone wharf in the right foreground.',
+        foundTitle: 'Did You Know? The Pattanam Roman Treasure Digs!',
+        xPercent: 68,
+        yPercent: 72,
+        hitRadius: 14,
+        storyUnlocked:
+          'Recent archaeological excavations at nearby Pattanam uncovered Roman terra sigillata pottery, Mediterranean glass beads, and 1st-century coins—proving vibrant daily contact between the Mediterranean world and Kerala during St. Thomas’s lifetime!',
+        stoneKeyWord: 'EZHARAPPALLIKAL (7.5 CHURCHES)',
+        stoneKeyMeaning: 'The seven and a half early Christian communities founded by St. Thomas in Kerala',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't2-art-3',
+        orderNumber: 3,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The palm-fringed shoreline looking toward the modern Pontifical Shrine.',
+        hintDirection: 'Click marker #3 along the palm-lined distant shore.',
+        foundTitle: 'Where Is It Modern Day Now? Kodungallur, Kerala, India',
+        xPercent: 52,
+        yPercent: 36,
+        hitRadius: 14,
+        storyUnlocked:
+          'Today, ancient Muziris (later called Cranganore) is Kodungallur in Kerala’s Thrissur district. In 1953, Cardinal Eugene Tisserant brought a bone relic of St. Thomas’s right arm from Ortona, Italy back to the Mar Thoma Pontifical Shrine here!',
+        stoneKeyWord: 'KODUNGALLUR, KERALA',
+        stoneKeyMeaning: 'Modern-day Malabar coastal town where ancient Muziris stands today',
+        soundCue: 'sanctuary_bell',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · The Ancient Spice Port',
+        questionPrompt: 'What was the ancient name of the Malabar harbor where St. Thomas landed in 52 AD?',
+        correctStoneId: 't2-art-1',
+      },
+      {
+        slotLabel: 'Lock II · The Malabar Communities',
+        questionPrompt: 'What traditional Malayalam name describes the 7.5 churches founded by St. Thomas?',
+        correctStoneId: 't2-art-2',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'Which modern town in Kerala, India is ancient Muziris today?',
+        correctStoneId: 't2-art-3',
+      },
+    ],
+    sealName: 'Seal of Muziris',
+  },
+  {
+    stopNumber: 3,
+    title: 'The Baptismal Pond of the Malabar Scholars',
+    subtitle: 'Visit India’s oldest continuous church and the lotus pond where St. Thomas baptized the first families',
+    eraLabel: '52–54 AD · The Malabar Mission',
+    ancientPlaceName: 'Palayoor (Palur)',
+    modernPlaceName: 'Palayoor (Guruvayur), Kerala',
+    modernCountry: 'India',
+    image: '/images/trails/thomas_step3_palayoor.jpg',
+    imageCaption: 'St. Thomas Syro-Malabar Pilgrim Church and historic baptismal pond at Palayoor, Kerala, India.',
+    whatYouCanSeeToday:
+      'In modern Palayoor (near Guruvayur in Thrissur district, Kerala), you can visit St. Thomas Major Archiepiscopal Pilgrim Church—the oldest continuously active church in India, established in 52 AD—and stand beside the preserved Thaliyakulam Pond where St. Thomas baptized local Namboothiri scholars.',
+    didYouKnowHighlight:
+      'Around the church courtyard in Palayoor, you can still see ancient carved granite Hindu temple stones, a traditional brass “Kalvilakku” (stone lamp), and the Boat Jetty ("Bottiukulam") where St. Thomas arrived by backwater canoe nearly 2,000 years ago!',
+    saintQuote:
+      '“Blessed are those who have not seen and yet have believed.” — John 20:29',
+    globePlacement: {
+      latDeg: 10.88,
+      lngDeg: 75.92,
+      regionLabel: 'Central Kerala Coast, Southwestern India',
+      beaconColorHex: '#52B788',
+      labelOffsetPx: [-76, -22],
+    },
+    detectiveCaseTitle: 'Case #3 · The Lotus Pond Baptism & India’s Oldest Active Parish',
+    detectiveLeadPrompt:
+      'Journey slightly north along Kerala’s Malabar coast to the ancient temple town where St. Thomas baptized Brahmin scholars in a lotus water tank that still exists today!',
+    detectiveClues: [
+      {
+        id: 't3-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A Historic Pilgrim Town Next to Guruvayur in Central Kerala',
+        clueText:
+          'Located in central Kerala’s Thrissur district just two kilometers from Guruvayur, this peaceful palm-shaded town is home to the oldest continuously functioning Christian church in all of India (founded in 52 AD).',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 't3-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: 'The Preserved “Thaliyakulam” Baptismal Pond & Ancient Stone Lamps!',
+        clueText:
+          'When local Vedic scholars threw water into the air during morning prayers in the Thaliyakulam pond, tradition says Thomas prayed that the water droplets remain suspended like glowing pearls in midair—inspiring the families to seek baptism in that very pond!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't3-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'Origin of the Ancient St. Thomas Christian (Nasrani) Families',
+        clueText:
+          'The ancestral families baptized here by St. Thomas—including Pakalomattam, Sankarapuri, Kalli, and Kaliyankal—preserved the Syriac liturgy and apostolic faith across twenty centuries.',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't3-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'The stone-stepped Thaliyakulam water tank reflecting the church facade.',
+        hintDirection: 'Click marker #1 on the stepped water pond in the foreground.',
+        foundTitle: 'The Thaliyakulam Baptismal Pond (52 AD)',
+        xPercent: 45,
+        yPercent: 74,
+        hitRadius: 14,
+        storyUnlocked:
+          'Beside this tranquil stepped water tank (Thaliyakulam), St. Thomas engaged in dialogue with local Brahmin scholars performing morning ablutions, leading to the baptism of the pioneering St. Thomas Christian (Mar Thoma Nasrani) families of India.',
+        stoneKeyWord: 'THALIYAKULAM POND',
+        stoneKeyMeaning: 'The preserved water tank in Palayoor where St. Thomas baptized the first families',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't3-art-2',
+        orderNumber: 2,
+        category: 'Did You Know?',
+        riddleToFind: 'The carved granite oil lamp (Kalvilakku) standing in the church courtyard.',
+        hintDirection: 'Click marker #2 on the tall stone oil lamp beside the courtyard.',
+        foundTitle: 'Did You Know? 2,000 Years of Unbroken Worship & Heritage!',
+        xPercent: 72,
+        yPercent: 54,
+        hitRadius: 14,
+        storyUnlocked:
+          'Unlike the other six early churches in Kerala that were relocated or rebuilt on new sites over the millennia, Palayoor Church still stands on its original 52 AD plot—preserving ancient granite oil lamps (Kalvilakku) and weathered sculptures!',
+        stoneKeyWord: 'INDIA’S OLDEST PARISH (52 AD)',
+        stoneKeyMeaning: 'Standing on its original site in Palayoor for nearly two millennia',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't3-art-3',
+        orderNumber: 3,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The white-and-gold Kerala church facade rising beneath the coconut palms.',
+        hintDirection: 'Click marker #3 on the main church sanctuary building.',
+        foundTitle: 'Where Is It Modern Day Now? Palayoor (Near Guruvayur), Kerala',
+        xPercent: 48,
+        yPercent: 34,
+        hitRadius: 14,
+        storyUnlocked:
+          'Every July on Dukrana (the July 3 Feast of St. Thomas), thousands of pilgrims walk the "Thoma Margam" procession to Palayoor in central Kerala, lighting oil lamps and praying in historic East Syriac and Malayalam.',
+        stoneKeyWord: 'PALAYOOR, KERALA',
+        stoneKeyMeaning: 'Modern-day central Kerala town housing the 52 AD St. Thomas Pilgrim Church',
+        soundCue: 'sanctuary_bell',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · The Sacred Water Tank',
+        questionPrompt: 'What is the name of the preserved pond where St. Thomas baptized the first families here?',
+        correctStoneId: 't3-art-1',
+      },
+      {
+        slotLabel: 'Lock II · Its Historic Distinction',
+        questionPrompt: 'What makes the 52 AD church at Palayoor unique across all of India?',
+        correctStoneId: 't3-art-2',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'In which Kerala town near Guruvayur does this sanctuary stand today?',
+        correctStoneId: 't3-art-3',
+      },
+    ],
+    sealName: 'Seal of Palayoor',
+  },
+  {
+    stopNumber: 4,
+    title: 'The Cave Refuge & Palm Print in the Rock',
+    subtitle: 'Step inside the granite cave of Little Mount where St. Thomas prayed and struck a spring from stone',
+    eraLabel: '68–72 AD · Cave of Solitude',
+    ancientPlaceName: 'Chinnamalai (Little Mount)',
+    modernPlaceName: 'Little Mount, Chennai',
+    modernCountry: 'India',
+    image: '/images/trails/thomas_step4_little_mount.jpg',
+    imageCaption: 'Rock-cut prayer cave and 16th-century chapel at Little Mount (Chinnamalai), Saidapet, Chennai, India.',
+    whatYouCanSeeToday:
+      'In the Saidapet neighborhood of southern Chennai, Tamil Nadu, you can stoop through the narrow granite cleft inside the 1551 Portuguese Chapel of Our Lady of Good Health to enter St. Thomas’s actual prayer cave, touch his palm print in the rock window, and see the perennial natural spring on the hillock outside.',
+    didYouKnowHighlight:
+      'Even in the blazing summer heat of Chennai when surrounding wells run dry, the tiny rock fissure outside the Little Mount cave—"St. Thomas’s Fountain," which tradition says he struck with his staff for thirsty listeners—still holds cool water!',
+    saintQuote:
+      '“Let us also go, that we may die with Him.” — St. Thomas (John 11:16)',
+    globePlacement: {
+      latDeg: 12.75,
+      lngDeg: 80.02,
+      regionLabel: 'Adyar River, Southern Chennai, Coromandel Coast',
+      beaconColorHex: '#6495ED',
+      labelOffsetPx: [74, 24],
+    },
+    detectiveCaseTitle: 'Case #4 · The Granite Cave With the Apostle’s Palm Print & Spring',
+    detectiveLeadPrompt:
+      'Crossing to India’s eastern Coromandel Coast, locate the granite hillock beside the Adyar River in southern Chennai where St. Thomas lived in a rock cave and left his handprint in stone!',
+    detectiveClues: [
+      {
+        id: 't4-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A Granite Hillock in Saidapet, Southern Chennai, India',
+        clueText:
+          'Known in Tamil as Chinnamalai ("Little Mount"), this rocky hillock beside the Adyar River in southern Chennai (formerly Madras) encloses a natural rock cavern beneath a 1551 Portuguese vaulted chapel.',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 't4-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: 'A Handprint in the Rock Window & A Spring Struck from Granite!',
+        clueText:
+          'Inside the cave’s narrow escape tunnel, pilgrims can still see the fossil-like impression of a palm pressed into the granite wall, while outside on the solid rock hilltop sits a natural water fissure that never dries up!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't4-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'The Apostle’s Hermitage of Prayer Before His Martyrdom (68–72 AD)',
+        clueText:
+          'During his final years preaching along the eastern coast of Tamilakam, St. Thomas spent nights in fasting and prayer inside this cool rock cave, preaching to crowds gathered around the hillock by day.',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't4-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'The candlelit granite altar deep inside the natural rock cavern.',
+        hintDirection: 'Click marker #1 in the glowing center of the rock cave.',
+        foundTitle: 'St. Thomas’s Cave of Prayer & Fasting (68–72 AD)',
+        xPercent: 48,
+        yPercent: 56,
+        hitRadius: 14,
+        storyUnlocked:
+          'After traveling across the southern peninsula to the Coromandel Coast, St. Thomas used this secluded granite cavern beside the Adyar River as his hermitage of silent prayer and teaching.',
+        stoneKeyWord: 'CHINNAMALAI PRAYER CAVE',
+        stoneKeyMeaning: 'The granite cavern in southern Chennai where St. Thomas prayed in solitude',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't4-art-2',
+        orderNumber: 2,
+        category: 'Did You Know?',
+        riddleToFind: 'The narrow sunlit rock cleft on the side of the cave wall.',
+        hintDirection: 'Click marker #2 on the sunlit rock opening on the right wall.',
+        foundTitle: 'Did You Know? The Palm Print & The Perennial Rock Spring!',
+        xPercent: 74,
+        yPercent: 44,
+        hitRadius: 14,
+        storyUnlocked:
+          'When hostile assailants cornered him inside the cave, tradition records that Thomas escaped through this narrow rock opening—leaving his right palm print pressed into the stone—and fled two miles south to Great Mount (St. Thomas Mount).',
+        stoneKeyWord: 'PALM PRINT IN THE STONE',
+        stoneKeyMeaning: 'Preserved inside the narrow rock escape cleft at Little Mount',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't4-art-3',
+        orderNumber: 3,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The rough-hewn stone steps leading from the 1551 Portuguese chapel into the cavern.',
+        hintDirection: 'Click marker #3 on the stone entrance steps on the left.',
+        foundTitle: 'Where Is It Modern Day Now? Little Mount (Saidapet), Chennai, India',
+        xPercent: 24,
+        yPercent: 66,
+        hitRadius: 14,
+        storyUnlocked:
+          'Today, Little Mount has its own station on the Chennai Metro Blue Line in Saidapet! Overlooking the historic 1551 Portuguese cave chapel stands a striking circular modern shrine dedicated to Our Lady of Good Health.',
+        stoneKeyWord: 'LITTLE MOUNT, CHENNAI',
+        stoneKeyMeaning: 'Modern-day neighborhood in southern Chennai where the cave shrine stands today',
+        soundCue: 'sanctuary_bell',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · The Hermitage in the Rock',
+        questionPrompt: 'What Tamil name meaning "Little Mount" designates St. Thomas’s prayer cave?',
+        correctStoneId: 't4-art-1',
+      },
+      {
+        slotLabel: 'Lock II · The Mark Left Behind',
+        questionPrompt: 'What physical impression can pilgrims still touch inside the cave’s narrow rock window?',
+        correctStoneId: 't4-art-2',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'Where in modern-day India is this rock cave sanctuary located?',
+        correctStoneId: 't4-art-3',
+      },
+    ],
+    sealName: 'Seal of Little Mount',
+  },
+  {
+    stopNumber: 5,
+    title: 'Martyrdom on the Mount & The Tomb by the Sea',
+    subtitle: 'Stand before San Thome Cathedral Basilica in Mylapore, built directly over St. Thomas’s 72 AD tomb',
+    eraLabel: 'July 3, 72 AD · Crown of Martyrdom',
+    ancientPlaceName: 'Mylapore (Mayilappur)',
+    modernPlaceName: 'San Thome, Chennai',
+    modernCountry: 'India',
+    image: '/images/trails/thomas_step5_santhome.jpg',
+    imageCaption: 'San Thome Cathedral Basilica on the Bay of Bengal shore in Mylapore, Chennai, India.',
+    whatYouCanSeeToday:
+      'Along the Marina beachfront in Mylapore, Chennai, you can enter the snow-white neo-Gothic San Thome Cathedral Basilica and descend into the underground crypt to pray directly beside St. Thomas’s original 1st-century tomb—and climb nearby St. Thomas Mount (Parangi Malai), where he was martyred in 72 AD.',
+    didYouKnowHighlight:
+      'Did you know there are only THREE basilicas in the entire world built directly over the tomb of one of Jesus’s Twelve Apostles? St. Peter’s Basilica in Rome (St. Peter), Santiago de Compostela in Spain (St. James), and San Thome Basilica in Chennai, India (St. Thomas)!',
+    saintQuote:
+      '“Jesus said to him: ‘I am the Way, and the Truth, and the Life.’” — Spoken in answer to St. Thomas (John 14:5–6)',
+    globePlacement: {
+      latDeg: 13.32,
+      lngDeg: 80.36,
+      regionLabel: 'Mylapore Coast, Bay of Bengal, Chennai, India',
+      beaconColorHex: '#E07A5F',
+      labelOffsetPx: [76, -20],
+    },
+    detectiveCaseTitle: 'Case #5 · One of Only Three Apostolic Tomb Basilicas on Earth',
+    detectiveLeadPrompt:
+      'Only three churches on earth stand directly over the original tomb of one of the Twelve Apostles: Rome, Santiago de Compostela, and this seaside neighborhood of peacocks on the Bay of Bengal!',
+    detectiveClues: [
+      {
+        id: 't5-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A White Neo-Gothic Basilica on the Marina Coast of Chennai, India',
+        clueText:
+          'Anciently called Mayilappur ("Town of Peacocks"), this historic seaside district in central Chennai faces the Bay of Bengal and is crowned by the 1896 white spire of San Thome Cathedral Basilica.',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 't5-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: 'One of Only Three Basilicas in the World Over an Apostle’s Tomb!',
+        clueText:
+          'Alongside St. Peter’s in the Vatican and St. James in Compostela, Spain, this basilica in Chennai is one of only three churches on the planet built directly over the first-century burial tomb of an Apostle! Even Marco Polo visited it in 1292!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't5-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'Martyred with a Lance at St. Thomas Mount on July 3, 72 AD',
+        clueText:
+          'On July 3, 72 AD, while praying before a stone cross carved on nearby Parangi Malai (St. Thomas Mount), the 72-year-old Apostle was pierced with a lance, and his disciples buried his body in this seaside sanctuary of Mylapore.',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't5-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'The soaring white spire of San Thome Basilica rising over the tomb crypt.',
+        hintDirection: 'Click marker #1 on the tall white basilica spire.',
+        foundTitle: 'Martyrdom on July 3, 72 AD & Burial in Mylapore',
+        xPercent: 48,
+        yPercent: 32,
+        hitRadius: 14,
+        storyUnlocked:
+          'Pierced with a lance while praying on St. Thomas Mount on July 3, 72 AD, the Apostle’s body was carried by his disciples to the small chapel he had built by the beach in Mylapore and laid to rest in a brick tomb.',
+        stoneKeyWord: 'JULY 3, 72 AD (DUKRANA)',
+        stoneKeyMeaning: 'The feast of St. Thomas’s martyrdom at St. Thomas Mount and burial in Mylapore',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't5-art-2',
+        orderNumber: 2,
+        category: 'Did You Know?',
+        riddleToFind: 'The subterranean crypt level beneath the cathedral nave.',
+        hintDirection: 'Click marker #2 near the lower sanctuary arches.',
+        foundTitle: 'Did You Know? Visited by King Alfred’s Envoys (883 AD) & Marco Polo (1292)!',
+        xPercent: 46,
+        yPercent: 68,
+        hitRadius: 14,
+        storyUnlocked:
+          'Long before European colonial ships arrived, Anglo-Saxon King Alfred the Great sent alms all the way from England to St. Thomas’s tomb in India in 883 AD (recorded in the Anglo-Saxon Chronicle), and Marco Polo prayed here in 1292!',
+        stoneKeyWord: 'ONE OF 3 APOSTOLIC BASILICAS',
+        stoneKeyMeaning: 'Alongside Rome (St. Peter) and Compostela (St. James), built over an Apostle’s tomb',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't5-art-3',
+        orderNumber: 3,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The waves of the Bay of Bengal lapping the Mylapore shore.',
+        hintDirection: 'Click marker #3 along the coastal garden and sea breeze.',
+        foundTitle: 'Where Is It Modern Day Now? San Thome (Mylapore), Chennai, India',
+        xPercent: 78,
+        yPercent: 62,
+        hitRadius: 14,
+        storyUnlocked:
+          'Today in Mylapore, Chennai, pilgrims descend into the underground crypt beneath San Thome Basilica to pray before the first-century tomb, and view the ancient lance head and earthen relics in the cathedral museum.',
+        stoneKeyWord: 'SAN THOME, CHENNAI',
+        stoneKeyMeaning: 'The coastal neighborhood of Mylapore in Chennai where the Basilica stands today',
+        soundCue: 'sanctuary_bell',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · His Crown of Martyrdom',
+        questionPrompt: 'On what date and year did St. Thomas seal his witness with martyrdom in Chennai?',
+        correctStoneId: 't5-art-1',
+      },
+      {
+        slotLabel: 'Lock II · Its Global Rank',
+        questionPrompt: 'Why is San Thome Cathedral Basilica one of only three such churches on earth?',
+        correctStoneId: 't5-art-2',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'In which seaside district of Chennai does this white basilica stand today?',
+        correctStoneId: 't5-art-3',
+      },
+    ],
+    sealName: 'Seal of Mylapore',
+  },
+  {
+    stopNumber: 6,
+    title: 'The Adriatic Basilica of the Apostle’s Relics',
+    subtitle: 'Cross back to Italy’s Adriatic coast where St. Thomas’s relics arrived by ship in 1258 AD',
+    eraLabel: '1258 AD to Present · Resting Place of the Relics',
+    ancientPlaceName: 'Ortona a Mare',
+    modernPlaceName: 'Ortona, Abruzzo',
+    modernCountry: 'Italy',
+    image: '/images/trails/thomas_step6_ortona.jpg',
+    imageCaption: 'Basilica of St. Thomas the Apostle overlooking the Adriatic Sea in Ortona, Abruzzo, Italy.',
+    whatYouCanSeeToday:
+      'On a sun-drenched cliff overlooking the Adriatic Sea in Ortona (Abruzzo region, eastern Italy), you can visit the Basilica Concattedrale di San Tommaso Apostolo and descend into the gilded crypt beneath the high altar where the major relics of St. Thomas rest inside a bronze urn.',
+    didYouKnowHighlight:
+      'How did St. Thomas’s relics travel from India to Italy? First carried along the Silk Road from Mylapore to Edessa (modern Urfa) in the 3rd century and later to the Greek island of Chios, they were brought across the Adriatic to Ortona on September 6, 1258 by naval captain Leone Acciaiuoli!',
+    saintQuote:
+      '“Lord, we do not know where You are going; how can we know the way?” — St. Thomas (John 14:5)',
+    globePlacement: {
+      latDeg: 42.35,
+      lngDeg: 14.4,
+      regionLabel: 'Trabocchi Coast, Adriatic Sea, Abruzzo, Italy',
+      beaconColorHex: '#C77DFF',
+      labelOffsetPx: [-70, 22],
+    },
+    detectiveCaseTitle: 'Case #6 · The Adriatic Cliffside Port That Guards the Apostle’s Relics',
+    detectiveLeadPrompt:
+      'After traveling from Mylapore to Edessa and the Greek island of Chios, a naval captain in 1258 AD carried St. Thomas’s relics across the sea to which cliffside port on Italy’s eastern Adriatic coast?',
+    detectiveClues: [
+      {
+        id: 't6-modern',
+        clueNumber: 1,
+        badgeLabel: 'Modern-Day City Clue',
+        headline: 'A Cliffside Port on the Adriatic “Trabocchi Coast” of Abruzzo, Italy',
+        clueText:
+          'Perched above the blue Adriatic Sea in eastern Italy’s Abruzzo region (province of Chieti), this coastal town is crowned by a medieval Aragonese Castle and the domed Basilica of St. Thomas the Apostle.',
+        soundCue: 'compass_click',
+      },
+      {
+        id: 't6-funfact',
+        clueNumber: 2,
+        badgeLabel: 'Did You Know? Fun Fact',
+        headline: 'Saved Through a 1566 Siege & Rebuilt After World War II!',
+        clueText:
+          'Brought here from the Aegean island of Chios by Captain Leone Acciaiuoli on September 6, 1258, St. Thomas’s relics and original marble tombstone from Chios survived both a 1566 Ottoman naval raid and the 1943 World War II battle that destroyed the upper church!',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't6-life',
+        clueNumber: 3,
+        badgeLabel: 'Saint’s Life Clue',
+        headline: 'From Mylapore to Edessa, Chios, and Ortona (232–1258 AD)',
+        clueText:
+          'While his original burial crypt remains revered in Mylapore, India (along with relic fragments in Kerala), the major skeletal relics of St. Thomas have rested in the crypt of this Italian Adriatic basilica since 1258 AD.',
+        soundCue: 'relic_discovered',
+      },
+    ],
+    hiddenArtifacts: [
+      {
+        id: 't6-art-1',
+        orderNumber: 1,
+        category: 'What Happened Here',
+        riddleToFind: 'The copper-domed Basilica of St. Thomas rising above the coastal town.',
+        hintDirection: 'Click marker #1 on the domed Basilica of St. Thomas.',
+        foundTitle: 'September 6, 1258: Arrival of the Apostle’s Relics by Sea',
+        xPercent: 46,
+        yPercent: 34,
+        hitRadius: 14,
+        storyUnlocked:
+          'On September 6, 1258, Ortonese naval captain Leone Acciaiuoli returned from the Aegean island of Chios bearing the skeletal relics of St. Thomas and the Greek-inscribed chalcedony slab ("Hagios Thomas"), welcomed by torchlight procession at the harbor.',
+        stoneKeyWord: 'CAPTAIN LEONE’S 1258 VOYAGE',
+        stoneKeyMeaning: 'How St. Thomas’s relics were brought by ship from Chios to Ortona in 1258 AD',
+        soundCue: 'relic_discovered',
+      },
+      {
+        id: 't6-art-2',
+        orderNumber: 2,
+        category: 'Did You Know?',
+        riddleToFind: 'The cliffside Aragonese Castle watching over the Adriatic harbor.',
+        hintDirection: 'Click marker #2 on the coastal fortress overlooking the sea.',
+        foundTitle: 'Did You Know? The Relics Were Hidden Wall-Deep in 1943!',
+        xPercent: 76,
+        yPercent: 48,
+        hitRadius: 14,
+        storyUnlocked:
+          'During the fierce December 1943 Battle of Ortona in World War II, the parish priest bricked St. Thomas’s bronze reliquary urn inside the bell-tower wall—saving the Apostle’s bones intact even when the cathedral nave collapsed around them!',
+        stoneKeyWord: 'SAVED IN THE 1943 SIEGE',
+        stoneKeyMeaning: 'How the Apostle’s urn and Greek marble slab survived World War II intact',
+        soundCue: 'gregorian_chime',
+      },
+      {
+        id: 't6-art-3',
+        orderNumber: 3,
+        category: 'Where Is It Today?',
+        riddleToFind: 'The golden harbor promenade curving along the Adriatic Sea.',
+        hintDirection: 'Click marker #3 along the sunlit coastal harbor.',
+        foundTitle: 'Where Is It Modern Day Now? Ortona, Abruzzo, Italy',
+        xPercent: 28,
+        yPercent: 68,
+        hitRadius: 14,
+        storyUnlocked:
+          'Today in Ortona (on Italy’s eastern Adriatic coast, 2.5 hours east of Rome), pilgrims from India and around the world gather in the gilded crypt beneath the rebuilt Basilica of St. Thomas, especially during the annual Perdono festival each May!',
+        stoneKeyWord: 'ORTONA, ABRUZZO, ITALY',
+        stoneKeyMeaning: 'The modern Italian Adriatic port where St. Thomas’s relics rest today',
+        soundCue: 'sanctuary_bell',
+      },
+    ],
+    vaultPrompts: [
+      {
+        slotLabel: 'Lock I · The 1258 Sea Translation',
+        questionPrompt: 'How did St. Thomas’s relics arrive on the Adriatic coast of Italy in 1258 AD?',
+        correctStoneId: 't6-art-1',
+      },
+      {
+        slotLabel: 'Lock II · Miraculous Preservation',
+        questionPrompt: 'How were the relics of St. Thomas protected when the basilica was bombed in 1943?',
+        correctStoneId: 't6-art-2',
+      },
+      {
+        slotLabel: 'Lock III · Where It Is Modern Day Now',
+        questionPrompt: 'In which Italian Adriatic port town does the Basilica of St. Thomas stand today?',
+        correctStoneId: 't6-art-3',
+      },
+    ],
+    sealName: 'Seal of Ortona',
+  },
+];
+
+export const SAINT_TRAILS: SaintTrailProfile[] = [
+  {
+    id: 'augustine',
+    saintName: 'St. Augustine of Hippo',
+    shortTitle: 'St. Augustine',
+    feastDay: 'August 28',
+    eraSpan: '354 – 430 AD · North Africa & Italy',
+    trailSubtitle: '6 Stops · Algeria, Tunisia & Italy',
+    overviewButtonLabel: 'Mediterranean',
+    globeHeaderSubtitle: 'Sacred Trails of St. Augustine (Birthplace to Tomb)',
+    overviewCamera: {
+      camLat: 38.0,
+      camLng: 9.5,
+      camAltitude: 5.6,
+      lookLat: 40.5,
+      lookLng: 9.5,
+      lookRadiusScale: 0.88,
+    },
+    highlightedIsoCountries: ['ITA', 'DZA', 'TUN'],
+    completionSummary:
+      'You traced St. Augustine’s footsteps across North Africa and Italy—from Souk Ahras, Algeria and Tunis, Tunisia to Milan, Ostia & Rome, Annaba, and his final resting place in Pavia, Italy.',
+    stops: ST_AUGUSTINE_TRAIL_STOPS,
+  },
+  {
+    id: 'thomas',
+    saintName: 'St. Thomas the Apostle',
+    shortTitle: 'St. Thomas',
+    feastDay: 'July 3 (Dukrana)',
+    eraSpan: '33 – 72 AD · Levant, India & Italy',
+    trailSubtitle: '6 Stops · Jerusalem, Kerala, Chennai & Italy',
+    overviewButtonLabel: 'Indo-Med Route',
+    globeHeaderSubtitle: 'Sacred Trails of St. Thomas (Upper Room to India & Ortona)',
+    overviewCamera: {
+      camLat: 22.0,
+      camLng: 54.0,
+      camAltitude: 10.2,
+      lookLat: 23.0,
+      lookLng: 54.0,
+      lookRadiusScale: 0.78,
+    },
+    highlightedIsoCountries: ['ISR', 'IND', 'ITA'],
+    completionSummary:
+      'You traced St. Thomas the Apostle’s footsteps from the Upper Room in Jerusalem across the Arabian Sea to Kodungallur and Palayoor in Kerala, Little Mount and San Thome in Chennai, India, and the Basilica of his relics in Ortona, Italy.',
+    stops: ST_THOMAS_TRAIL_STOPS,
+  },
+];
+
+/**
+ * Automatically selects the featured Saint Trail of the Day based on the UTC calendar date,
+ * so visitors see a rotating featured saint each day while retaining full freedom to switch!
+ */
+export function getDailySaintTrail(): SaintTrailProfile {
+  const utcDayIndex = Math.floor(Date.now() / 86_400_000);
+  return SAINT_TRAILS[utcDayIndex % SAINT_TRAILS.length];
+}
+

@@ -1,8 +1,11 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
-import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Compass,
   Volume2,
@@ -13,35 +16,40 @@ import {
   Check,
   Bell,
   Radio,
-  ArrowLeft,
   ArrowUpRight,
-  Cross,
-} from "lucide-react";
-import { ST_AUGUSTINE_TRAIL_STOPS } from "./data/saintsTrails";
+  Sparkles,
+} from 'lucide-react';
+import {
+  SAINT_TRAILS,
+  SaintId,
+  getDailySaintTrail,
+} from './data/saintsTrails';
 import {
   soundEngine,
   SOUNDTRACK_OPTIONS,
   SacredAmbientPreset,
-} from "./utils/soundEngine";
-import { Version2GlobeDetective } from "./components/Version2GlobeDetective";
+} from './utils/soundEngine';
+import { Version2GlobeDetective } from './components/Version2GlobeDetective';
 
 export default function SacredTrailsClient() {
+  const dailyTrail = getDailySaintTrail();
+  const [selectedSaintId, setSelectedSaintId] = useState<SaintId>(dailyTrail.id);
   const [v2SolvedCount, setV2SolvedCount] = useState<number>(0);
+
+  const activeSaintTrail =
+    SAINT_TRAILS.find((t) => t.id === selectedSaintId) || SAINT_TRAILS[0];
 
   // Audio state & 5-Preset Soundtrack Dropdown (Gregorian Chant set as default)
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [masterVolume, setMasterVolume] = useState<number>(75);
   const [selectedSoundtrack, setSelectedSoundtrack] =
-    useState<SacredAmbientPreset>("gregorian_chant");
+    useState<SacredAmbientPreset>('gregorian_chant');
   const [isAudioMenuOpen, setIsAudioMenuOpen] = useState<boolean>(false);
   const audioMenuRef = useRef<HTMLDivElement | null>(null);
 
+  // Start Gregorian Chant by default on initial mount
   useEffect(() => {
-    soundEngine.startAmbient("gregorian_chant");
-    return () => {
-      soundEngine.stopAmbient();
-      soundEngine.stopSpeaking();
-    };
+    soundEngine.startAmbient('gregorian_chant');
   }, []);
 
   useEffect(() => {
@@ -55,26 +63,27 @@ export default function SacredTrailsClient() {
       setIsMuted(false);
       soundEngine.setMuted(false);
     }
-    if (selectedSoundtrack === "none" && newPct > 0) {
-      setSelectedSoundtrack("gregorian_chant");
-      soundEngine.startAmbient("gregorian_chant");
+    if (selectedSoundtrack === 'none' && newPct > 0) {
+      setSelectedSoundtrack('gregorian_chant');
+      soundEngine.startAmbient('gregorian_chant');
     }
   };
 
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
       if (audioMenuRef.current && !audioMenuRef.current.contains(e.target as Node)) {
         setIsAudioMenuOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
   const handleSelectSoundtrack = (preset: SacredAmbientPreset) => {
     setSelectedSoundtrack(preset);
     setIsAudioMenuOpen(false);
-    if (preset === "none") {
+    if (preset === 'none') {
       soundEngine.stopAmbient();
     } else {
       if (isMuted) {
@@ -89,97 +98,100 @@ export default function SacredTrailsClient() {
 
   return (
     <div className="min-h-screen bg-[#0c0a08] text-[#f4efe6] selection:bg-[#d4af37]/30 selection:text-[#fef08a]">
-      {/* Breadcrumb & Collection Bar matching Divine Pilgrim Sacred Journeys */}
-      <div className="border-b border-[#262018] bg-[#110e0a] px-4 py-3 sm:px-8">
-        <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs text-[#a39783]">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 font-medium text-[#cfc3ae] transition hover:text-[#fef08a]"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" />
-              <span>Home</span>
-            </Link>
-            <span>/</span>
-            <span>Sacred journeys</span>
-            <span>/</span>
-            <span className="font-semibold text-[#d4af37]">Sacred trails</span>
-          </div>
-
-          <nav
-            aria-label="Sacred journey collections"
-            className="flex items-center gap-5 overflow-x-auto text-xs"
-          >
-            <Link
-              href="/sacred-mountains"
-              className="whitespace-nowrap text-[#a39783] transition hover:text-[#f4efe6]"
-            >
-              Sacred mountains
-            </Link>
-            <Link
-              href="/sacred-architecture"
-              className="whitespace-nowrap text-[#a39783] transition hover:text-[#f4efe6]"
-            >
-              Sacred architecture
-            </Link>
-            <Link
-              href="/sacred-trails"
-              aria-current="page"
-              className="whitespace-nowrap border-b-2 border-[#d4af37] pb-0.5 font-semibold text-[#fef08a]"
-            >
-              Sacred trails
-            </Link>
-          </nav>
-        </div>
-      </div>
-
-      {/* Saint Trail Control Bar: St. Augustine & 5-Style Sacred Audio */}
-      <div className="sticky top-0 z-40 border-b border-[#262018] bg-[#0e0c09]/95 px-3 py-2.5 backdrop-blur-md sm:px-8 sm:py-3">
+      {/* TOP BAR CONTRACT: Clean, Focused Header for Divine Pilgrim · Sacred Trails */}
+      <header className="sticky top-0 z-40 border-b border-[#262018] bg-[#0e0c09]/95 px-3 py-2.5 backdrop-blur-md sm:px-8 sm:py-3">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-2.5 sm:gap-3">
-          {/* Brand & Saint Title */}
+          {/* Zone 1: Divine Pilgrim · Sacred Trails Brand & Saint Identity */}
           <div className="flex items-center gap-2.5 sm:gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#d4af37]/50 bg-[#1a150e] text-[#d4af37] shadow-inner sm:h-10 sm:w-10">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-t-2xl border border-[#d4af37]/50 bg-[#1a150e] text-[#d4af37] shadow-inner sm:h-10 sm:w-10">
               <Compass className="h-4 w-4 sm:h-5 sm:w-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#d4af37] sm:text-[10px]">
-                  Sacred Trails · Footsteps of the Saints
+                  Divine Pilgrim · Sacred Trails
                 </span>
+                {activeSaintTrail.id === dailyTrail.id && (
+                  <span className="inline-flex items-center gap-1 rounded-md border border-[#d4af37]/40 bg-[#241d12] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#fef08a]">
+                    <Sparkles className="h-2.5 w-2.5 text-[#d4af37]" />
+                    Today’s Trail
+                  </span>
+                )}
               </div>
               <h1 className="font-serif text-base font-bold tracking-tight text-[#f4efe6] sm:text-xl">
-                St. Augustine of Hippo
+                {activeSaintTrail.saintName}
               </h1>
             </div>
           </div>
 
-          {/* Progress Counter & 5-Preset Sacred Soundtrack Dropdown */}
-          <div className="flex items-center gap-2">
-            <div className="hidden items-center gap-1.5 rounded-xl border border-[#2a231a] bg-[#16120d] px-3 py-1.5 text-xs sm:flex">
+          {/* Zone 2: Saint Trail Switcher, Progress Counter & 5-Preset Sacred Soundtrack Dropdown */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Saint Trail Switcher (Daily Saint Rotation + Instant Toggle) */}
+            <div
+              role="group"
+              aria-label="Choose Saint Pilgrimage Trail"
+              className="flex items-center rounded-xl border border-[#2c241b] bg-[#15110c] p-1"
+            >
+              {SAINT_TRAILS.map((trail) => {
+                const isSelected = trail.id === activeSaintTrail.id;
+                const isToday = trail.id === dailyTrail.id;
+                return (
+                  <button
+                    key={trail.id}
+                    onClick={() => {
+                      soundEngine.playEffect('compass_click');
+                      setSelectedSaintId(trail.id);
+                    }}
+                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition sm:px-3 sm:py-1.5 sm:text-xs ${
+                      isSelected
+                        ? 'bg-gradient-to-r from-[#d4af37] to-[#b58922] font-bold text-[#120f0b] shadow-sm'
+                        : 'text-[#cfc3ae] hover:text-[#fef08a]'
+                    }`}
+                    title={`${trail.saintName} (${trail.trailSubtitle})`}
+                  >
+                    <span>{trail.shortTitle}</span>
+                    {isToday && (
+                      <span
+                        className={`hidden rounded px-1 py-0.2 text-[9px] font-bold uppercase sm:inline ${
+                          isSelected
+                            ? 'bg-[#120f0b]/20 text-[#120f0b]'
+                            : 'bg-[#261f14] text-[#d4af37]'
+                        }`}
+                      >
+                        Today
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="hidden items-center gap-1.5 rounded-xl border border-[#2a231a] bg-[#16120d] px-3 py-1.5 text-xs md:flex">
               <Award className="h-4 w-4 text-[#d4af37]" />
               <span className="text-[#a39783]">Seals:</span>
               <strong className="text-[#f4efe6]">
-                {v2SolvedCount} / {ST_AUGUSTINE_TRAIL_STOPS.length}
+                {v2SolvedCount} / {activeSaintTrail.stops.length}
               </strong>
             </div>
 
+            {/* 5-Option Soundtrack Dropdown Menu */}
             <div ref={audioMenuRef} className="relative">
               <button
                 onClick={() => setIsAudioMenuOpen((prev) => !prev)}
                 className={`inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-[11px] font-semibold transition sm:gap-2 sm:px-3.5 sm:py-2 sm:text-xs ${
-                  selectedSoundtrack !== "none"
-                    ? "border-[#d4af37] bg-[#261f14] text-[#fef08a] shadow-[0_0_15px_rgba(212,175,55,0.2)]"
-                    : "border-[#2c241b] bg-[#17130e] text-[#cfc3ae] hover:border-[#d4af37]/60 hover:text-[#f4efe6]"
+                  selectedSoundtrack !== 'none'
+                    ? 'border-[#d4af37] bg-[#261f14] text-[#fef08a] shadow-[0_0_15px_rgba(212,175,55,0.2)]'
+                    : 'border-[#2c241b] bg-[#17130e] text-[#cfc3ae] hover:border-[#d4af37]/60 hover:text-[#f4efe6]'
                 }`}
                 title="Choose Sacred Soundtrack or Cinematic Score"
               >
                 <Music className="h-3.5 w-3.5 shrink-0 text-[#d4af37]" />
-                <span className="max-w-[140px] truncate sm:max-w-none">
-                  {activeOptionObj ? activeOptionObj.label : "Sacred Audio (5 Styles)"}
+                <span className="max-w-[120px] truncate sm:max-w-none">
+                  {activeOptionObj ? activeOptionObj.label : 'Sacred Audio (5 Styles)'}
                 </span>
                 <ChevronDown
                   className={`h-3.5 w-3.5 shrink-0 transition-transform ${
-                    isAudioMenuOpen ? "rotate-180" : ""
+                    isAudioMenuOpen ? 'rotate-180' : ''
                   }`}
                 />
               </button>
@@ -195,6 +207,7 @@ export default function SacredTrailsClient() {
                     </p>
                   </div>
 
+                  {/* Smooth Master Volume Control */}
                   <div className="border-b border-[#262018] px-3 py-2.5">
                     <div className="flex items-center justify-between text-[11px]">
                       <span className="font-semibold text-[#cfc3ae]">Master Volume</span>
@@ -220,15 +233,15 @@ export default function SacredTrailsClient() {
                           onClick={() => handleSelectSoundtrack(option.id)}
                           className={`flex w-full items-start justify-between gap-2 rounded-xl px-3 py-2.5 text-left transition ${
                             isSelected
-                              ? "border border-[#d4af37]/60 bg-[#251e13] text-[#fef08a]"
-                              : "border border-transparent hover:bg-[#1c1711] text-[#e6dccb]"
+                              ? 'border border-[#d4af37]/60 bg-[#251e13] text-[#fef08a]'
+                              : 'border border-transparent hover:bg-[#1c1711] text-[#e6dccb]'
                           }`}
                         >
                           <div className="flex items-start gap-2.5">
                             <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-[#382e21] bg-[#18140f] text-[#d4af37]">
-                              {option.id === "church_bells" ? (
+                              {option.id === 'church_bells' ? (
                                 <Bell className="h-3.5 w-3.5" />
-                              ) : option.id === "gregorian_chant" ? (
+                              ) : option.id === 'gregorian_chant' ? (
                                 <Radio className="h-3.5 w-3.5" />
                               ) : (
                                 <Music className="h-3.5 w-3.5" />
@@ -253,15 +266,15 @@ export default function SacredTrailsClient() {
 
                   <div className="mt-2 border-t border-[#262018] pt-1.5">
                     <button
-                      onClick={() => handleSelectSoundtrack("none")}
+                      onClick={() => handleSelectSoundtrack('none')}
                       className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-semibold transition ${
-                        selectedSoundtrack === "none"
-                          ? "bg-[#221c15] text-[#f3d27a]"
-                          : "text-[#9a8e7a] hover:bg-[#1c1711] hover:text-[#e6dccb]"
+                        selectedSoundtrack === 'none'
+                          ? 'bg-[#221c15] text-[#f3d27a]'
+                          : 'text-[#9a8e7a] hover:bg-[#1c1711] hover:text-[#e6dccb]'
                       }`}
                     >
                       <span>Turn Background Music Off (Foley Only)</span>
-                      {selectedSoundtrack === "none" && (
+                      {selectedSoundtrack === 'none' && (
                         <Check className="h-3.5 w-3.5 text-[#d4af37]" />
                       )}
                     </button>
@@ -273,7 +286,7 @@ export default function SacredTrailsClient() {
             <button
               onClick={() => setIsMuted(!isMuted)}
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#2c241b] bg-[#17130e] text-[#cfc3ae] transition hover:border-[#d4af37]/50 hover:text-[#f4efe6] sm:h-9 sm:w-9"
-              title={isMuted ? "Unmute All Audio" : "Mute All Audio"}
+              title={isMuted ? 'Unmute All Audio' : 'Mute All Audio'}
             >
               {isMuted ? (
                 <VolumeX className="h-4 w-4 text-rose-400" />
@@ -283,31 +296,48 @@ export default function SacredTrailsClient() {
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Main Sacred Trails 3D Globe Experience */}
-      <div>
-        <Version2GlobeDetective onSolvedCountChange={setV2SolvedCount} />
-      </div>
-
-      {/* Footer back to Divine Pilgrim */}
-      <footer className="mt-10 border-t border-[#262018] bg-[#0e0c09] px-4 py-8 sm:px-8">
-        <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 text-xs text-[#a39783]">
-          <div className="flex items-center gap-2.5 text-[#d4af37]">
-            <Cross className="h-5 w-5" />
-            <p className="text-[#cfc3ae]">
-              Every journey, <em className="font-serif text-base italic text-[#f4efe6]">a little closer to Him.</em>
-            </p>
+        {/* Sub-Navigation Collection Bar matching divinepilgrim.com (/sacred-mountains, /sacred-architecture, /sacred-trails) */}
+        <nav
+          aria-label="Sacred journey collections"
+          className="mx-auto mt-2 flex max-w-[1440px] items-center justify-between gap-4 overflow-x-auto border-t border-[#1f1a13] pt-2 text-[11px]"
+        >
+          <div className="flex items-center gap-5 shrink-0">
+            <a
+              href="/sacred-mountains"
+              className="inline-flex items-center gap-1 text-[#9a8e7a] transition hover:text-[#e6dccb]"
+            >
+              <span>Sacred mountains</span>
+              <ArrowUpRight className="h-3 w-3 opacity-70" />
+            </a>
+            <a
+              href="/sacred-architecture"
+              className="inline-flex items-center gap-1 text-[#9a8e7a] transition hover:text-[#e6dccb]"
+            >
+              <span>Sacred architecture</span>
+              <ArrowUpRight className="h-3 w-3 opacity-70" />
+            </a>
+            <span
+              aria-current="page"
+              className="border-b-2 border-[#d4af37] pb-0.5 font-semibold text-[#fef08a]"
+            >
+              Sacred trails
+            </span>
           </div>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 font-semibold text-[#d4af37] transition hover:text-[#fef08a]"
-          >
-            <span>Return to Divine Pilgrim</span>
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </footer>
+
+          <span className="hidden font-mono text-[10px] uppercase tracking-[0.16em] text-[#847866] sm:inline">
+            01 / PLACES OF GRACE · {activeSaintTrail.eraSpan.toUpperCase()}
+          </span>
+        </nav>
+      </header>
+
+      {/* Active Sacred Trails 3D Globe Experience */}
+      <main>
+        <Version2GlobeDetective
+          saintTrail={activeSaintTrail}
+          onSolvedCountChange={setV2SolvedCount}
+        />
+      </main>
     </div>
   );
 }
