@@ -18,10 +18,14 @@ import {
   Radio,
   ArrowUpRight,
   Sparkles,
+  Lock,
+  Unlock,
+  Calendar,
 } from 'lucide-react';
 import {
   SAINT_TRAILS,
   SaintId,
+  SaintTrailProfile,
   getDailySaintTrail,
 } from './data/saintsTrails';
 import {
@@ -33,11 +37,29 @@ import { Version2GlobeDetective } from './components/Version2GlobeDetective';
 
 export default function SacredTrailsClient() {
   const dailyTrail = getDailySaintTrail();
-  const [selectedSaintId, setSelectedSaintId] = useState<SaintId>(dailyTrail.id);
+  // Default to St. Francis Xavier if unlocked/featured or Today's Saint so the user can immediately experience the new trail
+  const [selectedSaintId, setSelectedSaintId] = useState<SaintId>('xavier');
   const [v2SolvedCount, setV2SolvedCount] = useState<number>(0);
+
+  // Weekly Lock Mode vs. Preview All 7 Days Mode
+  // In standard weekly mode, Today (and earlier days + St. Francis Xavier) are unlocked,
+  // while Tomorrow & future days of the week hide the saint's name ("🔒 Tomorrow · Mystery").
+  const [isPreviewAllDays, setIsPreviewAllDays] = useState<boolean>(false);
+  const [lockedDayNotice, setLockedDayNotice] = useState<SaintTrailProfile | null>(null);
 
   const activeSaintTrail =
     SAINT_TRAILS.find((t) => t.id === selectedSaintId) || SAINT_TRAILS[0];
+
+  // Determine the effective "Today" index for the weekly schedule bar.
+  // Ensure up through Tuesday (index 2 = St. Francis Xavier) or local today is unlocked in standard mode,
+  // while Tomorrow and future days are hidden behind the weekly lock unless Preview All 7 Days is active.
+  const rawTodayIndex = dailyTrail.weekdayIndex;
+  const effectiveUnlockedUpToIndex = Math.max(rawTodayIndex, 2); // Ensures Sun (Augustine), Mon (Thomas), Tue (Francis Xavier) are open while Wed-Sat demonstrate the Hidden Tomorrow Lock
+
+  const isTrailUnlocked = (trail: SaintTrailProfile): boolean => {
+    if (isPreviewAllDays) return true;
+    return trail.weekdayIndex <= effectiveUnlockedUpToIndex;
+  };
 
   // Audio state & 5-Preset Soundtrack Dropdown (Gregorian Chant set as default)
   const [isMuted, setIsMuted] = useState<boolean>(false);
@@ -101,7 +123,7 @@ export default function SacredTrailsClient() {
       {/* TOP BAR CONTRACT: Clean, Focused Header for Divine Pilgrim · Sacred Trails */}
       <header className="sticky top-0 z-40 border-b border-[#262018] bg-[#0e0c09]/95 px-3 py-2.5 backdrop-blur-md sm:px-8 sm:py-3">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-2.5 sm:gap-3">
-          {/* Zone 1: Divine Pilgrim · Sacred Trails Brand & Saint Identity */}
+          {/* Zone 1: Divine Pilgrim · Sacred Trails Brand & Active Saint Identity */}
           <div className="flex items-center gap-2.5 sm:gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-t-2xl border border-[#d4af37]/50 bg-[#1a150e] text-[#d4af37] shadow-inner sm:h-10 sm:w-10">
               <Compass className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -111,10 +133,14 @@ export default function SacredTrailsClient() {
                 <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#d4af37] sm:text-[10px]">
                   Divine Pilgrim · Sacred Trails
                 </span>
-                {activeSaintTrail.id === dailyTrail.id && (
-                  <span className="inline-flex items-center gap-1 rounded-md border border-[#d4af37]/40 bg-[#241d12] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#fef08a]">
-                    <Sparkles className="h-2.5 w-2.5 text-[#d4af37]" />
-                    Today’s Trail
+                <span className="inline-flex items-center gap-1 rounded-md border border-[#d4af37]/40 bg-[#241d12] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#fef08a]">
+                  <Calendar className="h-2.5 w-2.5 text-[#d4af37]" />
+                  {activeSaintTrail.weekdayName}’s Trail
+                </span>
+                {activeSaintTrail.id === 'xavier' && (
+                  <span className="inline-flex items-center gap-1 rounded-md border border-amber-400/50 bg-amber-500/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-amber-300">
+                    <Sparkles className="h-2.5 w-2.5 text-amber-300" />
+                    Featured · 60,000-Mile Voyage
                   </span>
                 )}
               </div>
@@ -124,47 +150,38 @@ export default function SacredTrailsClient() {
             </div>
           </div>
 
-          {/* Zone 2: Saint Trail Switcher, Progress Counter & 5-Preset Sacred Soundtrack Dropdown */}
+          {/* Zone 2: Progress Counter, Weekly Preview Toggle & 5-Preset Sacred Soundtrack Dropdown */}
           <div className="flex flex-wrap items-center gap-2">
-            {/* Saint Trail Switcher (Daily Saint Rotation + Instant Toggle) */}
-            <div
-              role="group"
-              aria-label="Choose Saint Pilgrimage Trail"
-              className="flex items-center rounded-xl border border-[#2c241b] bg-[#15110c] p-1"
+            {/* 1-Click Toggle between Weekly Lock Mode (Tomorrow Hidden) and Preview All 7 Days */}
+            <button
+              onClick={() => {
+                soundEngine.playEffect('compass_click');
+                setIsPreviewAllDays((prev) => !prev);
+                setLockedDayNotice(null);
+              }}
+              className={`inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-[11px] font-bold transition sm:px-3 sm:py-1.5 sm:text-xs ${
+                isPreviewAllDays
+                  ? 'border-emerald-400/60 bg-emerald-950/50 text-emerald-200 shadow-[0_0_12px_rgba(16,185,129,0.2)]'
+                  : 'border-[#3a2f21] bg-[#1a150e] text-[#e6d5b8] hover:border-[#d4af37]'
+              }`}
+              title={
+                isPreviewAllDays
+                  ? 'All 7 Weekly Saints are unlocked for testing. Click to test how Tomorrow’s Saint is hidden for daily players.'
+                  : 'Tomorrow & future days of the week are hidden as Mystery Trails. Click to unlock and preview all 7 saints today!'
+              }
             >
-              {SAINT_TRAILS.map((trail) => {
-                const isSelected = trail.id === activeSaintTrail.id;
-                const isToday = trail.id === dailyTrail.id;
-                return (
-                  <button
-                    key={trail.id}
-                    onClick={() => {
-                      soundEngine.playEffect('compass_click');
-                      setSelectedSaintId(trail.id);
-                    }}
-                    className={`flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition sm:px-3 sm:py-1.5 sm:text-xs ${
-                      isSelected
-                        ? 'bg-gradient-to-r from-[#d4af37] to-[#b58922] font-bold text-[#120f0b] shadow-sm'
-                        : 'text-[#cfc3ae] hover:text-[#fef08a]'
-                    }`}
-                    title={`${trail.saintName} (${trail.trailSubtitle})`}
-                  >
-                    <span>{trail.shortTitle}</span>
-                    {isToday && (
-                      <span
-                        className={`hidden rounded px-1 py-0.2 text-[9px] font-bold uppercase sm:inline ${
-                          isSelected
-                            ? 'bg-[#120f0b]/20 text-[#120f0b]'
-                            : 'bg-[#261f14] text-[#d4af37]'
-                        }`}
-                      >
-                        Today
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+              {isPreviewAllDays ? (
+                <>
+                  <Unlock className="h-3.5 w-3.5 text-emerald-400" />
+                  <span>All 7 Days Unlocked</span>
+                </>
+              ) : (
+                <>
+                  <Lock className="h-3.5 w-3.5 text-[#d4af37]" />
+                  <span>Preview All 7 Days</span>
+                </>
+              )}
+            </button>
 
             <div className="hidden items-center gap-1.5 rounded-xl border border-[#2a231a] bg-[#16120d] px-3 py-1.5 text-xs md:flex">
               <Award className="h-4 w-4 text-[#d4af37]" />
@@ -297,6 +314,118 @@ export default function SacredTrailsClient() {
           </div>
         </div>
 
+        {/* 7-DAY WEEKLY PILGRIMAGE CYCLE BAR (Sun – Sat) with Hidden Tomorrow's Saint Lock */}
+        <div className="mx-auto mt-2.5 max-w-[1440px] border-t border-[#1f1a13] pt-2">
+          <div className="flex items-center justify-between gap-2 overflow-x-auto pb-1">
+            <div
+              role="group"
+              aria-label="7-Day Weekly Saint Pilgrimage Rotation"
+              className="flex items-center gap-1.5"
+            >
+              {SAINT_TRAILS.map((trail) => {
+                const unlocked = isTrailUnlocked(trail);
+                const isSelected = trail.id === activeSaintTrail.id;
+                const isTomorrow =
+                  !isPreviewAllDays &&
+                  trail.weekdayIndex === effectiveUnlockedUpToIndex + 1;
+
+                return (
+                  <button
+                    key={trail.id}
+                    onClick={() => {
+                      soundEngine.playEffect('compass_click');
+                      if (unlocked) {
+                        setSelectedSaintId(trail.id);
+                        setLockedDayNotice(null);
+                      } else {
+                        setLockedDayNotice(trail);
+                      }
+                    }}
+                    className={`group relative flex shrink-0 items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-left text-[11px] transition sm:px-3 ${
+                      isSelected
+                        ? 'border-[#d4af37] bg-gradient-to-r from-[#d4af37] to-[#b58922] font-bold text-[#120f0b] shadow-[0_0_16px_rgba(212,175,55,0.28)]'
+                        : unlocked
+                        ? 'border-[#2c241b] bg-[#15110c] font-semibold text-[#e6dccb] hover:border-[#d4af37]/60 hover:text-[#fef08a]'
+                        : 'border-[#221c14] bg-[#100d09]/90 text-[#7c705e] hover:border-[#3d3122] hover:text-[#b0a28c]'
+                    }`}
+                    title={
+                      unlocked
+                        ? `${trail.weekdayName}: ${trail.saintName} (${trail.trailSubtitle})`
+                        : `Locked until ${trail.weekdayName} — Tomorrow’s Saint is hidden until midnight!`
+                    }
+                  >
+                    <span
+                      className={`rounded px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider ${
+                        isSelected
+                          ? 'bg-[#120f0b]/20 text-[#120f0b]'
+                          : unlocked
+                          ? 'bg-[#241d13] text-[#d4af37]'
+                          : 'bg-[#1b1610] text-[#6e6250]'
+                      }`}
+                    >
+                      {trail.weekdayShort}
+                    </span>
+
+                    {unlocked ? (
+                      <span className="whitespace-nowrap">{trail.shortTitle}</span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap italic">
+                        <Lock className="h-3 w-3 text-[#8a7960]" />
+                        <span>{isTomorrow ? 'Tomorrow · Mystery' : 'Mystery Saint'}</span>
+                      </span>
+                    )}
+
+                    {unlocked && trail.id === 'xavier' && !isSelected && (
+                      <span className="rounded bg-amber-500/20 px-1 py-0.2 text-[8px] font-extrabold uppercase tracking-wider text-amber-300">
+                        New
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            <span className="hidden shrink-0 font-mono text-[10px] uppercase tracking-[0.14em] text-[#847866] xl:inline">
+              7-Day Weekly Cycle · {isPreviewAllDays ? 'All 7 Unlocked' : 'Future Days Hidden'}
+            </span>
+          </div>
+
+          {/* Interactive Notice when clicking a Locked Future Day ("Tomorrow's Saint Hidden") */}
+          {lockedDayNotice && !isPreviewAllDays && (
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-[#d4af37]/40 bg-[#19140d] px-3.5 py-2 text-xs text-[#e6dccb]">
+              <div className="flex items-center gap-2">
+                <Lock className="h-4 w-4 shrink-0 text-[#d4af37]" />
+                <span>
+                  <strong className="text-[#fef08a]">
+                    {lockedDayNotice.weekdayName}’s Mystery Saint
+                  </strong>{' '}
+                  is hidden until {lockedDayNotice.weekdayName} at midnight so pilgrims return each day of the week!
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    soundEngine.playEffect('relic_discovered');
+                    setIsPreviewAllDays(true);
+                    setSelectedSaintId(lockedDayNotice.id);
+                    setLockedDayNotice(null);
+                  }}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#b58922] px-3 py-1 text-[11px] font-bold text-[#120f0b] shadow-sm transition hover:brightness-110"
+                >
+                  <Unlock className="h-3 w-3" />
+                  <span>Unlock & Preview {lockedDayNotice.weekdayName}’s Saint Now</span>
+                </button>
+                <button
+                  onClick={() => setLockedDayNotice(null)}
+                  className="rounded-lg border border-[#33291d] px-2 py-1 text-[11px] text-[#9a8e7a] hover:text-[#f4efe6]"
+                >
+                  Dismiss
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Sub-Navigation Collection Bar matching divinepilgrim.com (/sacred-mountains, /sacred-architecture, /sacred-trails) */}
         <nav
           aria-label="Sacred journey collections"
@@ -304,14 +433,18 @@ export default function SacredTrailsClient() {
         >
           <div className="flex items-center gap-5 shrink-0">
             <a
-              href="/sacred-mountains"
+              href="https://divinepilgrim.com/sacred-mountains"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-[#9a8e7a] transition hover:text-[#e6dccb]"
             >
               <span>Sacred mountains</span>
               <ArrowUpRight className="h-3 w-3 opacity-70" />
             </a>
             <a
-              href="/sacred-architecture"
+              href="https://divinepilgrim.com/sacred-architecture"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-[#9a8e7a] transition hover:text-[#e6dccb]"
             >
               <span>Sacred architecture</span>

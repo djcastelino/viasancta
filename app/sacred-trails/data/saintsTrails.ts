@@ -1,3 +1,11 @@
+import {
+  ST_FRANCIS_XAVIER_TRAIL_STOPS,
+  ST_PAUL_TRAIL_STOPS,
+  ST_FRANCIS_ASSISI_TRAIL_STOPS,
+  ST_IGNATIUS_TRAIL_STOPS,
+  ST_JOAN_ARC_TRAIL_STOPS,
+} from './weeklySaintTrails';
+
 export interface HiddenSceneArtifact {
   id: string;
   orderNumber: 1 | 2 | 3;
@@ -39,10 +47,20 @@ export interface GlobePlacement {
   labelOffsetPx?: [number, number];
 }
 
-export type SaintId = 'augustine' | 'thomas';
+export type SaintId =
+  | 'augustine'
+  | 'thomas'
+  | 'xavier'
+  | 'paul'
+  | 'francis'
+  | 'ignatius'
+  | 'joan';
 
 export interface SaintTrailProfile {
   id: SaintId;
+  weekdayIndex: number; // 0 = Sun, 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat
+  weekdayName: string;
+  weekdayShort: string;
   saintName: string;
   shortTitle: string;
   feastDay: string;
@@ -1582,6 +1600,9 @@ export const ST_THOMAS_TRAIL_STOPS: TrailStop[] = [
 export const SAINT_TRAILS: SaintTrailProfile[] = [
   {
     id: 'augustine',
+    weekdayIndex: 0,
+    weekdayName: 'Sunday',
+    weekdayShort: 'Sun',
     saintName: 'St. Augustine of Hippo',
     shortTitle: 'St. Augustine',
     feastDay: 'August 28',
@@ -1604,6 +1625,9 @@ export const SAINT_TRAILS: SaintTrailProfile[] = [
   },
   {
     id: 'thomas',
+    weekdayIndex: 1,
+    weekdayName: 'Monday',
+    weekdayShort: 'Mon',
     saintName: 'St. Thomas the Apostle',
     shortTitle: 'St. Thomas',
     feastDay: 'July 3 (Dukrana)',
@@ -1624,14 +1648,142 @@ export const SAINT_TRAILS: SaintTrailProfile[] = [
       'You traced St. Thomas the Apostle’s footsteps from the Upper Room in Jerusalem across the Arabian Sea to Kodungallur and Palayoor in Kerala, Little Mount and San Thome in Chennai, India, and the Basilica of his relics in Ortona, Italy.',
     stops: ST_THOMAS_TRAIL_STOPS,
   },
+  {
+    id: 'xavier',
+    weekdayIndex: 2,
+    weekdayName: 'Tuesday',
+    weekdayShort: 'Tue',
+    saintName: 'St. Francis Xavier',
+    shortTitle: 'St. Francis Xavier',
+    feastDay: 'December 3',
+    eraSpan: '1506 – 1552 AD · Europe, India, Japan & China',
+    trailSubtitle: '6 Stops · Spain, France, Portugal, India, Japan & China',
+    overviewButtonLabel: 'Eurasian Voyage',
+    globeHeaderSubtitle: 'Sacred Trails of St. Francis Xavier (Navarre to Goa, Japan & China)',
+    overviewCamera: {
+      camLat: 26.0,
+      camLng: 62.0,
+      camAltitude: 11.4,
+      lookLat: 26.0,
+      lookLng: 62.0,
+      lookRadiusScale: 0.75,
+    },
+    highlightedIsoCountries: ['ESP', 'FRA', 'PRT', 'IND', 'JPN', 'CHN'],
+    completionSummary:
+      'You sailed over 60,000 miles in the footsteps of St. Francis Xavier—from his birthplace at the Castle of Javier in Spain and Montmartre in Paris to Belém in Lisbon, Old Goa in India, Kagoshima in Japan, and Shangchuan Island off the coast of China.',
+    stops: ST_FRANCIS_XAVIER_TRAIL_STOPS,
+  },
+  {
+    id: 'paul',
+    weekdayIndex: 3,
+    weekdayName: 'Wednesday',
+    weekdayShort: 'Wed',
+    saintName: 'St. Paul the Apostle',
+    shortTitle: 'St. Paul',
+    feastDay: 'June 29',
+    eraSpan: '34 – 67 AD · Syria, Asia Minor, Greece & Rome',
+    trailSubtitle: '6 Stops · Damascus, Antioch, Philippi, Athens, Corinth & Rome',
+    overviewButtonLabel: 'Aegean & Rome',
+    globeHeaderSubtitle: 'Sacred Trails of St. Paul (Straight Street Damascus to Rome)',
+    overviewCamera: {
+      camLat: 37.5,
+      camLng: 24.5,
+      camAltitude: 6.4,
+      lookLat: 38.5,
+      lookLng: 24.5,
+      lookRadiusScale: 0.86,
+    },
+    highlightedIsoCountries: ['SYR', 'TUR', 'GRC', 'ITA'],
+    completionSummary:
+      'You walked the missionary roads and sea lanes of St. Paul the Apostle—from Straight Street in Damascus and the Cave Church of St. Peter in Antakya to Philippi, the Areopagus of Athens, the Bema of Corinth, and the Basilica of St. Paul Outside the Walls in Rome.',
+    stops: ST_PAUL_TRAIL_STOPS,
+  },
+  {
+    id: 'francis',
+    weekdayIndex: 4,
+    weekdayName: 'Thursday',
+    weekdayShort: 'Thu',
+    saintName: 'St. Francis of Assisi',
+    shortTitle: 'St. Francis',
+    feastDay: 'October 4',
+    eraSpan: '1181 – 1226 AD · Umbria & Tuscany, Italy',
+    trailSubtitle: '6 Stops · Assisi, San Damiano, Gubbio, Greccio, La Verna & Portiuncula',
+    overviewButtonLabel: 'Umbrian Trail',
+    globeHeaderSubtitle: 'Sacred Trails of St. Francis of Assisi (San Damiano to La Verna)',
+    overviewCamera: {
+      camLat: 42.9,
+      camLng: 12.4,
+      camAltitude: 4.5,
+      lookLat: 43.1,
+      lookLng: 12.4,
+      lookRadiusScale: 0.9,
+    },
+    highlightedIsoCountries: ['ITA'],
+    completionSummary:
+      'You followed Il Poverello across the hills of Umbria and Tuscany—from Piazza del Comune and the olive grove of San Damiano to the wolf’s stone well in Gubbio, the first Christmas manger cave at Greccio, the cliffs of La Verna, and the Portiuncula inside Santa Maria degli Angeli.',
+    stops: ST_FRANCIS_ASSISI_TRAIL_STOPS,
+  },
+  {
+    id: 'ignatius',
+    weekdayIndex: 5,
+    weekdayName: 'Friday',
+    weekdayShort: 'Fri',
+    saintName: 'St. Ignatius of Loyola',
+    shortTitle: 'St. Ignatius',
+    feastDay: 'July 31',
+    eraSpan: '1491 – 1556 AD · Spain, France & Italy',
+    trailSubtitle: '6 Stops · Loyola, Montserrat, Manresa, Paris, Venice & Rome',
+    overviewButtonLabel: 'Western Europe',
+    globeHeaderSubtitle: 'Sacred Trails of St. Ignatius of Loyola (Azpeitia to the Gesù in Rome)',
+    overviewCamera: {
+      camLat: 43.2,
+      camLng: 5.5,
+      camAltitude: 6.2,
+      lookLat: 44.0,
+      lookLng: 5.5,
+      lookRadiusScale: 0.86,
+    },
+    highlightedIsoCountries: ['ESP', 'FRA', 'ITA'],
+    completionSummary:
+      'You traced the pilgrim path of St. Ignatius of Loyola—from the Holy House of Loyola in Basque Spain, the Black Madonna of Montserrat, and the Cave of Manresa to Montmartre in Paris, the lagoons of Venice, and his jewel-encrusted shrine at the Church of the Gesù in Rome.',
+    stops: ST_IGNATIUS_TRAIL_STOPS,
+  },
+  {
+    id: 'joan',
+    weekdayIndex: 6,
+    weekdayName: 'Saturday',
+    weekdayShort: 'Sat',
+    saintName: 'St. Joan of Arc',
+    shortTitle: 'St. Joan of Arc',
+    feastDay: 'May 30',
+    eraSpan: '1412 – 1431 AD · Medieval France',
+    trailSubtitle: '6 Stops · Domrémy, Vaucouleurs, Chinon, Orléans, Reims & Rouen',
+    overviewButtonLabel: 'Heart of France',
+    globeHeaderSubtitle: 'Sacred Trails of St. Joan of Arc (Domrémy to Orléans, Reims & Rouen)',
+    overviewCamera: {
+      camLat: 47.5,
+      camLng: 2.5,
+      camAltitude: 5.2,
+      lookLat: 48.0,
+      lookLng: 2.5,
+      lookRadiusScale: 0.88,
+    },
+    highlightedIsoCountries: ['FRA'],
+    completionSummary:
+      'You rode alongside the Maid of Orléans across France—from her childhood garden in Domrémy and the Gate of France in Vaucouleurs to the fortress of Chinon, the besieged banks of the Loire at Orléans, the coronation nave of Reims Cathedral, and the Old Market Square of Rouen.',
+    stops: ST_JOAN_ARC_TRAIL_STOPS,
+  },
 ];
 
 /**
- * Automatically selects the featured Saint Trail of the Day based on the UTC calendar date,
- * so visitors see a rotating featured saint each day while retaining full freedom to switch!
+ * Returns the Saint Trail scheduled for Today's day of the week (0 = Sunday .. 6 = Saturday).
  */
 export function getDailySaintTrail(): SaintTrailProfile {
-  const utcDayIndex = Math.floor(Date.now() / 86_400_000);
-  return SAINT_TRAILS[(utcDayIndex + 1) % SAINT_TRAILS.length];
+  const localDayOfWeek = new Date().getDay(); // 0 (Sun) to 6 (Sat)
+  return (
+    SAINT_TRAILS.find((trail) => trail.weekdayIndex === localDayOfWeek) ||
+    SAINT_TRAILS[0]
+  );
 }
+
 

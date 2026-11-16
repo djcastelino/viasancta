@@ -726,7 +726,14 @@ class SoundEngine {
     stopNumber: number,
     kind: 'clue' | 'city',
     onEnd?: () => void,
-    saintId: 'augustine' | 'thomas' = 'augustine'
+    saintId:
+      | 'augustine'
+      | 'thomas'
+      | 'xavier'
+      | 'paul'
+      | 'francis'
+      | 'ignatius'
+      | 'joan' = 'augustine'
   ) {
     this.stopSpeaking();
     if (typeof window === 'undefined' || this.isMuted) {
@@ -739,7 +746,7 @@ class SoundEngine {
       this.htmlAudioElement.volume = Math.min(1.0, this.volume * 0.22);
     }
 
-    const prefix = saintId === 'thomas' ? 'thomas_stop' : 'stop';
+    const prefix = saintId === 'augustine' ? 'stop' : `${saintId}_stop`;
     const mp3Url = `/audio/narration/${prefix}_${stopNumber}_${kind}.mp3`;
     const audio = new Audio(mp3Url);
     audio.volume = Math.min(1.0, this.volume);
