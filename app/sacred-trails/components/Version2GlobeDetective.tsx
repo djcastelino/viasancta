@@ -96,6 +96,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   // Inspection Modal when a stop is solved or inspected
   const [inspectedStop, setInspectedStop] = useState<TrailStop | null>(null);
   const [cinematicFlightStop, setCinematicFlightStop] = useState<TrailStop | null>(null);
+  const [flightStageText, setFlightStageText] = useState<string>('');
   const [cinematicPortalGlow, setCinematicPortalGlow] = useState<boolean>(false);
   const flightTimerRef = useRef<number | null>(null);
   const stageTimerRef = useRef<number | null>(null);
@@ -128,6 +129,68 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     };
   }, [clearFlightTimers]);
 
+  const initialOverviewCamPos = latLngToVector3(
+    saintTrail.overviewCamera.camLat,
+    saintTrail.overviewCamera.camLng,
+    GLOBE_RADIUS + saintTrail.overviewCamera.camAltitude
+  );
+  const initialOverviewLookAt = latLngToVector3(
+    saintTrail.overviewCamera.lookLat,
+    saintTrail.overviewCamera.lookLng,
+    GLOBE_RADIUS * saintTrail.overviewCamera.lookRadiusScale
+  );
+
+  const liveCameraPosRef = useRef<THREE.Vector3>(initialOverviewCamPos.clone());
+  const liveLookAtRef = useRef<THREE.Vector3>(initialOverviewLookAt.clone());
+
+  // Deterministic time-based spherical keyframe flight state
+  const cameraTargetDataRef = useRef<{
+    autoMove: boolean;
+    startTimeMs: number;
+    durationMs: number;
+    startCameraPos: THREE.Vector3;
+    desiredCameraPos: THREE.Vector3;
+    startLookAt: THREE.Vector3;
+    desiredLookAt: THREE.Vector3;
+    arcLift: number;
+  }>({
+    autoMove: false,
+    startTimeMs: 0,
+    durationMs: 1200,
+    startCameraPos: initialOverviewCamPos.clone(),
+    desiredCameraPos: initialOverviewCamPos.clone(),
+    startLookAt: initialOverviewLookAt.clone(),
+    desiredLookAt: initialOverviewLookAt.clone(),
+    arcLift: 0,
+  });
+
+  const startSmoothCameraFlight = useCallback(
+    (
+      desiredCameraPos: THREE.Vector3,
+      desiredLookAt: THREE.Vector3,
+      durationMs = 1350,
+      arcLift = 0.85,
+      overrideStartCamPos?: THREE.Vector3,
+      overrideStartLookAt?: THREE.Vector3
+    ) => {
+      const fromCam = overrideStartCamPos ? overrideStartCamPos.clone() : liveCameraPosRef.current.clone();
+      const fromLook = overrideStartLookAt ? overrideStartLookAt.clone() : liveLookAtRef.current.clone();
+      liveCameraPosRef.current.copy(fromCam);
+      liveLookAtRef.current.copy(fromLook);
+      cameraTargetDataRef.current = {
+        autoMove: true,
+        startTimeMs: performance.now(),
+        durationMs,
+        startCameraPos: fromCam,
+        desiredCameraPos: desiredCameraPos.clone(),
+        startLookAt: fromLook,
+        desiredLookAt: desiredLookAt.clone(),
+        arcLift,
+      };
+    },
+    []
+  );
+
   // Reset state cleanly when switching between Saint Trails
   useEffect(() => {
     clearFlightTimers();
@@ -137,6 +200,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     setSolvedStopNumbers([]);
     setZoomedStopNumber(null);
     setCinematicFlightStop(null);
+    setFlightStageText('');
     setCinematicPortalGlow(false);
     setInspectedStop(null);
     setShowCompletionModal(false);
@@ -146,12 +210,13 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       text: `Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
     });
     const ov = saintTrail.overviewCamera;
-    cameraTargetDataRef.current = {
-      autoMove: true,
-      desiredCameraPos: latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
-      desiredLookAt: latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
-    };
-  }, [saintTrail, clearFlightTimers]);
+    startSmoothCameraFlight(
+      latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
+      latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
+      1400,
+      1.2
+    );
+  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
 
   useEffect(() => {
     onSolvedCountChange?.(solvedStopNumbers.length);
@@ -161,25 +226,6 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     const firstClueId = currentCaseStop.detectiveClues[0].id;
     setRevealedClueIds((prev) => (prev.includes(firstClueId) ? prev : [...prev, firstClueId]));
   }, [currentCaseStop]);
-
-  // Camera target ref for smooth damped fly-to animations
-  const cameraTargetDataRef = useRef<{
-    autoMove: boolean;
-    desiredCameraPos: THREE.Vector3;
-    desiredLookAt: THREE.Vector3;
-  }>({
-    autoMove: true,
-    desiredCameraPos: latLngToVector3(
-      saintTrail.overviewCamera.camLat,
-      saintTrail.overviewCamera.camLng,
-      GLOBE_RADIUS + saintTrail.overviewCamera.camAltitude
-    ),
-    desiredLookAt: latLngToVector3(
-      saintTrail.overviewCamera.lookLat,
-      saintTrail.overviewCamera.lookLng,
-      GLOBE_RADIUS * saintTrail.overviewCamera.lookRadiusScale
-    ),
-  });
 
   const solvedStopNumbersRef = useRef<number[]>(solvedStopNumbers);
   useEffect(() => {
@@ -214,6 +260,10 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
   const zoomToStopOnGlobe = useCallback(
     (stopNumber: number) => {
+      clearFlightTimers();
+      setCinematicFlightStop(null);
+      setFlightStageText('');
+      setCinematicPortalGlow(false);
       soundEngine.playEffect('compass_click');
       soundEngine.playCityBiomeAudio(stopNumber);
       const stopObj = trailStops.find((s) => s.stopNumber === stopNumber);
@@ -223,37 +273,43 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       // Position camera slightly south and above the city for a dramatic 3D oblique satellite angle
       const camPos = latLngToVector3(lat - 1.9, lng - 0.4, GLOBE_RADIUS + 2.45);
 
-      cameraTargetDataRef.current = {
-        autoMove: true,
-        desiredCameraPos: camPos,
-        desiredLookAt: surfacePos,
-      };
+      startSmoothCameraFlight(camPos, surfacePos, 1500, 1.8);
       setZoomedStopNumber(stopNumber);
     },
-    [trailStops]
+    [trailStops, clearFlightTimers, startSmoothCameraFlight]
   );
 
   const resetRegionalOverview = useCallback(() => {
+    clearFlightTimers();
+    setCinematicFlightStop(null);
+    setFlightStageText('');
+    setCinematicPortalGlow(false);
     soundEngine.playEffect('vellum_page');
     const ov = saintTrail.overviewCamera;
-    cameraTargetDataRef.current = {
-      autoMove: true,
-      desiredCameraPos: latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
-      desiredLookAt: latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
-    };
+    startSmoothCameraFlight(
+      latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
+      latLngToVector3(ov.lookLat, ov.lookLng, GLOBE_RADIUS * ov.lookRadiusScale),
+      1400,
+      1.0
+    );
     setZoomedStopNumber(null);
-  }, [saintTrail]);
+  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
 
   const resetFullPlanetOverview = useCallback(() => {
+    clearFlightTimers();
+    setCinematicFlightStop(null);
+    setFlightStageText('');
+    setCinematicPortalGlow(false);
     soundEngine.playEffect('vellum_page');
     const ov = saintTrail.overviewCamera;
-    cameraTargetDataRef.current = {
-      autoMove: true,
-      desiredCameraPos: latLngToVector3(24.0, ov.camLng, GLOBE_RADIUS + 14.5),
-      desiredLookAt: new THREE.Vector3(0, 0, 0),
-    };
+    startSmoothCameraFlight(
+      latLngToVector3(24.0, ov.camLng, GLOBE_RADIUS + 14.5),
+      new THREE.Vector3(0, 0, 0),
+      1450,
+      0.5
+    );
     setZoomedStopNumber(null);
-  }, [saintTrail]);
+  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
 
   // Initialize Ultra-HD Multi-Resolution Three.js Earth Scene
   useEffect(() => {
@@ -902,72 +958,57 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       }
     }
 
+    const dirStartVec = new THREE.Vector3();
+    const dirEndVec = new THREE.Vector3();
+
     const tick = () => {
       if (disposed) return;
-      const dt = Math.min(clock.getDelta(), 0.1);
+      clock.getDelta();
       const elapsed = clock.getElapsedTime();
 
-      // Smoothly fly camera along a curved spherical arc toward target when flying to a stop or overview
+      // Deterministic time-based spherical keyframe flight (immune to feedback loops & OrbitControls damping)
       if (!userDragging && cameraTargetDataRef.current.autoMove) {
-        const targetData = cameraTargetDataRef.current;
-        const dampLambda = 3.8;
+        const td = cameraTargetDataRef.current;
+        const elapsedFlightMs = Math.max(0, performance.now() - td.startTimeMs);
+        const rawU = Math.min(1, elapsedFlightMs / Math.max(1, td.durationMs));
+        // Smooth cubic ease-in-out
+        const t = rawU < 0.5 ? 4 * rawU * rawU * rawU : 1 - Math.pow(-2 * rawU + 2, 3) / 2;
 
-        // Interpolate spherical radius (altitude from Earth center) + spherical direction so the camera arcs over the globe
-        const curRadius = camera.position.length();
-        const targetRadius = targetData.desiredCameraPos.length();
-        const nextRadius = THREE.MathUtils.damp(curRadius, targetRadius, dampLambda, dt);
+        const startRadius = td.startCameraPos.length();
+        const endRadius = td.desiredCameraPos.length();
+        // Parabolic orbital arc lift (0 at t=0, peaks at t=0.5, 0 at t=1)
+        const midArc = Math.sin(t * Math.PI) * td.arcLift;
+        const nextRadius = THREE.MathUtils.lerp(startRadius, endRadius, t) + midArc;
 
-        // Slerp-like spherical direction damping
-        camera.position.x = THREE.MathUtils.damp(
-          camera.position.x,
-          targetData.desiredCameraPos.x,
-          dampLambda,
-          dt
-        );
-        camera.position.y = THREE.MathUtils.damp(
-          camera.position.y,
-          targetData.desiredCameraPos.y,
-          dampLambda,
-          dt
-        );
-        camera.position.z = THREE.MathUtils.damp(
-          camera.position.z,
-          targetData.desiredCameraPos.z,
-          dampLambda,
-          dt
-        );
+        dirStartVec.copy(td.startCameraPos).normalize();
+        dirEndVec.copy(td.desiredCameraPos).normalize();
+        camera.position
+          .copy(dirStartVec)
+          .lerp(dirEndVec, t)
+          .normalize()
+          .multiplyScalar(Math.max(GLOBE_RADIUS + 0.35, nextRadius));
 
-        // Add subtle parabolic arc lift when traversing long distances across the globe
-        const angularDist = camera.position.distanceTo(targetData.desiredCameraPos);
-        const arcBoost = Math.min(2.8, angularDist * 0.22);
-        camera.position.normalize().multiplyScalar(Math.max(GLOBE_RADIUS + 0.35, nextRadius + arcBoost));
+        controls.target.lerpVectors(td.startLookAt, td.desiredLookAt, t);
+        controls.enableDamping = false;
+        controls.update();
 
-        controls.target.x = THREE.MathUtils.damp(
-          controls.target.x,
-          targetData.desiredLookAt.x,
-          dampLambda * 1.15,
-          dt
-        );
-        controls.target.y = THREE.MathUtils.damp(
-          controls.target.y,
-          targetData.desiredLookAt.y,
-          dampLambda * 1.15,
-          dt
-        );
-        controls.target.z = THREE.MathUtils.damp(
-          controls.target.z,
-          targetData.desiredLookAt.z,
-          dampLambda * 1.15,
-          dt
-        );
+        if (rawU >= 1) {
+          td.autoMove = false;
+          controls.enableDamping = true;
+        }
+      } else {
+        controls.enableDamping = true;
+        controls.update();
       }
-
-      controls.update();
 
       // Safety clamp so user manual zoom never clips beneath the Earth surface
       if (camera.position.length() < GLOBE_RADIUS + 0.34) {
         camera.position.setLength(GLOBE_RADIUS + 0.34);
       }
+
+      // Keep live camera & lookAt refs synced for the next keyframe flight
+      liveCameraPosRef.current.copy(camera.position);
+      liveLookAtRef.current.copy(controls.target);
 
       // Slowly drift atmospheric clouds and fade them out when zoomed into the Mediterranean
       cloudsMesh.rotation.y = elapsed * 0.004;
@@ -1137,30 +1178,31 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
   /**
    * Reusable Globe-to-Scene Cinematic Flight (Option A + Option B):
-   * - Option B: If confirmed directly from the Full Globe (or another city), Stage 1 arcs the 3D Earth
-   *   across the sea/continents to frame the target city, then Stage 2 plunges straight down into the
-   *   Sanctuary Beacon (`altitude +0.42`).
-   * - Option A: If already hovering above the target city, plunges directly down to street/beacon level
-   *   (`altitude +0.42`) with a warm Golden Sanctuary Light Portal crossfading into the historical scene!
+   * - Stage 1 (0 -> 1.9s): Sweeps the 3D camera across the planet in a high parabolic arc (`arcLift: 2.8`)
+   *   to frame the destination city from satellite orbit (`+2.45` altitude) with city callouts visible.
+   * - Stage 2 (1.9s -> 3.6s): Plunges straight down from satellite orbit to street/sanctuary level
+   *   (`+0.36` altitude) right into the glowing 3D golden octahedron beacon.
+   * - Stage 3 (3.25s -> 3.8s): Blooms a warm Golden Sanctuary Light Portal and automatically opens the
+   *   existing historical "Stop Photo & Story" scene!
    */
   const flyAndEnterHistoricalScene = useCallback(
-    (targetStop: TrailStop) => {
+    (targetStop: TrailStop, forceFromFullEarth = false) => {
       clearFlightTimers();
       soundEngine.playCityBiomeAudio(targetStop.stopNumber);
 
       const lat = targetStop.globePlacement.latDeg;
       const lng = targetStop.globePlacement.lngDeg;
-      const wasAlreadyAtStop = zoomedStopNumberRef.current === targetStop.stopNumber;
 
-      // Regional approach pose (Stage 1 when flying from across the globe)
+      // Regional approach pose (Stage 1 orbital sweep)
       const approachSurfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
-      const approachCamPos = latLngToVector3(lat - 1.6, lng - 0.3, GLOBE_RADIUS + 2.2);
+      const approachCamPos = latLngToVector3(lat - 1.8, lng - 0.35, GLOBE_RADIUS + 2.45);
 
       // Ground-level Sanctuary Dive pose right into the glowing 3D Beacon (Stage 2)
-      const beaconJewelPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.12);
-      const groundDiveCamPos = latLngToVector3(lat - 0.28, lng - 0.06, GLOBE_RADIUS + 0.42);
+      const beaconJewelPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.14);
+      const groundDiveCamPos = latLngToVector3(lat - 0.24, lng - 0.05, GLOBE_RADIUS + 0.38);
 
       setZoomedStopNumber(targetStop.stopNumber);
+      setShowGlobeLabels(true);
       setActivePhotoHotspotId(targetStop.hiddenArtifacts[0].id);
 
       const prefersReducedMotion =
@@ -1168,12 +1210,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
         window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
       if (prefersReducedMotion) {
-        cameraTargetDataRef.current = {
-          autoMove: true,
-          desiredCameraPos: approachCamPos,
-          desiredLookAt: approachSurfacePos,
-        };
+        startSmoothCameraFlight(approachCamPos, approachSurfacePos, 400, 0);
         setCinematicFlightStop(null);
+        setFlightStageText('');
         setCinematicPortalGlow(false);
         setInspectedStop(targetStop);
         return;
@@ -1182,46 +1221,76 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       setCinematicFlightStop(targetStop);
       setCinematicPortalGlow(false);
 
-      const totalFlightMs = wasAlreadyAtStop ? 1650 : 2400;
-      const diveStartMs = wasAlreadyAtStop ? 0 : 850;
-      const portalStartMs = totalFlightMs - 480;
+      // If triggered via the Demo button or if already very close to the city, start from a wide planetary orbit
+      // so the player always experiences the full cross-globe flight + street-level sanctuary dive!
+      const currentDistToApproach = liveCameraPosRef.current.distanceTo(approachCamPos);
+      const shouldStartFromWideOrbit = forceFromFullEarth || currentDistToApproach < 1.2;
 
-      if (!wasAlreadyAtStop) {
-        // Stage 1: Spin across the 3D Globe to approach the city
-        cameraTargetDataRef.current = {
-          autoMove: true,
-          desiredCameraPos: approachCamPos,
-          desiredLookAt: approachSurfacePos,
-        };
-      }
+      const wideStartCamPos = shouldStartFromWideOrbit
+        ? latLngToVector3(
+            Math.max(-20, Math.min(52, lat + 16)),
+            lng - 38,
+            GLOBE_RADIUS + 13.5
+          )
+        : undefined;
+      const wideStartLookAt = shouldStartFromWideOrbit ? new THREE.Vector3(0, 0, 0) : undefined;
 
-      // Stage 2: Plunge all the way down into the glowing golden Sanctuary Beacon
+      // Stage 1 (0 -> 1900ms): Grand orbital sweep across the 3D Earth to frame the city
+      setFlightStageText(
+        `Stage 1/2 · Sweeping Across 3D Earth to ${targetStop.modernPlaceName}, ${targetStop.modernCountry}…`
+      );
+      startSmoothCameraFlight(
+        approachCamPos,
+        approachSurfacePos,
+        1850,
+        2.6,
+        wideStartCamPos,
+        wideStartLookAt
+      );
+
+      // Stage 2 (1900ms -> 3550ms): Plunge straight down into the glowing golden 3D Sanctuary Beacon
       stageTimerRef.current = window.setTimeout(() => {
         stageTimerRef.current = null;
-        cameraTargetDataRef.current = {
-          autoMove: true,
-          desiredCameraPos: groundDiveCamPos,
-          desiredLookAt: beaconJewelPos,
-        };
-      }, diveStartMs);
+        soundEngine.playEffect('compass_click');
+        setFlightStageText(
+          `Stage 2/2 · Diving Into Ancient ${targetStop.ancientPlaceName} Sanctuary Beacon…`
+        );
+        startSmoothCameraFlight(groundDiveCamPos, beaconJewelPos, 1650, 0.0);
+      }, 1900);
 
-      // Stage 3: Bloom warm golden light portal for the last 480ms before opening the scene
+      // Stage 3 (3250ms -> 3800ms): Bloom warm golden light portal before opening the historical scene
       portalTimerRef.current = window.setTimeout(() => {
         portalTimerRef.current = null;
         soundEngine.playEffect('sanctuary_bell');
+        setFlightStageText(`Entering ${targetStop.ancientPlaceName} Historical Scene…`);
         setCinematicPortalGlow(true);
-      }, portalStartMs);
+      }, 3250);
 
-      // Stage 4: Automatically enter the historical Stop Photo & Story scene
+      // Stage 4 (3800ms): Automatically enter the historical Stop Photo & Story scene
       flightTimerRef.current = window.setTimeout(() => {
         flightTimerRef.current = null;
         setCinematicFlightStop(null);
+        setFlightStageText('');
         setCinematicPortalGlow(false);
         setInspectedStop(targetStop);
-      }, totalFlightMs);
+      }, 3800);
     },
-    [clearFlightTimers]
+    [clearFlightTimers, startSmoothCameraFlight]
   );
+
+  const handleTestFullFlightDemo = () => {
+    soundEngine.playEffect('wax_seal_stamp');
+    const targetStop = currentCaseStop;
+    const nextSolved = solvedStopNumbers.includes(targetStop.stopNumber)
+      ? solvedStopNumbers
+      : [...solvedStopNumbers, targetStop.stopNumber];
+    setSolvedStopNumbers(nextSolved);
+    setFeedbackBanner({
+      type: 'success',
+      text: `3D Flight & Dive Demo: Sweeping from space orbit across the 3D Earth to ${targetStop.modernPlaceName}, ${targetStop.modernCountry} (Ancient ${targetStop.ancientPlaceName}), then diving into its golden Sanctuary Beacon!`,
+    });
+    flyAndEnterHistoricalScene(targetStop, true);
+  };
 
   const handleConfirmCityForCase = (stopToVerify: TrailStop) => {
     if (stopToVerify.stopNumber === currentCaseStop.stopNumber) {
@@ -1361,6 +1430,16 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                 {/* Camera & Label Controls */}
                 <div className="pointer-events-auto flex flex-wrap items-center gap-1.5">
                   <button
+                    onClick={handleTestFullFlightDemo}
+                    disabled={cinematicFlightStop !== null}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#facc15] bg-gradient-to-r from-[#d4af37] to-[#b58922] px-2.5 py-1 text-[10px] font-bold text-[#120f0b] shadow-[0_0_16px_rgba(212,175,55,0.45)] transition hover:brightness-110 disabled:opacity-50 sm:px-3 sm:py-1.5 sm:text-[11px]"
+                    title="Watch the full 2-stage 3D camera flight from space orbit straight into the active case's Sanctuary Beacon & Historical Scene"
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>Test 3D Flight & Dive</span>
+                  </button>
+
+                  <button
                     onClick={() => setShowGlobeLabels((prev) => !prev)}
                     className="inline-flex items-center gap-1 rounded-lg border border-[#383024] bg-[#12100d]/90 px-2 py-1 text-[10px] font-semibold text-[#e6dccb] transition hover:border-[#d4af37] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
                     title="Toggle Floating City Callout Labels"
@@ -1493,7 +1572,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               })}
             </div>
 
-            {/* Warm Golden Sanctuary Portal Crossfade Overlay during the final 420ms of the dive */}
+            {/* Warm Golden Sanctuary Portal Crossfade Overlay during the final 550ms of the dive */}
             <div
               className={`pointer-events-none absolute inset-0 z-20 transition-opacity duration-500 ${
                 cinematicPortalGlow ? 'opacity-100' : 'opacity-0'
@@ -1506,18 +1585,18 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
             {/* Cinematic Flight Overlay when swooping into a newly solved destination */}
             {cinematicFlightStop && (
-              <div className="pointer-events-auto absolute inset-x-4 bottom-24 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-[#facc15]/70 bg-[#14100b]/95 px-4 py-3 shadow-[0_0_30px_rgba(212,175,55,0.35)] backdrop-blur-md">
+              <div className="pointer-events-auto absolute inset-x-4 bottom-24 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-[#facc15]/80 bg-[#14100b]/95 px-4 py-3 shadow-[0_0_30px_rgba(212,175,55,0.45)] backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#facc15] bg-[#261e12] text-[#fef08a]">
                     <Sparkles className="h-4 w-4 animate-pulse" />
                   </span>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#facc15]">
-                      Case #{cinematicFlightStop.stopNumber} Verified · Sanctuary Dive
+                      Case #{cinematicFlightStop.stopNumber} Verified · 2-Stage Sanctuary Flight
                     </p>
                     <p className="font-serif text-sm font-bold text-[#f4efe6]">
-                      Diving into {cinematicFlightStop.modernPlaceName},{' '}
-                      {cinematicFlightStop.modernCountry}…
+                      {flightStageText ||
+                        `Diving into ${cinematicFlightStop.modernPlaceName}, ${cinematicFlightStop.modernCountry}…`}
                     </p>
                   </div>
                 </div>
@@ -1526,12 +1605,13 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                     clearFlightTimers();
                     const target = cinematicFlightStop;
                     setCinematicFlightStop(null);
+                    setFlightStageText('');
                     setCinematicPortalGlow(false);
                     setInspectedStop(target);
                   }}
                   className="shrink-0 rounded-lg border border-[#d4af37]/50 bg-[#241d13] px-2.5 py-1.5 text-[11px] font-bold text-[#fef08a] hover:border-[#facc15]"
                 >
-                  Enter Now
+                  Skip to Scene
                 </button>
               </div>
             )}
@@ -1565,22 +1645,31 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                         className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
                       >
                         <Search className="h-4 w-4" />
-                        Confirm for Case #{currentCaseStop.stopNumber}
+                        Confirm & Dive for Case #{currentCaseStop.stopNumber}
                       </button>
                     )}
 
                     {solvedStopNumbers.includes(zoomedStopObj.stopNumber) ? (
-                      <button
-                        onClick={() => {
-                          soundEngine.playEffect('sanctuary_bell');
-                          setInspectedStop(zoomedStopObj);
-                          setActivePhotoHotspotId(zoomedStopObj.hiddenArtifacts[0].id);
-                        }}
-                        className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/60 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 transition hover:border-emerald-400 hover:bg-emerald-900/40"
-                      >
-                        <Eye className="h-4 w-4 text-emerald-300" />
-                        View Stop Photo & Story
-                      </button>
+                      <>
+                        <button
+                          onClick={() => flyAndEnterHistoricalScene(zoomedStopObj, true)}
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-[#d4af37]/60 bg-[#241d13] px-3 py-2.5 text-xs font-bold text-[#fef08a] transition hover:border-[#facc15]"
+                        >
+                          <Sparkles className="h-3.5 w-3.5 text-[#facc15]" />
+                          Replay 3D Flight & Dive
+                        </button>
+                        <button
+                          onClick={() => {
+                            soundEngine.playEffect('sanctuary_bell');
+                            setInspectedStop(zoomedStopObj);
+                            setActivePhotoHotspotId(zoomedStopObj.hiddenArtifacts[0].id);
+                          }}
+                          className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/60 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 transition hover:border-emerald-400 hover:bg-emerald-900/40"
+                        >
+                          <Eye className="h-4 w-4 text-emerald-300" />
+                          View Stop Photo & Story
+                        </button>
+                      </>
                     ) : (
                       <span
                         className="inline-flex items-center gap-1.5 rounded-xl border border-[#2c241b] bg-[#18140f] px-3 py-2.5 text-[11px] font-medium text-[#8c7f6b]"
@@ -1596,9 +1685,22 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
             ) : (
               /* Quick Zoom & 1-Click Confirm Dock for All 6 Modern-Day Cities on the Globe */
               <div className="border-t border-[#262018] bg-[#120f0c] px-4 py-3">
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
-                  Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
-                </p>
+                <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
+                    Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
+                  </p>
+                  <button
+                    onClick={handleTestFullFlightDemo}
+                    disabled={cinematicFlightStop !== null}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#facc15] bg-gradient-to-r from-[#d4af37] to-[#b58922] px-3 py-1 text-[11px] font-bold text-[#120f0b] shadow-md transition hover:brightness-110 disabled:opacity-50"
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>
+                      Test 3D Flight & Dive (Case #{currentCaseStop.stopNumber}:{' '}
+                      {currentCaseStop.modernPlaceName})
+                    </span>
+                  </button>
+                </div>
                 <div className="flex flex-wrap gap-1.5">
                   {trailStops.map((stop) => {
                     const isSolved = solvedStopNumbers.includes(stop.stopNumber);
