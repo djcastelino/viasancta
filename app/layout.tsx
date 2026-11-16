@@ -43,6 +43,12 @@ export default function RootLayout({
             gtag('config', 'G-Y9BMLBXK0T');
           `}
         </Script>
+              <Script
+          src="/api/umami/script"
+          data-host-url="/api/umami"
+          data-website-id="722f5bca-d797-4466-8481-393aa336273b"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors`}
