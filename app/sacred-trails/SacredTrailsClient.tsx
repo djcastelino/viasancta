@@ -1,5 +1,4 @@
 "use client";
-
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -35,7 +34,7 @@ import {
 } from './utils/soundEngine';
 import { Version2GlobeDetective } from './components/Version2GlobeDetective';
 
-export default function SacredTrailsClient() {
+export default function App() {
   const dailyTrail = getDailySaintTrail();
   // Default to St. Francis Xavier if unlocked/featured or Today's Saint so the user can immediately experience the new trail
   const [selectedSaintId, setSelectedSaintId] = useState<SaintId>('xavier');
@@ -190,6 +189,18 @@ export default function SacredTrailsClient() {
                 {v2SolvedCount} / {activeSaintTrail.stops.length}
               </strong>
             </div>
+
+            {/* Direct Link to Divine Pilgrim Android App on Google Play */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.divinepilgrim.www.twa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-950/30 px-2.5 py-1.5 text-[11px] font-bold text-emerald-300 transition hover:border-emerald-400 hover:bg-emerald-900/40 sm:px-3 sm:text-xs"
+              title="Get the official Divine Pilgrim Android App on Google Play"
+            >
+              <span>📱 Android App</span>
+              <ArrowUpRight className="h-3.5 w-3.5 text-emerald-400" />
+            </a>
 
             {/* 5-Option Soundtrack Dropdown Menu */}
             <div ref={audioMenuRef} className="relative">
