@@ -1623,8 +1623,12 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                         </button>
                         {isSolved ? (
                           <button
-                            onClick={() => openSceneModal(stop)}
-                            title={`Revisit ${stop.historicalName} historical scene`}
+                            onClick={() => {
+                              soundEngine.playEffect('sanctuary_bell');
+                              setInspectedStop(stop);
+                              setActivePhotoHotspotId(stop.hiddenArtifacts[0].id);
+                            }}
+                            title={`Revisit ${stop.ancientPlaceName} historical scene`}
                             className="inline-flex items-center gap-1 border-l border-emerald-600/30 bg-emerald-900/35 px-2 py-1.5 text-[11px] font-semibold text-emerald-200 transition hover:bg-emerald-800/50"
                           >
                             <Eye className="h-3 w-3 text-emerald-300" />
@@ -1632,8 +1636,8 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                           </button>
                         ) : (
                           <button
-                            onClick={() => verifyDestinationOnGlobe(stop.stopNumber)}
-                            disabled={cinematicDiveStop !== null}
+                            onClick={() => handleConfirmCityForCase(stop)}
+                            disabled={divingToStop !== null}
                             title={`Confirm ${stop.modernPlaceName} for Case #${currentCaseStop.stopNumber} & fly into historical scene`}
                             className="inline-flex items-center gap-1 border-l border-[#2f271d] bg-[#d4af37]/15 px-2 py-1.5 text-[11px] font-bold text-[#d4af37] transition hover:bg-[#d4af37] hover:text-[#14110d] disabled:opacity-50"
                           >
