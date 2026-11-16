@@ -1,0 +1,149 @@
+{
+  "id": "AutoHubReels0001",
+  "name": "Automation Hub \u2014 Daily Umami Stats & 9:16 Reels Pipeline",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b1a10001-0000-4000-8000-000000000001",
+      "name": "Manual Test Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "b1a10002-0000-4000-8000-000000000002",
+      "name": "Daily 8AM Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "command": "/data/automation-hub/shared-tools/query-umami-stats.sh"
+      },
+      "id": "b1a10003-0000-4000-8000-000000000003",
+      "name": "1. Query Umami Analytics DB",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        460,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const statsJson = $input.first().json.stdout || '[]';\nlet umamiStats = [];\ntry { umamiStats = JSON.parse(statsJson); } catch (e) {}\n\nconst weeklySchedule = [\n  {\n    day: 'SUNDAY',\n    saint: 'ST. AUGUSTINE OF HIPPO',\n    year: 'Stop #1 of 6  |  Year 354 AD',\n    img: 'augustine_step1_thagaste_olive_1794701798229.jpg',\n    audio: 'stop_1_clue.mp3',\n    slug: 'sun_augustine_reel',\n    clueLine1: 'Born in this North African Roman town in modern',\n    clueLine2: 'Souk Ahras, Algeria, where Monica prayed for him.',\n    clue2: 'Situated in the fertile hills of Numidia before he sailed to Carthage and Milan.',\n    storyHook: 'Before becoming one of the greatest minds in Christian history, young Augustine was restless and chasing ambition across the Roman Empire.',\n    ytTitle: 'Year 354 AD: Where Did St. Augustine Begin His Journey? \ud83c\udf0d | Sacred Trails #Shorts',\n    hashtags: '#StAugustine #CatholicHistory #SacredTrails #ChristianHistory #GeographyMystery #Shorts'\n  },\n  {\n    day: 'MONDAY',\n    saint: 'ST. THOMAS THE APOSTLE',\n    year: 'Stop #1 of 6  |  Year 33 AD',\n    img: 'thomas_step1_jerusalem.jpg',\n    audio: 'thomas_stop_1_clue.mp3',\n    slug: 'mon_thomas_reel',\n    clueLine1: 'Inside a locked upstairs room on Mount Zion, he',\n    clueLine2: 'placed his fingers into the risen Lord wounds.',\n    clue2: 'From this ancient walled city, he embarked on the longest journey of any Apostle\u2014all the way to India.',\n    storyHook: 'Eight days after Easter, one skeptical Apostle demanded physical proof inside a locked room\u2014before sailing further East than any other disciple.',\n    ytTitle: 'Year 33 AD: Where Did St. Thomas Begin His 5,000-Mile Trail? \ud83c\udf0d | Sacred Trails #Shorts',\n    hashtags: '#StThomas #ApostleThomas #CatholicHistory #SacredTrails #AncientHistory #Shorts'\n  },\n  {\n    day: 'TUESDAY',\n    saint: 'ST. FRANCIS XAVIER',\n    year: 'Stop #1 of 6  |  Year 1506 AD',\n    img: 'xavier_step1_javier.jpg',\n    audio: 'xavier_stop_1_clue.mp3',\n    slug: 'tue_xavier_reel',\n    clueLine1: 'Born inside a partially dismantled stone castle in',\n    clueLine2: 'the foothills of the Pyrenees in northern Spain.',\n    clue2: 'After Navarre was conquered by Castile in 1512, Cardinal Cisneros ordered this family fortress stripped of its towers.',\n    storyHook: 'Before sailing to India, Malacca, and Japan, young Francis Xavier grew up inside a war-torn stone castle in the Pyrenees.',\n    ytTitle: 'Year 1506: Can You Find St. Francis Xavier Birthplace Castle? \ud83c\udf0d | #Shorts',\n    hashtags: '#StFrancisXavier #Jesuits #CatholicHistory #SacredTrails #HistoryMystery #Shorts'\n  },\n  {\n    day: 'WEDNESDAY',\n    saint: 'ST. PAUL THE APOSTLE',\n    year: 'Stop #1 of 6  |  Year 34 AD',\n    img: 'paul_step1_damascus.jpg',\n    audio: 'paul_stop_1_clue.mp3',\n    slug: 'wed_paul_reel',\n    clueLine1: 'Blinded by a heavenly light at midday, he was led',\n    clueLine2: 'along the ancient Roman boulevard called Straight Street.',\n    clue2: 'Ananias restored his sight inside one of the oldest continuously inhabited cities on Earth.',\n    storyHook: 'Breathing threats and carrying arrest warrants, Saul of Tarsus rode toward an ancient walled city\u2014until a blinding light stopped him cold.',\n    ytTitle: 'Year 34 AD: Can You Find Straight Street on the 3D Globe? \ud83c\udf0d | St. Paul #Shorts',\n    hashtags: '#StPaul #BibleHistory #CatholicHistory #SacredTrails #BiblicalGeography #Shorts'\n  },\n  {\n    day: 'THURSDAY',\n    saint: 'ST. FRANCIS OF ASSISI',\n    year: 'Stop #1 of 6  |  Year 1205 AD',\n    img: 'francis_step1_assisi.jpg',\n    audio: 'francis_stop_1_clue.mp3',\n    slug: 'thu_francis_reel',\n    clueLine1: 'Praying before a painted Byzantine cross in a crumbling',\n    clueLine2: 'hillside chapel, he heard: Rebuild My Church.',\n    clue2: 'Later became the home of St. Clare and the first Poor Clares in Umbria, Italy.',\n    storyHook: 'A wealthy silk merchant son walked into a ruined stone chapel in 1205\u2014and heard a voice from the Crucifix that changed his life forever.',\n    ytTitle: 'Year 1205: Which Ruined Chapel Spoke to St. Francis? \ud83c\udf0d | Sacred Trails #Shorts',\n    hashtags: '#StFrancisOfAssisi #CatholicHistory #SacredTrails #Umbria #ChristianHistory #Shorts'\n  },\n  {\n    day: 'FRIDAY',\n    saint: 'ST. IGNATIUS OF LOYOLA',\n    year: 'Stop #1 of 6  |  Year 1521 AD',\n    img: 'ignatius_step1_loyola.jpg',\n    audio: 'ignatius_stop_1_clue.mp3',\n    slug: 'fri_ignatius_reel',\n    clueLine1: 'Wounded by a cannonball in 1521, he recovered inside',\n    clueLine2: 'his family tower house in the green Basque valley.',\n    clue2: 'Asking for chivalric romances to pass the time, he was given only the Life of Christ and Lives of the Saints.',\n    storyHook: 'After a cannonball shattered his leg in 1521, a proud Spanish knight was carried home to a Basque tower house\u2014where two books changed his soul.',\n    ytTitle: 'Year 1521: Inside Which Basque Castle Did Ignatius Convert? \ud83c\udf0d | #Shorts',\n    hashtags: '#StIgnatius #Jesuits #CatholicHistory #SacredTrails #SpanishHistory #Shorts'\n  },\n  {\n    day: 'SATURDAY',\n    saint: 'ST. JOAN OF ARC',\n    year: 'Stop #1 of 6  |  Year 1425 AD',\n    img: 'joan_step1_domremy.jpg',\n    audio: 'joan_stop_1_clue.mp3',\n    slug: 'sat_joan_reel',\n    clueLine1: 'At age 13, she first heard St. Michael and St. Catherine',\n    clueLine2: 'in her father garden beside the Meuse River.',\n    clue2: 'A quiet village on the border of Champagne and Lorraine in northeastern France.',\n    storyHook: 'In the summer of 1425, while France was torn apart by the Hundred Years War, a 13-year-old peasant girl heard voices in her village garden.',\n    ytTitle: 'Year 1425: Where Did 13-Year-Old Joan of Arc Hear the Voices? \ud83c\udf0d | #Shorts',\n    hashtags: '#StJoanOfArc #JoanOfArc #CatholicHistory #SacredTrails #MedievalHistory #Shorts'\n  }\n];\n\nconst dow = new Date().getDay();\nconst today = weeklySchedule[dow];\nconst baseDir = '/data/automation-hub/projects/divinepilgrim/assets';\n\nconst cmd = [\n  '/data/automation-hub/shared-tools/generate-reel.sh',\n  '\"' + baseDir + '/images/trails/' + today.img + '\"',\n  '\"' + baseDir + '/audio/narration/' + today.audio + '\"',\n  '\"' + baseDir + '/audio/gregorian_chant.mp3\"',\n  '\"SACRED TRAILS  |  ' + today.day + ' MYSTERY\"',\n  '\"' + today.saint + '\"',\n  '\"' + today.year + '\"',\n  '\"' + today.clueLine1 + '\"',\n  '\"' + today.clueLine2 + '\"',\n  '\"Play Free at DivinePilgrim.com\"',\n  '\"' + today.slug + '\"'\n].join(' ');\n\nconst socialCaption = [\n  today.storyHook,\n  '',\n  '\ud83d\udd0d TODAY\\'S MYSTERY CLUE #1:',\n  '\"' + today.clueLine1 + ' ' + today.clueLine2 + '\"',\n  '',\n  '\ud83d\udcac Drop your city guess in the comments below!',\n  '\ud83c\udf0d Solve all 6 stops on the interactive 3D Globe (free, no login):',\n  '\ud83d\udc49 https://divinepilgrim.com/sacred-trails',\n  '',\n  today.hashtags\n].join('\\n');\n\nconst pinnedComment = '\ud83d\udca1 Need a 2nd hint? CLUE #2: ' + today.clue2 + ' \u2014 Test your guess on the 3D Globe at https://divinepilgrim.com/sacred-trails \ud83c\udf0d';\n\nreturn [{\n  json: {\n    dayOfWeek: today.day,\n    saint: today.saint,\n    reelSlug: today.slug,\n    renderCommand: cmd,\n    socialContext: {\n      youtubeTitle: today.ytTitle,\n      youtubeAndInstagramCaption: socialCaption,\n      firstPinnedComment: pinnedComment,\n      targetUrl: 'https://divinepilgrim.com/sacred-trails'\n    },\n    umamiAnalytics: umamiStats\n  }\n}];"
+      },
+      "id": "b1a10004-0000-4000-8000-000000000004",
+      "name": "2. Build Daily Mystery Context, Clues & Social Copy",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "command": "={{ $json.renderCommand }}"
+      },
+      "id": "b1a10005-0000-4000-8000-000000000005",
+      "name": "3. Render 9:16 Mystery Reel (FFmpeg)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        980,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const prev = $('2. Build Daily Mystery Context, Clues & Social Copy').first().json;\nlet renderResult = {};\ntry {\n  renderResult = JSON.parse($input.first().json.stdout || '{}');\n} catch (e) {\n  renderResult = { raw: $input.first().json.stdout };\n}\n\nreturn [{\n  json: {\n    status: 'READY_TO_PUBLISH',\n    dayOfWeek: prev.dayOfWeek,\n    saint: prev.saint,\n    videoUrlHttps: renderResult.public_https_url,\n    videoLocalFile: renderResult.file,\n    videoDurationSec: renderResult.duration_sec,\n    youtubeTitle: prev.socialContext.youtubeTitle,\n    captionForYouTubeInstagramTikTok: prev.socialContext.youtubeAndInstagramCaption,\n    pinnedCommentClue2: prev.socialContext.firstPinnedComment,\n    umamiTrafficSummary: prev.umamiAnalytics\n  }\n}];"
+      },
+      "id": "b1a10006-0000-4000-8000-000000000006",
+      "name": "4. Final Publish Package (YT + IG + TikTok Copy)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        340
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Test Trigger": {
+      "main": [
+        [
+          {
+            "node": "1. Query Umami Analytics DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily 8AM Schedule": {
+      "main": [
+        [
+          {
+            "node": "1. Query Umami Analytics DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1. Query Umami Analytics DB": {
+      "main": [
+        [
+          {
+            "node": "2. Build Daily Mystery Context, Clues & Social Copy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2. Build Daily Mystery Context, Clues & Social Copy": {
+      "main": [
+        [
+          {
+            "node": "3. Render 9:16 Mystery Reel (FFmpeg)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "3. Render 9:16 Mystery Reel (FFmpeg)": {
+      "main": [
+        [
+          {
+            "node": "4. Final Publish Package (YT + IG + TikTok Copy)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
