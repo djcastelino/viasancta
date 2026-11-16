@@ -1637,7 +1637,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                         ) : (
                           <button
                             onClick={() => handleConfirmCityForCase(stop)}
-                            disabled={divingToStop !== null}
+                            disabled={cinematicFlightStop !== null}
                             title={`Confirm ${stop.modernPlaceName} for Case #${currentCaseStop.stopNumber} & fly into historical scene`}
                             className="inline-flex items-center gap-1 border-l border-[#2f271d] bg-[#d4af37]/15 px-2 py-1.5 text-[11px] font-bold text-[#d4af37] transition hover:bg-[#d4af37] hover:text-[#14110d] disabled:opacity-50"
                           >
