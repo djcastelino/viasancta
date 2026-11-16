@@ -1202,7 +1202,6 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       const groundDiveCamPos = latLngToVector3(lat - 0.24, lng - 0.05, GLOBE_RADIUS + 0.38);
 
       setZoomedStopNumber(targetStop.stopNumber);
-      setShowGlobeLabels(true);
       setActivePhotoHotspotId(targetStop.hiddenArtifacts[0].id);
 
       const prefersReducedMotion =
@@ -1221,7 +1220,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       setCinematicFlightStop(targetStop);
       setCinematicPortalGlow(false);
 
-      // If triggered via the Demo button or if already very close to the city, start from a wide planetary orbit
+      // If replaying or already very close to the city, start from a wide planetary orbit
       // so the player always experiences the full cross-globe flight + street-level sanctuary dive!
       const currentDistToApproach = liveCameraPosRef.current.distanceTo(approachCamPos);
       const shouldStartFromWideOrbit = forceFromFullEarth || currentDistToApproach < 1.2;
@@ -1277,20 +1276,6 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     },
     [clearFlightTimers, startSmoothCameraFlight]
   );
-
-  const handleTestFullFlightDemo = () => {
-    soundEngine.playEffect('wax_seal_stamp');
-    const targetStop = currentCaseStop;
-    const nextSolved = solvedStopNumbers.includes(targetStop.stopNumber)
-      ? solvedStopNumbers
-      : [...solvedStopNumbers, targetStop.stopNumber];
-    setSolvedStopNumbers(nextSolved);
-    setFeedbackBanner({
-      type: 'success',
-      text: `3D Flight & Dive Demo: Sweeping from space orbit across the 3D Earth to ${targetStop.modernPlaceName}, ${targetStop.modernCountry} (Ancient ${targetStop.ancientPlaceName}), then diving into its golden Sanctuary Beacon!`,
-    });
-    flyAndEnterHistoricalScene(targetStop, true);
-  };
 
   const handleConfirmCityForCase = (stopToVerify: TrailStop) => {
     if (stopToVerify.stopNumber === currentCaseStop.stopNumber) {
@@ -1429,16 +1414,6 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
                 {/* Camera & Label Controls */}
                 <div className="pointer-events-auto flex flex-wrap items-center gap-1.5">
-                  <button
-                    onClick={handleTestFullFlightDemo}
-                    disabled={cinematicFlightStop !== null}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#facc15] bg-gradient-to-r from-[#d4af37] to-[#b58922] px-2.5 py-1 text-[10px] font-bold text-[#120f0b] shadow-[0_0_16px_rgba(212,175,55,0.45)] transition hover:brightness-110 disabled:opacity-50 sm:px-3 sm:py-1.5 sm:text-[11px]"
-                    title="Watch the full 2-stage 3D camera flight from space orbit straight into the active case's Sanctuary Beacon & Historical Scene"
-                  >
-                    <Sparkles className="h-3.5 w-3.5" />
-                    <span>Test 3D Flight & Dive</span>
-                  </button>
-
                   <button
                     onClick={() => setShowGlobeLabels((prev) => !prev)}
                     className="inline-flex items-center gap-1 rounded-lg border border-[#383024] bg-[#12100d]/90 px-2 py-1 text-[10px] font-semibold text-[#e6dccb] transition hover:border-[#d4af37] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
@@ -1685,22 +1660,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
             ) : (
               /* Quick Zoom & 1-Click Confirm Dock for All 6 Modern-Day Cities on the Globe */
               <div className="border-t border-[#262018] bg-[#120f0c] px-4 py-3">
-                <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
-                    Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
-                  </p>
-                  <button
-                    onClick={handleTestFullFlightDemo}
-                    disabled={cinematicFlightStop !== null}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[#facc15] bg-gradient-to-r from-[#d4af37] to-[#b58922] px-3 py-1 text-[11px] font-bold text-[#120f0b] shadow-md transition hover:brightness-110 disabled:opacity-50"
-                  >
-                    <Sparkles className="h-3.5 w-3.5" />
-                    <span>
-                      Test 3D Flight & Dive (Case #{currentCaseStop.stopNumber}:{' '}
-                      {currentCaseStop.modernPlaceName})
-                    </span>
-                  </button>
-                </div>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
+                  Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
+                </p>
                 <div className="flex flex-wrap gap-1.5">
                   {trailStops.map((stop) => {
                     const isSolved = solvedStopNumbers.includes(stop.stopNumber);
