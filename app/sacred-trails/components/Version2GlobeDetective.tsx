@@ -298,11 +298,12 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     roomEnv.dispose();
     pmremGenerator.dispose();
 
-    // OrbitControls — allow ground-level cinematic sanctuary dives down to +0.32
+    // OrbitControls — minDistance is distance from controls.target (the city pin), NOT from (0,0,0)!
+    // Setting minDistance = 0.35 allows the camera to dive right down to street/beacon level (+0.36)!
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
-    controls.minDistance = GLOBE_RADIUS + 0.32;
+    controls.minDistance = 0.35;
     controls.maxDistance = 32;
     controls.enablePan = false;
     controls.rotateSpeed = 0.6;
@@ -906,10 +907,17 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       const dt = Math.min(clock.getDelta(), 0.1);
       const elapsed = clock.getElapsedTime();
 
-      // Smoothly damp camera toward target when flying to a stop or overview
+      // Smoothly fly camera along a curved spherical arc toward target when flying to a stop or overview
       if (!userDragging && cameraTargetDataRef.current.autoMove) {
         const targetData = cameraTargetDataRef.current;
-        const dampLambda = 4.5;
+        const dampLambda = 3.8;
+
+        // Interpolate spherical radius (altitude from Earth center) + spherical direction so the camera arcs over the globe
+        const curRadius = camera.position.length();
+        const targetRadius = targetData.desiredCameraPos.length();
+        const nextRadius = THREE.MathUtils.damp(curRadius, targetRadius, dampLambda, dt);
+
+        // Slerp-like spherical direction damping
         camera.position.x = THREE.MathUtils.damp(
           camera.position.x,
           targetData.desiredCameraPos.x,
@@ -929,27 +937,37 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
           dt
         );
 
+        // Add subtle parabolic arc lift when traversing long distances across the globe
+        const angularDist = camera.position.distanceTo(targetData.desiredCameraPos);
+        const arcBoost = Math.min(2.8, angularDist * 0.22);
+        camera.position.normalize().multiplyScalar(Math.max(GLOBE_RADIUS + 0.35, nextRadius + arcBoost));
+
         controls.target.x = THREE.MathUtils.damp(
           controls.target.x,
           targetData.desiredLookAt.x,
-          dampLambda,
+          dampLambda * 1.15,
           dt
         );
         controls.target.y = THREE.MathUtils.damp(
           controls.target.y,
           targetData.desiredLookAt.y,
-          dampLambda,
+          dampLambda * 1.15,
           dt
         );
         controls.target.z = THREE.MathUtils.damp(
           controls.target.z,
           targetData.desiredLookAt.z,
-          dampLambda,
+          dampLambda * 1.15,
           dt
         );
       }
 
       controls.update();
+
+      // Safety clamp so user manual zoom never clips beneath the Earth surface
+      if (camera.position.length() < GLOBE_RADIUS + 0.34) {
+        camera.position.setLength(GLOBE_RADIUS + 0.34);
+      }
 
       // Slowly drift atmospheric clouds and fade them out when zoomed into the Mediterranean
       cloudsMesh.rotation.y = elapsed * 0.004;
@@ -1119,11 +1137,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
   /**
    * Reusable Globe-to-Scene Cinematic Flight (Option A + Option B):
-   * - Option B: If confirmed directly from the Full Globe (or another city), Stage 1 spins the 3D Earth
+   * - Option B: If confirmed directly from the Full Globe (or another city), Stage 1 arcs the 3D Earth
    *   across the sea/continents to frame the target city, then Stage 2 plunges straight down into the
-   *   Sanctuary Beacon (`altitude +0.36`).
+   *   Sanctuary Beacon (`altitude +0.42`).
    * - Option A: If already hovering above the target city, plunges directly down to street/beacon level
-   *   (`altitude +0.36`) with a warm Golden Sanctuary Light Portal crossfading into the historical scene!
+   *   (`altitude +0.42`) with a warm Golden Sanctuary Light Portal crossfading into the historical scene!
    */
   const flyAndEnterHistoricalScene = useCallback(
     (targetStop: TrailStop) => {
@@ -1136,11 +1154,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
 
       // Regional approach pose (Stage 1 when flying from across the globe)
       const approachSurfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
-      const approachCamPos = latLngToVector3(lat - 1.8, lng - 0.35, GLOBE_RADIUS + 2.35);
+      const approachCamPos = latLngToVector3(lat - 1.6, lng - 0.3, GLOBE_RADIUS + 2.2);
 
       // Ground-level Sanctuary Dive pose right into the glowing 3D Beacon (Stage 2)
-      const beaconJewelPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.14);
-      const groundDiveCamPos = latLngToVector3(lat - 0.26, lng - 0.05, GLOBE_RADIUS + 0.38);
+      const beaconJewelPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.12);
+      const groundDiveCamPos = latLngToVector3(lat - 0.28, lng - 0.06, GLOBE_RADIUS + 0.42);
 
       setZoomedStopNumber(targetStop.stopNumber);
       setActivePhotoHotspotId(targetStop.hiddenArtifacts[0].id);
@@ -1164,9 +1182,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       setCinematicFlightStop(targetStop);
       setCinematicPortalGlow(false);
 
-      const totalFlightMs = wasAlreadyAtStop ? 1350 : 2050;
-      const diveStartMs = wasAlreadyAtStop ? 0 : 720;
-      const portalStartMs = totalFlightMs - 420;
+      const totalFlightMs = wasAlreadyAtStop ? 1650 : 2400;
+      const diveStartMs = wasAlreadyAtStop ? 0 : 850;
+      const portalStartMs = totalFlightMs - 480;
 
       if (!wasAlreadyAtStop) {
         // Stage 1: Spin across the 3D Globe to approach the city
@@ -1187,7 +1205,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
         };
       }, diveStartMs);
 
-      // Stage 3: Bloom warm golden light portal for the last 420ms before opening the scene
+      // Stage 3: Bloom warm golden light portal for the last 480ms before opening the scene
       portalTimerRef.current = window.setTimeout(() => {
         portalTimerRef.current = null;
         soundEngine.playEffect('sanctuary_bell');
@@ -1576,29 +1594,54 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                 </div>
               </div>
             ) : (
-              /* Quick Zoom Dock for All 6 Modern-Day Cities on the Globe */
+              /* Quick Zoom & 1-Click Confirm Dock for All 6 Modern-Day Cities on the Globe */
               <div className="border-t border-[#262018] bg-[#120f0c] px-4 py-3">
                 <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
-                  Fly 3D Camera Directly to Any of the 6 Trail Cities:
+                  Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {trailStops.map((stop) => {
                     const isSolved = solvedStopNumbers.includes(stop.stopNumber);
                     return (
-                      <button
+                      <div
                         key={stop.stopNumber}
-                        onClick={() => zoomToStopOnGlobe(stop.stopNumber)}
-                        className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-medium transition ${
+                        className={`inline-flex items-center overflow-hidden rounded-lg border text-xs font-medium transition ${
                           isSolved
-                            ? 'border-emerald-600/40 bg-emerald-950/25 text-emerald-200 hover:border-emerald-400'
-                            : 'border-[#2f271d] bg-[#1a1510] text-[#e6dccb] hover:border-[#d4af37]'
+                            ? 'border-emerald-600/40 bg-emerald-950/25 text-emerald-200'
+                            : 'border-[#2f271d] bg-[#1a1510] text-[#e6dccb]'
                         }`}
                       >
-                        <ZoomIn className="h-3.5 w-3.5 text-[#d4af37]" />
-                        <span>
-                          {stop.modernPlaceName}, {stop.modernCountry}
-                        </span>
-                      </button>
+                        <button
+                          onClick={() => zoomToStopOnGlobe(stop.stopNumber)}
+                          title={`Fly 3D camera over ${stop.modernPlaceName}`}
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 transition hover:bg-[#d4af37]/15 hover:text-[#f4efe6]"
+                        >
+                          <ZoomIn className="h-3.5 w-3.5 text-[#d4af37]" />
+                          <span>
+                            {stop.modernPlaceName}, {stop.modernCountry}
+                          </span>
+                        </button>
+                        {isSolved ? (
+                          <button
+                            onClick={() => openSceneModal(stop)}
+                            title={`Revisit ${stop.historicalName} historical scene`}
+                            className="inline-flex items-center gap-1 border-l border-emerald-600/30 bg-emerald-900/35 px-2 py-1.5 text-[11px] font-semibold text-emerald-200 transition hover:bg-emerald-800/50"
+                          >
+                            <Eye className="h-3 w-3 text-emerald-300" />
+                            <span>Scene</span>
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => verifyDestinationOnGlobe(stop.stopNumber)}
+                            disabled={cinematicDiveStop !== null}
+                            title={`Confirm ${stop.modernPlaceName} for Case #${currentCaseStop.stopNumber} & fly into historical scene`}
+                            className="inline-flex items-center gap-1 border-l border-[#2f271d] bg-[#d4af37]/15 px-2 py-1.5 text-[11px] font-bold text-[#d4af37] transition hover:bg-[#d4af37] hover:text-[#14110d] disabled:opacity-50"
+                          >
+                            <Sparkles className="h-3 w-3" />
+                            <span>Confirm</span>
+                          </button>
+                        )}
+                      </div>
                     );
                   })}
                 </div>
