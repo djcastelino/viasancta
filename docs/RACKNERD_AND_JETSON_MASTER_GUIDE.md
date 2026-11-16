@@ -65,31 +65,39 @@ EOF
 docker compose up -d
 ```
 
-### Step C: Live Dashboard & Configured Website IDs (Deployed on `192.227.172.231:3005`)
-1. **Live Dashboard URL:** `http://192.227.172.231:3005`
-   - **Public Share View (Divine Pilgrim):** `http://192.227.172.231:3005/share/divinepilgrim`
-   - **Public Share View (Geonauts Guide):** `http://192.227.172.231:3005/share/geonautsguide`
-2. **Login Credentials:**
+### Step C: Live HTTPS URLs & Configured Website IDs (Deployed on `automation-hub` / `192.227.172.231`)
+1. **Free Forever HTTPS URLs (Powered by `sslip.io` + `caddy-https-gateway` Let's Encrypt):**
+   - **n8n Automation Hub:** `https://n8n.192-227-172-231.sslip.io` *(Direct port fallback: `http://192.227.172.231:5678`)*
+   - **Umami Analytics Dashboard:** `https://stats.192-227-172-231.sslip.io` *(Direct port fallback: `http://192.227.172.231:3005`)*
+     - **Public Share View (Divine Pilgrim):** `https://stats.192-227-172-231.sslip.io/share/divinepilgrim`
+     - **Public Share View (Geonauts Guide):** `https://stats.192-227-172-231.sslip.io/share/geonautsguide`
+   - **Reels Public Media Server (Meta/YouTube HTTPS Video Host):** `https://reels.192-227-172-231.sslip.io` *(Direct port fallback: `http://192.227.172.231:3006`)*
+     - **Sample Rendered 9:16 Reel:** `https://reels.192-227-172-231.sslip.io/xavier_case1_reel.mp4`
+2. **Umami Login Credentials:**
    - **Username:** `admin`
    - **Password:** `umami` *(Change anytime under Profile -> Password)*
-3. **Registered Website IDs:**
-   - **Divine Pilgrim (`divinepilgrim.com`):** `722f5bca-d797-4466-8481-393aa336273b` *(Already wired & pushed to `djcastelino/viasancta` via first-party HTTPS proxy `/api/umami`!)*
+3. **Registered Website IDs (First-Party Proxied via `/api/umami`):**
+   - **Divine Pilgrim (`divinepilgrim.com`):** `722f5bca-d797-4466-8481-393aa336273b`
    - **Geonauts Guide (`geonautsguide.com`):** `ba735871-038d-4bd1-9e74-af1da4dfc727`
 
 ---
 
-## 3. Automated Daily Reels / YouTube Shorts Pipeline (`n8n` + `ffmpeg` on RackNerd)
+## 3. Multi-Project `automation-hub` Workspace & Automated 9:16 Reels Pipeline
 
-Because `viasancta` already includes **42 high-res 16:9 stop images**, **126 clues**, and **84 Andrew Neural MP3 narrations**:
-1. **Daily Schedule Trigger (`n8n`):** Runs every morning at 8:00 AM on the RackNerd VPS.
-2. **Video Synthesis (`ffmpeg` on RackNerd):**
-   - Takes the stop image (`/public/images/trails/...jpg`) + slow zoom effect,
-   - Mixes the Andrew Neural MP3 (`/public/audio/narration/...mp3`) + ducked Gregorian Chant (`gregorian_chant.mp3`),
-   - Burns the mystery title & call-to-action (*"Play the 3D Globe Mystery at DivinePilgrim.com"*) onto a `1080x1920` (9:16) vertical `.mp4`.
-3. **Multi-Platform Auto-Publish:**
-   - **YouTube Shorts:** Uses `n8n`'s native YouTube Upload Video node (`#Shorts`).
-   - **Instagram Reels:** Uses Meta Graph API (`media_type=REELS`, pulling the `.mp4` from your RackNerd public URL).
-   - **Facebook Reels:** Publishes simultaneously to your Facebook Page via the same Meta Graph API token.
+### Server & Container Naming
+- **Linux Hostname:** `automation-hub`
+- **Containers on `automation-hub-net` Docker Network:**
+  - `caddy-https-gateway` (Ports `80` & `443` — automatic Let's Encrypt TLS for `*.192-227-172-231.sslip.io`)
+  - `n8n-automation-hub` (Port `5678` — mounts `/opt/automation-hub` inside container at `/data/automation-hub`)
+  - `umami` (Port `3005`) & `umami-db` (`postgres:15-alpine`, reachable from `n8n` at host `umami-db`, port `5432`, user `umami`, password `umami_secret_db_pass`, db `umami`)
+  - `reels-media-server` (Port `3006` — serves `/opt/automation-hub/public-media/reels` over HTTPS for Instagram/Facebook Graph API pulls)
+
+### Modular Folder Layout (`/opt/automation-hub` -> `/data/automation-hub` in n8n)
+- `/opt/automation-hub/shared-tools/query-umami-stats.sh`: Queries `umami-db` PostgreSQL and outputs a JSON report of 24-hour & 7-day visitors, pageviews, and countries across all sites.
+- `/opt/automation-hub/shared-tools/generate-reel.sh`: General-purpose `ffmpeg` 9:16 (`1080x1920`) vertical video generator (takes any image, voice MP3, optional background music MP3, title, subtitle, and footer CTA, and outputs a broadcast-ready H.264/AAC `.mp4` to `/opt/automation-hub/public-media/reels/`).
+- `/opt/automation-hub/projects/divinepilgrim/`: Synced assets for Divine Pilgrim (`viasancta`).
+- `/opt/automation-hub/projects/geonautsguide/`: Workspace for Geonauts Guide automations.
+- `/opt/automation-hub/projects/general/`: Workspace for future unrelated projects.
 
 ---
 
