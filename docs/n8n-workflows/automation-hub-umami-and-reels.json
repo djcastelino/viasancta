@@ -75,7 +75,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const prev = $('2. Build 144-Reel Context (Season 1 & 2 + Jetson AI)').first().json;\nlet renderResult = {};\ntry {\n  renderResult = JSON.parse($input.first().json.stdout || '{}');\n} catch (e) {\n  renderResult = { raw: $input.first().json.stdout };\n}\n\nreturn [{\n  json: {\n    status: 'READY_TO_PUBLISH',\n    contentType: prev.contentType,\n    season: prev.season,\n    cycleDayOf144: prev.cycleDay,\n    reflectionSource: prev.reflectionSource,\n    reflectionText: prev.reflectionText,\n    videoUrlHttps: renderResult.public_https_url,\n    videoLocalFile: renderResult.file,\n    videoDurationSec: renderResult.duration_sec,\n    youtubeTitle: prev.socialContext.youtubeTitle,\n    captionForYouTubeInstagramTikTok: prev.socialContext.youtubeAndInstagramCaption,\n    pinnedCommentClue2: prev.socialContext.firstPinnedComment,\n    webUrl: prev.socialContext.webUrl,\n    androidPlayStoreUrl: prev.socialContext.androidPlayStoreUrl,\n    umamiTrafficSummary: prev.umamiAnalytics\n  }\n}];"
+        "jsCode": "const fs = require('fs');\nconst prev = $('2. Build 144-Reel Context (Season 1 & 2 + Jetson AI)').first().json;\nlet renderResult = {};\ntry {\n  renderResult = JSON.parse($input.first().json.stdout || '{}');\n} catch (e) {\n  renderResult = { raw: $input.first().json.stdout };\n}\n\nconst metaPayloadPath = '/tmp/current-meta-payload.json';\ntry {\n  fs.writeFileSync(metaPayloadPath, JSON.stringify({\n    videoUrlHttps: renderResult.public_https_url,\n    title: prev.socialContext.youtubeTitle,\n    caption: prev.socialContext.youtubeAndInstagramCaption\n  }, null, 2));\n} catch (e) {}\n\nreturn [{\n  json: {\n    status: 'READY_TO_PUBLISH',\n    contentType: prev.contentType,\n    season: prev.season,\n    cycleDayOf144: prev.cycleDay,\n    reflectionSource: prev.reflectionSource,\n    reflectionText: prev.reflectionText,\n    videoUrlHttps: renderResult.public_https_url,\n    videoLocalFile: renderResult.file,\n    videoDurationSec: renderResult.duration_sec,\n    youtubeTitle: prev.socialContext.youtubeTitle,\n    captionForYouTubeInstagramTikTok: prev.socialContext.youtubeAndInstagramCaption,\n    pinnedCommentClue2: prev.socialContext.firstPinnedComment,\n    webUrl: prev.socialContext.webUrl,\n    androidPlayStoreUrl: prev.socialContext.androidPlayStoreUrl,\n    umamiTrafficSummary: prev.umamiAnalytics,\n    metaPayloadPath\n  }\n}];"
       },
       "id": "b1a10006-0000-4000-8000-000000000006",
       "name": "4. Final Publish Package (YT + IG + TikTok + Android Link)",
@@ -130,19 +130,33 @@
     },
     {
       "parameters": {
+        "command": "python3 /data/automation-hub/shared-tools/publish-meta-reels.py promisesAndParables /tmp/current-meta-payload.json"
+      },
+      "id": "b1a10010-0000-4000-8000-000000000010",
+      "name": "7. Auto-Publish to Instagram & Facebook (@promises_parables)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "continueOnFail": true,
+      "position": [
+        2000,
+        340
+      ]
+    },
+    {
+      "parameters": {
         "sendTo": "djcastelino@gmail.com",
         "subject": "={{ '\u2705 Short Uploaded (Day ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.cycleDayOf144 + '/144): ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.youtubeTitle }}",
         "emailType": "text",
-        "message": "={{ 'Good morning Deepak!\\n\\nYour daily @PromisesAndParables Short has been rendered and uploaded to YouTube automatically.\\n\\n\ud83c\udfac YouTube Video ID: https://youtube.com/shorts/' + ($json.id || '') + '\\n\ud83c\udf9e\ufe0f Direct MP4 Backup Link: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.videoUrlHttps + '\\n\ud83e\udde0 Reflection Source: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.reflectionSource + '\\n\u2728 Today\\'s Promise & Reflection: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.reflectionText + '\\n\\n\ud83d\udccc Pinned Comment to Paste (Optional):\\n' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.pinnedCommentClue2 + '\\n\\n\ud83d\udcca 24-Hour Umami Analytics Summary:\\n' + JSON.stringify($('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.umamiTrafficSummary, null, 2) }}",
+        "message": "={{ 'Good morning Deepak!\\n\\nYour daily @PromisesAndParables Short/Reel has been rendered and published across your channels:\\n\\n\u25b6\ufe0f YouTube Short: https://youtube.com/shorts/' + ($('6. Auto-Upload to YouTube (@PromisesAndParables)').item.json.id || '') + '\\n\ud83d\udcf8 Instagram & Facebook Status: ' + ($json.stdout || 'Published') + '\\n\ud83c\udfb5 1-Tap TikTok MP4 Download: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.videoUrlHttps + '\\n\ud83e\udde0 Reflection Source: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.reflectionSource + '\\n\u2728 Today\\'s Promise & Reflection: ' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.reflectionText + '\\n\\n\ud83d\udccb Ready-to-Copy TikTok Caption:\\n' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.captionForYouTubeInstagramTikTok + '\\n\\n\ud83d\udccc Pinned Comment (Clue #2):\\n' + $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.pinnedCommentClue2 + '\\n\\n\ud83d\udcca 24-Hour Umami Analytics Summary:\\n' + JSON.stringify($('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.umamiTrafficSummary, null, 2) }}",
         "options": {}
       },
       "id": "b1a10009-0000-4000-8000-000000000009",
-      "name": "7. Send Daily Summary Email (Gmail)",
+      "name": "8. Send Daily Summary Email (Gmail)",
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "continueOnFail": true,
       "position": [
-        2000,
+        2260,
         340
       ],
       "credentials": {
@@ -235,7 +249,18 @@
       "main": [
         [
           {
-            "node": "7. Send Daily Summary Email (Gmail)",
+            "node": "7. Auto-Publish to Instagram & Facebook (@promises_parables)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "7. Auto-Publish to Instagram & Facebook (@promises_parables)": {
+      "main": [
+        [
+          {
+            "node": "8. Send Daily Summary Email (Gmail)",
             "type": "main",
             "index": 0
           }
