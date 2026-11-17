@@ -9,7 +9,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        200,
+        180,
         240
       ]
     },
@@ -25,11 +25,11 @@
         }
       },
       "id": "b1a10002-0000-4000-8000-000000000002",
-      "name": "Daily 8AM Schedule",
+      "name": "Daily 8AM Schedule (1x/Day)",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        200,
+        180,
         440
       ]
     },
@@ -42,20 +42,20 @@
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
       "position": [
-        460,
+        440,
         340
       ]
     },
     {
       "parameters": {
-        "jsCode": "const fs = require('fs');\nconst statsJson = $input.first().json.stdout || '[]';\nlet umamiStats = [];\ntry { umamiStats = JSON.parse(statsJson); } catch (e) {}\n\nconst catalog = JSON.parse(fs.readFileSync('/data/automation-hub/projects/divinepilgrim/saints-42-stops.json', 'utf8'));\nconst now = new Date();\nconst dow = now.getDay(); // 0 (Sun) .. 6 (Sat)\nconst startOfYear = new Date(now.getFullYear(), 0, 1);\nconst weekNum = Math.floor(((now - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);\nconst stopIndex = weekNum % 6; // Rotates through Stops 1..6 across 6 weeks (42 days total!)\n\nconst saintTrail = catalog.find(c => c.dayIndex === dow) || catalog[0];\nconst stop = saintTrail.stops[stopIndex] || saintTrail.stops[0];\n\n// Split clue1Text cleanly into 2 lines (~48 chars each) for the 9:16 video card\nconst words = (stop.clue1Text || '').replace(/['\"\\n]/g, '').split(' ');\nlet line1 = '';\nlet line2 = '';\nfor (const w of words) {\n  if ((line1 + ' ' + w).trim().length <= 46) {\n    line1 = (line1 + ' ' + w).trim();\n  } else if ((line2 + ' ' + w).trim().length <= 46) {\n    line2 = (line2 + ' ' + w).trim();\n  } else {\n    line2 = (line2 + '...').slice(0, 49);\n    break;\n  }\n}\n\nconst slug = `${saintTrail.saintId}_stop${stop.stopNumber}_reel`;\nconst baseDir = '/data/automation-hub/projects/divinepilgrim/assets';\n\nconst cmd = [\n  '/data/automation-hub/shared-tools/generate-reel.sh',\n  '\"' + baseDir + '/images/trails/' + stop.imageFile + '\"',\n  '\"' + baseDir + '/audio/narration/' + stop.audioFile + '\"',\n  '\"' + baseDir + '/audio/gregorian_chant.mp3\"',\n  '\"SACRED TRAILS  |  ' + saintTrail.dayName + ' MYSTERY\"',\n  '\"' + saintTrail.saintName + '\"',\n  '\"Stop #' + stop.stopNumber + ' of 6  |  ' + (stop.eraLabel.split('\u00b7')[0] || '').trim() + '\"',\n  '\"' + line1 + '\"',\n  '\"' + line2 + '\"',\n  '\"Web: https://DivinePilgrim.com\"',\n  '\"' + slug + '\"'\n].join(' ');\n\nconst playStoreUrl = 'https://play.google.com/store/apps/details?id=com.divinepilgrim.www.twa';\nconst webUrl = 'https://divinepilgrim.com/sacred-trails';\n\nconst socialCaption = [\n  stop.leadPrompt,\n  '',\n  '\ud83d\udd0d TODAY\\'S MYSTERY CLUE #1 (' + stop.clue1Headline + '):',\n  '\"' + stop.clue1Text + '\"',\n  '',\n  '\ud83d\udcac Drop your city guess in the comments below!',\n  '',\n  '\ud83c\udf0d Play all 6 stops on the Interactive 3D Globe (Free, No Login):',\n  '\ud83d\udc49 Web: ' + webUrl,\n  '\ud83d\udcf1 Android App (Google Play): ' + playStoreUrl,\n  '',\n  '#DivinePilgrim #SacredTrails #CatholicHistory #' + saintTrail.shortTitle.replace(/[^a-zA-Z]/g, '') + ' #ChristianHistory #Shorts'\n].join('\\n');\n\nconst pinnedComment = [\n  '\ud83d\udca1 Need a 2nd clue? Here is CLUE #2: ' + stop.clue2Text,\n  '\ud83c\udf0d Test your city guess on the 3D Globe: ' + webUrl,\n  '\ud83d\udcf1 Or get the Divine Pilgrim Android App on Google Play: ' + playStoreUrl\n].join('\\n');\n\nreturn [{\n  json: {\n    dayOfWeek: saintTrail.dayName,\n    saint: saintTrail.saintName,\n    stopNumber: stop.stopNumber,\n    stopTitle: stop.title,\n    reelSlug: slug,\n    renderCommand: cmd,\n    socialContext: {\n      youtubeTitle: `${stop.title} \ud83c\udf0d | ${saintTrail.shortTitle} (Stop #${stop.stopNumber}) #Shorts`,\n      youtubeAndInstagramCaption: socialCaption,\n      firstPinnedComment: pinnedComment,\n      webUrl,\n      androidPlayStoreUrl: playStoreUrl\n    },\n    umamiAnalytics: umamiStats\n  }\n}];"
+        "jsCode": "const fs = require('fs');\nconst statsJson = $input.first().json.stdout || '[]';\nlet umamiStats = [];\ntry { umamiStats = JSON.parse(statsJson); } catch (e) {}\n\nconst catalog = JSON.parse(fs.readFileSync('/data/automation-hub/projects/divinepilgrim/saints-42-stops.json', 'utf8'));\nconst now = new Date();\nconst dow = now.getDay(); // 0 (Sun) .. 6 (Sat)\nconst startOfYear = new Date(now.getFullYear(), 0, 1);\nconst weekNum = Math.floor(((now - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);\nconst stopIndex = weekNum % 6; // Rotates through Stops 1..6 across 6 weeks (42 days total!)\n\nconst saintTrail = catalog.find(c => c.dayIndex === dow) || catalog[0];\nconst stop = saintTrail.stops[stopIndex] || saintTrail.stops[0];\n\nconst words = (stop.clue1Text || '').replace(/['\"\\n]/g, '').split(' ');\nlet line1 = '';\nlet line2 = '';\nfor (const w of words) {\n  if ((line1 + ' ' + w).trim().length <= 46) {\n    line1 = (line1 + ' ' + w).trim();\n  } else if ((line2 + ' ' + w).trim().length <= 46) {\n    line2 = (line2 + ' ' + w).trim();\n  } else {\n    line2 = (line2 + '...').slice(0, 49);\n    break;\n  }\n}\n\nconst slug = `${saintTrail.saintId}_stop${stop.stopNumber}_reel`;\nconst baseDir = '/data/automation-hub/projects/divinepilgrim/assets';\n\nconst cmd = [\n  '/data/automation-hub/shared-tools/generate-reel.sh',\n  '\"' + baseDir + '/images/trails/' + stop.imageFile + '\"',\n  '\"' + baseDir + '/audio/narration/' + stop.audioFile + '\"',\n  '\"' + baseDir + '/audio/gregorian_chant.mp3\"',\n  '\"FOOTSTEPS OF FAITH  |  ' + saintTrail.dayName + '\"',\n  '\"' + saintTrail.saintName + '\"',\n  '\"Stop #' + stop.stopNumber + ' of 6  |  ' + (stop.eraLabel.split('\u00b7')[0] || '').trim() + '\"',\n  '\"' + line1 + '\"',\n  '\"' + line2 + '\"',\n  '\"Web: https://DivinePilgrim.com\"',\n  '\"' + slug + '\"'\n].join(' ');\n\nconst playStoreUrl = 'https://play.google.com/store/apps/details?id=com.divinepilgrim.www.twa';\nconst webUrl = 'https://divinepilgrim.com/sacred-trails';\n\nconst socialCaption = [\n  stop.leadPrompt,\n  '',\n  '\ud83d\udd0d TODAY\\'S CLUE #1 (' + stop.clue1Headline + '):',\n  '\"' + stop.clue1Text + '\"',\n  '',\n  '\ud83d\udcac Do you know which city this is? Drop your guess in the comments!',\n  '',\n  '\ud83c\udfe1 Can\\'t make it to church, or looking for 5 quiet minutes of peace & Scripture today? Walk the interactive 3D Globe and listen to today\\'s Daily Promise from home (100% Free, No Login):',\n  '\ud83d\udc49 Web: ' + webUrl,\n  '\ud83d\udcf1 Android App (Google Play): ' + playStoreUrl,\n  '',\n  '#PromisesAndParables #FootstepsOfFaith #BibleHistory #ChristianEncouragement #FaithFromHome #' + saintTrail.shortTitle.replace(/[^a-zA-Z]/g, '') + ' #Shorts'\n].join('\\n');\n\nconst pinnedComment = [\n  '\ud83d\udca1 Need a 2nd hint? CLUE #2: ' + stop.clue2Text,\n  '\ud83c\udfe1 Take a 5-minute walk through Faith & History from home on the 3D Globe: ' + webUrl,\n  '\ud83d\udcf1 Or get the free Divine Pilgrim Android App on Google Play: ' + playStoreUrl\n].join('\\n');\n\nreturn [{\n  json: {\n    dayOfWeek: saintTrail.dayName,\n    saint: saintTrail.saintName,\n    stopNumber: stop.stopNumber,\n    stopTitle: stop.title,\n    reelSlug: slug,\n    renderCommand: cmd,\n    socialContext: {\n      youtubeTitle: `${stop.title} \ud83c\udf0d | Footsteps of Faith (${saintTrail.shortTitle}) #Shorts`,\n      youtubeAndInstagramCaption: socialCaption,\n      firstPinnedComment: pinnedComment,\n      webUrl,\n      androidPlayStoreUrl: playStoreUrl\n    },\n    umamiAnalytics: umamiStats\n  }\n}];"
       },
       "id": "b1a10004-0000-4000-8000-000000000004",
       "name": "2. Build 42-Stop Mystery Context & Social Copy",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        720,
+        700,
         340
       ]
     },
@@ -68,7 +68,7 @@
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
       "position": [
-        980,
+        960,
         340
       ]
     },
@@ -81,7 +81,44 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1240,
+        1220,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "fileSelector": "={{ $json.videoLocalFile }}",
+        "options": {}
+      },
+      "id": "b1a10007-0000-4000-8000-000000000007",
+      "name": "5. Load MP4 File From Disk",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.youtubeTitle }}",
+        "regionCode": "US",
+        "categoryId": "27",
+        "options": {
+          "description": "={{ $('4. Final Publish Package (YT + IG + TikTok + Android Link)').item.json.captionForYouTubeInstagramTikTok }}",
+          "privacyStatus": "unlisted",
+          "selfDeclaredMadeForKids": false
+        }
+      },
+      "id": "b1a10008-0000-4000-8000-000000000008",
+      "name": "6. Auto-Upload to YouTube (@PromisesAndParables)",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "disabled": true,
+      "position": [
+        1740,
         340
       ]
     }
@@ -98,7 +135,7 @@
         ]
       ]
     },
-    "Daily 8AM Schedule": {
+    "Daily 8AM Schedule (1x/Day)": {
       "main": [
         [
           {
@@ -136,6 +173,28 @@
         [
           {
             "node": "4. Final Publish Package (YT + IG + TikTok + Android Link)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "4. Final Publish Package (YT + IG + TikTok + Android Link)": {
+      "main": [
+        [
+          {
+            "node": "5. Load MP4 File From Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5. Load MP4 File From Disk": {
+      "main": [
+        [
+          {
+            "node": "6. Auto-Upload to YouTube (@PromisesAndParables)",
             "type": "main",
             "index": 0
           }
