@@ -46,8 +46,13 @@ export interface SoundtrackOption {
 
 export const SOUNDTRACK_OPTIONS: SoundtrackOption[] = [
   {
+    id: 'cathedral_organ',
+    label: 'Basilica Pipe Organ (Default)',
+    subtitle: 'Historic Cathedral Pipe Organ Liturgical Chorale',
+  },
+  {
     id: 'gregorian_chant',
-    label: 'Gregorian Chant (Default)',
+    label: 'Gregorian Chant',
     subtitle: 'Schola Gregoriana Monastic Choir · Ave Maria & Rorate Caeli',
   },
   {
@@ -64,11 +69,6 @@ export const SOUNDTRACK_OPTIONS: SoundtrackOption[] = [
     id: 'instrumental_hymns',
     label: 'Instrumental Sacred Strings',
     subtitle: 'Contemplative Orchestral Strings · Sacred Air',
-  },
-  {
-    id: 'cathedral_organ',
-    label: 'Basilica Pipe Organ',
-    subtitle: 'Historic Cathedral Pipe Organ Liturgical Chorale',
   },
 ];
 
@@ -90,12 +90,12 @@ class SoundEngine {
   private narrationAudioElement: HTMLAudioElement | null = null;
   private unlockListenerAttached: boolean = false;
   private isMuted: boolean = false;
-  private volume: number = 0.8;
+  private volume: number = 0.07;
 
   private ambientController: { stop: () => void } | null = null;
-  private currentAmbient: SacredAmbientPreset = 'gregorian_chant';
+  private currentAmbient: SacredAmbientPreset = 'cathedral_organ';
   private loopTimers: number[] = [];
-  private activeBiomeLabel: string = 'Gregorian Chant · Schola Gregoriana';
+  private activeBiomeLabel: string = 'Basilica Pipe Organ · Liturgical Chorale';
 
   private getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;

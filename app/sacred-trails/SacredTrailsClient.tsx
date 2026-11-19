@@ -62,15 +62,16 @@ export default function App() {
 
   // Audio state & 5-Preset Soundtrack Dropdown (Gregorian Chant set as default)
   const [isMuted, setIsMuted] = useState<boolean>(false);
-  const [masterVolume, setMasterVolume] = useState<number>(75);
+  const [masterVolume, setMasterVolume] = useState<number>(7);
   const [selectedSoundtrack, setSelectedSoundtrack] =
-    useState<SacredAmbientPreset>('gregorian_chant');
+    useState<SacredAmbientPreset>('cathedral_organ');
   const [isAudioMenuOpen, setIsAudioMenuOpen] = useState<boolean>(false);
   const audioMenuRef = useRef<HTMLDivElement | null>(null);
 
   // Start Gregorian Chant by default on initial mount
   useEffect(() => {
-    soundEngine.startAmbient('gregorian_chant');
+    soundEngine.setVolume(0.07);
+    soundEngine.startAmbient('cathedral_organ');
   }, []);
 
   useEffect(() => {
@@ -86,7 +87,8 @@ export default function App() {
     }
     if (selectedSoundtrack === 'none' && newPct > 0) {
       setSelectedSoundtrack('gregorian_chant');
-      soundEngine.startAmbient('gregorian_chant');
+      soundEngine.setVolume(0.07);
+    soundEngine.startAmbient('cathedral_organ');
     }
   };
 
@@ -243,9 +245,9 @@ export default function App() {
                     </div>
                     <input
                       type="range"
-                      min={10}
+                      min={1}
                       max={100}
-                      step={5}
+                      step={1}
                       value={masterVolume}
                       onChange={(e) => handleVolumeChange(Number(e.target.value))}
                       className="mt-1.5 h-1.5 w-full cursor-pointer appearance-none rounded-lg bg-[#2a231a] accent-[#d4af37]"
