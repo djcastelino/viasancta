@@ -1,4 +1,6 @@
 "use client";
+
+import { trackUmami } from "../lib/analytics";
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
