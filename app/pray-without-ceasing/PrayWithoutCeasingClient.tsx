@@ -1,7 +1,6 @@
-'use client';
-
+"use client";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import {
   Flame,
   Play,
@@ -144,7 +143,7 @@ export const UNCEASING_LITANIES: UnceasingLitanyTrack[] = [
         endSec: 60,
         scriptureRef: 'EPHESIANS 2:20 · REVELATION 19:16 · PHILIPPIANS 2:10–11',
         phrase:
-          '“You are the Cornerstone, our Living Hope, our Rock, and our Redeemer. King of kings, and Lord of lords, every knee shall bow and every tongue confess that Jesus Christ is Lord!”',
+          '“You are the Cornerstone, our Living Hope, our Rock, and our Redeemer. King of kings, and Lord of lords, every knee shall bow and every tongue confess that Jesus Christ is Lord! Thank You, Jesus. Praise You, Jesus. Alleluia, Amen!”',
         subtext: 'Every tongue confessing that Jesus Christ is Lord.',
       },
     ],
@@ -193,7 +192,7 @@ export const UNCEASING_LITANIES: UnceasingLitanyTrack[] = [
         endSec: 60,
         scriptureRef: 'HEBREWS 13:15 · REVELATION 7:12',
         phrase:
-          '“We offer to You continually the sacrifice of praise, the fruit of our lips giving thanks to Your Name.”',
+          '“We offer to You continually the sacrifice of praise, the fruit of our lips giving thanks to Your Name. Blessing and glory, wisdom and thanksgiving, honor and power belong to our God forever and ever! Thank You, Jesus. Praise You, Jesus. Alleluia, Amen!”',
         subtext: 'Offering the fruit of our lips in unbroken thanksgiving.',
       },
     ],
@@ -209,22 +208,14 @@ export default function PrayWithoutCeasingClient() {
   const [padEnabled, setPadEnabled] = useState<boolean>(true);
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
-  const [personalMinutesOffered, setPersonalMinutesOffered] = useState<number>(0);
-  const [globalChainMinutes, setGlobalChainMinutes] = useState<number>(17450);
-
-  useEffect(() => {
+  // Persistent Personal Chain of Praise counter
+  const [personalMinutesOffered, setPersonalMinutesOffered] = useState<number>(() => {
     try {
-      const saved = Number(localStorage.getItem('dp_unceasing_personal_mins') || '0');
-      setPersonalMinutesOffered(saved);
+      return Number(localStorage.getItem('dp_unceasing_personal_mins') || '0');
     } catch {
-      // ignore
+      return 0;
     }
-    const now = new Date();
-    const startOfYear = new Date(now.getFullYear(), 0, 0);
-    const dayOfYear = Math.floor((now.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24));
-    const minuteOfDay = now.getHours() * 60 + now.getMinutes();
-    setGlobalChainMinutes(14820 + dayOfYear * 84 + Math.floor(minuteOfDay / 3));
-  }, []);
+  });
 
   const voiceAudioRef = useRef<HTMLAudioElement | null>(null);
   const padAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -241,6 +232,7 @@ export default function PrayWithoutCeasingClient() {
       (seg) => elapsedSec >= seg.startSec && elapsedSec < seg.endSec
     ) || activeTrack.segments[activeTrack.segments.length - 1];
 
+  // Clean up audio & timers on unmount
   useEffect(() => {
     return () => {
       stopAllAudioAndTimers();
@@ -256,12 +248,16 @@ export default function PrayWithoutCeasingClient() {
       try {
         voiceAudioRef.current.pause();
         voiceAudioRef.current.currentTime = 0;
-      } catch {}
+      } catch {
+        // ignore
+      }
     }
     if (padAudioRef.current) {
       try {
         padAudioRef.current.pause();
-      } catch {}
+      } catch {
+        // ignore
+      }
     }
   };
 
@@ -270,23 +266,28 @@ export default function PrayWithoutCeasingClient() {
     setIsPlaying(false);
     setElapsedSec(60);
     setIsCompleted(true);
+    
 
-    setPersonalMinutesOffered((prev) => {
-      const next = prev + 1;
-      try {
-        localStorage.setItem('dp_unceasing_personal_mins', String(next));
-      } catch {}
-      return next;
-    });
-    setGlobalChainMinutes((prev) => prev + 1);
+    const nextPersonal = personalMinutesOffered + 1;
+    setPersonalMinutesOffered(nextPersonal);
+    try {
+      localStorage.setItem('dp_unceasing_personal_mins', String(nextPersonal));
+    } catch {
+      // ignore storage errors
+    }
   };
 
   const startSixtySecondPraise = () => {
+    
+    // Pause main app ambient soundtrack while the 60-second sacred litany plays so voices never clash
+    
+
     if (isCompleted || elapsedSec >= 60) {
       setElapsedSec(0);
       setIsCompleted(false);
     }
 
+    // Initialize or resume spoken prayer audio
     if (!voiceAudioRef.current || voiceAudioRef.current.src.indexOf(activeTrack.audioUrl) === -1) {
       if (voiceAudioRef.current) {
         voiceAudioRef.current.pause();
@@ -301,9 +302,12 @@ export default function PrayWithoutCeasingClient() {
       if (elapsedSec === 0 || isCompleted) {
         voiceAudioRef.current.currentTime = 0;
       }
-      voiceAudioRef.current.play().catch(() => {});
+      voiceAudioRef.current.play().catch(() => {
+        // Fallback if browser blocks autoplay
+      });
     }
 
+    // Gentle sacred background pad ("I Am the Bread of Life" instrumental)
     if (padEnabled) {
       if (!padAudioRef.current) {
         const pad = new Audio('/audio/background/i-am-the-bread-of-life.mp3');
@@ -399,11 +403,14 @@ export default function PrayWithoutCeasingClient() {
           url: shareUrl,
         });
         return;
-      } catch {}
+      } catch {
+        // Fallback to copy
+      }
     }
     handleCopyShare();
   };
 
+  // SVG Circle Progress calculation
   const radius = 58;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (progressPct / 100) * circumference;
@@ -419,52 +426,52 @@ export default function PrayWithoutCeasingClient() {
           <span>Back to Prayer Companion</span>
         </Link>
       </div>
+      {/* HERO SANCTUARY BANNER */}
+      <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/40 bg-gradient-to-b from-[#1a140c] via-[#120e09] to-[#0c0a07] shadow-[0_25px_70px_rgba(0,0,0,0.75)]">
+        {/* Dramatic Sacred Altar Painting Header */}
+        <div className="relative h-64 w-full overflow-hidden sm:h-80">
+          <img
+            src="/images/home/unceasing.webp"
+            alt="Pray Without Ceasing — Golden Incense of Thanksgiving Rising Before the Cross"
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#120e09] via-[#120e09]/45 to-transparent" />
 
-      <div className="relative overflow-hidden rounded-3xl border border-[#d4af37]/40 bg-gradient-to-b from-[#1a140c] via-[#120e09] to-[#0c0a07] p-6 shadow-[0_25px_70px_rgba(0,0,0,0.75)] sm:p-10">
-        <div
-          className="pointer-events-none absolute -top-28 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-[#d4af37]/15 blur-3xl"
-          aria-hidden="true"
-        />
-
-        <div className="relative flex flex-wrap items-center justify-between gap-3 border-b border-[#2e2418] pb-5">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/40 bg-[#231b10] px-3.5 py-1 text-xs font-bold uppercase tracking-[0.18em] text-[#fef08a]">
-            <Flame className="h-4 w-4 text-amber-400" />
-            <span>Pray Without Ceasing · 1-Minute Thanksgiving Chain</span>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2.5">
-            <div className="inline-flex items-center gap-2 rounded-xl border border-[#3a2e1e] bg-[#17120c] px-3 py-1.5 text-xs">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-              <span className="text-[#b5a790]">Global Chain of Praise:</span>
-              <strong className="font-mono text-sm text-[#fef08a]">
-                {globalChainMinutes.toLocaleString()} mins
-              </strong>
+          {/* Top Floating Badges over Artwork */}
+          <div className="absolute top-4 right-4 left-4 flex flex-wrap items-center justify-between gap-2 sm:top-6 sm:right-8 sm:left-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/60 bg-[#140f09]/85 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#fef08a] backdrop-blur-md">
+              <Flame className="h-4 w-4 text-amber-400" />
+              <span>Pray Without Ceasing · 1-Minute Thanksgiving Challenge</span>
             </div>
 
             {personalMinutesOffered > 0 && (
-              <div className="inline-flex items-center gap-1.5 rounded-xl border border-amber-400/40 bg-amber-500/10 px-3 py-1.5 text-xs font-bold text-amber-300">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/60 bg-[#140f09]/85 px-3.5 py-1.5 text-xs font-bold text-amber-300 backdrop-blur-md">
                 <Award className="h-3.5 w-3.5 text-amber-400" />
-                <span>Your Praise Offered: {personalMinutesOffered} min</span>
+                <span>Your Thanksgiving Offered: {personalMinutesOffered} min</span>
               </div>
             )}
           </div>
+
+          {/* Bottom Title Overlaid on Sacred Painting */}
+          <div className="absolute right-6 bottom-4 left-6 text-center sm:right-10 sm:left-10">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#d4af37]">
+              ISAIAH 43:21 · 1 THESSALONIANS 5:16–18 · REVELATION 7:12
+            </p>
+            <h2 className="mt-1.5 font-serif text-3xl font-bold tracking-tight text-[#faf5eb] drop-shadow-lg sm:text-5xl">
+              Created to Declare <em className="font-normal text-[#fef08a]">His Praise.</em>
+            </h2>
+          </div>
         </div>
 
-        <div className="relative mt-6 text-center">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#d4af37]">
-            ISAIAH 43:21 · 1 THESSALONIANS 5:16–18 · REVELATION 7:12
-          </p>
-          <h1 className="mt-2 font-serif text-3xl font-bold tracking-tight text-[#faf5eb] sm:text-5xl">
-            Created to Declare <em className="font-normal text-[#fef08a]">His Praise.</em>
-          </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#cfc3ae] sm:text-base">
+        <div className="p-6 pt-3 sm:p-10 sm:pt-4">
+          <p className="mx-auto max-w-2xl text-center text-sm leading-relaxed text-[#cfc3ae] sm:text-base">
             God formed us so that our lips would continually declare His praise. Take{' '}
             <strong className="text-[#fef08a]">60 seconds right now</strong> to speak these words of
-            thanksgiving and the saving Names of Jesus aloud—then pass the flame to keep an unbroken
-            chain of praise rising to our Lord and God, Jesus Christ.
+            thanksgiving and the saving Names of Jesus aloud—then pass the flame to a friend to keep
+            a continual chain of praise rising to our Lord and God, Jesus Christ.
           </p>
-        </div>
 
+        {/* 3-Litany Track Selector */}
         <div
           className="relative mt-7 grid grid-cols-1 gap-2.5 sm:grid-cols-3"
           role="tablist"
@@ -498,8 +505,10 @@ export default function PrayWithoutCeasingClient() {
           })}
         </div>
 
+        {/* MAIN 60-SECOND ALTAR OF PRAISE STAGE */}
         <div className="relative mt-7 rounded-2xl border border-[#3a2e1e] bg-[#0e0b08]/95 p-6 sm:p-8">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+            {/* Left Column: 60-Second Golden Halo Countdown & Controls */}
             <div className="flex flex-col items-center justify-center lg:col-span-4">
               <div className="relative flex h-36 w-36 items-center justify-center">
                 <svg className="h-full w-full -rotate-90 transform" viewBox="0 0 140 140">
@@ -543,6 +552,7 @@ export default function PrayWithoutCeasingClient() {
                 </div>
               </div>
 
+              {/* Primary Play / Pause / Reset Controls */}
               <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
                 {!isPlaying ? (
                   <button
@@ -579,6 +589,7 @@ export default function PrayWithoutCeasingClient() {
                 )}
               </div>
 
+              {/* Voice Guide & Background Pad Toggles */}
               <div className="mt-4 flex items-center gap-2 text-xs">
                 <button
                   onClick={toggleVoiceMute}
@@ -587,6 +598,7 @@ export default function PrayWithoutCeasingClient() {
                       ? 'border-[#d4af37]/50 bg-[#211a10] text-[#fef08a]'
                       : 'border-[#2c2318] bg-[#14100b] text-[#847764]'
                   }`}
+                  title="Toggle Spoken Prayer Guide"
                 >
                   {voiceMuted ? (
                     <VolumeX className="h-3.5 w-3.5 text-rose-400" />
@@ -603,6 +615,7 @@ export default function PrayWithoutCeasingClient() {
                       ? 'border-[#d4af37]/50 bg-[#211a10] text-[#fef08a]'
                       : 'border-[#2c2318] bg-[#14100b] text-[#847764]'
                   }`}
+                  title="Toggle Bread of Life Instrumental Pad"
                 >
                   <Music className="h-3.5 w-3.5 text-[#d4af37]" />
                   <span>{padEnabled ? 'Hymn Pad On' : 'Hymn Pad Off'}</span>
@@ -610,6 +623,7 @@ export default function PrayWithoutCeasingClient() {
               </div>
             </div>
 
+            {/* Right Column: Synchronized Illuminated Prayer Prompt */}
             <div className="lg:col-span-8">
               <div className="rounded-2xl border border-[#d4af37]/30 bg-gradient-to-br from-[#1b150d] to-[#120e09] p-6 shadow-inner">
                 <div className="flex flex-wrap items-center justify-between gap-2">
@@ -628,6 +642,7 @@ export default function PrayWithoutCeasingClient() {
 
                 <p className="mt-3 text-xs italic text-[#b5a790]">{activeSegment.subtext}</p>
 
+                {/* Step Indicators across the 60 seconds */}
                 <div className="mt-6 grid grid-cols-4 gap-2 sm:grid-cols-5">
                   {activeTrack.segments.map((seg, idx) => {
                     const isCurrent = seg.id === activeSegment.id;
@@ -660,6 +675,7 @@ export default function PrayWithoutCeasingClient() {
                 </div>
               </div>
 
+              {/* Full Tap-Along Praise Cloud (All the declarations from the user's vision) */}
               <div className="mt-4 rounded-2xl border border-[#2a2117] bg-[#130f0a] p-4">
                 <div className="mb-2.5 flex items-center justify-between text-xs text-[#a39681]">
                   <span className="font-semibold uppercase tracking-wider text-[#d4af37]">
@@ -696,6 +712,7 @@ export default function PrayWithoutCeasingClient() {
             </div>
           </div>
 
+          {/* PASS THE FLAME — CONTINUAL CHAIN OF THANKSGIVING SHARE PANEL */}
           <div
             className={`mt-7 rounded-2xl border p-5 transition-all sm:p-6 ${
               isCompleted
@@ -761,6 +778,7 @@ export default function PrayWithoutCeasingClient() {
             </div>
           </div>
 
+          {/* Scriptural Reference Footer Box */}
           <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#241d14] bg-[#100d09] px-4 py-3 text-xs text-[#9e917c]">
             <div className="flex items-center gap-2">
               <BookOpen className="h-4 w-4 shrink-0 text-[#d4af37]" />
@@ -774,7 +792,8 @@ export default function PrayWithoutCeasingClient() {
             </span>
           </div>
         </div>
+        </div>
       </div>
     </div>
   );
-}
+};
