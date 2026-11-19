@@ -46,8 +46,13 @@ export interface SoundtrackOption {
 
 export const SOUNDTRACK_OPTIONS: SoundtrackOption[] = [
   {
+    id: 'instrumental_hymns',
+    label: 'Instrumental Sacred Strings (Default)',
+    subtitle: 'Contemplative Orchestral Strings · Sacred Air',
+  },
+  {
     id: 'cathedral_organ',
-    label: 'Basilica Pipe Organ (Default)',
+    label: 'Basilica Pipe Organ',
     subtitle: 'Historic Cathedral Pipe Organ Liturgical Chorale',
   },
   {
@@ -64,11 +69,6 @@ export const SOUNDTRACK_OPTIONS: SoundtrackOption[] = [
     id: 'church_bells',
     label: 'Cathedral Church Bells',
     subtitle: 'Authentic European Monastery Sanctuary Bell Peal',
-  },
-  {
-    id: 'instrumental_hymns',
-    label: 'Instrumental Sacred Strings',
-    subtitle: 'Contemplative Orchestral Strings · Sacred Air',
   },
 ];
 
@@ -93,9 +93,9 @@ class SoundEngine {
   private volume: number = 0.07;
 
   private ambientController: { stop: () => void } | null = null;
-  private currentAmbient: SacredAmbientPreset = 'cathedral_organ';
+  private currentAmbient: SacredAmbientPreset = 'instrumental_hymns';
   private loopTimers: number[] = [];
-  private activeBiomeLabel: string = 'Basilica Pipe Organ · Liturgical Chorale';
+  private activeBiomeLabel: string = 'Instrumental Sacred Strings · Sacred Air';
 
   private getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;

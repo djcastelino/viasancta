@@ -64,14 +64,14 @@ export default function App() {
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [masterVolume, setMasterVolume] = useState<number>(7);
   const [selectedSoundtrack, setSelectedSoundtrack] =
-    useState<SacredAmbientPreset>('cathedral_organ');
+    useState<SacredAmbientPreset>('instrumental_hymns');
   const [isAudioMenuOpen, setIsAudioMenuOpen] = useState<boolean>(false);
   const audioMenuRef = useRef<HTMLDivElement | null>(null);
 
   // Start Gregorian Chant by default on initial mount
   useEffect(() => {
     soundEngine.setVolume(0.07);
-    soundEngine.startAmbient('cathedral_organ');
+    soundEngine.startAmbient('instrumental_hymns');
   }, []);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function App() {
     if (selectedSoundtrack === 'none' && newPct > 0) {
       setSelectedSoundtrack('gregorian_chant');
       soundEngine.setVolume(0.07);
-    soundEngine.startAmbient('cathedral_organ');
+    soundEngine.startAmbient('instrumental_hymns');
     }
   };
 
