@@ -1,4 +1,3 @@
-import Navigation from "../components/Navigation";
 import PrayWithoutCeasingClient from "./PrayWithoutCeasingClient";
 
 export const metadata = {
@@ -10,8 +9,7 @@ export const metadata = {
 export default function PrayWithoutCeasingPage() {
   return (
     <div className="min-h-screen bg-[#0c0a08] text-[#f4efe6]">
-      <Navigation />
-      <main className="pt-16">
+      <main className="pt-4">
         <PrayWithoutCeasingClient />
       </main>
     </div>
