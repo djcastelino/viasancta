@@ -66,6 +66,13 @@ const pilgrimages = [
 ];
 const prayers = [
   {
+    href: "/pray-without-ceasing",
+    image: "unceasing",
+    label: "ISAIAH 43:21 · 1 THESS 5:17",
+    title: "Pray Without Ceasing",
+    text: "Join the 60-second spoken thanksgiving chain to Jesus Christ—proclaiming His saving Names and passing the flame.",
+  },
+  {
     href: "/seven-swords",
     image: "sword",
     label: "PRAY WITH PURPOSE",
