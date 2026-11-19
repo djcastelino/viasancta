@@ -274,6 +274,7 @@ export default function PrayWithoutCeasingClient() {
   };
 
   const handleCompleteMinute = () => {
+    trackUmami('prayer_completed', { track: activeTrack.id });
     stopAllAudioAndTimers();
     setIsPlaying(false);
     setElapsedSec(60);
@@ -305,6 +306,7 @@ export default function PrayWithoutCeasingClient() {
   };
 
   const startSixtySecondPraise = () => {
+    trackUmami('prayer_started', { track: activeTrack.id });
     
     // Pause main app ambient soundtrack while the 60-second sacred litany plays so voices never clash
     
@@ -384,6 +386,7 @@ export default function PrayWithoutCeasingClient() {
   };
 
   const handleSelectTrack = (trackId: 'litany-1' | 'litany-2' | 'litany-3') => {
+    trackUmami('prayer_track_selected', { track: trackId });
     stopAllAudioAndTimers();
     voiceAudioRef.current = null;
     setSelectedTrackId(trackId);
@@ -416,12 +419,14 @@ export default function PrayWithoutCeasingClient() {
   const shareMessage = `🙏 I just joined the 1-Minute "Pray Without Ceasing" Thanksgiving Chain to Jesus Christ (Isaiah 43:21 · 1 Thess 5:17).\n\nHelp keep the chain of praise to our Lord unbroken today — take 60 seconds and pray this aloud:\n${shareUrl}`;
 
   const handleCopyShare = () => {
+    trackUmami('prayer_shared', { method: 'copy' });
     navigator.clipboard.writeText(shareMessage);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 3000);
   };
 
   const handleNativeShare = async () => {
+    trackUmami('prayer_shared', { method: 'native' });
     if (navigator.share) {
       try {
         await navigator.share({

@@ -104,6 +104,7 @@ export default function App() {
   }, []);
 
   const handleSelectSoundtrack = (preset: SacredAmbientPreset) => {
+    trackUmami('sacred_audio_selected', { preset });
     setSelectedSoundtrack(preset);
     setIsAudioMenuOpen(false);
     if (preset === 'none') {
@@ -349,6 +350,7 @@ export default function App() {
                       soundEngine.playEffect('compass_click');
                       if (unlocked) {
                         setSelectedSaintId(trail.id);
+                        trackUmami('sacred_trail_selected', { saint: trail.id });
                         setLockedDayNotice(null);
                       } else {
                         setLockedDayNotice(trail);
@@ -421,6 +423,7 @@ export default function App() {
                     soundEngine.playEffect('relic_discovered');
                     setIsPreviewAllDays(true);
                     setSelectedSaintId(lockedDayNotice.id);
+                    trackUmami('sacred_trail_selected', { saint: lockedDayNotice.id });
                     setLockedDayNotice(null);
                   }}
                   className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#b58922] px-3 py-1 text-[11px] font-bold text-[#120f0b] shadow-sm transition hover:brightness-110"

@@ -1,4 +1,6 @@
 'use client';
+
+import { trackUmami } from '../lib/analytics';
 import { useJourneyDialog } from '@/app/lib/useJourneyDialog';
 
 import { useState, useEffect, useRef } from 'react';
@@ -40,6 +42,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
 
   const handleCardClick = (church: any) => {
     setSelectedChurch(church);
+    trackUmami('architecture_opened', { church: church?.name || String(church?.id || '') });
   };
 
   const handleCloseModal = () => {
@@ -60,6 +63,7 @@ export default function SacredArchitectureClient({ churches, countries, styles }
   };
 
   const handleListen = async (section: 'history' | 'architecture' | 'funFacts') => {
+    trackUmami('architecture_audio_played', { section, church: selectedChurch?.name || '' });
     if (!selectedChurch) return;
 
     setError('');
