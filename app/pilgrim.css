@@ -583,8 +583,8 @@
 }
 .pilgrim-prayer-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
 }
 .pilgrim-prayer-card {
   display: flex;
@@ -1242,3 +1242,17 @@
 
 /* The focused homepage keeps one Scripture tool without an empty grid cell. */
 .pilgrim-word-tools-single { grid-template-columns: 1fr; }
+
+@media (max-width: 1150px) {
+  .pilgrim-prayer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .pilgrim-prayer-grid {
+    grid-template-columns: 1fr;
+  }
+  .pilgrim-top-praise-pill span:not(:last-child) {
+    display: none;
+  }
+}

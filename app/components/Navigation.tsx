@@ -4,6 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Cross, Menu, X, ArrowUpRight } from "lucide-react";
 import SettingsMenu from "./SettingsMenu";
+import PraiseChainBadge from "./PraiseChainBadge";
 const links = [
   ["/", "Home"],
   ["/discover", "Discover"],
@@ -60,6 +61,7 @@ export default function Navigation() {
           ))}
         </nav>
         <div className="pilgrim-nav-actions">
+          <PraiseChainBadge />
           <Link href="/about" className="pilgrim-about-link">
             Our story <ArrowUpRight size={14} />
           </Link>
