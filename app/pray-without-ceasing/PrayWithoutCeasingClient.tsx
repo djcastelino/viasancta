@@ -208,7 +208,7 @@ export default function PrayWithoutCeasingClient() {
   const [padEnabled, setPadEnabled] = useState<boolean>(true);
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
-  // Persistent Personal Chain of Praise counter
+  // Persistent Personal Chain of Praise counter + Real Cumulative Global Database Counter
   const [personalMinutesOffered, setPersonalMinutesOffered] = useState<number>(() => {
     try {
       return Number(localStorage.getItem('dp_unceasing_personal_mins') || '0');
@@ -216,6 +216,18 @@ export default function PrayWithoutCeasingClient() {
       return 0;
     }
   });
+  const [globalChainMinutes, setGlobalChainMinutes] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('https://reels.192-227-172-231.sslip.io/praise-chain', { cache: 'no-store' })
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data?.totalMinutes === 'number') {
+          setGlobalChainMinutes(data.totalMinutes);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const voiceAudioRef = useRef<HTMLAudioElement | null>(null);
   const padAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -275,6 +287,21 @@ export default function PrayWithoutCeasingClient() {
     } catch {
       // ignore storage errors
     }
+
+    // Atomically increment the real persistent database counter on the server
+    fetch('https://reels.192-227-172-231.sslip.io/praise-chain', {
+      method: 'POST',
+      cache: 'no-store',
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data?.totalMinutes === 'number') {
+          setGlobalChainMinutes(data.totalMinutes);
+        }
+      })
+      .catch(() => {
+        setGlobalChainMinutes((prev) => (prev !== null ? prev + 1 : 2));
+      });
   };
 
   const startSixtySecondPraise = () => {
@@ -439,17 +466,30 @@ export default function PrayWithoutCeasingClient() {
 
           {/* Top Floating Badges over Artwork */}
           <div className="absolute top-4 right-4 left-4 flex flex-wrap items-center justify-between gap-2 sm:top-6 sm:right-8 sm:left-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/60 bg-[#140f09]/85 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-[#fef08a] backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#d4af37]/60 bg-[#140f09]/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fef08a] backdrop-blur-md">
               <Flame className="h-4 w-4 text-amber-400" />
-              <span>Pray Without Ceasing · 1-Minute Thanksgiving Challenge</span>
+              <span>NEW: Pray Without Ceasing (60-Sec Thanksgiving Chain)</span>
             </div>
 
-            {personalMinutesOffered > 0 && (
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/60 bg-[#140f09]/85 px-3.5 py-1.5 text-xs font-bold text-amber-300 backdrop-blur-md">
-                <Award className="h-3.5 w-3.5 text-amber-400" />
-                <span>Your Thanksgiving Offered: {personalMinutesOffered} min</span>
-              </div>
-            )}
+            <div className="flex flex-wrap items-center gap-2">
+              {globalChainMinutes !== null && (
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-[#140f09]/90 px-3.5 py-1.5 text-xs font-semibold text-emerald-200 backdrop-blur-md">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                  <span>Cumulative Praise Offered:</span>
+                  <strong className="font-mono text-sm text-[#fef08a]">
+                    {globalChainMinutes.toLocaleString()}{' '}
+                    {globalChainMinutes === 1 ? 'min' : 'mins'}
+                  </strong>
+                </div>
+              )}
+
+              {personalMinutesOffered > 0 && (
+                <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/60 bg-[#140f09]/90 px-3.5 py-1.5 text-xs font-bold text-amber-300 backdrop-blur-md">
+                  <Award className="h-3.5 w-3.5 text-amber-400" />
+                  <span>Your Praise: {personalMinutesOffered} min</span>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Bottom Title Overlaid on Sacred Painting */}

@@ -13,6 +13,7 @@ import {
 import { isSectionVisible, showTodaysPromise } from "./lib/sectionVisibility";
 import TodaysPromise from "./components/TodaysPromise";
 import HomeDailyHero from "./components/HomeDailyHero";
+import PraiseChainBadge from "./components/PraiseChainBadge";
 import churches from "@/public/sacred-architecture.json";
 
 export const metadata = {
@@ -248,6 +249,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
+              {item.href === "/pray-without-ceasing" && <PraiseChainBadge />}
               <p className="pilgrim-eyebrow">{item.label}</p>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
