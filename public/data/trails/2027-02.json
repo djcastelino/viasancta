@@ -1,0 +1,1995 @@
+[
+  {
+    "id": "brigid-of-kildare",
+    "calendarDate": "2027-02-01",
+    "isFeastDay": true,
+    "weekdayIndex": 1,
+    "weekdayName": "Monday",
+    "weekdayShort": "Mon",
+    "saintName": "St. Brigid of Kildare",
+    "shortTitle": "St. Brigid",
+    "feastDay": "February 1",
+    "eraSpan": "c. 451 – 525 AD · Faughart, Kildare & Downpatrick, Ireland",
+    "trailSubtitle": "4 Stops · Faughart, Croghan Hill, Kildare & Downpatrick",
+    "overviewButtonLabel": "Emerald Isle of Brigid",
+    "globeHeaderSubtitle": "Sacred Trails of St. Brigid (Faughart, Kildare & Downpatrick, Ireland)",
+    "overviewCamera": {
+      "camLat": 53.69,
+      "camLng": -6.32,
+      "camAltitude": 4.6,
+      "lookLat": 53.74,
+      "lookLng": -6.32,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "IRL",
+      "GBR"
+    ],
+    "completionSummary": "You walked the green meadows of Ireland with St. Brigid, \"Mary of the Gael\"—from her humble birthplace at Faughart and the famed oak-tree monastery of Kildare to weaving the rush St. Brigid’s Cross and resting beside St. Patrick in Downpatrick.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Born on the Threshold at Faughart",
+        "subtitle": "Sweep your lantern across Fochart (Faughart) to uncover 3 hidden memories",
+        "eraLabel": "c. 451 AD · County Louth, Ireland",
+        "ancientPlaceName": "Fochart (Faughart)",
+        "modernPlaceName": "Faughart (Dundalk)",
+        "modernCountry": "Ireland",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/brigid-of-kildare/stop1.webp",
+        "imageCaption": "Emerald misty Irish hillside stream beside ancient mossy limestone stones and blooming white hawthorn.",
+        "whatYouCanSeeToday": "Pilgrims still visit St. Brigid’s Shrine and holy well at Faughart, marking the beloved threshold of Ireland’s female patron saint.",
+        "didYouKnowHighlight": "When her frustrated father took Brigid to the King of Leinster to sell her as a servant, she casually gave the King’s leper-beggar his own ornate sword; the stunned King declared: \"Her merit before God is greater than ours—I could never buy or sell her!\"",
+        "saintQuote": "I would like a great lake of hospitality for the King of Kings.",
+        "hiddenArtifacts": [
+          {
+            "id": "brigid-of-kildare_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Fochart (Faughart) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Born on the Threshold at Faughart",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born to Brocca, a baptized Christian slave woman, and Dubhthach, a Scottish-Irish chieftain, young Brigid was raised herding sheep and churning butter. Her generous heart couldn’t resist giving away milk, butter, and even her father’s jeweled sword to starving beggars—telling him simply that Christ had need of it.",
+            "stoneKeyWord": "Faughart",
+            "stoneKeyMeaning": "Historic turning point in Fochart (Faughart)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "brigid-of-kildare_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Faughart (Dundalk).",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Faughart (Dundalk), Ireland Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Pilgrims still visit St. Brigid’s Shrine and holy well at Faughart, marking the beloved threshold of Ireland’s female patron saint.",
+            "stoneKeyWord": "Hospitality",
+            "stoneKeyMeaning": "Living pilgrimage site in Faughart (Dundalk)",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "brigid-of-kildare_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Brigid",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "When her frustrated father took Brigid to the King of Leinster to sell her as a servant, she casually gave the King’s leper-beggar his own ornate sword; the stunned King declared: \"Her merit before God is greater than ours—I could never buy or sell her!\"",
+            "stoneKeyWord": "Generosity",
+            "stoneKeyMeaning": "Enduring witness of St. Brigid",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Fochart (Faughart)?",
+            "correctStoneId": "brigid-of-kildare_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Faughart (Dundalk)?",
+            "correctStoneId": "brigid-of-kildare_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "brigid-of-kildare_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Fochart (Faughart)",
+        "globePlacement": {
+          "latDeg": 54.0485,
+          "lngDeg": -6.3827,
+          "regionLabel": "County Louth, Ireland",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Born on the Threshold at Faughart",
+        "detectiveLeadPrompt": "Trace St. Brigid’s c. 451 ad · county louth, ireland trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "brigid-of-kildare_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (County Louth, Ireland)",
+            "clueText": "A tranquil green hillside shrine north of Dundalk near the Ring of Gullion in Ireland.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "brigid-of-kildare_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When her frustrated father took Brigid to the King of Leinster to sell her as a servant, she casually gave the King’s leper-beggar his own ornate sword; the stunned King declared: \"Her merit before God is greater than ours—I could never buy or sell her!\"",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "brigid-of-kildare_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Born on the Threshold at Faughart",
+            "clueText": "Born to Brocca, a baptized Christian slave woman, and Dubhthach, a Scottish-Irish chieftain, young Brigid was raised herding sheep and churning butter. Her generous heart couldn’t resist giving away milk, butter, and even her father’s jeweled sword to starving beggars—telling him simply that Christ had need of it.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "The Oak Church of Kildare",
+        "subtitle": "Sweep your lantern across Cill Dara to uncover 3 hidden memories",
+        "eraLabel": "c. 480 AD · Cill Dara (Church of the Oak)",
+        "ancientPlaceName": "Cill Dara",
+        "modernPlaceName": "Kildare",
+        "modernCountry": "Ireland",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/brigid-of-kildare/stop2.webp",
+        "imageCaption": "Ancient spreading Irish oak tree beside a warm glowing perpetual fire hearth and round stone monastic tower.",
+        "whatYouCanSeeToday": "Kildare’s tall medieval Round Tower, Cathedral, and the modern Solas Bhríde Flame Sanctuary keep Brigid’s ancient light of peace and welcome burning bright.",
+        "didYouKnowHighlight": "Legend says when Brigid asked the local chieftain for only as much pasture as her woolen cloak would cover, she laid her mantle on the grass and four companions walked outward—miraculously stretching it across the entire lush Curragh plain!",
+        "saintQuote": "Where there is peace and mercy, the flame of Christ never dies.",
+        "hiddenArtifacts": [
+          {
+            "id": "brigid-of-kildare_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Cill Dara in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Oak Church of Kildare",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Settling beside a giant sacred oak tree on the lush plains of the Curragh, Brigid founded Cill Dara (\"Church of the Oak\")—a remarkable double monastery for both nuns and monks that grew into Ireland’s greatest center of art, hospitality, learning, and healing.",
+            "stoneKeyWord": "Church of the Oak",
+            "stoneKeyMeaning": "Historic turning point in Cill Dara",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "brigid-of-kildare_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Kildare.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Kildare, Ireland Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Kildare’s tall medieval Round Tower, Cathedral, and the modern Solas Bhríde Flame Sanctuary keep Brigid’s ancient light of peace and welcome burning bright.",
+            "stoneKeyWord": "Cloak Miracle",
+            "stoneKeyMeaning": "Living pilgrimage site in Kildare",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "brigid-of-kildare_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Brigid",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Legend says when Brigid asked the local chieftain for only as much pasture as her woolen cloak would cover, she laid her mantle on the grass and four companions walked outward—miraculously stretching it across the entire lush Curragh plain!",
+            "stoneKeyWord": "Kildare",
+            "stoneKeyMeaning": "Enduring witness of St. Brigid",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Cill Dara?",
+            "correctStoneId": "brigid-of-kildare_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Kildare?",
+            "correctStoneId": "brigid-of-kildare_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "brigid-of-kildare_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Cill Dara",
+        "globePlacement": {
+          "latDeg": 53.1578,
+          "lngDeg": -6.9114,
+          "regionLabel": "County Kildare, Ireland",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Oak Church of Kildare",
+        "detectiveLeadPrompt": "Trace St. Brigid’s c. 480 ad · cill dara (church of the oak) trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "brigid-of-kildare_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (County Kildare, Ireland)",
+            "clueText": "The historic heart of Ireland’s lush Curragh plains southwest of Dublin.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "brigid-of-kildare_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Legend says when Brigid asked the local chieftain for only as much pasture as her woolen cloak would cover, she laid her mantle on the grass and four companions walked outward—miraculously stretching it across the entire lush Curragh plain!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "brigid-of-kildare_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Oak Church of Kildare",
+            "clueText": "Settling beside a giant sacred oak tree on the lush plains of the Curragh, Brigid founded Cill Dara (\"Church of the Oak\")—a remarkable double monastery for both nuns and monks that grew into Ireland’s greatest center of art, hospitality, learning, and healing.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Weaving the Cross of Green Rushes",
+        "subtitle": "Sweep your lantern across Plains of Leinster to uncover 3 hidden memories",
+        "eraLabel": "c. 490 – 520 AD · St. Brigid’s Cross",
+        "ancientPlaceName": "Plains of Leinster",
+        "modernPlaceName": "Kildare",
+        "modernCountry": "Ireland",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/brigid-of-kildare/stop3.webp",
+        "imageCaption": "Warm candlelit Irish stone cottage interior with a freshly woven four-armed cross of bright green meadow rushes resting beside a bedside.",
+        "whatYouCanSeeToday": "Across Ireland every February 1—now an official Irish national holiday—families and schoolchildren still weave fresh green rush St. Brigid’s Crosses to hang above their doorways for blessing and protection.",
+        "didYouKnowHighlight": "St. Brigid’s February 1 feast coincides with Imbolc, the ancient Celtic dawn of spring—celebrating light returning to the winter land.",
+        "saintQuote": "May this house be blessed with the peace of Christ.",
+        "hiddenArtifacts": [
+          {
+            "id": "brigid-of-kildare_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Plains of Leinster in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Weaving the Cross of Green Rushes",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Summoned to the bedside of a dying pagan chieftain who was delirious and frightened, Brigid picked up fresh green rushes strewn across the earthen floor and began gently weaving them into a distinctive four-armed cross while telling him the story of Christ’s love. Calmed and deeply moved, the chieftain asked for baptism before he died.",
+            "stoneKeyWord": "Rush Cross",
+            "stoneKeyMeaning": "Historic turning point in Plains of Leinster",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "brigid-of-kildare_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Kildare.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Kildare, Ireland Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Across Ireland every February 1—now an official Irish national holiday—families and schoolchildren still weave fresh green rush St. Brigid’s Crosses to hang above their doorways for blessing and protection.",
+            "stoneKeyWord": "Spring Dawn",
+            "stoneKeyMeaning": "Living pilgrimage site in Kildare",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "brigid-of-kildare_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Brigid",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Brigid’s February 1 feast coincides with Imbolc, the ancient Celtic dawn of spring—celebrating light returning to the winter land.",
+            "stoneKeyWord": "Imbolc",
+            "stoneKeyMeaning": "Enduring witness of St. Brigid",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Plains of Leinster?",
+            "correctStoneId": "brigid-of-kildare_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Kildare?",
+            "correctStoneId": "brigid-of-kildare_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "brigid-of-kildare_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Plains of Leinster",
+        "globePlacement": {
+          "latDeg": 53.151,
+          "lngDeg": -6.885,
+          "regionLabel": "County Kildare, Ireland",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Weaving the Cross of Green Rushes",
+        "detectiveLeadPrompt": "Trace St. Brigid’s c. 490 – 520 ad · st. brigid’s cross trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "brigid-of-kildare_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (County Kildare, Ireland)",
+            "clueText": "The green meadows and rush-lined streams of County Kildare in central Ireland.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "brigid-of-kildare_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Brigid’s February 1 feast coincides with Imbolc, the ancient Celtic dawn of spring—celebrating light returning to the winter land.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "brigid-of-kildare_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Weaving the Cross of Green Rushes",
+            "clueText": "Summoned to the bedside of a dying pagan chieftain who was delirious and frightened, Brigid picked up fresh green rushes strewn across the earthen floor and began gently weaving them into a distinctive four-armed cross while telling him the story of Christ’s love. Calmed and deeply moved, the chieftain asked for baptism before he died.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "Resting Beside St. Patrick in Downpatrick",
+        "subtitle": "Sweep your lantern across Dún Pádraig to uncover 3 hidden memories",
+        "eraLabel": "525 AD · Ireland’s Three Patrons",
+        "ancientPlaceName": "Dún Pádraig",
+        "modernPlaceName": "Downpatrick",
+        "modernCountry": "United Kingdom",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/brigid-of-kildare/stop4.webp",
+        "imageCaption": "Sunlit mossy granite stone inscribed with \"PATRIC\" beside a Gothic stone cathedral atop emerald hills.",
+        "whatYouCanSeeToday": "On the peaceful hilltop of Down Cathedral, a timeless verse honors Ireland’s three patron saints united in one shrine: \"In Down three saints one grave do fill: Brigid, Patrick, and Columcille.\"",
+        "didYouKnowHighlight": "St. Brigid is celebrated as patroness of Ireland, poets, dairy farmers, midwives, and peacemakers—one of the few women whose feast day became a nationwide public holiday.",
+        "saintQuote": "You are the light of the world; let your hospitality shine before all.",
+        "hiddenArtifacts": [
+          {
+            "id": "brigid-of-kildare_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Dún Pádraig in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Resting Beside St. Patrick in Downpatrick",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "Revered across the island as \"Mary of the Gael\" and close spiritual heir to St. Patrick’s mission, Brigid passed peacefully around age seventy-four. During the Viking invasions, Irish monks translated her relics north for safekeeping beside St. Patrick and St. Columba.",
+            "stoneKeyWord": "Downpatrick",
+            "stoneKeyMeaning": "Historic turning point in Dún Pádraig",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "brigid-of-kildare_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Downpatrick.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Downpatrick, United Kingdom Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "On the peaceful hilltop of Down Cathedral, a timeless verse honors Ireland’s three patron saints united in one shrine: \"In Down three saints one grave do fill: Brigid, Patrick, and Columcille.\"",
+            "stoneKeyWord": "Mary of the Gael",
+            "stoneKeyMeaning": "Living pilgrimage site in Downpatrick",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "brigid-of-kildare_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Brigid",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Brigid is celebrated as patroness of Ireland, poets, dairy farmers, midwives, and peacemakers—one of the few women whose feast day became a nationwide public holiday.",
+            "stoneKeyWord": "Three Patrons",
+            "stoneKeyMeaning": "Enduring witness of St. Brigid",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Dún Pádraig?",
+            "correctStoneId": "brigid-of-kildare_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Downpatrick?",
+            "correctStoneId": "brigid-of-kildare_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "brigid-of-kildare_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Dún Pádraig",
+        "globePlacement": {
+          "latDeg": 54.3264,
+          "lngDeg": -5.7192,
+          "regionLabel": "County Down, Northern Ireland",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Resting Beside St. Patrick in Downpatrick",
+        "detectiveLeadPrompt": "Trace St. Brigid’s 525 ad · ireland’s three patrons trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "brigid-of-kildare_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (County Down, Northern Ireland)",
+            "clueText": "A historic hilltop cathedral town in County Down, Northern Ireland, south of Belfast.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "brigid-of-kildare_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Brigid is celebrated as patroness of Ireland, poets, dairy farmers, midwives, and peacemakers—one of the few women whose feast day became a nationwide public holiday.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "brigid-of-kildare_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Resting Beside St. Patrick in Downpatrick",
+            "clueText": "Revered across the island as \"Mary of the Gael\" and close spiritual heir to St. Patrick’s mission, Brigid passed peacefully around age seventy-four. During the Viking invasions, Irish monks translated her relics north for safekeeping beside St. Patrick and St. Columba.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "presentation-of-the-lord",
+    "calendarDate": "2027-02-02",
+    "isFeastDay": true,
+    "weekdayIndex": 2,
+    "weekdayName": "Tuesday",
+    "weekdayShort": "Tue",
+    "saintName": "Presentation of the Lord (Candlemas)",
+    "shortTitle": "Candlemas",
+    "feastDay": "February 2",
+    "eraSpan": "c. 6 BC – 7th Century AD · Bethlehem, Jerusalem & Rome",
+    "trailSubtitle": "4 Stops · Bethlehem, Jerusalem Temple Courts, Altar of Simeon & Rome",
+    "overviewButtonLabel": "Jerusalem to Rome",
+    "globeHeaderSubtitle": "Sacred Trails of Candlemas (Bethlehem, Jerusalem Temple & Rome)",
+    "overviewCamera": {
+      "camLat": 35.9,
+      "camLng": 23.87,
+      "camAltitude": 6.5,
+      "lookLat": 36.81,
+      "lookLng": 23.87,
+      "lookRadiusScale": 0.86
+    },
+    "highlightedIsoCountries": [
+      "PSE",
+      "ISR",
+      "ITA"
+    ],
+    "completionSummary": "You walked the luminous Feast of Candlemas—from Mary and Joseph’s humble offering of two turtledoves out of Bethlehem to Simeon’s prophetic Nunc Dimittis and Anna’s joy in the Jerusalem Temple, carried down through Rome’s golden candlelight processions.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Two Turtledoves from Bethlehem",
+        "subtitle": "Sweep your lantern across Bethlehem Road to uncover 3 hidden memories",
+        "eraLabel": "Forty Days After Christmas",
+        "ancientPlaceName": "Bethlehem Road",
+        "modernPlaceName": "Bethlehem",
+        "modernCountry": "Palestine",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/presentation-of-the-lord/stop1.webp",
+        "imageCaption": "Golden morning limestone hills between Bethlehem and Jerusalem as a humble young family carries a swaddled infant and two white doves.",
+        "whatYouCanSeeToday": "The ancient ridge road linking Bethlehem and Jerusalem reminds pilgrims that the King of the Universe chose to enter His own Temple as a poor child.",
+        "didYouKnowHighlight": "Leviticus 12:8 expressly allowed families who could not afford a lamb to offer two birds—quietly revealing to us the real, humble poverty of the Holy Family.",
+        "saintQuote": "Every firstborn male shall be consecrated to the Lord.",
+        "hiddenArtifacts": [
+          {
+            "id": "presentation-of-the-lord_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Bethlehem Road in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Two Turtledoves from Bethlehem",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Forty days after Jesus’s birth, faithful to the Law of Moses, Mary and Joseph carried their newborn Son up the six-mile road to Jerusalem. Unable to afford a lamb, they brought the Scripture’s special offering reserved for the poor: \"a pair of turtledoves, or two young pigeons.\"",
+            "stoneKeyWord": "Two Doves",
+            "stoneKeyMeaning": "Historic turning point in Bethlehem Road",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "presentation-of-the-lord_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bethlehem.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bethlehem, Palestine Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "The ancient ridge road linking Bethlehem and Jerusalem reminds pilgrims that the King of the Universe chose to enter His own Temple as a poor child.",
+            "stoneKeyWord": "Forty Days",
+            "stoneKeyMeaning": "Living pilgrimage site in Bethlehem",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "presentation-of-the-lord_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Candlemas",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Leviticus 12:8 expressly allowed families who could not afford a lamb to offer two birds—quietly revealing to us the real, humble poverty of the Holy Family.",
+            "stoneKeyWord": "Poverty",
+            "stoneKeyMeaning": "Enduring witness of Candlemas",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Bethlehem Road?",
+            "correctStoneId": "presentation-of-the-lord_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bethlehem?",
+            "correctStoneId": "presentation-of-the-lord_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "presentation-of-the-lord_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Bethlehem Road",
+        "globePlacement": {
+          "latDeg": 31.714,
+          "lngDeg": 35.209,
+          "regionLabel": "Judea, West Bank",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Two Turtledoves from Bethlehem",
+        "detectiveLeadPrompt": "Trace Candlemas’s forty days after christmas trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "presentation-of-the-lord_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Judea, West Bank)",
+            "clueText": "The six-mile Judean ridge road climbing north from Bethlehem toward the Holy City of Jerusalem.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "presentation-of-the-lord_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Leviticus 12:8 expressly allowed families who could not afford a lamb to offer two birds—quietly revealing to us the real, humble poverty of the Holy Family.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "presentation-of-the-lord_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Two Turtledoves from Bethlehem",
+            "clueText": "Forty days after Jesus’s birth, faithful to the Law of Moses, Mary and Joseph carried their newborn Son up the six-mile road to Jerusalem. Unable to afford a lamb, they brought the Scripture’s special offering reserved for the poor: \"a pair of turtledoves, or two young pigeons.\"",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Simeon’s Song: Light to the Nations",
+        "subtitle": "Sweep your lantern across Second Temple of Jerusalem to uncover 3 hidden memories",
+        "eraLabel": "c. 6 BC · Court of the Temple",
+        "ancientPlaceName": "Second Temple of Jerusalem",
+        "modernPlaceName": "Jerusalem",
+        "modernCountry": "Israel",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/presentation-of-the-lord/stop2.webp",
+        "imageCaption": "Sunlit golden limestone colonnades of the Jerusalem Temple flooded with radiant morning light as an elderly man cradles a glowing newborn.",
+        "whatYouCanSeeToday": "Every single night across the globe, monks, nuns, priests, and lay Christians close their day in Night Prayer (Compline) by singing Simeon’s exact words from this moment.",
+        "didYouKnowHighlight": "In the Eastern Churches, February 2 is called \"Hypapante\"—The Great Encounter—celebrating the meeting of Old Testament longing and New Testament fulfillment.",
+        "saintQuote": "My eyes have seen your salvation—a light for revelation to the Gentiles.",
+        "hiddenArtifacts": [
+          {
+            "id": "presentation-of-the-lord_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Second Temple of Jerusalem in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Simeon’s Song: Light to the Nations",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Guided by the Holy Spirit into the bustling Temple courts, righteous old Simeon recognized the long-awaited Messiah in a poor peasant couple’s arms. Taking Jesus gently into his aged hands, he sang the timeless Nunc Dimittis: \"Now, Master, you may let your servant go in peace... for my eyes have seen your salvation, a light for revelation to the Gentiles!\"",
+            "stoneKeyWord": "Nunc Dimittis",
+            "stoneKeyMeaning": "Historic turning point in Second Temple of Jerusalem",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "presentation-of-the-lord_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Jerusalem.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Jerusalem, Israel Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Every single night across the globe, monks, nuns, priests, and lay Christians close their day in Night Prayer (Compline) by singing Simeon’s exact words from this moment.",
+            "stoneKeyWord": "Simeon",
+            "stoneKeyMeaning": "Living pilgrimage site in Jerusalem",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "presentation-of-the-lord_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Candlemas",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "In the Eastern Churches, February 2 is called \"Hypapante\"—The Great Encounter—celebrating the meeting of Old Testament longing and New Testament fulfillment.",
+            "stoneKeyWord": "Light to Nations",
+            "stoneKeyMeaning": "Enduring witness of Candlemas",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Second Temple of Jerusalem?",
+            "correctStoneId": "presentation-of-the-lord_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Jerusalem?",
+            "correctStoneId": "presentation-of-the-lord_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "presentation-of-the-lord_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Second Temple of Jerusalem",
+        "globePlacement": {
+          "latDeg": 31.7781,
+          "lngDeg": 35.2354,
+          "regionLabel": "Old City, Jerusalem",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Simeon’s Song: Light to the Nations",
+        "detectiveLeadPrompt": "Trace Candlemas’s c. 6 bc · court of the temple trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "presentation-of-the-lord_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Old City, Jerusalem)",
+            "clueText": "The majestic ancient Temple Mount platform crowned by golden stone walls in Jerusalem’s Old City.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "presentation-of-the-lord_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "In the Eastern Churches, February 2 is called \"Hypapante\"—The Great Encounter—celebrating the meeting of Old Testament longing and New Testament fulfillment.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "presentation-of-the-lord_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Simeon’s Song: Light to the Nations",
+            "clueText": "Guided by the Holy Spirit into the bustling Temple courts, righteous old Simeon recognized the long-awaited Messiah in a poor peasant couple’s arms. Taking Jesus gently into his aged hands, he sang the timeless Nunc Dimittis: \"Now, Master, you may let your servant go in peace... for my eyes have seen your salvation, a light for revelation to the Gentiles!\"",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Prophetess Anna & the Pierced Heart",
+        "subtitle": "Sweep your lantern across Southern Steps of the Temple to uncover 3 hidden memories",
+        "eraLabel": "c. 6 BC · Court of the Women",
+        "ancientPlaceName": "Southern Steps of the Temple",
+        "modernPlaceName": "Jerusalem",
+        "modernCountry": "Israel",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/presentation-of-the-lord/stop3.webp",
+        "imageCaption": "Ancient broad carved limestone Temple steps bathed in warm amber sunlight where an elderly widow speaks joyfully to pilgrims.",
+        "whatYouCanSeeToday": "Archaeologists have uncovered the original 1st-century limestone Southern Steps of the Temple—the exact broad stone stairs Mary, Joseph, and Jesus ascended on Candlemas!",
+        "didYouKnowHighlight": "Look closely at the Southern Steps today: the stairs alternate between wide and narrow treads intentionally, designed so pilgrims would slow down and step reverently toward God.",
+        "saintQuote": "She gave thanks to God and spoke about the child to all who were awaiting the redemption of Jerusalem.",
+        "hiddenArtifacts": [
+          {
+            "id": "presentation-of-the-lord_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Southern Steps of the Temple in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Prophetess Anna & the Pierced Heart",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Right beside Simeon stood eighty-four-year-old widow Anna, who had prayed and fasted in the Temple day and night for decades. Giving thanks to God, she became the very first evangelist in Jerusalem—telling everyone hoping for redemption about the Child. Meanwhile Simeon gently foretold to Mary: \"A sword will pierce your own soul too.\"",
+            "stoneKeyWord": "Southern Steps",
+            "stoneKeyMeaning": "Historic turning point in Southern Steps of the Temple",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "presentation-of-the-lord_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Jerusalem.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Jerusalem, Israel Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Archaeologists have uncovered the original 1st-century limestone Southern Steps of the Temple—the exact broad stone stairs Mary, Joseph, and Jesus ascended on Candlemas!",
+            "stoneKeyWord": "Anna",
+            "stoneKeyMeaning": "Living pilgrimage site in Jerusalem",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "presentation-of-the-lord_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Candlemas",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Look closely at the Southern Steps today: the stairs alternate between wide and narrow treads intentionally, designed so pilgrims would slow down and step reverently toward God.",
+            "stoneKeyWord": "Pierced Heart",
+            "stoneKeyMeaning": "Enduring witness of Candlemas",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Southern Steps of the Temple?",
+            "correctStoneId": "presentation-of-the-lord_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Jerusalem?",
+            "correctStoneId": "presentation-of-the-lord_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "presentation-of-the-lord_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Southern Steps of the Temple",
+        "globePlacement": {
+          "latDeg": 31.776,
+          "lngDeg": 35.235,
+          "regionLabel": "Old City, Jerusalem",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Prophetess Anna & the Pierced Heart",
+        "detectiveLeadPrompt": "Trace Candlemas’s c. 6 bc · court of the women trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "presentation-of-the-lord_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Old City, Jerusalem)",
+            "clueText": "The archaeological Southern Steps of the ancient Jerusalem Temple beside the Western Wall.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "presentation-of-the-lord_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Look closely at the Southern Steps today: the stairs alternate between wide and narrow treads intentionally, designed so pilgrims would slow down and step reverently toward God.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "presentation-of-the-lord_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Prophetess Anna & the Pierced Heart",
+            "clueText": "Right beside Simeon stood eighty-four-year-old widow Anna, who had prayed and fasted in the Temple day and night for decades. Giving thanks to God, she became the very first evangelist in Jerusalem—telling everyone hoping for redemption about the Child. Meanwhile Simeon gently foretold to Mary: \"A sword will pierce your own soul too.\"",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "The Candlemas Processions of Rome",
+        "subtitle": "Sweep your lantern across Santa Maria Maggiore to uncover 3 hidden memories",
+        "eraLabel": "4th – 7th Century AD · Feast of Candles",
+        "ancientPlaceName": "Santa Maria Maggiore",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/presentation-of-the-lord/stop4.webp",
+        "imageCaption": "Hundreds of glowing beeswax candles illuminating a grand Roman twilight procession winding toward a golden basilica.",
+        "whatYouCanSeeToday": "On February 2, churches across the world bless the entire year’s supply of beeswax candles while congregations lift lit tapers in procession.",
+        "didYouKnowHighlight": "Wait—ever wondered where Groundhog Day (February 2) came from? It grew straight out of an old European Candlemas weather proverb: \"If Candlemas be fair and bright, winter will have another flight!\"",
+        "saintQuote": "A light shining in the darkness, and the darkness shall not overcome it.",
+        "hiddenArtifacts": [
+          {
+            "id": "presentation-of-the-lord_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Santa Maria Maggiore in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Candlemas Processions of Rome",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "First witnessed by the 4th-century Spanish pilgrim Egeria in Jerusalem, the Feast of the Presentation spread to Rome where Pope Sergius I introduced solemn glowing candlelight processions celebrating Christ as \"the Light to the Nations\"—giving the feast its warm English name: Candlemas.",
+            "stoneKeyWord": "Candlemas",
+            "stoneKeyMeaning": "Historic turning point in Santa Maria Maggiore",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "presentation-of-the-lord_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "On February 2, churches across the world bless the entire year’s supply of beeswax candles while congregations lift lit tapers in procession.",
+            "stoneKeyWord": "Beeswax Tapers",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "presentation-of-the-lord_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Candlemas",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—ever wondered where Groundhog Day (February 2) came from? It grew straight out of an old European Candlemas weather proverb: \"If Candlemas be fair and bright, winter will have another flight!\"",
+            "stoneKeyWord": "Procession",
+            "stoneKeyMeaning": "Enduring witness of Candlemas",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Santa Maria Maggiore?",
+            "correctStoneId": "presentation-of-the-lord_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "presentation-of-the-lord_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "presentation-of-the-lord_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Santa Maria Maggiore",
+        "globePlacement": {
+          "latDeg": 41.8976,
+          "lngDeg": 12.4985,
+          "regionLabel": "Lazio, Italy",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Candlemas Processions of Rome",
+        "detectiveLeadPrompt": "Trace Candlemas’s 4th – 7th century ad · feast of candles trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "presentation-of-the-lord_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Lazio, Italy)",
+            "clueText": "Historic Rome, where Pope Sergius I established the great pre-dawn candlelight procession to Santa Maria Maggiore.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "presentation-of-the-lord_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Wait—ever wondered where Groundhog Day (February 2) came from? It grew straight out of an old European Candlemas weather proverb: \"If Candlemas be fair and bright, winter will have another flight!\"",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "presentation-of-the-lord_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Candlemas Processions of Rome",
+            "clueText": "First witnessed by the 4th-century Spanish pilgrim Egeria in Jerusalem, the Feast of the Presentation spread to Rome where Pope Sergius I introduced solemn glowing candlelight processions celebrating Christ as \"the Light to the Nations\"—giving the feast its warm English name: Candlemas.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "blaise-of-sebaste",
+    "calendarDate": "2027-02-03",
+    "isFeastDay": true,
+    "weekdayIndex": 3,
+    "weekdayName": "Wednesday",
+    "weekdayShort": "Wed",
+    "saintName": "St. Blaise of Sebaste",
+    "shortTitle": "St. Blaise",
+    "feastDay": "February 3",
+    "eraSpan": "c. 270 – 316 AD · Sebaste in Armenia & Dubrovnik",
+    "trailSubtitle": "4 Stops · Sebaste (Sivas), Mount Argeus Cave, Prison of Sebaste & Dubrovnik",
+    "overviewButtonLabel": "Anatolia to Dubrovnik",
+    "globeHeaderSubtitle": "Sacred Trails of St. Blaise (Sivas, Mount Argeus & Dubrovnik, Croatia)",
+    "overviewCamera": {
+      "camLat": 39.83,
+      "camLng": 27.56,
+      "camAltitude": 6.5,
+      "lookLat": 40.59,
+      "lookLng": 27.56,
+      "lookRadiusScale": 0.86
+    },
+    "highlightedIsoCountries": [
+      "TUR",
+      "HRV"
+    ],
+    "completionSummary": "You walked the compassionate trail of St. Blaise, physician-bishop and Patron of Throats—from his healing ministry in ancient Sebaste and wild-animal sanctuary in the mountains to saving a choking boy and protecting the walled Adriatic gem of Dubrovnik.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Physician of Body and Soul",
+        "subtitle": "Sweep your lantern across Sebasteia (Lesser Armenia) to uncover 3 hidden memories",
+        "eraLabel": "c. 295 – 310 AD · Bishop of Sebaste",
+        "ancientPlaceName": "Sebasteia (Lesser Armenia)",
+        "modernPlaceName": "Sivas",
+        "modernCountry": "Turkey",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/blaise-of-sebaste/stop1.webp",
+        "imageCaption": "High Anatolian stone town framed by winter snow peaks and warm lantern-lit physician quarters.",
+        "whatYouCanSeeToday": "Modern Sivas preserves the ancient Anatolian crossroads where St. Blaise’s fame spread rapidly across both the Byzantine East and medieval Europe.",
+        "didYouKnowHighlight": "In medieval Europe, St. Blaise became one of the beloved \"Fourteen Holy Helpers\"—the group of saints invoked in times of urgent sickness and danger.",
+        "saintQuote": "Heal the body with care, and lift the soul to the Great Physician.",
+        "hiddenArtifacts": [
+          {
+            "id": "blaise-of-sebaste_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Sebasteia (Lesser Armenia) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Physician of Body and Soul",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Trained first as a compassionate physician in ancient Sebaste, Blaise was acclaimed bishop by the townspeople who loved his tireless care for the sick poor. Whether treating fevers or healing wounded hearts, he united medical skill with deep Christian prayer.",
+            "stoneKeyWord": "Sebaste",
+            "stoneKeyMeaning": "Historic turning point in Sebasteia (Lesser Armenia)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "blaise-of-sebaste_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Sivas.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Sivas, Turkey Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Modern Sivas preserves the ancient Anatolian crossroads where St. Blaise’s fame spread rapidly across both the Byzantine East and medieval Europe.",
+            "stoneKeyWord": "Physician",
+            "stoneKeyMeaning": "Living pilgrimage site in Sivas",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "blaise-of-sebaste_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Blaise",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "In medieval Europe, St. Blaise became one of the beloved \"Fourteen Holy Helpers\"—the group of saints invoked in times of urgent sickness and danger.",
+            "stoneKeyWord": "Holy Helper",
+            "stoneKeyMeaning": "Enduring witness of St. Blaise",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Sebasteia (Lesser Armenia)?",
+            "correctStoneId": "blaise-of-sebaste_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Sivas?",
+            "correctStoneId": "blaise-of-sebaste_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "blaise-of-sebaste_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Sebasteia (Lesser Armenia)",
+        "globePlacement": {
+          "latDeg": 39.7477,
+          "lngDeg": 37.0179,
+          "regionLabel": "Central Anatolia, Turkey",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Physician of Body and Soul",
+        "detectiveLeadPrompt": "Trace St. Blaise’s c. 295 – 310 ad · bishop of sebaste trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "blaise-of-sebaste_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Central Anatolia, Turkey)",
+            "clueText": "A historic highland city along the Kızılırmak River in central-eastern Turkey.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "blaise-of-sebaste_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "In medieval Europe, St. Blaise became one of the beloved \"Fourteen Holy Helpers\"—the group of saints invoked in times of urgent sickness and danger.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "blaise-of-sebaste_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Physician of Body and Soul",
+            "clueText": "Trained first as a compassionate physician in ancient Sebaste, Blaise was acclaimed bishop by the townspeople who loved his tireless care for the sick poor. Whether treating fevers or healing wounded hearts, he united medical skill with deep Christian prayer.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "The Mountain Cave of Gentle Beasts",
+        "subtitle": "Sweep your lantern across Mount Argeus to uncover 3 hidden memories",
+        "eraLabel": "c. 315 AD · Mount Argeus Hermitage",
+        "ancientPlaceName": "Mount Argeus",
+        "modernPlaceName": "Mount Erciyes Foothills",
+        "modernCountry": "Turkey",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/blaise-of-sebaste/stop2.webp",
+        "imageCaption": "Peaceful sunlit mountain cave surrounded by pine forest where deer, wolves, and wounded birds gather calmly beside a gentle white-bearded hermit.",
+        "whatYouCanSeeToday": "Because of his tender care for wounded creatures in the wilderness, St. Blaise is also honored alongside St. Francis as a gentle patron of veterinarians and wild animals.",
+        "didYouKnowHighlight": "Hunters sent to capture wild beasts for the Roman arena froze in astonishment when they saw wolves and lions sitting quietly like lambs outside Blaise’s cave!",
+        "saintQuote": "Every living creature knows the touch of mercy.",
+        "hiddenArtifacts": [
+          {
+            "id": "blaise-of-sebaste_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Mount Argeus in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Mountain Cave of Gentle Beasts",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "During Emperor Licinius’s brutal persecution, Blaise withdrew to a quiet mountain cave to pray and guide his scattered flock safely. Ancient accounts tell that wounded wolves, bears, and wild deer wandered peacefully up to his cave—waiting patiently for him to bind their paws and bless them—until imperial hunters stumbled upon the astonishing scene and arrested him.",
+            "stoneKeyWord": "Mountain Cave",
+            "stoneKeyMeaning": "Historic turning point in Mount Argeus",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "blaise-of-sebaste_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Mount Erciyes Foothills.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Mount Erciyes Foothills, Turkey Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Because of his tender care for wounded creatures in the wilderness, St. Blaise is also honored alongside St. Francis as a gentle patron of veterinarians and wild animals.",
+            "stoneKeyWord": "Gentle Beasts",
+            "stoneKeyMeaning": "Living pilgrimage site in Mount Erciyes Foothills",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "blaise-of-sebaste_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Blaise",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Hunters sent to capture wild beasts for the Roman arena froze in astonishment when they saw wolves and lions sitting quietly like lambs outside Blaise’s cave!",
+            "stoneKeyWord": "Mercy",
+            "stoneKeyMeaning": "Enduring witness of St. Blaise",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Mount Argeus?",
+            "correctStoneId": "blaise-of-sebaste_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Mount Erciyes Foothills?",
+            "correctStoneId": "blaise-of-sebaste_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "blaise-of-sebaste_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Mount Argeus",
+        "globePlacement": {
+          "latDeg": 38.5312,
+          "lngDeg": 35.447,
+          "regionLabel": "Anatolia, Turkey",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Mountain Cave of Gentle Beasts",
+        "detectiveLeadPrompt": "Trace St. Blaise’s c. 315 ad · mount argeus hermitage trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "blaise-of-sebaste_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Anatolia, Turkey)",
+            "clueText": "The dramatic volcanic slopes of central Anatolia south of Sivas.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "blaise-of-sebaste_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Hunters sent to capture wild beasts for the Roman arena froze in astonishment when they saw wolves and lions sitting quietly like lambs outside Blaise’s cave!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "blaise-of-sebaste_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Mountain Cave of Gentle Beasts",
+            "clueText": "During Emperor Licinius’s brutal persecution, Blaise withdrew to a quiet mountain cave to pray and guide his scattered flock safely. Ancient accounts tell that wounded wolves, bears, and wild deer wandered peacefully up to his cave—waiting patiently for him to bind their paws and bless them—until imperial hunters stumbled upon the astonishing scene and arrested him.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "The Choking Boy & Crossed Candles",
+        "subtitle": "Sweep your lantern across Prison of Sebaste to uncover 3 hidden memories",
+        "eraLabel": "316 AD · Blessing of Throats",
+        "ancientPlaceName": "Prison of Sebaste",
+        "modernPlaceName": "Sivas",
+        "modernCountry": "Turkey",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/blaise-of-sebaste/stop3.webp",
+        "imageCaption": "Two warm glowing tapered candles crossed gently in a darkened stone prison chamber as a grateful mother cradles her rescued child.",
+        "whatYouCanSeeToday": "Every February 3 in parishes around the world, priests hold two crossed blessed candles (from Candlemas the day before!) against each person’s throat, praying: \"Through the intercession of St. Blaise, may God deliver you from every disease of the throat.\"",
+        "didYouKnowHighlight": "Tradition adds that a grateful poor woman whose pig Blaise had rescued from a wolf sneaked two bright candles into his pitch-black dungeon cell—giving us the exact crossed-candle symbol used every February 3!",
+        "saintQuote": "May the Lord deliver you from every ailment of the throat and every other evil.",
+        "hiddenArtifacts": [
+          {
+            "id": "blaise-of-sebaste_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Prison of Sebaste in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Choking Boy & Crossed Candles",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "While Blaise was marched in chains to prison, a frantic mother broke through the Roman guards cradling her little boy who was suffocating on a sharp fishbone lodged in his throat. Blaise paused, placed his bound hands over the child, prayed to Christ, and the boy instantly coughed up the bone—completely healed!",
+            "stoneKeyWord": "Crossed Candles",
+            "stoneKeyMeaning": "Historic turning point in Prison of Sebaste",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "blaise-of-sebaste_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Sivas.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Sivas, Turkey Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Every February 3 in parishes around the world, priests hold two crossed blessed candles (from Candlemas the day before!) against each person’s throat, praying: \"Through the intercession of St. Blaise, may God deliver you from every disease of the throat.\"",
+            "stoneKeyWord": "Fishbone Miracle",
+            "stoneKeyMeaning": "Living pilgrimage site in Sivas",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "blaise-of-sebaste_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Blaise",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Tradition adds that a grateful poor woman whose pig Blaise had rescued from a wolf sneaked two bright candles into his pitch-black dungeon cell—giving us the exact crossed-candle symbol used every February 3!",
+            "stoneKeyWord": "Blessing of Throats",
+            "stoneKeyMeaning": "Enduring witness of St. Blaise",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Prison of Sebaste?",
+            "correctStoneId": "blaise-of-sebaste_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Sivas?",
+            "correctStoneId": "blaise-of-sebaste_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "blaise-of-sebaste_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Prison of Sebaste",
+        "globePlacement": {
+          "latDeg": 39.7505,
+          "lngDeg": 37.015,
+          "regionLabel": "Central Anatolia, Turkey",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Choking Boy & Crossed Candles",
+        "detectiveLeadPrompt": "Trace St. Blaise’s 316 ad · blessing of throats trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "blaise-of-sebaste_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Central Anatolia, Turkey)",
+            "clueText": "Historic Sebaste in Anatolia, birthplace of one of Christianity’s most memorable annual blessings.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "blaise-of-sebaste_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Tradition adds that a grateful poor woman whose pig Blaise had rescued from a wolf sneaked two bright candles into his pitch-black dungeon cell—giving us the exact crossed-candle symbol used every February 3!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "blaise-of-sebaste_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Choking Boy & Crossed Candles",
+            "clueText": "While Blaise was marched in chains to prison, a frantic mother broke through the Roman guards cradling her little boy who was suffocating on a sharp fishbone lodged in his throat. Blaise paused, placed his bound hands over the child, prayed to Christ, and the boy instantly coughed up the bone—completely healed!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "Sveti Vlaho: Guardian of Dubrovnik",
+        "subtitle": "Sweep your lantern across Ragusa to uncover 3 hidden memories",
+        "eraLabel": "971 AD – Present · Walled City on the Adriatic",
+        "ancientPlaceName": "Ragusa",
+        "modernPlaceName": "Dubrovnik",
+        "modernCountry": "Croatia",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/blaise-of-sebaste/stop4.webp",
+        "imageCaption": "Sunlit terracotta rooftops and golden baroque Church of St. Blaise framed by turquoise Adriatic sea walls in Dubrovnik.",
+        "whatYouCanSeeToday": "Statues of St. Blaise (\"Sveti Vlaho\") holding a miniature model of Dubrovnik guard every gate and rampart of the Old City, and Dubrovnik’s grand Feast of St. Blaise on February 3 is recognized by UNESCO as Intangible Cultural Heritage of Humanity!",
+        "didYouKnowHighlight": "For over a thousand years straight—without missing a single February 3—Dubrovnik has released white doves and carried banners along the Stradun in honor of St. Blaise.",
+        "saintQuote": "Stand watch over this city and keep its gates in peace.",
+        "hiddenArtifacts": [
+          {
+            "id": "blaise-of-sebaste_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Ragusa in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Sveti Vlaho: Guardian of Dubrovnik",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "According to beloved Croatian chronicle, in 971 AD Venetian warships anchored secretly off Ragusa (Dubrovnik) planning a surprise night attack. St. Blaise appeared in a vision to a local parish priest warning the city senate in time to close the gates—saving Dubrovnik without bloodshed.",
+            "stoneKeyWord": "Dubrovnik",
+            "stoneKeyMeaning": "Historic turning point in Ragusa",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "blaise-of-sebaste_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Dubrovnik.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Dubrovnik, Croatia Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "Statues of St. Blaise (\"Sveti Vlaho\") holding a miniature model of Dubrovnik guard every gate and rampart of the Old City, and Dubrovnik’s grand Feast of St. Blaise on February 3 is recognized by UNESCO as Intangible Cultural Heritage of Humanity!",
+            "stoneKeyWord": "Sveti Vlaho",
+            "stoneKeyMeaning": "Living pilgrimage site in Dubrovnik",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "blaise-of-sebaste_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Blaise",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "For over a thousand years straight—without missing a single February 3—Dubrovnik has released white doves and carried banners along the Stradun in honor of St. Blaise.",
+            "stoneKeyWord": "UNESCO Feast",
+            "stoneKeyMeaning": "Enduring witness of St. Blaise",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Ragusa?",
+            "correctStoneId": "blaise-of-sebaste_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Dubrovnik?",
+            "correctStoneId": "blaise-of-sebaste_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "blaise-of-sebaste_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Ragusa",
+        "globePlacement": {
+          "latDeg": 42.6407,
+          "lngDeg": 18.1103,
+          "regionLabel": "Dalmatia, Croatia",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Sveti Vlaho: Guardian of Dubrovnik",
+        "detectiveLeadPrompt": "Trace St. Blaise’s 971 ad – present · walled city on the adriatic trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "blaise-of-sebaste_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Dalmatia, Croatia)",
+            "clueText": "Croatia’s breathtaking medieval walled \"Pearl of the Adriatic.\"",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "blaise-of-sebaste_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "For over a thousand years straight—without missing a single February 3—Dubrovnik has released white doves and carried banners along the Stradun in honor of St. Blaise.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "blaise-of-sebaste_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Sveti Vlaho: Guardian of Dubrovnik",
+            "clueText": "According to beloved Croatian chronicle, in 971 AD Venetian warships anchored secretly off Ragusa (Dubrovnik) planning a surprise night attack. St. Blaise appeared in a vision to a local parish priest warning the city senate in time to close the gates—saving Dubrovnik without bloodshed.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "john-de-britto",
+    "calendarDate": "2027-02-04",
+    "isFeastDay": true,
+    "weekdayIndex": 4,
+    "weekdayName": "Thursday",
+    "weekdayShort": "Thu",
+    "saintName": "St. John de Britto",
+    "shortTitle": "St. John de Britto",
+    "feastDay": "February 4",
+    "eraSpan": "1647 – 1693 · Lisbon, Goa & Tamil Nadu, India",
+    "trailSubtitle": "4 Stops · Lisbon, Old Goa, Madurai & Oriyur, Tamil Nadu",
+    "overviewButtonLabel": "Lisbon to Tamil Nadu",
+    "globeHeaderSubtitle": "Sacred Trails of St. John de Britto (Lisbon, Old Goa, Madurai & Oriyur, India)",
+    "overviewCamera": {
+      "camLat": 22.29,
+      "camLng": 34.95,
+      "camAltitude": 10.6,
+      "lookLat": 24.29,
+      "lookLng": 34.95,
+      "lookRadiusScale": 0.76
+    },
+    "highlightedIsoCountries": [
+      "PRT",
+      "IND"
+    ],
+    "completionSummary": "You walked the remarkable inculturated path of St. John de Britto—from the royal court of Lisbon and Old Goa to living barefoot in saffron robes as a Tamil sage in Madurai and giving his witness on the red sands of Oriyur.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "From Royal Page to Jesuit Missionary",
+        "subtitle": "Sweep your lantern across Olisipo (Lisbon) to uncover 3 hidden memories",
+        "eraLabel": "1647 – 1673 · Royal Court of Lisbon",
+        "ancientPlaceName": "Olisipo (Lisbon)",
+        "modernPlaceName": "Lisbon",
+        "modernCountry": "Portugal",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/john-de-britto/stop1.webp",
+        "imageCaption": "Golden baroque Jesuit church interior of São Roque in Lisbon gleaming with candlelight beside a young nobleman’s velvet cloak.",
+        "whatYouCanSeeToday": "Lisbon’s historic Church of São Roque preserves the Jesuit heritage where young John traded royal luxury for a missionary’s wooden staff.",
+        "didYouKnowHighlight": "Even when his childhood playmate became King Pedro II of Portugal and begged him to stay home as royal tutor, John gently refused—choosing the dusty roads of South India instead.",
+        "saintQuote": "I was born not for the palace, but for the distant harvest of souls.",
+        "hiddenArtifacts": [
+          {
+            "id": "john-de-britto_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Olisipo (Lisbon) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "From Royal Page to Jesuit Missionary",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born into one of Portugal’s grandest aristocratic families and raised as personal companion to Crown Prince Pedro, eleven-year-old John fell gravely ill. His mother prayed to St. Francis Xavier and vowed to dress him in a miniature Jesuit cassock for a year if he survived—a vow that sparked John’s lifelong desire to sail to India.",
+            "stoneKeyWord": "Royal Page",
+            "stoneKeyMeaning": "Historic turning point in Olisipo (Lisbon)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "john-de-britto_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Lisbon.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Lisbon, Portugal Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Lisbon’s historic Church of São Roque preserves the Jesuit heritage where young John traded royal luxury for a missionary’s wooden staff.",
+            "stoneKeyWord": "Lisbon",
+            "stoneKeyMeaning": "Living pilgrimage site in Lisbon",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "john-de-britto_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. John de Britto",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Even when his childhood playmate became King Pedro II of Portugal and begged him to stay home as royal tutor, John gently refused—choosing the dusty roads of South India instead.",
+            "stoneKeyWord": "Xavier Vow",
+            "stoneKeyMeaning": "Enduring witness of St. John de Britto",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Olisipo (Lisbon)?",
+            "correctStoneId": "john-de-britto_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Lisbon?",
+            "correctStoneId": "john-de-britto_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "john-de-britto_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Olisipo (Lisbon)",
+        "globePlacement": {
+          "latDeg": 38.7139,
+          "lngDeg": -9.146,
+          "regionLabel": "Lisbon, Portugal",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "From Royal Page to Jesuit Missionary",
+        "detectiveLeadPrompt": "Trace St. John de Britto’s 1647 – 1673 · royal court of lisbon trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "john-de-britto_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Lisbon, Portugal)",
+            "clueText": "Portugal’s storied hilltop capital on the Atlantic edge of Europe.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "john-de-britto_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Even when his childhood playmate became King Pedro II of Portugal and begged him to stay home as royal tutor, John gently refused—choosing the dusty roads of South India instead.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "john-de-britto_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "From Royal Page to Jesuit Missionary",
+            "clueText": "Born into one of Portugal’s grandest aristocratic families and raised as personal companion to Crown Prince Pedro, eleven-year-old John fell gravely ill. His mother prayed to St. Francis Xavier and vowed to dress him in a miniature Jesuit cassock for a year if he survived—a vow that sparked John’s lifelong desire to sail to India.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Gateway of the East in Old Goa",
+        "subtitle": "Sweep your lantern across Velha Goa to uncover 3 hidden memories",
+        "eraLabel": "1673 · Following Francis Xavier’s Wake",
+        "ancientPlaceName": "Velha Goa",
+        "modernPlaceName": "Old Goa",
+        "modernCountry": "India",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/john-de-britto/stop2.webp",
+        "imageCaption": "Warm red-laterite arches of Bom Jesus Basilica in Old Goa glowing beneath lush Konkan palms.",
+        "whatYouCanSeeToday": "Pilgrims visiting Bom Jesus Basilica in Old Goa walk the exact stone courtyard where John de Britto set out on foot toward Madurai.",
+        "didYouKnowHighlight": "During his voyage to India, John studied Tamil relentlessly on deck so he could speak to villagers in their own beloved poetic tongue from day one.",
+        "saintQuote": "To win hearts for Christ, we must first learn to speak their language with love.",
+        "hiddenArtifacts": [
+          {
+            "id": "john-de-britto_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Velha Goa in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Gateway of the East in Old Goa",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Sailing around the Cape of Good Hope in 1673, Father John de Britto landed in Old Goa and knelt in prayer beside the incorrupt tomb of his hero St. Francis Xavier before volunteering for one of the most challenging missions on Earth: the interior Tamil kingdoms of South India.",
+            "stoneKeyWord": "Old Goa",
+            "stoneKeyMeaning": "Historic turning point in Velha Goa",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "john-de-britto_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Old Goa.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Old Goa, India Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Pilgrims visiting Bom Jesus Basilica in Old Goa walk the exact stone courtyard where John de Britto set out on foot toward Madurai.",
+            "stoneKeyWord": "Mandovi",
+            "stoneKeyMeaning": "Living pilgrimage site in Old Goa",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "john-de-britto_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. John de Britto",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "During his voyage to India, John studied Tamil relentlessly on deck so he could speak to villagers in their own beloved poetic tongue from day one.",
+            "stoneKeyWord": "Tamil",
+            "stoneKeyMeaning": "Enduring witness of St. John de Britto",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Velha Goa?",
+            "correctStoneId": "john-de-britto_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Old Goa?",
+            "correctStoneId": "john-de-britto_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "john-de-britto_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Velha Goa",
+        "globePlacement": {
+          "latDeg": 15.5009,
+          "lngDeg": 73.9116,
+          "regionLabel": "Goa, India",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Gateway of the East in Old Goa",
+        "detectiveLeadPrompt": "Trace St. John de Britto’s 1673 · following francis xavier’s wake trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "john-de-britto_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Goa, India)",
+            "clueText": "The UNESCO-listed historic baroque sanctuary complex along the Mandovi River in Goa.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "john-de-britto_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "During his voyage to India, John studied Tamil relentlessly on deck so he could speak to villagers in their own beloved poetic tongue from day one.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "john-de-britto_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Gateway of the East in Old Goa",
+            "clueText": "Sailing around the Cape of Good Hope in 1673, Father John de Britto landed in Old Goa and knelt in prayer beside the incorrupt tomb of his hero St. Francis Xavier before volunteering for one of the most challenging missions on Earth: the interior Tamil kingdoms of South India.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Arul Anandar: The Saffron-Robed Sage of Madurai",
+        "subtitle": "Sweep your lantern across Madurai & Marava Country to uncover 3 hidden memories",
+        "eraLabel": "1674 – 1692 · Madurai Mission",
+        "ancientPlaceName": "Madurai & Marava Country",
+        "modernPlaceName": "Madurai",
+        "modernCountry": "India",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/john-de-britto/stop3.webp",
+        "imageCaption": "Sunlit palm-lined red-earth Tamil village road at dusk with an oil lamp glowing beside a simple saffron-robed ascetic.",
+        "whatYouCanSeeToday": "Across Tamil Nadu, St. John de Britto is still affectionately called \"Arul Anandar\"—honored as a pioneer of deep cultural respect and dialogue between the Gospel and Indian spirituality.",
+        "didYouKnowHighlight": "Unlike missionaries who served only one caste, Arul Anandar walked fearlessly into villages of marginalized communities as well as royal courts, baptizing thousands across southern Tamil Nadu.",
+        "saintQuote": "Become all things to all people, that by love some may know the grace of God.",
+        "hiddenArtifacts": [
+          {
+            "id": "john-de-britto_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Madurai & Marava Country in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Arul Anandar: The Saffron-Robed Sage of Madurai",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Realizing European clothes and customs built walls between himself and Indian villagers, John adopted the humble life of an Indian pandaraswami (ascetic sage): wearing simple saffron cotton robes, walking barefoot, eating only vegetarian rice and herbs, sleeping on woven mats, and taking the Tamil name \"Arul Anandar\" (\"Joy of Grace\").",
+            "stoneKeyWord": "Arul Anandar",
+            "stoneKeyMeaning": "Historic turning point in Madurai & Marava Country",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "john-de-britto_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Madurai.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Madurai, India Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Across Tamil Nadu, St. John de Britto is still affectionately called \"Arul Anandar\"—honored as a pioneer of deep cultural respect and dialogue between the Gospel and Indian spirituality.",
+            "stoneKeyWord": "Saffron Robe",
+            "stoneKeyMeaning": "Living pilgrimage site in Madurai",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "john-de-britto_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. John de Britto",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Unlike missionaries who served only one caste, Arul Anandar walked fearlessly into villages of marginalized communities as well as royal courts, baptizing thousands across southern Tamil Nadu.",
+            "stoneKeyWord": "Madurai",
+            "stoneKeyMeaning": "Enduring witness of St. John de Britto",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Madurai & Marava Country?",
+            "correctStoneId": "john-de-britto_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Madurai?",
+            "correctStoneId": "john-de-britto_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "john-de-britto_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Madurai & Marava Country",
+        "globePlacement": {
+          "latDeg": 9.9195,
+          "lngDeg": 78.1193,
+          "regionLabel": "Tamil Nadu, India",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Arul Anandar: The Saffron-Robed Sage of Madurai",
+        "detectiveLeadPrompt": "Trace St. John de Britto’s 1674 – 1692 · madurai mission trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "john-de-britto_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Tamil Nadu, India)",
+            "clueText": "One of India’s oldest living cultural cities in Tamil Nadu, famous for its ancient temple towers and classical Tamil poetry.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "john-de-britto_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Unlike missionaries who served only one caste, Arul Anandar walked fearlessly into villages of marginalized communities as well as royal courts, baptizing thousands across southern Tamil Nadu.",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "john-de-britto_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Arul Anandar: The Saffron-Robed Sage of Madurai",
+            "clueText": "Realizing European clothes and customs built walls between himself and Indian villagers, John adopted the humble life of an Indian pandaraswami (ascetic sage): wearing simple saffron cotton robes, walking barefoot, eating only vegetarian rice and herbs, sleeping on woven mats, and taking the Tamil name \"Arul Anandar\" (\"Joy of Grace\").",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "The Red Sands of Oriyur",
+        "subtitle": "Sweep your lantern across Oriyur (Marava Kingdom) to uncover 3 hidden memories",
+        "eraLabel": "February 4, 1693 · Martyrdom in Tamil Nadu",
+        "ancientPlaceName": "Oriyur (Marava Kingdom)",
+        "modernPlaceName": "Oriyur",
+        "modernCountry": "India",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/john-de-britto/stop4.webp",
+        "imageCaption": "Radiant golden-crimson coastal Tamil Nadu shrine standing amid swaying palmyra palms and warm terracotta sands.",
+        "whatYouCanSeeToday": "The grand Shrine of St. John de Britto at Oriyur draws hundreds of thousands of pilgrims from across South India—famous for its distinctive red soil revered in memory of the \"Red Martyr.\"",
+        "didYouKnowHighlight": "When John de Britto’s elderly mother in Lisbon heard her son had been martyred in India, she did not put on black mourning clothes—she wore her brightest festive gown and attended a Te Deum of thanksgiving!",
+        "saintQuote": "I await death with impatience; it has always been the object of my dearest prayers.",
+        "hiddenArtifacts": [
+          {
+            "id": "john-de-britto_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Oriyur (Marava Kingdom) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Red Sands of Oriyur",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "When a Marava prince named Tadaya Theva converted to Christianity and freed his extra wives out of respect for Christian marriage, angry courtiers arrested Arul Anandar and sentenced him to death. Walking calmly to the sandy plain of Oriyur on February 4, 1693, he prayed for his executioners and bowed his head joyfully.",
+            "stoneKeyWord": "Oriyur",
+            "stoneKeyMeaning": "Historic turning point in Oriyur (Marava Kingdom)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "john-de-britto_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Oriyur.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Oriyur, India Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "The grand Shrine of St. John de Britto at Oriyur draws hundreds of thousands of pilgrims from across South India—famous for its distinctive red soil revered in memory of the \"Red Martyr.\"",
+            "stoneKeyWord": "Red Sands",
+            "stoneKeyMeaning": "Living pilgrimage site in Oriyur",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "john-de-britto_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. John de Britto",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "When John de Britto’s elderly mother in Lisbon heard her son had been martyred in India, she did not put on black mourning clothes—she wore her brightest festive gown and attended a Te Deum of thanksgiving!",
+            "stoneKeyWord": "Arul Anandar",
+            "stoneKeyMeaning": "Enduring witness of St. John de Britto",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Oriyur (Marava Kingdom)?",
+            "correctStoneId": "john-de-britto_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Oriyur?",
+            "correctStoneId": "john-de-britto_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "john-de-britto_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Oriyur (Marava Kingdom)",
+        "globePlacement": {
+          "latDeg": 9.8644,
+          "lngDeg": 79.0442,
+          "regionLabel": "Ramanathapuram, Tamil Nadu, India",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Red Sands of Oriyur",
+        "detectiveLeadPrompt": "Trace St. John de Britto’s february 4, 1693 · martyrdom in tamil nadu trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "john-de-britto_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Ramanathapuram, Tamil Nadu, India)",
+            "clueText": "A revered coastal pilgrimage village in southern Tamil Nadu facing the Palk Bay.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "john-de-britto_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When John de Britto’s elderly mother in Lisbon heard her son had been martyred in India, she did not put on black mourning clothes—she wore her brightest festive gown and attended a Te Deum of thanksgiving!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "john-de-britto_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Red Sands of Oriyur",
+            "clueText": "When a Marava prince named Tadaya Theva converted to Christianity and freed his extra wives out of respect for Christian marriage, angry courtiers arrested Arul Anandar and sentenced him to death. Walking calmly to the sandy plain of Oriyur on February 4, 1693, he prayed for his executioners and bowed his head joyfully.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  }
+]
