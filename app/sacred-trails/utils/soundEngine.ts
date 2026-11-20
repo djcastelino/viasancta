@@ -726,18 +726,26 @@ class SoundEngine {
     stopNumber: number,
     kind: 'clue' | 'city',
     onEnd?: () => void,
-    saintId:
-      | 'augustine'
-      | 'thomas'
-      | 'xavier'
-      | 'paul'
-      | 'francis'
-      | 'ignatius'
-      | 'joan' = 'augustine'
+    saintId: string = 'augustine',
+    fallbackText?: string
   ) {
     this.stopSpeaking();
     if (typeof window === 'undefined' || this.isMuted) {
       if (onEnd) onEnd();
+      return;
+    }
+
+    const PRERECORDED_SAINTS = new Set([
+      'augustine',
+      'thomas',
+      'xavier',
+      'paul',
+      'francis',
+      'ignatius',
+      'joan',
+    ]);
+    if (!PRERECORDED_SAINTS.has(saintId) && fallbackText) {
+      this.speakNarration(fallbackText, onEnd);
       return;
     }
 
@@ -763,9 +771,17 @@ class SoundEngine {
       if (onEnd) onEnd();
     };
 
+    const handleError = () => {
+      if (fallbackText) {
+        this.speakNarration(fallbackText, onEnd);
+      } else {
+        handleFinish();
+      }
+    };
+
     audio.onended = handleFinish;
-    audio.onerror = handleFinish;
-    audio.play().catch(handleFinish);
+    audio.onerror = handleError;
+    audio.play().catch(handleError);
   }
 
   public speakNarration(text: string, onEnd?: () => void) {

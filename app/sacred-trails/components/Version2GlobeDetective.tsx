@@ -1743,7 +1743,8 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                         currentCaseStop.stopNumber,
                         'clue',
                         () => setIsNarrating(false),
-                        saintTrail.id
+                        saintTrail.id,
+                        `${currentCaseStop.detectiveClues[0].clueText} ${currentCaseStop.detectiveClues[1].clueText}`
                       );
                     }
                   }}
@@ -1994,7 +1995,8 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                         inspectedStop.stopNumber,
                         'city',
                         () => setIsNarrating(false),
-                        saintTrail.id
+                        saintTrail.id,
+                        `${inspectedStop.whatYouCanSeeToday} ${inspectedStop.didYouKnowHighlight}`
                       );
                     }
                   }}
