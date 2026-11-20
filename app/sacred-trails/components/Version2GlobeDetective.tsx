@@ -90,7 +90,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     text: string;
   }>({
     type: 'info',
-    text: `Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
+    text: `Read the Detective Clues on the right, then click any of the ${saintTrail.stops.length} Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
   });
 
   // Inspection Modal when a stop is solved or inspected
@@ -207,7 +207,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     setRevealedClueIds([saintTrail.stops[0].detectiveClues[0].id]);
     setFeedbackBanner({
       type: 'info',
-      text: `Read the Detective Clues on the right, then click any of the 6 Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
+      text: `Read the Detective Clues on the right, then click any of the ${saintTrail.stops.length} Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
     });
     const ov = saintTrail.overviewCamera;
     startSmoothCameraFlight(

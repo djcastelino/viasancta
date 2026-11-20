@@ -47,17 +47,25 @@ export interface GlobePlacement {
   labelOffsetPx?: [number, number];
 }
 
-export type SaintId =
-  | 'augustine'
-  | 'thomas'
-  | 'xavier'
-  | 'paul'
-  | 'francis'
-  | 'ignatius'
-  | 'joan';
+export type SaintId = string;
+
+export interface CalendarIndexEntry {
+  date: string;
+  monthKey: string;
+  id: SaintId;
+  saintName: string;
+  shortTitle: string;
+  feastDay: string;
+  isFeastDay: boolean;
+  eraSpan: string;
+  stopCount: number;
+  previewImage: string;
+}
 
 export interface SaintTrailProfile {
   id: SaintId;
+  calendarDate?: string;
+  isFeastDay?: boolean;
   weekdayIndex: number; // 0 = Sun, 1 = Mon, 2 = Tue, 3 = Wed, 4 = Thu, 5 = Fri, 6 = Sat
   weekdayName: string;
   weekdayShort: string;

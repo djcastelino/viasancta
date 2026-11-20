@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass } from 'lucide-react';
 
 interface ResilientImageProps {
@@ -18,6 +18,10 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
 }) => {
   const [hasError, setHasError] = useState(false);
 
+  useEffect(() => {
+    setHasError(false);
+  }, [src]);
+
   if (hasError || !src) {
     return (
       <div
@@ -30,7 +34,7 @@ export const ResilientImage: React.FC<ResilientImageProps> = ({
           {fallbackTitle || alt}
         </span>
         <span className="font-mono text-xs text-slate-400 mt-1">
-          Archival Plate · Geonauts Dossier
+          Archival Plate · Divine Pilgrim
         </span>
       </div>
     );
