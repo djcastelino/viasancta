@@ -1,0 +1,2903 @@
+[
+  {
+    "id": "justin-martyr",
+    "calendarDate": "2027-06-01",
+    "isFeastDay": true,
+    "weekdayIndex": 2,
+    "weekdayName": "Tuesday",
+    "weekdayShort": "Tue",
+    "saintName": "St. Justin Martyr",
+    "shortTitle": "St. Justin Martyr",
+    "feastDay": "June 1",
+    "eraSpan": "c. 100 – 165 AD · Samaria, Ephesus & Rome",
+    "trailSubtitle": "3 Stops · Flavia Neapolis (Samaria), Ephesus Seafront & Rome Philosophy School",
+    "overviewButtonLabel": "Samaria to Ephesus & Rome",
+    "globeHeaderSubtitle": "Sacred Trails of St. Justin Martyr (Nablus, Ephesus & Rome)",
+    "overviewCamera": {
+      "camLat": 36.15,
+      "camLng": 23.87,
+      "camAltitude": 6.5,
+      "lookLat": 37.06,
+      "lookLng": 23.87,
+      "lookRadiusScale": 0.86
+    },
+    "highlightedIsoCountries": [
+      "PSE",
+      "TUR",
+      "ITA"
+    ],
+    "completionSummary": "You walked beside the sea with St. Justin Martyr, Patron Saint of Philosophers—the brilliant second-century seeker who tried Stoicism and Plato before discovering the Gospel, kept wearing his philosopher’s cloak, and wrote history’s oldest eyewitness account of Sunday Mass.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Restless Young Seeker in Flavia Neapolis",
+        "subtitle": "Sweep your lantern across Flavia Neapolis to uncover 3 hidden memories",
+        "eraLabel": "c. 100 – 130 AD · Samaria",
+        "ancientPlaceName": "Flavia Neapolis",
+        "modernPlaceName": "Nablus",
+        "modernCountry": "Palestine",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/justin-martyr/stop1.webp",
+        "imageCaption": "Sunlit ancient Greco-Roman limestone colonnades nestled between twin golden hills as a thoughtful young Greek scholar reads philosophy scrolls.",
+        "whatYouCanSeeToday": "Justin’s candid spiritual autobiography in his \"Dialogue with Trypho\" still resonates with modern seekers searching honestly for meaning.",
+        "didYouKnowHighlight": "Justin coined the famous idea of \"Seeds of the Word\" (\"Logos Spermatikos\")—teaching warmly that whatever is genuinely true and noble in ANY culture or philosophy already belongs to Christ!",
+        "saintQuote": "Whatever things were rightly said among all people belong to us Christians—for all truth comes from God.",
+        "hiddenArtifacts": [
+          {
+            "id": "justin-martyr_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Flavia Neapolis in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Restless Young Seeker in Flavia Neapolis",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born to pagan Greek-speaking parents in Flavia Neapolis around 100 AD, bright young Justin hungered relentlessly for truth—studying under Stoics, Aristotelians, Pythagoreans, and Platonists one after another, always sensing something deeper was still missing.",
+            "stoneKeyWord": "Seeds of the Word",
+            "stoneKeyMeaning": "Historic turning point in Flavia Neapolis",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "justin-martyr_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Nablus.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Nablus, Palestine Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Justin’s candid spiritual autobiography in his \"Dialogue with Trypho\" still resonates with modern seekers searching honestly for meaning.",
+            "stoneKeyWord": "Patron of Philosophers",
+            "stoneKeyMeaning": "Living pilgrimage site in Nablus",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "justin-martyr_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Justin Martyr",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Justin coined the famous idea of \"Seeds of the Word\" (\"Logos Spermatikos\")—teaching warmly that whatever is genuinely true and noble in ANY culture or philosophy already belongs to Christ!",
+            "stoneKeyWord": "Honest Seeker",
+            "stoneKeyMeaning": "Enduring witness of St. Justin Martyr",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Flavia Neapolis?",
+            "correctStoneId": "justin-martyr_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Nablus?",
+            "correctStoneId": "justin-martyr_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "justin-martyr_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Flavia Neapolis",
+        "globePlacement": {
+          "latDeg": 32.2211,
+          "lngDeg": 35.2544,
+          "regionLabel": "West Bank, Palestine",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Restless Young Seeker in Flavia Neapolis",
+        "detectiveLeadPrompt": "Trace St. Justin Martyr’s c. 100 – 130 ad · samaria trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "justin-martyr_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (West Bank, Palestine)",
+            "clueText": "An ancient Roman valley city nestled between Mount Gerizim and Mount Ebal north of Jerusalem.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "justin-martyr_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Justin coined the famous idea of \"Seeds of the Word\" (\"Logos Spermatikos\")—teaching warmly that whatever is genuinely true and noble in ANY culture or philosophy already belongs to Christ!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "justin-martyr_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Restless Young Seeker in Flavia Neapolis",
+            "clueText": "Born to pagan Greek-speaking parents in Flavia Neapolis around 100 AD, bright young Justin hungered relentlessly for truth—studying under Stoics, Aristotelians, Pythagoreans, and Platonists one after another, always sensing something deeper was still missing.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "The Old Man by the Sea in Ephesus",
+        "subtitle": "Sweep your lantern across Ephesus Seafront to uncover 3 hidden memories",
+        "eraLabel": "c. 132 AD · Aegean Coast, Ephesus",
+        "ancientPlaceName": "Ephesus Seafront",
+        "modernPlaceName": "Selçuk / Ephesus",
+        "modernCountry": "Turkey",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/justin-martyr/stop2.webp",
+        "imageCaption": "Shimmering golden Aegean sea breeze washing against quiet ancient marble shoreline stones where a gentle silver-haired elder speaks warmly with a captivated young philosopher.",
+        "whatYouCanSeeToday": "The sunlit marble avenues of ancient Ephesus recall the exact coastline where Justin discovered that Christianity wasn’t the enemy of philosophy—it was its fulfillment!",
+        "didYouKnowHighlight": "Even after becoming a Christian, Justin kept wearing his distinctive rough Greek philosopher’s cloak (\"pallium\") so curious passersby in the street would stop and talk with him about truth!",
+        "saintQuote": "A flame was kindled in my soul, and a love of the prophets and of the friends of Christ possessed me.",
+        "hiddenArtifacts": [
+          {
+            "id": "justin-martyr_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Ephesus Seafront in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Old Man by the Sea in Ephesus",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Walking alone beside the sea near Ephesus pondering Plato, Justin struck up a conversation with a serene, gentle elderly stranger who pointed him beyond abstract theories to the Hebrew prophets and the living person of Jesus Christ! Instantly, Justin recalled, \"A flame was kindled in my soul—I found this philosophy alone to be safe and profitable.\"",
+            "stoneKeyWord": "Ephesus Seafront",
+            "stoneKeyMeaning": "Historic turning point in Ephesus Seafront",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "justin-martyr_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Selçuk / Ephesus.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Selçuk / Ephesus, Turkey Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "The sunlit marble avenues of ancient Ephesus recall the exact coastline where Justin discovered that Christianity wasn’t the enemy of philosophy—it was its fulfillment!",
+            "stoneKeyWord": "Philosopher’s Cloak",
+            "stoneKeyMeaning": "Living pilgrimage site in Selçuk / Ephesus",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "justin-martyr_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Justin Martyr",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Even after becoming a Christian, Justin kept wearing his distinctive rough Greek philosopher’s cloak (\"pallium\") so curious passersby in the street would stop and talk with him about truth!",
+            "stoneKeyWord": "Kindled Flame",
+            "stoneKeyMeaning": "Enduring witness of St. Justin Martyr",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Ephesus Seafront?",
+            "correctStoneId": "justin-martyr_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Selçuk / Ephesus?",
+            "correctStoneId": "justin-martyr_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "justin-martyr_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Ephesus Seafront",
+        "globePlacement": {
+          "latDeg": 37.9497,
+          "lngDeg": 27.3639,
+          "regionLabel": "İzmir Province, Turkey",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Old Man by the Sea in Ephesus",
+        "detectiveLeadPrompt": "Trace St. Justin Martyr’s c. 132 ad · aegean coast, ephesus trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "justin-martyr_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (İzmir Province, Turkey)",
+            "clueText": "The legendary ancient marble port city along western Turkey’s sparkling Aegean coast.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "justin-martyr_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Even after becoming a Christian, Justin kept wearing his distinctive rough Greek philosopher’s cloak (\"pallium\") so curious passersby in the street would stop and talk with him about truth!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "justin-martyr_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Old Man by the Sea in Ephesus",
+            "clueText": "Walking alone beside the sea near Ephesus pondering Plato, Justin struck up a conversation with a serene, gentle elderly stranger who pointed him beyond abstract theories to the Hebrew prophets and the living person of Jesus Christ! Instantly, Justin recalled, \"A flame was kindled in my soul—I found this philosophy alone to be safe and profitable.\"",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Describing Sunday Mass & Witness in Rome",
+        "subtitle": "Sweep your lantern across School of Justin Above the Baths of Timothy, Rome to uncover 3 hidden memories",
+        "eraLabel": "c. 155 – June 1, 165 AD · Rome, Italy",
+        "ancientPlaceName": "School of Justin Above the Baths of Timothy, Rome",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/justin-martyr/stop3.webp",
+        "imageCaption": "Warm lamplit second-century Roman upstairs study room where a serene bearded teacher writes a bold open letter to the Roman Emperor beside gathered students.",
+        "whatYouCanSeeToday": "Nearly 1,900 years later, Sunday worship in churches worldwide follows the exact same structure St. Justin Martyr recorded in Rome in 155 AD!",
+        "didYouKnowHighlight": "When Roman Prefect Rusticus threatened Justin and his students with death unless they renounced Christ, Justin answered with unforgettable clarity: \"No right-minded person turns from truth to falsehood!\"",
+        "saintQuote": "You can kill us, but you cannot harm us.",
+        "hiddenArtifacts": [
+          {
+            "id": "justin-martyr_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of School of Justin Above the Baths of Timothy, Rome in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Describing Sunday Mass & Witness in Rome",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Opening a lively upstairs school of Christian philosophy in Rome, Justin wrote his fearless \"First Apology\" directly to Emperor Antoninus Pius—giving historians our oldest detailed eyewitness description of Sunday Mass from 155 AD (Scripture readings, homily, prayers of the faithful, shared bread and wine, and a collection for orphans and prisoners!). Arrested in 165 AD with six students, Justin smiled calmly when asked if he expected heaven: \"I do not suppose it—I know it!\"",
+            "stoneKeyWord": "155 AD Mass Account",
+            "stoneKeyMeaning": "Historic turning point in School of Justin Above the Baths of Timothy, Rome",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "justin-martyr_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Nearly 1,900 years later, Sunday worship in churches worldwide follows the exact same structure St. Justin Martyr recorded in Rome in 155 AD!",
+            "stoneKeyWord": "First Apology",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "justin-martyr_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Justin Martyr",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "When Roman Prefect Rusticus threatened Justin and his students with death unless they renounced Christ, Justin answered with unforgettable clarity: \"No right-minded person turns from truth to falsehood!\"",
+            "stoneKeyWord": "June 1",
+            "stoneKeyMeaning": "Enduring witness of St. Justin Martyr",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in School of Justin Above the Baths of Timothy, Rome?",
+            "correctStoneId": "justin-martyr_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "justin-martyr_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "justin-martyr_s3_a3"
+          }
+        ],
+        "sealName": "Seal of School of Justin Above the Baths of Timothy, Rome",
+        "globePlacement": {
+          "latDeg": 41.8947,
+          "lngDeg": 12.4853,
+          "regionLabel": "Lazio, Italy",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Describing Sunday Mass & Witness in Rome",
+        "detectiveLeadPrompt": "Trace St. Justin Martyr’s c. 155 – june 1, 165 ad · rome, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "justin-martyr_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Lazio, Italy)",
+            "clueText": "The imperial capital where Justin ran Rome’s very first public school of Christian philosophy.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "justin-martyr_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When Roman Prefect Rusticus threatened Justin and his students with death unless they renounced Christ, Justin answered with unforgettable clarity: \"No right-minded person turns from truth to falsehood!\"",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "justin-martyr_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Describing Sunday Mass & Witness in Rome",
+            "clueText": "Opening a lively upstairs school of Christian philosophy in Rome, Justin wrote his fearless \"First Apology\" directly to Emperor Antoninus Pius—giving historians our oldest detailed eyewitness description of Sunday Mass from 155 AD (Scripture readings, homily, prayers of the faithful, shared bread and wine, and a collection for orphans and prisoners!). Arrested in 165 AD with six students, Justin smiled calmly when asked if he expected heaven: \"I do not suppose it—I know it!\"",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "marcellinus-and-peter",
+    "calendarDate": "2027-06-02",
+    "isFeastDay": true,
+    "weekdayIndex": 3,
+    "weekdayName": "Wednesday",
+    "weekdayShort": "Wed",
+    "saintName": "Sts. Marcellinus and Peter",
+    "shortTitle": "Sts. Marcellinus & Peter",
+    "feastDay": "June 2",
+    "eraSpan": "c. 260 – 304 AD · Rome & Seligenstadt, Germany",
+    "trailSubtitle": "3 Stops · Rome Prison Conversions, Via Labicana Catacombs & Seligenstadt Abbey",
+    "overviewButtonLabel": "Rome to Seligenstadt",
+    "globeHeaderSubtitle": "Sacred Trails of Sts. Marcellinus & Peter (Rome, Italy & Seligenstadt, Germany)",
+    "overviewCamera": {
+      "camLat": 45.63,
+      "camLng": 10.76,
+      "camAltitude": 5.4,
+      "lookLat": 45.96,
+      "lookLng": 10.76,
+      "lookRadiusScale": 0.88
+    },
+    "highlightedIsoCountries": [
+      "ITA",
+      "DEU"
+    ],
+    "completionSummary": "You stepped into the early catacombs of Rome with Sts. Marcellinus and Peter—the joyful priest and lay exorcist martyred in 304 AD whose loving courage converted their own Roman jailer and earned them a permanent place spoken aloud in the Roman Canon of the Mass.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Converting Their Own Jailer in Rome",
+        "subtitle": "Sweep your lantern across Carcer of Rome to uncover 3 hidden memories",
+        "eraLabel": "304 AD · Ancient Rome",
+        "ancientPlaceName": "Carcer of Rome",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/marcellinus-and-peter/stop1.webp",
+        "imageCaption": "Soft dawn light pouring through a barred Roman stone dungeon window where two radiant chained friends comfort a grateful weeping Roman jailer and his family.",
+        "whatYouCanSeeToday": "Every time Eucharistic Prayer I (the ancient Roman Canon) is prayed at Mass anywhere on earth, the names of \"Marcellinus and Peter\" still ring aloud alongside the Apostles!",
+        "didYouKnowHighlight": "Pope St. Damasus learned the eyewitness details of Sts. Marcellinus and Peter’s martyrdom directly from their former executioner—who himself repented and became a Christian after witnessing their serene forgiveness!",
+        "saintQuote": "Even in chains, the joy of Christ sets the jailer’s own heart free.",
+        "hiddenArtifacts": [
+          {
+            "id": "marcellinus-and-peter_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Carcer of Rome in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Converting Their Own Jailer in Rome",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "During the brutal persecution of 304 AD, gentle Roman priest Marcellinus and lay church minister Peter were thrown into prison for comforting frightened Christians. Remarkably, their fearless joy and healing compassion toward their Roman jailer Artemius’s sick daughter moved Artemius, his wife, and their entire household to embrace baptism right inside the prison!",
+            "stoneKeyWord": "Roman Canon",
+            "stoneKeyMeaning": "Historic turning point in Carcer of Rome",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "marcellinus-and-peter_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Every time Eucharistic Prayer I (the ancient Roman Canon) is prayed at Mass anywhere on earth, the names of \"Marcellinus and Peter\" still ring aloud alongside the Apostles!",
+            "stoneKeyWord": "Converted Jailer",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "marcellinus-and-peter_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Marcellinus & Peter",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Pope St. Damasus learned the eyewitness details of Sts. Marcellinus and Peter’s martyrdom directly from their former executioner—who himself repented and became a Christian after witnessing their serene forgiveness!",
+            "stoneKeyWord": "Priest & Exorcist",
+            "stoneKeyMeaning": "Enduring witness of Sts. Marcellinus & Peter",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Carcer of Rome?",
+            "correctStoneId": "marcellinus-and-peter_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "marcellinus-and-peter_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "marcellinus-and-peter_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Carcer of Rome",
+        "globePlacement": {
+          "latDeg": 41.8929,
+          "lngDeg": 12.4843,
+          "regionLabel": "Lazio, Italy",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Converting Their Own Jailer in Rome",
+        "detectiveLeadPrompt": "Trace Sts. Marcellinus & Peter’s 304 ad · ancient rome trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "marcellinus-and-peter_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Lazio, Italy)",
+            "clueText": "The ancient imperial heart of Rome during Emperor Diocletian’s final persecution.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "marcellinus-and-peter_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Pope St. Damasus learned the eyewitness details of Sts. Marcellinus and Peter’s martyrdom directly from their former executioner—who himself repented and became a Christian after witnessing their serene forgiveness!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "marcellinus-and-peter_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Converting Their Own Jailer in Rome",
+            "clueText": "During the brutal persecution of 304 AD, gentle Roman priest Marcellinus and lay church minister Peter were thrown into prison for comforting frightened Christians. Remarkably, their fearless joy and healing compassion toward their Roman jailer Artemius’s sick daughter moved Artemius, his wife, and their entire household to embrace baptism right inside the prison!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "The Catacombs & Basilica Along Via Labicana",
+        "subtitle": "Sweep your lantern across Catacombe dei Santi Marcellino e Pietro to uncover 3 hidden memories",
+        "eraLabel": "304 – 325 AD · Via Casilina, Rome",
+        "ancientPlaceName": "Catacombe dei Santi Marcellino e Pietro",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/marcellinus-and-peter/stop2.webp",
+        "imageCaption": "Peaceful ancient Roman underground frescoed stone vault glowing softly by amber oil lamps beside early Christian symbols of peace and doves.",
+        "whatYouCanSeeToday": "The Catacombs of Sts. Marcellinus and Peter along Rome’s Via Casilina preserve stunning third- and fourth-century biblical frescoes of the Good Shepherd and Last Supper.",
+        "didYouKnowHighlight": "St. Helena’s massive crimson porphyry sarcophagus originally stood right next to the tomb of Sts. Marcellinus and Peter before moving to the Vatican Museums!",
+        "saintQuote": "Clear away the thorns with peace, and kneel without fear before the Lord of Life.",
+        "hiddenArtifacts": [
+          {
+            "id": "marcellinus-and-peter_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Catacombe dei Santi Marcellino e Pietro in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Catacombs & Basilica Along Via Labicana",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Led secretly into a thorny forest outside Rome so Christians wouldn’t find their graves, Marcellinus and Peter cheerfully cleared a quiet patch of thorns themselves before kneeling peacefully in prayer on June 2, 304. Soon afterward, Emperor Constantine built a grand basilica right over their catacombs—and his mother St. Helena chose to be buried right beside their shrine!",
+            "stoneKeyWord": "Via Labicana",
+            "stoneKeyMeaning": "Historic turning point in Catacombe dei Santi Marcellino e Pietro",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "marcellinus-and-peter_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "The Catacombs of Sts. Marcellinus and Peter along Rome’s Via Casilina preserve stunning third- and fourth-century biblical frescoes of the Good Shepherd and Last Supper.",
+            "stoneKeyWord": "Catacomb Frescoes",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "marcellinus-and-peter_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Marcellinus & Peter",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Helena’s massive crimson porphyry sarcophagus originally stood right next to the tomb of Sts. Marcellinus and Peter before moving to the Vatican Museums!",
+            "stoneKeyWord": "St. Helena",
+            "stoneKeyMeaning": "Enduring witness of Sts. Marcellinus & Peter",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Catacombe dei Santi Marcellino e Pietro?",
+            "correctStoneId": "marcellinus-and-peter_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "marcellinus-and-peter_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "marcellinus-and-peter_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Catacombe dei Santi Marcellino e Pietro",
+        "globePlacement": {
+          "latDeg": 41.8787,
+          "lngDeg": 12.5484,
+          "regionLabel": "Lazio, Italy",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Catacombs & Basilica Along Via Labicana",
+        "detectiveLeadPrompt": "Trace Sts. Marcellinus & Peter’s 304 – 325 ad · via casilina, rome trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "marcellinus-and-peter_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Lazio, Italy)",
+            "clueText": "Rome’s historic southeastern Via Labicana housing one of the richest frescoed early Christian catacombs.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "marcellinus-and-peter_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Helena’s massive crimson porphyry sarcophagus originally stood right next to the tomb of Sts. Marcellinus and Peter before moving to the Vatican Museums!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "marcellinus-and-peter_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Catacombs & Basilica Along Via Labicana",
+            "clueText": "Led secretly into a thorny forest outside Rome so Christians wouldn’t find their graves, Marcellinus and Peter cheerfully cleared a quiet patch of thorns themselves before kneeling peacefully in prayer on June 2, 304. Soon afterward, Emperor Constantine built a grand basilica right over their catacombs—and his mother St. Helena chose to be buried right beside their shrine!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Charlemagne’s Biographer & Seligenstadt Abbey",
+        "subtitle": "Sweep your lantern across Einhardsbasilika, Seligenstadt to uncover 3 hidden memories",
+        "eraLabel": "828 AD – Present · River Main, Germany",
+        "ancientPlaceName": "Einhardsbasilika, Seligenstadt",
+        "modernPlaceName": "Seligenstadt",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/marcellinus-and-peter/stop3.webp",
+        "imageCaption": "Graceful half-timbered German river town beside a serene red-sandstone Carolingian abbey basilica and blooming herb gardens.",
+        "whatYouCanSeeToday": "Seligenstadt’s stunning Carolingian Basilica of Sts. Marcellinus and Peter and its lush medicinal abbey gardens still welcome travelers near Frankfurt.",
+        "didYouKnowHighlight": "Einhard wrote a vivid bestseller in 830 AD chronicling every adventure of carrying Sts. Marcellinus and Peter’s relics across the Alps—one of the most colorful medieval travelogues ever written!",
+        "saintQuote": "Across centuries and Alps, the peace of two humble friends still blesses every city that welcomes them.",
+        "hiddenArtifacts": [
+          {
+            "id": "marcellinus-and-peter_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Einhardsbasilika, Seligenstadt in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Charlemagne’s Biographer & Seligenstadt Abbey",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "In 828 AD, Einhard—Charlemagne’s celebrated scholar and royal biographer—brought the cherished relics of Sts. Marcellinus and Peter across the Alps to his peaceful riverside abbey along the Main River in Germany. So beloved did their shrine become that the town changed its name to \"Seligenstadt\"—literally \"City of the Blessed Saints\"!",
+            "stoneKeyWord": "Seligenstadt",
+            "stoneKeyMeaning": "Historic turning point in Einhardsbasilika, Seligenstadt",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "marcellinus-and-peter_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Seligenstadt.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Seligenstadt, Germany Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Seligenstadt’s stunning Carolingian Basilica of Sts. Marcellinus and Peter and its lush medicinal abbey gardens still welcome travelers near Frankfurt.",
+            "stoneKeyWord": "June 2",
+            "stoneKeyMeaning": "Living pilgrimage site in Seligenstadt",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "marcellinus-and-peter_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Marcellinus & Peter",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Einhard wrote a vivid bestseller in 830 AD chronicling every adventure of carrying Sts. Marcellinus and Peter’s relics across the Alps—one of the most colorful medieval travelogues ever written!",
+            "stoneKeyWord": "City of the Blessed",
+            "stoneKeyMeaning": "Enduring witness of Sts. Marcellinus & Peter",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Einhardsbasilika, Seligenstadt?",
+            "correctStoneId": "marcellinus-and-peter_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Seligenstadt?",
+            "correctStoneId": "marcellinus-and-peter_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "marcellinus-and-peter_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Einhardsbasilika, Seligenstadt",
+        "globePlacement": {
+          "latDeg": 50.0436,
+          "lngDeg": 8.9756,
+          "regionLabel": "Hesse, Germany",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Charlemagne’s Biographer & Seligenstadt Abbey",
+        "detectiveLeadPrompt": "Trace Sts. Marcellinus & Peter’s 828 ad – present · river main, germany trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "marcellinus-and-peter_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Hesse, Germany)",
+            "clueText": "A picturesque half-timbered Hessian river town on the Main named literally \"City of the Blessed.\"",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "marcellinus-and-peter_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Einhard wrote a vivid bestseller in 830 AD chronicling every adventure of carrying Sts. Marcellinus and Peter’s relics across the Alps—one of the most colorful medieval travelogues ever written!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "marcellinus-and-peter_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Charlemagne’s Biographer & Seligenstadt Abbey",
+            "clueText": "In 828 AD, Einhard—Charlemagne’s celebrated scholar and royal biographer—brought the cherished relics of Sts. Marcellinus and Peter across the Alps to his peaceful riverside abbey along the Main River in Germany. So beloved did their shrine become that the town changed its name to \"Seligenstadt\"—literally \"City of the Blessed Saints\"!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "charles-lwanga",
+    "calendarDate": "2027-06-03",
+    "isFeastDay": true,
+    "weekdayIndex": 4,
+    "weekdayName": "Thursday",
+    "weekdayShort": "Thu",
+    "saintName": "St. Charles Lwanga & Ugandan Martyrs",
+    "shortTitle": "St. Charles Lwanga",
+    "feastDay": "June 3",
+    "eraSpan": "c. 1860 – 1886 · Kingdom of Buganda (Uganda)",
+    "trailSubtitle": "3 Stops · Munyonyo Royal Court, Lake Victoria Walk & Namugongo Martyrs Shrine",
+    "overviewButtonLabel": "Lake Victoria, Uganda",
+    "globeHeaderSubtitle": "Sacred Trails of St. Charles Lwanga (Munyonyo, Kampala & Namugongo, Uganda)",
+    "overviewCamera": {
+      "camLat": 0.3,
+      "camLng": 32.62,
+      "camAltitude": 4.6,
+      "lookLat": 0.31,
+      "lookLng": 32.62,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "UGA"
+    ],
+    "completionSummary": "You walked the red-earth hills of Uganda with St. Charles Lwanga and the twenty-two Ugandan Martyrs—fearless young royal pages who protected vulnerable boys from royal abuse, baptized their youngest friends at midnight, and walked singing toward Namugongo.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Protecting the Young Pages at Munyonyo",
+        "subtitle": "Sweep your lantern across Munyonyo Palace of Buganda to uncover 3 hidden memories",
+        "eraLabel": "1885 – May 1886 · Shores of Lake Victoria",
+        "ancientPlaceName": "Munyonyo Palace of Buganda",
+        "modernPlaceName": "Munyonyo, Kampala",
+        "modernCountry": "Uganda",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/charles-lwanga/stop1.webp",
+        "imageCaption": "Lush emerald banana groves overlooking sparkling turquoise waters of Lake Victoria at golden dawn beside a tranquil lakeside sanctuary.",
+        "whatYouCanSeeToday": "The radiant lakeside Munyonyo Martyrs Shrine marks the exact spot where Charles Lwanga baptized Kizito and chose courage over compromise.",
+        "didYouKnowHighlight": "Both Catholic (22) and Anglican (23) young Ugandan Christians walked side by side in friendship to martyrdom in 1886—forging an unbreakable ecumenical bond across East Africa!",
+        "saintQuote": "Stay close to me, Kizito—we will walk together and hold hands right into heaven.",
+        "hiddenArtifacts": [
+          {
+            "id": "charles-lwanga_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Munyonyo Palace of Buganda in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Protecting the Young Pages at Munyonyo",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Chief steward of the young royal pages at King Mwanga II’s court in Buganda, athletic, charismatic twenty-five-year-old Charles Lwanga became a fierce older brother protecting teenage boys—including thirteen-year-old Kizito—from the cruel king’s predatory demands. When King Mwanga ordered every Christian page to step forward or renounce Christ on May 25, 1886, Charles led fifteen boys forward immediately—and secretly baptized young Kizito and three catechumens that very night!",
+            "stoneKeyWord": "Munyonyo",
+            "stoneKeyMeaning": "Historic turning point in Munyonyo Palace of Buganda",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "charles-lwanga_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Munyonyo, Kampala.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Munyonyo, Kampala, Uganda Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "The radiant lakeside Munyonyo Martyrs Shrine marks the exact spot where Charles Lwanga baptized Kizito and chose courage over compromise.",
+            "stoneKeyWord": "Young Kizito",
+            "stoneKeyMeaning": "Living pilgrimage site in Munyonyo, Kampala",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "charles-lwanga_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Charles Lwanga",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Both Catholic (22) and Anglican (23) young Ugandan Christians walked side by side in friendship to martyrdom in 1886—forging an unbreakable ecumenical bond across East Africa!",
+            "stoneKeyWord": "Patron of African Youth",
+            "stoneKeyMeaning": "Enduring witness of St. Charles Lwanga",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Munyonyo Palace of Buganda?",
+            "correctStoneId": "charles-lwanga_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Munyonyo, Kampala?",
+            "correctStoneId": "charles-lwanga_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "charles-lwanga_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Munyonyo Palace of Buganda",
+        "globePlacement": {
+          "latDeg": 0.2371,
+          "lngDeg": 32.6177,
+          "regionLabel": "Central Region, Uganda",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Protecting the Young Pages at Munyonyo",
+        "detectiveLeadPrompt": "Trace St. Charles Lwanga’s 1885 – may 1886 · shores of lake victoria trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "charles-lwanga_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Central Region, Uganda)",
+            "clueText": "A verdant lakeside hill on the northern shore of Lake Victoria just south of central Kampala.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "charles-lwanga_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Both Catholic (22) and Anglican (23) young Ugandan Christians walked side by side in friendship to martyrdom in 1886—forging an unbreakable ecumenical bond across East Africa!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "charles-lwanga_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Protecting the Young Pages at Munyonyo",
+            "clueText": "Chief steward of the young royal pages at King Mwanga II’s court in Buganda, athletic, charismatic twenty-five-year-old Charles Lwanga became a fierce older brother protecting teenage boys—including thirteen-year-old Kizito—from the cruel king’s predatory demands. When King Mwanga ordered every Christian page to step forward or renounce Christ on May 25, 1886, Charles led fifteen boys forward immediately—and secretly baptized young Kizito and three catechumens that very night!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "The Singing March Across Kampala’s Hills",
+        "subtitle": "Sweep your lantern across Road to Namugongo to uncover 3 hidden memories",
+        "eraLabel": "May 26 – June 2, 1886 · Rubaga to Mengo & Kampala",
+        "ancientPlaceName": "Road to Namugongo",
+        "modernPlaceName": "Kampala",
+        "modernCountry": "Uganda",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/charles-lwanga/stop2.webp",
+        "imageCaption": "Warm golden equatorial afternoon illuminating red-earth Ugandan footpaths lined with lush tropical palms as joyful young believers walk in serene solidarity.",
+        "whatYouCanSeeToday": "Every June, millions of pilgrims walk on foot for days—some trekking hundreds of miles from Kenya, Rwanda, Tanzania, and Congo—retracing the joyful footsteps of Charles Lwanga and his friends!",
+        "didYouKnowHighlight": "St. Charles Lwanga’s fearless example sparked one of the fastest, most vibrant flowerings of Christianity in modern African history—growing Uganda’s tiny 1886 community into tens of millions today!",
+        "saintQuote": "A well that has many sources never runs dry—when we are gone, many more will rise after us!",
+        "hiddenArtifacts": [
+          {
+            "id": "charles-lwanga_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Road to Namugongo in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Singing March Across Kampala’s Hills",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Bound together by ropes along the grueling thirty-mile march through Kampala toward Namugongo, the young pages stunned onlookers by singing joyful hymns and forgiving their guards along the road! Thirteen-year-old St. Kizito—the youngest martyr—walked smiling calmly, saying later he felt like he was going to a wedding feast.",
+            "stoneKeyWord": "Kampala Hills",
+            "stoneKeyMeaning": "Historic turning point in Road to Namugongo",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "charles-lwanga_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Kampala.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Kampala, Uganda Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Every June, millions of pilgrims walk on foot for days—some trekking hundreds of miles from Kenya, Rwanda, Tanzania, and Congo—retracing the joyful footsteps of Charles Lwanga and his friends!",
+            "stoneKeyWord": "Joyful March",
+            "stoneKeyMeaning": "Living pilgrimage site in Kampala",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "charles-lwanga_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Charles Lwanga",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Charles Lwanga’s fearless example sparked one of the fastest, most vibrant flowerings of Christianity in modern African history—growing Uganda’s tiny 1886 community into tens of millions today!",
+            "stoneKeyWord": "East Africa",
+            "stoneKeyMeaning": "Enduring witness of St. Charles Lwanga",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Road to Namugongo?",
+            "correctStoneId": "charles-lwanga_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Kampala?",
+            "correctStoneId": "charles-lwanga_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "charles-lwanga_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Road to Namugongo",
+        "globePlacement": {
+          "latDeg": 0.3136,
+          "lngDeg": 32.5811,
+          "regionLabel": "Central Region, Uganda",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Singing March Across Kampala’s Hills",
+        "detectiveLeadPrompt": "Trace St. Charles Lwanga’s may 26 – june 2, 1886 · rubaga to mengo & kampala trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "charles-lwanga_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Central Region, Uganda)",
+            "clueText": "Uganda’s vibrant seven-hilled capital overlooking the sweeping northern expanse of Lake Victoria.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "charles-lwanga_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Charles Lwanga’s fearless example sparked one of the fastest, most vibrant flowerings of Christianity in modern African history—growing Uganda’s tiny 1886 community into tens of millions today!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "charles-lwanga_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Singing March Across Kampala’s Hills",
+            "clueText": "Bound together by ropes along the grueling thirty-mile march through Kampala toward Namugongo, the young pages stunned onlookers by singing joyful hymns and forgiving their guards along the road! Thirteen-year-old St. Kizito—the youngest martyr—walked smiling calmly, saying later he felt like he was going to a wedding feast.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "The Pavilion Shrine at Namugongo",
+        "subtitle": "Sweep your lantern across Namugongo to uncover 3 hidden memories",
+        "eraLabel": "June 3, 1886 – Present · Namugongo, Uganda",
+        "ancientPlaceName": "Namugongo",
+        "modernPlaceName": "Namugongo, Wakiso",
+        "modernCountry": "Uganda",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/charles-lwanga/stop3.webp",
+        "imageCaption": "Distinctive cone-shaped modern East African basilica supported by twenty-two gleaming copper pillars reflected in a peaceful lakeside amphitheater at golden sunrise.",
+        "whatYouCanSeeToday": "Built in the graceful shape of a traditional Buganda royal hut supported by 22 tall pillars, the Basilica of the Uganda Martyrs at Namugongo draws over TWO MILLION joyful pilgrims every June 3—a national public holiday in Uganda!",
+        "didYouKnowHighlight": "Pope St. Paul VI canonized St. Charles Lwanga and his companions in 1964 and flew personally to Namugongo in 1969—the first papal visit to sub-Saharan Africa in history!",
+        "saintQuote": "You are burning me, yet it feels like cool water—may God give you grace to know Him too.",
+        "hiddenArtifacts": [
+          {
+            "id": "charles-lwanga_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Namugongo in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Pavilion Shrine at Namugongo",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "On Ascension Day, June 3, 1886, Charles Lwanga was burned slowly first in an attempt to terrify the younger boys—yet his astonishing calm moved even his executioner, whispering peacefully: \"It is as if you are pouring cool water over me; may God open your heart!\" None of his young companions wavered.",
+            "stoneKeyWord": "Namugongo Basilica",
+            "stoneKeyMeaning": "Historic turning point in Namugongo",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "charles-lwanga_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Namugongo, Wakiso.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Namugongo, Wakiso, Uganda Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Built in the graceful shape of a traditional Buganda royal hut supported by 22 tall pillars, the Basilica of the Uganda Martyrs at Namugongo draws over TWO MILLION joyful pilgrims every June 3—a national public holiday in Uganda!",
+            "stoneKeyWord": "June 3",
+            "stoneKeyMeaning": "Living pilgrimage site in Namugongo, Wakiso",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "charles-lwanga_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Charles Lwanga",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Pope St. Paul VI canonized St. Charles Lwanga and his companions in 1964 and flew personally to Namugongo in 1969—the first papal visit to sub-Saharan Africa in history!",
+            "stoneKeyWord": "22 Copper Pillars",
+            "stoneKeyMeaning": "Enduring witness of St. Charles Lwanga",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Namugongo?",
+            "correctStoneId": "charles-lwanga_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Namugongo, Wakiso?",
+            "correctStoneId": "charles-lwanga_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "charles-lwanga_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Namugongo",
+        "globePlacement": {
+          "latDeg": 0.3869,
+          "lngDeg": 32.6517,
+          "regionLabel": "Central Region, Uganda",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Pavilion Shrine at Namugongo",
+        "detectiveLeadPrompt": "Trace St. Charles Lwanga’s june 3, 1886 – present · namugongo, uganda trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "charles-lwanga_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Central Region, Uganda)",
+            "clueText": "Africa’s largest annual pilgrimage sanctuary rising in a green valley northeast of Kampala.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "charles-lwanga_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Pope St. Paul VI canonized St. Charles Lwanga and his companions in 1964 and flew personally to Namugongo in 1969—the first papal visit to sub-Saharan Africa in history!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "charles-lwanga_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Pavilion Shrine at Namugongo",
+            "clueText": "On Ascension Day, June 3, 1886, Charles Lwanga was burned slowly first in an attempt to terrify the younger boys—yet his astonishing calm moved even his executioner, whispering peacefully: \"It is as if you are pouring cool water over me; may God open your heart!\" None of his young companions wavered.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "francis-caracciolo",
+    "calendarDate": "2027-06-04",
+    "isFeastDay": true,
+    "weekdayIndex": 5,
+    "weekdayName": "Friday",
+    "weekdayShort": "Fri",
+    "saintName": "St. Francis Caracciolo",
+    "shortTitle": "St. Francis Caracciolo",
+    "feastDay": "June 4",
+    "eraSpan": "1563 – 1608 · Abruzzo, Naples & Spain",
+    "trailSubtitle": "3 Stops · Villa Santa Maria Abruzzo, Naples Hospital & Agnone, Molise",
+    "overviewButtonLabel": "Abruzzo to Naples",
+    "globeHeaderSubtitle": "Sacred Trails of St. Francis Caracciolo (Villa Santa Maria, Naples & Agnone, Italy)",
+    "overviewCamera": {
+      "camLat": 41.36,
+      "camLng": 14.32,
+      "camAltitude": 4.6,
+      "lookLat": 41.4,
+      "lookLng": 14.32,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "ITA"
+    ],
+    "completionSummary": "You walked the sunlit mountain towns of Abruzzo and bustling Naples with St. Francis Caracciolo—Patron Saint of Italian Chefs and Cooks—who traded a prince’s fortune after surviving a devastating skin disease to found the Adorno Fathers and serve prisoners and the sick.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Noble Youth of Villa Santa Maria",
+        "subtitle": "Sweep your lantern across Villa Santa Maria to uncover 3 hidden memories",
+        "eraLabel": "1563 – 1585 · Abruzzo, Italy",
+        "ancientPlaceName": "Villa Santa Maria",
+        "modernPlaceName": "Villa Santa Maria",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/francis-caracciolo/stop1.webp",
+        "imageCaption": "Sun-washed stone mountain village perched dramatically beneath towering limestone crags overlooking a lush green Abruzzo valley.",
+        "whatYouCanSeeToday": "Villa Santa Maria—celebrated for centuries for producing Europe’s finest culinary masters—honors its beloved hometown saint every year as the official Patron Saint of Italian Chefs!",
+        "didYouKnowHighlight": "Why is St. Francis Caracciolo the Patron Saint of Italian Cooks? Both because his hometown of Villa Santa Maria is Italy’s legendary cradle of chefs AND because Francis humbly insisted on scrubbing pots and cooking meals in his own monastery kitchen even while Superior General!",
+        "saintQuote": "Serve at the kitchen hearth with the exact same reverence you bring to the altar.",
+        "hiddenArtifacts": [
+          {
+            "id": "francis-caracciolo_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Villa Santa Maria in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Noble Youth of Villa Santa Maria",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born Prince Ascanio Caracciolo in Villa Santa Maria, young Ascanio loved hunting and outdoor life—until at age twenty-two a terrifying, disfiguring leprosy-like illness brought him to the brink of death. Vowing to give his whole life to God and the poor if spared, he recovered completely, gave away his entire noble estate, and moved to Naples to become a priest!",
+            "stoneKeyWord": "Villa Santa Maria",
+            "stoneKeyMeaning": "Historic turning point in Villa Santa Maria",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "francis-caracciolo_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Villa Santa Maria.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Villa Santa Maria, Italy Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Villa Santa Maria—celebrated for centuries for producing Europe’s finest culinary masters—honors its beloved hometown saint every year as the official Patron Saint of Italian Chefs!",
+            "stoneKeyWord": "Patron of Italian Chefs",
+            "stoneKeyMeaning": "Living pilgrimage site in Villa Santa Maria",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "francis-caracciolo_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Francis Caracciolo",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Why is St. Francis Caracciolo the Patron Saint of Italian Cooks? Both because his hometown of Villa Santa Maria is Italy’s legendary cradle of chefs AND because Francis humbly insisted on scrubbing pots and cooking meals in his own monastery kitchen even while Superior General!",
+            "stoneKeyWord": "Abruzzo",
+            "stoneKeyMeaning": "Enduring witness of St. Francis Caracciolo",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Villa Santa Maria?",
+            "correctStoneId": "francis-caracciolo_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Villa Santa Maria?",
+            "correctStoneId": "francis-caracciolo_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "francis-caracciolo_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Villa Santa Maria",
+        "globePlacement": {
+          "latDeg": 41.9497,
+          "lngDeg": 14.3497,
+          "regionLabel": "Abruzzo, Italy",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Noble Youth of Villa Santa Maria",
+        "detectiveLeadPrompt": "Trace St. Francis Caracciolo’s 1563 – 1585 · abruzzo, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "francis-caracciolo_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Abruzzo, Italy)",
+            "clueText": "A scenic Abruzzo cliffside village famous across Italy as the \"Hometown of Master Chefs.\"",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "francis-caracciolo_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Why is St. Francis Caracciolo the Patron Saint of Italian Cooks? Both because his hometown of Villa Santa Maria is Italy’s legendary cradle of chefs AND because Francis humbly insisted on scrubbing pots and cooking meals in his own monastery kitchen even while Superior General!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "francis-caracciolo_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Noble Youth of Villa Santa Maria",
+            "clueText": "Born Prince Ascanio Caracciolo in Villa Santa Maria, young Ascanio loved hunting and outdoor life—until at age twenty-two a terrifying, disfiguring leprosy-like illness brought him to the brink of death. Vowing to give his whole life to God and the poor if spared, he recovered completely, gave away his entire noble estate, and moved to Naples to become a priest!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Founding the Adorno Fathers & Serving Naples’ Poor",
+        "subtitle": "Sweep your lantern across Santa Maria Maggiore, Naples to uncover 3 hidden memories",
+        "eraLabel": "1588 – 1607 · Naples, Italy",
+        "ancientPlaceName": "Santa Maria Maggiore, Naples",
+        "modernPlaceName": "Naples",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/francis-caracciolo/stop2.webp",
+        "imageCaption": "Warm golden Mediterranean courtyard inside historic Naples where a smiling gentle priest brings hot food to grateful prisoners and hospital patients.",
+        "whatYouCanSeeToday": "St. Francis Caracciolo’s relics rest peacefully inside Naples’ historic Basilica of Santa Maria Maggiore alla Pietrasanta.",
+        "didYouKnowHighlight": "When Francis’s order needed a new house in Madrid, he walked barefoot across Spain begging bread for the poor—and calmly refused when kings and popes tried to make him a bishop!",
+        "saintQuote": "The zeal of Your house consumes me—let me stay always among the least.",
+        "hiddenArtifacts": [
+          {
+            "id": "francis-caracciolo_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Santa Maria Maggiore, Naples in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Founding the Adorno Fathers & Serving Naples’ Poor",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Through an amusing twist of fate, a secret letter inviting a DIFFERENT Francis Caracciolo to help launch a new religious order was accidentally delivered to our Francis in Naples! Reading it as God’s humorous nudge, he teamed up with Giovanni Agostino Adorno to co-found the Clerics Regular Minor (Adorno Fathers)—adding a unique fourth vow NEVER to accept high Church titles or bishoprics, and keeping perpetual prayer before the Eucharist while nursing Naples’ poorest hospital patients!",
+            "stoneKeyWord": "Adorno Fathers",
+            "stoneKeyMeaning": "Historic turning point in Santa Maria Maggiore, Naples",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "francis-caracciolo_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Naples.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Naples, Italy Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Francis Caracciolo’s relics rest peacefully inside Naples’ historic Basilica of Santa Maria Maggiore alla Pietrasanta.",
+            "stoneKeyWord": "Wrong-Address Letter",
+            "stoneKeyMeaning": "Living pilgrimage site in Naples",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "francis-caracciolo_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Francis Caracciolo",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "When Francis’s order needed a new house in Madrid, he walked barefoot across Spain begging bread for the poor—and calmly refused when kings and popes tried to make him a bishop!",
+            "stoneKeyWord": "Naples",
+            "stoneKeyMeaning": "Enduring witness of St. Francis Caracciolo",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Santa Maria Maggiore, Naples?",
+            "correctStoneId": "francis-caracciolo_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Naples?",
+            "correctStoneId": "francis-caracciolo_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "francis-caracciolo_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Santa Maria Maggiore, Naples",
+        "globePlacement": {
+          "latDeg": 40.8508,
+          "lngDeg": 14.2539,
+          "regionLabel": "Campania, Italy",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Founding the Adorno Fathers & Serving Naples’ Poor",
+        "detectiveLeadPrompt": "Trace St. Francis Caracciolo’s 1588 – 1607 · naples, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "francis-caracciolo_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Campania, Italy)",
+            "clueText": "Southern Italy’s exuberant historic coastal metropolis along the Bay of Naples.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "francis-caracciolo_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When Francis’s order needed a new house in Madrid, he walked barefoot across Spain begging bread for the poor—and calmly refused when kings and popes tried to make him a bishop!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "francis-caracciolo_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Founding the Adorno Fathers & Serving Naples’ Poor",
+            "clueText": "Through an amusing twist of fate, a secret letter inviting a DIFFERENT Francis Caracciolo to help launch a new religious order was accidentally delivered to our Francis in Naples! Reading it as God’s humorous nudge, he teamed up with Giovanni Agostino Adorno to co-found the Clerics Regular Minor (Adorno Fathers)—adding a unique fourth vow NEVER to accept high Church titles or bishoprics, and keeping perpetual prayer before the Eucharist while nursing Naples’ poorest hospital patients!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Peaceful Sunset in the Bell-Makers’ Town of Agnone",
+        "subtitle": "Sweep your lantern across Agnone to uncover 3 hidden memories",
+        "eraLabel": "June 4, 1608 · Agnone, Molise",
+        "ancientPlaceName": "Agnone",
+        "modernPlaceName": "Agnone",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/francis-caracciolo/stop3.webp",
+        "imageCaption": "Golden hillside southern Italian stone town glowing in evening light as ancient bronze church bells chime across misty Apennine valleys.",
+        "whatYouCanSeeToday": "Agnone’s famous thousand-year-old Marinelli Bell Foundry still casts sacred bells for cathedrals worldwide right beside the town where St. Francis Caracciolo went home.",
+        "didYouKnowHighlight": "Francis’s joyful motto—\"Let us go to heaven!\"—echoes across Abruzzo, Naples, and Italian kitchens worldwide every June 4!",
+        "saintQuote": "Let us go, let us go to heaven!",
+        "hiddenArtifacts": [
+          {
+            "id": "francis-caracciolo_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Agnone in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Peaceful Sunset in the Bell-Makers’ Town of Agnone",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Invited to establish a quiet house of prayer in the mountain town of Agnone just across the valley from his birthplace, forty-four-year-old Francis fell ill with a high fever on the eve of Corpus Christi. Rising joyfully at dusk on June 4, 1608, he whispered, \"Let us go, let us go to heaven!\" and passed away in complete serenity.",
+            "stoneKeyWord": "Agnone",
+            "stoneKeyMeaning": "Historic turning point in Agnone",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "francis-caracciolo_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Agnone.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Agnone, Italy Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Agnone’s famous thousand-year-old Marinelli Bell Foundry still casts sacred bells for cathedrals worldwide right beside the town where St. Francis Caracciolo went home.",
+            "stoneKeyWord": "June 4",
+            "stoneKeyMeaning": "Living pilgrimage site in Agnone",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "francis-caracciolo_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Francis Caracciolo",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Francis’s joyful motto—\"Let us go to heaven!\"—echoes across Abruzzo, Naples, and Italian kitchens worldwide every June 4!",
+            "stoneKeyWord": "Bell-Makers’ Town",
+            "stoneKeyMeaning": "Enduring witness of St. Francis Caracciolo",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Agnone?",
+            "correctStoneId": "francis-caracciolo_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Agnone?",
+            "correctStoneId": "francis-caracciolo_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "francis-caracciolo_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Agnone",
+        "globePlacement": {
+          "latDeg": 41.8094,
+          "lngDeg": 14.3778,
+          "regionLabel": "Molise, Italy",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Peaceful Sunset in the Bell-Makers’ Town of Agnone",
+        "detectiveLeadPrompt": "Trace St. Francis Caracciolo’s june 4, 1608 · agnone, molise trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "francis-caracciolo_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Molise, Italy)",
+            "clueText": "A historic Apennine hilltop town in Molise renowned for a thousand-year-old papal bronze bell foundry.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "francis-caracciolo_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Francis’s joyful motto—\"Let us go to heaven!\"—echoes across Abruzzo, Naples, and Italian kitchens worldwide every June 4!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "francis-caracciolo_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Peaceful Sunset in the Bell-Makers’ Town of Agnone",
+            "clueText": "Invited to establish a quiet house of prayer in the mountain town of Agnone just across the valley from his birthplace, forty-four-year-old Francis fell ill with a high fever on the eve of Corpus Christi. Rising joyfully at dusk on June 4, 1608, he whispered, \"Let us go, let us go to heaven!\" and passed away in complete serenity.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "boniface-of-mainz",
+    "calendarDate": "2027-06-05",
+    "isFeastDay": true,
+    "weekdayIndex": 6,
+    "weekdayName": "Saturday",
+    "weekdayShort": "Sat",
+    "saintName": "St. Boniface of Mainz",
+    "shortTitle": "St. Boniface of Mainz",
+    "feastDay": "June 5",
+    "eraSpan": "c. 675 – 754 AD · Devon England, Hesse Germany & Frisia",
+    "trailSubtitle": "4 Stops · Crediton Devon, Geismar Oak Hesse, Fulda Abbey & Dokkum Netherlands",
+    "overviewButtonLabel": "England to Germany & Frisia",
+    "globeHeaderSubtitle": "Sacred Trails of St. Boniface of Mainz (Crediton, Geismar, Fulda & Dokkum)",
+    "overviewCamera": {
+      "camLat": 51.41,
+      "camLng": 3.01,
+      "camAltitude": 5.4,
+      "lookLat": 51.94,
+      "lookLng": 3.01,
+      "lookRadiusScale": 0.88
+    },
+    "highlightedIsoCountries": [
+      "GBR",
+      "DEU",
+      "NLD"
+    ],
+    "completionSummary": "You crossed the North Sea into the ancient German forests with St. Boniface—\"the Apostle of Germany\"—the English Benedictine scholar from Devon who chopped down Thor’s sacred oak at Geismar, inspired the legend of the Christmas Tree, and founded Fulda Abbey.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Devon Scholar Turned Missionary at Crediton",
+        "subtitle": "Sweep your lantern across Cridiantun (Crediton) to uncover 3 hidden memories",
+        "eraLabel": "c. 675 – 716 AD · Devon, England",
+        "ancientPlaceName": "Cridiantun (Crediton)",
+        "modernPlaceName": "Crediton, Devon",
+        "modernCountry": "United Kingdom",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/boniface-of-mainz/stop1.webp",
+        "imageCaption": "Rolling emerald hills and red-sandstone parish church in southwestern England bathed in gentle golden morning mist.",
+        "whatYouCanSeeToday": "Crediton’s magnificent red-sandstone Holy Cross Church and St. Boniface statue proudly celebrate Devon’s most famous son.",
+        "didYouKnowHighlight": "Pope St. Gregory II renamed Winfrid \"Boniface\" (\"Doer of Good\") in Rome in 719 AD before commissioning him to evangelize Germany!",
+        "saintQuote": "Stand firm in the spirit of courage, like faithful watchdogs who never stay silent.",
+        "hiddenArtifacts": [
+          {
+            "id": "boniface-of-mainz_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Cridiantun (Crediton) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Devon Scholar Turned Missionary at Crediton",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born Winfrid in Crediton, Devon around 675 AD, bright young Winfrid grew into England’s most famous Benedictine teacher and author of the first Latin grammar written in England! Yet at age forty—when most scholars settle into comfortable libraries—he felt an unstoppable call to sail across the sea and share Christ with his distant Germanic cousins.",
+            "stoneKeyWord": "Crediton Devon",
+            "stoneKeyMeaning": "Historic turning point in Cridiantun (Crediton)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "boniface-of-mainz_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Crediton, Devon.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Crediton, Devon, United Kingdom Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Crediton’s magnificent red-sandstone Holy Cross Church and St. Boniface statue proudly celebrate Devon’s most famous son.",
+            "stoneKeyWord": "Winfrid",
+            "stoneKeyMeaning": "Living pilgrimage site in Crediton, Devon",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "boniface-of-mainz_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Boniface of Mainz",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Pope St. Gregory II renamed Winfrid \"Boniface\" (\"Doer of Good\") in Rome in 719 AD before commissioning him to evangelize Germany!",
+            "stoneKeyWord": "Apostle of Germany",
+            "stoneKeyMeaning": "Enduring witness of St. Boniface of Mainz",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Cridiantun (Crediton)?",
+            "correctStoneId": "boniface-of-mainz_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Crediton, Devon?",
+            "correctStoneId": "boniface-of-mainz_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "boniface-of-mainz_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Cridiantun (Crediton)",
+        "globePlacement": {
+          "latDeg": 50.79,
+          "lngDeg": -3.6531,
+          "regionLabel": "Devon, England",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Devon Scholar Turned Missionary at Crediton",
+        "detectiveLeadPrompt": "Trace St. Boniface of Mainz’s c. 675 – 716 ad · devon, england trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "boniface-of-mainz_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Devon, England)",
+            "clueText": "A charming red-earth market town nestled in the green rolling valleys of Devon, southwestern England.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "boniface-of-mainz_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Pope St. Gregory II renamed Winfrid \"Boniface\" (\"Doer of Good\") in Rome in 719 AD before commissioning him to evangelize Germany!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "boniface-of-mainz_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Devon Scholar Turned Missionary at Crediton",
+            "clueText": "Born Winfrid in Crediton, Devon around 675 AD, bright young Winfrid grew into England’s most famous Benedictine teacher and author of the first Latin grammar written in England! Yet at age forty—when most scholars settle into comfortable libraries—he felt an unstoppable call to sail across the sea and share Christ with his distant Germanic cousins.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Thor’s Oak & the Evergreen Tree at Geismar",
+        "subtitle": "Sweep your lantern across Donar’s Oak, Geismar to uncover 3 hidden memories",
+        "eraLabel": "723 AD · Hesse, Germany",
+        "ancientPlaceName": "Donar’s Oak, Geismar",
+        "modernPlaceName": "Fritzlar / Geismar",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/boniface-of-mainz/stop2.webp",
+        "imageCaption": "Sunlit ancient German oak forest clearing where a fearless monk stands calmly beside a fallen giant oak and a slender vibrant green evergreen fir sapling.",
+        "whatYouCanSeeToday": "St. Peter’s Cathedral in Fritzlar stands proudly in the historic valley where Boniface turned fear of thunder gods into joyful Christian peace.",
+        "didYouKnowHighlight": "Next time you decorate a Christmas Tree in December, remember St. Boniface at Geismar—whose evergreen fir tree pointing toward heaven became one of the world’s favorite holiday symbols!",
+        "saintQuote": "Here stands a small living evergreen pointing straight to heaven—let this be your tree of peace!",
+        "hiddenArtifacts": [
+          {
+            "id": "boniface-of-mainz_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Donar’s Oak, Geismar in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Thor’s Oak & the Evergreen Tree at Geismar",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Finding villagers terrified of the giant sacred Oak of Thor (\"Donar’s Oak\") at Geismar—believing anyone who touched it would be struck dead by lightning—Boniface calmly picked up an axe and took a few swings! Suddenly a mighty rushing gust of wind toppled the massive hollow oak into four neat pieces without hurting a soul. Using the fallen oak’s timber, Boniface built a warm chapel to St. Peter—and beloved legend tells he pointed to a tiny green fir sapling growing undisturbed among its roots as a living symbol of Christ’s evergreen love, inspiring the **Christmas Tree**!",
+            "stoneKeyWord": "Thor’s Oak",
+            "stoneKeyMeaning": "Historic turning point in Donar’s Oak, Geismar",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "boniface-of-mainz_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Fritzlar / Geismar.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Fritzlar / Geismar, Germany Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Peter’s Cathedral in Fritzlar stands proudly in the historic valley where Boniface turned fear of thunder gods into joyful Christian peace.",
+            "stoneKeyWord": "Christmas Tree Legend",
+            "stoneKeyMeaning": "Living pilgrimage site in Fritzlar / Geismar",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "boniface-of-mainz_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Boniface of Mainz",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Next time you decorate a Christmas Tree in December, remember St. Boniface at Geismar—whose evergreen fir tree pointing toward heaven became one of the world’s favorite holiday symbols!",
+            "stoneKeyWord": "Geismar",
+            "stoneKeyMeaning": "Enduring witness of St. Boniface of Mainz",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Donar’s Oak, Geismar?",
+            "correctStoneId": "boniface-of-mainz_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Fritzlar / Geismar?",
+            "correctStoneId": "boniface-of-mainz_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "boniface-of-mainz_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Donar’s Oak, Geismar",
+        "globePlacement": {
+          "latDeg": 51.1422,
+          "lngDeg": 9.2572,
+          "regionLabel": "Hesse, Germany",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Thor’s Oak & the Evergreen Tree at Geismar",
+        "detectiveLeadPrompt": "Trace St. Boniface of Mainz’s 723 ad · hesse, germany trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "boniface-of-mainz_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Hesse, Germany)",
+            "clueText": "A storied medieval half-timbered Hessian valley town near Kassel.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "boniface-of-mainz_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Next time you decorate a Christmas Tree in December, remember St. Boniface at Geismar—whose evergreen fir tree pointing toward heaven became one of the world’s favorite holiday symbols!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "boniface-of-mainz_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Thor’s Oak & the Evergreen Tree at Geismar",
+            "clueText": "Finding villagers terrified of the giant sacred Oak of Thor (\"Donar’s Oak\") at Geismar—believing anyone who touched it would be struck dead by lightning—Boniface calmly picked up an axe and took a few swings! Suddenly a mighty rushing gust of wind toppled the massive hollow oak into four neat pieces without hurting a soul. Using the fallen oak’s timber, Boniface built a warm chapel to St. Peter—and beloved legend tells he pointed to a tiny green fir sapling growing undisturbed among its roots as a living symbol of Christ’s evergreen love, inspiring the **Christmas Tree**!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Founding the Great Abbey of Fulda",
+        "subtitle": "Sweep your lantern across Kloster Fulda to uncover 3 hidden memories",
+        "eraLabel": "744 AD · Fulda, Hesse, Germany",
+        "ancientPlaceName": "Kloster Fulda",
+        "modernPlaceName": "Fulda",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/boniface-of-mainz/stop3.webp",
+        "imageCaption": "Grand twin-towered Baroque white-and-ochre German cathedral rising peacefully over manicured green Hessian abbey gardens.",
+        "whatYouCanSeeToday": "Every year the Catholic bishops of Germany still gather right beside St. Boniface’s shrine inside Fulda Cathedral.",
+        "didYouKnowHighlight": "Boniface’s warm surviving letters back home to English nuns asking them to copy brightly inked Gospels and send warm socks show his wonderfully human, affectionate heart!",
+        "saintQuote": "Let us not be timid bystanders—let us build schools, libraries, and houses of mercy.",
+        "hiddenArtifacts": [
+          {
+            "id": "boniface-of-mainz_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Kloster Fulda in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Founding the Great Abbey of Fulda",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Becoming Archbishop of Mainz and organizing dioceses across Bavaria, Hesse, and Thuringia, Boniface invited courageous women missionaries from England too—like St. Lioba and St. Walburga—to open schools and libraries! In 744 he founded his dearest treasure, the great Abbey of Fulda, which became medieval Germany’s greatest center of learning.",
+            "stoneKeyWord": "Fulda Abbey",
+            "stoneKeyMeaning": "Historic turning point in Kloster Fulda",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "boniface-of-mainz_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Fulda.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Fulda, Germany Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Every year the Catholic bishops of Germany still gather right beside St. Boniface’s shrine inside Fulda Cathedral.",
+            "stoneKeyWord": "St. Lioba",
+            "stoneKeyMeaning": "Living pilgrimage site in Fulda",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "boniface-of-mainz_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Boniface of Mainz",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Boniface’s warm surviving letters back home to English nuns asking them to copy brightly inked Gospels and send warm socks show his wonderfully human, affectionate heart!",
+            "stoneKeyWord": "German Learning",
+            "stoneKeyMeaning": "Enduring witness of St. Boniface of Mainz",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Kloster Fulda?",
+            "correctStoneId": "boniface-of-mainz_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Fulda?",
+            "correctStoneId": "boniface-of-mainz_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "boniface-of-mainz_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Kloster Fulda",
+        "globePlacement": {
+          "latDeg": 50.5542,
+          "lngDeg": 9.6717,
+          "regionLabel": "Hesse, Germany",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Founding the Great Abbey of Fulda",
+        "detectiveLeadPrompt": "Trace St. Boniface of Mainz’s 744 ad · fulda, hesse, germany trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "boniface-of-mainz_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Hesse, Germany)",
+            "clueText": "A luminous Baroque cathedral city in the heart of central Germany cherished as Boniface’s resting place.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "boniface-of-mainz_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Boniface’s warm surviving letters back home to English nuns asking them to copy brightly inked Gospels and send warm socks show his wonderfully human, affectionate heart!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "boniface-of-mainz_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Founding the Great Abbey of Fulda",
+            "clueText": "Becoming Archbishop of Mainz and organizing dioceses across Bavaria, Hesse, and Thuringia, Boniface invited courageous women missionaries from England too—like St. Lioba and St. Walburga—to open schools and libraries! In 744 he founded his dearest treasure, the great Abbey of Fulda, which became medieval Germany’s greatest center of learning.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "Shielding Himself Only with the Gospel at Dokkum",
+        "subtitle": "Sweep your lantern across Dokkum to uncover 3 hidden memories",
+        "eraLabel": "June 5, 754 AD · Frisia, Netherlands",
+        "ancientPlaceName": "Dokkum",
+        "modernPlaceName": "Dokkum",
+        "modernCountry": "Netherlands",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/boniface-of-mainz/stop4.webp",
+        "imageCaption": "Misty green northern Dutch canal meadow under golden dawn clouds where an elderly white-haired bishop lifts a leather-bound Gospel book calmly in peace.",
+        "whatYouCanSeeToday": "Miraculously preserved at Fulda Cathedral is the actual 1,270-year-old \"Ragyndrudis Codex\"—still bearing the deep diagonal sword-cuts made while St. Boniface held it up at Dokkum!",
+        "didYouKnowHighlight": "St. Boniface’s cut-marked Gospel book in Fulda is one of the most moving physical relics of early medieval European history!",
+        "saintQuote": "Cease fighting, my children—Scripture teaches us not to return evil for evil, but good for evil.",
+        "hiddenArtifacts": [
+          {
+            "id": "boniface-of-mainz_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Dokkum in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Shielding Himself Only with the Gospel at Dokkum",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "Nearly eighty years old, Boniface stepped down as Archbishop of Mainz to return one last time to the wild marshes of Frisia to confirm newly baptized Christians. On Pentecost morning, June 5, 754 at Dokkum, armed bandits stormed his camp looking for treasure! Stopping his companions from fighting back, Boniface lifted his Gospel book peacefully over his head and forgave his attackers as he fell.",
+            "stoneKeyWord": "Dokkum",
+            "stoneKeyMeaning": "Historic turning point in Dokkum",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "boniface-of-mainz_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Dokkum.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Dokkum, Netherlands Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "Miraculously preserved at Fulda Cathedral is the actual 1,270-year-old \"Ragyndrudis Codex\"—still bearing the deep diagonal sword-cuts made while St. Boniface held it up at Dokkum!",
+            "stoneKeyWord": "Sword-Cut Gospel",
+            "stoneKeyMeaning": "Living pilgrimage site in Dokkum",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "boniface-of-mainz_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Boniface of Mainz",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Boniface’s cut-marked Gospel book in Fulda is one of the most moving physical relics of early medieval European history!",
+            "stoneKeyWord": "June 5",
+            "stoneKeyMeaning": "Enduring witness of St. Boniface of Mainz",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Dokkum?",
+            "correctStoneId": "boniface-of-mainz_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Dokkum?",
+            "correctStoneId": "boniface-of-mainz_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "boniface-of-mainz_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Dokkum",
+        "globePlacement": {
+          "latDeg": 53.3264,
+          "lngDeg": 5.9989,
+          "regionLabel": "Friesland, Netherlands",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Shielding Himself Only with the Gospel at Dokkum",
+        "detectiveLeadPrompt": "Trace St. Boniface of Mainz’s june 5, 754 ad · frisia, netherlands trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "boniface-of-mainz_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Friesland, Netherlands)",
+            "clueText": "A charming star-shaped canal town in northern Friesland, Netherlands.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "boniface-of-mainz_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Boniface’s cut-marked Gospel book in Fulda is one of the most moving physical relics of early medieval European history!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "boniface-of-mainz_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Shielding Himself Only with the Gospel at Dokkum",
+            "clueText": "Nearly eighty years old, Boniface stepped down as Archbishop of Mainz to return one last time to the wild marshes of Frisia to confirm newly baptized Christians. On Pentecost morning, June 5, 754 at Dokkum, armed bandits stormed his camp looking for treasure! Stopping his companions from fighting back, Boniface lifted his Gospel book peacefully over his head and forgave his attackers as he fell.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "norbert-of-xanten",
+    "calendarDate": "2027-06-06",
+    "isFeastDay": true,
+    "weekdayIndex": 0,
+    "weekdayName": "Sunday",
+    "weekdayShort": "Sun",
+    "saintName": "St. Norbert of Xanten",
+    "shortTitle": "St. Norbert of Xanten",
+    "feastDay": "June 6",
+    "eraSpan": "c. 1080 – 1134 · Rhineland, France, Magdeburg & Prague",
+    "trailSubtitle": "4 Stops · Xanten on the Rhine, Prémontré Valley France, Magdeburg & Strahov Abbey Prague",
+    "overviewButtonLabel": "Rhineland to France & Prague",
+    "globeHeaderSubtitle": "Sacred Trails of St. Norbert of Xanten (Xanten, Prémontré, Magdeburg & Prague)",
+    "overviewCamera": {
+      "camLat": 50.39,
+      "camLng": 8.9,
+      "camAltitude": 5.4,
+      "lookLat": 50.83,
+      "lookLng": 8.9,
+      "lookRadiusScale": 0.88
+    },
+    "highlightedIsoCountries": [
+      "DEU",
+      "FRA",
+      "CZE"
+    ],
+    "completionSummary": "You rode from worldly imperial courts to sunlit white-robed abbeys with St. Norbert of Xanten—thrown from his horse by a sudden bolt of lightning, founder of the Norbertines (Premonstratensians), and fearless peacemaker Archbishop of Magdeburg.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Struck by Lightning Near Xanten on the Rhine",
+        "subtitle": "Sweep your lantern across Xanten & Vreden Road to uncover 3 hidden memories",
+        "eraLabel": "1115 · Rhineland, Germany",
+        "ancientPlaceName": "Xanten & Vreden Road",
+        "modernPlaceName": "Xanten",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/norbert-of-xanten/stop1.webp",
+        "imageCaption": "Dramatic golden storm-clouds cracking open above a leafy Rhineland country lane where a startled young nobleman kneels beside his trembling horse.",
+        "whatYouCanSeeToday": "Xanten’s soaring Gothic St. Viktor’s Cathedral commemorates the dazzling lightning conversion that reshaped twelfth-century Europe.",
+        "didYouKnowHighlight": "Norbert’s sudden 1115 turnaround echoed St. Paul’s Damascus Road—transforming a pampered courtier overnight into a barefoot itinerant peacemaker!",
+        "saintQuote": "Turn away from evil and do good; seek peace and pursue it.",
+        "hiddenArtifacts": [
+          {
+            "id": "norbert-of-xanten_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Xanten & Vreden Road in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Struck by Lightning Near Xanten on the Rhine",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born into a wealthy noble Rhineland family near Xanten, handsome young Norbert loved fine banquets, silk clothes, and royal favors at Emperor Henry V’s court—collecting church incomes without bothering to be ordained! Riding proudly toward Vreden in 1115, a blinding lightning bolt slammed directly into the earth right in front of his horse, throwing him unconscious to the ground. Waking up like St. Paul, he asked: \"Lord, what do You want me to do?\"—and immediately gave away all his wealth to the poor!",
+            "stoneKeyWord": "Xanten",
+            "stoneKeyMeaning": "Historic turning point in Xanten & Vreden Road",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "norbert-of-xanten_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Xanten.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Xanten, Germany Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Xanten’s soaring Gothic St. Viktor’s Cathedral commemorates the dazzling lightning conversion that reshaped twelfth-century Europe.",
+            "stoneKeyWord": "Lightning Conversion",
+            "stoneKeyMeaning": "Living pilgrimage site in Xanten",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "norbert-of-xanten_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Norbert of Xanten",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Norbert’s sudden 1115 turnaround echoed St. Paul’s Damascus Road—transforming a pampered courtier overnight into a barefoot itinerant peacemaker!",
+            "stoneKeyWord": "Rhineland",
+            "stoneKeyMeaning": "Enduring witness of St. Norbert of Xanten",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Xanten & Vreden Road?",
+            "correctStoneId": "norbert-of-xanten_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Xanten?",
+            "correctStoneId": "norbert-of-xanten_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "norbert-of-xanten_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Xanten & Vreden Road",
+        "globePlacement": {
+          "latDeg": 51.6623,
+          "lngDeg": 6.4533,
+          "regionLabel": "North Rhine-Westphalia, Germany",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Struck by Lightning Near Xanten on the Rhine",
+        "detectiveLeadPrompt": "Trace St. Norbert of Xanten’s 1115 · rhineland, germany trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "norbert-of-xanten_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (North Rhine-Westphalia, Germany)",
+            "clueText": "A historic Roman-rooted cathedral town resting beside the Lower Rhine near the Dutch border.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "norbert-of-xanten_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Norbert’s sudden 1115 turnaround echoed St. Paul’s Damascus Road—transforming a pampered courtier overnight into a barefoot itinerant peacemaker!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "norbert-of-xanten_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Struck by Lightning Near Xanten on the Rhine",
+            "clueText": "Born into a wealthy noble Rhineland family near Xanten, handsome young Norbert loved fine banquets, silk clothes, and royal favors at Emperor Henry V’s court—collecting church incomes without bothering to be ordained! Riding proudly toward Vreden in 1115, a blinding lightning bolt slammed directly into the earth right in front of his horse, throwing him unconscious to the ground. Waking up like St. Paul, he asked: \"Lord, what do You want me to do?\"—and immediately gave away all his wealth to the poor!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Founding the White Canons at Prémontré",
+        "subtitle": "Sweep your lantern across Abbaye de Prémontré to uncover 3 hidden memories",
+        "eraLabel": "Christmas 1121 · Picardy, France",
+        "ancientPlaceName": "Abbaye de Prémontré",
+        "modernPlaceName": "Prémontré",
+        "modernCountry": "France",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/norbert-of-xanten/stop2.webp",
+        "imageCaption": "Snow-dusted wooded French valley meadow glowing warm gold as forty joyful white-robed canons gather in candlelight on Christmas night.",
+        "whatYouCanSeeToday": "Over nine hundred years later, white-robed Norbertines serve parishes, schools, and abbeys across Europe, North America, India, and Africa.",
+        "didYouKnowHighlight": "Norbert’s brilliant breakthrough was uniting monastic prayer AND hands-on parish preaching together—showing you don’t have to choose between deep silence and loving your neighbors!",
+        "saintQuote": "Prepare your heart in quiet prayer so you may pour peace freely into every parish.",
+        "hiddenArtifacts": [
+          {
+            "id": "norbert-of-xanten_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Abbaye de Prémontré in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Founding the White Canons at Prémontré",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Walking barefoot in winter snow preaching reconciliation across France and Belgium, Norbert gathered eager disciples in a quiet wooded valley near Laon called \"Prémontré\" (\"the meadow shown beforehand\"). On Christmas Day 1121, Norbert and forty companions wore simple white wool habits to launch the Premonstratensians—known affectionately as the **Norbertines** or White Canons, blending quiet contemplative prayer with active neighborhood parish service!",
+            "stoneKeyWord": "Prémontré",
+            "stoneKeyMeaning": "Historic turning point in Abbaye de Prémontré",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "norbert-of-xanten_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Prémontré.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Prémontré, France Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Over nine hundred years later, white-robed Norbertines serve parishes, schools, and abbeys across Europe, North America, India, and Africa.",
+            "stoneKeyWord": "Norbertines",
+            "stoneKeyMeaning": "Living pilgrimage site in Prémontré",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "norbert-of-xanten_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Norbert of Xanten",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Norbert’s brilliant breakthrough was uniting monastic prayer AND hands-on parish preaching together—showing you don’t have to choose between deep silence and loving your neighbors!",
+            "stoneKeyWord": "White Canons",
+            "stoneKeyMeaning": "Enduring witness of St. Norbert of Xanten",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Abbaye de Prémontré?",
+            "correctStoneId": "norbert-of-xanten_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Prémontré?",
+            "correctStoneId": "norbert-of-xanten_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "norbert-of-xanten_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Abbaye de Prémontré",
+        "globePlacement": {
+          "latDeg": 49.5419,
+          "lngDeg": 3.4139,
+          "regionLabel": "Hauts-de-France, France",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Founding the White Canons at Prémontré",
+        "detectiveLeadPrompt": "Trace St. Norbert of Xanten’s christmas 1121 · picardy, france trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "norbert-of-xanten_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Hauts-de-France, France)",
+            "clueText": "A tranquil forested valley clearing in northern France west of Laon.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "norbert-of-xanten_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Norbert’s brilliant breakthrough was uniting monastic prayer AND hands-on parish preaching together—showing you don’t have to choose between deep silence and loving your neighbors!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "norbert-of-xanten_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Founding the White Canons at Prémontré",
+            "clueText": "Walking barefoot in winter snow preaching reconciliation across France and Belgium, Norbert gathered eager disciples in a quiet wooded valley near Laon called \"Prémontré\" (\"the meadow shown beforehand\"). On Christmas Day 1121, Norbert and forty companions wore simple white wool habits to launch the Premonstratensians—known affectionately as the **Norbertines** or White Canons, blending quiet contemplative prayer with active neighborhood parish service!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Barefoot Peacemaker Archbishop of Magdeburg",
+        "subtitle": "Sweep your lantern across Magdeburg to uncover 3 hidden memories",
+        "eraLabel": "1126 – June 6, 1134 · Saxony-Anhalt",
+        "ancientPlaceName": "Magdeburg",
+        "modernPlaceName": "Magdeburg",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/norbert-of-xanten/stop3.webp",
+        "imageCaption": "Stately German riverfront cathedral square bathed in crisp amber light where a barefoot white-robed archbishop gently stops a bewildered doorkeeper with a warm smile.",
+        "whatYouCanSeeToday": "Magdeburg remembers the fearless reformer who twice survived assassination attempts while rooting out corruption and defending the poor.",
+        "didYouKnowHighlight": "In Antwerp earlier in his preaching, Norbert peacefully won back an entire city swept up by a charismatic con-man denying the Eucharist—earning him the title \"Apostle of the Blessed Sacrament\"!",
+        "saintQuote": "You saw the truth about me far better than those who placed me on a throne.",
+        "hiddenArtifacts": [
+          {
+            "id": "norbert-of-xanten_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Magdeburg in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Barefoot Peacemaker Archbishop of Magdeburg",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Elected Archbishop of Magdeburg in 1126, Norbert arrived at his own palace barefoot in a worn wool cloak—so humble that the palace doorkeeper didn’t recognize him and tried to shoo him away as a beggar! Smiling cheerfully, Norbert told the horrified guard: \"You judged me far better than the people who forced me into this palace!\" Working alongside St. Bernard of Clairvaux, he also helped heal a painful papal schism before dying peacefully on June 6, 1134.",
+            "stoneKeyWord": "Magdeburg",
+            "stoneKeyMeaning": "Historic turning point in Magdeburg",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "norbert-of-xanten_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Magdeburg.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Magdeburg, Germany Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Magdeburg remembers the fearless reformer who twice survived assassination attempts while rooting out corruption and defending the poor.",
+            "stoneKeyWord": "Barefoot Archbishop",
+            "stoneKeyMeaning": "Living pilgrimage site in Magdeburg",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "norbert-of-xanten_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Norbert of Xanten",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "In Antwerp earlier in his preaching, Norbert peacefully won back an entire city swept up by a charismatic con-man denying the Eucharist—earning him the title \"Apostle of the Blessed Sacrament\"!",
+            "stoneKeyWord": "June 6",
+            "stoneKeyMeaning": "Enduring witness of St. Norbert of Xanten",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Magdeburg?",
+            "correctStoneId": "norbert-of-xanten_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Magdeburg?",
+            "correctStoneId": "norbert-of-xanten_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "norbert-of-xanten_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Magdeburg",
+        "globePlacement": {
+          "latDeg": 52.1246,
+          "lngDeg": 11.6343,
+          "regionLabel": "Saxony-Anhalt, Germany",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Barefoot Peacemaker Archbishop of Magdeburg",
+        "detectiveLeadPrompt": "Trace St. Norbert of Xanten’s 1126 – june 6, 1134 · saxony-anhalt trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "norbert-of-xanten_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Saxony-Anhalt, Germany)",
+            "clueText": "A historic Elbe River cathedral city in central Germany.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "norbert-of-xanten_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "In Antwerp earlier in his preaching, Norbert peacefully won back an entire city swept up by a charismatic con-man denying the Eucharist—earning him the title \"Apostle of the Blessed Sacrament\"!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "norbert-of-xanten_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Barefoot Peacemaker Archbishop of Magdeburg",
+            "clueText": "Elected Archbishop of Magdeburg in 1126, Norbert arrived at his own palace barefoot in a worn wool cloak—so humble that the palace doorkeeper didn’t recognize him and tried to shoo him away as a beggar! Smiling cheerfully, Norbert told the horrified guard: \"You judged me far better than the people who forced me into this palace!\" Working alongside St. Bernard of Clairvaux, he also helped heal a painful papal schism before dying peacefully on June 6, 1134.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "The Luminous Library & Shrine at Strahov Abbey, Prague",
+        "subtitle": "Sweep your lantern across Strahovský klášter to uncover 3 hidden memories",
+        "eraLabel": "1627 – Present · Petřín Hill, Prague",
+        "ancientPlaceName": "Strahovský klášter",
+        "modernPlaceName": "Prague",
+        "modernCountry": "Czech Republic",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/norbert-of-xanten/stop4.webp",
+        "imageCaption": "Breathtaking Baroque frescoed monastic library hall and sunlit hilltop abbey spires overlooking the red rooftops of Prague.",
+        "whatYouCanSeeToday": "Visitors to Prague’s breathtaking Strahov Abbey marvel at both its world-famous Philosophical Library and St. Norbert’s radiant shrine inside the Basilica of the Assumption.",
+        "didYouKnowHighlight": "Strahov Abbey’s stunning 900-year-old Norbertine monastery overlooking Prague still brews classic monastic craft recipes and preserves over 200,000 priceless historic volumes!",
+        "saintQuote": "Keep faith bright, learning generous, and peace welcoming to every traveler.",
+        "hiddenArtifacts": [
+          {
+            "id": "norbert-of-xanten_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Strahovský klášter in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Luminous Library & Shrine at Strahov Abbey, Prague",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "In 1627, St. Norbert’s cherished relics were solemnly translated from Magdeburg to the gleaming white-robed Norbertine Abbey of Strahov overlooking Prague—where he became one of Bohemia’s beloved heavenly patrons.",
+            "stoneKeyWord": "Strahov Abbey",
+            "stoneKeyMeaning": "Historic turning point in Strahovský klášter",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "norbert-of-xanten_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Prague.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Prague, Czech Republic Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "Visitors to Prague’s breathtaking Strahov Abbey marvel at both its world-famous Philosophical Library and St. Norbert’s radiant shrine inside the Basilica of the Assumption.",
+            "stoneKeyWord": "Prague Hilltop",
+            "stoneKeyMeaning": "Living pilgrimage site in Prague",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "norbert-of-xanten_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Norbert of Xanten",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Strahov Abbey’s stunning 900-year-old Norbertine monastery overlooking Prague still brews classic monastic craft recipes and preserves over 200,000 priceless historic volumes!",
+            "stoneKeyWord": "White Canons",
+            "stoneKeyMeaning": "Enduring witness of St. Norbert of Xanten",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Strahovský klášter?",
+            "correctStoneId": "norbert-of-xanten_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Prague?",
+            "correctStoneId": "norbert-of-xanten_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "norbert-of-xanten_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Strahovský klášter",
+        "globePlacement": {
+          "latDeg": 50.0865,
+          "lngDeg": 14.3895,
+          "regionLabel": "Prague, Czech Republic",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "The Luminous Library & Shrine at Strahov Abbey, Prague",
+        "detectiveLeadPrompt": "Trace St. Norbert of Xanten’s 1627 – present · petřín hill, prague trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "norbert-of-xanten_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Prague, Czech Republic)",
+            "clueText": "Prague’s celebrated hilltop Norbertine abbey overlooking the Vltava River and Charles Bridge.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "norbert-of-xanten_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Strahov Abbey’s stunning 900-year-old Norbertine monastery overlooking Prague still brews classic monastic craft recipes and preserves over 200,000 priceless historic volumes!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "norbert-of-xanten_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Luminous Library & Shrine at Strahov Abbey, Prague",
+            "clueText": "In 1627, St. Norbert’s cherished relics were solemnly translated from Magdeburg to the gleaming white-robed Norbertine Abbey of Strahov overlooking Prague—where he became one of Bohemia’s beloved heavenly patrons.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "robert-of-newminster",
+    "calendarDate": "2027-06-07",
+    "isFeastDay": true,
+    "weekdayIndex": 1,
+    "weekdayName": "Monday",
+    "weekdayShort": "Mon",
+    "saintName": "St. Robert of Newminster",
+    "shortTitle": "St. Robert of Newminster",
+    "feastDay": "June 7",
+    "eraSpan": "c. 1100 – 1159 · Yorkshire & Northumberland, England",
+    "trailSubtitle": "3 Stops · Gargrave Yorkshire, Fountains Abbey & Newminster Abbey, Northumberland",
+    "overviewButtonLabel": "Yorkshire to Northumberland",
+    "globeHeaderSubtitle": "Sacred Trails of St. Robert of Newminster (Gargrave, Fountains Abbey & Morpeth, England)",
+    "overviewCamera": {
+      "camLat": 54.52,
+      "camLng": -1.84,
+      "camAltitude": 4.6,
+      "lookLat": 54.57,
+      "lookLng": -1.84,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "GBR"
+    ],
+    "completionSummary": "You walked the green dales of northern England with St. Robert of Newminster—the warm-hearted Yorkshire parish priest who helped build iconic Fountains Abbey out of a winter clearing and fed starving families during England’s bitter civil war.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Parish Shepherd in the Yorkshire Dales at Gargrave",
+        "subtitle": "Sweep your lantern across Gargrave to uncover 3 hidden memories",
+        "eraLabel": "c. 1100 – 1132 · North Yorkshire",
+        "ancientPlaceName": "Gargrave",
+        "modernPlaceName": "Gargrave, North Yorkshire",
+        "modernCountry": "United Kingdom",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/robert-of-newminster/stop1.webp",
+        "imageCaption": "Lush emerald Yorkshire Dales green stone walls, sparkling River Aire waters, and a peaceful stone village church glowing at dawn.",
+        "whatYouCanSeeToday": "The tranquil stone village of Gargrave along the Pennine Way still celebrates St. Robert’s friendly Yorkshire roots.",
+        "didYouKnowHighlight": "Robert was close friends with the famous English hermit St. Godric of Finchale—legend tells the two elderly friends could sense each other’s prayers across miles of northern moorland!",
+        "saintQuote": "Leave behind noise and ambition, and listen for God’s quiet voice in the valley.",
+        "hiddenArtifacts": [
+          {
+            "id": "robert-of-newminster_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Gargrave in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Parish Shepherd in the Yorkshire Dales at Gargrave",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born in Gargrave in the green Yorkshire Dales around 1100 and educated in Paris, kind-hearted Robert returned home to serve as parish priest of his native village—deeply loved for his clear preaching and tender care for poor farmers—before longing for an even simpler life of prayer.",
+            "stoneKeyWord": "Yorkshire Dales",
+            "stoneKeyMeaning": "Historic turning point in Gargrave",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "robert-of-newminster_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Gargrave, North Yorkshire.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Gargrave, North Yorkshire, United Kingdom Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "The tranquil stone village of Gargrave along the Pennine Way still celebrates St. Robert’s friendly Yorkshire roots.",
+            "stoneKeyWord": "Gargrave",
+            "stoneKeyMeaning": "Living pilgrimage site in Gargrave, North Yorkshire",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "robert-of-newminster_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Robert of Newminster",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Robert was close friends with the famous English hermit St. Godric of Finchale—legend tells the two elderly friends could sense each other’s prayers across miles of northern moorland!",
+            "stoneKeyWord": "Parish Shepherd",
+            "stoneKeyMeaning": "Enduring witness of St. Robert of Newminster",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Gargrave?",
+            "correctStoneId": "robert-of-newminster_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Gargrave, North Yorkshire?",
+            "correctStoneId": "robert-of-newminster_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "robert-of-newminster_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Gargrave",
+        "globePlacement": {
+          "latDeg": 53.9825,
+          "lngDeg": -2.1038,
+          "regionLabel": "North Yorkshire, England",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Parish Shepherd in the Yorkshire Dales at Gargrave",
+        "detectiveLeadPrompt": "Trace St. Robert of Newminster’s c. 1100 – 1132 · north yorkshire trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "robert-of-newminster_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (North Yorkshire, England)",
+            "clueText": "A picturesque riverside Yorkshire Dales stone village near Skipton.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "robert-of-newminster_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Robert was close friends with the famous English hermit St. Godric of Finchale—legend tells the two elderly friends could sense each other’s prayers across miles of northern moorland!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "robert-of-newminster_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Parish Shepherd in the Yorkshire Dales at Gargrave",
+            "clueText": "Born in Gargrave in the green Yorkshire Dales around 1100 and educated in Paris, kind-hearted Robert returned home to serve as parish priest of his native village—deeply loved for his clear preaching and tender care for poor farmers—before longing for an even simpler life of prayer.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Co-Founding Fountains Abbey Under an Elm Tree",
+        "subtitle": "Sweep your lantern across Fountains Abbey to uncover 3 hidden memories",
+        "eraLabel": "Winter 1132 – 1137 · Skell Valley, Yorkshire",
+        "ancientPlaceName": "Fountains Abbey",
+        "modernPlaceName": "Ripon, North Yorkshire",
+        "modernCountry": "United Kingdom",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/robert-of-newminster/stop2.webp",
+        "imageCaption": "Breathtaking soaring golden-stone Gothic abbey ruins reflected peacefully in clear emerald Yorkshire valley waters beneath dramatic sky.",
+        "whatYouCanSeeToday": "Fountains Abbey and Studley Royal Water Garden stand as one of England’s most awe-inspiring UNESCO World Heritage treasures.",
+        "didYouKnowHighlight": "During that starving first winter at Fountains Abbey, when a hungry beggar knocked asking for bread and the monks had only two loaves left, they immediately gave the beggar one whole loaf—and minutes later a wagon full of fresh bread arrived unexpectedly from nearby Knaresborough Castle!",
+        "saintQuote": "Give away half of your last loaf in winter, and heaven will fill the valley.",
+        "hiddenArtifacts": [
+          {
+            "id": "robert-of-newminster_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Fountains Abbey in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Co-Founding Fountains Abbey Under an Elm Tree",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Joining twelve courageous Benedictine brothers who left comfort in York seeking true Gospel simplicity, Robert spent the freezing winter of 1132 sheltering beneath a giant leafless elm tree in a rocky Yorkshire glen—boiling elm leaves in salt water for soup! Never losing heart, their tiny clearing blossomed into legendary **Fountains Abbey**, soon welcoming St. Bernard’s Cistercian reform.",
+            "stoneKeyWord": "Fountains Abbey",
+            "stoneKeyMeaning": "Historic turning point in Fountains Abbey",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "robert-of-newminster_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Ripon, North Yorkshire.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Ripon, North Yorkshire, United Kingdom Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Fountains Abbey and Studley Royal Water Garden stand as one of England’s most awe-inspiring UNESCO World Heritage treasures.",
+            "stoneKeyWord": "Winter Elm Tree",
+            "stoneKeyMeaning": "Living pilgrimage site in Ripon, North Yorkshire",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "robert-of-newminster_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Robert of Newminster",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "During that starving first winter at Fountains Abbey, when a hungry beggar knocked asking for bread and the monks had only two loaves left, they immediately gave the beggar one whole loaf—and minutes later a wagon full of fresh bread arrived unexpectedly from nearby Knaresborough Castle!",
+            "stoneKeyWord": "UNESCO Yorkshire",
+            "stoneKeyMeaning": "Enduring witness of St. Robert of Newminster",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Fountains Abbey?",
+            "correctStoneId": "robert-of-newminster_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Ripon, North Yorkshire?",
+            "correctStoneId": "robert-of-newminster_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "robert-of-newminster_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Fountains Abbey",
+        "globePlacement": {
+          "latDeg": 54.1095,
+          "lngDeg": -1.5815,
+          "regionLabel": "North Yorkshire, England",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Co-Founding Fountains Abbey Under an Elm Tree",
+        "detectiveLeadPrompt": "Trace St. Robert of Newminster’s winter 1132 – 1137 · skell valley, yorkshire trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "robert-of-newminster_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (North Yorkshire, England)",
+            "clueText": "Britain’s grandest UNESCO Cistercian abbey ruins nestled in the serene Skell Valley near Ripon.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "robert-of-newminster_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "During that starving first winter at Fountains Abbey, when a hungry beggar knocked asking for bread and the monks had only two loaves left, they immediately gave the beggar one whole loaf—and minutes later a wagon full of fresh bread arrived unexpectedly from nearby Knaresborough Castle!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "robert-of-newminster_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Co-Founding Fountains Abbey Under an Elm Tree",
+            "clueText": "Joining twelve courageous Benedictine brothers who left comfort in York seeking true Gospel simplicity, Robert spent the freezing winter of 1132 sheltering beneath a giant leafless elm tree in a rocky Yorkshire glen—boiling elm leaves in salt water for soup! Never losing heart, their tiny clearing blossomed into legendary **Fountains Abbey**, soon welcoming St. Bernard’s Cistercian reform.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Mercy During Civil War at Newminster Abbey",
+        "subtitle": "Sweep your lantern across Newminster Abbey to uncover 3 hidden memories",
+        "eraLabel": "1138 – June 7, 1159 · Morpeth, Northumberland",
+        "ancientPlaceName": "Newminster Abbey",
+        "modernPlaceName": "Morpeth, Northumberland",
+        "modernCountry": "United Kingdom",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/robert-of-newminster/stop3.webp",
+        "imageCaption": "Peaceful weathered stone Gothic archway standing quietly in lush green Northumbrian meadow beside the gentle River Wansbeck.",
+        "whatYouCanSeeToday": "The tranquil stone arches of Newminster Abbey near Morpeth preserve the serene riverside valley where St. Robert’s hospitality healed a war-torn borderland.",
+        "didYouKnowHighlight": "Legend remembers that at the exact moment Robert died on June 7, 1159, his distant hermit friend St. Godric saw a radiant ball of fire carried skyward by angels and whispered: \"My dear friend Abbot Robert has gone home to God!\"",
+        "saintQuote": "Rebuild what war destroys—with stone for shelter, bread for the hungry, and mercy for all.",
+        "hiddenArtifacts": [
+          {
+            "id": "robert-of-newminster_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Newminster Abbey in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Mercy During Civil War at Newminster Abbey",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Sent north in 1138 to become founding Abbot of Newminster Abbey near Morpeth, Robert saw Scottish raids and England’s brutal \"Anarchy\" civil war burn his brand-new wooden abbey to the ground! Undeterred, he rebuilt patiently in stone, opened three daughter abbeys, and kept Newminster’s kitchens feeding hundreds of starving displaced families until his peaceful death on June 7, 1159.",
+            "stoneKeyWord": "Newminster Abbey",
+            "stoneKeyMeaning": "Historic turning point in Newminster Abbey",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "robert-of-newminster_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Morpeth, Northumberland.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Morpeth, Northumberland, United Kingdom Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "The tranquil stone arches of Newminster Abbey near Morpeth preserve the serene riverside valley where St. Robert’s hospitality healed a war-torn borderland.",
+            "stoneKeyWord": "June 7",
+            "stoneKeyMeaning": "Living pilgrimage site in Morpeth, Northumberland",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "robert-of-newminster_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Robert of Newminster",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Legend remembers that at the exact moment Robert died on June 7, 1159, his distant hermit friend St. Godric saw a radiant ball of fire carried skyward by angels and whispered: \"My dear friend Abbot Robert has gone home to God!\"",
+            "stoneKeyWord": "Northumberland",
+            "stoneKeyMeaning": "Enduring witness of St. Robert of Newminster",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Newminster Abbey?",
+            "correctStoneId": "robert-of-newminster_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Morpeth, Northumberland?",
+            "correctStoneId": "robert-of-newminster_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "robert-of-newminster_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Newminster Abbey",
+        "globePlacement": {
+          "latDeg": 55.1669,
+          "lngDeg": -1.7024,
+          "regionLabel": "Northumberland, England",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Mercy During Civil War at Newminster Abbey",
+        "detectiveLeadPrompt": "Trace St. Robert of Newminster’s 1138 – june 7, 1159 · morpeth, northumberland trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "robert-of-newminster_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Northumberland, England)",
+            "clueText": "A charming Northumbrian market town along the winding River Wansbeck north of Newcastle.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "robert-of-newminster_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Legend remembers that at the exact moment Robert died on June 7, 1159, his distant hermit friend St. Godric saw a radiant ball of fire carried skyward by angels and whispered: \"My dear friend Abbot Robert has gone home to God!\"",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "robert-of-newminster_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Mercy During Civil War at Newminster Abbey",
+            "clueText": "Sent north in 1138 to become founding Abbot of Newminster Abbey near Morpeth, Robert saw Scottish raids and England’s brutal \"Anarchy\" civil war burn his brand-new wooden abbey to the ground! Undeterred, he rebuilt patiently in stone, opened three daughter abbeys, and kept Newminster’s kitchens feeding hundreds of starving displaced families until his peaceful death on June 7, 1159.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  }
+]
