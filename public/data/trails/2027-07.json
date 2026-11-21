@@ -1,0 +1,882 @@
+[
+  {
+    "id": "junipero-serra",
+    "calendarDate": "2027-07-01",
+    "isFeastDay": true,
+    "weekdayIndex": 4,
+    "weekdayName": "Thursday",
+    "weekdayShort": "Thu",
+    "saintName": "St. Junípero Serra",
+    "shortTitle": "St. Junípero Serra",
+    "feastDay": "July 1",
+    "eraSpan": "1713 – 1784 · Mallorca, Mexico & California",
+    "trailSubtitle": "4 Stops · Petra Birthplace Mallorca, Mexico City, Mission San Diego & Carmel Mission",
+    "overviewButtonLabel": "Spain, Mexico & California",
+    "globeHeaderSubtitle": "Sacred Trails of St. Junípero Serra (Mallorca, Mexico City, San Diego & Carmel)",
+    "overviewCamera": {
+      "camLat": 27.53,
+      "camLng": -59.4,
+      "camAltitude": 12.2,
+      "lookLat": 29.53,
+      "lookLng": -59.4,
+      "lookRadiusScale": 0.72
+    },
+    "highlightedIsoCountries": [
+      "ESP",
+      "MEX",
+      "USA"
+    ],
+    "completionSummary": "You crossed oceans, deserts, and Pacific bluffs with tireless Franciscan St. Junípero Serra—who left a prestigious university chair in Mallorca at thirty-five, walked thousands of miles with a swollen ulcerated leg, and planted California’s historic coastal mission trail living his motto: \"Always forward, never back!\"",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "From Stone Farmhouse to University Professor in Mallorca",
+        "subtitle": "Sweep your lantern across Petra, Balearic Islands to uncover 3 hidden memories",
+        "eraLabel": "1713 – 1749 · Petra & Palma de Mallorca, Spain",
+        "ancientPlaceName": "Petra, Balearic Islands",
+        "modernPlaceName": "Petra, Mallorca",
+        "modernCountry": "Spain",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/junipero-serra/stop1.webp",
+        "imageCaption": "Warm honey-gold limestone Balearic village framed by ancient almond groves and Mediterranean windmills bathed in bright island sunlight.",
+        "whatYouCanSeeToday": "In Petra, Mallorca, visitors can step right inside St. Junípero Serra’s tiny stone childhood cottage—still preserved with its rustic hearth and olive-wood beams!",
+        "didYouKnowHighlight": "Standing only five foot two inches tall, tiny Father Serra carried a massive spirit—choosing St. Francis’s quirky, big-hearted friend Brother Juniper as his namesake so he would never take himself too seriously!",
+        "saintQuote": "Siempre adelante, nunca atrás! (Always forward, never back!)",
+        "hiddenArtifacts": [
+          {
+            "id": "junipero-serra_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Petra, Balearic Islands in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "From Stone Farmhouse to University Professor in Mallorca",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born Miquel Josep Serra to humble illiterate farmers in the sunlit Mallorcan village of Petra in 1713, bright little Miquel loved singing in the Franciscan choir so much that he entered the friars at sixteen—taking the cheerful name **Junípero** after St. Francis’s funniest, most joyful companion! Rising to become one of Palma de Mallorca’s most celebrated philosophy professors, thirty-five-year-old Father Serra shocked his colleagues by walking away from tenure and comfort to board a wooden sailing ship bound for the Americas.",
+            "stoneKeyWord": "Petra Mallorca",
+            "stoneKeyMeaning": "Historic turning point in Petra, Balearic Islands",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "junipero-serra_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Petra, Mallorca.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Petra, Mallorca, Spain Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "In Petra, Mallorca, visitors can step right inside St. Junípero Serra’s tiny stone childhood cottage—still preserved with its rustic hearth and olive-wood beams!",
+            "stoneKeyWord": "Siempre Adelante",
+            "stoneKeyMeaning": "Living pilgrimage site in Petra, Mallorca",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "junipero-serra_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Junípero Serra",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Standing only five foot two inches tall, tiny Father Serra carried a massive spirit—choosing St. Francis’s quirky, big-hearted friend Brother Juniper as his namesake so he would never take himself too seriously!",
+            "stoneKeyWord": "Brother Juniper",
+            "stoneKeyMeaning": "Enduring witness of St. Junípero Serra",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Petra, Balearic Islands?",
+            "correctStoneId": "junipero-serra_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Petra, Mallorca?",
+            "correctStoneId": "junipero-serra_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "junipero-serra_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Petra, Balearic Islands",
+        "globePlacement": {
+          "latDeg": 39.6143,
+          "lngDeg": 3.1121,
+          "regionLabel": "Mallorca, Spain",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "From Stone Farmhouse to University Professor in Mallorca",
+        "detectiveLeadPrompt": "Trace St. Junípero Serra’s 1713 – 1749 · petra & palma de mallorca, spain trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "junipero-serra_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Mallorca, Spain)",
+            "clueText": "A peaceful golden limestone village in the sunny heart of Spain’s Mediterranean island of Mallorca.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "junipero-serra_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Standing only five foot two inches tall, tiny Father Serra carried a massive spirit—choosing St. Francis’s quirky, big-hearted friend Brother Juniper as his namesake so he would never take himself too seriously!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "junipero-serra_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "From Stone Farmhouse to University Professor in Mallorca",
+            "clueText": "Born Miquel Josep Serra to humble illiterate farmers in the sunlit Mallorcan village of Petra in 1713, bright little Miquel loved singing in the Franciscan choir so much that he entered the friars at sixteen—taking the cheerful name **Junípero** after St. Francis’s funniest, most joyful companion! Rising to become one of Palma de Mallorca’s most celebrated philosophy professors, thirty-five-year-old Father Serra shocked his colleagues by walking away from tenure and comfort to board a wooden sailing ship bound for the Americas.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Walking 250 Miles to Guadalupe & Sierra Gorda",
+        "subtitle": "Sweep your lantern across Colegio de San Fernando, Mexico City to uncover 3 hidden memories",
+        "eraLabel": "1749 – 1767 · Veracruz, Mexico City & Sierra Gorda",
+        "ancientPlaceName": "Colegio de San Fernando, Mexico City",
+        "modernPlaceName": "Mexico City",
+        "modernCountry": "Mexico",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/junipero-serra/stop2.webp",
+        "imageCaption": "Sun-warmed volcanic-stone Mexican Baroque cloister and bustling sunlit courtyard framed by blue-tiled domes beneath bright highland skies.",
+        "whatYouCanSeeToday": "Five breathtaking UNESCO World Heritage Franciscan Missions in Mexico’s Sierra Gorda—built collaboratively by Father Serra and local Pame craftspeople—still dazzle travelers with vibrant sculpted floral facades!",
+        "didYouKnowHighlight": "In 1773, sixty-year-old Serra trekked ALL THE WAY back to Mexico City to present his famous 32-point *Representación* to the Viceroy—historians note it was California’s earliest formal bill of rights defending Indigenous people from abusive military soldiers!",
+        "saintQuote": "We must win their hearts by kindness, never by force.",
+        "hiddenArtifacts": [
+          {
+            "id": "junipero-serra_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Colegio de San Fernando, Mexico City in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Walking 250 Miles to Guadalupe & Sierra Gorda",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Landing at Veracruz in December 1749, Father Serra refused the carriage offered to him and walked all 250 rugged mountain miles to Mexico City on foot—suffering a venomous insect bite on his leg that caused a painful, open swelling for the remaining thirty-five years of his life! After spending eight creative years learning the Pame language and designing stunning folk-baroque churches alongside Indigenous artisans in Mexico’s Sierra Gorda mountains, fifty-five-year-old Serra got the call to head north to Alta California.",
+            "stoneKeyWord": "Sierra Gorda UNESCO",
+            "stoneKeyMeaning": "Historic turning point in Colegio de San Fernando, Mexico City",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "junipero-serra_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Mexico City.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Mexico City, Mexico Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Five breathtaking UNESCO World Heritage Franciscan Missions in Mexico’s Sierra Gorda—built collaboratively by Father Serra and local Pame craftspeople—still dazzle travelers with vibrant sculpted floral facades!",
+            "stoneKeyWord": "Mexico City",
+            "stoneKeyMeaning": "Living pilgrimage site in Mexico City",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "junipero-serra_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Junípero Serra",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "In 1773, sixty-year-old Serra trekked ALL THE WAY back to Mexico City to present his famous 32-point *Representación* to the Viceroy—historians note it was California’s earliest formal bill of rights defending Indigenous people from abusive military soldiers!",
+            "stoneKeyWord": "Bill of Rights",
+            "stoneKeyMeaning": "Enduring witness of St. Junípero Serra",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Colegio de San Fernando, Mexico City?",
+            "correctStoneId": "junipero-serra_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Mexico City?",
+            "correctStoneId": "junipero-serra_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "junipero-serra_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Colegio de San Fernando, Mexico City",
+        "globePlacement": {
+          "latDeg": 19.4384,
+          "lngDeg": -99.1489,
+          "regionLabel": "Mexico City, Mexico",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Walking 250 Miles to Guadalupe & Sierra Gorda",
+        "detectiveLeadPrompt": "Trace St. Junípero Serra’s 1749 – 1767 · veracruz, mexico city & sierra gorda trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "junipero-serra_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Mexico City, Mexico)",
+            "clueText": "Mexico’s historic highland capital where Father Serra walked 250 miles on foot from the Gulf Coast.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "junipero-serra_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "In 1773, sixty-year-old Serra trekked ALL THE WAY back to Mexico City to present his famous 32-point *Representación* to the Viceroy—historians note it was California’s earliest formal bill of rights defending Indigenous people from abusive military soldiers!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "junipero-serra_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Walking 250 Miles to Guadalupe & Sierra Gorda",
+            "clueText": "Landing at Veracruz in December 1749, Father Serra refused the carriage offered to him and walked all 250 rugged mountain miles to Mexico City on foot—suffering a venomous insect bite on his leg that caused a painful, open swelling for the remaining thirty-five years of his life! After spending eight creative years learning the Pame language and designing stunning folk-baroque churches alongside Indigenous artisans in Mexico’s Sierra Gorda mountains, fifty-five-year-old Serra got the call to head north to Alta California.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Planting the First Bell at Mission San Diego de Alcalá",
+        "subtitle": "Sweep your lantern across Mission San Diego de Alcalá to uncover 3 hidden memories",
+        "eraLabel": "July 16, 1769 · San Diego, California",
+        "ancientPlaceName": "Mission San Diego de Alcalá",
+        "modernPlaceName": "San Diego",
+        "modernCountry": "United States",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/junipero-serra/stop3.webp",
+        "imageCaption": "Crisp whitewashed Spanish colonial adobe bell wall silhouetted against brilliant Pacific blue skies and sunlit golden coastal hills.",
+        "whatYouCanSeeToday": "Mission San Diego de Alcalá’s iconic five-bell whitewashed adobe campanario still stands as a lively parish and California’s oldest historic mission site.",
+        "didYouKnowHighlight": "When frightened expedition leaders nearly voted to abandon starving San Diego and sail back to Mexico in 1770, stubborn Father Serra refused to board the ship—praying a nine-day novena to St. Joseph until the rescue supply ship *San Antonio* literally sailed over the horizon on St. Joseph’s Day, March 19!",
+        "saintQuote": "To speak of going back is out of the question—always forward!",
+        "hiddenArtifacts": [
+          {
+            "id": "junipero-serra_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Mission San Diego de Alcalá in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Planting the First Bell at Mission San Diego de Alcalá",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Limping overland from Baja California through scorching deserts with his swollen leg, fifty-five-year-old Father Serra reached San Diego Bay in July 1769, hung a bronze bell from a leafy oak tree, and founded **Mission San Diego de Alcalá**—the first link in California’s iconic 600-mile **El Camino Real**! Over the next fifteen years, walking thousands of coastal miles despite asthma and constant pain, he personally founded **nine** missions that birthed modern San Diego, Carmel, San Luis Obispo, San Francisco, and Santa Clara.",
+            "stoneKeyWord": "Mission San Diego",
+            "stoneKeyMeaning": "Historic turning point in Mission San Diego de Alcalá",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "junipero-serra_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in San Diego.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "San Diego, United States Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Mission San Diego de Alcalá’s iconic five-bell whitewashed adobe campanario still stands as a lively parish and California’s oldest historic mission site.",
+            "stoneKeyWord": "El Camino Real",
+            "stoneKeyMeaning": "Living pilgrimage site in San Diego",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "junipero-serra_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Junípero Serra",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "When frightened expedition leaders nearly voted to abandon starving San Diego and sail back to Mexico in 1770, stubborn Father Serra refused to board the ship—praying a nine-day novena to St. Joseph until the rescue supply ship *San Antonio* literally sailed over the horizon on St. Joseph’s Day, March 19!",
+            "stoneKeyWord": "Nine Missions",
+            "stoneKeyMeaning": "Enduring witness of St. Junípero Serra",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Mission San Diego de Alcalá?",
+            "correctStoneId": "junipero-serra_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in San Diego?",
+            "correctStoneId": "junipero-serra_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "junipero-serra_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Mission San Diego de Alcalá",
+        "globePlacement": {
+          "latDeg": 32.7844,
+          "lngDeg": -117.1063,
+          "regionLabel": "Southern California, USA",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Planting the First Bell at Mission San Diego de Alcalá",
+        "detectiveLeadPrompt": "Trace St. Junípero Serra’s july 16, 1769 · san diego, california trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "junipero-serra_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Southern California, USA)",
+            "clueText": "Southern California’s sunny bay city where the very first of the 21 California Missions was founded in 1769.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "junipero-serra_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When frightened expedition leaders nearly voted to abandon starving San Diego and sail back to Mexico in 1770, stubborn Father Serra refused to board the ship—praying a nine-day novena to St. Joseph until the rescue supply ship *San Antonio* literally sailed over the horizon on St. Joseph’s Day, March 19!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "junipero-serra_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Planting the First Bell at Mission San Diego de Alcalá",
+            "clueText": "Limping overland from Baja California through scorching deserts with his swollen leg, fifty-five-year-old Father Serra reached San Diego Bay in July 1769, hung a bronze bell from a leafy oak tree, and founded **Mission San Diego de Alcalá**—the first link in California’s iconic 600-mile **El Camino Real**! Over the next fifteen years, walking thousands of coastal miles despite asthma and constant pain, he personally founded **nine** missions that birthed modern San Diego, Carmel, San Luis Obispo, San Francisco, and Santa Clara.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 4,
+        "title": "Home by the Cypress Sea at Carmel Mission",
+        "subtitle": "Sweep your lantern across Mission San Carlos Borromeo de Carmelo to uncover 3 hidden memories",
+        "eraLabel": "1770 – August 28, 1784 · Carmel-by-the-Sea, California",
+        "ancientPlaceName": "Mission San Carlos Borromeo de Carmelo",
+        "modernPlaceName": "Carmel-by-the-Sea",
+        "modernCountry": "United States",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/junipero-serra/stop4.webp",
+        "imageCaption": "Warm golden sandstone Moorish-domed mission basilica framed by blooming bougainvillea and gnarled cypresses overlooking the sparkling misty Pacific Ocean.",
+        "whatYouCanSeeToday": "Carmel Mission Basilica—widely called the jewel of California’s missions—welcomes visitors to pray beside St. Junípero Serra’s stone sanctuary tomb and step inside his preserved tiny adobe bedroom.",
+        "didYouKnowHighlight": "When Pope Francis canonized St. Junípero Serra in September 2015, he celebrated him as an tireless missionary who kept going forward with joy—and California’s golden sandstone Carmel Mission still rings his original bells!",
+        "saintQuote": "I promise you I will not forget you when I reach heaven.",
+        "hiddenArtifacts": [
+          {
+            "id": "junipero-serra_s4_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Mission San Carlos Borromeo de Carmelo in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Home by the Cypress Sea at Carmel Mission",
+            "xPercent": 28,
+            "yPercent": 48,
+            "hitRadius": 14,
+            "storyUnlocked": "Falling in love with the misty cypress coast and sparkling bay of Carmel, St. Junípero Serra made **Mission San Carlos Borromeo de Carmelo** his home headquarters for his final fourteen years—living in a tiny bare-walled adobe cell with a wooden plank bed and a small desk where he wrote hundreds of letters. Passing away peacefully on August 28, 1784 at age seventy, he was canonized right in Washington, D.C. in 2015—the first saint ever canonized on United States soil!",
+            "stoneKeyWord": "Carmel Mission",
+            "stoneKeyMeaning": "Historic turning point in Mission San Carlos Borromeo de Carmelo",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "junipero-serra_s4_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Carmel-by-the-Sea.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Carmel-by-the-Sea, United States Today",
+            "xPercent": 60,
+            "yPercent": 62,
+            "hitRadius": 14,
+            "storyUnlocked": "Carmel Mission Basilica—widely called the jewel of California’s missions—welcomes visitors to pray beside St. Junípero Serra’s stone sanctuary tomb and step inside his preserved tiny adobe bedroom.",
+            "stoneKeyWord": "First Canonized in USA",
+            "stoneKeyMeaning": "Living pilgrimage site in Carmel-by-the-Sea",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "junipero-serra_s4_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Junípero Serra",
+            "xPercent": 74,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "When Pope Francis canonized St. Junípero Serra in September 2015, he celebrated him as an tireless missionary who kept going forward with joy—and California’s golden sandstone Carmel Mission still rings his original bells!",
+            "stoneKeyWord": "July 1",
+            "stoneKeyMeaning": "Enduring witness of St. Junípero Serra",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Mission San Carlos Borromeo de Carmelo?",
+            "correctStoneId": "junipero-serra_s4_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Carmel-by-the-Sea?",
+            "correctStoneId": "junipero-serra_s4_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "junipero-serra_s4_a3"
+          }
+        ],
+        "sealName": "Seal of Mission San Carlos Borromeo de Carmelo",
+        "globePlacement": {
+          "latDeg": 36.5426,
+          "lngDeg": -121.9197,
+          "regionLabel": "Monterey Peninsula, California, USA",
+          "beaconColorHex": "#10b981",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Home by the Cypress Sea at Carmel Mission",
+        "detectiveLeadPrompt": "Trace St. Junípero Serra’s 1770 – august 28, 1784 · carmel-by-the-sea, california trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "junipero-serra_s4_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Monterey Peninsula, California, USA)",
+            "clueText": "California’s breathtaking cypress-lined coastal peninsula where Father Serra made his beloved mission headquarters.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "junipero-serra_s4_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "When Pope Francis canonized St. Junípero Serra in September 2015, he celebrated him as an tireless missionary who kept going forward with joy—and California’s golden sandstone Carmel Mission still rings his original bells!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "junipero-serra_s4_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Home by the Cypress Sea at Carmel Mission",
+            "clueText": "Falling in love with the misty cypress coast and sparkling bay of Carmel, St. Junípero Serra made **Mission San Carlos Borromeo de Carmelo** his home headquarters for his final fourteen years—living in a tiny bare-walled adobe cell with a wooden plank bed and a small desk where he wrote hundreds of letters. Passing away peacefully on August 28, 1784 at age seventy, he was canonized right in Washington, D.C. in 2015—the first saint ever canonized on United States soil!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "otto-of-bamberg",
+    "calendarDate": "2027-07-02",
+    "isFeastDay": true,
+    "weekdayIndex": 5,
+    "weekdayName": "Friday",
+    "weekdayShort": "Fri",
+    "saintName": "St. Otto of Bamberg",
+    "shortTitle": "St. Otto of Bamberg",
+    "feastDay": "July 2",
+    "eraSpan": "c. 1060 – 1139 · Bamberg, Germany & Pomerania, Poland",
+    "trailSubtitle": "3 Stops · Bamberg Cathedral, Michelsberg Abbey & Baltic Coast of Szczecin",
+    "overviewButtonLabel": "Bavaria to the Baltic",
+    "globeHeaderSubtitle": "Sacred Trails of St. Otto of Bamberg (Bamberg (Germany) & Szczecin (Poland))",
+    "overviewCamera": {
+      "camLat": 51.51,
+      "camLng": 12.71,
+      "camAltitude": 4.6,
+      "lookLat": 51.66,
+      "lookLng": 12.71,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "DEU",
+      "POL"
+    ],
+    "completionSummary": "You journeyed from Franconia’s four-spired imperial cathedral all the way to the breezy Baltic coast with St. Otto of Bamberg—the \"Apostle of Pomerania\" who healed imperial feuds as a peacemaker and won northern Europe by bringing gifts, fairness, and respect instead of swords.",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Peacemaker-Bishop of Four-Spired Bamberg",
+        "subtitle": "Sweep your lantern across Babenberga (Bamberg Cathedral) to uncover 3 hidden memories",
+        "eraLabel": "1102 – 1124 · Bamberg, Bavaria, Germany",
+        "ancientPlaceName": "Babenberga (Bamberg Cathedral)",
+        "modernPlaceName": "Bamberg",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/otto-of-bamberg/stop1.webp",
+        "imageCaption": "Majestic four-spired pale sandstone Romanesque imperial cathedral glowing in golden Franconian light above historic timbered river houses.",
+        "whatYouCanSeeToday": "Bamberg’s breathtaking UNESCO Old Town and four-spired Cathedral still glow with the architectural and charitable vision St. Otto poured into Franconia.",
+        "didYouKnowHighlight": "During a devastating Bavarian famine, Bishop Otto refused to dine on fine food—spending the entire episcopal treasury to buy grain and personally distributing loaves so thousands of families survived!",
+        "saintQuote": "True authority is measured by how gently it lifts the poor.",
+        "hiddenArtifacts": [
+          {
+            "id": "otto-of-bamberg_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Babenberga (Bamberg Cathedral) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Peacemaker-Bishop of Four-Spired Bamberg",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born into a modest Swabian noble family around 1060, gifted young Otto spent years teaching in Poland—learning Slavic languages fluently!—before becoming imperial chancellor and Bishop of Bamberg in 1102. Entering Bamberg barefoot in winter snow to show his humility, Otto rebuilt Bamberg Cathedral after a fire, founded over twenty monasteries and free hospitals, and acted as the brilliant bridge-building diplomat who helped end the bitter 50-year Investiture Controversy with the **Concordat of Worms** in 1122!",
+            "stoneKeyWord": "Bamberg Cathedral",
+            "stoneKeyMeaning": "Historic turning point in Babenberga (Bamberg Cathedral)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "otto-of-bamberg_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bamberg.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bamberg, Germany Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Bamberg’s breathtaking UNESCO Old Town and four-spired Cathedral still glow with the architectural and charitable vision St. Otto poured into Franconia.",
+            "stoneKeyWord": "Concordat of Worms",
+            "stoneKeyMeaning": "Living pilgrimage site in Bamberg",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "otto-of-bamberg_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Otto of Bamberg",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "During a devastating Bavarian famine, Bishop Otto refused to dine on fine food—spending the entire episcopal treasury to buy grain and personally distributing loaves so thousands of families survived!",
+            "stoneKeyWord": "Bavaria",
+            "stoneKeyMeaning": "Enduring witness of St. Otto of Bamberg",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Babenberga (Bamberg Cathedral)?",
+            "correctStoneId": "otto-of-bamberg_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bamberg?",
+            "correctStoneId": "otto-of-bamberg_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "otto-of-bamberg_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Babenberga (Bamberg Cathedral)",
+        "globePlacement": {
+          "latDeg": 49.8909,
+          "lngDeg": 10.8824,
+          "regionLabel": "Bavaria, Germany",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Peacemaker-Bishop of Four-Spired Bamberg",
+        "detectiveLeadPrompt": "Trace St. Otto of Bamberg’s 1102 – 1124 · bamberg, bavaria, germany trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "otto-of-bamberg_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Bavaria, Germany)",
+            "clueText": "Bavaria’s UNESCO-listed \"City of Seven Hills\" famed for its towering four-spired imperial cathedral.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "otto-of-bamberg_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "During a devastating Bavarian famine, Bishop Otto refused to dine on fine food—spending the entire episcopal treasury to buy grain and personally distributing loaves so thousands of families survived!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "otto-of-bamberg_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Peacemaker-Bishop of Four-Spired Bamberg",
+            "clueText": "Born into a modest Swabian noble family around 1060, gifted young Otto spent years teaching in Poland—learning Slavic languages fluently!—before becoming imperial chancellor and Bishop of Bamberg in 1102. Entering Bamberg barefoot in winter snow to show his humility, Otto rebuilt Bamberg Cathedral after a fire, founded over twenty monasteries and free hospitals, and acted as the brilliant bridge-building diplomat who helped end the bitter 50-year Investiture Controversy with the **Concordat of Worms** in 1122!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Breezy Baltic Voyage to Szczecin & Pomerania",
+        "subtitle": "Sweep your lantern across Stettin (Szczecin, Pomerania) to uncover 3 hidden memories",
+        "eraLabel": "1124 – 1128 · Szczecin & Wolin, Pomerania, Poland",
+        "ancientPlaceName": "Stettin (Szczecin, Pomerania)",
+        "modernPlaceName": "Szczecin",
+        "modernCountry": "Poland",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/otto-of-bamberg/stop2.webp",
+        "imageCaption": "Breezy amber-lit Baltic port harbor framed by timber medieval ships and tall coastal pines as a tall smiling bishop hands gifts to curious Pomeranian townspeople.",
+        "whatYouCanSeeToday": "Across northern Poland and northeastern Germany, St. Otto of Bamberg is cherished as the beloved **\"Apostle of Pomerania\"**—celebrated for proving that genuine friendship achieves what armies never could!",
+        "didYouKnowHighlight": "Otto deliberately arrived in Pomerania dressed cleanly and generously paying his own way—because earlier beggared missionaries had been mocked as fortune-hunters! His thoughtful cultural sensitivity won entire cities overnight!",
+        "saintQuote": "We have not come to take your silver, but to share a treasure that can never be stolen.",
+        "hiddenArtifacts": [
+          {
+            "id": "otto-of-bamberg_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Stettin (Szczecin, Pomerania) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Breezy Baltic Voyage to Szczecin & Pomerania",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "When Polish Duke Bolesław III begged someone to preach the Gospel to the fiercely independent Baltic Pomeranians—where earlier harsh preachers had failed completely!—sixty-four-year-old Bishop Otto stepped forward with a genius strategy: **never ask for a single coin, and come bringing generous gifts, fair trade, and total respect!** Speaking fluent Slavic, redeeming captives from slavery, and arriving with wagonloads of fine cloth and provisions for the poor, Otto peacefully baptized over 22,000 Pomeranians across Szczecin, Wolin, and Pyrzyce!",
+            "stoneKeyWord": "Apostle of Pomerania",
+            "stoneKeyMeaning": "Historic turning point in Stettin (Szczecin, Pomerania)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "otto-of-bamberg_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Szczecin.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Szczecin, Poland Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Across northern Poland and northeastern Germany, St. Otto of Bamberg is cherished as the beloved **\"Apostle of Pomerania\"**—celebrated for proving that genuine friendship achieves what armies never could!",
+            "stoneKeyWord": "Szczecin Baltic",
+            "stoneKeyMeaning": "Living pilgrimage site in Szczecin",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "otto-of-bamberg_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Otto of Bamberg",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Otto deliberately arrived in Pomerania dressed cleanly and generously paying his own way—because earlier beggared missionaries had been mocked as fortune-hunters! His thoughtful cultural sensitivity won entire cities overnight!",
+            "stoneKeyWord": "Respectful Mission",
+            "stoneKeyMeaning": "Enduring witness of St. Otto of Bamberg",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Stettin (Szczecin, Pomerania)?",
+            "correctStoneId": "otto-of-bamberg_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Szczecin?",
+            "correctStoneId": "otto-of-bamberg_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "otto-of-bamberg_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Stettin (Szczecin, Pomerania)",
+        "globePlacement": {
+          "latDeg": 53.4285,
+          "lngDeg": 14.5528,
+          "regionLabel": "West Pomerania, Poland",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Breezy Baltic Voyage to Szczecin & Pomerania",
+        "detectiveLeadPrompt": "Trace St. Otto of Bamberg’s 1124 – 1128 · szczecin & wolin, pomerania, poland trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "otto-of-bamberg_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (West Pomerania, Poland)",
+            "clueText": "Poland’s historic Baltic river port at the mouth of the Oder where Christianity peacefully took root.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "otto-of-bamberg_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Otto deliberately arrived in Pomerania dressed cleanly and generously paying his own way—because earlier beggared missionaries had been mocked as fortune-hunters! His thoughtful cultural sensitivity won entire cities overnight!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "otto-of-bamberg_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Breezy Baltic Voyage to Szczecin & Pomerania",
+            "clueText": "When Polish Duke Bolesław III begged someone to preach the Gospel to the fiercely independent Baltic Pomeranians—where earlier harsh preachers had failed completely!—sixty-four-year-old Bishop Otto stepped forward with a genius strategy: **never ask for a single coin, and come bringing generous gifts, fair trade, and total respect!** Speaking fluent Slavic, redeeming captives from slavery, and arriving with wagonloads of fine cloth and provisions for the poor, Otto peacefully baptized over 22,000 Pomeranians across Szczecin, Wolin, and Pyrzyce!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "Hilltop Resting Place at St. Michael’s Abbey, Bamberg",
+        "subtitle": "Sweep your lantern across Kloster Michelsberg, Bamberg to uncover 3 hidden memories",
+        "eraLabel": "1128 – June 30, 1139 · Michelsberg Abbey, Bamberg",
+        "ancientPlaceName": "Kloster Michelsberg, Bamberg",
+        "modernPlaceName": "Bamberg",
+        "modernCountry": "Germany",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/otto-of-bamberg/stop3.webp",
+        "imageCaption": "Elevated terraced Baroque abbey monastery surrounded by lush sunlit Franconian vineyards overlooking golden cathedral spires below.",
+        "whatYouCanSeeToday": "Inside Bamberg’s panoramic Michelsberg Abbey Church—whose famous vaulted ceiling is painted as an astonishing \"Heavenly Garden\" of 600 botanical herbs!—pilgrims still slip beneath St. Otto’s arched medieval stone tomb asking for healing of back pain and strength for the journey!",
+        "didYouKnowHighlight": "A charming centuries-old tradition at St. Otto’s tomb in Bamberg invites pilgrims to crawl gently through the low stone archway right under his sarcophagus—asking for healthy backs and joyful perseverance!",
+        "saintQuote": "Walk forward with open hands, and even distant shores become home.",
+        "hiddenArtifacts": [
+          {
+            "id": "otto-of-bamberg_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Kloster Michelsberg, Bamberg in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Hilltop Resting Place at St. Michael’s Abbey, Bamberg",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Returning home to Bamberg after two legendary Baltic missionary journeys, elderly Bishop Otto kept founding hospitals, restoring churches, and writing letters of encouragement to his newborn Pomeranian parishes right until his peaceful passing on June 30, 1139. Canonized fifty years later, he rests inside his beloved hilltop Abbey of St. Michael overlooking the valley he loved.",
+            "stoneKeyWord": "Michelsberg Abbey",
+            "stoneKeyMeaning": "Historic turning point in Kloster Michelsberg, Bamberg",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "otto-of-bamberg_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bamberg.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bamberg, Germany Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Inside Bamberg’s panoramic Michelsberg Abbey Church—whose famous vaulted ceiling is painted as an astonishing \"Heavenly Garden\" of 600 botanical herbs!—pilgrims still slip beneath St. Otto’s arched medieval stone tomb asking for healing of back pain and strength for the journey!",
+            "stoneKeyWord": "Heavenly Garden Ceiling",
+            "stoneKeyMeaning": "Living pilgrimage site in Bamberg",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "otto-of-bamberg_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Otto of Bamberg",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "A charming centuries-old tradition at St. Otto’s tomb in Bamberg invites pilgrims to crawl gently through the low stone archway right under his sarcophagus—asking for healthy backs and joyful perseverance!",
+            "stoneKeyWord": "July 2",
+            "stoneKeyMeaning": "Enduring witness of St. Otto of Bamberg",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Kloster Michelsberg, Bamberg?",
+            "correctStoneId": "otto-of-bamberg_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bamberg?",
+            "correctStoneId": "otto-of-bamberg_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "otto-of-bamberg_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Kloster Michelsberg, Bamberg",
+        "globePlacement": {
+          "latDeg": 49.8936,
+          "lngDeg": 10.8764,
+          "regionLabel": "Bavaria, Germany",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Hilltop Resting Place at St. Michael’s Abbey, Bamberg",
+        "detectiveLeadPrompt": "Trace St. Otto of Bamberg’s 1128 – june 30, 1139 · michelsberg abbey, bamberg trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "otto-of-bamberg_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Bavaria, Germany)",
+            "clueText": "The panoramic monastery hilltop crowned by terraced vineyards looking straight across Bamberg’s historic rooftops.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "otto-of-bamberg_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "A charming centuries-old tradition at St. Otto’s tomb in Bamberg invites pilgrims to crawl gently through the low stone archway right under his sarcophagus—asking for healthy backs and joyful perseverance!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "otto-of-bamberg_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Hilltop Resting Place at St. Michael’s Abbey, Bamberg",
+            "clueText": "Returning home to Bamberg after two legendary Baltic missionary journeys, elderly Bishop Otto kept founding hospitals, restoring churches, and writing letters of encouragement to his newborn Pomeranian parishes right until his peaceful passing on June 30, 1139. Canonized fifty years later, he rests inside his beloved hilltop Abbey of St. Michael overlooking the valley he loved.",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  }
+]
