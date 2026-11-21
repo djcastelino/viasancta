@@ -1,0 +1,1526 @@
+[
+  {
+    "id": "all-saints-day",
+    "calendarDate": "2027-11-01",
+    "isFeastDay": true,
+    "weekdayIndex": 1,
+    "weekdayName": "Monday",
+    "weekdayShort": "Mon",
+    "saintName": "Solemnity of All Saints",
+    "shortTitle": "All Saints’ Day",
+    "feastDay": "November 1",
+    "eraSpan": "609 AD – Eternity · Rome Pantheon, Cluny & Every Nation on Earth",
+    "trailSubtitle": "3 Stops · Pantheon (Santa Maria ad Martyres) Rome, St. Peter’s Basilica & The Great Multitude",
+    "overviewButtonLabel": "Rome & All Nations",
+    "globeHeaderSubtitle": "Sacred Trails of All Saints’ Day (Rome, Italy & Global Communion of Saints)",
+    "overviewCamera": {
+      "camLat": 41.9,
+      "camLng": 12.47,
+      "camAltitude": 4.6,
+      "lookLat": 41.9,
+      "lookLng": 12.47,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "ITA",
+      "FRA",
+      "VAT"
+    ],
+    "completionSummary": "You stepped beneath the soaring golden oculus of Rome’s ancient Pantheon on All Saints’ Day—celebrating not only the 365 canonized heroes on our calendar, but the countless billions of hidden, smiling grandmothers, nurses, farmers, and unsung peacemakers from every tribe and tongue shining forever in God’s joy!",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "609 AD — Turning Rome’s Pantheon Into Santa Maria ad Martyres",
+        "subtitle": "Sweep your lantern across Pantheon (Basilica Sanctae Mariae ad Martyres) to uncover 3 hidden memories",
+        "eraLabel": "May 13, 609 AD · The Pantheon, Rome, Italy",
+        "ancientPlaceName": "Pantheon (Basilica Sanctae Mariae ad Martyres)",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-saints-day/stop1.webp",
+        "imageCaption": "Warm golden shaft of sunlight pouring straight down through the soaring open circular oculus of Rome’s ancient coffered-concrete Pantheon onto gleaming polychrome marble floors.",
+        "whatYouCanSeeToday": "Standing beneath the **Pantheon’s** unreinforced 43-meter concrete dome—still the largest in the world nearly 2,000 years later!—pilgrims watch golden sunlight sweep across the marble floor just as it did on that first All Saints celebration!",
+        "didYouKnowHighlight": "Without Pope Boniface IV turning the Pantheon into a Christian church in **609 AD**, marble looters would almost certainly have dismantled it centuries ago—meaning **All Saints’ Day literally saved the Pantheon for humanity!**",
+        "saintQuote": "Rejoice and be glad, for your reward will be great in heaven! (Matthew 5:12)",
+        "hiddenArtifacts": [
+          {
+            "id": "all-saints-day_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Pantheon (Basilica Sanctae Mariae ad Martyres) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "609 AD — Turning Rome’s Pantheon Into Santa Maria ad Martyres",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—ever wonder HOW **All Saints’ Day** got its start in Western history?! On **May 13, 609 AD**, **Pope St. Boniface IV** stepped inside Rome’s awe-inspiring **Pantheon**—literally built to honor \"all the pagan gods\"—brought twenty-eight wagonloads of unnamed martyr relics up from the dark catacombs, and rededicated the magnificent dome to **St. Mary and ALL the Martyrs (*Santa Maria ad Martyres*)!** Because so many humble heroes’ names were known only to God, the Church wanted ONE grand festival where **NOT A SINGLE FORGOTTEN SAINT** gets left out!",
+            "stoneKeyWord": "Pantheon 609 AD",
+            "stoneKeyMeaning": "Historic turning point in Pantheon (Basilica Sanctae Mariae ad Martyres)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-saints-day_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Standing beneath the **Pantheon’s** unreinforced 43-meter concrete dome—still the largest in the world nearly 2,000 years later!—pilgrims watch golden sunlight sweep across the marble floor just as it did on that first All Saints celebration!",
+            "stoneKeyWord": "Santa Maria ad Martyres",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-saints-day_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Saints’ Day",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Without Pope Boniface IV turning the Pantheon into a Christian church in **609 AD**, marble looters would almost certainly have dismantled it centuries ago—meaning **All Saints’ Day literally saved the Pantheon for humanity!**",
+            "stoneKeyWord": "Saved the Pantheon",
+            "stoneKeyMeaning": "Enduring witness of All Saints’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Pantheon (Basilica Sanctae Mariae ad Martyres)?",
+            "correctStoneId": "all-saints-day_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "all-saints-day_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-saints-day_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Pantheon (Basilica Sanctae Mariae ad Martyres)",
+        "globePlacement": {
+          "latDeg": 41.8986,
+          "lngDeg": 12.4769,
+          "regionLabel": "Historic Center, Rome, Italy",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "609 AD — Turning Rome’s Pantheon Into Santa Maria ad Martyres",
+        "detectiveLeadPrompt": "Trace All Saints’ Day’s may 13, 609 ad · the pantheon, rome, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-saints-day_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Historic Center, Rome, Italy)",
+            "clueText": "Rome’s breathtaking 2,000-year-old domed temple of \"all gods,\" rededicated in 609 AD by Pope Boniface IV to Mary and ALL the Christian martyrs—sparking All Saints’ Day!",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-saints-day_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Without Pope Boniface IV turning the Pantheon into a Christian church in **609 AD**, marble looters would almost certainly have dismantled it centuries ago—meaning **All Saints’ Day literally saved the Pantheon for humanity!**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-saints-day_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "609 AD — Turning Rome’s Pantheon Into Santa Maria ad Martyres",
+            "clueText": "Wait—ever wonder HOW **All Saints’ Day** got its start in Western history?! On **May 13, 609 AD**, **Pope St. Boniface IV** stepped inside Rome’s awe-inspiring **Pantheon**—literally built to honor \"all the pagan gods\"—brought twenty-eight wagonloads of unnamed martyr relics up from the dark catacombs, and rededicated the magnificent dome to **St. Mary and ALL the Martyrs (*Santa Maria ad Martyres*)!** Because so many humble heroes’ names were known only to God, the Church wanted ONE grand festival where **NOT A SINGLE FORGOTTEN SAINT** gets left out!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Why November 1? Pope Gregory III’s Chapel in St. Peter’s",
+        "subtitle": "Sweep your lantern across Oratory of All Saints, Old St. Peter’s, Rome to uncover 3 hidden memories",
+        "eraLabel": "731 – 835 AD · St. Peter’s Basilica, Vatican City & Frankish Realms",
+        "ancientPlaceName": "Oratory of All Saints, Old St. Peter’s, Rome",
+        "modernPlaceName": "Vatican City (Rome)",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-saints-day/stop2.webp",
+        "imageCaption": "Radiant golden mosaic chapel inside Rome’s grand basilica aglow with amber autumn light and laurel garlands honoring apostles, martyrs, and everyday believers.",
+        "whatYouCanSeeToday": "Every **November 1**, bells ring across cathedrals and village chapels from **Manila and Mexico City to Warsaw, Rome, and New York**, proclaiming the **Beatitudes** as the road map to joy!",
+        "didYouKnowHighlight": "Wait—did you catch that fun language fact?! **\"Halloween\"** literally comes from **\"All Hallows’ Even\"**—the joyful vigil night right before **All Saints’ (\"All Hallows’\") Day!**",
+        "saintQuote": "Blessed are the pure in heart, for they shall see God!",
+        "hiddenArtifacts": [
+          {
+            "id": "all-saints-day_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Oratory of All Saints, Old St. Peter’s, Rome in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Why November 1? Pope Gregory III’s Chapel in St. Peter’s",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Why did All Saints move from May 13 to **November 1**?! Around **731–741 AD**, **Pope St. Gregory III** built a radiant new chapel inside Old **St. Peter’s Basilica** dedicated to *\"the Savior, His Mother, all the Apostles, Martyrs, Confessors, and ALL the just made perfect throughout the whole world\"*—and consecrated it on **November 1!** A century later in **835**, **Pope Gregory IV** and Emperor Louis the Pious extended **November 1** across all of Europe—turning the golden harvest evening beforehand into ***\"All Hallows’ Eve\"*** (*Halloween*)!",
+            "stoneKeyWord": "November 1 Origin",
+            "stoneKeyMeaning": "Historic turning point in Oratory of All Saints, Old St. Peter’s, Rome",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-saints-day_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Vatican City (Rome).",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Vatican City (Rome), Italy Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Every **November 1**, bells ring across cathedrals and village chapels from **Manila and Mexico City to Warsaw, Rome, and New York**, proclaiming the **Beatitudes** as the road map to joy!",
+            "stoneKeyWord": "All Hallows’ Eve",
+            "stoneKeyMeaning": "Living pilgrimage site in Vatican City (Rome)",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-saints-day_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Saints’ Day",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—did you catch that fun language fact?! **\"Halloween\"** literally comes from **\"All Hallows’ Even\"**—the joyful vigil night right before **All Saints’ (\"All Hallows’\") Day!**",
+            "stoneKeyWord": "Pope Gregory III",
+            "stoneKeyMeaning": "Enduring witness of All Saints’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Oratory of All Saints, Old St. Peter’s, Rome?",
+            "correctStoneId": "all-saints-day_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Vatican City (Rome)?",
+            "correctStoneId": "all-saints-day_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-saints-day_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Oratory of All Saints, Old St. Peter’s, Rome",
+        "globePlacement": {
+          "latDeg": 41.9022,
+          "lngDeg": 12.4539,
+          "regionLabel": "Vatican City, Rome",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Why November 1? Pope Gregory III’s Chapel in St. Peter’s",
+        "detectiveLeadPrompt": "Trace All Saints’ Day’s 731 – 835 ad · st. peter’s basilica, vatican city & frankish realms trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-saints-day_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Vatican City, Rome)",
+            "clueText": "Vatican City, where Pope Gregory III dedicated an All Saints oratory specifically on November 1 in the 730s—setting the joyful autumn date celebrated worldwide today.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-saints-day_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Wait—did you catch that fun language fact?! **\"Halloween\"** literally comes from **\"All Hallows’ Even\"**—the joyful vigil night right before **All Saints’ (\"All Hallows’\") Day!**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-saints-day_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Why November 1? Pope Gregory III’s Chapel in St. Peter’s",
+            "clueText": "Why did All Saints move from May 13 to **November 1**?! Around **731–741 AD**, **Pope St. Gregory III** built a radiant new chapel inside Old **St. Peter’s Basilica** dedicated to *\"the Savior, His Mother, all the Apostles, Martyrs, Confessors, and ALL the just made perfect throughout the whole world\"*—and consecrated it on **November 1!** A century later in **835**, **Pope Gregory IV** and Emperor Louis the Pious extended **November 1** across all of Europe—turning the golden harvest evening beforehand into ***\"All Hallows’ Eve\"*** (*Halloween*)!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "The Great Multitude — Celebrating the \"Saints Next Door\"",
+        "subtitle": "Sweep your lantern across Communion of Saints (Global Church) to uncover 3 hidden memories",
+        "eraLabel": "Revelation 7:9 – Eternity · Every Nation, Tribe, People & Tongue",
+        "ancientPlaceName": "Communion of Saints (Global Church)",
+        "modernPlaceName": "Every Home & Nation",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-saints-day/stop3.webp",
+        "imageCaption": "Luminous golden horizon rising over earth’s continents filled with warm glowing lanterns symbolizing countless unsung joyful souls from every culture united in peace.",
+        "whatYouCanSeeToday": "Pause today and whisper thank-you for **one quiet \"saint next door\"** in your own family or life whose unseen kindness helped shape who you are!",
+        "didYouKnowHighlight": "St. John Henry Newman wrote warmly that **\"the world is kept alive by the hidden prayers of thousands of quiet souls whose names never make the newspapers!\"**",
+        "saintQuote": "A great multitude no one could count, from every nation, tribe, people, and tongue!",
+        "hiddenArtifacts": [
+          {
+            "id": "all-saints-day_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Communion of Saints (Global Church) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Great Multitude — Celebrating the \"Saints Next Door\"",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "In **Revelation 7:9**, St. John looks into heaven and gasps in wonder: **\"I saw a great multitude, which NO ONE COULD COUNT, from every nation, race, people, and tongue!\"** Today’s feast isn’t just for bishops or miracle-workers in stained glass—it is for the **\"saints next door\"**: the patient grandfather who prayed quietly every dawn, the tired nurse who held strangers’ hands, the honest shopkeeper, the forgiving friend—ordinary people who loved quietly and are cheering US on right now!",
+            "stoneKeyWord": "Saints Next Door",
+            "stoneKeyMeaning": "Historic turning point in Communion of Saints (Global Church)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-saints-day_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Every Home & Nation.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Every Home & Nation, Italy Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Pause today and whisper thank-you for **one quiet \"saint next door\"** in your own family or life whose unseen kindness helped shape who you are!",
+            "stoneKeyWord": "Revelation 7:9",
+            "stoneKeyMeaning": "Living pilgrimage site in Every Home & Nation",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-saints-day_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Saints’ Day",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "St. John Henry Newman wrote warmly that **\"the world is kept alive by the hidden prayers of thousands of quiet souls whose names never make the newspapers!\"**",
+            "stoneKeyWord": "November 1",
+            "stoneKeyMeaning": "Enduring witness of All Saints’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Communion of Saints (Global Church)?",
+            "correctStoneId": "all-saints-day_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Every Home & Nation?",
+            "correctStoneId": "all-saints-day_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-saints-day_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Communion of Saints (Global Church)",
+        "globePlacement": {
+          "latDeg": 41.9,
+          "lngDeg": 12.46,
+          "regionLabel": "Universal Communion of Saints",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Great Multitude — Celebrating the \"Saints Next Door\"",
+        "detectiveLeadPrompt": "Trace All Saints’ Day’s revelation 7:9 – eternity · every nation, tribe, people & tongue trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-saints-day_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Universal Communion of Saints)",
+            "clueText": "Every corner of the globe—reminding us on All Saints’ Day that millions of uncanonized everyday heroes shine right beside the famous names of history.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-saints-day_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. John Henry Newman wrote warmly that **\"the world is kept alive by the hidden prayers of thousands of quiet souls whose names never make the newspapers!\"**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-saints-day_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Great Multitude — Celebrating the \"Saints Next Door\"",
+            "clueText": "In **Revelation 7:9**, St. John looks into heaven and gasps in wonder: **\"I saw a great multitude, which NO ONE COULD COUNT, from every nation, race, people, and tongue!\"** Today’s feast isn’t just for bishops or miracle-workers in stained glass—it is for the **\"saints next door\"**: the patient grandfather who prayed quietly every dawn, the tired nurse who held strangers’ hands, the honest shopkeeper, the forgiving friend—ordinary people who loved quietly and are cheering US on right now!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "all-souls-day",
+    "calendarDate": "2027-11-02",
+    "isFeastDay": true,
+    "weekdayIndex": 2,
+    "weekdayName": "Tuesday",
+    "weekdayShort": "Tue",
+    "saintName": "All Souls’ Day (All the Faithful Departed)",
+    "shortTitle": "All Souls’ Day",
+    "feastDay": "November 2",
+    "eraSpan": "998 AD – Present · Cluny Abbey France, Roman Catacombs & Global Candlelight",
+    "trailSubtitle": "3 Stops · Abbey of Cluny 998 AD, Catacomb of Priscilla Rome & Global Sea of Candles",
+    "overviewButtonLabel": "Cluny & Rome",
+    "globeHeaderSubtitle": "Sacred Trails of All Souls’ Day (Cluny France & Rome, Italy)",
+    "overviewCamera": {
+      "camLat": 43.85,
+      "camLng": 8.58,
+      "camAltitude": 4.6,
+      "lookLat": 44.16,
+      "lookLng": 8.58,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "FRA",
+      "ITA"
+    ],
+    "completionSummary": "You lit a warm golden candle of love across the threshold of eternity on All Souls’ Day—tracing the compassionate tradition launched by Abbot St. Odilo at France’s great Abbey of Cluny in 998 AD to remember and pray tenderly for every beloved soul who has gone before us!",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "998 AD — St. Odilo Launches All Souls’ Day at Cluny Abbey",
+        "subtitle": "Sweep your lantern across Abbatia Cluniacensis (Cluny) to uncover 3 hidden memories",
+        "eraLabel": "998 AD · Abbey of Cluny, Burgundy, France",
+        "ancientPlaceName": "Abbatia Cluniacensis (Cluny)",
+        "modernPlaceName": "Cluny",
+        "modernCountry": "France",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-souls-day/stop1.webp",
+        "imageCaption": "Warm golden autumn twilight falling over the soaring medieval Romanesque bell tower of Cluny Abbey in Burgundy as hundreds of gentle monks walk in glowing candlelight.",
+        "whatYouCanSeeToday": "Standing beneath the surviving towering **Clock Tower of Cluny Abbey** in sunny Burgundy, remember how one French abbot’s compassionate heart gave the whole world a sacred annual day to say **\"You are NEVER forgotten!\"**",
+        "didYouKnowHighlight": "Within just a few decades, St. Odilo’s November 2 remembrance proved so deeply healing that **Rome and the entire Universal Church** joyfully adopted **All Souls’ Day** worldwide!",
+        "saintQuote": "Eternal rest grant unto them, O Lord, and let perpetual light shine upon them.",
+        "hiddenArtifacts": [
+          {
+            "id": "all-souls-day_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Abbatia Cluniacensis (Cluny) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "998 AD — St. Odilo Launches All Souls’ Day at Cluny Abbey",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—how did **November 2** become the world’s tenderest day of remembrance?! Right on the eve of the year 1000—in **998 AD**—compassionate **Abbot St. Odilo of Cluny** in Burgundy realized that right after celebrating the radiant saints in heaven on November 1, human hearts ache to remember **every ordinary loved one**—parents, friends, soldiers, strangers with nobody left to visit their graves! So Odilo decreed that every single monastery in Cluny’s vast European network would ring bells, offer Masses, and feed the poor in loving memory of **ALL the faithful departed every November 2!**",
+            "stoneKeyWord": "Cluny Abbey 998 AD",
+            "stoneKeyMeaning": "Historic turning point in Abbatia Cluniacensis (Cluny)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-souls-day_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Cluny.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Cluny, France Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Standing beneath the surviving towering **Clock Tower of Cluny Abbey** in sunny Burgundy, remember how one French abbot’s compassionate heart gave the whole world a sacred annual day to say **\"You are NEVER forgotten!\"**",
+            "stoneKeyWord": "Abbot St. Odilo",
+            "stoneKeyMeaning": "Living pilgrimage site in Cluny",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-souls-day_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Souls’ Day",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Within just a few decades, St. Odilo’s November 2 remembrance proved so deeply healing that **Rome and the entire Universal Church** joyfully adopted **All Souls’ Day** worldwide!",
+            "stoneKeyWord": "Perpetual Light",
+            "stoneKeyMeaning": "Enduring witness of All Souls’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Abbatia Cluniacensis (Cluny)?",
+            "correctStoneId": "all-souls-day_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Cluny?",
+            "correctStoneId": "all-souls-day_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-souls-day_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Abbatia Cluniacensis (Cluny)",
+        "globePlacement": {
+          "latDeg": 46.4347,
+          "lngDeg": 4.6592,
+          "regionLabel": "Burgundy, Eastern France",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "998 AD — St. Odilo Launches All Souls’ Day at Cluny Abbey",
+        "detectiveLeadPrompt": "Trace All Souls’ Day’s 998 ad · abbey of cluny, burgundy, france trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-souls-day_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Burgundy, Eastern France)",
+            "clueText": "The legendary Burgundian Benedictine abbey where Abbot St. Odilo instituted November 2 in the year 998 AD as an annual day of loving prayer for all departed souls.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-souls-day_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Within just a few decades, St. Odilo’s November 2 remembrance proved so deeply healing that **Rome and the entire Universal Church** joyfully adopted **All Souls’ Day** worldwide!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-souls-day_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "998 AD — St. Odilo Launches All Souls’ Day at Cluny Abbey",
+            "clueText": "Wait—how did **November 2** become the world’s tenderest day of remembrance?! Right on the eve of the year 1000—in **998 AD**—compassionate **Abbot St. Odilo of Cluny** in Burgundy realized that right after celebrating the radiant saints in heaven on November 1, human hearts ache to remember **every ordinary loved one**—parents, friends, soldiers, strangers with nobody left to visit their graves! So Odilo decreed that every single monastery in Cluny’s vast European network would ring bells, offer Masses, and feed the poor in loving memory of **ALL the faithful departed every November 2!**",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Hope Carved in Stone at the Catacomb of Priscilla",
+        "subtitle": "Sweep your lantern across Coemeterium Priscillae, Roma to uncover 3 hidden memories",
+        "eraLabel": "2nd – 4th Century AD · Via Salaria, Rome, Italy",
+        "ancientPlaceName": "Coemeterium Priscillae, Roma",
+        "modernPlaceName": "Rome",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-souls-day/stop2.webp",
+        "imageCaption": "Hushed ancient underground Roman stone archway softly lit by golden oil lamps revealing an early fresco of the Good Shepherd carrying a gentle lamb across His shoulders.",
+        "whatYouCanSeeToday": "Exploring the quiet underground corridors of Rome’s **Catacomb of Priscilla**—home to the oldest known painting of **Mary holding baby Jesus** (2nd century!)—reminds us that love NEVER ends at the grave!",
+        "didYouKnowHighlight": "In 2nd-century **2 Maccabees 12:46** and early Roman catacomb prayers alike, praying for departed friends has always been called *\"a holy and wholesome thought\"*—the ultimate bond of family love that crosses death itself!",
+        "saintQuote": "Love is stronger than death—those we hold in prayer are never truly lost.",
+        "hiddenArtifacts": [
+          {
+            "id": "all-souls-day_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Coemeterium Priscillae, Roma in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Hope Carved in Stone at the Catacomb of Priscilla",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Long before Cluny, early Christians descended by lamplight into Rome’s **Catacomb of Priscilla** to honor their departed loved ones—NOT with despair, but with radiant hope! Instead of gloomy epitaphs, they painted **peacocks (symbols of immortality), anchors of hope, and the smiling Good Shepherd** carrying a sheep home on His shoulders, carving tender prayers straight into the stone: ***\"In pace!\"*** (*\"In peace!\"*) and ***\"May God refresh your spirit in light!\"***",
+            "stoneKeyWord": "Catacomb of Priscilla",
+            "stoneKeyMeaning": "Historic turning point in Coemeterium Priscillae, Roma",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-souls-day_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome, Italy Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Exploring the quiet underground corridors of Rome’s **Catacomb of Priscilla**—home to the oldest known painting of **Mary holding baby Jesus** (2nd century!)—reminds us that love NEVER ends at the grave!",
+            "stoneKeyWord": "Good Shepherd Fresco",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-souls-day_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Souls’ Day",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "In 2nd-century **2 Maccabees 12:46** and early Roman catacomb prayers alike, praying for departed friends has always been called *\"a holy and wholesome thought\"*—the ultimate bond of family love that crosses death itself!",
+            "stoneKeyWord": "In Pace Hope",
+            "stoneKeyMeaning": "Enduring witness of All Souls’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Coemeterium Priscillae, Roma?",
+            "correctStoneId": "all-souls-day_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome?",
+            "correctStoneId": "all-souls-day_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-souls-day_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Coemeterium Priscillae, Roma",
+        "globePlacement": {
+          "latDeg": 41.9297,
+          "lngDeg": 12.5086,
+          "regionLabel": "Via Salaria, Rome, Italy",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Hope Carved in Stone at the Catacomb of Priscilla",
+        "detectiveLeadPrompt": "Trace All Souls’ Day’s 2nd – 4th century ad · via salaria, rome, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-souls-day_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Via Salaria, Rome, Italy)",
+            "clueText": "Rome’s serene ancient Via Salaria catacomb—nicknamed \"Queen of the Catacombs\"—whose tender early inscriptions ask simply: \"Pray for us! Live in peace!\"",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-souls-day_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "In 2nd-century **2 Maccabees 12:46** and early Roman catacomb prayers alike, praying for departed friends has always been called *\"a holy and wholesome thought\"*—the ultimate bond of family love that crosses death itself!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-souls-day_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Hope Carved in Stone at the Catacomb of Priscilla",
+            "clueText": "Long before Cluny, early Christians descended by lamplight into Rome’s **Catacomb of Priscilla** to honor their departed loved ones—NOT with despair, but with radiant hope! Instead of gloomy epitaphs, they painted **peacocks (symbols of immortality), anchors of hope, and the smiling Good Shepherd** carrying a sheep home on His shoulders, carving tender prayers straight into the stone: ***\"In pace!\"*** (*\"In peace!\"*) and ***\"May God refresh your spirit in light!\"***",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "A Global Sea of Candles & Golden Marigolds",
+        "subtitle": "Sweep your lantern across Monastero di San Gregorio al Celio & Global Remembrance to uncover 3 hidden memories",
+        "eraLabel": "Present Day · San Gregorio al Celio Rome & Cemeteries Worldwide",
+        "ancientPlaceName": "Monastero di San Gregorio al Celio & Global Remembrance",
+        "modernPlaceName": "Rome & Worldwide",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/all-souls-day/stop3.webp",
+        "imageCaption": "Breathtaking twilight hillside glowing with thousands of warm golden flickering candles and vibrant amber marigold petals honoring beloved family members across the world.",
+        "whatYouCanSeeToday": "Even on **All Souls’ Day**, Catholic priests are uniquely permitted to celebrate **three separate Masses**—one for their parish, one for a personal intention, and one for **every forgotten soul who has no one else to pray for them!**",
+        "didYouKnowHighlight": "That tender custom of offering three Masses on November 2 began in **15th-century Spain** and was extended to the whole world by **Pope Benedict XV in 1915** right in the midst of World War I’s immense grief!",
+        "saintQuote": "May the souls of all the faithful departed, through the mercy of God, rest in peace.",
+        "hiddenArtifacts": [
+          {
+            "id": "all-souls-day_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Monastero di San Gregorio al Celio & Global Remembrance in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "A Global Sea of Candles & Golden Marigolds",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Every **November 2** at dusk, something breathtaking happens right across planet Earth: in **Poland (*Zaduszki*)**, millions of glowing lanterns turn dark autumn cemeteries into blazing rivers of gold; in **Mexico (*Día de los Muertos*)**, families lay paths of bright orange marigolds (*cempasúchil*) and swap joyful laughter about beloved grandparents; in **the Philippines (*Undas*)**, whole families picnic lovingly beside their ancestors’ tombs! Different languages, ONE timeless Christian certainty: **death does NOT get the last word—Resurrection does!**",
+            "stoneKeyWord": "Sea of Golden Candles",
+            "stoneKeyMeaning": "Historic turning point in Monastero di San Gregorio al Celio & Global Remembrance",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "all-souls-day_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Rome & Worldwide.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Rome & Worldwide, Italy Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Even on **All Souls’ Day**, Catholic priests are uniquely permitted to celebrate **three separate Masses**—one for their parish, one for a personal intention, and one for **every forgotten soul who has no one else to pray for them!**",
+            "stoneKeyWord": "Three Masses for Forgotten",
+            "stoneKeyMeaning": "Living pilgrimage site in Rome & Worldwide",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "all-souls-day_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of All Souls’ Day",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "That tender custom of offering three Masses on November 2 began in **15th-century Spain** and was extended to the whole world by **Pope Benedict XV in 1915** right in the midst of World War I’s immense grief!",
+            "stoneKeyWord": "November 2",
+            "stoneKeyMeaning": "Enduring witness of All Souls’ Day",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Monastero di San Gregorio al Celio & Global Remembrance?",
+            "correctStoneId": "all-souls-day_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Rome & Worldwide?",
+            "correctStoneId": "all-souls-day_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "all-souls-day_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Monastero di San Gregorio al Celio & Global Remembrance",
+        "globePlacement": {
+          "latDeg": 41.8856,
+          "lngDeg": 12.4906,
+          "regionLabel": "Rome & Global Tradition",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "A Global Sea of Candles & Golden Marigolds",
+        "detectiveLeadPrompt": "Trace All Souls’ Day’s present day · san gregorio al celio rome & cemeteries worldwide trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "all-souls-day_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Rome & Global Tradition)",
+            "clueText": "Rome’s peaceful Caelian Hill monastery—alongside candlelit family cemeteries from Poland and the Philippines to Mexico and Italy—glowing with remembrance every November 2.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "all-souls-day_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "That tender custom of offering three Masses on November 2 began in **15th-century Spain** and was extended to the whole world by **Pope Benedict XV in 1915** right in the midst of World War I’s immense grief!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "all-souls-day_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "A Global Sea of Candles & Golden Marigolds",
+            "clueText": "Every **November 2** at dusk, something breathtaking happens right across planet Earth: in **Poland (*Zaduszki*)**, millions of glowing lanterns turn dark autumn cemeteries into blazing rivers of gold; in **Mexico (*Día de los Muertos*)**, families lay paths of bright orange marigolds (*cempasúchil*) and swap joyful laughter about beloved grandparents; in **the Philippines (*Undas*)**, whole families picnic lovingly beside their ancestors’ tombs! Different languages, ONE timeless Christian certainty: **death does NOT get the last word—Resurrection does!**",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hubert-of-liege",
+    "calendarDate": "2027-11-03",
+    "isFeastDay": true,
+    "weekdayIndex": 3,
+    "weekdayName": "Wednesday",
+    "weekdayShort": "Wed",
+    "saintName": "St. Hubert of Liège",
+    "shortTitle": "St. Hubert of Liège",
+    "feastDay": "November 3",
+    "eraSpan": "c. 656 – 727 AD · Ardennes Forest, Maastricht & Liège, Belgium",
+    "trailSubtitle": "3 Stops · Ardennes Forest Encounter, Maastricht & Liège Belgium, and Saint-Hubert Basilica",
+    "overviewButtonLabel": "Belgium & Netherlands",
+    "globeHeaderSubtitle": "Sacred Trails of St. Hubert of Liège (Maastricht Netherlands, Liège & Saint-Hubert Belgium)",
+    "overviewCamera": {
+      "camLat": 50.31,
+      "camLng": 5.47,
+      "camAltitude": 4.6,
+      "lookLat": 50.33,
+      "lookLng": 5.47,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "BEL",
+      "NLD"
+    ],
+    "completionSummary": "You rode deep into the misty golden autumn woods of Belgium’s Ardennes Forest with St. Hubert of Liège—the pleasure-loving medieval nobleman stunned into conversion by a majestic stag with a glowing golden cross between its antlers, who became the Apostle of the Ardennes and pioneer of ethical respect for wildlife!",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "The Glowing Cross Between the Stag’s Antlers",
+        "subtitle": "Sweep your lantern across Arduenna Silva (Ardennes Forest) to uncover 3 hidden memories",
+        "eraLabel": "c. 685 AD · Ardennes Forest, Wallonia, Belgium",
+        "ancientPlaceName": "Arduenna Silva (Ardennes Forest)",
+        "modernPlaceName": "Saint-Hubert (Ardennes)",
+        "modernCountry": "Belgium",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/hubert-of-liege/stop1.webp",
+        "imageCaption": "Shafts of crisp golden sunrise piercing misty emerald-and-amber ancient Belgian oak woods where a noble white stag turns calmly with a radiant luminous cross glowing between its antlers.",
+        "whatYouCanSeeToday": "In the lush forested heart of Belgium’s **Ardennes**, that unforgettable encounter transformed Hubert from a careless hunter into history’s great champion of **reverence for God’s creatures and ethical stewardship of nature!**",
+        "didYouKnowHighlight": "Wait—ever wondered why hunters, forest rangers, and wildlife conservationists in Europe follow **\"St. Hubert’s Code of Ethics\"**? Because Hubert taught strict respect for animal dignity—never hunting out of cruelty or waste, and caring for forest wildlife in harsh winters!",
+        "saintQuote": "Stop chasing shadows in the woods—turn your gaze toward the Light that waits for you!",
+        "hiddenArtifacts": [
+          {
+            "id": "hubert-of-liege_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Arduenna Silva (Ardennes Forest) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Glowing Cross Between the Stag’s Antlers",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "Born around **656 AD** into wealthy Frankish nobility, young **Hubert** loved royal banquets and thrilling forest hunts—until the sudden tragic death of his beloved young wife **Floribanne** left him heartbroken and restless! Trying to outrun his grief on **Good Friday morning** while everyone else was in church, Hubert galloped deep into the misty **Ardennes Forest** chasing a magnificent giant stag! Suddenly the stag halted, turned calmly to face him—and right between its towering antlers shone a **radiant glowing crucifix**, as a gentle voice asked: **\"Hubert, unless you turn back to the Lord, where is your restless chase leading you?\"**",
+            "stoneKeyWord": "Stag With Glowing Cross",
+            "stoneKeyMeaning": "Historic turning point in Arduenna Silva (Ardennes Forest)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "hubert-of-liege_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Saint-Hubert (Ardennes).",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Saint-Hubert (Ardennes), Belgium Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "In the lush forested heart of Belgium’s **Ardennes**, that unforgettable encounter transformed Hubert from a careless hunter into history’s great champion of **reverence for God’s creatures and ethical stewardship of nature!**",
+            "stoneKeyWord": "Ardennes Forest",
+            "stoneKeyMeaning": "Living pilgrimage site in Saint-Hubert (Ardennes)",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "hubert-of-liege_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Hubert of Liège",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—ever wondered why hunters, forest rangers, and wildlife conservationists in Europe follow **\"St. Hubert’s Code of Ethics\"**? Because Hubert taught strict respect for animal dignity—never hunting out of cruelty or waste, and caring for forest wildlife in harsh winters!",
+            "stoneKeyWord": "Ethical Wildlife Care",
+            "stoneKeyMeaning": "Enduring witness of St. Hubert of Liège",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Arduenna Silva (Ardennes Forest)?",
+            "correctStoneId": "hubert-of-liege_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Saint-Hubert (Ardennes)?",
+            "correctStoneId": "hubert-of-liege_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "hubert-of-liege_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Arduenna Silva (Ardennes Forest)",
+        "globePlacement": {
+          "latDeg": 50.0264,
+          "lngDeg": 5.3742,
+          "regionLabel": "Wallonia, Belgian Ardennes",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Glowing Cross Between the Stag’s Antlers",
+        "detectiveLeadPrompt": "Trace St. Hubert of Liège’s c. 685 ad · ardennes forest, wallonia, belgium trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "hubert-of-liege_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Wallonia, Belgian Ardennes)",
+            "clueText": "The deep misty oak-and-beech forest of southern Belgium where nobleman Hubert experienced his legendary Good Friday awakening.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "hubert-of-liege_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Wait—ever wondered why hunters, forest rangers, and wildlife conservationists in Europe follow **\"St. Hubert’s Code of Ethics\"**? Because Hubert taught strict respect for animal dignity—never hunting out of cruelty or waste, and caring for forest wildlife in harsh winters!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "hubert-of-liege_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Glowing Cross Between the Stag’s Antlers",
+            "clueText": "Born around **656 AD** into wealthy Frankish nobility, young **Hubert** loved royal banquets and thrilling forest hunts—until the sudden tragic death of his beloved young wife **Floribanne** left him heartbroken and restless! Trying to outrun his grief on **Good Friday morning** while everyone else was in church, Hubert galloped deep into the misty **Ardennes Forest** chasing a magnificent giant stag! Suddenly the stag halted, turned calmly to face him—and right between its towering antlers shone a **radiant glowing crucifix**, as a gentle voice asked: **\"Hubert, unless you turn back to the Lord, where is your restless chase leading you?\"**",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "First Bishop & Founder of Liège Along the Meuse",
+        "subtitle": "Sweep your lantern across Trajectum (Maastricht) & Leodium (Liège) to uncover 3 hidden memories",
+        "eraLabel": "705 – 727 AD · Maastricht Netherlands & Liège, Belgium",
+        "ancientPlaceName": "Trajectum (Maastricht) & Leodium (Liège)",
+        "modernPlaceName": "Liège",
+        "modernCountry": "Belgium",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/hubert-of-liege/stop2.webp",
+        "imageCaption": "Warm amber sunset over stone bridges spanning the shimmering Meuse River in medieval Liège where a compassionate bishop blesses riverboat merchants and artisans.",
+        "whatYouCanSeeToday": "From **Maastricht’s** ancient Roman bridges to bustling **Liège**, Belgium still honors **St. Hubert** as the city’s founding civic father—and every autumn hosts joyous brass-horn concerts in his honor!",
+        "didYouKnowHighlight": "St. Hubert’s fearless missionary treks into remote, wild valleys earned him the beloved title **\"The Apostle of the Ardennes\"**—and he is also the quirky, wonderful **Patron Saint of Mathematicians, Opticians, and Foresters!**",
+        "saintQuote": "Honest scales in the market and gentle mercy in the forest both honor the Creator.",
+        "hiddenArtifacts": [
+          {
+            "id": "hubert-of-liege_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Trajectum (Maastricht) & Leodium (Liège) in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "First Bishop & Founder of Liège Along the Meuse",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "Giving up all his lands and titles to study under wise **St. Lambert of Maastricht**, Hubert succeeded him as bishop in **705 AD**! Soon after, Hubert respectfully transferred St. Lambert’s relics to the quiet riverside hamlet of **Liège** along the Meuse—building a grand basilica, fair courts, honest weights-and-measures rules for market merchants, and schools that literally **founded the historic City of Liège!**",
+            "stoneKeyWord": "Founder of Liège",
+            "stoneKeyMeaning": "Historic turning point in Trajectum (Maastricht) & Leodium (Liège)",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "hubert-of-liege_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Liège.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Liège, Belgium Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "From **Maastricht’s** ancient Roman bridges to bustling **Liège**, Belgium still honors **St. Hubert** as the city’s founding civic father—and every autumn hosts joyous brass-horn concerts in his honor!",
+            "stoneKeyWord": "Apostle of Ardennes",
+            "stoneKeyMeaning": "Living pilgrimage site in Liège",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "hubert-of-liege_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Hubert of Liège",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Hubert’s fearless missionary treks into remote, wild valleys earned him the beloved title **\"The Apostle of the Ardennes\"**—and he is also the quirky, wonderful **Patron Saint of Mathematicians, Opticians, and Foresters!**",
+            "stoneKeyWord": "Patron of Mathematicians",
+            "stoneKeyMeaning": "Enduring witness of St. Hubert of Liège",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Trajectum (Maastricht) & Leodium (Liège)?",
+            "correctStoneId": "hubert-of-liege_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Liège?",
+            "correctStoneId": "hubert-of-liege_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "hubert-of-liege_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Trajectum (Maastricht) & Leodium (Liège)",
+        "globePlacement": {
+          "latDeg": 50.6403,
+          "lngDeg": 5.5718,
+          "regionLabel": "Meuse Valley, Wallonia, Belgium",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "First Bishop & Founder of Liège Along the Meuse",
+        "detectiveLeadPrompt": "Trace St. Hubert of Liège’s 705 – 727 ad · maastricht netherlands & liège, belgium trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "hubert-of-liege_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Meuse Valley, Wallonia, Belgium)",
+            "clueText": "The vibrant Meuse River city in eastern Belgium that grew directly from a tiny village into a great European center thanks to Bishop St. Hubert.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "hubert-of-liege_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Hubert’s fearless missionary treks into remote, wild valleys earned him the beloved title **\"The Apostle of the Ardennes\"**—and he is also the quirky, wonderful **Patron Saint of Mathematicians, Opticians, and Foresters!**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "hubert-of-liege_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "First Bishop & Founder of Liège Along the Meuse",
+            "clueText": "Giving up all his lands and titles to study under wise **St. Lambert of Maastricht**, Hubert succeeded him as bishop in **705 AD**! Soon after, Hubert respectfully transferred St. Lambert’s relics to the quiet riverside hamlet of **Liège** along the Meuse—building a grand basilica, fair courts, honest weights-and-measures rules for market merchants, and schools that literally **founded the historic City of Liège!**",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "The Grand Basilica of Saint-Hubert in the Ardennes",
+        "subtitle": "Sweep your lantern across Abbaye de Saint-Hubert-en-Ardenne to uncover 3 hidden memories",
+        "eraLabel": "825 AD – Present · Basilica of Saint-Hubert, Belgium",
+        "ancientPlaceName": "Abbaye de Saint-Hubert-en-Ardenne",
+        "modernPlaceName": "Saint-Hubert",
+        "modernCountry": "Belgium",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/hubert-of-liege/stop3.webp",
+        "imageCaption": "Majestic creamy-stone twin-towered Gothic-Baroque abbey basilica rising amid fiery crimson-and-gold Ardennes autumn trees as gentle forest horns echo across the valley.",
+        "whatYouCanSeeToday": "Every **November 3**, the magnificent **Basilica of Saint-Hubert** fills with the resonant golden harmonies of **French hunting horns (*Trompes de Chasse*)**—and joyful crowds even bring their **beloved dogs and horses** right onto the plaza for the traditional **St. Hubert Blessing of Animals!**",
+        "didYouKnowHighlight": "Wait—ever seen the famous **St. Hubert Hound**?! That gentle, soulful-eyed breed—ancestor of today’s modern **Bloodhound**—was lovingly bred for centuries right by the Benedictine monks of **Saint-Hubert Abbey!**",
+        "saintQuote": "Every creature of forest and field praises the gentleness of its Maker.",
+        "hiddenArtifacts": [
+          {
+            "id": "hubert-of-liege_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Abbaye de Saint-Hubert-en-Ardenne in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Grand Basilica of Saint-Hubert in the Ardennes",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Passing peacefully at **Tervuren** near Brussels in **727 AD** after reciting the Lord’s Prayer and the Creed aloud, Hubert’s relics were carried in solemn joy back to the heart of his beloved woods at **Andage**—soon renamed **Saint-Hubert!** For over a thousand years, travelers, woodsmen, and dog-lovers alike walked deep into the Ardennes to seek St. Hubert’s blessing of safety and healing!",
+            "stoneKeyWord": "Saint-Hubert Basilica",
+            "stoneKeyMeaning": "Historic turning point in Abbaye de Saint-Hubert-en-Ardenne",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "hubert-of-liege_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Saint-Hubert.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Saint-Hubert, Belgium Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Every **November 3**, the magnificent **Basilica of Saint-Hubert** fills with the resonant golden harmonies of **French hunting horns (*Trompes de Chasse*)**—and joyful crowds even bring their **beloved dogs and horses** right onto the plaza for the traditional **St. Hubert Blessing of Animals!**",
+            "stoneKeyWord": "Ancestor of Bloodhound",
+            "stoneKeyMeaning": "Living pilgrimage site in Saint-Hubert",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "hubert-of-liege_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of St. Hubert of Liège",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—ever seen the famous **St. Hubert Hound**?! That gentle, soulful-eyed breed—ancestor of today’s modern **Bloodhound**—was lovingly bred for centuries right by the Benedictine monks of **Saint-Hubert Abbey!**",
+            "stoneKeyWord": "November 3",
+            "stoneKeyMeaning": "Enduring witness of St. Hubert of Liège",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Abbaye de Saint-Hubert-en-Ardenne?",
+            "correctStoneId": "hubert-of-liege_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Saint-Hubert?",
+            "correctStoneId": "hubert-of-liege_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "hubert-of-liege_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Abbaye de Saint-Hubert-en-Ardenne",
+        "globePlacement": {
+          "latDeg": 50.0267,
+          "lngDeg": 5.3746,
+          "regionLabel": "Luxembourg Province, Belgium",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Grand Basilica of Saint-Hubert in the Ardennes",
+        "detectiveLeadPrompt": "Trace St. Hubert of Liège’s 825 ad – present · basilica of saint-hubert, belgium trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "hubert-of-liege_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Luxembourg Province, Belgium)",
+            "clueText": "The picturesque forest town in southern Belgium named directly after St. Hubert, crowned by a grand Renaissance-Gothic basilica guarding his legacy.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "hubert-of-liege_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Wait—ever seen the famous **St. Hubert Hound**?! That gentle, soulful-eyed breed—ancestor of today’s modern **Bloodhound**—was lovingly bred for centuries right by the Benedictine monks of **Saint-Hubert Abbey!**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "hubert-of-liege_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Grand Basilica of Saint-Hubert in the Ardennes",
+            "clueText": "Passing peacefully at **Tervuren** near Brussels in **727 AD** after reciting the Lord’s Prayer and the Creed aloud, Hubert’s relics were carried in solemn joy back to the heart of his beloved woods at **Andage**—soon renamed **Saint-Hubert!** For over a thousand years, travelers, woodsmen, and dog-lovers alike walked deep into the Ardennes to seek St. Hubert’s blessing of safety and healing!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vitalis-and-agricola",
+    "calendarDate": "2027-11-04",
+    "isFeastDay": true,
+    "weekdayIndex": 4,
+    "weekdayName": "Thursday",
+    "weekdayShort": "Thu",
+    "saintName": "Sts. Vitalis & Agricola of Bologna",
+    "shortTitle": "Sts. Vitalis & Agricola",
+    "feastDay": "November 4",
+    "eraSpan": "c. 260 – 304 AD · Bologna, Emilia-Romagna, Italy",
+    "trailSubtitle": "3 Stops · Bologna Roman Arena, St. Ambrose’s 393 AD Discovery & Basilica of Santo Stefano",
+    "overviewButtonLabel": "Bologna, Northern Italy",
+    "globeHeaderSubtitle": "Sacred Trails of Sts. Vitalis & Agricola (Bologna, Emilia-Romagna, Italy)",
+    "overviewCamera": {
+      "camLat": 44.49,
+      "camLng": 11.35,
+      "camAltitude": 4.6,
+      "lookLat": 44.49,
+      "lookLng": 11.35,
+      "lookRadiusScale": 0.9
+    },
+    "highlightedIsoCountries": [
+      "ITA"
+    ],
+    "completionSummary": "You walked beneath the glowing red-brick porticoes of Bologna with Sts. Vitalis and Agricola—a wealthy Roman nobleman and his enslaved servant who shattered ancient class barriers to become devoted brothers in Christ, encouraging each other side by side through martyrdom in 304 AD!",
+    "stops": [
+      {
+        "stopNumber": 1,
+        "title": "Master and Servant Transformed Into Brothers in Bologna",
+        "subtitle": "Sweep your lantern across Bononia, Roman Emilia to uncover 3 hidden memories",
+        "eraLabel": "c. 295 – 304 AD · Bologna (Roman Bononia), Northern Italy",
+        "ancientPlaceName": "Bononia, Roman Emilia",
+        "modernPlaceName": "Bologna",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/vitalis-and-agricola/stop1.webp",
+        "imageCaption": "Warm sunlit terracotta Roman colonnades in ancient Bononia where a dignified Roman citizen and his joyful servant sit side by side as total equals sharing bread and a Gospel scroll.",
+        "whatYouCanSeeToday": "Walking under Bologna’s UNESCO miles of warm ochre **terracotta porticoes**, pause to honor the city’s **very first two Christian martyrs**—a nobleman and a servant linked inseparably forever!",
+        "didYouKnowHighlight": "Notice how **St. Ambrose of Milan**—who personally wrote down their eyewitness legacy in 393 AD—was moved to tears by the fact that **\"the servant led the master into heaven like a fearless elder brother!\"**",
+        "saintQuote": "In Christ, chains fall away—no longer master and servant, but brothers forever!",
+        "hiddenArtifacts": [
+          {
+            "id": "vitalis-and-agricola_s1_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Bononia, Roman Emilia in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Master and Servant Transformed Into Brothers in Bologna",
+            "xPercent": 35,
+            "yPercent": 47,
+            "hitRadius": 14,
+            "storyUnlocked": "In the rigid class hierarchy of 3rd-century Roman **Bononia (Bologna)**, wealthy citizen **Agricola** was universally admired—even by pagans!—for his warm, gentle courtesy. Yet Agricola’s dearest spiritual friend and teacher wasn’t a senator or general—it was **Vitalis**, an enslaved man inside his own household! Embracing Christ together, master and servant completely erased the barrier between them: Agricola treated Vitalis as a beloved **brother and equal in Christ**, turning their home into a quiet beacon of brotherhood!",
+            "stoneKeyWord": "Master & Servant Brothers",
+            "stoneKeyMeaning": "Historic turning point in Bononia, Roman Emilia",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "vitalis-and-agricola_s1_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bologna.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bologna, Italy Today",
+            "xPercent": 57,
+            "yPercent": 63,
+            "hitRadius": 14,
+            "storyUnlocked": "Walking under Bologna’s UNESCO miles of warm ochre **terracotta porticoes**, pause to honor the city’s **very first two Christian martyrs**—a nobleman and a servant linked inseparably forever!",
+            "stoneKeyWord": "First Bologna Martyrs",
+            "stoneKeyMeaning": "Living pilgrimage site in Bologna",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "vitalis-and-agricola_s1_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Vitalis & Agricola",
+            "xPercent": 75,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Notice how **St. Ambrose of Milan**—who personally wrote down their eyewitness legacy in 393 AD—was moved to tears by the fact that **\"the servant led the master into heaven like a fearless elder brother!\"**",
+            "stoneKeyWord": "Roman Bononia",
+            "stoneKeyMeaning": "Enduring witness of Sts. Vitalis & Agricola",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Bononia, Roman Emilia?",
+            "correctStoneId": "vitalis-and-agricola_s1_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bologna?",
+            "correctStoneId": "vitalis-and-agricola_s1_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "vitalis-and-agricola_s1_a3"
+          }
+        ],
+        "sealName": "Seal of Bononia, Roman Emilia",
+        "globePlacement": {
+          "latDeg": 44.4949,
+          "lngDeg": 11.3426,
+          "regionLabel": "Emilia-Romagna, Northern Italy",
+          "beaconColorHex": "#f59e0b",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "Master and Servant Transformed Into Brothers in Bologna",
+        "detectiveLeadPrompt": "Trace Sts. Vitalis & Agricola’s c. 295 – 304 ad · bologna (roman bononia), northern italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "vitalis-and-agricola_s1_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Emilia-Romagna, Northern Italy)",
+            "clueText": "Northern Italy’s warm terracotta-porticoed university city—ancient Roman Bononia—where nobleman Agricola and his servant Vitalis lived out Christian equality.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "vitalis-and-agricola_s1_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Notice how **St. Ambrose of Milan**—who personally wrote down their eyewitness legacy in 393 AD—was moved to tears by the fact that **\"the servant led the master into heaven like a fearless elder brother!\"**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "vitalis-and-agricola_s1_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Master and Servant Transformed Into Brothers in Bologna",
+            "clueText": "In the rigid class hierarchy of 3rd-century Roman **Bononia (Bologna)**, wealthy citizen **Agricola** was universally admired—even by pagans!—for his warm, gentle courtesy. Yet Agricola’s dearest spiritual friend and teacher wasn’t a senator or general—it was **Vitalis**, an enslaved man inside his own household! Embracing Christ together, master and servant completely erased the barrier between them: Agricola treated Vitalis as a beloved **brother and equal in Christ**, turning their home into a quiet beacon of brotherhood!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 2,
+        "title": "Side-by-Side Courage in the Arena (304 AD)",
+        "subtitle": "Sweep your lantern across Arena di Bononia to uncover 3 hidden memories",
+        "eraLabel": "c. 304 AD · Bologna Roman Amphitheater, Italy",
+        "ancientPlaceName": "Arena di Bononia",
+        "modernPlaceName": "Bologna",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/vitalis-and-agricola/stop2.webp",
+        "imageCaption": "Golden afternoon sunlight piercing an ancient Roman stone archway in Bologna where two calm steadfast friends encourage one another with peaceful courage.",
+        "whatYouCanSeeToday": "Near Bologna’s historic **Via San Vitale** (named right after the faithful servant!), the ancient Church of **Santi Vitale e Agricola in Arena** still marks the traditional arena ground of their witness!",
+        "didYouKnowHighlight": "St. Ambrose recorded that even the Roman executioners hesitated to strike kindhearted Agricola because **everyone in Bologna liked him**—yet Agricola refused to save his skin by denying his friend Vitalis or his Lord!",
+        "saintQuote": "Do not fear—stand firm beside me, brother, for heaven’s gates stand open!",
+        "hiddenArtifacts": [
+          {
+            "id": "vitalis-and-agricola_s2_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Arena di Bononia in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "Side-by-Side Courage in the Arena (304 AD)",
+            "xPercent": 28,
+            "yPercent": 52,
+            "hitRadius": 14,
+            "storyUnlocked": "When Emperor Diocletian’s persecution struck Bologna around **304 AD**, clever Roman judges thought they could break wealthy **Agricola** easily—by arresting and torturing his beloved servant **Vitalis** right in front of his eyes! Instead, their plan spectacularly backfired! Enduring fierce cruelty without a single word of bitterness, **Vitalis** prayed aloud for his tormentors until his final breath—and watching his servant’s breathtaking peace filled **Agricola** with unstoppable courage to embrace crucifixion peacefully right beside him!",
+            "stoneKeyWord": "Via San Vitale",
+            "stoneKeyMeaning": "Historic turning point in Arena di Bononia",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "vitalis-and-agricola_s2_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bologna.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bologna, Italy Today",
+            "xPercent": 62,
+            "yPercent": 66,
+            "hitRadius": 14,
+            "storyUnlocked": "Near Bologna’s historic **Via San Vitale** (named right after the faithful servant!), the ancient Church of **Santi Vitale e Agricola in Arena** still marks the traditional arena ground of their witness!",
+            "stoneKeyWord": "Witnessed by St. Ambrose",
+            "stoneKeyMeaning": "Living pilgrimage site in Bologna",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "vitalis-and-agricola_s2_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Vitalis & Agricola",
+            "xPercent": 78,
+            "yPercent": 32,
+            "hitRadius": 14,
+            "storyUnlocked": "St. Ambrose recorded that even the Roman executioners hesitated to strike kindhearted Agricola because **everyone in Bologna liked him**—yet Agricola refused to save his skin by denying his friend Vitalis or his Lord!",
+            "stoneKeyWord": "304 AD Martyrdom",
+            "stoneKeyMeaning": "Enduring witness of Sts. Vitalis & Agricola",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Arena di Bononia?",
+            "correctStoneId": "vitalis-and-agricola_s2_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bologna?",
+            "correctStoneId": "vitalis-and-agricola_s2_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "vitalis-and-agricola_s2_a3"
+          }
+        ],
+        "sealName": "Seal of Arena di Bononia",
+        "globePlacement": {
+          "latDeg": 44.4942,
+          "lngDeg": 11.3489,
+          "regionLabel": "Emilia-Romagna, Italy",
+          "beaconColorHex": "#38bdf8",
+          "labelOffsetPx": [
+            0,
+            22
+          ]
+        },
+        "detectiveCaseTitle": "Side-by-Side Courage in the Arena (304 AD)",
+        "detectiveLeadPrompt": "Trace Sts. Vitalis & Agricola’s c. 304 ad · bologna roman amphitheater, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "vitalis-and-agricola_s2_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Emilia-Romagna, Italy)",
+            "clueText": "Bologna’s historic heart where Roman authorities tortured Vitalis first hoping to terrify Agricola—only to watch Vitalis’s radiant calm inspire his friend to stay steadfast.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "vitalis-and-agricola_s2_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "St. Ambrose recorded that even the Roman executioners hesitated to strike kindhearted Agricola because **everyone in Bologna liked him**—yet Agricola refused to save his skin by denying his friend Vitalis or his Lord!",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "vitalis-and-agricola_s2_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "Side-by-Side Courage in the Arena (304 AD)",
+            "clueText": "When Emperor Diocletian’s persecution struck Bologna around **304 AD**, clever Roman judges thought they could break wealthy **Agricola** easily—by arresting and torturing his beloved servant **Vitalis** right in front of his eyes! Instead, their plan spectacularly backfired! Enduring fierce cruelty without a single word of bitterness, **Vitalis** prayed aloud for his tormentors until his final breath—and watching his servant’s breathtaking peace filled **Agricola** with unstoppable courage to embrace crucifixion peacefully right beside him!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      },
+      {
+        "stopNumber": 3,
+        "title": "The Seven Churches of Santo Stefano & St. Ambrose’s Homage",
+        "subtitle": "Sweep your lantern across Complesso delle Sette Chiese (Santo Stefano), Bologna to uncover 3 hidden memories",
+        "eraLabel": "393 AD – Present · Basilica of Santo Stefano, Bologna, Italy",
+        "ancientPlaceName": "Complesso delle Sette Chiese (Santo Stefano), Bologna",
+        "modernPlaceName": "Bologna",
+        "modernCountry": "Italy",
+        "image": "https://reels.192-227-172-231.sslip.io/saints/vitalis-and-agricola/stop3.webp",
+        "imageCaption": "Enchanting cluster of ancient warm red-brick Romanesque churches framing a hushed cobbled Italian piazza glowing softly at twilight.",
+        "whatYouCanSeeToday": "Step inside the hushed 5th-century **Church of Sts. Vitalis and Agricola** within Bologna’s **Santo Stefano complex**—its ancient marble sarcophagi still stand side by side, whispering across seventeen centuries that **true friendship in Christ dissolves every social wall!**",
+        "didYouKnowHighlight": "Wait—every **November 4**, remember that Bologna’s oldest surviving church isn’t named after a conquering emperor—it’s named after an **enslaved servant and his master who chose to live and die as equal brothers!**",
+        "saintQuote": "Where true love dwells, every wall between rich and poor crumbles into brotherhood.",
+        "hiddenArtifacts": [
+          {
+            "id": "vitalis-and-agricola_s3_a1",
+            "orderNumber": 1,
+            "category": "What Happened Here",
+            "riddleToFind": "Find the luminous focal point of Complesso delle Sette Chiese (Santo Stefano), Bologna in the scene.",
+            "hintDirection": "Scan the center-left horizon of the painting.",
+            "foundTitle": "The Seven Churches of Santo Stefano & St. Ambrose’s Homage",
+            "xPercent": 35,
+            "yPercent": 43,
+            "hitRadius": 14,
+            "storyUnlocked": "Nearly ninety years later in **393 AD**, the great **St. Ambrose of Milan** visited Bologna, discovered the honored tombs of **Vitalis and Agricola**, and carried relics back to **Florence** (founding the iconic Basilica of San Lorenzo!) and **Milan**—spreading their story of brotherhood across all of Italy! Right in Bologna, their ancient church became the cornerstone of the magical **Basilica of Santo Stefano** (the famous *\"Seven Churches\"*)!",
+            "stoneKeyWord": "Seven Churches Bologna",
+            "stoneKeyMeaning": "Historic turning point in Complesso delle Sette Chiese (Santo Stefano), Bologna",
+            "soundCue": "relic_discovered"
+          },
+          {
+            "id": "vitalis-and-agricola_s3_a2",
+            "orderNumber": 2,
+            "category": "Where Is It Today?",
+            "riddleToFind": "Discover what pilgrims still visit today in Bologna.",
+            "hintDirection": "Sweep near the lower-center foreground.",
+            "foundTitle": "Bologna, Italy Today",
+            "xPercent": 55,
+            "yPercent": 69,
+            "hitRadius": 14,
+            "storyUnlocked": "Step inside the hushed 5th-century **Church of Sts. Vitalis and Agricola** within Bologna’s **Santo Stefano complex**—its ancient marble sarcophagi still stand side by side, whispering across seventeen centuries that **true friendship in Christ dissolves every social wall!**",
+            "stoneKeyWord": "Santo Stefano Shrine",
+            "stoneKeyMeaning": "Living pilgrimage site in Bologna",
+            "soundCue": "sanctuary_bell"
+          },
+          {
+            "id": "vitalis-and-agricola_s3_a3",
+            "orderNumber": 3,
+            "category": "Did You Know?",
+            "riddleToFind": "Uncover a remarkable detail remembered across the centuries.",
+            "hintDirection": "Check the upper-right sky or architectural detail.",
+            "foundTitle": "Hidden Detail of Sts. Vitalis & Agricola",
+            "xPercent": 81,
+            "yPercent": 39,
+            "hitRadius": 14,
+            "storyUnlocked": "Wait—every **November 4**, remember that Bologna’s oldest surviving church isn’t named after a conquering emperor—it’s named after an **enslaved servant and his master who chose to live and die as equal brothers!**",
+            "stoneKeyWord": "November 4",
+            "stoneKeyMeaning": "Enduring witness of Sts. Vitalis & Agricola",
+            "soundCue": "gregorian_chime"
+          }
+        ],
+        "vaultPrompts": [
+          {
+            "slotLabel": "First Memory",
+            "questionPrompt": "Which emblem marks what happened in Complesso delle Sette Chiese (Santo Stefano), Bologna?",
+            "correctStoneId": "vitalis-and-agricola_s3_a1"
+          },
+          {
+            "slotLabel": "Living Shrine",
+            "questionPrompt": "Which emblem points to what stands today in Bologna?",
+            "correctStoneId": "vitalis-and-agricola_s3_a2"
+          },
+          {
+            "slotLabel": "Enduring Witness",
+            "questionPrompt": "Which emblem recalls the lasting legacy of this stop?",
+            "correctStoneId": "vitalis-and-agricola_s3_a3"
+          }
+        ],
+        "sealName": "Seal of Complesso delle Sette Chiese (Santo Stefano), Bologna",
+        "globePlacement": {
+          "latDeg": 44.4922,
+          "lngDeg": 11.3486,
+          "regionLabel": "Bologna, Northern Italy",
+          "beaconColorHex": "#f43f5e",
+          "labelOffsetPx": [
+            0,
+            -24
+          ]
+        },
+        "detectiveCaseTitle": "The Seven Churches of Santo Stefano & St. Ambrose’s Homage",
+        "detectiveLeadPrompt": "Trace Sts. Vitalis & Agricola’s 393 ad – present · basilica of santo stefano, bologna, italy trail and identify this sanctuary on the 3D Earth.",
+        "detectiveClues": [
+          {
+            "id": "vitalis-and-agricola_s3_c1",
+            "clueNumber": 1,
+            "badgeLabel": "Modern-Day City Clue",
+            "headline": "Where on Earth? (Bologna, Northern Italy)",
+            "clueText": "Bologna’s mesmerizing \"Seven Churches\" complex—known as Bologna’s Jerusalem—whose oldest 5th-century chapel guards the original stone sarcophagi of Sts. Vitalis and Agricola.",
+            "soundCue": "compass_click"
+          },
+          {
+            "id": "vitalis-and-agricola_s3_c2",
+            "clueNumber": 2,
+            "badgeLabel": "Did You Know? Fun Fact",
+            "headline": "Historical Footprint",
+            "clueText": "Wait—every **November 4**, remember that Bologna’s oldest surviving church isn’t named after a conquering emperor—it’s named after an **enslaved servant and his master who chose to live and die as equal brothers!**",
+            "soundCue": "gregorian_chime"
+          },
+          {
+            "id": "vitalis-and-agricola_s3_c3",
+            "clueNumber": 3,
+            "badgeLabel": "Saint’s Life Clue",
+            "headline": "The Seven Churches of Santo Stefano & St. Ambrose’s Homage",
+            "clueText": "Nearly ninety years later in **393 AD**, the great **St. Ambrose of Milan** visited Bologna, discovered the honored tombs of **Vitalis and Agricola**, and carried relics back to **Florence** (founding the iconic Basilica of San Lorenzo!) and **Milan**—spreading their story of brotherhood across all of Italy! Right in Bologna, their ancient church became the cornerstone of the magical **Basilica of Santo Stefano** (the famous *\"Seven Churches\"*)!",
+            "soundCue": "relic_discovered"
+          }
+        ]
+      }
+    ]
+  }
+]
