@@ -1,6 +1,7 @@
 "use client";
 
 import { trackUmami } from "../lib/analytics";
+import { LITANY_TIMINGS, type LitanyWordTiming } from "./litanyTimings";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from 'react';
 import {
@@ -29,6 +30,7 @@ export interface LitanySegment {
   scriptureRef?: string;
   phrase: string;
   subtext: string;
+  words?: LitanyWordTiming[];
 }
 
 export interface UnceasingLitanyTrack {
@@ -52,7 +54,7 @@ export const UNCEASING_LITANIES: UnceasingLitanyTrack[] = [
     scriptureAnchor: 'Isaiah 43:21 & 1 Thessalonians 5:16–18',
     scriptureQuote:
       '“This people I have formed for Myself; they shall declare My praise.” — “Rejoice always, pray without ceasing, in everything give thanks.”',
-    audioUrl: '/audio/unceasing/litany-1.mp3',
+    audioUrl: '/audio/unceasing/litany-1.mp3?v=2',
     durationSec: 60,
     segments: [
       {
@@ -109,7 +111,7 @@ export const UNCEASING_LITANIES: UnceasingLitanyTrack[] = [
     scriptureAnchor: 'John 8:12 · Revelation 1:8 · Philippians 2:9–11',
     scriptureQuote:
       '“Therefore God also has highly exalted Him and given Him the name which is above every name.”',
-    audioUrl: '/audio/unceasing/litany-2.mp3',
+    audioUrl: '/audio/unceasing/litany-2.mp3?v=2',
     durationSec: 60,
     segments: [
       {
@@ -158,7 +160,7 @@ export const UNCEASING_LITANIES: UnceasingLitanyTrack[] = [
     scriptureAnchor: 'Hebrews 13:15 & Psalm 103:1–4',
     scriptureQuote:
       '“Therefore by Him let us continually offer the sacrifice of praise to God, that is, the fruit of our lips, giving thanks to His name.”',
-    audioUrl: '/audio/unceasing/litany-3.mp3',
+    audioUrl: '/audio/unceasing/litany-3.mp3?v=2',
     durationSec: 60,
     segments: [
       {
@@ -233,10 +235,28 @@ export default function PrayWithoutCeasingClient() {
 
   const voiceAudioRef = useRef<HTMLAudioElement | null>(null);
   const padAudioRef = useRef<HTMLAudioElement | null>(null);
-  const timerIntervalRef = useRef<number | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const startTimestampRef = useRef<number>(0);
 
-  const activeTrack =
+  const rawActiveTrack =
     UNCEASING_LITANIES.find((t) => t.id === selectedTrackId) || UNCEASING_LITANIES[0];
+  const syncedTiming = LITANY_TIMINGS[rawActiveTrack.id];
+  const activeTrack: UnceasingLitanyTrack = syncedTiming
+    ? {
+        ...rawActiveTrack,
+        segments: rawActiveTrack.segments.map((seg) => {
+          const match = syncedTiming.segments.find((s) => s.id === seg.id);
+          return match
+            ? {
+                ...seg,
+                startSec: match.startSec,
+                endSec: match.endSec,
+                words: match.words,
+              }
+            : seg;
+        }),
+      }
+    : rawActiveTrack;
 
   const remainingSec = Math.max(0, 60 - Math.floor(elapsedSec));
   const progressPct = Math.min(100, (elapsedSec / 60) * 100);
@@ -253,11 +273,15 @@ export default function PrayWithoutCeasingClient() {
     };
   }, []);
 
-  const stopAllAudioAndTimers = () => {
-    if (timerIntervalRef.current) {
-      window.clearInterval(timerIntervalRef.current);
-      timerIntervalRef.current = null;
+  const cancelSyncLoop = () => {
+    if (rafRef.current !== null) {
+      window.cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
     }
+  };
+
+  const stopAllAudioAndTimers = () => {
+    cancelSyncLoop();
     if (voiceAudioRef.current) {
       try {
         voiceAudioRef.current.pause();
@@ -309,11 +333,9 @@ export default function PrayWithoutCeasingClient() {
 
   const startSixtySecondPraise = () => {
     trackUmami('prayer_started', { track: activeTrack.id });
-    
-    // Pause main app ambient soundtrack while the 60-second sacred litany plays so voices never clash
-    
 
-    if (isCompleted || elapsedSec >= 60) {
+    const initialElapsed = isCompleted || elapsedSec >= 60 ? 0 : elapsedSec;
+    if (initialElapsed === 0) {
       setElapsedSec(0);
       setIsCompleted(false);
     }
@@ -324,14 +346,20 @@ export default function PrayWithoutCeasingClient() {
         voiceAudioRef.current.pause();
       }
       const audio = new Audio(activeTrack.audioUrl);
+      audio.preload = 'auto';
       audio.volume = voiceMuted ? 0 : 1.0;
       voiceAudioRef.current = audio;
     }
 
     if (voiceAudioRef.current) {
       voiceAudioRef.current.muted = voiceMuted;
-      if (elapsedSec === 0 || isCompleted) {
-        voiceAudioRef.current.currentTime = 0;
+      voiceAudioRef.current.volume = voiceMuted ? 0 : 1.0;
+      if (Math.abs(voiceAudioRef.current.currentTime - initialElapsed) > 0.2 || initialElapsed === 0) {
+        try {
+          voiceAudioRef.current.currentTime = initialElapsed;
+        } catch {
+          // ignore if metadata not yet loaded
+        }
       }
       voiceAudioRef.current.play().catch(() => {
         // Fallback if browser blocks autoplay
@@ -350,33 +378,56 @@ export default function PrayWithoutCeasingClient() {
     }
 
     setIsPlaying(true);
+    cancelSyncLoop();
+    startTimestampRef.current = Date.now() - initialElapsed * 1000;
 
-    if (timerIntervalRef.current) {
-      window.clearInterval(timerIntervalRef.current);
-    }
+    const tick = () => {
+      const audio = voiceAudioRef.current;
+      let nextElapsed: number;
 
-    const startTimestamp = Date.now() - elapsedSec * 1000;
-    timerIntervalRef.current = window.setInterval(() => {
-      const nextElapsed = (Date.now() - startTimestamp) / 1000;
+      if (audio && !audio.paused && !audio.ended && audio.readyState >= 2) {
+        // Lock screen text 100% directly to the narrator's real audio clock (zero drift)
+        nextElapsed = audio.currentTime;
+        startTimestampRef.current = Date.now() - nextElapsed * 1000;
+      } else {
+        // Smooth fallback while audio buffers, is muted/blocked, or finishes final ~1-2s to 60s
+        nextElapsed = (Date.now() - startTimestampRef.current) / 1000;
+      }
+
       if (nextElapsed >= 60) {
         handleCompleteMinute();
-      } else {
-        setElapsedSec(nextElapsed);
+        return;
       }
-    }, 100);
+
+      setElapsedSec(nextElapsed);
+      rafRef.current = window.requestAnimationFrame(tick);
+    };
+
+    rafRef.current = window.requestAnimationFrame(tick);
   };
 
   const pauseSixtySecondPraise = () => {
     setIsPlaying(false);
-    if (timerIntervalRef.current) {
-      window.clearInterval(timerIntervalRef.current);
-      timerIntervalRef.current = null;
-    }
+    cancelSyncLoop();
     if (voiceAudioRef.current) {
       voiceAudioRef.current.pause();
     }
     if (padAudioRef.current) {
       padAudioRef.current.pause();
+    }
+  };
+
+  const handleSeekToSegment = (targetSec: number) => {
+    const clamped = Math.max(0, Math.min(59.5, targetSec));
+    setElapsedSec(clamped);
+    setIsCompleted(false);
+    startTimestampRef.current = Date.now() - clamped * 1000;
+    if (voiceAudioRef.current) {
+      try {
+        voiceAudioRef.current.currentTime = clamped;
+      } catch {
+        // ignore
+      }
     }
   };
 
@@ -402,6 +453,7 @@ export default function PrayWithoutCeasingClient() {
     setVoiceMuted(next);
     if (voiceAudioRef.current) {
       voiceAudioRef.current.muted = next;
+      voiceAudioRef.current.volume = next ? 0 : 1.0;
     }
   };
 
@@ -684,7 +736,36 @@ export default function PrayWithoutCeasingClient() {
                 </div>
 
                 <blockquote className="mt-4 font-serif text-xl font-medium leading-relaxed text-[#fff9ed] sm:text-2xl">
-                  {activeSegment.phrase}
+                  {activeSegment.words && activeSegment.words.length > 0 ? (
+                    <>
+                      <span className="text-[#d4af37]/80">&ldquo;</span>
+                      {activeSegment.words.map((wordObj, wIdx) => {
+                        const isLive = isPlaying || elapsedSec > 0;
+                        const isSpokenNow =
+                          isLive &&
+                          elapsedSec >= wordObj.s - 0.04 &&
+                          elapsedSec <= wordObj.e + 0.12;
+                        const isAlreadySpoken = isLive && elapsedSec > wordObj.e + 0.12;
+                        const wordClass = isSpokenNow
+                          ? 'text-[#facc15] drop-shadow-[0_0_12px_rgba(250,204,21,0.45)]'
+                          : isAlreadySpoken || !isLive
+                          ? 'text-[#fff9ed]'
+                          : 'text-[#a89a84]';
+                        return (
+                          <span
+                            key={`${activeSegment.id}-${wIdx}`}
+                            className={`transition-colors duration-100 ${wordClass}`}
+                          >
+                            {wordObj.w}
+                            {wIdx < activeSegment.words!.length - 1 ? ' ' : ''}
+                          </span>
+                        );
+                      })}
+                      <span className="text-[#d4af37]/80">&rdquo;</span>
+                    </>
+                  ) : (
+                    activeSegment.phrase
+                  )}
                 </blockquote>
 
                 <p className="mt-3 text-xs italic text-[#b5a790]">{activeSegment.subtext}</p>
@@ -694,15 +775,12 @@ export default function PrayWithoutCeasingClient() {
                   {activeTrack.segments.map((seg, idx) => {
                     const isCurrent = seg.id === activeSegment.id;
                     const isPast = elapsedSec >= seg.endSec;
+                    const dispStart = Math.round(seg.startSec);
+                    const dispEnd = Math.round(seg.endSec);
                     return (
                       <button
                         key={seg.id}
-                        onClick={() => {
-                          setElapsedSec(seg.startSec);
-                          if (voiceAudioRef.current) {
-                            voiceAudioRef.current.currentTime = seg.startSec;
-                          }
-                        }}
+                        onClick={() => handleSeekToSegment(seg.startSec)}
                         className={`rounded-lg border px-2 py-1.5 text-left transition ${
                           isCurrent
                             ? 'border-[#d4af37] bg-[#2a2013] text-[#fef08a]'
@@ -712,8 +790,8 @@ export default function PrayWithoutCeasingClient() {
                         }`}
                       >
                         <div className="font-mono text-[10px] font-bold">
-                          0:{String(seg.startSec).padStart(2, '0')}–0:
-                          {String(seg.endSec).padStart(2, '0')}
+                          0:{String(dispStart).padStart(2, '0')}–0:
+                          {String(dispEnd).padStart(2, '0')}
                         </div>
                         <div className="truncate text-[11px] font-medium">Part {idx + 1}</div>
                       </button>
