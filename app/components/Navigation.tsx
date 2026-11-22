@@ -11,6 +11,7 @@ const links = [
   ["/#tours", "Pilgrimages"],
   ["/#challenge", "Scripture"],
   ["/#spiritual-warfare", "Prayer"],
+  ["/ask-the-doctors", "Doctors"],
 ];
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -38,6 +39,7 @@ export default function Navigation() {
               href={href}
               aria-current={
                 (href === "/" && pathname === "/") ||
+                (href === "/ask-the-doctors" && pathname.startsWith("/ask-the-doctors")) ||
                 (href === "/#tours" &&
                   [
                     "/tours/",

@@ -297,6 +297,16 @@ export default function Home() {
             </span>
             <MoveUpRight size={23} />
           </Link>
+          <Link href="/ask-the-doctors">
+            <span>
+              <Headphones size={23} strokeWidth={1} />
+              <span>
+                <small>14 SAINTS · 17 PUBLIC-DOMAIN PDFS · GUIDED BY ANDREW</small>
+                <strong>Ask the Doctors of the Church</strong>
+              </span>
+            </span>
+            <MoveUpRight size={23} />
+          </Link>
         </div>
       </section>
       )}
