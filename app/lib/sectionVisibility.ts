@@ -8,6 +8,7 @@ export const hiddenSections = [
   '/memory-verses',
 ];
 export const showTodaysPromise = false;
+export const showPrayerSection = false;
 export function isSectionVisible(path: string) {
   return !hiddenSections.some(hidden => path === hidden || path.startsWith(hidden + '/'));
 }

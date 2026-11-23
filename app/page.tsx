@@ -10,7 +10,7 @@ import {
   MoveUpRight,
   Sparkles,
 } from "lucide-react";
-import { isSectionVisible, showTodaysPromise } from "./lib/sectionVisibility";
+import { isSectionVisible, showPrayerSection, showTodaysPromise } from "./lib/sectionVisibility";
 import TodaysPromise from "./components/TodaysPromise";
 import HomeDailyHero from "./components/HomeDailyHero";
 import churches from "@/public/sacred-architecture.json";
@@ -18,7 +18,7 @@ import churches from "@/public/sacred-architecture.json";
 export const metadata = {
   title: "Divine Pilgrim — Sacred journeys. A deeper faith.",
   description:
-    "Discover sacred places, reflect on Scripture, and make room for prayer. Catholic virtual pilgrimages and daily spiritual companions.",
+    "Discover sacred places, reflect on Scripture, and explore the Doctors of the Church. Catholic virtual pilgrimages and daily spiritual companions.",
 };
 const pilgrimages = [
   {
@@ -214,6 +214,7 @@ export default function Home() {
           )}
         </div>
       </section>
+      {showPrayerSection && (
       <section
         className="pilgrim-section pilgrim-prayer"
         id="spiritual-warfare"
@@ -258,6 +259,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      )}
       {isSectionVisible("/biblical-timeline") && isSectionVisible("/jesus-in-ot") && (
       <section
         className="pilgrim-history"

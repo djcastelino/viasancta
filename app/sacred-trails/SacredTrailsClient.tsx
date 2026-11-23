@@ -157,11 +157,11 @@ export default function SacredTrailsClient() {
   const [drawerQuery, setDrawerQuery] = useState<string>('');
   const [drawerFilter, setDrawerFilter] = useState<'all' | 'feast' | 'completed'>('all');
 
-  // Audio state (preserves default Instrumental Hymns at 7% volume)
-  const [isMuted, setIsMuted] = useState<boolean>(false);
+  // Audio state (default Sound Off; users can enable anytime)
+  const [isMuted, setIsMuted] = useState<boolean>(true);
   const [masterVolume, setMasterVolume] = useState<number>(7);
   const [selectedSoundtrack, setSelectedSoundtrack] =
-    useState<SacredAmbientPreset>('instrumental_hymns');
+    useState<SacredAmbientPreset>('none');
   const [isAudioMenuOpen, setIsAudioMenuOpen] = useState<boolean>(false);
   const audioMenuRef = useRef<HTMLDivElement | null>(null);
 
@@ -197,7 +197,8 @@ export default function SacredTrailsClient() {
 
   useEffect(() => {
     soundEngine.setVolume(0.07);
-    soundEngine.startAmbient('instrumental_hymns');
+    soundEngine.setMuted(true);
+    soundEngine.stopAmbient();
   }, []);
 
   useEffect(() => {
@@ -360,6 +361,8 @@ export default function SacredTrailsClient() {
     setSelectedSoundtrack(preset);
     setIsAudioMenuOpen(false);
     if (preset === 'none') {
+      setIsMuted(true);
+      soundEngine.setMuted(true);
       soundEngine.stopAmbient();
     } else {
       if (isMuted) {
@@ -575,8 +578,20 @@ export default function SacredTrailsClient() {
 
             <div ref={audioMenuRef} className="relative flex items-center gap-1">
               <button
-                onClick={() => setIsMuted((m) => !m)}
-                aria-label={isMuted ? 'Unmute sacred audio' : 'Mute sacred audio'}
+                onClick={() => {
+                  if (isMuted || selectedSoundtrack === 'none') {
+                    setIsMuted(false);
+                    soundEngine.setMuted(false);
+                    if (selectedSoundtrack === 'none') {
+                      setSelectedSoundtrack('instrumental_hymns');
+                      soundEngine.startAmbient('instrumental_hymns');
+                    }
+                  } else {
+                    setIsMuted(true);
+                    soundEngine.setMuted(true);
+                  }
+                }}
+                aria-label={isMuted || selectedSoundtrack === 'none' ? 'Unmute sacred audio' : 'Mute sacred audio'}
                 className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[#2c241b] bg-[#17130e] text-[#cfc3ae] transition hover:border-[#d4af37]/60 hover:text-[#fef08a]"
               >
                 {isMuted || selectedSoundtrack === 'none' ? (

@@ -46,8 +46,13 @@ export interface SoundtrackOption {
 
 export const SOUNDTRACK_OPTIONS: SoundtrackOption[] = [
   {
+    id: 'none',
+    label: 'Sound Off (Default)',
+    subtitle: 'Silent Pilgrimage · Enable sacred audio anytime',
+  },
+  {
     id: 'instrumental_hymns',
-    label: 'Instrumental Sacred Strings (Default)',
+    label: 'Instrumental Sacred Strings',
     subtitle: 'Contemplative Orchestral Strings · Sacred Air',
   },
   {
@@ -89,13 +94,13 @@ class SoundEngine {
   private htmlAudioElement: HTMLAudioElement | null = null;
   private narrationAudioElement: HTMLAudioElement | null = null;
   private unlockListenerAttached: boolean = false;
-  private isMuted: boolean = false;
+  private isMuted: boolean = true;
   private volume: number = 0.07;
 
   private ambientController: { stop: () => void } | null = null;
-  private currentAmbient: SacredAmbientPreset = 'instrumental_hymns';
+  private currentAmbient: SacredAmbientPreset = 'none';
   private loopTimers: number[] = [];
-  private activeBiomeLabel: string = 'Instrumental Sacred Strings · Sacred Air';
+  private activeBiomeLabel: string = 'Sound Off';
 
   private getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;

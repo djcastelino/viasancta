@@ -5,12 +5,13 @@ import { usePathname } from "next/navigation";
 import { Cross, Menu, X, ArrowUpRight } from "lucide-react";
 import SettingsMenu from "./SettingsMenu";
 import PraiseChainBadge from "./PraiseChainBadge";
+import { showPrayerSection } from "../lib/sectionVisibility";
 const links = [
   ["/", "Home"],
   ["/discover", "Discover"],
   ["/#tours", "Pilgrimages"],
   ["/#challenge", "Scripture"],
-  ["/#spiritual-warfare", "Prayer"],
+  ...(showPrayerSection ? [["/#spiritual-warfare", "Prayer"]] : []),
   ["/ask-the-doctors", "Doctors"],
 ];
 export default function Navigation() {
@@ -63,7 +64,7 @@ export default function Navigation() {
           ))}
         </nav>
         <div className="pilgrim-nav-actions">
-          <PraiseChainBadge />
+          {showPrayerSection && <PraiseChainBadge />}
           <Link href="/about" className="pilgrim-about-link">
             Our story <ArrowUpRight size={14} />
           </Link>

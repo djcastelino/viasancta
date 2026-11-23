@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import discoveryPhotos from '@/public/discovery-photos.json';
+import { showPrayerSection } from '../lib/sectionVisibility';
 
 export const metadata = {
   title: 'About Divine Pilgrim',
@@ -77,7 +78,7 @@ export default function AboutPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Audio:</strong> Synthetic voices read journey narrations and Scripture quiz fun facts (powered by Azure Speech)</li>
-                <li><strong>Background Music:</strong> Carefully selected ambient tracks create prayerful atmospheres</li>
+                <li><strong>Background Music:</strong> Carefully selected ambient tracks create contemplative atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
                 <li><strong>AI-Created Sacred Trails &amp; 3D Cartography:</strong> Sacred Trails uses AI-created historical trail storytelling, detective clues, and scene illustrations paired with an interactive 3D WebGL Earth and voice narration</li>
                 <li><strong>AI Assistance:</strong> AI assists with some journey explanations, trail narratives, and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
@@ -132,6 +133,7 @@ export default function AboutPage() {
               </p>
 
 
+              {showPrayerSection && (
               <p>
                 <strong>Spiritual Warfare & Deliverance Ministry:</strong> Content inspired by the teaching of{' '}
                 <a
@@ -152,6 +154,7 @@ export default function AboutPage() {
                   logosvoice.tv
                 </a>.
               </p>
+              )}
             </div>
           </section>
 
