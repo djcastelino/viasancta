@@ -61,7 +61,7 @@ const pilgrimages = [
     image: "sacred-trails",
     label: "FOOTSTEPS OF THE SAINTS",
     title: "Sacred trails",
-    text: "From birthplace to final resting place, trace the real-world journeys of the saints through 3D globe trails and detective clues.",
+    text: "From birthplace to final resting place, walk in the real-world footsteps of 365 saints through an interactive 3D Earth, sacred art, and guided narration.",
   },
 ];
 const prayers = [

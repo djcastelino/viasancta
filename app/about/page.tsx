@@ -54,7 +54,7 @@ export default function AboutPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Sacred Mountains:</strong> Explore biblical mountains, their landscapes, and the Scripture accounts associated with them, with audio journeys</li>
                   <li><strong>Sacred Architecture:</strong> Discover churches and basilicas, their history, design, and craftsmanship</li>
-                  <li><strong>Sacred Trails:</strong> Walk in the footsteps of the saints (beginning with St. Augustine of Hippo) from birthplace to final resting place across an interactive 3D Earth, solving modern-day city detective clues, exploring historical fun facts, and inspecting historical sanctuary scenes</li>
+                  <li><strong>Sacred Trails:</strong> Walk in the footsteps of the saints (beginning with St. Augustine of Hippo) from birthplace to final resting place across an interactive 3D Earth, exploring historical notes, sacred artwork, and guided voice narration at every stop</li>
                 </ul>
               </div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <li><strong>Audio:</strong> Synthetic voices read journey narrations and Scripture quiz fun facts (powered by Azure Speech)</li>
                 <li><strong>Background Music:</strong> Carefully selected ambient tracks create contemplative atmospheres</li>
                 <li><strong>Progressive Web App:</strong> Works on any device, installable like a native app</li>
-                <li><strong>AI-Created Sacred Trails &amp; 3D Cartography:</strong> Sacred Trails uses AI-created historical trail storytelling, detective clues, and scene illustrations paired with an interactive 3D WebGL Earth and voice narration</li>
+                <li><strong>AI-Created Sacred Trails &amp; 3D Cartography:</strong> Sacred Trails uses AI-assisted historical storytelling and museum-style scene illustrations paired with an interactive 3D WebGL Earth and voice narration</li>
                 <li><strong>AI Assistance:</strong> AI assists with some journey explanations, trail narratives, and quiz fun facts. Divine Pilgrim is an independent project without ecclesiastical approval. Use our feedback address to suggest corrections.</li>
               </ul>
             </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             </h2>
             <div className="text-gray-700 space-y-3 text-sm">
               <p>
-                <strong>Sacred Trails (AI-Created Trails, Free-Licensed Images &amp; Sacred Audio):</strong> The Sacred Trails experience combines AI-created trail narratives, detective clues, and scene artwork with public-domain and freely licensed 3D Earth satellite/relief cartography (NASA Blue Marble, Natural Earth, and Wikimedia Commons) and public-domain / Creative Commons sacred audio recordings from Wikimedia Commons (including monastic Gregorian chant, European church bell peals, J.S. Bach orchestral strings, and Johann Pachelbel cathedral pipe organ recordings), alongside procedural Web Audio spatial soundscapes.
+                <strong>Sacred Trails (AI-Created Trails, Free-Licensed Images &amp; Sacred Audio):</strong> The Sacred Trails experience combines AI-assisted trail narratives and museum-style scene artwork with public-domain and freely licensed 3D Earth satellite/relief cartography (NASA Blue Marble, Natural Earth, and Wikimedia Commons) and public-domain / Creative Commons sacred audio recordings from Wikimedia Commons (including monastic Gregorian chant, European church bell peals, J.S. Bach orchestral strings, and Johann Pachelbel cathedral pipe organ recordings), alongside procedural Web Audio spatial soundscapes.
               </p>
 
 

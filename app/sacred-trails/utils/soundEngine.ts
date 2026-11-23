@@ -93,6 +93,9 @@ class SoundEngine {
 
   private htmlAudioElement: HTMLAudioElement | null = null;
   private narrationAudioElement: HTMLAudioElement | null = null;
+  private sharedNarrationPlayer: HTMLAudioElement | null = null;
+  private activeNarrationBlobUrl: string | null = null;
+  private narrationToken: number = 0;
   private unlockListenerAttached: boolean = false;
   private isMuted: boolean = true;
   private volume: number = 0.07;
@@ -220,7 +223,7 @@ class SoundEngine {
         : Math.min(1.0, this.volume);
     }
     if (this.narrationAudioElement) {
-      this.narrationAudioElement.volume = Math.min(1.0, this.volume);
+      this.narrationAudioElement.volume = 0.95;
     }
   }
 
@@ -233,12 +236,34 @@ class SoundEngine {
     if (this.htmlAudioElement) {
       this.htmlAudioElement.muted = muted;
     }
-    if (this.narrationAudioElement) {
-      this.narrationAudioElement.muted = muted;
-    }
     if (muted) {
       this.stopAmbient();
-      this.stopSpeaking();
+    }
+  }
+
+  /**
+   * Synchronously primes a shared HTMLAudioElement inside a user click/tap gesture
+   * so iOS Safari and macOS Safari allow Andrew voice playback after an async fetch.
+   */
+  public unlockNarrationForUserGesture() {
+    if (typeof window === 'undefined') return;
+    if (!this.sharedNarrationPlayer) {
+      this.sharedNarrationPlayer = new Audio();
+      this.sharedNarrationPlayer.preload = 'auto';
+    }
+    try {
+      this.sharedNarrationPlayer.muted = false;
+      this.sharedNarrationPlayer.volume = 0.95;
+      this.sharedNarrationPlayer.src =
+        'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+      const pr = this.sharedNarrationPlayer.play();
+      if (pr && typeof pr.then === 'function') {
+        pr.then(() => {
+          this.sharedNarrationPlayer?.pause();
+        }).catch(() => {});
+      }
+    } catch {
+      // Ignore silent unlock failure
     }
   }
 
@@ -735,10 +760,11 @@ class SoundEngine {
     fallbackText?: string
   ) {
     this.stopSpeaking();
-    if (typeof window === 'undefined' || this.isMuted) {
+    if (typeof window === 'undefined') {
       if (onEnd) onEnd();
       return;
     }
+    const token = ++this.narrationToken;
 
     const PRERECORDED_SAINTS = new Set([
       'augustine',
@@ -754,19 +780,21 @@ class SoundEngine {
       return;
     }
 
-    // Gently duck background ambient music so Andrew's voice is warm and clear
     if (this.htmlAudioElement) {
       this.htmlAudioElement.volume = Math.min(1.0, this.volume * 0.22);
     }
 
     const prefix = saintId === 'augustine' ? 'stop' : `${saintId}_stop`;
     const mp3Url = `/audio/narration/${prefix}_${stopNumber}_${kind}.mp3`;
-    const audio = new Audio(mp3Url);
-    audio.volume = Math.min(1.0, this.volume);
-    audio.muted = this.isMuted;
+    const audio = this.sharedNarrationPlayer || new Audio();
+    this.sharedNarrationPlayer = audio;
+    audio.muted = false;
+    audio.volume = 0.95;
+    audio.src = mp3Url;
     this.narrationAudioElement = audio;
 
     const handleFinish = () => {
+      if (this.narrationToken !== token) return;
       if (this.narrationAudioElement === audio) {
         this.narrationAudioElement = null;
       }
@@ -777,6 +805,7 @@ class SoundEngine {
     };
 
     const handleError = () => {
+      if (this.narrationToken !== token) return;
       if (fallbackText) {
         this.speakNarration(fallbackText, onEnd);
       } else {
@@ -791,16 +820,45 @@ class SoundEngine {
 
   public speakNarration(text: string, onEnd?: () => void) {
     this.stopSpeaking();
-    if (typeof window === 'undefined' || this.isMuted) {
+    if (typeof window === 'undefined' || !text.trim()) {
       if (onEnd) onEnd();
       return;
     }
+    const token = ++this.narrationToken;
 
     if (this.htmlAudioElement) {
       this.htmlAudioElement.volume = Math.min(1.0, this.volume * 0.22);
     }
 
-    // Attempt Azure Andrew Neural (/api/generate-audio) first
+    const playBlob = (blob: Blob) => {
+      if (this.narrationToken !== token) return;
+      if (this.activeNarrationBlobUrl) {
+        URL.revokeObjectURL(this.activeNarrationBlobUrl);
+      }
+      const blobUrl = URL.createObjectURL(blob);
+      this.activeNarrationBlobUrl = blobUrl;
+      const audio = this.sharedNarrationPlayer || new Audio();
+      this.sharedNarrationPlayer = audio;
+      audio.muted = false;
+      audio.volume = 0.95;
+      audio.src = blobUrl;
+      this.narrationAudioElement = audio;
+
+      const finish = () => {
+        if (this.narrationToken !== token) return;
+        if (this.activeNarrationBlobUrl === blobUrl) {
+          URL.revokeObjectURL(blobUrl);
+          this.activeNarrationBlobUrl = null;
+        }
+        if (this.narrationAudioElement === audio) this.narrationAudioElement = null;
+        if (this.htmlAudioElement) this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+        if (onEnd) onEnd();
+      };
+      audio.onended = finish;
+      audio.onerror = finish;
+      audio.play().catch(finish);
+    };
+
     fetch('/api/generate-audio', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -811,41 +869,48 @@ class SoundEngine {
       }),
     })
       .then((res) => {
-        if (!res.ok) throw new Error('Fallback');
+        if (!res.ok) throw new Error('Primary audio route failed');
         return res.blob();
       })
-      .then((blob) => {
-        const blobUrl = URL.createObjectURL(blob);
-        const audio = new Audio(blobUrl);
-        audio.volume = Math.min(1.0, this.volume);
-        this.narrationAudioElement = audio;
-        const finish = () => {
-          URL.revokeObjectURL(blobUrl);
-          if (this.narrationAudioElement === audio) this.narrationAudioElement = null;
-          if (this.htmlAudioElement) this.htmlAudioElement.volume = Math.min(1.0, this.volume);
-          if (onEnd) onEnd();
-        };
-        audio.onended = finish;
-        audio.onerror = finish;
-        audio.play().catch(finish);
-      })
+      .then(playBlob)
       .catch(() => {
-        if (this.htmlAudioElement) {
-          this.htmlAudioElement.volume = Math.min(1.0, this.volume);
-        }
-        if (onEnd) onEnd();
+        // Fallback to /api/doctors/speak (also en-US-AndrewMultilingualNeural)
+        fetch('/api/doctors/speak', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error('Fallback audio failed');
+            return res.blob();
+          })
+          .then(playBlob)
+          .catch(() => {
+            if (this.narrationToken !== token) return;
+            if (this.htmlAudioElement) {
+              this.htmlAudioElement.volume = Math.min(1.0, this.volume);
+            }
+            if (onEnd) onEnd();
+          });
       });
   }
 
   public stopSpeaking() {
+    this.narrationToken += 1;
     if (this.narrationAudioElement) {
       try {
+        this.narrationAudioElement.onended = null;
+        this.narrationAudioElement.onerror = null;
         this.narrationAudioElement.pause();
-        this.narrationAudioElement.src = '';
+        this.narrationAudioElement.currentTime = 0;
       } catch {
         // Ignore
       }
       this.narrationAudioElement = null;
+    }
+    if (this.activeNarrationBlobUrl) {
+      URL.revokeObjectURL(this.activeNarrationBlobUrl);
+      this.activeNarrationBlobUrl = null;
     }
     if (this.htmlAudioElement) {
       this.htmlAudioElement.volume = Math.min(1.0, this.volume);

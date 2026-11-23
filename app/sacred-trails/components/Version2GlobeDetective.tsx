@@ -5,24 +5,19 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 import {
   Compass,
   Sparkles,
-  CheckCircle2,
   MapPin,
-  HelpCircle,
   BookOpen,
-  Award,
-  ZoomIn,
   ZoomOut,
-  RotateCcw,
-  Eye,
+  ChevronLeft,
   ChevronRight,
-  Search,
   Globe,
-  Flame,
   Layers,
   Map as MapIcon,
   Volume2,
   Square,
-  Lock,
+  Play,
+  Landmark,
+  RotateCcw,
 } from 'lucide-react';
 import { SAINT_TRAILS, SaintTrailProfile, TrailStop } from '../data/saintsTrails';
 import { soundEngine } from '../utils/soundEngine';
@@ -66,6 +61,54 @@ interface GeoJsonFeature {
   };
 }
 
+function getStopNarrativeParagraphs(stop: TrailStop): string[] {
+  const seen = new Set<string>();
+  const addClean = (txt?: string) => {
+    const t = (txt || '').trim();
+    if (!t) return null;
+    const key = t.toLowerCase().slice(0, 72);
+    if (seen.has(key)) return null;
+    seen.add(key);
+    return t;
+  };
+
+  // Mark whatYouCanSeeToday and didYouKnowHighlight so we don't repeat them in the main prose
+  if (stop.whatYouCanSeeToday) {
+    seen.add(stop.whatYouCanSeeToday.trim().toLowerCase().slice(0, 72));
+  }
+  if (stop.didYouKnowHighlight) {
+    seen.add(stop.didYouKnowHighlight.trim().toLowerCase().slice(0, 72));
+  }
+
+  const out: string[] = [];
+  for (const art of stop.hiddenArtifacts || []) {
+    const cleaned = addClean(art.storyUnlocked);
+    if (cleaned) out.push(cleaned);
+  }
+  if (out.length === 0) {
+    for (const clue of stop.detectiveClues || []) {
+      const cleaned = addClean(clue.clueText);
+      if (cleaned) {
+        out.push(cleaned);
+        break;
+      }
+    }
+  }
+  return out;
+}
+
+function buildAndrewStopScript(saintName: string, stop: TrailStop, totalStops: number): string {
+  const paragraphs = getStopNarrativeParagraphs(stop);
+  const mainStory = paragraphs.join(' ');
+  const pieces = [
+    `Stop ${stop.stopNumber} of ${totalStops} in the life of ${saintName}: ${stop.title}, in ${stop.modernPlaceName}, ${stop.modernCountry}.`,
+    mainStory,
+    stop.whatYouCanSeeToday ? `Today: ${stop.whatYouCanSeeToday}` : '',
+    stop.saintQuote ? `${saintName} reminds us: ${stop.saintQuote}` : '',
+  ];
+  return pieces.filter(Boolean).join(' ');
+}
+
 export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   saintTrail = SAINT_TRAILS[0],
   onSolvedCountChange,
@@ -76,58 +119,43 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
   const leaderLineRefs = useRef<Record<number, SVGLineElement | null>>({});
   const anchorDotRefs = useRef<Record<number, SVGCircleElement | null>>({});
 
-  // Game progression state
-  const [activeCaseIndex, setActiveCaseIndex] = useState<number>(0);
-  const [solvedStopNumbers, setSolvedStopNumbers] = useState<number[]>([]);
+  // Non-gamified guided pilgrimage state (all stops immediately unlocked)
+  const [activeStopIndex, setActiveStopIndex] = useState<number>(0);
+  const [visitedStopNumbers, setVisitedStopNumbers] = useState<number[]>(() =>
+    trailStops[0] ? [trailStops[0].stopNumber] : []
+  );
   const [zoomedStopNumber, setZoomedStopNumber] = useState<number | null>(null);
-  const [showGlobeLabels, setShowGlobeLabels] = useState<boolean>(false);
+  const [showGlobeLabels, setShowGlobeLabels] = useState<boolean>(true);
   const [mapStyle, setMapStyle] = useState<GlobeMapStyle>('satellite_hd');
-  const [revealedClueIds, setRevealedClueIds] = useState<string[]>([
-    trailStops[0].detectiveClues[0].id,
-  ]);
-  const [feedbackBanner, setFeedbackBanner] = useState<{
-    type: 'info' | 'success' | 'mismatch';
-    text: string;
-  }>({
-    type: 'info',
-    text: `Read the Detective Clues on the right, then click any of the ${saintTrail.stops.length} Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
-  });
-
-  // Inspection Modal when a stop is solved or inspected
-  const [inspectedStop, setInspectedStop] = useState<TrailStop | null>(null);
-  const [cinematicFlightStop, setCinematicFlightStop] = useState<TrailStop | null>(null);
-  const [flightStageText, setFlightStageText] = useState<string>('');
-  const [cinematicPortalGlow, setCinematicPortalGlow] = useState<boolean>(false);
-  const flightTimerRef = useRef<number | null>(null);
-  const stageTimerRef = useRef<number | null>(null);
-  const portalTimerRef = useRef<number | null>(null);
-  const [activePhotoHotspotId, setActivePhotoHotspotId] = useState<string | null>(null);
-  const [showCompletionModal, setShowCompletionModal] = useState<boolean>(false);
   const [isNarrating, setIsNarrating] = useState<boolean>(false);
+  const [isAutoTouring, setIsAutoTouring] = useState<boolean>(false);
 
-  const currentCaseStop = trailStops[activeCaseIndex] || trailStops[0];
+  const autoTourRef = useRef<boolean>(false);
+  const autoTourTimerRef = useRef<number | null>(null);
+  const currentStop = trailStops[activeStopIndex] || trailStops[0];
 
-  const clearFlightTimers = useCallback(() => {
-    if (flightTimerRef.current !== null) {
-      window.clearTimeout(flightTimerRef.current);
-      flightTimerRef.current = null;
-    }
-    if (stageTimerRef.current !== null) {
-      window.clearTimeout(stageTimerRef.current);
-      stageTimerRef.current = null;
-    }
-    if (portalTimerRef.current !== null) {
-      window.clearTimeout(portalTimerRef.current);
-      portalTimerRef.current = null;
+  const clearAutoTourTimer = useCallback(() => {
+    if (autoTourTimerRef.current !== null) {
+      window.clearTimeout(autoTourTimerRef.current);
+      autoTourTimerRef.current = null;
     }
   }, []);
 
-  // Clear any active cinematic flight timer on unmount
+  const stopNarrationAndTour = useCallback(() => {
+    autoTourRef.current = false;
+    setIsAutoTouring(false);
+    clearAutoTourTimer();
+    soundEngine.stopSpeaking();
+    setIsNarrating(false);
+  }, [clearAutoTourTimer]);
+
   useEffect(() => {
     return () => {
-      clearFlightTimers();
+      autoTourRef.current = false;
+      clearAutoTourTimer();
+      soundEngine.stopSpeaking();
     };
-  }, [clearFlightTimers]);
+  }, [clearAutoTourTimer]);
 
   const initialOverviewCamPos = latLngToVector3(
     saintTrail.overviewCamera.camLat,
@@ -191,24 +219,13 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     []
   );
 
-  // Reset state cleanly when switching between Saint Trails
+  // Reset cleanly when switching between Saint Trails
   useEffect(() => {
-    clearFlightTimers();
-    soundEngine.stopSpeaking();
-    setIsNarrating(false);
-    setActiveCaseIndex(0);
-    setSolvedStopNumbers([]);
+    stopNarrationAndTour();
+    setActiveStopIndex(0);
+    setVisitedStopNumbers(saintTrail.stops[0] ? [saintTrail.stops[0].stopNumber] : []);
     setZoomedStopNumber(null);
-    setCinematicFlightStop(null);
-    setFlightStageText('');
-    setCinematicPortalGlow(false);
-    setInspectedStop(null);
-    setShowCompletionModal(false);
-    setRevealedClueIds([saintTrail.stops[0].detectiveClues[0].id]);
-    setFeedbackBanner({
-      type: 'info',
-      text: `Read the Detective Clues on the right, then click any of the ${saintTrail.stops.length} Sanctuary Beacons on the Ultra-HD 3D Earth to trace ${saintTrail.saintName}’s footsteps!`,
-    });
+
     const ov = saintTrail.overviewCamera;
     startSmoothCameraFlight(
       latLngToVector3(ov.camLat, ov.camLng, GLOBE_RADIUS + ov.camAltitude),
@@ -216,21 +233,17 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       1400,
       1.2
     );
-  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
+  }, [saintTrail, stopNarrationAndTour, startSmoothCameraFlight]);
 
   useEffect(() => {
-    onSolvedCountChange?.(solvedStopNumbers.length);
-  }, [solvedStopNumbers.length, onSolvedCountChange]);
+    onSolvedCountChange?.(visitedStopNumbers.length);
+  }, [visitedStopNumbers.length, onSolvedCountChange]);
 
+  // Keep all trail arcs softly illuminated for every stop in the non-gamified journey
+  const solvedStopNumbersRef = useRef<number[]>(trailStops.map((s) => s.stopNumber));
   useEffect(() => {
-    const firstClueId = currentCaseStop.detectiveClues[0].id;
-    setRevealedClueIds((prev) => (prev.includes(firstClueId) ? prev : [...prev, firstClueId]));
-  }, [currentCaseStop]);
-
-  const solvedStopNumbersRef = useRef<number[]>(solvedStopNumbers);
-  useEffect(() => {
-    solvedStopNumbersRef.current = solvedStopNumbers;
-  }, [solvedStopNumbers]);
+    solvedStopNumbersRef.current = trailStops.map((s) => s.stopNumber);
+  }, [trailStops]);
 
   const zoomedStopNumberRef = useRef<number | null>(zoomedStopNumber);
   useEffect(() => {
@@ -253,37 +266,63 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
         mapStyle === 'satellite_hd' ? 0.0 : mapStyle === 'natgeo_atlas' ? 1.0 : 2.0;
     }
     if (borderGroupRef.current) {
-      // In NatGeo Atlas mode, borders are already printed on the map; keep 3D vector borders subtle
       borderGroupRef.current.visible = mapStyle !== 'natgeo_atlas';
     }
   }, [mapStyle]);
 
   const zoomToStopOnGlobe = useCallback(
-    (stopNumber: number) => {
-      clearFlightTimers();
-      setCinematicFlightStop(null);
-      setFlightStageText('');
-      setCinematicPortalGlow(false);
+    (stopNumber: number, keepAutoTour = false) => {
+      if (!keepAutoTour) {
+        stopNarrationAndTour();
+      }
       soundEngine.playEffect('compass_click');
       soundEngine.playCityBiomeAudio(stopNumber);
-      const stopObj = trailStops.find((s) => s.stopNumber === stopNumber);
+      const idx = trailStops.findIndex((s) => s.stopNumber === stopNumber);
+      const stopObj = idx >= 0 ? trailStops[idx] : trailStops[0];
+      if (idx >= 0) {
+        setActiveStopIndex(idx);
+      }
+      if (stopObj) {
+        setVisitedStopNumbers((prev) =>
+          prev.includes(stopObj.stopNumber) ? prev : [...prev, stopObj.stopNumber]
+        );
+      }
       const lat = stopObj ? stopObj.globePlacement.latDeg : 40.5;
       const lng = stopObj ? stopObj.globePlacement.lngDeg : 9.5;
       const surfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
-      // Position camera slightly south and above the city for a dramatic 3D oblique satellite angle
       const camPos = latLngToVector3(lat - 1.9, lng - 0.4, GLOBE_RADIUS + 2.45);
-
-      startSmoothCameraFlight(camPos, surfacePos, 1500, 1.8);
+      startSmoothCameraFlight(camPos, surfacePos, 1450, 1.8);
       setZoomedStopNumber(stopNumber);
     },
-    [trailStops, clearFlightTimers, startSmoothCameraFlight]
+    [trailStops, stopNarrationAndTour, startSmoothCameraFlight]
+  );
+
+  const replayWideFlightToStop = useCallback(
+    (stop: TrailStop) => {
+      soundEngine.playEffect('compass_click');
+      const lat = stop.globePlacement.latDeg;
+      const lng = stop.globePlacement.lngDeg;
+      const surfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
+      const camPos = latLngToVector3(lat - 1.9, lng - 0.4, GLOBE_RADIUS + 2.45);
+      const wideStartCamPos = latLngToVector3(
+        Math.max(-20, Math.min(52, lat + 15)),
+        lng - 34,
+        GLOBE_RADIUS + 12.5
+      );
+      startSmoothCameraFlight(
+        camPos,
+        surfacePos,
+        1850,
+        2.3,
+        wideStartCamPos,
+        new THREE.Vector3(0, 0, 0)
+      );
+      setZoomedStopNumber(stop.stopNumber);
+    },
+    [startSmoothCameraFlight]
   );
 
   const resetRegionalOverview = useCallback(() => {
-    clearFlightTimers();
-    setCinematicFlightStop(null);
-    setFlightStageText('');
-    setCinematicPortalGlow(false);
     soundEngine.playEffect('vellum_page');
     const ov = saintTrail.overviewCamera;
     startSmoothCameraFlight(
@@ -293,13 +332,9 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       1.0
     );
     setZoomedStopNumber(null);
-  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
+  }, [saintTrail, startSmoothCameraFlight]);
 
   const resetFullPlanetOverview = useCallback(() => {
-    clearFlightTimers();
-    setCinematicFlightStop(null);
-    setFlightStageText('');
-    setCinematicPortalGlow(false);
     soundEngine.playEffect('vellum_page');
     const ov = saintTrail.overviewCamera;
     startSmoothCameraFlight(
@@ -309,7 +344,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
       0.5
     );
     setZoomedStopNumber(null);
-  }, [saintTrail, clearFlightTimers, startSmoothCameraFlight]);
+  }, [saintTrail, startSmoothCameraFlight]);
 
   // Initialize Ultra-HD Multi-Resolution Three.js Earth Scene
   useEffect(() => {
@@ -1166,226 +1201,145 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
     };
   }, [zoomToStopOnGlobe, saintTrail, trailStops]);
 
-  const handleRevealClue = (
-    clueId: string,
-    soundCue: 'compass_click' | 'gregorian_chime' | 'relic_discovered'
-  ) => {
-    soundEngine.playEffect(soundCue);
-    if (!revealedClueIds.includes(clueId)) {
-      setRevealedClueIds((prev) => [...prev, clueId]);
-    }
-  };
 
-  /**
-   * Reusable Globe-to-Scene Cinematic Flight (Option A + Option B):
-   * - Stage 1 (0 -> 1.9s): Sweeps the 3D camera across the planet in a high parabolic arc (`arcLift: 2.8`)
-   *   to frame the destination city from satellite orbit (`+2.45` altitude) with city callouts visible.
-   * - Stage 2 (1.9s -> 3.6s): Plunges straight down from satellite orbit to street/sanctuary level
-   *   (`+0.36` altitude) right into the glowing 3D golden octahedron beacon.
-   * - Stage 3 (3.25s -> 3.8s): Blooms a warm Golden Sanctuary Light Portal and automatically opens the
-   *   existing historical "Stop Photo & Story" scene!
-   */
-  const flyAndEnterHistoricalScene = useCallback(
-    (targetStop: TrailStop, forceFromFullEarth = false) => {
-      clearFlightTimers();
-      soundEngine.playCityBiomeAudio(targetStop.stopNumber);
-
-      const lat = targetStop.globePlacement.latDeg;
-      const lng = targetStop.globePlacement.lngDeg;
-
-      // Regional approach pose (Stage 1 orbital sweep)
-      const approachSurfacePos = latLngToVector3(lat, lng, GLOBE_RADIUS);
-      const approachCamPos = latLngToVector3(lat - 1.8, lng - 0.35, GLOBE_RADIUS + 2.45);
-
-      // Ground-level Sanctuary Dive pose right into the glowing 3D Beacon (Stage 2)
-      const beaconJewelPos = latLngToVector3(lat, lng, GLOBE_RADIUS + 0.14);
-      const groundDiveCamPos = latLngToVector3(lat - 0.24, lng - 0.05, GLOBE_RADIUS + 0.38);
-
-      setZoomedStopNumber(targetStop.stopNumber);
-      setActivePhotoHotspotId(targetStop.hiddenArtifacts[0].id);
-
-      const prefersReducedMotion =
-        typeof window !== 'undefined' &&
-        window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-
-      if (prefersReducedMotion) {
-        startSmoothCameraFlight(approachCamPos, approachSurfacePos, 400, 0);
-        setCinematicFlightStop(null);
-        setFlightStageText('');
-        setCinematicPortalGlow(false);
-        setInspectedStop(targetStop);
+  const speakStopAtIndex = useCallback(
+    (idx: number, continueTour: boolean) => {
+      const stop = trailStops[idx];
+      if (!stop) {
+        stopNarrationAndTour();
         return;
       }
-
-      setCinematicFlightStop(targetStop);
-      setCinematicPortalGlow(false);
-
-      // If replaying or already very close to the city, start from a wide planetary orbit
-      // so the player always experiences the full cross-globe flight + street-level sanctuary dive!
-      const currentDistToApproach = liveCameraPosRef.current.distanceTo(approachCamPos);
-      const shouldStartFromWideOrbit = forceFromFullEarth || currentDistToApproach < 1.2;
-
-      const wideStartCamPos = shouldStartFromWideOrbit
-        ? latLngToVector3(
-            Math.max(-20, Math.min(52, lat + 16)),
-            lng - 38,
-            GLOBE_RADIUS + 13.5
-          )
-        : undefined;
-      const wideStartLookAt = shouldStartFromWideOrbit ? new THREE.Vector3(0, 0, 0) : undefined;
-
-      // Stage 1 (0 -> 1900ms): Grand orbital sweep across the 3D Earth to frame the city
-      setFlightStageText(
-        `Stage 1/2 · Sweeping Across 3D Earth to ${targetStop.modernPlaceName}, ${targetStop.modernCountry}…`
-      );
-      startSmoothCameraFlight(
-        approachCamPos,
-        approachSurfacePos,
-        1850,
-        2.6,
-        wideStartCamPos,
-        wideStartLookAt
-      );
-
-      // Stage 2 (1900ms -> 3550ms): Plunge straight down into the glowing golden 3D Sanctuary Beacon
-      stageTimerRef.current = window.setTimeout(() => {
-        stageTimerRef.current = null;
-        soundEngine.playEffect('compass_click');
-        setFlightStageText(
-          `Stage 2/2 · Diving Into Ancient ${targetStop.ancientPlaceName} Sanctuary Beacon…`
-        );
-        startSmoothCameraFlight(groundDiveCamPos, beaconJewelPos, 1650, 0.0);
-      }, 1900);
-
-      // Stage 3 (3250ms -> 3800ms): Bloom warm golden light portal before opening the historical scene
-      portalTimerRef.current = window.setTimeout(() => {
-        portalTimerRef.current = null;
-        soundEngine.playEffect('sanctuary_bell');
-        setFlightStageText(`Entering ${targetStop.ancientPlaceName} Historical Scene…`);
-        setCinematicPortalGlow(true);
-      }, 3250);
-
-      // Stage 4 (3800ms): Automatically enter the historical Stop Photo & Story scene
-      flightTimerRef.current = window.setTimeout(() => {
-        flightTimerRef.current = null;
-        setCinematicFlightStop(null);
-        setFlightStageText('');
-        setCinematicPortalGlow(false);
-        setInspectedStop(targetStop);
-      }, 3800);
+      setIsNarrating(true);
+      const script = buildAndrewStopScript(saintTrail.saintName, stop, trailStops.length);
+      soundEngine.speakNarration(script, () => {
+        setIsNarrating(false);
+        if (continueTour && autoTourRef.current) {
+          if (idx < trailStops.length - 1) {
+            const nextIdx = idx + 1;
+            const nextStop = trailStops[nextIdx];
+            zoomToStopOnGlobe(nextStop.stopNumber, true);
+            clearAutoTourTimer();
+            autoTourTimerRef.current = window.setTimeout(() => {
+              if (autoTourRef.current) {
+                speakStopAtIndex(nextIdx, true);
+              }
+            }, 1650);
+          } else {
+            autoTourRef.current = false;
+            setIsAutoTouring(false);
+            resetRegionalOverview();
+          }
+        }
+      });
     },
-    [clearFlightTimers, startSmoothCameraFlight]
+    [trailStops, saintTrail.saintName, stopNarrationAndTour, zoomToStopOnGlobe, clearAutoTourTimer, resetRegionalOverview]
   );
 
-  const handleConfirmCityForCase = (stopToVerify: TrailStop) => {
-    if (stopToVerify.stopNumber === currentCaseStop.stopNumber) {
-      soundEngine.playEffect('wax_seal_stamp');
-      const nextSolved = solvedStopNumbers.includes(stopToVerify.stopNumber)
-        ? solvedStopNumbers
-        : [...solvedStopNumbers, stopToVerify.stopNumber];
-      setSolvedStopNumbers(nextSolved);
-
-      setFeedbackBanner({
-        type: 'success',
-        text: `Case #${currentCaseStop.stopNumber} Solved! Diving into ${stopToVerify.modernPlaceName}, ${stopToVerify.modernCountry} (Ancient ${stopToVerify.ancientPlaceName}) to enter the historical sanctuary…`,
-      });
-
-      flyAndEnterHistoricalScene(stopToVerify);
-
-      if (nextSolved.length === trailStops.length) {
-        setTimeout(() => {
-          soundEngine.playEffect('pilgrimage_complete');
-        }, 450);
-      }
-    } else {
-      // Even on a mismatch from full-globe 1-click confirm, fly the camera to that city so the player sees what they picked!
-      if (zoomedStopNumber !== stopToVerify.stopNumber) {
-        zoomToStopOnGlobe(stopToVerify.stopNumber);
-      }
-      soundEngine.playEffect('puzzle_mismatch');
-      setFeedbackBanner({
-        type: 'mismatch',
-        text: `Not quite! That is ${stopToVerify.modernPlaceName}, ${stopToVerify.modernCountry} (Ancient ${stopToVerify.ancientPlaceName}). Re-read the Modern-Day City Clue and Fun Fact Clue for Case #${currentCaseStop.stopNumber}!`,
-      });
+  const handleListenAndrew = () => {
+    if (isNarrating) {
+      stopNarrationAndTour();
+      return;
     }
+    soundEngine.unlockNarrationForUserGesture();
+    autoTourRef.current = false;
+    setIsAutoTouring(false);
+    speakStopAtIndex(activeStopIndex, false);
+  };
+
+  const handleToggleAutoTour = () => {
+    if (isAutoTouring) {
+      stopNarrationAndTour();
+      return;
+    }
+    soundEngine.unlockNarrationForUserGesture();
+    autoTourRef.current = true;
+    setIsAutoTouring(true);
+    zoomToStopOnGlobe(currentStop.stopNumber, true);
+    clearAutoTourTimer();
+    autoTourTimerRef.current = window.setTimeout(() => {
+      if (autoTourRef.current) {
+        speakStopAtIndex(activeStopIndex, true);
+      }
+    }, 900);
+  };
+
+  const goToStopByIndex = (idx: number) => {
+    if (idx < 0 || idx >= trailStops.length) return;
+    zoomToStopOnGlobe(trailStops[idx].stopNumber);
   };
 
   const zoomedStopObj = zoomedStopNumber
     ? trailStops.find((s) => s.stopNumber === zoomedStopNumber) || null
     : null;
+  const narrativeParagraphs = getStopNarrativeParagraphs(currentStop);
+  const isLastStop = activeStopIndex === trailStops.length - 1;
 
   return (
     <div className="mx-auto max-w-[1440px] px-4 py-5 sm:px-8">
-      {/* Top Trail Case Stepper (All 6 Cases) */}
-      <div className="mb-4 rounded-2xl border border-[#2a241c] bg-[#13100d] p-3 sm:mb-5 sm:p-3.5 shadow-xl">
-        <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
+      {/* Top Pilgrimage Route Stepper (All Stops Unlocked — Travertine Stone & Olive) */}
+      <div className="mb-5 rounded-2xl border border-[#DCD2C0] bg-[#FCFBF8] p-3.5 shadow-[0_10px_28px_rgba(34,30,26,0.06)] sm:p-4">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <Globe className="h-4 w-4 shrink-0 text-[#d4af37]" />
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#d4af37]">
-              Sacred Trails · Footsteps of {saintTrail.saintName} ({trailStops.length} Trail Stops)
+            <Globe className="h-4 w-4 shrink-0 text-[#4F6348]" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A65B3A] sm:text-xs">
+              Pilgrimage Route · Footsteps of {saintTrail.saintName} ({trailStops.length} Stops)
             </span>
           </div>
-          <span className="text-xs text-[#a39783]">
-            Solved Trail Cases:{' '}
-            <strong className="text-[#f4efe6]">
-              {solvedStopNumbers.length} / {trailStops.length}
+          <span className="text-xs font-medium text-[#655C50]">
+            Stop{' '}
+            <strong className="text-[#221E1A]">
+              {activeStopIndex + 1} of {trailStops.length}
             </strong>
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+        <div
+          className={`grid gap-2 ${
+            trailStops.length <= 3
+              ? 'grid-cols-1 sm:grid-cols-3'
+              : trailStops.length === 4
+                ? 'grid-cols-2 lg:grid-cols-4'
+                : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-6'
+          }`}
+        >
           {trailStops.map((stop, idx) => {
-            const isCurrentCase = idx === activeCaseIndex;
-            const isSolved = solvedStopNumbers.includes(stop.stopNumber);
+            const isActive = idx === activeStopIndex;
+            const isVisited = visitedStopNumbers.includes(stop.stopNumber);
             return (
               <button
                 key={stop.stopNumber}
-                onClick={() => {
-                  soundEngine.stopSpeaking();
-                  setIsNarrating(false);
-                  soundEngine.playEffect('vellum_page');
-                  setActiveCaseIndex(idx);
-                  if (isSolved) {
-                    zoomToStopOnGlobe(stop.stopNumber);
-                    setFeedbackBanner({
-                      type: 'success',
-                      text: `Case #${stop.stopNumber} (${stop.modernPlaceName}, ${stop.modernCountry}) is unlocked! Click "View Stop Photo & Story" to revisit its historical scene.`,
-                    });
-                  } else {
-                    setFeedbackBanner({
-                      type: 'info',
-                      text: `Investigating Case #${stop.stopNumber}: Read the clues and locate the matching modern-day city on the 3D Earth!`,
-                    });
-                  }
-                }}
-                className={`group flex min-h-[60px] flex-col justify-between rounded-xl border p-2.5 text-left transition-all ${
-                  isCurrentCase
-                    ? 'border-[#d4af37] bg-[#221c14] shadow-[0_0_18px_rgba(212,175,55,0.18)]'
-                    : isSolved
-                      ? 'border-emerald-700/40 bg-emerald-950/15 hover:border-emerald-500/60'
-                      : 'border-[#262018] bg-[#16130f] hover:border-[#3d3326]'
+                onClick={() => goToStopByIndex(idx)}
+                className={`group flex min-h-[62px] flex-col justify-between rounded-xl border px-3 py-2.5 text-left transition-all cursor-pointer ${
+                  isActive
+                    ? 'border-[#4F6348] bg-[#4F6348] text-white shadow-[0_8px_20px_rgba(79,99,72,0.22)]'
+                    : 'border-[#DCD2C0] bg-[#F5F0E6] text-[#221E1A] hover:border-[#4F6348]/60 hover:bg-[#ECE4D6]'
                 }`}
               >
                 <div className="flex items-center justify-between gap-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#d4af37]">
-                    Case #{stop.stopNumber}
+                  <span
+                    className={`text-[10px] font-bold uppercase tracking-wider ${
+                      isActive ? 'text-[#E3EBD9]' : 'text-[#A65B3A]'
+                    }`}
+                  >
+                    Stop {stop.stopNumber}
                   </span>
-                  {isSolved ? (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Solved
-                    </span>
-                  ) : (
-                    <span className="text-[10px] text-[#847866]">Mystery</span>
+                  {isVisited && !isActive && (
+                    <span className="h-2 w-2 rounded-full bg-[#4F6348]/70" title="Visited" />
                   )}
                 </div>
-                <p className="mt-1 line-clamp-1 font-serif text-xs font-bold text-[#f4efe6]">
-                  {isSolved
-                    ? `${stop.modernPlaceName}, ${stop.modernCountry}`
-                    : `Trail Mystery #${stop.stopNumber}`}
+                <p
+                  className={`mt-0.5 line-clamp-1 font-serif text-sm font-bold ${
+                    isActive ? 'text-white' : 'text-[#221E1A]'
+                  }`}
+                >
+                  {stop.modernPlaceName}, {stop.modernCountry}
                 </p>
-                <p className="mt-0.5 line-clamp-1 text-[10px] text-[#9a8e7a]">
-                  {isSolved ? `Ancient ${stop.ancientPlaceName}` : stop.eraLabel}
+                <p
+                  className={`mt-0.5 line-clamp-1 text-[10px] ${
+                    isActive ? 'text-[#DCE5D5]' : 'text-[#655C50]'
+                  }`}
+                >
+                  {stop.eraLabel}
                 </p>
               </button>
             );
@@ -1393,19 +1347,19 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
         </div>
       </div>
 
-      {/* Main 12-Column Split: 7 Cols Interactive 3D Satellite Earth + 5 Cols Detective Case Dossier */}
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
-        {/* LEFT 7 COLUMNS: Interactive Ultra-HD 3D Globe Viewport */}
+      {/* Main 12-Column Split: 7 Cols Ultra-HD 3D Earth + 5 Cols Editorial Pilgrimage Story Card */}
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6 items-start">
+        {/* LEFT 7 COLUMNS: Full Existing Ultra-HD 3D Globe Viewport (100% Preserved) */}
         <div className="lg:col-span-7 flex flex-col">
-          <div className="relative overflow-hidden rounded-2xl border border-[#332a1e] bg-[#02050b] shadow-2xl">
-            {/* Top HUD inside Globe (Mobile-Compact & Responsive) */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex flex-col gap-2 bg-gradient-to-b from-[#02050b]/95 via-[#02050b]/70 to-transparent px-3 py-2.5 sm:px-4 sm:py-3.5">
+          <div className="relative overflow-hidden rounded-2xl border border-[#CFC4B0] bg-[#02050b] shadow-[0_22px_54px_rgba(34,30,26,0.16)]">
+            {/* Top HUD inside Globe (All 3 Map Styles + Zoom/Overview + Labels Preserved) */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex flex-col gap-2 bg-gradient-to-b from-[#060b14]/95 via-[#060b14]/70 to-transparent px-3 py-2.5 sm:px-4 sm:py-3.5">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="min-w-0">
-                  <p className="truncate text-[9px] font-bold uppercase tracking-[0.18em] text-[#d4af37] sm:text-[10px]">
-                    3D Sacred Earth · Drag to Rotate · Pinch or Click City to Zoom
+                  <p className="truncate text-[9px] font-bold uppercase tracking-[0.18em] text-[#e6cfa3] sm:text-[10px]">
+                    3D Sacred Earth · Drag to Rotate · Pinch or Click Any City
                   </p>
-                  <h2 className="truncate font-serif text-sm font-bold text-[#f4efe6] sm:text-lg">
+                  <h2 className="truncate font-serif text-sm font-bold text-[#f7f3eb] sm:text-lg">
                     {zoomedStopObj
                       ? `${zoomedStopObj.modernPlaceName}, ${zoomedStopObj.modernCountry} (${zoomedStopObj.ancientPlaceName})`
                       : saintTrail.globeHeaderSubtitle}
@@ -1416,24 +1370,22 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                 <div className="pointer-events-auto flex flex-wrap items-center gap-1.5">
                   <button
                     onClick={() => setShowGlobeLabels((prev) => !prev)}
-                    className="inline-flex items-center gap-1 rounded-lg border border-[#383024] bg-[#12100d]/90 px-2 py-1 text-[10px] font-semibold text-[#e6dccb] transition hover:border-[#d4af37] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
+                    className="inline-flex items-center gap-1 rounded-lg border border-white/20 bg-[#0d1520]/90 px-2 py-1 text-[10px] font-semibold text-[#f0eae0] transition hover:border-[#c8b288] sm:px-2.5 sm:py-1.5 sm:text-[11px] cursor-pointer"
                     title="Toggle Floating City Callout Labels"
                   >
-                    <Layers className="h-3.5 w-3.5 text-[#d4af37]" />
+                    <Layers className="h-3.5 w-3.5 text-[#d9be8a]" />
                     <span>{showGlobeLabels ? 'Hide Labels' : 'Show Labels'}</span>
                   </button>
-
                   <button
                     onClick={resetRegionalOverview}
-                    className="inline-flex items-center gap-1 rounded-lg border border-[#d4af37]/50 bg-[#17130e]/90 px-2 py-1 text-[10px] font-semibold text-[#f3d27a] transition hover:bg-[#261f16] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
+                    className="inline-flex items-center gap-1 rounded-lg border border-[#7fa174]/70 bg-[#1f2e1c]/90 px-2 py-1 text-[10px] font-semibold text-[#e6f0e1] transition hover:bg-[#2b3f27] sm:px-2.5 sm:py-1.5 sm:text-[11px] cursor-pointer"
                   >
                     <Compass className="h-3.5 w-3.5" />
                     <span>{saintTrail.overviewButtonLabel}</span>
                   </button>
-
                   <button
                     onClick={resetFullPlanetOverview}
-                    className="inline-flex items-center gap-1 rounded-lg border border-[#383024] bg-[#12100d]/90 px-2 py-1 text-[10px] font-semibold text-[#cfc3ae] transition hover:border-[#d4af37] sm:px-2.5 sm:py-1.5 sm:text-[11px]"
+                    className="inline-flex items-center gap-1 rounded-lg border border-white/20 bg-[#0d1520]/90 px-2 py-1 text-[10px] font-semibold text-[#d7d0c4] transition hover:border-[#c8b288] sm:px-2.5 sm:py-1.5 sm:text-[11px] cursor-pointer"
                   >
                     <ZoomOut className="h-3.5 w-3.5" />
                     <span>Full Earth</span>
@@ -1441,11 +1393,11 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                 </div>
               </div>
 
-              {/* 3 Map Style Switcher Pill Bar */}
+              {/* 3 Map Style Switcher Pill Bar (Satellite HD · NatGeo Atlas · Golden Dusk & Lights) */}
               <div className="pointer-events-auto flex items-center gap-1.5 overflow-x-auto pb-0.5">
-                <span className="mr-0.5 hidden shrink-0 items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[#a39783] sm:inline-flex">
-                  <MapIcon className="h-3 w-3 text-[#d4af37]" />
-                  Style:
+                <span className="mr-0.5 hidden shrink-0 items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[#c7bfb2] sm:inline-flex">
+                  <MapIcon className="h-3 w-3 text-[#d9be8a]" />
+                  Globe View:
                 </span>
                 {(
                   [
@@ -1460,10 +1412,10 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                       soundEngine.playEffect('compass_click');
                       setMapStyle(mode.id);
                     }}
-                    className={`shrink-0 rounded-lg border px-2.5 py-1 text-[10px] font-semibold transition sm:text-[11px] ${
+                    className={`shrink-0 rounded-lg border px-2.5 py-1 text-[10px] font-semibold transition sm:text-[11px] cursor-pointer ${
                       mapStyle === mode.id
-                        ? 'border-[#d4af37] bg-[#261e12] text-[#fef08a] shadow-sm'
-                        : 'border-[#2c251c] bg-[#100e0b]/85 text-[#b8ab96] hover:border-[#d4af37]/50 hover:text-[#f4efe6]'
+                        ? 'border-[#e6cfa3] bg-[#4F6348] text-white shadow-sm'
+                        : 'border-white/15 bg-[#0b111c]/85 text-[#d1c9bc] hover:border-white/40 hover:text-white'
                     }`}
                   >
                     {mode.label}
@@ -1472,10 +1424,10 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               </div>
             </div>
 
-            {/* 3D WebGL Canvas Mount (Touch-Action None for Smooth Android/iOS Pinch & Orbit) */}
+            {/* 3D WebGL Canvas Mount */}
             <div
               ref={mountRef}
-              className="h-[370px] w-full touch-none select-none cursor-grab active:cursor-grabbing sm:h-[500px] lg:h-[560px]"
+              className="h-[370px] w-full touch-none select-none cursor-grab active:cursor-grabbing sm:h-[500px] lg:h-[580px]"
             />
 
             {/* SVG Leader Lines connecting exact surface pins to floating city callouts */}
@@ -1508,8 +1460,7 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
             {/* Projected 2D Interactive City Callouts on the 3D Globe */}
             <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
               {trailStops.map((stop) => {
-                const isSelected = zoomedStopNumber === stop.stopNumber;
-                const isSolved = solvedStopNumbers.includes(stop.stopNumber);
+                const isSelected = currentStop.stopNumber === stop.stopNumber;
                 return (
                   <button
                     key={stop.stopNumber}
@@ -1518,28 +1469,24 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
                     }}
                     onClick={() => zoomToStopOnGlobe(stop.stopNumber)}
                     style={{ opacity: 0 }}
-                    className={`group absolute left-0 top-0 flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-left shadow-xl transition-colors ${
+                    className={`group absolute left-0 top-0 flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-left shadow-xl transition-colors cursor-pointer ${
                       isSelected
-                        ? 'z-30 border-[#facc15] bg-[#1f180d]/95 text-[#fef08a] ring-2 ring-[#facc15]/40'
-                        : isSolved
-                          ? 'z-20 border-emerald-500/70 bg-[#0d1f17]/95 text-emerald-200 hover:border-[#d4af37]'
-                          : 'z-10 border-[#d4af37]/55 bg-[#0b111e]/92 text-[#f4efe6] hover:border-[#facc15] hover:bg-[#1a1610]'
+                        ? 'z-30 border-[#e6cfa3] bg-[#4F6348]/95 text-white ring-2 ring-[#e6cfa3]/40'
+                        : 'z-10 border-white/25 bg-[#0c1420]/90 text-[#f4efe6] hover:border-[#e6cfa3] hover:bg-[#1a2638]'
                     }`}
                   >
                     <span
-                      className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-[#0c0a08]"
+                      className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-[#14110c]"
                       style={{ backgroundColor: stop.globePlacement.beaconColorHex }}
                     >
-                      {isSolved ? '✓' : ''}
+                      {stop.stopNumber}
                     </span>
                     <div>
                       <p className="whitespace-nowrap text-[11px] font-bold leading-none">
                         {stop.modernPlaceName}, {stop.modernCountry}
                       </p>
-                      <p className="mt-0.5 whitespace-nowrap text-[9px] text-[#c7b99e]">
-                        {isSolved
-                          ? `Stop ${stop.stopNumber} · ${stop.ancientPlaceName}`
-                          : `Ancient ${stop.ancientPlaceName}`}
+                      <p className="mt-0.5 whitespace-nowrap text-[9px] text-[#d6cec0]">
+                        {stop.ancientPlaceName}
                       </p>
                     </div>
                   </button>
@@ -1547,686 +1494,228 @@ export const Version2GlobeDetective: React.FC<Version2GlobeDetectiveProps> = ({
               })}
             </div>
 
-            {/* Warm Golden Sanctuary Portal Crossfade Overlay during the final 550ms of the dive */}
-            <div
-              className={`pointer-events-none absolute inset-0 z-20 transition-opacity duration-500 ${
-                cinematicPortalGlow ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{
-                background:
-                  'radial-gradient(circle at 50% 54%, rgba(254, 240, 138, 0.92) 0%, rgba(212, 175, 55, 0.55) 38%, rgba(12, 10, 8, 0.95) 100%)',
-              }}
-            />
-
-            {/* Cinematic Flight Overlay when swooping into a newly solved destination */}
-            {cinematicFlightStop && (
-              <div className="pointer-events-auto absolute inset-x-4 bottom-24 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-[#facc15]/80 bg-[#14100b]/95 px-4 py-3 shadow-[0_0_30px_rgba(212,175,55,0.45)] backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#facc15] bg-[#261e12] text-[#fef08a]">
-                    <Sparkles className="h-4 w-4 animate-pulse" />
-                  </span>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#facc15]">
-                      Case #{cinematicFlightStop.stopNumber} Verified · 2-Stage Sanctuary Flight
-                    </p>
-                    <p className="font-serif text-sm font-bold text-[#f4efe6]">
-                      {flightStageText ||
-                        `Diving into ${cinematicFlightStop.modernPlaceName}, ${cinematicFlightStop.modernCountry}…`}
-                    </p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => {
-                    clearFlightTimers();
-                    const target = cinematicFlightStop;
-                    setCinematicFlightStop(null);
-                    setFlightStageText('');
-                    setCinematicPortalGlow(false);
-                    setInspectedStop(target);
-                  }}
-                  className="shrink-0 rounded-lg border border-[#d4af37]/50 bg-[#241d13] px-2.5 py-1.5 text-[11px] font-bold text-[#fef08a] hover:border-[#facc15]"
-                >
-                  Skip to Scene
-                </button>
-              </div>
-            )}
-
-            {/* Zoomed-In City Action Bar at Bottom of 3D Globe */}
-            {zoomedStopObj ? (
-              <div className="border-t border-[#332a1e] bg-[#14110d] p-4">
-                <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#d4af37]">
-                        3D Satellite Camera Locked On
-                      </span>
-                      <span className="text-xs text-[#a39783]">·</span>
-                      <span className="text-xs font-semibold text-emerald-300">
-                        {zoomedStopObj.globePlacement.regionLabel}
-                      </span>
-                    </div>
-                    <h3 className="mt-0.5 font-serif text-lg font-bold text-[#f4efe6]">
-                      {zoomedStopObj.modernPlaceName}, {zoomedStopObj.modernCountry}{' '}
-                      <span className="text-sm font-normal text-[#b8ab96]">
-                        (Ancient {zoomedStopObj.ancientPlaceName})
-                      </span>
-                    </h3>
-                  </div>
-
+            {/* Clean Sunlit Travertine Status Bar below 3D Earth */}
+            <div className="border-t border-[#DCD2C0] bg-[#FCFBF8] px-4 py-3.5 text-[#221E1A]">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
-                    {!solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
-                      <button
-                        onClick={() => handleConfirmCityForCase(zoomedStopObj)}
-                        className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
-                      >
-                        <Search className="h-4 w-4" />
-                        Confirm & Dive for Case #{currentCaseStop.stopNumber}
-                      </button>
-                    )}
-
-                    {solvedStopNumbers.includes(zoomedStopObj.stopNumber) ? (
-                      <>
-                        <button
-                          onClick={() => flyAndEnterHistoricalScene(zoomedStopObj, true)}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-[#d4af37]/60 bg-[#241d13] px-3 py-2.5 text-xs font-bold text-[#fef08a] transition hover:border-[#facc15]"
-                        >
-                          <Sparkles className="h-3.5 w-3.5 text-[#facc15]" />
-                          Replay 3D Flight & Dive
-                        </button>
-                        <button
-                          onClick={() => {
-                            soundEngine.playEffect('sanctuary_bell');
-                            setInspectedStop(zoomedStopObj);
-                            setActivePhotoHotspotId(zoomedStopObj.hiddenArtifacts[0].id);
-                          }}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-500/60 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 transition hover:border-emerald-400 hover:bg-emerald-900/40"
-                        >
-                          <Eye className="h-4 w-4 text-emerald-300" />
-                          View Stop Photo & Story
-                        </button>
-                      </>
-                    ) : (
-                      <span
-                        className="inline-flex items-center gap-1.5 rounded-xl border border-[#2c241b] bg-[#18140f] px-3 py-2.5 text-[11px] font-medium text-[#8c7f6b]"
-                        title="Confirm the matching city for the active case to unlock its historical photo and story"
-                      >
-                        <Lock className="h-3.5 w-3.5 text-[#a39783]" />
-                        <span>Scene Unlocks on Confirm</span>
-                      </span>
-                    )}
+                    <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-[#A65B3A]">
+                      <MapPin className="h-3.5 w-3.5" />
+                      {currentStop.globePlacement.regionLabel}
+                    </span>
+                    <span className="text-xs text-[#A39A8C]">·</span>
+                    <span className="text-xs font-medium text-[#655C50]">
+                      Stop {currentStop.stopNumber} of {trailStops.length}
+                    </span>
                   </div>
+                  <p className="mt-0.5 font-serif text-base font-bold text-[#221E1A] sm:text-lg">
+                    {currentStop.modernPlaceName}, {currentStop.modernCountry}{' '}
+                    <span className="text-sm font-normal text-[#655C50]">
+                      (Historically {currentStop.ancientPlaceName})
+                    </span>
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    onClick={() => replayWideFlightToStop(currentStop)}
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#DCD2C0] bg-[#F3EDE2] px-3 py-2 text-xs font-semibold text-[#221E1A] transition hover:border-[#4F6348] hover:bg-[#EAEFE7] cursor-pointer"
+                  >
+                    <Sparkles className="h-3.5 w-3.5 text-[#4F6348]" />
+                    <span>Fly to Stop</span>
+                  </button>
+                  <button
+                    onClick={resetRegionalOverview}
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#DCD2C0] bg-[#FCFBF8] px-3 py-2 text-xs font-semibold text-[#655C50] transition hover:border-[#4F6348] hover:text-[#221E1A] cursor-pointer"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5" />
+                    <span>Overview</span>
+                  </button>
                 </div>
               </div>
-            ) : (
-              /* Quick Zoom & 1-Click Confirm Dock for All 6 Modern-Day Cities on the Globe */
-              <div className="border-t border-[#262018] bg-[#120f0c] px-4 py-3">
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#a39783]">
-                  Fly 3D Camera to Any Trail City — or 1-Click Confirm Directly:
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT 5 COLUMNS: Sunlit Travertine Stone & Olive Guided Story Card */}
+        <article className="lg:col-span-5 overflow-hidden rounded-2xl border border-[#DCD2C0] bg-[#FCFBF8] shadow-[0_18px_44px_rgba(34,30,26,0.08)]">
+          {/* Museum-Framed Renaissance Oil Painting */}
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#221E1A]">
+            <ResilientImage
+              src={currentStop.image}
+              alt={currentStop.title}
+              className="h-full w-full object-cover"
+            />
+            {currentStop.imageCaption && (
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#161310]/90 via-[#161310]/45 to-transparent px-4 pb-3 pt-10">
+                <p className="text-xs leading-relaxed text-[#F4EFE6]">
+                  {currentStop.imageCaption}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {trailStops.map((stop) => {
-                    const isSolved = solvedStopNumbers.includes(stop.stopNumber);
-                    return (
-                      <div
-                        key={stop.stopNumber}
-                        className={`inline-flex items-center overflow-hidden rounded-lg border text-xs font-medium transition ${
-                          isSolved
-                            ? 'border-emerald-600/40 bg-emerald-950/25 text-emerald-200'
-                            : 'border-[#2f271d] bg-[#1a1510] text-[#e6dccb]'
-                        }`}
-                      >
-                        <button
-                          onClick={() => zoomToStopOnGlobe(stop.stopNumber)}
-                          title={`Fly 3D camera over ${stop.modernPlaceName}`}
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 transition hover:bg-[#d4af37]/15 hover:text-[#f4efe6]"
-                        >
-                          <ZoomIn className="h-3.5 w-3.5 text-[#d4af37]" />
-                          <span>
-                            {stop.modernPlaceName}, {stop.modernCountry}
-                          </span>
-                        </button>
-                        {isSolved ? (
-                          <button
-                            onClick={() => {
-                              soundEngine.playEffect('sanctuary_bell');
-                              setInspectedStop(stop);
-                              setActivePhotoHotspotId(stop.hiddenArtifacts[0].id);
-                            }}
-                            title={`Revisit ${stop.ancientPlaceName} historical scene`}
-                            className="inline-flex items-center gap-1 border-l border-emerald-600/30 bg-emerald-900/35 px-2 py-1.5 text-[11px] font-semibold text-emerald-200 transition hover:bg-emerald-800/50"
-                          >
-                            <Eye className="h-3 w-3 text-emerald-300" />
-                            <span>Scene</span>
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => handleConfirmCityForCase(stop)}
-                            disabled={cinematicFlightStop !== null}
-                            title={`Confirm ${stop.modernPlaceName} for Case #${currentCaseStop.stopNumber} & fly into historical scene`}
-                            className="inline-flex items-center gap-1 border-l border-[#2f271d] bg-[#d4af37]/15 px-2 py-1.5 text-[11px] font-bold text-[#d4af37] transition hover:bg-[#d4af37] hover:text-[#14110d] disabled:opacity-50"
-                          >
-                            <Sparkles className="h-3 w-3" />
-                            <span>Confirm</span>
-                          </button>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
             )}
           </div>
-        </div>
 
-        {/* RIGHT 5 COLUMNS: Detective Case Clues & Investigation Dossier */}
-        <div className="lg:col-span-5 flex flex-col justify-between rounded-2xl border border-[#2d251b] bg-[#15120e] p-5 shadow-2xl">
-          <div>
-            {/* Case Header */}
-            <div className="flex items-start justify-between gap-2 border-b border-[#262018] pb-3.5">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#d4af37]">
-                  Active Pilgrim Detective Dossier · {currentCaseStop.eraLabel}
-                </span>
-                <h2 className="mt-1 font-serif text-xl font-bold text-[#f4efe6]">
-                  {currentCaseStop.detectiveCaseTitle}
-                </h2>
-              </div>
-              <div className="flex shrink-0 items-center gap-1.5">
-                <button
-                  onClick={() => {
-                    if (isNarrating) {
-                      soundEngine.stopSpeaking();
-                      setIsNarrating(false);
-                    } else {
-                      setIsNarrating(true);
-                      soundEngine.playAndrewNarration(
-                        currentCaseStop.stopNumber,
-                        'clue',
-                        () => setIsNarrating(false),
-                        saintTrail.id,
-                        `${currentCaseStop.detectiveClues[0].clueText} ${currentCaseStop.detectiveClues[1].clueText}`
-                      );
-                    }
-                  }}
-                  className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[11px] font-bold transition ${
-                    isNarrating
-                      ? 'border-[#facc15] bg-[#2b2212] text-[#fef08a]'
-                      : 'border-[#d4af37]/60 bg-[#221a11] text-[#f3d27a] hover:border-[#d4af37]'
-                  }`}
-                  title="Hear Andrew share an exclusive spoken Modern-Day City clue not written on the card"
-                >
-                  {isNarrating ? (
-                    <>
-                      <Square className="h-3 w-3 fill-current" />
-                      <span>Stop Voice</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="h-3.5 w-3.5 text-[#d4af37]" />
-                      <span>Audio City Clue</span>
-                    </>
-                  )}
-                </button>
+          {/* Editorial Content */}
+          <div className="p-5 sm:p-6">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A65B3A]">
+              Stop {currentStop.stopNumber} of {trailStops.length} · {currentStop.eraLabel}
+            </p>
+            <h2 className="mt-1.5 font-serif text-2xl font-bold leading-snug text-[#221E1A] sm:text-3xl">
+              {currentStop.title}
+            </h2>
+            <p className="mt-1 text-sm font-medium text-[#655C50]">
+              {currentStop.modernPlaceName}, {currentStop.modernCountry}
+              {currentStop.ancientPlaceName &&
+              currentStop.ancientPlaceName.toLowerCase() !==
+                currentStop.modernPlaceName.toLowerCase()
+                ? ` · Historically ${currentStop.ancientPlaceName}`
+                : ''}
+            </p>
 
-                {solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
-                  <span className="inline-flex shrink-0 items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-950/30 px-2.5 py-1 text-xs font-bold text-emerald-300">
-                    <CheckCircle2 className="h-4 w-4" />
-                    Solved
-                  </span>
+            {/* Voice Narration & Hands-Free Guided Auto-Tour */}
+            <div className="mt-4 flex flex-wrap items-center gap-2.5">
+              <button
+                type="button"
+                onClick={handleListenAndrew}
+                className="inline-flex items-center gap-2 rounded-xl bg-[#4F6348] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-[#3F5139] cursor-pointer"
+              >
+                {isNarrating ? (
+                  <>
+                    <Square className="h-3.5 w-3.5 fill-current" />
+                    <span>Stop Andrew</span>
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="h-4 w-4" />
+                    <span>Listen with Andrew</span>
+                  </>
                 )}
+              </button>
+
+              <button
+                type="button"
+                onClick={handleToggleAutoTour}
+                className={`inline-flex items-center gap-2 rounded-xl border px-3.5 py-2.5 text-xs font-semibold transition cursor-pointer ${
+                  isAutoTouring
+                    ? 'border-[#A65B3A] bg-[#F7ECE6] text-[#8E4A2D]'
+                    : 'border-[#C8D4C2] bg-[#EAEFE7] text-[#35462F] hover:bg-[#DFE8DA]'
+                }`}
+              >
+                {isAutoTouring ? (
+                  <>
+                    <Square className="h-3.5 w-3.5 fill-current" />
+                    <span>Stop Auto-Tour</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className="h-3.5 w-3.5 fill-current" />
+                    <span>Guided Auto-Tour</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Saint Story Prose */}
+            <div className="mt-5 space-y-3 font-serif text-[18px] leading-[1.68] text-[#221E1A]">
+              {narrativeParagraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
+
+            {/* Words of the Saint */}
+            {currentStop.saintQuote && (
+              <blockquote className="mt-5 rounded-r-xl border-l-[3px] border-[#A65B3A] bg-[#F1EADF] px-4 py-3.5 font-serif text-[17px] italic leading-relaxed text-[#2A241E]">
+                “{currentStop.saintQuote}”
+                <footer className="mt-1.5 not-italic font-sans text-xs font-semibold text-[#655C50]">
+                  — {saintTrail.saintName}
+                </footer>
+              </blockquote>
+            )}
+
+            {/* Peaceful Expandable Context Panels (Zero Quiz) */}
+            <div className="mt-5 space-y-2.5">
+              {currentStop.whatYouCanSeeToday && (
+                <details
+                  open
+                  className="rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] px-4 py-3"
+                >
+                  <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#4F6348]">
+                    <Landmark className="h-3.5 w-3.5 shrink-0" />
+                    <span>What Pilgrims See Today</span>
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-[#4E463D]">
+                    {currentStop.whatYouCanSeeToday}
+                  </p>
+                </details>
+              )}
+
+              {currentStop.didYouKnowHighlight && (
+                <details className="rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] px-4 py-3">
+                  <summary className="flex cursor-pointer list-none items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#A65B3A]">
+                    <BookOpen className="h-3.5 w-3.5 shrink-0" />
+                    <span>Historical Note · Did You Know?</span>
+                  </summary>
+                  <p className="mt-2 text-sm leading-relaxed text-[#4E463D]">
+                    {currentStop.didYouKnowHighlight}
+                  </p>
+                </details>
+              )}
+            </div>
+
+            {/* Pilgrimage Completion Reflection on Final Stop */}
+            {isLastStop && saintTrail.completionSummary && (
+              <div className="mt-5 rounded-xl border border-[#C8D4C2] bg-[#EAEFE7] p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#4F6348]">
+                  Pilgrimage Complete · Reflection
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-[#2D3829]">
+                  {saintTrail.completionSummary}
+                </p>
               </div>
-            </div>
+            )}
 
-            {/* Lead Detective Prompt */}
-            <p className="mt-3 text-sm leading-relaxed text-[#cfc3ae]">
-              {currentCaseStop.detectiveLeadPrompt}
-            </p>
+            {/* Simple Previous / Next Stop Controls */}
+            <div className="mt-6 flex items-center justify-between gap-2 border-t border-[#E6DDD0] pt-4">
+              <button
+                type="button"
+                onClick={() => goToStopByIndex(activeStopIndex - 1)}
+                disabled={activeStopIndex === 0}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-[#DCD2C0] bg-[#FCFBF8] px-3.5 py-2.5 text-xs font-semibold text-[#221E1A] transition hover:border-[#4F6348] disabled:cursor-not-allowed disabled:opacity-40 cursor-pointer"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                <span>Previous Stop</span>
+              </button>
 
-            {/* Feedback Banner */}
-            <div
-              className={`mt-3.5 rounded-xl border p-3 text-xs leading-relaxed ${
-                feedbackBanner.type === 'success'
-                  ? 'border-emerald-500/40 bg-emerald-950/25 text-emerald-200'
-                  : feedbackBanner.type === 'mismatch'
-                    ? 'border-amber-500/50 bg-amber-950/30 text-amber-200'
-                    : 'border-[#332a1e] bg-[#1c1711] text-[#d8ccb8]'
-              }`}
-            >
-              {feedbackBanner.text}
-            </div>
-
-            {/* 3 Progressive Detective Clue Cards */}
-            <div className="mt-4 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#d4af37]">
-                  Detective Evidence Clues (Click to Reveal & Hear Chime)
-                </span>
-                <span className="text-[11px] text-[#9a8e7a]">
-                  {
-                    currentCaseStop.detectiveClues.filter((c) => revealedClueIds.includes(c.id))
-                      .length
-                  }{' '}
-                  / 3 Clues Opened
-                </span>
-              </div>
-
-              {currentCaseStop.detectiveClues.map((clue) => {
-                const isRevealed = revealedClueIds.includes(clue.id);
-                return (
-                  <div
-                    key={clue.id}
-                    className={`rounded-xl border transition-all ${
-                      isRevealed
-                        ? 'border-[#3d3224] bg-[#1d1812] p-3.5'
-                        : 'border-dashed border-[#3a3023] bg-[#18140f] p-3 hover:border-[#d4af37]'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span
-                        className={`inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider ${
-                          clue.clueNumber === 1
-                            ? 'text-emerald-400'
-                            : clue.clueNumber === 2
-                              ? 'text-amber-300'
-                              : 'text-[#d4af37]'
-                        }`}
-                      >
-                        {clue.clueNumber === 1 && <MapPin className="h-3.5 w-3.5" />}
-                        {clue.clueNumber === 2 && <HelpCircle className="h-3.5 w-3.5" />}
-                        {clue.clueNumber === 3 && <BookOpen className="h-3.5 w-3.5" />}
-                        Clue #{clue.clueNumber} · {clue.badgeLabel}
-                      </span>
-
-                      {!isRevealed && (
-                        <button
-                          onClick={() => handleRevealClue(clue.id, clue.soundCue)}
-                          className="inline-flex items-center gap-1 rounded-lg bg-[#282118] px-2.5 py-1 text-[11px] font-bold text-[#f3d27a] hover:bg-[#362c20]"
-                        >
-                          <Sparkles className="h-3 w-3" />
-                          Reveal Clue
-                        </button>
-                      )}
-                    </div>
-
-                    {isRevealed ? (
-                      <div className="mt-2">
-                        <h4 className="font-serif text-sm font-bold text-[#f4efe6]">
-                          {clue.headline}
-                        </h4>
-                        <p className="mt-1 text-xs leading-relaxed text-[#cfc3ae]">
-                          {clue.clueText}
-                        </p>
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => handleRevealClue(clue.id, clue.soundCue)}
-                        className="mt-1.5 w-full text-left text-xs text-[#8c7f6b] hover:text-[#cfc3ae]"
-                      >
-                        Click to unseal Clue #{clue.clueNumber} ({clue.badgeLabel})…
-                      </button>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Bottom Suspect City Selector & Case Navigation (Supports Option B: 1-Click Fly & Confirm from Full Globe!) */}
-          <div className="mt-5 border-t border-[#262018] pt-4">
-            <div className="mb-2 flex items-center justify-between gap-2">
-              <p className="text-xs font-bold uppercase tracking-wider text-[#d4af37]">
-                Suspect Cities (Zoom or 1-Click Confirm & Fly):
-              </p>
-              <span className="text-[10px] text-[#9a8e7a]">
-                Click <strong className="text-[#f3d27a]">Fly & Confirm</strong> from anywhere!
+              <span className="text-xs font-semibold text-[#655C50]">
+                {activeStopIndex + 1} / {trailStops.length}
               </span>
-            </div>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {trailStops.map((stop) => {
-                const isZoomed = zoomedStopNumber === stop.stopNumber;
-                const isSolved = solvedStopNumbers.includes(stop.stopNumber);
-                const isCurrentCaseSolved = solvedStopNumbers.includes(currentCaseStop.stopNumber);
-                return (
-                  <div
-                    key={stop.stopNumber}
-                    className={`flex items-center justify-between gap-1.5 rounded-xl border p-1.5 text-xs transition ${
-                      isZoomed
-                        ? 'border-[#facc15] bg-[#282012] text-[#fef08a]'
-                        : isSolved
-                          ? 'border-emerald-700/40 bg-emerald-950/20 text-emerald-200'
-                          : 'border-[#2c241b] bg-[#1b1611] text-[#e6dccb]'
-                    }`}
-                  >
-                    <button
-                      onClick={() => zoomToStopOnGlobe(stop.stopNumber)}
-                      className="flex min-w-0 flex-1 items-center gap-1.5 px-1.5 py-1 text-left hover:text-[#fef08a]"
-                      title={`Zoom 3D Camera to ${stop.modernPlaceName}, ${stop.modernCountry}`}
-                    >
-                      <ZoomIn className="h-3.5 w-3.5 shrink-0 text-[#d4af37]" />
-                      <span className="truncate font-medium">
-                        {stop.modernPlaceName}, {stop.modernCountry}
-                      </span>
-                    </button>
 
-                    {!isCurrentCaseSolved ? (
-                      <button
-                        onClick={() => handleConfirmCityForCase(stop)}
-                        className="shrink-0 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#b58922] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#120f0b] shadow-sm transition hover:brightness-110"
-                        title={`Fly 3D Camera & Confirm ${stop.modernPlaceName} for Case #${currentCaseStop.stopNumber}`}
-                      >
-                        Confirm
-                      </button>
-                    ) : isSolved ? (
-                      <button
-                        onClick={() => flyAndEnterHistoricalScene(stop)}
-                        className="shrink-0 rounded-lg border border-emerald-500/50 bg-emerald-950/40 px-2 py-1 text-[10px] font-bold text-emerald-200 hover:bg-emerald-900/50"
-                        title={`Fly into ${stop.modernPlaceName} & Open Historical Scene`}
-                      >
-                        Enter
-                      </button>
-                    ) : null}
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Confirm or Revisit Solved Stop Photo & Story Buttons */}
-            <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
-              {zoomedStopObj && !solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
+              {isLastStop ? (
                 <button
-                  onClick={() => handleConfirmCityForCase(zoomedStopObj)}
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg transition hover:brightness-110"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  Confirm {zoomedStopObj.modernPlaceName} for Case #{currentCaseStop.stopNumber}
-                </button>
-              )}
-
-              {solvedStopNumbers.includes(currentCaseStop.stopNumber) && (
-                <button
+                  type="button"
                   onClick={() => {
-                    soundEngine.playEffect('sanctuary_bell');
-                    setInspectedStop(currentCaseStop);
-                    setActivePhotoHotspotId(currentCaseStop.hiddenArtifacts[0].id);
+                    goToStopByIndex(0);
+                    resetRegionalOverview();
                   }}
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl border border-emerald-500/50 bg-emerald-950/30 px-3.5 py-2.5 text-xs font-bold text-emerald-200 hover:bg-emerald-900/40"
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-[#4F6348] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#3F5139] cursor-pointer"
                 >
-                  <Eye className="h-4 w-4" />
-                  View Stop Photo & Story ({currentCaseStop.modernPlaceName})
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  <span>Overview Route</span>
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => goToStopByIndex(activeStopIndex + 1)}
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-[#4F6348] px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-[#3F5139] cursor-pointer"
+                >
+                  <span>Next Stop</span>
+                  <ChevronRight className="h-4 w-4" />
                 </button>
               )}
             </div>
           </div>
-        </div>
+        </article>
       </div>
-
-      {/* UNLOCKED / INSPECTED STOP PHOTO & MODERN-DAY STORY MODAL */}
-      {inspectedStop && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2.5 sm:p-4">
-          <div className="max-h-[92dvh] w-full max-w-4xl overflow-y-auto rounded-2xl sm:rounded-3xl border border-[#d4af37]/50 bg-[#14110d] shadow-2xl">
-            {/* Modal Top Bar (Sticky for Mobile/Android) */}
-            <div className="sticky top-0 z-20 flex flex-wrap items-center justify-between gap-2.5 border-b border-[#2b231a] bg-[#1a1510]/95 px-4 py-3.5 backdrop-blur-md sm:px-6 sm:py-4">
-              <div>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#d4af37]">
-                    Trail Stop {inspectedStop.stopNumber} of {trailStops.length} · {inspectedStop.eraLabel}
-                  </span>
-                  {solvedStopNumbers.includes(inspectedStop.stopNumber) && (
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400">
-                      <CheckCircle2 className="h-3.5 w-3.5" />
-                      Verified on 3D Globe
-                    </span>
-                  )}
-                </div>
-                <h3 className="mt-0.5 font-serif text-lg font-bold text-[#f4efe6] sm:text-2xl">
-                  {inspectedStop.title}
-                </h3>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-2">
-                <button
-                  onClick={() => {
-                    if (isNarrating) {
-                      soundEngine.stopSpeaking();
-                      setIsNarrating(false);
-                    } else {
-                      setIsNarrating(true);
-                      soundEngine.playAndrewNarration(
-                        inspectedStop.stopNumber,
-                        'city',
-                        () => setIsNarrating(false),
-                        saintTrail.id,
-                        `${inspectedStop.whatYouCanSeeToday} ${inspectedStop.didYouKnowHighlight}`
-                      );
-                    }
-                  }}
-                  className={`inline-flex items-center gap-1.5 rounded-xl border px-3 py-2 text-xs font-bold transition sm:px-3.5 ${
-                    isNarrating
-                      ? 'border-[#facc15] bg-[#2b2212] text-[#fef08a]'
-                      : 'border-[#d4af37]/50 bg-[#241d14] text-[#f3d27a] hover:border-[#d4af37]'
-                  }`}
-                  title="Hear Andrew share a bonus 3-line fun fact about this modern-day city today (not written below!)"
-                >
-                  {isNarrating ? (
-                    <>
-                      <Square className="h-3.5 w-3.5 fill-current" />
-                      <span>Stop Voice</span>
-                    </>
-                  ) : (
-                    <>
-                      <Volume2 className="h-4 w-4" />
-                      <span>Modern City Audio Fact</span>
-                    </>
-                  )}
-                </button>
-
-                <button
-                  onClick={() => {
-                    soundEngine.stopSpeaking();
-                    setIsNarrating(false);
-                    zoomToStopOnGlobe(inspectedStop.stopNumber);
-                    setInspectedStop(null);
-                  }}
-                  className="rounded-xl border border-[#3a3023] bg-[#221c15] px-3 py-2 text-xs font-semibold text-[#e6dccb] hover:border-[#d4af37] sm:px-3.5"
-                >
-                  Back to Globe
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-12">
-              {/* Left 7 Cols: Stop Photograph with Interactive Story Hotspots */}
-              <div className="lg:col-span-7">
-                <div className="relative overflow-hidden rounded-2xl border border-[#382e21] bg-[#0d0b08]">
-                  <ResilientImage
-                    src={inspectedStop.image}
-                    alt={inspectedStop.title}
-                    className="h-[240px] w-full object-cover sm:h-[360px]"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/25" />
-
-                  {/* Interactive Hotspots on the Stop Photo */}
-                  {inspectedStop.hiddenArtifacts.map((art) => {
-                    const isActive = activePhotoHotspotId === art.id;
-                    return (
-                      <button
-                        key={art.id}
-                        onClick={() => {
-                          soundEngine.playEffect(art.soundCue);
-                          setActivePhotoHotspotId(art.id);
-                        }}
-                        style={{ left: `${art.xPercent}%`, top: `${art.yPercent}%` }}
-                        className={`absolute -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-bold shadow-lg transition-transform ${
-                          isActive
-                            ? 'scale-110 border-[#fef08a] bg-[#d4af37] text-[#120f0b]'
-                            : 'border-[#d4af37] bg-[#14110d]/90 text-[#f3d27a] hover:scale-105'
-                        }`}
-                      >
-                        <Flame className="h-3.5 w-3.5" />
-                        <span>#{art.orderNumber}</span>
-                      </button>
-                    );
-                  })}
-
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 text-xs text-[#e6dccb]">
-                    <span className="font-medium">{inspectedStop.imageCaption}</span>
-                  </div>
-                </div>
-
-                {/* Selected Photo Hotspot Detail */}
-                {(() => {
-                  const activeArt =
-                    inspectedStop.hiddenArtifacts.find((a) => a.id === activePhotoHotspotId) ||
-                    inspectedStop.hiddenArtifacts[0];
-                  return (
-                    <div className="mt-3 rounded-xl border border-[#332a1e] bg-[#1b1611] p-3.5">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#d4af37]">
-                          Photo Detail #{activeArt.orderNumber} · {activeArt.category}
-                        </span>
-                        <span className="text-[11px] text-[#9a8e7a]">
-                          Click markers #1, #2, #3 on photo
-                        </span>
-                      </div>
-                      <h4 className="mt-1 font-serif text-sm font-bold text-[#f4efe6]">
-                        {activeArt.foundTitle}
-                      </h4>
-                      <p className="mt-1 text-xs leading-relaxed text-[#cfc3ae]">
-                        {activeArt.storyUnlocked}
-                      </p>
-                    </div>
-                  );
-                })()}
-              </div>
-
-              {/* Right 5 Cols: Modern-Day City Now, Did You Know, and Next Case Button */}
-              <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
-                <div className="space-y-3.5">
-                  {/* Ancient -> Modern City Card */}
-                  <div className="rounded-xl border border-emerald-600/35 bg-emerald-950/20 p-4">
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
-                      <MapPin className="h-3.5 w-3.5" />
-                      Where Is It Modern Day Now?
-                    </div>
-                    <p className="mt-1 font-serif text-base font-bold text-[#f4efe6]">
-                      Ancient {inspectedStop.ancientPlaceName} → Today:{' '}
-                      <span className="text-emerald-300">
-                        {inspectedStop.modernPlaceName}, {inspectedStop.modernCountry}
-                      </span>
-                    </p>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#d4cbbe]">
-                      {inspectedStop.whatYouCanSeeToday}
-                    </p>
-                  </div>
-
-                  {/* Did You Know Card */}
-                  <div className="rounded-xl border border-amber-500/35 bg-amber-950/20 p-4">
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-amber-300">
-                      <HelpCircle className="h-3.5 w-3.5" />
-                      Did You Know?
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#e6dccb]">
-                      {inspectedStop.didYouKnowHighlight}
-                    </p>
-                  </div>
-
-                  {/* Saint Quote */}
-                  <blockquote className="rounded-xl border border-[#2f271d] bg-[#1a1510] p-3.5 italic text-xs text-[#cfc3ae]">
-                    {inspectedStop.saintQuote}
-                  </blockquote>
-                </div>
-
-                {/* Modal Footer Actions */}
-                <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
-                  <button
-                    onClick={() => {
-                      soundEngine.stopSpeaking();
-                      setIsNarrating(false);
-                      zoomToStopOnGlobe(inspectedStop.stopNumber);
-                      setInspectedStop(null);
-                    }}
-                    className="rounded-xl border border-[#3a3023] bg-[#1f1913] px-4 py-2.5 text-xs font-semibold text-[#e6dccb] hover:border-[#d4af37]"
-                  >
-                    Back to 3D Globe
-                  </button>
-
-                  {activeCaseIndex < trailStops.length - 1 ? (
-                    <button
-                      onClick={() => {
-                        soundEngine.playEffect('vellum_page');
-                        const nextIdx = activeCaseIndex + 1;
-                        setActiveCaseIndex(nextIdx);
-                        setInspectedStop(null);
-                        resetRegionalOverview();
-                      }}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b] shadow-lg hover:brightness-110"
-                    >
-                      <span>Investigate Case #{activeCaseIndex + 2}</span>
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => {
-                        soundEngine.playEffect('pilgrimage_complete');
-                        setInspectedStop(null);
-                        setShowCompletionModal(true);
-                      }}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-[#091510] shadow-lg"
-                    >
-                      <Award className="h-4 w-4" />
-                      Complete 3D Globe Pilgrimage
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Full 6-Stop Completion Modal */}
-      {showCompletionModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-          <div className="max-w-lg rounded-3xl border border-[#d4af37] bg-[#16120d] p-6 text-center shadow-2xl">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#d4af37] bg-[#261f15] text-[#f3d27a]">
-              <Award className="h-7 w-7" />
-            </div>
-            <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#d4af37]">
-              {saintTrail.saintName} · 3D Globe Trail Complete
-            </p>
-            <h3 className="mt-1 font-serif text-2xl font-bold text-[#f4efe6]">
-              All 6 Sanctuary Beacons Unlocked!
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#cfc3ae]">
-              {saintTrail.completionSummary}
-            </p>
-            <div className="mt-5 flex justify-center gap-3">
-              <button
-                onClick={() => {
-                  setShowCompletionModal(false);
-                  resetRegionalOverview();
-                }}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-[#d4af37] to-[#b58922] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#120f0b]"
-              >
-                <Compass className="h-4 w-4" />
-                Explore 3D Globe Freely
-              </button>
-              <button
-                onClick={() => {
-                  setSolvedStopNumbers([]);
-                  setActiveCaseIndex(0);
-                  setShowCompletionModal(false);
-                  resetRegionalOverview();
-                }}
-                className="inline-flex items-center gap-1.5 rounded-xl border border-[#3a3023] bg-[#211b14] px-4 py-2.5 text-xs font-semibold text-[#e6dccb]"
-              >
-                <RotateCcw className="h-4 w-4" />
-                Replay Detective Cases
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
