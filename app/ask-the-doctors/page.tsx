@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AskTheDoctorsPage() {
   return (
-    <div className="min-h-screen bg-[#0c0a08] text-[#f4efe6]">
+    <div className="min-h-screen bg-[#F3EDE2] text-[#221E1A] selection:bg-[#4F6348]/20">
       <main className="pt-4 pb-24">
         <AskDoctorsClient />
       </main>
