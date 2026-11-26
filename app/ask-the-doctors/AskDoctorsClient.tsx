@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   BookOpen,
+  CheckCircle2,
   ChevronDown,
   ChevronUp,
   Cross,
@@ -14,6 +15,7 @@ import {
   Sparkles,
   Square,
   Volume2,
+  VolumeX,
 } from 'lucide-react';
 
 interface DoctorInfo {
@@ -24,7 +26,8 @@ interface DoctorInfo {
   tier: string;
   bio: string;
   workCount: number;
-  passageCount: number;
+  pdfPages: number;
+  passages: number;
 }
 
 interface WorkInfo {
@@ -33,7 +36,6 @@ interface WorkInfo {
   author: string;
   title: string;
   edition: string;
-  pub_year: string;
   pdf_filename: string;
   total_pages: number;
   passage_count: number;
@@ -73,6 +75,8 @@ interface AskResponse {
   abstained: boolean;
 }
 
+type ResearchStage = 'idle' | 'searching' | 'analyzing' | 'voicing';
+
 const STARTER_QUESTIONS = [
   'What do the Doctors teach about the Eucharist and the Real Presence?',
   'What do St. Augustine and St. Thomas Aquinas teach about grace and free will?',
@@ -96,17 +100,22 @@ export default function AskDoctorsClient() {
   const [selectedDoctor, setSelectedDoctor] = useState<string>('all');
   const [question, setQuestion] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [stage, setStage] = useState<ResearchStage>('idle');
+  const [livePassages, setLivePassages] = useState<RetrievedSource[]>([]);
   const [errorMsg, setErrorMsg] = useState<string>('');
   const [result, setResult] = useState<AskResponse | null>(null);
   const [expandedSources, setExpandedSources] = useState<Record<number, boolean>>({});
   const [highlightedSourceIdx, setHighlightedSourceIdx] = useState<number | null>(null);
   const [showBibliography, setShowBibliography] = useState<boolean>(false);
 
-  // Andrew voice playback state
+  // Andrew voice playback state (ON by default so Andrew speaks his analysis aloud)
+  const [autoSpeak, setAutoSpeak] = useState<boolean>(true);
   const [audioLoading, setAudioLoading] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState<boolean>(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audioUrlRef = useRef<string | null>(null);
+  const requestIdRef = useRef<number>(0);
 
   useEffect(() => {
     fetch('/api/doctors/catalog')
@@ -135,76 +144,53 @@ export default function AskDoctorsClient() {
       audioRef.current.currentTime = 0;
     }
     setIsPlaying(false);
+    setAudioLoading(false);
   }
 
-  async function handleAsk(customQuestion?: string) {
-    const q = (customQuestion ?? question).trim();
-    if (!q || loading) return;
-    if (customQuestion) setQuestion(customQuestion);
-
-    stopAudio();
-    setLoading(true);
-    setErrorMsg('');
-    setHighlightedSourceIdx(null);
-
-    try {
-      const res = await fetch('/api/doctors/ask', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: q, doctor: selectedDoctor }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setErrorMsg(data.error || 'Unable to reach Andrew right now. Please try again.');
-        return;
-      }
-      setResult(data);
-      // Open the first 2 source excerpts by default for immediate verification
-      const initExp: Record<number, boolean> = {};
-      if (Array.isArray(data.sources)) {
-        data.sources.slice(0, 2).forEach((s: RetrievedSource) => {
-          initExp[s.id] = true;
-        });
-      }
-      setExpandedSources(initExp);
-    } catch {
-      setErrorMsg('Connection interrupted. Please try asking Andrew again.');
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  async function handleListenAndrew() {
-    if (!result?.spokenText) return;
-    if (isPlaying) {
-      stopAudio();
-      return;
-    }
-    setAudioLoading(true);
-    setErrorMsg('');
-    // Synchronously unlock shared Audio element inside the tap gesture for iPhone/Safari
+  function unlockSafariAudio() {
+    // Synchronously unlock shared Audio element inside the user tap gesture for iPhone/Safari
     const audio = audioRef.current || new Audio();
     audioRef.current = audio;
     audio.preload = 'auto';
+    audio.volume = 0.95;
     try {
       audio.src =
         'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
-      await audio.play().catch(() => {});
-      audio.pause();
+      const p = audio.play();
+      if (p && typeof p.then === 'function') {
+        p.then(() => {
+          audio.pause();
+        }).catch(() => {});
+      }
     } catch {
       // Ignore silent unlock failure
     }
+  }
+
+  async function playAndrewVoice(spokenText: string, reqId?: number, isAuto = false) {
+    if (!spokenText) return;
+    setAudioLoading(true);
+    setAutoplayBlocked(false);
+    const audio = audioRef.current || new Audio();
+    audioRef.current = audio;
+    audio.preload = 'auto';
+    audio.volume = 0.95;
+
     try {
       const res = await fetch('/api/doctors/speak', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: result.spokenText }),
+        body: JSON.stringify({ text: spokenText }),
       });
+      if (reqId !== undefined && reqId !== requestIdRef.current) return;
       if (!res.ok) {
-        setErrorMsg('Andrew voice narration is momentarily busy. Please try again.');
+        if (!isAuto) {
+          setErrorMsg('Andrew voice narration is momentarily busy. Please try again.');
+        }
         return;
       }
       const blob = await res.blob();
+      if (reqId !== undefined && reqId !== requestIdRef.current) return;
       if (audioUrlRef.current) {
         URL.revokeObjectURL(audioUrlRef.current);
       }
@@ -217,10 +203,108 @@ export default function AskDoctorsClient() {
       await audio.play();
       setIsPlaying(true);
     } catch {
-      setErrorMsg('Could not play Andrew audio on this device.');
+      if (isAuto) {
+        setAutoplayBlocked(true);
+      } else {
+        setErrorMsg('Could not play Andrew audio on this device.');
+      }
     } finally {
-      setAudioLoading(false);
+      if (reqId === undefined || reqId === requestIdRef.current) {
+        setAudioLoading(false);
+      }
     }
+  }
+
+  async function handleAsk(customQuestion?: string) {
+    const q = (customQuestion ?? question).trim();
+    if (!q || loading) return;
+    if (customQuestion) setQuestion(customQuestion);
+
+    const myReqId = ++requestIdRef.current;
+    stopAudio();
+    if (autoSpeak) {
+      unlockSafariAudio();
+    }
+
+    setLoading(true);
+    setStage('searching');
+    setLivePassages([]);
+    setResult(null);
+    setErrorMsg('');
+    setAutoplayBlocked(false);
+    setHighlightedSourceIdx(null);
+
+    try {
+      // Stage 1: Real fast PDF archive lookup so the pilgrim sees the exact PDFs & pages Andrew opens
+      try {
+        const retRes = await fetch(
+          `/api/doctors/retrieve?q=${encodeURIComponent(q)}&doctor=${encodeURIComponent(selectedDoctor)}`
+        );
+        if (retRes.ok) {
+          const retData = await retRes.json();
+          if (myReqId !== requestIdRef.current) return;
+          if (Array.isArray(retData.passages)) {
+            setLivePassages(retData.passages);
+          }
+        }
+      } catch {
+        // Non-fatal: /api/doctors/ask performs authoritative retrieval as well
+      }
+
+      if (myReqId !== requestIdRef.current) return;
+      setStage('analyzing');
+
+      // Stage 2: Andrew reads, compares, and analyzes those verified public-domain PDF passages
+      const res = await fetch('/api/doctors/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: q, doctor: selectedDoctor }),
+      });
+      const data = await res.json();
+      if (myReqId !== requestIdRef.current) return;
+
+      if (!res.ok) {
+        setErrorMsg(data.error || 'Unable to reach Andrew right now. Please try again.');
+        return;
+      }
+
+      setResult(data);
+      // Open the first 2 source excerpts by default for immediate verification
+      const initExp: Record<number, boolean> = {};
+      if (Array.isArray(data.sources)) {
+        data.sources.slice(0, 2).forEach((s: RetrievedSource) => {
+          initExp[s.id] = true;
+        });
+      }
+      setExpandedSources(initExp);
+      setLoading(false);
+      setStage('idle');
+
+      // Stage 3: Automatically speak Andrew's analysis aloud when Voice is enabled
+      if (autoSpeak && data.spokenText) {
+        void playAndrewVoice(data.spokenText, myReqId, true);
+      }
+    } catch {
+      if (myReqId === requestIdRef.current) {
+        setErrorMsg('Connection interrupted. Please try asking Andrew again.');
+      }
+    } finally {
+      if (myReqId === requestIdRef.current) {
+        setLoading(false);
+        setStage('idle');
+      }
+    }
+  }
+
+  async function handleListenAndrew() {
+    if (!result?.spokenText) return;
+    if (isPlaying) {
+      stopAudio();
+      return;
+    }
+    setErrorMsg('');
+    unlockSafariAudio();
+    await playAndrewVoice(result.spokenText, requestIdRef.current, false);
   }
 
   function jumpToSource(numIndex: number) {
@@ -262,16 +346,16 @@ export default function AskDoctorsClient() {
             const mBold = tok.match(/^\*\*([^*]+)\*\*$/);
             if (mBold) {
               return (
-                <strong key={tIdx} className="font-semibold text-[#181512]">
+                <strong key={tIdx} className="font-semibold text-[#1C1814]">
                   {mBold[1]}
                 </strong>
               );
             }
-            const mItalic = tok.match(/^\*([^*]+)\*$/);
-            if (mItalic) {
+            const mItal = tok.match(/^\*([^*]+)\*$/);
+            if (mItal) {
               return (
-                <em key={tIdx} className="italic text-[#2A241E]">
-                  {mItalic[1]}
+                <em key={tIdx} className="italic text-[#3B332A]">
+                  {mItal[1]}
                 </em>
               );
             }
@@ -285,6 +369,11 @@ export default function AskDoctorsClient() {
   const mag7 = doctors.filter((d) => d.tier === 'Magnificent 7');
   const earlyAndMystics = doctors.filter((d) => d.tier !== 'Magnificent 7');
   const activeDoctorObj = doctors.find((d) => d.slug === selectedDoctor);
+
+  // Deduplicated list of works Andrew opened during live research
+  const liveUniquePdfs = Array.from(
+    new Map(livePassages.map((p) => [`${p.pdfFilename}-${p.pageLabel}`, p])).values()
+  );
 
   return (
     <div className="mx-auto max-w-4xl px-4 sm:px-6">
@@ -300,8 +389,8 @@ export default function AskDoctorsClient() {
           Ask the Doctors of the Church
         </h1>
         <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-[#5C5347]">
-          Guided by <span className="text-[#4F6348] font-semibold">Andrew</span> — strictly grounded in{' '}
-          {stats.totalPdfPages.toLocaleString()} pages of pre-1929 public-domain writings by St. Augustine,
+          Guided by <span className="text-[#4F6348] font-semibold">Andrew</span> — who opens, analyzes, and speaks
+          directly from {stats.totalPdfPages.toLocaleString()} pages of pre-1929 public-domain writings by St. Augustine,
           St. Thomas Aquinas, St. Jerome, St. John Chrysostom, St. Francis de Sales, St. Teresa of Ávila,
           St. Thérèse of Lisieux, St. Ignatius of Antioch, St. Irenaeus, and more.
         </p>
@@ -313,17 +402,45 @@ export default function AskDoctorsClient() {
           <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#A65B3A]">
             Choose Your Inquiry Scope
           </span>
-          <button
-            type="button"
-            onClick={() => setSelectedDoctor('all')}
-            className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer border ${
-              selectedDoctor === 'all'
-                ? 'border-[#4F6348] bg-[#4F6348] text-white shadow-sm'
-                : 'border-[#DCD2C0] bg-[#F5F0E6] text-[#4E463D] hover:border-[#4F6348]/60 hover:text-[#221E1A]'
-            }`}
-          >
-            Council of All {stats.doctorCount} Saints (Recommended)
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                const next = !autoSpeak;
+                setAutoSpeak(next);
+                if (!next) stopAudio();
+              }}
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer border ${
+                autoSpeak
+                  ? 'border-[#C8D4C2] bg-[#EAEFE7] text-[#35462F]'
+                  : 'border-[#DCD2C0] bg-[#F5F0E6] text-[#655C50]'
+              }`}
+              title="Toggle whether Andrew automatically speaks his analysis aloud"
+            >
+              {autoSpeak ? (
+                <>
+                  <Volume2 className="h-3.5 w-3.5 text-[#4F6348]" />
+                  <span>Andrew Voice: On</span>
+                </>
+              ) : (
+                <>
+                  <VolumeX className="h-3.5 w-3.5" />
+                  <span>Andrew Voice: Off</span>
+                </>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedDoctor('all')}
+              className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all cursor-pointer border ${
+                selectedDoctor === 'all'
+                  ? 'border-[#4F6348] bg-[#4F6348] text-white shadow-sm'
+                  : 'border-[#DCD2C0] bg-[#F5F0E6] text-[#4E463D] hover:border-[#4F6348]/60 hover:text-[#221E1A]'
+              }`}
+            >
+              Council of All {stats.doctorCount} Saints (Recommended)
+            </button>
+          </div>
         </div>
 
         {/* The Magnificent 7 */}
@@ -417,7 +534,7 @@ export default function AskDoctorsClient() {
             {loading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Searching PDFs…</span>
+                <span>{stage === 'searching' ? 'Opening PDFs…' : 'Andrew Analyzing…'}</span>
               </>
             ) : (
               <>
@@ -444,13 +561,74 @@ export default function AskDoctorsClient() {
         </div>
       </section>
 
+      {/* LIVE ANDREW'S STUDY DESK — SHOWS REAL PDFS & PAGES BEING OPENED AND ANALYZED */}
+      {loading && (
+        <section className="mt-6 rounded-2xl border border-[#C8D4C2] bg-[#FCFBF8] p-5 sm:p-6 shadow-[0_14px_36px_rgba(34,30,26,0.06)]">
+          <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.16em] text-[#4F6348]">
+            <Loader2 className="h-4 w-4 animate-spin text-[#4F6348]" />
+            <span>Andrew’s Study Desk — Live PDF Inspection</span>
+          </div>
+
+          <div className="mt-4 space-y-2.5 text-sm">
+            <div className="flex items-center gap-2.5 text-[#221E1A]">
+              {stage === 'searching' ? (
+                <Loader2 className="h-4 w-4 shrink-0 animate-spin text-[#A65B3A]" />
+              ) : (
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#4F6348]" />
+              )}
+              <span>
+                {stage === 'searching'
+                  ? `Searching ${stats.pdfCount} public-domain PDFs (${stats.totalPdfPages.toLocaleString()} indexed pages)…`
+                  : `Opened ${livePassages.length} matching passage${livePassages.length === 1 ? '' : 's'} from the PDF archive`}
+              </span>
+            </div>
+
+            {liveUniquePdfs.length > 0 && (
+              <div className="ml-6 rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] p-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#A65B3A] mb-2">
+                  PDF Pages Currently Open on Andrew’s Desk
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {liveUniquePdfs.map((src) => (
+                    <span
+                      key={`${src.id}-${src.pageLabel}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-[#DCD2C0] bg-[#FCFBF8] px-2.5 py-1 text-xs text-[#221E1A]"
+                    >
+                      <FileText className="h-3 w-3 text-[#4F6348] shrink-0" />
+                      <span className="font-semibold">{src.author}</span>
+                      <span className="text-[#655C50]">· {src.workTitle}</span>
+                      <span className="font-mono text-[11px] text-[#A65B3A]">({src.pageLabel})</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div
+              className={`flex items-center gap-2.5 ${
+                stage === 'analyzing' ? 'text-[#221E1A] font-medium' : 'text-[#857A6B]'
+              }`}
+            >
+              {stage === 'analyzing' ? (
+                <Loader2 className="h-4 w-4 shrink-0 animate-spin text-[#4F6348]" />
+              ) : (
+                <div className="h-4 w-4 shrink-0 rounded-full border border-[#DCD2C0]" />
+              )}
+              <span>
+                Reading these passages side by side, analyzing the Saints’ teachings, and preparing Andrew’s spoken reflection…
+              </span>
+            </div>
+          </div>
+        </section>
+      )}
+
       {errorMsg && (
         <div className="mt-4 rounded-xl border border-[#D99B8C] bg-[#FDF1EE] px-4 py-3 text-sm text-[#8A2F1C]">
           {errorMsg}
         </div>
       )}
 
-      {/* ANDREW'S GROUNDED ANSWER */}
+      {/* ANDREW'S GROUNDED ANALYTICAL ANSWER */}
       {result && (
         <section className="mt-6 space-y-5">
           <div className="rounded-2xl border border-[#DCD2C0] bg-[#FCFBF8] p-5 sm:p-7 shadow-[0_18px_44px_rgba(34,30,26,0.08)]">
@@ -459,10 +637,10 @@ export default function AskDoctorsClient() {
                 <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#4F6348]">
                   <ShieldCheck className="h-3.5 w-3.5" />
                   <span>
-                    Andrew · Divine Pilgrim Study Guide ·{' '}
+                    Andrew’s Reflection ·{' '}
                     {result.abstained
                       ? 'No Direct PDF Match'
-                      : `Grounded in ${result.sources.length} Public-Domain PDF Excerpts`}
+                      : `Analyzed ${result.sources.length} Public-Domain PDF Passages`}
                   </span>
                 </div>
                 <h2 className="mt-1.5 font-serif text-xl sm:text-2xl font-bold text-[#221E1A]">
@@ -475,27 +653,54 @@ export default function AskDoctorsClient() {
                   type="button"
                   onClick={handleListenAndrew}
                   disabled={audioLoading}
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#4F6348] px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[#3F5139] disabled:opacity-60 transition-colors cursor-pointer"
+                  className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-semibold text-white shadow-sm disabled:opacity-60 transition-colors cursor-pointer ${
+                    isPlaying
+                      ? 'bg-[#A65B3A] hover:bg-[#8E4C2F]'
+                      : 'bg-[#4F6348] hover:bg-[#3F5139]'
+                  }`}
                 >
                   {audioLoading ? (
                     <>
                       <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                      <span>Preparing Andrew’s voice…</span>
+                      <span>Andrew is preparing to speak…</span>
                     </>
                   ) : isPlaying ? (
                     <>
                       <Square className="h-3.5 w-3.5 fill-current" />
-                      <span>Stop Audio</span>
+                      <span>Andrew is Speaking · Stop</span>
                     </>
                   ) : (
                     <>
                       <Volume2 className="h-3.5 w-3.5" />
-                      <span>Listen with Andrew</span>
+                      <span>{autoplayBlocked ? 'Tap to Hear Andrew Speak' : 'Listen with Andrew'}</span>
                     </>
                   )}
                 </button>
               )}
             </div>
+
+            {/* COMPACT STRIP OF EXACT PDF PAGES ANDREW EXAMINED */}
+            {result.sources && result.sources.length > 0 && (
+              <div className="mb-5 rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] px-3.5 py-2.5">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#A65B3A] mr-1">
+                    PDFs Andrew Examined:
+                  </span>
+                  {result.sources.map((src, idx) => (
+                    <button
+                      key={src.id}
+                      type="button"
+                      onClick={() => jumpToSource(idx + 1)}
+                      className="inline-flex items-center gap-1 rounded-md border border-[#DCD2C0] bg-[#FCFBF8] px-2 py-0.5 text-[11px] text-[#221E1A] hover:border-[#4F6348] hover:bg-[#EAEFE7] transition-colors cursor-pointer"
+                    >
+                      <span className="font-bold text-[#4F6348]">[{idx + 1}]</span>
+                      <span className="font-medium">{src.author}</span>
+                      <span className="font-mono text-[10px] text-[#655C50]">{src.pageLabel}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div>{renderProseWithCitations(result.answer)}</div>
 
@@ -630,7 +835,6 @@ export default function AskDoctorsClient() {
               <strong className="text-[#221E1A]">Chapter:Verse only</strong> so copyrighted Bible translations are never reproduced.
             </p>
           </div>
-
           <div className="rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] p-4">
             <h3 className="text-sm font-bold text-[#221E1A]">
               Closed-Book Grounding (Honest About AI Limits)
@@ -642,7 +846,6 @@ export default function AskDoctorsClient() {
               against the verbatim PDF excerpts displayed beneath each answer.
             </p>
           </div>
-
           <div className="rounded-xl border border-[#E2D8C8] bg-[#F6F2EA] p-4">
             <h3 className="text-sm font-bold text-[#221E1A]">
               Not Spiritual Counseling
