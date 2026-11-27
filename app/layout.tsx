@@ -52,6 +52,9 @@ export const metadata: Metadata = {
       "Explore Eucharistic miracles, sacred architecture, saint mystery trails, Doctors of the Church, and daily Scripture study.",
     images: ["/feature_graphic.png"],
   },
+  other: {
+    "p:domain_verify": "bef772ff7e4a0c3f4866147b0994a4c2",
+  },
 };
 
 const jsonLd = {
