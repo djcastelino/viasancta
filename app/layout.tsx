@@ -19,8 +19,48 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Divine Pilgrim - Virtual Sacred Pilgrimages",
-  description: "Explore sacred architecture, biblical mountains, and daily six-clue Scripture challenges.",
+  metadataBase: new URL("https://www.divinepilgrim.com"),
+  title: {
+    default: "Divine Pilgrim — Catholic Sacred Pilgrimages, Saints & Doctors",
+    template: "%s | Divine Pilgrim",
+  },
+  description:
+    "Explore Eucharistic miracles, sacred architecture, saint mystery trails, Doctors of the Church, and daily Scripture study on Divine Pilgrim.",
+  alternates: {
+    canonical: "https://www.divinepilgrim.com",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.divinepilgrim.com",
+    siteName: "Divine Pilgrim",
+    title: "Divine Pilgrim — Catholic Sacred Pilgrimages, Saints & Doctors",
+    description:
+      "Explore Eucharistic miracles, sacred architecture, saint mystery trails, Doctors of the Church, and daily Scripture study.",
+    images: [
+      {
+        url: "/feature_graphic.png",
+        width: 1024,
+        height: 500,
+        alt: "Divine Pilgrim — Virtual Sacred Pilgrimages",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Divine Pilgrim — Catholic Sacred Pilgrimages, Saints & Doctors",
+    description:
+      "Explore Eucharistic miracles, sacred architecture, saint mystery trails, Doctors of the Church, and daily Scripture study.",
+    images: ["/feature_graphic.png"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Divine Pilgrim",
+  url: "https://www.divinepilgrim.com",
+  description:
+    "Interactive Catholic pilgrimages, Eucharistic miracles archive, sacred architecture, saint trails, and Doctors of the Church study library.",
 };
 
 export default function RootLayout({
@@ -31,6 +71,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-Y9BMLBXK0T"
           strategy="afterInteractive"
@@ -43,7 +87,7 @@ export default function RootLayout({
             gtag('config', 'G-Y9BMLBXK0T');
           `}
         </Script>
-              <Script
+        <Script
           src="/api/umami/script"
           data-host-url="/api/umami"
           data-website-id="722f5bca-d797-4466-8481-393aa336273b"
