@@ -67,10 +67,10 @@ export async function GET() {
   ];
 
   if (Array.isArray(miracles)) {
-    for (const m of miracles as Array<{
+    for (const m of miracles as unknown as Array<{
       id?: string;
       name?: string;
-      date?: string;
+      date?: string | number;
       description?: string;
       images?: Array<{ url?: string }>;
       location?: { city?: string; country?: string };

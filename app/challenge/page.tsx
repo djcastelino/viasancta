@@ -239,7 +239,7 @@ export default function ChallengePage() {
 
   const buildScoreGrid = () => {
     const guesses = gameState?.guesses || [];
-    const targetName = (challenge?.name || "").trim().toLowerCase();
+    const targetName = (gameState?.targetChallenge?.name || "").trim().toLowerCase();
     const cells: string[] = [];
     for (let i = 0; i < 6; i++) {
       if (i < guesses.length) {
