@@ -33,6 +33,7 @@ export default function ChallengePage() {
   const [guess, setGuess] = useState("");
   const [revealedClues, setRevealedClues] = useState(1);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
   const [trivia, setTrivia] = useState<string>("");
   const [loadingTrivia, setLoadingTrivia] = useState(false);
   const audio = useSacredAudio();
@@ -236,24 +237,63 @@ export default function ChallengePage() {
       );
   };
 
+  const buildScoreGrid = () => {
+    const guesses = gameState?.guesses || [];
+    const targetName = (challenge?.name || "").trim().toLowerCase();
+    const cells: string[] = [];
+    for (let i = 0; i < 6; i++) {
+      if (i < guesses.length) {
+        const isHit = guesses[i].trim().toLowerCase() === targetName;
+        cells.push(isHit ? "🟩" : "🟥");
+      } else {
+        cells.push("⬜");
+      }
+    }
+    return cells.join("");
+  };
+
+  const buildShareText = () => {
+    const guesses = gameState?.guesses || [];
+    const streak = gameState?.currentStreak || 0;
+    const dateLabel = new Date().toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+    const scoreLine = gameState?.isWon
+      ? `Solved in ${guesses.length}/6${streak > 1 ? ` · 🔥 ${streak}-day streak` : ""}`
+      : "Missed today (X/6)";
+    return [
+      `🕯️ Divine Pilgrim · Scripture Challenge (${dateLabel})`,
+      scoreLine,
+      buildScoreGrid(),
+      "",
+      "Can you guess today's biblical figure? (No spoilers!)",
+      "https://www.divinepilgrim.com/challenge",
+    ].join("\n");
+  };
+
   const handleShare = async () => {
-    const result = gameState?.isWon
-      ? `✅ ${gameState.guesses.length} ${gameState.guesses.length === 1 ? "guess" : "guesses"}`
-      : "❌";
-
-    const text = `Daily Scripture Challenge\n${result}\n🔴${"🟠🟡🔵🟢🟣".slice(0, Math.min(revealedClues - 1, 5) * 2)}\n\ndivinepilgrim.com/challenge`;
-
+    const text = buildShareText();
+    const copyFallback = async () => {
+      try {
+        await navigator.clipboard.writeText(text);
+        setShareCopied(true);
+        setTimeout(() => setShareCopied(false), 3000);
+      } catch {
+        setShareCopied(false);
+      }
+    };
     if (navigator.share) {
       try {
-        await navigator.share({ text });
+        await navigator.share({
+          title: "Divine Pilgrim — Daily Scripture Challenge",
+          text,
+        });
       } catch {
-        // User cancelled or error - copy to clipboard instead
-        navigator.clipboard.writeText(text);
-        alert("Copied to clipboard!");
+        await copyFallback();
       }
     } else {
-      navigator.clipboard.writeText(text);
-      alert("Copied to clipboard!");
+      await copyFallback();
     }
   };
 
@@ -518,12 +558,37 @@ export default function ChallengePage() {
                     {gameState.guesses.length === 1 ? "guess" : "guesses"}.
                   </p>
                 )}
-                <button
-                  className="scripture-button scripture-button-gold"
-                  onClick={handleShare}
+                <div
+                  style={{
+                    margin: "14px 0",
+                    padding: "10px 14px",
+                    borderRadius: "12px",
+                    background: "rgba(0,0,0,0.05)",
+                    fontSize: "20px",
+                    letterSpacing: "4px",
+                    textAlign: "center",
+                  }}
+                  aria-label="Spoiler-free score grid"
                 >
-                  Share your discovery <ArrowUpRight size={17} />
-                </button>
+                  {buildScoreGrid()}
+                </div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center" }}>
+                  <button
+                    className="scripture-button scripture-button-gold"
+                    onClick={handleShare}
+                  >
+                    {shareCopied ? "Copied! Paste in WhatsApp or iMessage" : "Share Spoiler-Free Score"} <ArrowUpRight size={17} />
+                  </button>
+                  <a
+                    className="scripture-button"
+                    style={{ textDecoration: "none", border: "1px solid currentColor" }}
+                    href={`https://wa.me/?text=${encodeURIComponent(buildShareText())}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             )}
             {gameState.guesses.length > 0 && (
